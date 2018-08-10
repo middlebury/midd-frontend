@@ -1,0 +1,67 @@
+{
+  "name": "midd-theme-frontend",
+  "description": "Frontend assets for Drupal8 MiddTheme",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "gulp",
+    "dev": "gulp dev",
+    "build": "gulp build --production",
+    "build:icons": "gulp icons && gulp copy:icons",
+    "deploy": "gulp deploy --production",
+    "lint": "eslint src/**"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/middlebury/midd-theme-frontend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/middlebury/midd-theme-frontend/issues"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "beeper": "^1.1.1",
+    "browser-sync": "^2.23.6",
+    "del": "^2.2.2",
+    "eslint": "^3.15.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-combine-mq": "^0.4.0",
+    "gulp-csscomb-lint": "^0.0.2",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-data": "^1.2.1",
+    "gulp-eslint": "^3.0.1",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-prettify": "^0.5.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^3.1.0",
+    "gulp-size": "^2.1.0",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-twig": "^0.7.0",
+    "gulp-uglify": "^2.0.1",
+    "gulp-util": "^3.0.8",
+    "js-yaml": "^3.8.2",
+    "rollup": "^0.64.1",
+    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-commonjs": "^9.1.5",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-uglify": "^4.0.0",
+    "yargs": "^6.6.0"
+  },
+  "dependencies": {
+    "chart.js": "^2.7.1",
+    "headroom.js": "^0.9.4",
+    "intersection-observer": "^0.5.0",
+    "middlebury-design-system": "^0.8.0",
+    "normalize.css": "^5.0.0",
+    "object-fit-images": "^3.2.3",
+    "pikaday": "^1.7.0",
+    "swiper": "^4.1.0"
+  }
+}

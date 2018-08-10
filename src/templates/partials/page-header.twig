@@ -1,0 +1,26 @@
+<header class="pt-4" aria-labelledby="midd-page-header-label">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 offset-sm-1">
+
+        {% include 'partials/breadcrumb.twig' with { items: breadcrumb } %}
+        <h1 class="display-3 mb-3 mb-md-7" id="midd-page-header-label">{{title}}</h1>
+
+      </div>
+    </div>
+  </div>
+</header>
+
+{# <div class="container">
+  <div class="row">
+
+    <div class="col-sm-10 offset-sm-1">
+      <header class="page-header">
+      {% include 'breadcrumb.twig' %}
+
+        <h1 class='display-3 mb-1 mb-md-4'>Student Activities</h1>
+      </header>
+    </div>
+
+  </div>
+</div> #}

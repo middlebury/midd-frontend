@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/83898/706148/css/fonts.css" />
+</head>
+<body class="{% if bodyClass %}{{bodyClass}}{% endif %}" id="midd-pagetop">
+  <nav aria-labelledby="midd-skip-link">
+    <a href="#midd-main" class="sr-only sr-only-focusable" id="midd-skip-link">Skip to content</a>
+  </nav>
+  <div style="display:none">
+  {% include 'partials/icons.twig' %}
+  </div>
+  <div class="site-container">
+    {% if alert %}
+      <div class="alert alert--warning">
+        <div class="container">
+          <strong>Warning:</strong> look out below!
+        </div>
+      </div>
+    {% endif %}
+    {% include 'partials/header.twig' %}
+    <main class="main" id="midd-main" aria-labelledby="midd-page-header-label">
+      <div class="page">
+        {% if page_header %}
+          {% include 'partials/page-header.twig' with page_header %}
+        {% endif %}
+        {% block page %}{% endblock %}
+        {% block page_footer %}{% endblock %}
+      </div>
+    </main>
+    {% include 'partials/footer.twig' %}
+  </div>
+  {# {% include 'partials/mission-modal.twig' %} #}
+  <script src="js/bundle.js" async></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

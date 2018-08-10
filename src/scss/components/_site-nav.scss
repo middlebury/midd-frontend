@@ -1,0 +1,151 @@
+.site-nav__list {
+  @include media(md) {
+    display: flex;
+  }
+}
+
+.site-nav__item {
+  position: relative;
+  border-top: 1px solid $gray-light;
+
+  @include media(md) {
+    margin-right: 1.5rem;
+    border-top: 0;
+  }
+
+  &:hover {
+    @include media(md) {
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: $brand-primary;
+        animation: fadeIn 0.5s;
+      }
+
+      .site-subnav {
+        visibility: visible;
+        opacity: 1;
+        animation: fadeIn 0.5s;
+      }
+    }
+  }
+}
+
+.site-nav__actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.site-nav__subnav-handle {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  border-left: 1px solid $gray-light;
+
+  @include media(md) {
+    display: none;
+  }
+
+  .icon {
+    transition: 0.2s transform;
+  }
+
+  &.is-toggled {
+    .icon {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.site-subnav {
+  // background: $gray-light;
+  padding-left: 2rem;
+  display: none;
+
+  &.is-toggled {
+    display: block;
+  }
+
+  @include media(md) {
+    display: block;
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    padding: 1.5rem;
+    min-width: 450px;
+    border: 1px solid $brand-primary;
+    opacity: 0;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .site-nav__list {
+    @include media(md) {
+      column-count: 2;
+      column-gap: 1.5rem;
+      display: block;
+    }
+  }
+
+  .site-nav__item {
+    @include media(md) {
+      display: inline-block;
+      width: 100%;
+      margin-right: 0;
+
+      &:hover {
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .site-nav__link {
+    font-weight: normal;
+    padding-left: 0;
+
+    @include media(md) {
+      font-size: 14px;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+  }
+}
+
+.site-nav__link {
+  font-weight: 600;
+  font-size: 14px;
+  display: block;
+  padding: 1rem;
+
+  &:hover,
+  &:focus {
+    color: $brand-primary;
+    text-decoration: none;
+  }
+
+  @include media(md) {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+.site-nav--util {
+  @include media(md) {
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  a {
+    font-weight: 500;
+  }
+}

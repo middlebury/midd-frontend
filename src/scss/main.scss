@@ -1,0 +1,19 @@
+@import '../../node_modules/middlebury-design-system/scss/mds';
+
+@import 'keyframes';
+
+@import 'components/header';
+@import 'components/site-nav';
+@import 'components/site-search';
+
+.display-3 {
+  font-size: 48px;
+  line-height: 1.4;
+  font-weight: normal;
+  // margin-bottom: 1rem;
+
+  @include media(md) {
+    font-size: 64px;
+    // margin-bottom: 4rem;
+  }
+}

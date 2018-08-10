@@ -1,0 +1,47 @@
+{% macro list(menu) %}
+  <ul class="page-nav__list">
+    {% for item in menu %}
+      <li class="page-nav__item{% if item.items %} page-nav__item--active{% endif %}">
+        <a href="#" class="page-nav__link{% if item.active %} page-nav__link--active{% endif %}">{{item.text}}</a>
+        {% if item.items %}
+          {{ _self.list(item.items) }}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endmacro %}
+
+{% import _self as macros %}
+
+<div class="page-nav">
+  <button class="page-nav__toggler" id="midd-page-nav-label" data-toggle-target=".js-page-nav">
+    <span>Additional Navigation</span>
+    <span class="page-nav__icon is-toggled-hide">
+      <svg class="icon">
+        <use xlink:href="#icon-arrow-down" />
+      </svg>
+    </span>
+    <span class="page-nav__icon is-toggled-show">
+      <svg class="icon">
+        <use xlink:href="#icon-arrow-up" />
+      </svg>
+    </span>
+  </button>
+  <nav class="page-nav__content js-page-nav">
+
+    {{ macros.list(items) }}
+
+    {% if callouts %}
+
+      <ul class="page-nav__list page-nav__list--callouts">
+        {% for item in callouts %}
+          <li class="page-nav__item">
+            <a href="#" class="page-nav__link">{{item.text}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+
+    {% endif %}
+  </nav>
+</div>
+
