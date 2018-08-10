@@ -1,6 +1,6 @@
 {
-  "name": "midd-theme-frontend",
-  "description": "Frontend assets for Drupal8 MiddTheme",
+  "name": "midd-frontend",
+  "description": "Frontend assets for Drupal8 middlebury_theme",
   "version": "0.0.1",
   "scripts": {
     "start": "gulp",
@@ -12,10 +12,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/middlebury/midd-theme-frontend.git"
+    "url": "https://github.com/middlebury/midd-frontend.git"
   },
   "bugs": {
-    "url": "https://github.com/middlebury/midd-theme-frontend/issues"
+    "url": "https://github.com/middlebury/midd-frontend/issues"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
