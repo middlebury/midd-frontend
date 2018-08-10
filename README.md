@@ -1,15 +1,13 @@
-# frontend
+# midd-frontend
+> Frontend code for middlebury_theme
 
-[![dependency status](https://david-dm.org/middlebury/frontend.svg)](https://david-dm.org/middlebury/frontend)
-[![dev dependency status](https://david-dm.org/middlebury/frontend/dev-status.svg)](https://david-dm.org/middlebury/frontend?type=dev)
-
-> Frontend files and build tools for new miis.edu and others to come
+[![dependency status](https://david-dm.org/middlebury/midd-frontend.svg)](https://david-dm.org/middlebury/midd-frontend)
+[![dev dependency status](https://david-dm.org/middlebury/midd-frontend/dev-status.svg)](https://david-dm.org/middlebury/midd-frontend?type=dev)
 
 ## Requirements
 - Node 6.4+
 
 ## Getting started
-
 
 Install node modules:
 
