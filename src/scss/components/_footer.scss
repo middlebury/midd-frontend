@@ -1,0 +1,50 @@
+.site-footer {
+  background-color: $brand-primary;
+  padding-top: spacing(6);
+  padding-bottom: spacing(6);
+}
+
+.site-footer__title {
+  font-family: $font-family-serif;
+  font-size: typescale(8);
+  color: $white;
+  line-height: lineheight('heading');
+  margin-bottom: spacing(2);
+}
+
+.site-footer__address {
+  color: $white;
+  margin-bottom: spacing(7);
+  font-size: typescale(3);
+}
+
+.site-footer__tel-link {
+  color: $white;
+}
+
+//
+// secondary-footer
+//
+.secondary-footer {
+  background-color: $navy-dark;
+  padding-top: spacing(4);
+  padding-bottom: spacing(4);
+}
+
+.secondary-footer__list {
+  @include media(md) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+.secondary-footer__link {
+  color: $white;
+}
+
+.secondary-footer__button {
+  // display: none;
+  // text-align: right;
+}

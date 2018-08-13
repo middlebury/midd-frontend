@@ -1,0 +1,116 @@
+{% extends "layout.twig" %}
+
+{% block page %}
+
+  {% include 'partials/page-header.twig' with {
+    breadcrumb: [
+      { text: 'Events' }
+    ],
+    title: 'Museum of Art Lecture Series'
+  } %}
+
+  <article class="" aria-labelledby="midd-event-label">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-sm-10 offset-sm-1 col-md-8 col-lg-6">
+          <header class="mb-4" aria-labelledby="midd-event-label">
+            <div class="mb-3">
+              <p class="">
+                <strong><time datetime="">August 18, 2017 &middot; 4:00 PM&ndash;August 19, 2017 &middot; 8:00 PM</time></strong>
+              </p>
+              <p class="">TESOL Members $175; Non-members $225</p>
+              <p class="">Open to the Public</p>
+            </div>
+
+            {% include 'partials/share.twig' %}
+          </header>
+
+          <div class="mb-4">
+            <figure>
+              {% include 'partials/img.twig' with { name: 'featured' } %}
+              <figcaption class="media__caption">
+                This is a caption for this image.
+                <span class="media__credit">Credit</span>
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="text typography mb-4">
+            <p>The Old Monterey Foundation, a California non-profit, public benefit corporation, was formed on February 14, 2011, with the specific mission and purpose of promoting, supporting and enhancing the artistic, cultural and historic environment of historic Downtown Monterey, California.</p>
+
+            <p>Since 2013, Old Monterey Foundation has continued its promotion of local history and art with the 2014 Jules Tavernier Lecture Series and the 2015 Marcia Devoe Lecture Series, and the Art in the Gardens Plein Aire event.</p>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6">
+
+              <div class="mb-5">
+                <h2 class="title mb-3">Where</h2>
+
+                <address class="mb-3">McCone Irvine Auditorium<br>
+                460 Pierce St<br>
+                Monterey, CA 93940</address>
+
+                <ul class="list">
+                  <li class="list__item">
+                    <span class="list__icon">
+                      <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-map-marker" />
+                      </svg>
+                    </span>
+                    <a href="#" class="link-border">View in Campus Map</a>
+                  </li>
+                  <li class="list__item">
+                    <span class="list__icon">
+                      <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-calendar" />
+                      </svg>
+                    </span>
+                    <a href="#" class="link-border">Add to my calendar</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mb-5">
+                <h2 class="title mb-3">Contact Organizer</h2>
+
+                <p>Priscilla Lorenzo<br>
+                  <a href="#" class="link-border">plorenzo@middlebury.edu</a><br>
+                  <a href="tel:" class="link-border">802-555-0000</a>
+                </p>
+              </div>
+
+            </div>
+            <div class="col-sm-6">
+              <div class="mb-4">
+                <picture>
+                  <img src="http://placehold.it/300x300" srcset="http://placehold.it/300x300 1x, http://placehold.it/600x600 2x" alt="">
+                </picture>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-push-1 col-md-3">
+          <div class="mb-3">
+            <div class="mb-2">
+              <a href="#">
+                <figure>
+                  <img src="//placehold.it/144x192" alt="" />
+                </figure>
+              </a>
+            </div>
+            <h3 class="f5"><a href="#">Michael Green</a></h3>
+            <div class="typography">
+              <p>Program Manager of the Monterey State Historic Park, who will discuss the history of Cooper Molera.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </article>
+
+{% endblock %}

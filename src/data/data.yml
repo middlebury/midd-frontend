@@ -23,28 +23,74 @@ site_nav:
   - text: Events
 
 footer_nav:
+  - title: Information for
+    items:
+      - text: Students
+        url: /institute/students
+      - text: Alumni
+        url: /institute/alumni
+      - text: Faculty and Staff
+        url: /institute/faculty-staff
+      - text: Employers
+        url: /institute/advancing-your-career/employers
+      - text: Media
+        url: /institute/offices-services/communications
+      - text: Partners
+        url: /institute/leadership-impact/global-partnerships
+      - text: Donors
+        url: /institute/giving
+      - text: Visitors
+        url: /institute/admissions/visit
+  - title: Quick Links
+    items:
+      - text: Emergency
+        url: /institute/offices-services/security
+      - text: Campus Map
+        url: http://www.myatlascms.com/map/index.php?id=972
+      - text: Directory
+        url: https://directory.miis.edu
+      - text: Employment
+        url: https://middlebury.peopleadmin.com
+      - text: State Authorization
+        url: https://www.middlebury.edu/institute/institute-approach/about/strf
+      - text: Website Support
+        url: http://go.middlebury.edu/sitehelp
+      - text: Offices and Services
+        url: /institute/offices-services
+      - text: BannerWeb
+        url: https://ssb-prod.ec.middlebury.edu/PNTR/twbkwbis.P_WWWLogin?
+      - text: EthicsPoint
+        url: https://secure.ethicspoint.com/domain/media/en/gui/28296/index.html
+      - text: WebMail
+        url: https://mail.middlebury.edu/owa/auth/logon.aspx
+      - text: Zoom Web Conferencing
+        url: https://middlebury.zoom.us
+      - text: Site Editor Login
+        url: https://www.middlebury.edu/institute/saml/login?destination=/
+
 
 secondary_footer_nav:
-  - text: Privacy Policy
-    href: http://www.middlebury.edu/about/privacy
-  - text: Copyright
-    href: http://www.middlebury.edu/about/copyright
+  - text: About Middlebury
+  - text: Support Middlebury
+  - text: Work With Us
+  - text: Middlebury A-Z
+  - text: Copyright and Privacy
 
 social_links:
   - text: Instagram
-    href: http://go.miis.edu/instagram
+    href: http://go.middlebury.edu/instagram
     slug: instagram
   - text: Facebook
-    href: http://go.miis.edu/facebook
+    href: http://go.middlebury.edu/facebook
     slug: facebook
   - text: twitter
-    href: http://go.miis.edu/twitter
+    href: http://go.middlebury.edu/twitter
     slug: twitter
   - text: LinkedIn
-    href: http://go.miis.edu/linkedin
+    href: http://go.middlebury.edu/linkedin
     slug: linkedin
   - text: Vimeo
-    href: https://vimeo.com/middleburyinstitute
+    href: http://go.middlebury.edu/vimeo
     slug: vimeo
 
 breakpoints:

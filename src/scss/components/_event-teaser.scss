@@ -1,0 +1,37 @@
+.event-teaser {
+  display: flex;
+}
+
+.event-teaser__date {
+  text-align: center;
+}
+
+.event-teaser__body {
+  padding-left: spacing(3);
+}
+
+.event-teaser__month {
+  font-weight: $font-weight-light;
+  line-height: $line-height-solid;
+  display: block;
+  font-size: typescale(4);
+}
+
+.event-teaser__day {
+  display: block;
+  font-size: typescale(6);
+  font-weight: $font-weight-light;
+  line-height: $line-height-solid;
+}
+
+.event-teaser__title {
+  font-size: typescale(5);
+}
+
+.event-teaser__local {
+  // font-size: 16px;
+}
+
+.event-teaser__time {
+  display: block;
+}

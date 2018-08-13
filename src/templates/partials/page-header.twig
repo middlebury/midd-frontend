@@ -3,8 +3,13 @@
     <div class="row">
       <div class="col-sm-10 offset-sm-1">
 
-        {% include 'partials/breadcrumb.twig' with { items: breadcrumb } %}
-        <h1 class="display-3 mb-3 mb-md-7" id="midd-page-header-label">{{title}}</h1>
+        {% if breadcrumb %}
+          {% include 'partials/breadcrumb.twig' with { items: breadcrumb } %}
+        {% endif %}
+        <h1 class="display-3 {% if lead == null %} mb-3 mb-md-7{% endif %}" id="midd-page-header-label">{{title}}</h1>
+        {% if lead %}
+          <p class="lead mb-7">{{lead}}</p>
+        {% endif %}
 
       </div>
     </div>

@@ -1,0 +1,11 @@
+<ul class="social-links">
+  {% for item in items %}
+    <li class="social-links__item">
+      <a href="{{item.href}}" class="social-links__link">
+        <svg class="icon">
+          <use xlink:href="#icon-{{item.slug}}" />
+        </svg>
+      </a>
+    </li>
+  {% endfor %}
+</ul>

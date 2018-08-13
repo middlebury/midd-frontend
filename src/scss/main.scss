@@ -3,8 +3,19 @@
 @import 'keyframes';
 
 @import 'components/header';
+@import 'components/accordion';
 @import 'components/site-nav';
 @import 'components/site-search';
+@import 'components/datepicker';
+@import 'components/story-teaser';
+@import 'components/event-teaser';
+@import 'components/profile-section';
+@import 'components/list';
+@import 'components/social-links';
+@import 'components/profile-info';
+@import 'components/share';
+@import 'components/footer';
+@import 'components/footer-menu';
 
 .display-3 {
   font-size: 48px;
@@ -16,4 +27,25 @@
     font-size: 64px;
     // margin-bottom: 4rem;
   }
+}
+
+.w-md-40 {
+  @include media(md) {
+    width: 40%;
+  }
+}
+
+.lead {
+  font-size: typescale(5);
+  line-height: $line-height-heading;
+}
+
+.title {
+  font-family: $font-family-sans-serif;
+  font-size: typescale(6);
+  font-weight: $font-weight-semibold;
+}
+
+.text {
+  margin-bottom: spacing(6);
 }
