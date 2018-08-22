@@ -1,7 +1,7 @@
-<header class="site-header js-site-header">
-  <div class="site-header__main">
+<header class="school-header js-headroom">
+  <div class="school-header__main">
     <a href="">
-      <img src="images/midd-logo.svg" alt="" width="186" height="76">
+      <img src="images/midd-logo.svg" alt="" width="186" height="76" class="school-header__logo">
     </a>
     <a href="#menu" data-toggle-target=".js-menu-1" class="menu-handle">
       <svg class="icon bars">
@@ -11,12 +11,12 @@
         <use xlink:href="#icon-times">
       </svg>
 
-      <span class="menu-handle-text">Menu</span>
+      <span class="menu-handle__text">Menu</span>
     </a>
   </div>
 
-  <div class="site-header__content js-menu-1">
-    <div class="site-header__navs">
+  <div class="school-header__content js-menu-1">
+    <div class="school-header__navs">
       <nav class="site-nav">
         <ul class="site-nav__list">
           {% for item in site_nav.items %}
@@ -48,7 +48,7 @@
           {% endfor %}
         </ul>
       </nav>
-      <span class="site-header__divider"></span>
+      <span class="school-header__divider"></span>
       <nav class="site-nav">
         <ul class="site-nav__list site-nav--util">
           {% for item in site_nav.utils %}
@@ -60,7 +60,7 @@
       </nav>
     </nav>
   </div>
-  <div class="site-header__search">
+  <div class="school-header__search">
 
     <div class="site-search">
       <a href="#search" class="site-search__handle">
