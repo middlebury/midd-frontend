@@ -1,6 +1,6 @@
 import Headroom from 'headroom.js';
 
-const headerElem = document.querySelector('.js-site-header');
+const headerElem = document.querySelector('.js-headroom');
 
 const header = new Headroom(headerElem, {
   offset: headerElem.offsetHeight
