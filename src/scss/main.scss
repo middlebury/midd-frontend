@@ -1,21 +1,63 @@
-@import '../../node_modules/middlebury-design-system/scss/mds';
+// abstracts
+@import 'functions';
+@import 'variables';
+@import 'mixins';
 
-@import 'keyframes';
+// base
+@import 'global';
 
 @import 'components/header';
+// components
 @import 'components/accordion';
+@import 'components/alert';
+@import 'components/breadcrumb';
+@import 'components/button';
+@import 'components/callout-group';
+@import 'components/callout';
+@import 'components/datepicker';
+@import 'components/event-teaser';
+@import 'components/footer-menu';
+@import 'components/footer';
+@import 'components/form';
+@import 'components/grid';
+@import 'components/icon';
+@import 'components/input-group';
+@import 'components/lead';
+@import 'components/link-list';
+@import 'components/list';
+@import 'components/media-object';
+@import 'components/page-nav';
+@import 'components/pagination';
+@import 'components/profile-info';
+@import 'components/profile-section';
+@import 'components/quote';
+@import 'components/schedule';
+@import 'components/share';
 @import 'components/site-nav';
 @import 'components/site-search';
-@import 'components/datepicker';
-@import 'components/story-teaser';
-@import 'components/event-teaser';
-@import 'components/profile-section';
-@import 'components/list';
 @import 'components/social-links';
-@import 'components/profile-info';
-@import 'components/share';
-@import 'components/footer';
-@import 'components/footer-menu';
+@import 'components/story-teaser';
+@import 'components/table';
+@import 'components/transcript';
+@import 'components/video';
+
+// scope
+@import 'scope/typography';
+@import 'scope/google-custom-search';
+
+// utils
+@import 'utils/background';
+@import 'utils/clearfix';
+@import 'utils/color';
+@import 'utils/display';
+@import 'utils/flex';
+@import 'utils/float';
+@import 'utils/font';
+@import 'utils/order';
+@import 'utils/screen-reader';
+@import 'utils/spacing';
+@import 'utils/text';
+@import 'utils/type';
 
 .display-3 {
   font-size: 48px;
@@ -48,4 +90,30 @@
 
 .text {
   margin-bottom: spacing(6);
+}
+
+.menu-handle {
+  color: $white;
+
+  &:focus {
+    text-decoration: none;
+  }
+
+  .times {
+    display: none;
+  }
+
+  &.is-toggled {
+    .bars {
+      display: none;
+    }
+
+    .times {
+      display: inline-block;
+    }
+  }
+
+  @include media(md) {
+    display: none;
+  }
 }

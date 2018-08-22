@@ -1,0 +1,14 @@
+.lead {
+  font-size: $lead-font-size;
+  line-height: $line-height-heading;
+  margin-bottom: $lead-margin-bottom;
+
+  a {
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}

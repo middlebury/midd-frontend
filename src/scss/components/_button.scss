@@ -1,0 +1,128 @@
+.button {
+  display: inline-block;
+  font-family: $font-family-base;
+  text-align: center;
+  border: $btn-border-width solid $btn-border-color;
+  cursor: pointer;
+  background-color: $input-bg;
+  color: $input-color;
+  transition: $btn-transition;
+  padding: $btn-padding-y $btn-padding-x;
+  font-size: $btn-font-size;
+  line-height: $btn-line-height;
+  border-radius: $btn-border-radius;
+  white-space: nowrap;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &--disabled,
+  &[disabled] {
+    opacity: $btn-disabled-opacity;
+    pointer-events: none;
+  }
+}
+
+// Shapes
+
+.button--block {
+  display: block;
+  width: 100%;
+}
+
+.button--circle {
+  border-radius: 10rem;
+  padding: 1rem;
+  width: 3rem;
+  height: 3rem;
+  line-height: 1;
+}
+
+.button--pill {
+  border-radius: 10rem;
+}
+
+// Sizes
+
+.button--sm {
+  font-size: $btn-font-size-sm;
+  padding: $btn-padding-y-sm $btn-padding-x-sm;
+}
+
+.button--lg {
+  font-size: $btn-font-size-lg;
+  padding: $btn-padding-y-lg $btn-padding-x-lg;
+}
+
+// Themes
+
+.button--primary {
+  background-color: $btn-primary-bg;
+  color: $btn-primary-color;
+
+  &:hover,
+  &:focus {
+    background-color: $btn-primary-hover-bg;
+    color: $btn-primary-hover-color;
+  }
+
+  &.button--outline {
+    background-color: transparent;
+    color: $btn-primary-bg;
+    border-color: $btn-primary-bg;
+
+    &:focus,
+    &:hover {
+      color: $btn-primary-color;
+      background-color: $btn-primary-bg;
+    }
+  }
+}
+
+.button--secondary {
+  background-color: $btn-secondary-bg;
+  color: $btn-secondary-color;
+
+  &:hover,
+  &:focus {
+    background-color: $btn-secondary-hover-bg;
+    color: $btn-secondary-hover-color;
+  }
+
+  &.button--outline {
+    background-color: transparent;
+    color: $btn-secondary-bg;
+    border-color: $btn-secondary-bg;
+
+    &:hover,
+    &:focus {
+      background-color: $btn-secondary-bg;
+      color: $btn-secondary-color;
+    }
+  }
+}
+
+.button--light {
+  background-color: $btn-light-bg;
+  color: $btn-light-color;
+
+  &:hover,
+  &:focus {
+    background-color: $btn-light-hover-bg;
+    color: $btn-light-hover-color;
+  }
+
+  &.button--outline {
+    background-color: transparent;
+    border-color: $btn-light-bg;
+    color: $btn-light-bg;
+
+    &:hover,
+    &:focus {
+      background-color: $btn-light-bg;
+      color: $btn-light-color;
+    }
+  }
+}
