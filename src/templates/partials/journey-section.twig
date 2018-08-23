@@ -1,0 +1,42 @@
+<section class="journey-section journey-section--{{name}} js-journey-section" data-line-duration="{{duration}}">
+  <figure class="journey-bg">
+    <img src="{{image}}" alt="">
+  </figure>
+  <div class="journey-main">
+    <div class="container">
+      <div class="journey-content">
+        <div class="row">
+          <div class="col-9 col-md-7">
+
+            <h2 class="journey-title display-3">{{title}}</h2>
+            <p class="journey-text">{{text}}</p>
+            {# <a href="#" class="journey-button">Learn more</a> #}
+
+          </div>
+
+        </div>
+      </div>
+      {% if dots %}
+        <ul class="journey-dots">
+          {% for item in dots %}
+            <li class="journey-dots-item">
+              <a href="#" class="journey-dots-link">
+                <span class="journey-dots-text">{{item}}</span>
+                <span class="journey-dots-icon">
+                  <span class="journey-dot"></span>
+                </span>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      {% if article %}
+        <article class="journey-article">
+          <h3><a href="">{{article.title}}</a></h3>
+          <a href="">Read Story</a>
+        </article>
+      {% endif %}
+    </div>
+
+  </div>
+</section>
