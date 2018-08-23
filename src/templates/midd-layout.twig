@@ -1,0 +1,13 @@
+{% extends "layout.twig" %}
+
+{% block layout_header %}
+  <header class="site-header">
+    {% include 'partials/midd-header.twig' %}
+  </header>
+{% endblock %}
+
+{% block layout_page %}
+
+  {% block midd_page %}{% endblock %}
+
+{% endblock %}

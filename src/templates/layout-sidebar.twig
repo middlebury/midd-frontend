@@ -1,6 +1,11 @@
 {% extends "layout.twig" %}
 
 {% block page %}
+
+{% if page_header %}
+  {% include 'partials/page-header.twig' with page_header %}
+{% endif %}
+
 <div class="container">
 
   <div class="row">

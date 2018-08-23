@@ -1,0 +1,28 @@
+{% extends "anchor-layout.twig" %}
+
+{% block anchor_page %}
+
+  {% if page_header %}
+    {% include 'partials/page-header.twig' with page_header %}
+  {% endif %}
+
+  <div class="container">
+    <div class="row">
+
+      {% set _sidebar = block('anchor_sidebar') %}
+
+      {% if _sidebar is not empty %}
+        <div class="col-sm-10 col-md-3 offset-sm-1 offset-md-0 mb-4">
+          <a href="#midd-content" class="sr-only sr-only-focusable">Skip sidebar</a>
+          {{ _sidebar|raw }}
+        </div>
+      {% endif %}
+
+      <div class="col-sm-10 offset-sm-1 offset-md-0 col-md-8 col-lg-6">
+        {% block anchor_content %}{% endblock %}
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

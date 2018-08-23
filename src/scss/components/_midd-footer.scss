@@ -1,0 +1,23 @@
+.midd-footer {
+  background-color: $navy-dark;
+  padding-top: spacing(4);
+  padding-bottom: spacing(4);
+}
+
+.midd-footer__list {
+  @include media(md) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+.midd-footer__link {
+  color: $white;
+}
+
+.midd-footer__button {
+  // display: none;
+  // text-align: right;
+}

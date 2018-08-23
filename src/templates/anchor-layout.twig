@@ -1,0 +1,14 @@
+{% extends "layout.twig" %}
+
+{% block layout_header %}
+  <header class="site-header">
+    {% include 'partials/midd-header.twig' %}
+    {% include 'partials/anchor-header.twig' %}
+  </header>
+{% endblock %}
+
+{% block layout_page %}
+
+  {% block anchor_page %}{% endblock %}
+
+{% endblock %}

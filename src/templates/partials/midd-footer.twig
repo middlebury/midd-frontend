@@ -1,0 +1,34 @@
+<div class="midd-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+
+        <div class="midd-footer__brand">
+          <a href="https://www.middlebury.edu">
+            <img src="images/middlebury-logo-white.svg" alt="Middlebury" width="195" height="71">
+          </a>
+        </div>
+
+      </div>
+      <div class="col-lg-8">
+
+        <ul class="midd-footer__list">
+          {% for item in secondary_footer_nav %}
+            <li class="secondary-footer__item">
+              <a href="{{item.href}}" class="secondary-footer__link">{{item.text}}</a>
+            </li>
+          {% endfor %}
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+  {# <div class="secondary-footer__button">
+    <a href="#midd-pagetop" class="button button--primary" aria-label="Back to top">
+      <svg class="icon">
+        <use xlink:href="#icon-arrow-up" />
+      </svg>
+    </a>
+  </div> #}
+</div>

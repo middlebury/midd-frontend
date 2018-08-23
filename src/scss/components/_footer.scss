@@ -21,30 +21,3 @@
 .site-footer__tel-link {
   color: $white;
 }
-
-//
-// secondary-footer
-//
-.secondary-footer {
-  background-color: $navy-dark;
-  padding-top: spacing(4);
-  padding-bottom: spacing(4);
-}
-
-.secondary-footer__list {
-  @include media(md) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-  }
-}
-
-.secondary-footer__link {
-  color: $white;
-}
-
-.secondary-footer__button {
-  // display: none;
-  // text-align: right;
-}

@@ -1,0 +1,28 @@
+.anchor-header {
+  padding-top: spacing(3);
+  border-bottom: 1px solid $brand-primary;
+}
+
+.anchor-header__title {
+  font-size: $h2-font-size;
+}
+
+.anchor-header__primary {
+}
+.anchor-header__secondary {
+}
+
+.anchor-nav {
+}
+
+.anchor-nav__list {
+  display: flex;
+  margin-left: -#{spacing(4/2)};
+}
+
+.anchor-nav__link {
+  display: inline-block;
+  padding: spacing(3) spacing(4/2);
+  font-weight: $font-weight-semibold;
+  font-size: typescale(2);
+}

@@ -2,11 +2,13 @@ import Headroom from 'headroom.js';
 
 const headerElem = document.querySelector('.js-headroom');
 
-const header = new Headroom(headerElem, {
-  offset: headerElem.offsetHeight
-});
+if (headerElem) {
+  const header = new Headroom(headerElem, {
+    offset: headerElem.offsetHeight
+  });
 
-header.init();
+  header.init();
 
-document.querySelector('body').style.paddingTop =
-  headerElem.offsetHeight + 'px';
+  document.querySelector('body').style.paddingTop =
+    headerElem.offsetHeight + 'px';
+}

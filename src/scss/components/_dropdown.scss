@@ -1,0 +1,17 @@
+.dropdown {
+  position: relative;
+}
+
+.dropdown__menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  padding: spacing(3);
+  background-color: $white;
+}
+
+.dropdown__menu--right {
+  right: 0;
+  left: auto;
+}
