@@ -2,9 +2,9 @@
 /// Breakpoints
 ////
 
-$screen-sm: 580px !default;
-$screen-md: 960px !default;
-$screen-lg: 1200px !default;
+$screen-sm: 512px !default;
+$screen-md: 768px !default;
+$screen-lg: 1024px !default;
 $screen-xl: 1440px !default; // TODO: Do we need xl? There's no col-xl-* or media(xl) usage
 
 ////
