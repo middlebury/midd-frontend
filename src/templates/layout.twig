@@ -26,7 +26,11 @@
     {% block layout_header %}{% endblock %}
 
     <main class="page" id="midd-main" aria-labelledby="midd-page-header-label">
-      {% block layout_page %}{% endblock %}
+      {% if page_header %}
+        {% include 'partials/page-header.twig' with page_header %}
+      {% endif %}
+
+      {% block page %}{% endblock %}
     </main>
 
     {% block layout_footer %}{% endblock %}

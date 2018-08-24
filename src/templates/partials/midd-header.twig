@@ -1,62 +1,64 @@
 <div class="midd-header">
-  <div class="midd-header__primary">
-    <div class="midd-header__logo">
-      <a href="">
-        <img src="images/midd-shield.svg" alt="" class="midd-header__shield">
-        <img src="images/midd-wordmark.svg" alt="" class="midd-header__wordmark">
+  <div class="midd-header__container">
+    <div class="midd-header__primary">
+      <div class="midd-header__logo">
+        <a href="">
+          <img src="images/midd-shield.svg" alt="" class="midd-header__shield">
+          <img src="images/midd-wordmark.svg" alt="" class="midd-header__wordmark">
+        </a>
+      </div>
+
+      <a href="#menu" data-toggle-target=".js-menu-1" class="menu-handle">
+        <svg class="icon bars">
+          <use xlink:href="#icon-bars">
+        </svg>
+        <svg class="icon times">
+          <use xlink:href="#icon-times">
+        </svg>
+
+        <span class="menu-handle__text">Menu</span>
       </a>
     </div>
 
-    <a href="#menu" data-toggle-target=".js-menu-1" class="menu-handle">
-      <svg class="icon bars">
-        <use xlink:href="#icon-bars">
-      </svg>
-      <svg class="icon times">
-        <use xlink:href="#icon-times">
-      </svg>
+    <div class="midd-header__secondary js-menu-1">
 
-      <span class="menu-handle__text">Menu</span>
-    </a>
-  </div>
+      <div class="midd-header__navs">
 
-  <div class="midd-header__secondary js-menu-1">
+        <nav class="midd-nav">
+          <ul class="midd-nav__list">
+            {% for item in ['Our Schools', 'About Middlebury', 'Offices and Services'] %}
+              <li class="midd-nav__item">
+                <a href="" class="midd-nav__link">
+                  {{item}}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
 
-    <div class="midd-header__navs">
-
-      <nav class="midd-nav">
-        <ul class="midd-nav__list">
-          {% for item in ['Our Schools', 'About Middlebury', 'Offices and Services'] %}
-            <li class="midd-nav__item">
-              <a href="" class="midd-nav__link">
-                {{item}}
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      </nav>
-
-    </div>
-    <div class="midd-header__search">
-
-      <div class="site-search">
-        <a href="#search" class="site-search__handle">
-          <svg class="icon"><use xlink:href="#icon-search"></svg> Search
-        </a>
-
-        <div class="site-search__content">
-          <form class="">
-            <div class="site-search__group">
-              <input type="search" class="site-search__input" placeholder="Search">
-              <button type="submit" class="site-search__submit">
-                <svg class="icon">
-                  <use xlink:href="#icon-search">
-                </svg>
-              </button>
-            </div>
-          </form>
-        </div>
       </div>
+      <div class="midd-header__search">
 
+        <div class="site-search">
+          <a href="#search" class="site-search__handle">
+            <svg class="icon"><use xlink:href="#icon-search"></svg> Search
+          </a>
+
+          <div class="site-search__content">
+            <form class="">
+              <div class="site-search__group">
+                <input type="search" class="site-search__input" placeholder="Search">
+                <button type="submit" class="site-search__submit">
+                  <svg class="icon">
+                    <use xlink:href="#icon-search">
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 
