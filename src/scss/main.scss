@@ -66,30 +66,6 @@
 @import 'utils/type';
 @import 'utils/sizing';
 
-.display-3 {
-  font-size: 48px;
-  line-height: 1.4;
-  font-weight: normal;
-  // margin-bottom: 1rem;
-
-  @include media(md) {
-    font-size: 64px;
-    // margin-bottom: 4rem;
-  }
-}
-
-
-.lead {
-  font-size: typescale(5);
-  line-height: $line-height-heading;
-}
-
-.title {
-  font-family: $font-family-sans-serif;
-  font-size: typescale(6);
-  font-weight: $font-weight-semibold;
-}
-
 .text {
   margin-bottom: spacing(6);
 }
