@@ -404,22 +404,3 @@
     animation-iteration-count: infinite;
   }
 }
-
-.display-1 {
-}
-.display-2 {
-}
-.display-3 {
-  font-size: 32px;
-  line-height: 1;
-
-  @include media(md) {
-    font-size: 48px;
-  }
-  @include media(lg) {
-    font-size: 64px;
-  }
-  @include media(xl) {
-    font-size: 112px;
-  }
-}
