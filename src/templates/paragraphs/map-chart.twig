@@ -1,0 +1,22 @@
+<div class="chart">
+  {% if title is not empty %}
+    <h3 class="chart__title">{{title}}</h3>
+  {% endif %}
+  {% include 'partials/world.twig' with { id: id } %}
+
+  <p>
+    {% for item in items %}
+      {{item.name}}{% if not loop.last %}; {% endif %}
+    {% endfor %}
+  </p>
+
+  <style>
+    {% for item in items %}
+      #midd-world-{{id}} #{{item.abbr|upper}}{% if not loop.last %},{% endif %}
+    {% endfor %}
+      {
+        fill: #0d395f;
+      }
+
+  </style>
+</div>
