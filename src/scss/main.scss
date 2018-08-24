@@ -64,6 +64,7 @@
 @import 'utils/spacing';
 @import 'utils/text';
 @import 'utils/type';
+@import 'utils/sizing';
 
 .display-3 {
   font-size: 48px;
@@ -77,11 +78,6 @@
   }
 }
 
-.w-md-40 {
-  @include media(md) {
-    width: 40%;
-  }
-}
 
 .lead {
   font-size: typescale(5);

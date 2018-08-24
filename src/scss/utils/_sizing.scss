@@ -1,0 +1,5 @@
+.w-md-40 {
+  @include media(md) {
+    width: 40%;
+  }
+}
