@@ -4,6 +4,10 @@
   }
 }
 
+.title {
+  @include section-title;
+}
+
 // do we need to add these font sizes to typescale?
 
 .display-1 {
