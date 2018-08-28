@@ -1,10 +1,5 @@
-{% set current_icon = '<span class="text-primary" title="Offered in the current term">●</span>' %}
-{% set upcoming_icon = '<span class="text-primary" title="Offered in the upcoming term">○</span>' %}
-
-<ul class="list list--inline">
-  <li class="list__item">Current term {{current_icon}}</li>
-  <li class="list__item">Upcoming term(s) {{upcoming_icon}}</li>
-</ul>
+{% set current_icon = '<span class="badge" title="Offered in the current term">Current</span>' %}
+{% set upcoming_icon = '<span class="badge" title="Offered in the upcoming term">Upcoming</span>' %}
 
 {% include 'partials/accordion.twig' with {
   items: [
@@ -28,4 +23,3 @@
     }
   ]
 } %}
-

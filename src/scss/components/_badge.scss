@@ -1,0 +1,8 @@
+.badge {
+  font-size: typescale(1);
+  border: 1px solid $brand-primary;
+  padding: spacing(1);
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
