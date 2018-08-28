@@ -5,28 +5,26 @@
     {# ID must be unique on the page #}
     {% set id = loop.index %}
 
-    <div class="accordion-item">
+    <div class="accordion-item js-accordion-item-{{id}}">
       <h4 class="accordion-item__title" id="accordion-item-label-{{id}}" role="tab">
         <a
           href="#accordion-content-{{id}}"
           class="accordion-item__link"
-          data-toggle-target=".js-accordion-content-{{id}}"
+          data-toggle-target=".js-accordion-item-{{id}}"
           aria-expanded="false"
           aria-controls="accordion-content-{{id}}">
 
           <span class="accordion-item__label">{{item.title}}</span>
 
-          <svg class="accordion-item__icon accordion-item__icon--open icon">
-            <use xlink:href="#icon-chevron-down" />
-          </svg>
-
-          <svg class="accordion-item__icon accordion-item__icon--close icon">
-            <use xlink:href="#icon-chevron-up" />
-          </svg>
+          <span class="accordion-item__icon">
+            <svg class="icon">
+              <use xlink:href="#icon-chevron-down" />
+            </svg>
+          </span>
         </a>
 
       </h4>
-      <div class="accordion-item__content js-accordion-content-{{id}}" id="accordion-content-{{id}}" role="tabpanel" aria-labelledby="accordion-item-label-{{id}}">
+      <div class="accordion-item__content" id="accordion-content-{{id}}" role="tabpanel" aria-labelledby="accordion-item-label-{{id}}">
         <div class="typography">
           {{item.content}}
         </div>
