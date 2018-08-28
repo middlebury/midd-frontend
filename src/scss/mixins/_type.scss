@@ -9,13 +9,11 @@
 }
 
 @mixin section-title($margin-bottom: $section-title-margin-bottom) {
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
-  font-weight: $font-weight-medium;
+  font-size: typescale(5);
   font-family: $font-family-sans-serif;
-  font-size: 14px;
-  line-height: 20px;
-  margin-bottom: $margin-bottom;
+  font-weight: $font-weight-semibold;
+  line-height: lineheight('heading');
+  margin-bottom: spacing(5);
 }
 
 @mixin break-words {
