@@ -3,3 +3,61 @@
 $list-item-margin-bottom: 0.5rem;
 $list-item-margin-bottom-md: 2rem;
 $list-item-margin-bottom-lg: 3rem;
+
+.list {
+  // margin-bottom: 60px;
+}
+
+.list__item {
+  &:not(:last-of-type) {
+    margin-bottom: $list-item-margin-bottom;
+
+    .list--md & {
+      margin-bottom: $list-item-margin-bottom-md;
+    }
+
+    .list--lg & {
+      margin-bottom: $list-item-margin-bottom-lg;
+    }
+  }
+}
+
+.list--dividers {
+  .list__item {
+    &:not(:last-of-type) {
+      border-bottom: 1px solid $border-color;
+      padding-bottom: $list-item-margin-bottom-md;
+    }
+  }
+
+  &.list--lg {
+    .list__item {
+      &:not(:last-of-type) {
+        padding-bottom: $list-item-margin-bottom-lg;
+      }
+    }
+  }
+}
+
+.list--inline {
+  .list__item {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+}
+
+.list__icon {
+  vertical-align: top;
+  margin-right: 10px;
+  position: relative;
+  top: 5px;
+  color: $green-light;
+}
+
+.list--unordered {
+  list-style-type: disc;
+  margin-left: 20px;
+}
