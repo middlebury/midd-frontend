@@ -1,3 +1,7 @@
+$link-list-gutters: (
+  xs: 24px
+);
+
 .link-list {
 }
 
@@ -10,7 +14,7 @@
   margin-top: spacing(5);
 
   @include media(sm) {
-    @include make-row();
+    @include make-row($link-list-gutters);
   }
 }
 
@@ -18,7 +22,7 @@
   margin-bottom: spacing(4);
 
   @include media(sm) {
-    @include make-col-ready();
+    @include make-col-ready($link-list-gutters);
     @include make-col(6);
   }
   @include media(md) {

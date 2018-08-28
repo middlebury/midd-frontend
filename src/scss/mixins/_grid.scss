@@ -33,14 +33,14 @@
   }
 }
 
-@mixin make-col-ready() {
+@mixin make-col-ready($gutters: $grid-gutter-widths) {
   position: relative;
   // Prevent columns from becoming too narrow when at smaller grid tiers by
   // always setting `width: 100%;`. This works because we use `flex` values
   // later on to override this initial width.
   width: 100%;
   min-height: 1px; // Prevent collapsing
-  @include make-gutters();
+  @include make-gutters($gutters);
 }
 
 @mixin make-col($size, $columns: $grid-columns) {
