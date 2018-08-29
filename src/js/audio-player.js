@@ -1,3 +1,5 @@
+import onresize from 'onresize';
+
 import forEach from './utils/forEach';
 import { $, $$, on, off, hide, show } from './utils/dom';
 
@@ -45,8 +47,12 @@ class AudioPlayer {
   init() {
     this.addListeners();
 
-    hide(this.pauseBtn);
     hide(this.audio);
+    hide(this.pauseBtn);
+
+    onresize.on(() => {
+      this.updateSliderPosition();
+    });
   }
 
   addListeners() {
@@ -70,27 +76,25 @@ class AudioPlayer {
   }
 
   handleRightArrowPress() {
-    console.log('seek foward');
+    this.audio.currentTime = this.audio.currentTime + 10;
   }
 
   handleLeftArrowPress() {
-    console.log('seek backward');
+    this.audio.currentTime = this.audio.currentTime - 10;
   }
 
   handleMetaDataLoad() {
-    this.durationElem.innerHTML = formatTime(this.audio.duration);
-
-    this.setCurrentTime(this.audio.currentTime);
-
-    // this.track.value = Math.floor(this.audio.duration);
-
     this.slider.setAttribute('aria-valuemin', this.audio.currentTime);
     this.slider.setAttribute('aria-valuemax', this.audio.duration);
     this.slider.setAttribute('aria-valuenow', this.audio.currentTime);
+
+    this.durationElem.innerHTML = formatTime(this.audio.duration);
+    this.setCurrentTime(this.audio.currentTime);
   }
 
   handleUpdateTime() {
     this.setCurrentTime(this.audio.currentTime);
+    this.updateSliderPosition();
   }
 
   handleTrackClick(event) {
@@ -102,18 +106,11 @@ class AudioPlayer {
 
     // debugger;
 
-    this.playAtTime(percentage);
-  }
-
-  playAtTime(percentage) {
-    // debugger;
-
     const targetTime = this.audio.duration * percentage;
+    // this.play(targetTime);
 
-    this.play();
     this.audio.currentTime = targetTime;
-
-    this.setSlider(this.audio);
+    // this.updateSliderPosition();
   }
 
   setCurrentTime(time) {
@@ -121,20 +118,14 @@ class AudioPlayer {
   }
 
   // update slider on the trackt to match time
-  setSlider(time) {
-    var percentageOfSong = this.audio.currentTime / this.audio.duration;
-    var percentageOfSlider = this.track.offsetWidth * percentageOfSong;
+  updateSliderPosition() {
+    const percentageOfSong = this.audio.currentTime / this.audio.duration;
+    const percentageOfSlider = this.track.offsetWidth * percentageOfSong;
 
-    //Updates the track progress div.
     this.slider.style.left = Math.round(percentageOfSlider) + 'px';
   }
 
-  handleSliderClick() {
-    // activeSong.currentTime = activeSong.duration * percentage;
-  }
-
   play() {
-    console.log('play');
     this.audio.play();
 
     hide(this.playBtn);
@@ -142,14 +133,11 @@ class AudioPlayer {
 
     this.pauseBtn.focus();
 
-    console.log(this.elem);
-
     this.elem.setAttribute(PAUSED_ATTR, false);
     this.elem.setAttribute(PLAYING_ATTR, true);
   }
 
   pause() {
-    console.log('pause');
     this.audio.pause();
 
     hide(this.pauseBtn);
@@ -162,11 +150,9 @@ class AudioPlayer {
 
   mute() {
     if (this.audio.muted) {
-      console.log('unmute');
       this.audio.muted = false;
       this.elem.setAttribute(MUTED_ATTR, false);
     } else {
-      console.log('mute');
       this.audio.muted = true;
       this.elem.setAttribute(MUTED_ATTR, true);
     }
