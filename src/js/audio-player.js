@@ -32,15 +32,6 @@ class AudioPlayer {
     this.currentTimeElem = $('[data-current-time]', elem);
     this.durationElem = $('[data-duration]', elem);
 
-    this.play = this.play.bind(this);
-    this.pause = this.pause.bind(this);
-    this.mute = this.mute.bind(this);
-
-    this.handleUpdateTime = this.handleUpdateTime.bind(this);
-    this.handleMetaDataLoad = this.handleMetaDataLoad.bind(this);
-    this.handleSliderKeyDown = this.handleSliderKeyDown.bind(this);
-    this.handleTrackClick = this.handleTrackClick.bind(this);
-
     this.init();
   }
 
@@ -67,57 +58,51 @@ class AudioPlayer {
     on(this.slider, 'keydown', this.handleSliderKeyDown);
   }
 
-  handleSliderKeyDown(event) {
+  handleSliderKeyDown = event => {
     if (event.keyCode === RIGHT_ARROW_KEY) {
       this.handleRightArrowPress();
     } else if (event.keyCode === LEFT_ARROW_KEY) {
       this.handleLeftArrowPress();
     }
-  }
+  };
 
-  handleRightArrowPress() {
+  handleRightArrowPress = () => {
     this.audio.currentTime = this.audio.currentTime + 10;
-  }
+  };
 
-  handleLeftArrowPress() {
+  handleLeftArrowPress = () => {
     this.audio.currentTime = this.audio.currentTime - 10;
-  }
+  };
 
-  handleMetaDataLoad() {
+  handleMetaDataLoad = () => {
     this.slider.setAttribute('aria-valuemin', this.audio.currentTime);
     this.slider.setAttribute('aria-valuemax', this.audio.duration);
     this.slider.setAttribute('aria-valuenow', this.audio.currentTime);
 
     this.durationElem.innerHTML = formatTime(this.audio.duration);
     this.setCurrentTime(this.audio.currentTime);
-  }
+  };
 
-  handleUpdateTime() {
+  handleUpdateTime = () => {
     this.setCurrentTime(this.audio.currentTime);
     this.updateSliderPosition();
-  }
+  };
 
-  handleTrackClick(event) {
+  handleTrackClick = event => {
     const songSliderWidth = this.track.offsetWidth;
-    // const clickLocation = event.layerX - this.track.offsetLeft;
     const clickLocation = event.layerX;
 
     const percentage = clickLocation / songSliderWidth;
 
-    // debugger;
-
     const targetTime = this.audio.duration * percentage;
-    // this.play(targetTime);
 
     this.audio.currentTime = targetTime;
-    // this.updateSliderPosition();
-  }
+  };
 
   setCurrentTime(time) {
     this.currentTimeElem.innerHTML = formatTime(time);
   }
 
-  // update slider on the trackt to match time
   updateSliderPosition() {
     const percentageOfSong = this.audio.currentTime / this.audio.duration;
     const percentageOfSlider = this.track.offsetWidth * percentageOfSong;
@@ -125,7 +110,7 @@ class AudioPlayer {
     this.slider.style.left = Math.round(percentageOfSlider) + 'px';
   }
 
-  play() {
+  play = () => {
     this.audio.play();
 
     hide(this.playBtn);
@@ -135,9 +120,9 @@ class AudioPlayer {
 
     this.elem.setAttribute(PAUSED_ATTR, false);
     this.elem.setAttribute(PLAYING_ATTR, true);
-  }
+  };
 
-  pause() {
+  pause = () => {
     this.audio.pause();
 
     hide(this.pauseBtn);
@@ -146,9 +131,9 @@ class AudioPlayer {
 
     this.elem.setAttribute(PLAYING_ATTR, false);
     this.elem.setAttribute(PAUSED_ATTR, true);
-  }
+  };
 
-  mute() {
+  mute = () => {
     if (this.audio.muted) {
       this.audio.muted = false;
       this.elem.setAttribute(MUTED_ATTR, false);
@@ -156,7 +141,7 @@ class AudioPlayer {
       this.audio.muted = true;
       this.elem.setAttribute(MUTED_ATTR, true);
     }
-  }
+  };
 }
 
 const togglers = $$('[data-audio-player]');

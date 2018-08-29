@@ -138,7 +138,7 @@ gulp.task('scripts:dev', () =>
               }
             ]
           ],
-          plugins: ['external-helpers']
+          plugins: ['external-helpers', 'transform-class-properties']
         }),
         rollupResolve(),
         rollupCommon()
