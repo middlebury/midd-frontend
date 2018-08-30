@@ -1,28 +1,82 @@
 .anchor-header {
+  background-color: $gray-lighter;
   padding-top: spacing(3);
-  border-bottom: 1px solid $brand-primary;
+  border-bottom: 1px solid $border-color;
 }
 
 .anchor-header__title {
   font-size: $h2-font-size;
+  font-family: $font-family-serif;
+  margin-bottom: spacing(5);
+
+  @include media(md) {
+    margin-bottom: 0;
+  }
 }
 
-.anchor-header__primary {
+.anchor-header__link {
+  @include link-border;
+  border-color: $gray-light;
 }
-.anchor-header__secondary {
+
+.anchor-header__handle {
+  display: block;
+  @include media(md) {
+    display: none;
+  }
 }
+
+.anchor-header__icon {
+  transition: transform 0.2s;
+  .anchor-header.is-toggled & {
+    transform: rotate(-180deg);
+  }
+}
+
+.anchor-header__nav {
+  .anchor-header.has-toggler & {
+    display: none;
+    @include media(md) {
+      display: block;
+    }
+  }
+  .anchor-header.is-toggled & {
+    display: block;
+  }
+}
+
+// anchor nav
 
 .anchor-nav {
+  margin-left: -#{spacing(3)};
+  margin-right: -#{spacing(3)};
+  @include media(md) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .anchor-nav__list {
-  display: flex;
-  margin-left: -#{spacing(4/2)};
+  @include media(md) {
+    display: flex;
+    margin-left: -#{spacing(4/2)};
+  }
+}
+
+.anchor-nav__item {
+  border-top: 1px solid $border-color;
+  @include media(md) {
+    border-top: 0;
+  }
 }
 
 .anchor-nav__link {
-  display: inline-block;
-  padding: spacing(3) spacing(4/2);
   font-weight: $font-weight-semibold;
   font-size: typescale(2);
+  display: block;
+  padding: spacing(4);
+
+  @include media(md) {
+    padding: spacing(3) spacing(4/2);
+  }
 }

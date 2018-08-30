@@ -1,30 +1,30 @@
-<div class="anchor-header">
+<div class="anchor-header js-anchor-header">
   <div class="container">
     <div class="row">
-      <div class="col-md-7">
-        <h2 class="anchor-header__title">
+      <div class="col-8">
+        <p class="anchor-header__title">
           <a href="" class="anchor-header__link">Student Financial Services</a>
-        </h2>
-        <nav class="anchor-nav">
-          <ul class="anchor-nav__list">
-            {% for item in ['How to apply', 'Types of aid', 'Education Loans', 'Payment Options', 'Helpful Links'] %}
-              <li class="anchor-nav__item">
-                <a href="" class="anchor-nav__link">{{item}}</a>
-              </li>
-            {% endfor %}
-          </ul>
-        </nav>
+        </p>
       </div>
-      <div class="col-md-5">
-        <aside class="page-callout">
-          <span class="page-callout__text">
-            <strong>WORKSHOP: Understand Your Departmental Risk and How to Manage It</strong><br/>
-            September 25
-          </span>
-
-          <a href="" class="page-callout__button button button--primary">Register Now</a>
-        </aside>
+      <div class="col-4">
+        <button class="button button--sm d-md-none" data-toggle-target=".js-anchor-header">
+          <svg class="icon anchor-header__icon">
+            <use xlink:href="#icon-chevron-down">
+          </svg>
+        </button>
       </div>
+    </div>
+    <div class="anchor-header__nav">
+      <nav class="anchor-nav">
+        <ul class="anchor-nav__list">
+          {% for item in ['How to apply', 'Types of aid', 'Education Loans', 'Payment Options', 'Helpful Links'] %}
+            {% set active = loop.index == 3 %}
+            <li class="anchor-nav__item{% if active %} anchor-nav__item--active{% endif %}">
+              <a href="" class="anchor-nav__link{% if active %} anchor-nav__link--active{% endif %}">{{item}}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
     </div>
   </div>
 </div>
