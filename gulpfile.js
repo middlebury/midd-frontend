@@ -4,23 +4,25 @@ const twig = require('gulp-twig');
 const sass = require('gulp-sass');
 const browserSync = require('browser-sync');
 const sourcemaps = require('gulp-sourcemaps');
-const autoprefixer = require('gulp-autoprefixer');
 const plumber = require('gulp-plumber');
 const data = require('gulp-data');
 const notify = require('gulp-notify');
 const prettify = require('gulp-prettify');
 const imagemin = require('gulp-imagemin');
-const cssnano = require('gulp-cssnano');
 const replace = require('gulp-replace');
 const yaml = require('js-yaml');
 const del = require('del');
 const beeper = require('beeper');
 const args = require('yargs').argv;
 const gulpIf = require('gulp-if');
-const cmq = require('gulp-combine-mq');
 const size = require('gulp-size');
 const rename = require('gulp-rename');
 const rollup = require('rollup');
+const postcss = require('gulp-postcss');
+const postcssPresetEnv = require('postcss-preset-env');
+const mqPacker = require('css-mqpacker');
+const sortCSSMq = require('sort-css-media-queries');
+const cssnano = require('cssnano');
 
 const rollupBabel = require('rollup-plugin-babel');
 const rollupResolve = require('rollup-plugin-node-resolve');
@@ -102,6 +104,17 @@ gulp.task('copy:icons', () => {
 });
 
 gulp.task('styles', () => {
+  const plugins = [postcssPresetEnv()];
+
+  if (production) {
+    plugins.push(
+      cssnano(),
+      mqPacker({
+        sort: sortCSSMq
+      })
+    );
+  }
+
   return gulp
     .src(paths.styles.src)
     .pipe(gulpIf(!production, sourcemaps.init({ loadMaps: true })))
@@ -111,9 +124,7 @@ gulp.task('styles', () => {
       })
     )
     .on('error', sass.logError)
-    .pipe(autoprefixer())
-    .pipe(gulpIf(production, cmq()))
-    .pipe(gulpIf(production, cssnano()))
+    .pipe(postcss(plugins))
     .pipe(gulpIf(!production, sourcemaps.write('./')))
     .pipe(size({ showFiles: true }))
     .pipe(gulp.dest(paths.styles.dest))
