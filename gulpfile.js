@@ -119,11 +119,11 @@ gulp.task('styles', () => {
     .src(paths.styles.src)
     .pipe(gulpIf(!production, sourcemaps.init({ loadMaps: true })))
     .pipe(
-      sass({
-        onError: browserSync.notify
+      plumber({
+        errorHandler: onError
       })
     )
-    .on('error', sass.logError)
+    .pipe(sass())
     .pipe(postcss(plugins))
     .pipe(gulpIf(!production, sourcemaps.write('./')))
     .pipe(size({ showFiles: true }))
