@@ -66,11 +66,11 @@
   flex: 0 0 auto;
   align-self: center;
   margin-left: auto;
-  transition: 0.2s;
+  transition: $chevron-transition;
   transform-origin: center;
 
   .accordion-item.is-toggled & {
-    transform: rotate(180deg);
+    transform: $chevron-transform;
   }
 }
 

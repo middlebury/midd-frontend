@@ -27,9 +27,9 @@
 }
 
 .anchor-header__icon {
-  transition: transform 0.2s;
+  transition: $chevron-transition;
   .anchor-header.is-toggled & {
-    transform: rotate(-180deg);
+    transform: $chevron-transform;
   }
 }
 

@@ -359,3 +359,6 @@ $component-margin-bottom: spacing(7) !default;
 $list-item-margin-bottom: spacing(1) !default;
 $list-item-margin-bottom-md: spacing(2) !default;
 $list-item-margin-bottom-lg: spacing(3) !default;
+
+$chevron-transform: rotate(-180deg);
+$chevron-transition: transform 0.2s ease-in-out;

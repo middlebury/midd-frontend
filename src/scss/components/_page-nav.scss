@@ -20,6 +20,11 @@
 
 .page-nav__icon {
   float: right;
+  transition: $chevron-transition;
+
+  .page-nav__handle.is-toggled & {
+    transform: $chevron-transform;
+  }
 }
 
 .page-nav__content {
