@@ -19,10 +19,10 @@
 
 .transcript__icon {
   margin-left: spacing(2);
-  transition: 0.2s;
+  transition: $chevron-transition;
 
   .transcript.is-toggled & {
-    transform: rotate(180deg);
+    transform: $chevron-transform;
   }
 }
 
