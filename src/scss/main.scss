@@ -75,32 +75,6 @@
   margin-bottom: spacing(6);
 }
 
-.menu-handle {
-  color: $white;
-
-  &:focus {
-    text-decoration: none;
-  }
-
-  .times {
-    display: none;
-  }
-
-  &.is-toggled {
-    .bars {
-      display: none;
-    }
-
-    .times {
-      display: inline-block;
-    }
-  }
-
-  @include media(md) {
-    display: none;
-  }
-}
-
 .page {
   // padding-top: spacing(5);
 }

@@ -8,19 +8,18 @@
         </a>
       </div>
 
-      <a href="#menu" data-toggle-target=".js-menu-1" class="menu-handle">
-        <svg class="icon bars">
+      <a href="#menu" data-toggle-target=".js-midd-header-menu" class="midd-header__handle">
+        <svg class="icon midd-header__icon midd-header__icon--bars">
           <use xlink:href="#icon-bars">
         </svg>
-        <svg class="icon times">
+        <svg class="icon midd-header__icon midd-header__icon--times">
           <use xlink:href="#icon-times">
         </svg>
-
-        <span class="menu-handle__text">Menu</span>
+        <span>Menu</span>
       </a>
     </div>
 
-    <div class="midd-header__secondary js-menu-1">
+    <div class="midd-header__secondary js-midd-header-menu">
 
       {% set nav_example = [
         { text: 'Our Schools' },
@@ -37,7 +36,7 @@
               </a>
 
               {% if item.items %}
-                <a href="#" role="button" class="midd-nav__button" data-toggle-target=".js-middnav-list-{{loop.index}}">
+                <a href="#" role="button" class="midd-nav__handle" data-toggle-target=".js-middnav-list-{{loop.index}}">
                   <svg class="icon midd-nav__icon">
                     <use xlink:href="#icon-chevron-down">
                   </svg>
