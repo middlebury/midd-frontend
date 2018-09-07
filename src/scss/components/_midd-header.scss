@@ -1,13 +1,5 @@
 .midd-header {
   background-color: $brand-primary;
-  border-top: 4px solid $brand-primary;
-  padding-top: spacing(2);
-  padding-bottom: spacing(2);
-
-  @include media(md) {
-    padding-top: spacing(3);
-    padding-bottom: spacing(3);
-  }
 
   &.headroom {
     will-change: transform;
@@ -51,25 +43,41 @@
   }
 }
 
+.midd-header__logo {
+  // padding-top: spacing(2);
+  // padding-bottom: spacing(2);
+
+  @include media(md) {
+    // padding-top: spacing(3);
+    // padding-bottom: spacing(3);
+  }
+}
+
 .midd-header__shield {
   width: 44px;
-  margin-bottom: calc(#{spacing(2)} - 10px);
-  // margin-top: -3px;
+  position: relative;
+  top: 8px;
+
+  // margin-bottom: -10px;
+  // margin-top: 8px;
 
   @include media(md) {
     width: 67px;
-    margin-bottom: -28px;
-    margin-top: -3px;
+    // top: 16px;
+    // margin-bottom: -28px;
+    // margin-top: -3px;
 
     .midd-header--transparent & {
-      margin-bottom: 0;
-      margin-top: 0;
+      // margin-bottom: 0;
+      // margin-top: 0;
     }
   }
 }
 
 .midd-header__wordmark {
   width: 76px;
+  position: relative;
+  // top: 18px;
   margin-left: 8px;
 
   @include media(md) {
@@ -134,4 +142,10 @@
     flex-direction: row;
     padding-top: 0;
   }
+}
+
+.midd-header__nav {
+}
+
+.midd-header__search {
 }
