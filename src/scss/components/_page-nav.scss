@@ -2,7 +2,7 @@
   // margin-bottom: 4rem;
 }
 
-.page-nav__handle {
+.page-nav__button {
   padding: 1rem;
   border: 1px solid $border-color;
   width: 100%;
@@ -22,7 +22,7 @@
   float: right;
   transition: $chevron-transition;
 
-  .page-nav__handle.is-toggled & {
+  .page-nav__button.is-toggled & {
     transform: $chevron-transform;
   }
 }

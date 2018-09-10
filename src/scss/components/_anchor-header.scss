@@ -35,7 +35,7 @@
   }
 }
 
-.anchor-header__handle {
+.anchor-header__button {
   margin-left: spacing(3);
   color: $brand-primary;
   padding: spacing(2);
@@ -52,7 +52,7 @@
 .anchor-header__icon {
   transition: $chevron-transition;
 
-  .anchor-header__handle.is-toggled & {
+  .anchor-header__button.is-toggled & {
     transform: $chevron-transform;
   }
 }
