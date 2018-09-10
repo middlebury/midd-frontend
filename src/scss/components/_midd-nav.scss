@@ -110,7 +110,7 @@
   }
 }
 
-.midd-nav__handle {
+.midd-nav__button {
   color: $white;
   padding: spacing(3);
   border-left: 1px solid $navy-light;
@@ -122,7 +122,7 @@
 
 .midd-nav__icon {
   transition: $chevron-transition;
-  .midd-nav__handle.is-toggled & {
+  .midd-nav__button.is-toggled & {
     transform: $chevron-transform;
   }
 }

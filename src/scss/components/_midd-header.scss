@@ -116,14 +116,14 @@
 }
 
 .midd-header__icon--bars {
-  .midd-header__handle.is-toggled & {
+  .midd-header__button.is-toggled & {
     display: none;
   }
 }
 
 .midd-header__icon--times {
   display: none;
-  .midd-header__handle.is-toggled & {
+  .midd-header__button.is-toggled & {
     display: inline-block;
   }
 }
