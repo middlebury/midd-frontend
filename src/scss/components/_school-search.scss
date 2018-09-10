@@ -1,0 +1,76 @@
+.school-search__content {
+  // transition: 0.2s;
+  margin-bottom: spacing(3);
+
+  @include media(md) {
+    //   position: absolute;
+    //   top: 100%;
+    //   right: 0;
+    //   opacity: 0;
+    //   visibility: hidden;
+    padding: 1rem;
+    background-color: $white;
+    border: 1px solid $brand-primary;
+  }
+
+  // .site-header__search:focus &,
+  // .site-header__search:hover & {
+  //   opacity: 1;
+  //   visibility: visible;
+  // }
+}
+
+.school-search__button {
+  font-weight: 500;
+  font-size: 14px;
+  display: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  @include media(md) {
+    display: inline-block;
+  }
+}
+
+.school-search__group {
+  display: flex;
+}
+
+.school-search__input {
+  flex: 1;
+  border: 1px solid $gray;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1;
+  padding: 1rem;
+  border-right: 0;
+  -webkit-appearance: none;
+  background-color: $brand-primary-dark;
+  border-color: $brand-primary-dark;
+  color: $white;
+
+  &::placeholder {
+    color: $gray-light;
+  }
+
+  @include media(md) {
+    background-color: $white;
+  }
+}
+
+.school-search__submit {
+  flex: 0 0 auto;
+  padding: 1rem;
+  font-size: 16px;
+  line-height: 1;
+  border: 1px solid $gray;
+  border-left: 0;
+  background-color: $brand-primary-dark;
+  border-color: $brand-primary-dark;
+  color: $white;
+
+  @include media(md) {
+  }
+}
