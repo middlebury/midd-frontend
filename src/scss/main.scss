@@ -3,6 +3,9 @@
 @import 'variables';
 @import 'mixins';
 
+// vendor
+@import '../../node_modules/normalize.css/normalize';
+
 // base
 @import 'global';
 
