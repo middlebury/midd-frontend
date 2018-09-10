@@ -1,20 +1,16 @@
-<div class="anchor-header js-anchor-header">
+<div class="anchor-header">
   <div class="container">
-    <div class="row">
-      <div class="col-8">
-        <p class="anchor-header__title">
-          <a href="" class="anchor-header__link">Student Financial Services</a>
-        </p>
-      </div>
-      <div class="col-4">
-        <button class="button button--sm d-md-none" data-toggle-target=".js-anchor-header">
-          <svg class="icon anchor-header__icon">
-            <use xlink:href="#icon-chevron-down">
-          </svg>
-        </button>
-      </div>
+    <div class="anchor-header__primary">
+      <p class="anchor-header__title">
+        <a href="" class="anchor-header__link">Student Financial Services</a>
+      </p>
+      <button class="anchor-header__handle" data-toggle-target=".js-anchor-header-nav">
+        <svg class="icon anchor-header__icon">
+          <use xlink:href="#icon-chevron-down">
+        </svg>
+      </button>
     </div>
-    <div class="anchor-header__nav">
+    <div class="anchor-header__nav js-anchor-header-nav">
       <nav class="anchor-nav">
         <ul class="anchor-nav__list">
           {% for item in ['How to apply', 'Types of aid', 'Education Loans', 'Payment Options', 'Helpful Links'] %}
