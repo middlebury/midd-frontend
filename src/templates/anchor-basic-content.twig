@@ -12,25 +12,36 @@
   {% embed 'partials/sidebar-layout.twig' %}
     {% block sidebar %}
 
-      {% include 'partials/page-nav.twig' with {
-        items: [
-          { text: 'Curriculum', href: '#' },
-          {
-            text: 'Faculty',
-            href: '#',
-            items: [
-              { text: 'Faculty sub page 1', href: '#' },
-              { text: 'Faculty sub page 2', href: '#' },
-              {
-                text: 'Faculty sub page 3',
-                href: '#',
-              },
-              { text: 'Faculty sub page 4', href: '#' },
-            ]
-          },
-          { text: 'Financing Your Education', href: '#' },
-        ]
-      } %}
+      <div class="mb-7">
+        {% include 'partials/page-nav.twig' with {
+          items: [
+            { text: 'Curriculum', href: '#' },
+            {
+              text: 'Faculty',
+              href: '#',
+              items: [
+                { text: 'Faculty sub page 1', href: '#' },
+                { text: 'Faculty sub page 2', href: '#' },
+                {
+                  text: 'Faculty sub page 3',
+                  href: '#',
+                },
+                { text: 'Faculty sub page 4', href: '#' },
+              ]
+            },
+            { text: 'Financing Your Education', href: '#' },
+          ]
+        } %}
+      </div>
+
+      <aside class="page-callout">
+        <p class="page-callout__text">
+          <strong>WORKSHOP: Understand Your Departmental Risk and How to Manage It</strong><br/>
+          September 25
+        </p>
+
+        <a href="" class="page-callout__button button button--primary button--sm button--secondary">Register Now</a>
+      </aside>
 
     {% endblock %}
     {% block content %}
