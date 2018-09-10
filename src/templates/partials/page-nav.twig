@@ -14,18 +14,11 @@
 {% import _self as macros %}
 
 <div class="page-nav">
-  <button class="page-nav__toggler" id="midd-page-nav-label" data-toggle-target=".js-page-nav">
-    <span>Additional Navigation</span>
-    <span class="page-nav__icon is-toggled-hide">
-      <svg class="icon">
-        <use xlink:href="#icon-chevron-down" />
-      </svg>
-    </span>
-    <span class="page-nav__icon is-toggled-show">
-      <svg class="icon">
-        <use xlink:href="#icon-chevron-up" />
-      </svg>
-    </span>
+  <button class="page-nav__handle" id="midd-page-nav-label" data-toggle-target=".js-page-nav">
+    Additional Navigation
+    <svg class="page-nav__icon icon">
+      <use xlink:href="#icon-chevron-down" />
+    </svg>
   </button>
   <nav class="page-nav__content js-page-nav">
 
