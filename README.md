@@ -5,7 +5,7 @@
 [![dev dependency status](https://david-dm.org/middlebury/midd-frontend/dev-status.svg)](https://david-dm.org/middlebury/midd-frontend?type=dev)
 
 ## Requirements
-- Node 6.4+
+- Node 8.12+
 
 ## Getting started
 
