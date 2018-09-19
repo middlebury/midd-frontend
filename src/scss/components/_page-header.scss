@@ -1,0 +1,30 @@
+.page-header {
+  padding-top: spacing(4);
+  padding-bottom: spacing(4);
+
+  @include media(md) {
+    padding-top: spacing(7);
+    padding-bottom: spacing(7);
+  }
+  @include media(lg) {
+    padding-top: spacing(8);
+    padding-bottom: spacing(8);
+  }
+}
+
+.page-header__title {
+  // TODO: create/use mixin display-3
+  font-size: 32px;
+  line-height: $line-height-solid;
+  font-weight: $font-weight-normal;
+  margin-bottom: spacing(3);
+
+  @include media(md) {
+    font-size: 48px;
+    margin-bottom: spacing(7);
+  }
+
+  @include media(lg) {
+    font-size: 64px;
+  }
+}
