@@ -27,6 +27,7 @@ const cssnano = require('cssnano');
 const rollupBabel = require('rollup-plugin-babel');
 const rollupResolve = require('rollup-plugin-node-resolve');
 const rollupCommon = require('rollup-plugin-commonjs');
+const { uglify } = require('rollup-plugin-uglify');
 
 const production = !!args.production;
 
@@ -149,7 +150,8 @@ gulp.task('scripts:dev', () =>
           plugins: ['external-helpers', 'transform-class-properties']
         }),
         rollupResolve(),
-        rollupCommon()
+        rollupCommon(),
+        production && uglify()
       ]
     })
     .then(bundle =>
