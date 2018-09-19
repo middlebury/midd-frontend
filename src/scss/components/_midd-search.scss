@@ -32,6 +32,7 @@
   font-weight: $font-weight-medium;
   font-size: typescale(2);
   color: $white;
+  line-height: $line-height-solid;
   display: none;
   position: relative;
   border-top: 4px solid transparent;
@@ -47,7 +48,7 @@
 
   @include media(md) {
     display: block;
-    padding-top: spacing(4);
+    padding-top: calc(#{spacing(4)} - 4px);
     padding-bottom: spacing(4);
   }
 }

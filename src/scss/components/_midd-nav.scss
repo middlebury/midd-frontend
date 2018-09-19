@@ -16,8 +16,6 @@
   }
 
   .midd-nav__list {
-    padding-left: spacing(4);
-
     &.has-toggler {
       display: none;
       @include media(md) {
@@ -46,13 +44,22 @@
 }
 
 .midd-nav__item {
-  position: relative;
   border-top: 1px solid $navy-light;
-  display: flex;
-  flex-wrap: wrap;
 
   @include media(md) {
     border-top: 0;
+    flex: 1 0 auto;
+  }
+}
+
+.midd-nav__item--top {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+
+  @include media(md) {
+    border-top: 0;
+    margin-right: spacing(4);
 
     &:hover,
     &:focus-within {
@@ -61,12 +68,6 @@
         opacity: 1;
       }
     }
-  }
-}
-
-.midd-nav__item--top {
-  @include media(md) {
-    margin-right: spacing(4);
   }
 }
 
@@ -85,11 +86,12 @@
 
 .midd-nav__link--top {
   flex: 1;
-  padding: calc(#{spacing(3)} - 4px) spacing(3);
+  padding: spacing(4) spacing(3);
+  line-height: $line-height-solid;
 
   @include media(md) {
     border-top: 4px solid transparent;
-    padding-top: spacing(4);
+    padding-top: calc(#{spacing(4)} - 4px);
     padding-bottom: spacing(4);
     padding-left: 0;
     padding-right: 0;
@@ -104,6 +106,13 @@
 
 .midd-nav__link--sub {
   padding: spacing(3);
+
+  .midd-nav__list & {
+    padding-left: spacing(6);
+    @include media(md) {
+      padding-left: spacing(4) / 2;
+    }
+  }
 
   @include media(md) {
     padding: spacing(4) / 2;
