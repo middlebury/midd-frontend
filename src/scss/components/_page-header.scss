@@ -17,11 +17,9 @@
   font-size: 32px;
   line-height: $line-height-solid;
   font-weight: $font-weight-normal;
-  margin-bottom: spacing(3);
 
   @include media(md) {
     font-size: 48px;
-    margin-bottom: spacing(7);
   }
 
   @include media(lg) {
