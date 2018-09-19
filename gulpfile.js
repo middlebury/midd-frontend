@@ -287,8 +287,8 @@ gulp.task('build', [
   'images',
   'styles',
   // 'scripts:lint',
-  'scripts:dev'
-  // 'copy:deps'
+  'scripts:dev',
+  'copy:deps'
 ]);
 
 gulp.task('dev', ['build', 'watch']);
