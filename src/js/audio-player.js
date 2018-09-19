@@ -10,6 +10,8 @@ const MUTED_ATTR = 'data-muted';
 const RIGHT_ARROW_KEY = 39;
 const LEFT_ARROW_KEY = 37;
 
+// TODO: make this create the audio markup for when js is disabled, markup doesn't exist
+
 function formatTime(seconds) {
   let minutes = Math.floor(seconds / 60);
   minutes = minutes >= 10 ? minutes : '' + minutes;
