@@ -1,24 +1,6 @@
-{% extends "layout.twig" %}
-{#
-{% set page_header = {
-title: 'Beryl Levinger',
-breadcrumb: [
-  { text: 'Leadership and Impact' },
-  { text: 'Faculty in the Field' },
-]
-} %} #}
+{% extends "school-layout.twig" %}
 
 {% block page %}
-{#
-<div class="container">
-  {% include 'partials/breadcrumb.twig' with {
-    items: [
-      {
-        text: 'People'
-      }
-    ]
-  } %}
-</div> #}
 
 <article class="profile-detail">
 
@@ -29,12 +11,14 @@ breadcrumb: [
   } %}
 
   <div class="container">
+
     {# <div class="row">
       <header class="mb-4">
         <h1 class="display-3">Berly Levinger</h1>
         <p class="lead">Distinguished Professor; Program Chair, International Policy and Development; Master of Public Administration</p>
       </header>
     </div> #}
+
     <div class="row">
       <div class="col-md-push-1 col-md-11">
 
@@ -73,7 +57,9 @@ breadcrumb: [
           </div>
           <div class="col-md-8 flex-md-first">
 
-            <div class="text typography">
+            <p class="lead">Distinguished Professor; Program Chair, International Policy and Development; Master of Public Administration</p>
+
+            <div class="mb-7 typography">
               <p>Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas elementum augue nec nisl. Proinauctor lorem at nibh. Curabitur nulla purus, feugiat id, elementum in, lobortis quis, pede. Vivamus sodales adipiscing sapien. Vestibulum posuere nulla eget wisi.</p>
               <p>Integer volutpat ligula eget enim. Suspendisse vitae arcu. Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas elementum augue nec nisl. Proin auctor lorem at nibh. Curabitur nulla purus, feugiat id, elementum in, lobortis quis, pede. Vivamus sodales adipiscing sapien. Vestibulum posuere nulla eget wisi.</p>
             </div>
