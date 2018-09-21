@@ -1,59 +1,51 @@
 <header class="school-header js-headroom">
   <div class="school-header__primary">
     <a href="">
-      <img src="images/midd-logo.svg" alt="" width="186" height="76" class="school-header__logo">
+      <picture>
+        <img src="images/midd-logo.svg" alt="" width="186" height="76" class="school-header__logo">
+      </picture>
     </a>
-    <a href="#menu" data-toggle-target=".js-menu-1" class="menu-handle">
-      <svg class="icon bars">
+    <button class="school-header__handle" data-toggle-target=".js-site-menu">
+      <svg class="icon school-header__icon school-header__icon--bars">
         <use xlink:href="#icon-bars">
       </svg>
-      <svg class="icon times">
+      <svg class="icon school-header__icon school-header__icon--times">
         <use xlink:href="#icon-times">
       </svg>
-
-      <span class="menu-handle__text">Menu</span>
-    </a>
+      <span class="school-header__handle-text">Menu</span>
+    </button>
   </div>
 
-  <div class="school-header__secondary js-menu-1">
+  <div class="school-header__secondary js-site-menu">
     <div class="school-header__navs">
-      <nav class="site-nav">
-        <ul class="site-nav__list">
+      <nav class="school-nav">
+        <ul class="school-nav__list">
           {% for item in site_nav.items %}
-            <li class="site-nav__item">
+            <li class="school-nav__item">
+
+              <a href="" class="school-nav__link">{{item.text}}</a>
 
               {% if item.items %}
+                <button class="school-nav__handle" data-toggle-target=".js-subnav-{{loop.index}}" aria-haspopup="true" aria-expanded="false" aria-controls="subnav-{{loop.index}}">
+                  <svg class="icon school-nav__icon">
+                    <use xlink:href="#icon-chevron-down" />
+                  </svg>
+                </button>
 
-                <div class="site-nav__actions">
-                  <a href="" class="site-nav__link">{{item.text}}</a>
-                  <a href="#" data-toggle-target=".js-subnav-{{loop.index}}" role="button" class="site-nav__subnav-handle">
-                    <svg id="icon-arrow-down" class="icon" viewBox="0 0 20 12" width="100%" height="100%">
-                      <path d="M10 8L2 0 0 2l10 10L20 2l-2-2z" fill-rule="evenodd"></path>
-                    </svg>
-                  </a>
-                </div>
-
-                <nav class="site-subnav js-subnav-{{loop.index}}">
-                  <ul class="site-nav__list">
-                    {% for subitem in item.items %}
-                      <li class="site-nav__item"><a href="" class="site-nav__link">{{subitem.text}}</a></li>
-                    {% endfor %}
-                  </ul>
-                </nav>
-              {% else %}
-                <a href="" class="site-nav__link">{{item.text}}</a>
+                <ul class="school-nav__list js-subnav-{{loop.index}}" id="subnav-{{loop.index}}">
+                  {% for subitem in item.items %}
+                    <li class="school-nav__item">
+                      <a href="" class="school-nav__link">{{subitem.text}}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
               {% endif %}
 
             </li>
           {% endfor %}
-        </ul>
-      </nav>
-      <span class="school-header__divider"></span>
-      <nav class="site-nav">
-        <ul class="site-nav__list site-nav--util">
           {% for item in site_nav.utils %}
-            <li class="site-nav__item">
-              <a href="" class="site-nav__link">{{item.text}}</a>
+            <li class="school-nav__item school-nav__item--util">
+              <a href="" class="school-nav__link school-nav__link--util">{{item.text}}</a>
             </li>
           {% endfor %}
         </ul>
@@ -63,15 +55,24 @@
   <div class="school-header__search">
 
     <div class="school-search">
-      <a href="#search" class="school-search__button">
+      <a
+        href="/search"
+        class="school-search__button"
+        role="button"
+        aria-label="Open site search"
+        aria-expanded="false"
+        aria-haspopup="true"
+        data-toggle-target=".js-site-search"
+      >
         <svg class="icon"><use xlink:href="#icon-search"></svg> Search
       </a>
 
-      <div class="school-search__content">
+      <div class="school-search__content js-site-search">
         <form class="">
           <div class="school-search__group">
-            <input type="search" class="school-search__input" placeholder="Search">
-            <button type="submit" class="school-search__submit">
+            <label for="midd-school-search" class="sr-only">Search</label>
+            <input type="search" class="school-search__input" id="midd-school-search" placeholder="Search">
+            <button type="submit" class="school-search__submit" aria-label="Search">
               <svg class="icon">
                 <use xlink:href="#icon-search">
               </svg>

@@ -8,6 +8,24 @@
     background: none;
     padding: 0;
   }
+
+  &.headroom {
+    will-change: transform;
+    transition: transform 200ms linear;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+  }
+
+  &.headroom--pinned {
+    transform: translateY(0%);
+  }
+
+  &.headroom--unpinned {
+    transform: translateY(-100%);
+  }
 }
 
 .school-header__primary {
@@ -20,13 +38,47 @@
   }
 }
 
+// TODO: do we need to use picture since logos widths will vary across schools?
 .school-header__logo {
   max-width: inherit;
+  // width: 124px;
+  @include media(md) {
+    // width: 187px;
+  }
+}
+
+.school-header__handle {
+  color: $white;
+  padding: 1rem;
+  background: none;
+  border: 0;
+  appearance: none;
+
+  margin-right: -1rem;
+  @include media(md) {
+    display: none;
+  }
+}
+
+.school-header__icon {
+}
+
+.school-header__icon--bars {
+  .school-header__handle.is-toggled & {
+    display: none;
+  }
+}
+.school-header__icon--times {
+  display: none;
+
+  .school-header__handle.is-toggled & {
+    display: inline-block;
+  }
 }
 
 .school-header__secondary {
-  background: $white;
-  border-bottom: 1px solid $brand-primary;
+  background: $navy;
+  border-bottom: 1px solid $navy;
   flex-direction: column-reverse;
   display: none;
 
@@ -41,6 +93,7 @@
     width: 100%;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+    background: $white;
   }
 }
 
@@ -62,28 +115,4 @@
 }
 
 .school-header__search {
-  position: relative;
-  @include media(md) {
-    padding: 1.5rem;
-  }
-}
-
-// headroom styles
-
-.school-header.headroom {
-  will-change: transform;
-  transition: transform 200ms linear;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 50;
-}
-
-.school-header.headroom--pinned {
-  transform: translateY(0%);
-}
-
-.school-header.headroom--unpinned {
-  transform: translateY(-100%);
 }

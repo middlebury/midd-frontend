@@ -1,0 +1,94 @@
+.school-nav {
+}
+
+.school-nav__list {
+  width: 100%;
+  @include media(md) {
+    display: flex;
+  }
+
+  .school-nav__list {
+    display: none;
+    &.is-toggled {
+      display: block;
+    }
+  }
+}
+
+.school-nav__item {
+  position: relative;
+  border-top: 1px solid $navy-light;
+  display: flex;
+  flex-wrap: wrap;
+
+  @include media(md) {
+    margin-right: 1.5rem;
+    border-top: 0;
+    border-color: $gray-light;
+    display: block;
+  }
+
+  &:focus-within,
+  &:hover {
+    @include media(md) {
+      .school-nav__list {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.school-nav__item--util {
+  &:first-of-type {
+    border-left: 1px solid $navy;
+  }
+}
+
+.school-nav__handle {
+  background: none;
+  border: 0;
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  border-left: 1px solid $navy-light;
+  color: $white;
+
+  @include media(md) {
+    display: none;
+  }
+}
+
+.school-nav__icon {
+  transition: $chevron-transition;
+  .school-nav__handle.is-toggled & {
+    transform: $chevron-transform;
+  }
+}
+
+.school-nav__link {
+  display: block;
+  padding: spacing(4) spacing(3);
+  flex: 1;
+  line-height: 1;
+  color: $white;
+  font-size: typescale(3);
+
+  .school-nav__list .school-nav__list & {
+    padding-left: spacing(7);
+    @include media(md) {
+      padding-left: spacing(3);
+    }
+  }
+
+  @include media(md) {
+    font-weight: 600;
+    font-size: typescale(2);
+    color: $navy;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.school-nav__link--util {
+  font-size: 14px;
+}

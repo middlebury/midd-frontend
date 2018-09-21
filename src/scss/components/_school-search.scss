@@ -1,29 +1,39 @@
+.school-search {
+  padding: 1rem;
+  @include media(md) {
+    padding: 0;
+  }
+}
+
 .school-search__content {
-  // transition: 0.2s;
+  transition: 0.2s;
   margin-bottom: spacing(3);
 
   @include media(md) {
-    //   position: absolute;
-    //   top: 100%;
-    //   right: 0;
-    //   opacity: 0;
-    //   visibility: hidden;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
     padding: 1rem;
+    width: 400px;
     background-color: $white;
     border: 1px solid $brand-primary;
   }
 
-  // .site-header__search:focus &,
-  // .site-header__search:hover & {
-  //   opacity: 1;
-  //   visibility: visible;
-  // }
+  .school-search:focus-within &,
+  .school-search:hover & {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .school-search__button {
   font-weight: 500;
   font-size: 14px;
   display: none;
+  padding-top: spacing(4);
+  padding-bottom: spacing(4);
 
   &:hover {
     text-decoration: none;
@@ -46,17 +56,23 @@
   line-height: 1;
   padding: 1rem;
   border-right: 0;
-  -webkit-appearance: none;
-  background-color: $brand-primary-dark;
+  background-color: $white;
   border-color: $brand-primary-dark;
+  appearance: none;
+  background-color: $navy-dark;
   color: $white;
 
   &::placeholder {
-    color: $gray-light;
+    color: $white;
+
+    @include media(md) {
+      color: initial;
+    }
   }
 
   @include media(md) {
     background-color: $white;
+    color: $black;
   }
 }
 
@@ -70,7 +86,4 @@
   background-color: $brand-primary-dark;
   border-color: $brand-primary-dark;
   color: $white;
-
-  @include media(md) {
-  }
 }
