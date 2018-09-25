@@ -17,6 +17,10 @@ class Toggler {
 
     this.handleElemClick = this.handleElemClick.bind(this);
 
+    this.focusTargetSelector = elem.getAttribute('data-toggle-focus');
+
+    this.focusTarget = document.querySelector(this.focusTargetSelector);
+
     this.init();
   }
 
@@ -81,6 +85,12 @@ class Toggler {
     if (elem) {
       elem.classList.add(this.activeClass);
       this.setAriaExpanded(elem, true);
+      if (this.focusTarget) {
+        // TODO: watch for transition end instead
+        setTimeout(() => {
+          document.querySelector('input').focus();
+        }, 100);
+      }
     }
   }
 
