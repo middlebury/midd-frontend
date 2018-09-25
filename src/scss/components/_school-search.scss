@@ -1,6 +1,8 @@
 .school-search {
   padding: 1rem;
-  @include media(md) {
+  position: relative;
+
+  @include media(lg) {
     padding: 0;
   }
 }
@@ -9,7 +11,7 @@
   transition: 0.2s;
   margin-bottom: spacing(3);
 
-  @include media(md) {
+  @include media(lg) {
     position: absolute;
     top: 100%;
     right: 0;
@@ -21,26 +23,47 @@
     border: 1px solid $brand-primary;
   }
 
-  .school-search:focus-within &,
-  .school-search:hover & {
+  &.is-toggled {
     opacity: 1;
     visibility: visible;
   }
 }
 
 .school-search__button {
-  font-weight: 500;
-  font-size: 14px;
+  font-weight: $font-weight-medium;
+  font-size: typescale(2);
+  // line-height: 1;
   display: none;
   padding-top: spacing(4);
   padding-bottom: spacing(4);
+  border-bottom: 4px solid transparent;
+  opacity: 0.8;
+  transition: opacity 0.2s, border-color 0.2s;
 
+  &.is-toggled,
   &:hover {
     text-decoration: none;
+    opacity: 1;
+    border-color: $navy;
   }
 
-  @include media(md) {
+  @include media(lg) {
     display: inline-block;
+  }
+}
+.school-search__icon {
+}
+
+.school-search__icon--times {
+  display: none;
+  .school-search__button.is-toggled & {
+    display: inline-block;
+  }
+}
+
+.school-search__icon--search {
+  .school-search__button.is-toggled & {
+    display: none;
   }
 }
 
@@ -65,12 +88,12 @@
   &::placeholder {
     color: $white;
 
-    @include media(md) {
+    @include media(lg) {
       color: initial;
     }
   }
 
-  @include media(md) {
+  @include media(lg) {
     background-color: $white;
     color: $black;
   }

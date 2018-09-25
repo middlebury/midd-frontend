@@ -3,14 +3,51 @@
 
 .school-nav__list {
   width: 100%;
-  @include media(md) {
+  @include media(lg) {
     display: flex;
   }
+}
 
-  .school-nav__list {
-    display: none;
-    &.is-toggled {
-      display: block;
+.school-nav__list--cols {
+  @include media(lg) {
+    column-count: 2;
+    min-width: 500px;
+
+    .school-nav__item {
+      width: 100%;
+      display: inline-block;
+    }
+  }
+}
+
+.school-nav__list--sub {
+  display: none;
+
+  @include media(lg) {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: $white;
+    padding: spacing(4) / 2 spacing(4);
+    border: 1px solid $navy;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  &.is-toggled {
+    display: block;
+  }
+
+  .school-nav__link {
+    padding-left: spacing(7);
+
+    @include media(lg) {
+      padding-right: 0;
+      padding-left: 0;
+      padding-top: spacing(4) / 2;
+      padding-bottom: spacing(4) / 2;
     }
   }
 }
@@ -21,17 +58,17 @@
   display: flex;
   flex-wrap: wrap;
 
-  @include media(md) {
-    margin-right: 1.5rem;
+  @include media(lg) {
+    margin-right: spacing(4);
     border-top: 0;
     border-color: $gray-light;
-    display: block;
+    transition: opacity 0.2s;
   }
 
   &:focus-within,
   &:hover {
-    @include media(md) {
-      .school-nav__list {
+    @include media(lg) {
+      .school-nav__list--sub {
         visibility: visible;
         opacity: 1;
       }
@@ -49,11 +86,11 @@
   background: none;
   border: 0;
   display: inline-block;
-  padding: 1rem 1.5rem;
+  padding: spacing(3) spacing(4);
   border-left: 1px solid $navy-light;
   color: $white;
 
-  @include media(md) {
+  @include media(lg) {
     display: none;
   }
 }
@@ -68,27 +105,42 @@
 .school-nav__link {
   display: block;
   padding: spacing(4) spacing(3);
-  flex: 1;
-  line-height: 1;
   color: $white;
   font-size: typescale(3);
+  font-weight: $font-weight-medium;
+  opacity: 0.8;
+  transition: opacity 0.2s, border-color 0.2s;
 
-  .school-nav__list .school-nav__list & {
-    padding-left: spacing(7);
-    @include media(md) {
-      padding-left: spacing(3);
-    }
-  }
-
-  @include media(md) {
-    font-weight: 600;
-    font-size: typescale(2);
+  @include media(lg) {
     color: $navy;
     padding-left: 0;
     padding-right: 0;
   }
 }
 
+.school-nav__link--top {
+  border-bottom: 4px solid transparent;
+  line-height: 1;
+
+  .school-nav__item:focus-within &,
+  .school-nav__item:hover & {
+    opacity: 1;
+    border-color: $navy;
+    text-decoration: none;
+  }
+
+  @include media(lg) {
+    font-size: typescale(2);
+    font-weight: $font-weight-semibold;
+    line-height: lineheight('body');
+  }
+}
+
+.school-nav__item--util {
+  font-size: 18px;
+}
+
 .school-nav__link--util {
-  font-size: 14px;
+  font-size: typescale(2);
+  font-weight: $font-weight-medium;
 }

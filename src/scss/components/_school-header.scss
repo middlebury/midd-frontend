@@ -2,7 +2,7 @@
   background: $brand-primary;
   border-top: 4px solid $brand-primary;
 
-  @include media(md) {
+  @include media(lg) {
     display: flex;
     align-items: flex-start;
     background: none;
@@ -29,21 +29,25 @@
 }
 
 .school-header__primary {
-  padding: 1rem;
+  padding-top: spacing(3);
+  padding-bottom: spacing(3);
   display: flex;
   justify-content: space-between;
+  @include make-gutters();
 
-  @include media(md) {
-    background: $brand-primary;
+  @include media(lg) {
+    background-color: $brand-primary;
+    padding-top: spacing(4);
+    padding-bottom: spacing(4);
   }
 }
 
 // TODO: do we need to use picture since logos widths will vary across schools?
 .school-header__logo {
   max-width: inherit;
-  // width: 124px;
-  @include media(md) {
+  @include media(lg) {
     // width: 187px;
+    // max-width: inherit;
   }
 }
 
@@ -55,7 +59,7 @@
   appearance: none;
 
   margin-right: -1rem;
-  @include media(md) {
+  @include media(lg) {
     display: none;
   }
 }
@@ -86,7 +90,7 @@
     display: flex;
   }
 
-  @include media(md) {
+  @include media(lg) {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -98,7 +102,7 @@
 }
 
 .school-header__navs {
-  @include media(md) {
+  @include media(lg) {
     display: flex;
   }
 }
@@ -109,7 +113,7 @@
   background: $brand-primary;
   width: 1px;
   display: none;
-  @include media(md) {
+  @include media(lg) {
     display: inline-block;
   }
 }
