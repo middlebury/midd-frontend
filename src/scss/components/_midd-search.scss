@@ -1,5 +1,5 @@
 .midd-search {
-  @include media(md) {
+  @include media(lg) {
     position: relative;
   }
 }
@@ -8,7 +8,7 @@
   transition: 0.2s;
   margin-bottom: spacing(3);
 
-  @include media(md) {
+  @include media(lg) {
     width: 400px;
     position: absolute;
     top: 100%;
@@ -46,7 +46,7 @@
     border-color: $white;
   }
 
-  @include media(md) {
+  @include media(lg) {
     display: block;
     padding-top: calc(#{spacing(4)} - 4px);
     padding-bottom: spacing(4);
@@ -77,12 +77,12 @@
 
   &::placeholder {
     color: $gray-light;
-    @include media(md) {
+    @include media(lg) {
       color: initial;
     }
   }
 
-  @include media(md) {
+  @include media(lg) {
     background-color: $white;
     color: $black;
   }
@@ -99,7 +99,7 @@
   border-color: $brand-primary-dark;
   color: $white;
 
-  @include media(md) {
+  @include media(lg) {
     color: $navy;
     // border-color: 0
     background-color: $white;

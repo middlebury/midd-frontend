@@ -5,7 +5,7 @@
 $screen-sm: 512px !default;
 $screen-md: 768px !default;
 $screen-lg: 1024px !default;
-$screen-xl: 1440px !default; // TODO: Do we need xl? There's no col-xl-* or media(xl) usage
+$screen-xl: 1280px !default; // TODO: Do we need xl? There's no col-xl-* or media(xl) usage
 
 ////
 /// Grid configuration
@@ -28,7 +28,8 @@ $grid-breakpoints: (
   xs: 0,
   sm: $screen-sm,
   md: $screen-md,
-  lg: $screen-lg
+  lg: $screen-lg,
+  xl: $screen-xl
 ) !default;
 
 ////

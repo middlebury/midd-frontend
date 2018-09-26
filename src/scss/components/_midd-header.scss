@@ -32,7 +32,7 @@
 .midd-header__container {
   @include make-container();
 
-  @include media(md) {
+  @include media(lg) {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -59,7 +59,7 @@
     display: flex;
   }
 
-  @include media(md) {
+  @include media(lg) {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -69,7 +69,7 @@
 
 .midd-header__logo {
   height: 48px;
-  @include media(md) {
+  @include media(lg) {
     height: 64px;
   }
 }
@@ -80,7 +80,7 @@
   left: 0;
   top: 8px;
 
-  @include media(md) {
+  @include media(lg) {
     width: 67px;
   }
 }
@@ -91,7 +91,7 @@
   left: 4px;
   top: 0;
 
-  @include media(md) {
+  @include media(lg) {
     width: 114px;
     left: 8px;
   }
@@ -112,7 +112,7 @@
     text-decoration: none;
   }
 
-  @include media(md) {
+  @include media(lg) {
     display: none;
   }
 }
