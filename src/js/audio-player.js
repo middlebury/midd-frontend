@@ -55,6 +55,7 @@ class AudioPlayer {
 
     on(this.audio, 'loadedmetadata', this.handleMetaDataLoad);
     on(this.audio, 'timeupdate', this.handleUpdateTime);
+    on(this.audio, 'ended', this.pause);
 
     on(this.track, 'click', this.handleTrackClick);
     on(this.slider, 'keydown', this.handleSliderKeyDown);
