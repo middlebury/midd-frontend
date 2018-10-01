@@ -111,6 +111,10 @@ class AudioPlayer {
     const percentageOfSlider = this.track.offsetWidth * percentageOfSong;
 
     this.slider.style.left = Math.round(percentageOfSlider) + 'px';
+    this.slider.setAttribute(
+      'aria-valuenow',
+      Math.round(this.audio.currentTime)
+    );
   }
 
   play = () => {
