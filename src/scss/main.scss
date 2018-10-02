@@ -90,3 +90,15 @@
 .visually-hidden {
   @include sr-only;
 }
+
+.link-underline {
+  @include link-border;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-25 {
+  width: 25%;
+}

@@ -1,0 +1,103 @@
+
+{% extends "midd-layout.twig" %}
+
+{% set page_header = {
+  title: 'Offices',
+  breadcrumb: []
+} %}
+
+{% block page %}
+
+
+<div class="container">
+
+  <div class="row mb-7">
+    <div class="col-md-6">
+      <label for="">Find on page</label>
+      <input type="search" class="form-control" placeholder="Department name">
+    </div>
+    <div class="col-md-6">
+      <label for="">Display by</label>
+      <select name="" id="" class="form-control">
+        <option value="" selected>Group</option>
+        <option value="">A-Z</option>
+      </select>
+    </div>
+  </div>
+
+  {% for item in offices %}
+
+    <h2 class="mb-5">{{item.title}}</h2>
+
+    <style>
+    .table td {vertical-align:middle;}
+    .table {
+      table-layout: fixed;
+    }
+    </style>
+
+    <table class="table mt-0">
+    {% for subitem in item.items %}
+      <tr>
+        <td class="w-25">
+          <a href="" class="link-underline">{{subitem.title}}</a>
+        </td>
+        <td>
+          {% if random(2) %}
+          <a href="">
+            admissions@middlebury.edu
+          </a>
+          {% endif %}
+        </td>
+        <td>
+          {% if random(2) %}
+            802-555-5555
+          {% endif %}
+        </td>
+        <td>
+          {% if random(2) %}
+            152 College St<br>Middlebury, VT 05753
+          {% endif %}
+        </td>
+        <td>
+
+        {% for social in ['youtube', 'facebook', 'instagram', 'twitter', 'vimeo'] %}
+          {% if random(1) %}
+            <a href="">
+              <svg class="icon">
+                <use href="#icon-{{social}}" />
+              </svg>
+            </a>
+          {% endif %}
+        {% endfor %}
+          {# <a href="">
+            <svg class="icon">
+              <use href="#icon-facebook" />
+            </svg>
+          </a>
+          <a href="">
+            <svg class="icon">
+              <use href="#icon-twitter" />
+            </svg>
+          </a>
+          <a href="">
+            <svg class="icon">
+              <use href="#icon-instagram" />
+            </svg>
+          </a>
+          <a href="">
+            <svg class="icon">
+              <use href="#icon-vimeo" />
+            </svg>
+          </a> #}
+        </td>
+      </tr>
+    {% endfor %}
+    </table>
+
+  {% endfor %}
+
+</div>
+
+{% endblock %}
+
