@@ -171,31 +171,6 @@ gulp.task('scripts:dev', () =>
     })
 );
 
-// gulp.task('scripts', function() {
-//   var b = browserify({
-//     entries: './src/js/index.js',
-//     debug: true,
-//     transform: [[babelify, { presets: ['es2015'] }]]
-//   });
-
-//   return b
-//     .bundle()
-//     .on('error', function(err) {
-//       console.error(err.message); // eslint-disable-line no-console
-//       beeper();
-//       this.emit('end');
-//     })
-//     .pipe(source('bundle.js'))
-//     .pipe(buffer())
-//     .pipe(gulpIf(!production, sourcemaps.init({ loadMaps: true })))
-//     .pipe(gulpIf(production, uglify()))
-//     .on('error', gutil.log)
-//     .pipe(gulpIf(!production, sourcemaps.write('./')))
-//     .pipe(size({ showFiles: true }))
-//     .pipe(gulp.dest(paths.scripts.dest))
-//     .pipe(browserSync.stream());
-// });
-
 gulp.task('html', () => {
   gulp
     .src(paths.html.src)
