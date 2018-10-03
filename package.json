@@ -8,6 +8,7 @@
     "build": "gulp build --production",
     "build:icons": "gulp icons && gulp copy:icons",
     "deploy": "gulp deploy --production",
+    "test": "bundlesize",
     "lint": "eslint src/js/**"
   },
   "repository": {
@@ -26,6 +27,7 @@
     "babel-preset-env": "^1.6.1",
     "beeper": "^1.1.1",
     "browser-sync": "^2.23.6",
+    "bundlesize": "^0.17.0",
     "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.0",
     "del": "^2.2.2",
@@ -58,14 +60,26 @@
   "dependencies": {
     "animejs": "^2.2.0",
     "chart.js": "^2.7.1",
+    "element-closest": "^2.0.2",
     "focus-within": "^2.0.0",
     "h": "^0.1.0",
     "headroom.js": "^0.9.4",
     "intersection-observer": "^0.5.0",
+    "lodash.debounce": "^4.0.8",
     "normalize.css": "^8.0.0",
     "object-fit-images": "^3.2.3",
     "onresize": "^1.0.1",
     "pikaday": "^1.7.0",
     "swiper": "^4.1.0"
-  }
+  },
+  "bundlesize": [
+    {
+      "path": "./dist/css/*.css",
+      "maxSize": "150 kB"
+    },
+    {
+      "path": "./dist/js/bundle.js",
+      "maxSize": "40 kB"
+    }
+  ]
 }
