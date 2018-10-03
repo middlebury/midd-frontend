@@ -212,3 +212,100 @@ image_sizes:
     - 400x225
     sizes: '(max-width: 580px) 128px, (max-width: 960px) 160px, (max-width: 1200px) 400px, 320px'
   # TODO: slidershow with lazy <picture>?
+
+
+offices:
+- title: Academics
+  items:
+  - title: Academic Administration
+  - title: Academic Technology
+  - title: Center for Teaching, Learning and Programs
+  - title: Center for the Comparative Study of Race and Ethnicity
+  - title: Course Scheduling
+  - title: Grants and Sponsored Programs
+  - title: Institutional Review Board
+  - title: Learning Resources
+  - title: Library
+  - title: Provost
+  - title: Registrar
+  - title: Rohatyn Center for Global Affairs
+  - title: Sciences Technical Support Services
+  - title: Study Abroad Programs
+  - title: Undergraduate Research
+- title: Administration
+  items:
+  - title: Advancement and Alumni Relations
+  - title: Assessment and Institutional Research
+  - title: Communications and Marketing
+  - title: Dean of Environmental Affairs
+  - title: Dean of the College
+  - title: Finance and Treasurer
+  - title: Human Resources
+  - title: Enterprise Risk Management
+  - title: Office of the General Counsel
+  - title: Office of the President
+- title: Campus Services
+  items:
+  - title: Bookstore
+  - title: Business Services
+  - title: Catering
+  - title: Chaplain's Office
+  - title: Dining
+  - title: Event Management
+  - title: Facilities Services
+  - title: Office of Sustainability Integration
+  - title: Printing and Mailing Services
+  - title: Recycling and Waste Management
+- title: Student Life
+  items:
+  - title: Campus Activities and Leadership
+  - title: Center for Careers and Internships
+  - title: Scott Center for Spiritual and Religious Life
+  - title: Chellis Women's Resource Center
+  - title: College Bookstore
+  - title: Community Engagement
+  - title: Dining
+  - title: International Student and Scholar Services
+  - title: Student Accessibility Services
+  - title: Student Employment
+  - title: Student Fellowships and Scholarships
+  - title: Student Financial Services (Financial Aid, Bursar, Cashier)
+  - title: Student Government
+  - title: The Campus
+  - title: The Commons
+  - title: WRMC 91.1FM
+- title: Health and Safety
+  items:
+  - title: Environmental Health and Safety
+  - title: Health and Wellness Education
+  - title: Parton Center for Health and Wellness
+  - title: Public Safety
+  - title: Sexual Assault Resources and Information
+- title: News
+  items:
+  - title: Middlebury Magazine
+  - title: News and Media Relations
+- title: Schools and Programs
+  items:
+  - title: Bread Loaf School of English
+  - title: Bread Loaf Writers' Conferences
+  - title: Middlebury C.V. Starr Schools Abroad
+  - title: Middlebury in DC
+  - title: Middlebury Institute of International Studies at Monterey
+  - title: Middlebury Language Schools
+  - title: Middlebury School of the Environment
+  - title: Undergraduate Admissions
+  - title: Admissions
+  - title: Student Financial Services (Financial Aid, Bursar, Cashier)
+  - title: International Student and Scholar Services
+- title: Technology
+  items:
+  - title: Academic Technology
+  - title: Administrative Systems (Banner)
+  - title: Information Security
+  - title: Information Technology Services
+  - title: Reporting and Business Intelligence
+  - title: SensusAccess
+  - title: Technology HelpDesk
+  - title: Telephone Services
+  - title: WebMail
