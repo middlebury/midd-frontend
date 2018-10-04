@@ -215,97 +215,166 @@ image_sizes:
 
 
 offices:
-- title: Academics
-  items:
   - title: Academic Administration
+    group: Academics
   - title: Academic Technology
+    group: Academics
   - title: Center for Teaching, Learning and Programs
+    group: Academics
   - title: Center for the Comparative Study of Race and Ethnicity
+    group: Academics
   - title: Course Scheduling
+    group: Academics
   - title: Grants and Sponsored Programs
+    group: Academics
   - title: Institutional Review Board
+    group: Academics
   - title: Learning Resources
+    group: Academics
   - title: Library
+    group: Academics
   - title: Provost
+    group: Academics
   - title: Registrar
+    group: Academics
   - title: Rohatyn Center for Global Affairs
+    group: Academics
   - title: Sciences Technical Support Services
+    group: Academics
   - title: Study Abroad Programs
+    group: Academics
   - title: Undergraduate Research
-- title: Administration
-  items:
+    group: Academics
+
   - title: Advancement and Alumni Relations
+    group: Administration
   - title: Assessment and Institutional Research
+    group: Administration
   - title: Communications and Marketing
+    group: Administration
   - title: Dean of Environmental Affairs
+    group: Administration
   - title: Dean of the College
+    group: Administration
   - title: Finance and Treasurer
+    group: Administration
   - title: Human Resources
+    group: Administration
   - title: Enterprise Risk Management
+    group: Administration
   - title: Office of the General Counsel
+    group: Administration
   - title: Office of the President
-- title: Campus Services
-  items:
+    group: Administration
+
   - title: Bookstore
+    group: Campus Services
   - title: Business Services
+    group: Campus Services
   - title: Catering
+    group: Campus Services
   - title: Chaplain's Office
+    group: Campus Services
   - title: Dining
+    group: Campus Services
   - title: Event Management
+    group: Campus Services
   - title: Facilities Services
+    group: Campus Services
   - title: Office of Sustainability Integration
+    group: Campus Services
   - title: Printing and Mailing Services
+    group: Campus Services
   - title: Recycling and Waste Management
-- title: Student Life
-  items:
+    group: Campus Services
+
   - title: Campus Activities and Leadership
+    group: Student Life
   - title: Center for Careers and Internships
+    group: Student Life
   - title: Scott Center for Spiritual and Religious Life
+    group: Student Life
   - title: Chellis Women's Resource Center
+    group: Student Life
   - title: College Bookstore
+    group: Student Life
   - title: Community Engagement
+    group: Student Life
   - title: Dining
+    group: Student Life
   - title: International Student and Scholar Services
+    group: Student Life
   - title: Student Accessibility Services
+    group: Student Life
   - title: Student Employment
+    group: Student Life
   - title: Student Fellowships and Scholarships
+    group: Student Life
   - title: Student Financial Services (Financial Aid, Bursar, Cashier)
+    group: Student Life
   - title: Student Government
+    group: Student Life
   - title: The Campus
+    group: Student Life
   - title: The Commons
+    group: Student Life
   - title: WRMC 91.1FM
-- title: Health and Safety
-  items:
+    group: Student Life
+
   - title: Environmental Health and Safety
+    group: Health and Safety
   - title: Health and Wellness Education
+    group: Health and Safety
   - title: Parton Center for Health and Wellness
+    group: Health and Safety
   - title: Public Safety
+    group: Health and Safety
   - title: Sexual Assault Resources and Information
-- title: News
-  items:
+    group: Health and Safety
+
   - title: Middlebury Magazine
+    group: News
   - title: News and Media Relations
-- title: Schools and Programs
-  items:
+    group: News
+
   - title: Bread Loaf School of English
+    group: Schools and Programs
   - title: Bread Loaf Writers' Conferences
+    group: Schools and Programs
   - title: Middlebury C.V. Starr Schools Abroad
+    group: Schools and Programs
   - title: Middlebury in DC
+    group: Schools and Programs
   - title: Middlebury Institute of International Studies at Monterey
+    group: Schools and Programs
   - title: Middlebury Language Schools
+    group: Schools and Programs
   - title: Middlebury School of the Environment
+    group: Schools and Programs
   - title: Undergraduate Admissions
+    group: Schools and Programs
   - title: Admissions
+    group: Schools and Programs
   - title: Student Financial Services (Financial Aid, Bursar, Cashier)
+    group: Schools and Programs
   - title: International Student and Scholar Services
-- title: Technology
-  items:
+    group: Schools and Programs
+
   - title: Academic Technology
+    group: Technology
   - title: Administrative Systems (Banner)
+    group: Technology
   - title: Information Security
+    group: Technology
   - title: Information Technology Services
+    group: Technology
   - title: Reporting and Business Intelligence
+    group: Technology
   - title: SensusAccess
+    group: Technology
   - title: Technology HelpDesk
+    group: Technology
   - title: Telephone Services
+    group: Technology
   - title: WebMail
+    group: Technology

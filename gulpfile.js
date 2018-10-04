@@ -23,6 +23,7 @@ const postcssPresetEnv = require('postcss-preset-env');
 const mqPacker = require('css-mqpacker');
 const sortCSSMq = require('sort-css-media-queries');
 const cssnano = require('cssnano');
+const _ = require('lodash');
 
 const rollupBabel = require('rollup-plugin-babel');
 const rollupResolve = require('rollup-plugin-node-resolve');
@@ -187,7 +188,24 @@ gulp.task('html', () => {
     )
     .pipe(
       twig({
-        base: './src/templates'
+        base: './src/templates',
+        filters: [
+          {
+            name: 'groupBy',
+            func: (items, field) => {
+              const grouped = _.groupBy(items, field[0]);
+
+              const groupArr = Object.keys(grouped).map(key => ({
+                group: key,
+                items: grouped[key]
+              }));
+
+              console.log(groupArr);
+
+              return groupArr;
+            }
+          }
+        ]
       })
     )
     .pipe(prettify())
