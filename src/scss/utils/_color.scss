@@ -1,7 +1,8 @@
 $text-colors: (
   'primary': $brand-primary,
   'secondary': $brand-secondary,
-  'white': $white
+  'white': $white,
+  'gray': $gray
 );
 
 @each $name, $hex in $text-colors {
