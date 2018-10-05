@@ -9,7 +9,9 @@
       display: none !important;
     }
     // .d#{$infix}-inline       { display: inline !important; }
-    // .d#{$infix}-inline-block { display: inline-block !important; }
+    .d#{$infix}-inline-block {
+      display: inline-block !important;
+    }
     .d#{$infix}-block {
       display: block !important;
     }
