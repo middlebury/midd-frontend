@@ -2,100 +2,110 @@
 {% extends "midd-layout.twig" %}
 
 {% set page_header = {
-  title: 'Offices',
+  title: 'Offices and Services',
   breadcrumb: []
 } %}
 
 {% block page %}
 
+<div data-sifter>
 
-<div class="container">
+{% embed 'partials/sidebar-layout.twig' %}
+  {% block sidebar %}
 
-  <div class="row mb-7">
-    <div class="col-md-6">
+  {# <div class="row"> #}
+    {# <div class="col-md-8 mb-8 pr-md-0"> #}
+    <div class="mb-4">
       <label for="">Find on page</label>
-      <input type="search" class="form-control" placeholder="Department name">
+      <div class="input-group">
+        <div class="input-group__field">
+          <input
+            type="search"
+            class="form-control form-control--sm"
+            placeholder="Type a department name..."
+            data-sifter-input
+          >
+        </div>
+        <div class="input-group__button">
+          <button type="submit" aria-label="Filter by name" class="button button--sm button--primary">
+            <svg class="icon">
+              <use href="#icon-search"/>
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
-    <div class="col-md-6">
-      <label for="">Display by</label>
-      <select name="" id="" class="form-control">
+    {# </div> #}
+    {# <div class="col-md-4 mb-8"> #}
+      {# <label for="">Display by</label>
+      <select name="" id="" class="form-control form-control--sm">
         <option value="" selected>Group</option>
         <option value="">A-Z</option>
-      </select>
-    </div>
-  </div>
+      </select> #}
+    {# </div> #}
+  {# </div> #}
 
-  {% for item in offices %}
+  {% endblock %}
+  {% block content %}
 
-    <h2 class="mb-5">{{item.title}}</h2>
 
-    <style>
-    .table td {vertical-align:middle;}
-    .table {
-      table-layout: fixed;
-    }
-    </style>
+    {% for item in offices|groupBy('group') %}
 
-    <table class="table mt-0">
-    {% for subitem in item.items %}
-      <tr>
-        <td class="w-25">
-          <a href="" class="link-underline">{{subitem.title}}</a>
-        </td>
-        <td>
-          {% if random(2) %}
-          <a href="">
-            admissions@middlebury.edu
-          </a>
-          {% endif %}
-        </td>
-        <td>
-          {% if random(2) %}
-            802-555-5555
-          {% endif %}
-        </td>
-        <td>
-          {% if random(2) %}
-            152 College St<br>Middlebury, VT 05753
-          {% endif %}
-        </td>
-        <td>
+      <section class="mb-7 js-sifter-item-parent">
 
-        {% for social in ['youtube', 'facebook', 'instagram', 'twitter', 'vimeo'] %}
-          {% if random(1) %}
-            <a href="">
-              <svg class="icon">
-                <use href="#icon-{{social}}" />
-              </svg>
-            </a>
-          {% endif %}
-        {% endfor %}
-          {# <a href="">
-            <svg class="icon">
-              <use href="#icon-facebook" />
-            </svg>
-          </a>
-          <a href="">
-            <svg class="icon">
-              <use href="#icon-twitter" />
-            </svg>
-          </a>
-          <a href="">
-            <svg class="icon">
-              <use href="#icon-instagram" />
-            </svg>
-          </a>
-          <a href="">
-            <svg class="icon">
-              <use href="#icon-vimeo" />
-            </svg>
-          </a> #}
-        </td>
-      </tr>
+        <h2 class="mb-5">{{item.group}}</h2>
+
+        <div class="col-count-md-2">
+
+          {% for subitem in item.items %}
+            <article
+              class="w-100 d-inline-block mb-5"
+              data-sifter-item="{{subitem.title}}"
+              data-sifter-item-parent=".js-sifter-item-parent"
+            >
+              <h3 class="f4 mb-2 font-sans-serif">
+                <a href="" class="link-underline">{{subitem.title}}</a>
+              </h3>
+
+              {% if random(2) %}
+                <p class="f2"><a href="">admissions@middlebury.edu</a></p>
+              {% endif %}
+
+              {% if random(2) %}
+                <p class="f2">802-555-5555</p>
+              {% endif %}
+
+              {% if random(2) %}
+                <p class="f2">152 College St<br>Middlebury, VT 05753</p>
+              {% endif %}
+
+              <div class="d-flex mt2">
+                {% for social in ['youtube', 'facebook', 'instagram', 'twitter', 'vimeo'] %}
+                  {% if random(1) %}
+                    <div class="mr-2">
+                      <a href="" class="hover-fadein d-inline-block p-1">
+                        <svg class="icon"><use xlink:href="#icon-{{social}}" /></svg>
+                      </a>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+
+            </article>
+          {% endfor %}
+
+        </div>
+
+      {% if loop.index != offices.length %}
+        <hr class="my-7">
+      {% endif %}
+
+      </section>
+
     {% endfor %}
-    </table>
 
-  {% endfor %}
+  {% endblock %}
+{% endembed %}
 
 </div>
 

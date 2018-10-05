@@ -95,10 +95,35 @@
   @include link-border;
 }
 
-.w-50 {
-  width: 50%;
+.col-count-md-2 {
+  @include media(md) {
+    column-count: 2;
+    column-gap: 2rem;
+    // grid-template-columns: 1fr 1fr;
+    // display: grid;
+    // grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  }
 }
 
-.w-25 {
-  width: 25%;
+.w-100 {
+  width: 100%;
+}
+
+.hover-fadein {
+  opacity: 0.5;
+  transition: opactiy 0.2s;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.sifter-parent {
+}
+
+.sifter-has-hidden-items {
+  display: block;
+}
+
+.sifter-item-hidden {
+  display: none !important;
 }
