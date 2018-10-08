@@ -1,0 +1,7 @@
+.hover-fadein {
+  opacity: 0.5;
+  transition: opactiy 0.2s;
+  &:hover {
+    opacity: 1;
+  }
+}

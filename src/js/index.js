@@ -6,5 +6,6 @@ import './video';
 import './responsive-table';
 import './events-datepicker';
 import './audio-player';
+import './sifter';
 
 focusWithin(document);

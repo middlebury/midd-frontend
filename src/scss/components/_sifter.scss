@@ -1,0 +1,36 @@
+/*
+ * TODO: clean this up
+ * - use classes or data attributes only
+ * - remove need for !important
+ */
+
+.sifter-parent {
+}
+
+.sifter-active {
+  [data-sifter-item-parent] {
+    display: none;
+  }
+
+  .sifter-item-parent-active {
+    display: block;
+  }
+
+  [data-sifter-item] {
+    display: none !important;
+  }
+
+  .sifter-item-active {
+    display: inline-block !important;
+  }
+}
+
+.sifter-no-results {
+  [data-sifter-item-parent] {
+    display: none;
+  }
+}
+
+.sifter-item-parent-active {
+  // display: block;
+}

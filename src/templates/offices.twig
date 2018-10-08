@@ -13,8 +13,6 @@
 {% embed 'partials/sidebar-layout.twig' %}
   {% block sidebar %}
 
-  {# <div class="row"> #}
-    {# <div class="col-md-8 mb-8 pr-md-0"> #}
     <div class="mb-4">
       <label for="">Find on page</label>
       <div class="input-group">
@@ -35,15 +33,6 @@
         </div>
       </div>
     </div>
-    {# </div> #}
-    {# <div class="col-md-4 mb-8"> #}
-      {# <label for="">Display by</label>
-      <select name="" id="" class="form-control form-control--sm">
-        <option value="" selected>Group</option>
-        <option value="">A-Z</option>
-      </select> #}
-    {# </div> #}
-  {# </div> #}
 
   {% endblock %}
   {% block content %}
@@ -51,7 +40,7 @@
 
     {% for item in offices|groupBy('group') %}
 
-      <section class="mb-7 js-sifter-item-parent">
+      <section class="mb-7" data-sifter-item-parent>
 
         <h2 class="mb-5">{{item.group}}</h2>
 
@@ -61,7 +50,6 @@
             <article
               class="w-100 d-inline-block mb-5"
               data-sifter-item="{{subitem.title}}"
-              data-sifter-item-parent=".js-sifter-item-parent"
             >
               <h3 class="f4 mb-2 font-sans-serif">
                 <a href="" class="link-underline">{{subitem.title}}</a>
@@ -103,6 +91,12 @@
       </section>
 
     {% endfor %}
+
+    <div data-sifter-message hidden>
+      <div class="alert alert--info">
+        <p data-sifter-no-results-value='No results found for "{term}"'></p>
+      </div>
+    </div>
 
   {% endblock %}
 {% endembed %}
