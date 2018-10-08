@@ -200,8 +200,6 @@ gulp.task('html', () => {
                 items: grouped[key]
               }));
 
-              console.log(groupArr);
-
               return groupArr;
             }
           }
