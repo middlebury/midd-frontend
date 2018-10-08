@@ -90,10 +90,6 @@
   // padding-top: spacing(5);
 }
 
-.visually-hidden {
-  @include sr-only;
-}
-
 .link-underline {
   @include link-border;
 }
