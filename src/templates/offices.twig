@@ -34,69 +34,81 @@
     {% endblock %}
     {% block content %}
 
-      <div class="js-offices-region" id="midd-offices">
+      <div class="row">
+        <div class="col-md-3 order-md-2">
 
-        {% for item in offices|groupBy('group') %}
+          <div data-digest-nav></div>
 
-          <section class="mb-7 border-b-1 pb-7 js-offices-group">
+        </div>
+        <div class="col-md-9 order-md-1">
 
-            <h2 class="mb-5">{{item.group}}</h2>
+          <div class="js-offices-region" id="midd-offices" data-digest-content>
 
-            <div class="col-count-md-2">
+            {% for item in offices|groupBy('group') %}
 
-              {% for subitem in item.items %}
-                <article class="w-100 d-inline-block mb-5 js-offices-item">
-                  <h3 class="f4 mb-2 font-sans-serif js-offices-title">
-                    <a href="" class="link-underline">{{subitem.title}}</a>
-                  </h3>
+              <section class="mb-7 border-b-1 pb-7 js-offices-group">
 
-                  <p class="f2">
-                    {% if random(2) %}
-                      <a href="">admissions@middlebury.edu</a><br>
-                    {% endif %}
+                <h2 class="mb-5">{{item.group}}</h2>
 
-                    {% if random(2) %}
-                      <a href="tel:">(802) 555-5555</a><br>
-                    {% endif %}
+                <div class="col-count-md-2">
 
-                    {% if random(2) %}
-                      152 College St<br>Middlebury, VT 05753
-                    {% endif %}
-                  </p>
+                  {% for subitem in item.items %}
+                    <article class="w-100 d-inline-block mb-5 js-offices-item">
+                      <h3 class="f4 mb-2 font-sans-serif js-offices-title">
+                        <a href="" class="link-underline">{{subitem.title}}</a>
+                      </h3>
 
-                  <div class="d-flex">
-                    {% for social in ['youtube', 'facebook', 'instagram', 'twitter', 'vimeo'] %}
-                      {% if random(1) %}
-                        <div class="mr-2">
-                          <a href="" class="hover-fadein d-inline-block p-1">
-                            <svg class="icon"><use xlink:href="#icon-{{social}}" /></svg>
-                          </a>
-                        </div>
-                      {% endif %}
-                    {% endfor %}
-                  </div>
+                      <p class="f2">
+                        {% if random(2) %}
+                          <a href="">admissions@middlebury.edu</a><br>
+                        {% endif %}
 
-                </article>
-              {% endfor %}
+                        {% if random(2) %}
+                          <a href="tel:">(802) 555-5555</a><br>
+                        {% endif %}
 
-            </div>
+                        {% if random(2) %}
+                          152 College St<br>Middlebury, VT 05753
+                        {% endif %}
+                      </p>
 
-          </section>
+                      <div class="d-flex">
+                        {% for social in ['youtube', 'facebook', 'instagram', 'twitter', 'vimeo'] %}
+                          {% if random(1) %}
+                            <div class="mr-2">
+                              <a href="" class="hover-fadein d-inline-block p-1">
+                                <svg class="icon"><use xlink:href="#icon-{{social}}" /></svg>
+                              </a>
+                            </div>
+                          {% endif %}
+                        {% endfor %}
+                      </div>
 
-        {% endfor %}
+                    </article>
+                  {% endfor %}
 
-        <div
-          class="alert alert--info js-offices-alert"
-          data-template='No results found for "{term}"'
-          hidden
-        />
+                </div>
 
-      </div>
+              </section>
 
-    {% endblock %}
-  {% endembed %}
+            {% endfor %}
+
+            <div
+              class="alert alert--info js-offices-alert"
+              data-template='No results found for "{term}"'
+              hidden
+            />
+
+          </div>
+
+        {% endblock %}
+      {% endembed %}
+
+    </div>
+
 
   </div>
+</div>
 
 {% endblock %}
 
