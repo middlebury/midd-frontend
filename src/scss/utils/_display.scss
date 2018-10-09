@@ -6,20 +6,20 @@
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
     .d#{$infix}-none {
-      display: none !important;
+      display: none;
     }
-    // .d#{$infix}-inline       { display: inline !important; }
+    // .d#{$infix}-inline       { display: inline ; }
     .d#{$infix}-inline-block {
-      display: inline-block !important;
+      display: inline-block;
     }
     .d#{$infix}-block {
-      display: block !important;
+      display: block;
     }
-    // .d#{$infix}-table        { display: table !important; }
-    // .d#{$infix}-table-cell   { display: table-cell !important; }
+    // .d#{$infix}-table        { display: table ; }
+    // .d#{$infix}-table-cell   { display: table-cell ; }
     .d#{$infix}-flex {
-      display: flex !important;
+      display: flex;
     }
-    // .d#{$infix}-inline-flex  { display: inline-flex !important; }
+    // .d#{$infix}-inline-flex  { display: inline-flex ; }
   }
 }

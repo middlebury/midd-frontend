@@ -7,44 +7,44 @@
     @each $prop, $abbrev in (margin: m, padding: p) {
       @each $size, $length in $spacing {
         .#{$abbrev}#{$infix}-#{$size} {
-          #{$prop}: $length !important;
+          #{$prop}: $length;
         }
         .#{$abbrev}t#{$infix}-#{$size} {
-          #{$prop}-top: $length !important;
+          #{$prop}-top: $length;
         }
         .#{$abbrev}r#{$infix}-#{$size} {
-          #{$prop}-right: $length !important;
+          #{$prop}-right: $length;
         }
         .#{$abbrev}b#{$infix}-#{$size} {
-          #{$prop}-bottom: $length !important;
+          #{$prop}-bottom: $length;
         }
         .#{$abbrev}l#{$infix}-#{$size} {
-          #{$prop}-left: $length !important;
+          #{$prop}-left: $length;
         }
         .#{$abbrev}x#{$infix}-#{$size} {
-          #{$prop}-right: $length !important;
-          #{$prop}-left: $length !important;
+          #{$prop}-right: $length;
+          #{$prop}-left: $length;
         }
         .#{$abbrev}y#{$infix}-#{$size} {
-          #{$prop}-top: $length !important;
-          #{$prop}-bottom: $length !important;
+          #{$prop}-top: $length;
+          #{$prop}-bottom: $length;
         }
       }
     }
 
     // Some special margin utils
-    // .m#{$infix}-auto  { margin:        auto !important; }
-    // .mt#{$infix}-auto { margin-top:    auto !important; }
-    // .mr#{$infix}-auto { margin-right:  auto !important; }
-    // .mb#{$infix}-auto { margin-bottom: auto !important; }
-    // .ml#{$infix}-auto { margin-left:   auto !important; }
+    // .m#{$infix}-auto  { margin:        auto; }
+    // .mt#{$infix}-auto { margin-top:    auto; }
+    // .mr#{$infix}-auto { margin-right:  auto; }
+    // .mb#{$infix}-auto { margin-bottom: auto; }
+    // .ml#{$infix}-auto { margin-left:   auto; }
     // .mx#{$infix}-auto {
-    //   margin-right: auto !important;
-    //   margin-left:  auto !important;
+    //   margin-right: auto;
+    //   margin-left:  auto;
     // }
     // .my#{$infix}-auto {
-    //   margin-top:    auto !important;
-    //   margin-bottom: auto !important;
+    //   margin-top:    auto;
+    //   margin-bottom: auto;
     // }
   }
 }
