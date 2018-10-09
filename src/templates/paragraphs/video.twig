@@ -2,12 +2,7 @@
 <figure class="my-7 video js-video" data-video='<iframe src="https://player.vimeo.com/video/221201240" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'>
   <div class="video__content js-video-content">
     <a href="https://player.vimeo.com/video/221201240" class="js-video-link">
-      <img
-        src="https://i.vimeocdn.com/video/639399875_640.jpg"
-        srcset="https://i.vimeocdn.com/video/639399875_640.jpg 640w, https://i.vimeocdn.com/video/639399875_200x150.jpg 200w, https://i.vimeocdn.com/video/639399875_100x75.jpg 100w"
-        sizes="(max-width: 640px) 100vw, 640px"
-        alt=""
-      />
+      {% include 'partials/img.twig' with { name: 'video' } %}
       <span class="button button--primary video__button">
         Play
         <span class="ml-3">
