@@ -1,4 +1,3 @@
-
 {% extends "midd-layout.twig" %}
 
 {% set page_header = {
@@ -8,100 +7,96 @@
 
 {% block page %}
 
-<div data-sifter>
+<div class="js-offices">
 
-{% embed 'partials/sidebar-layout.twig' %}
-  {% block sidebar %}
+  {% embed 'partials/sidebar-layout.twig' %}
+    {% block sidebar %}
 
-    <div class="mb-4">
-      <label for="">Find on page</label>
-      <div class="input-group">
-        <div class="input-group__field">
-          <input
-            type="search"
-            class="form-control form-control--sm"
-            placeholder="Type a department name..."
-            data-sifter-input
-          >
-        </div>
-        <div class="input-group__button">
-          <button type="submit" aria-label="Filter by name" class="button button--sm button--primary">
-            <svg class="icon">
-              <use href="#icon-search"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-
-  {% endblock %}
-  {% block content %}
-
-
-    {% for item in offices|groupBy('group') %}
-
-      <section class="mb-7" data-sifter-item-parent>
-
-        <h2 class="mb-5">{{item.group}}</h2>
-
-        <div class="col-count-md-2">
-
-          {% for subitem in item.items %}
-            <article
-              class="w-100 d-inline-block mb-5"
-              data-sifter-item="{{subitem.title}}"
+      <div class="form-group js-offices-form">
+        <form>
+          <label for="midd-office-search">Find on page</label>
+          <div class="input-group">
+            <input
+              type="search"
+              class="form-control form-control--sm js-offices-input"
+              placeholder="Type a department name..."
+              id="midd-office-search"
             >
-              <h3 class="f4 mb-2 font-sans-serif">
-                <a href="" class="link-underline">{{subitem.title}}</a>
-              </h3>
-
-              {% if random(2) %}
-                <p class="f2"><a href="">admissions@middlebury.edu</a></p>
-              {% endif %}
-
-              {% if random(2) %}
-                <p class="f2">802-555-5555</p>
-              {% endif %}
-
-              {% if random(2) %}
-                <p class="f2">152 College St<br>Middlebury, VT 05753</p>
-              {% endif %}
-
-              <div class="d-flex mt2">
-                {% for social in ['youtube', 'facebook', 'instagram', 'twitter', 'vimeo'] %}
-                  {% if random(1) %}
-                    <div class="mr-2">
-                      <a href="" class="hover-fadein d-inline-block p-1">
-                        <svg class="icon"><use xlink:href="#icon-{{social}}" /></svg>
-                      </a>
-                    </div>
-                  {% endif %}
-                {% endfor %}
-              </div>
-
-            </article>
-          {% endfor %}
-
-        </div>
-
-      {% if loop.index != offices.length %}
-        <hr class="my-7">
-      {% endif %}
-
-      </section>
-
-    {% endfor %}
-
-    <div data-sifter-message hidden>
-      <div class="alert alert--info">
-        <p data-sifter-no-results-value='No results found for "{term}"'></p>
+            <button type="submit" aria-label="Show results" class="button button--sm button--primary button--outline js-offices-button">
+              <svg class="icon">
+                <use xlink:href="#icon-search">
+              </svg>
+            </button>
+          </div>
+        </form>
       </div>
-    </div>
 
-  {% endblock %}
-{% endembed %}
+    {% endblock %}
+    {% block content %}
 
-</div>
+      <div class="js-offices-region" id="midd-offices">
+
+        {% for item in offices|groupBy('group') %}
+
+          <section class="mb-7 border-b-1 pb-7 js-offices-group">
+
+            <h2 class="mb-5">{{item.group}}</h2>
+
+            <div class="col-count-md-2">
+
+              {% for subitem in item.items %}
+                <article class="w-100 d-inline-block mb-5 js-offices-item">
+                  <h3 class="f4 mb-2 font-sans-serif js-offices-title">
+                    <a href="" class="link-underline">{{subitem.title}}</a>
+                  </h3>
+
+                  <p class="f2">
+                    {% if random(2) %}
+                      <a href="">admissions@middlebury.edu</a><br>
+                    {% endif %}
+
+                    {% if random(2) %}
+                      <a href="tel:">(802) 555-5555</a><br>
+                    {% endif %}
+
+                    {% if random(2) %}
+                      152 College St<br>Middlebury, VT 05753
+                    {% endif %}
+                  </p>
+
+                  <div class="d-flex">
+                    {% for social in ['youtube', 'facebook', 'instagram', 'twitter', 'vimeo'] %}
+                      {% if random(1) %}
+                        <div class="mr-2">
+                          <a href="" class="hover-fadein d-inline-block p-1">
+                            <svg class="icon"><use xlink:href="#icon-{{social}}" /></svg>
+                          </a>
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+
+                </article>
+              {% endfor %}
+
+            </div>
+
+          </section>
+
+        {% endfor %}
+
+        <div
+          class="alert alert--info js-offices-alert"
+          data-template='No results found for "{term}"'
+          hidden
+        />
+
+      </div>
+
+    {% endblock %}
+  {% endembed %}
+
+  </div>
 
 {% endblock %}
 

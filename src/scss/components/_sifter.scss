@@ -4,9 +4,6 @@
  * - remove need for !important
  */
 
-.sifter-parent {
-}
-
 .sifter-active {
   [data-sifter-item-parent] {
     display: none;

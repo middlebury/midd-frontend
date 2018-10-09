@@ -101,3 +101,30 @@
     column-gap: 2rem;
   }
 }
+
+// offices page
+.js-offices {
+  &.has-results {
+    .js-offices-group {
+      display: none;
+
+      &.is-active {
+        display: block;
+      }
+    }
+
+    .js-offices-item {
+      display: none;
+
+      &.is-active {
+        display: inline-block;
+      }
+    }
+  }
+
+  &.is-empty {
+    .js-offices-group {
+      display: none;
+    }
+  }
+}
