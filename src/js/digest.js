@@ -1,15 +1,14 @@
 import AnchorJS from 'anchor-js';
+import SmoothScroll from 'smooth-scroll';
+import MenuSpy from 'menuspy';
 import h from 'h';
 
 import forEach from './utils/forEach';
-import { $, $$ } from './utils/dom';
+import { $$ } from './utils/dom';
 
 class Digest {
   constructor(elem) {
     this.elem = elem;
-
-    this.nav = $(`[data-digest-nav]`);
-    this.headingSelector = `[data-digest-content] h2`;
 
     this.init();
   }
@@ -17,9 +16,11 @@ class Digest {
   init() {
     const anchors = new AnchorJS();
 
-    anchors.add(this.headingSelector);
+    const headingSelector = '[data-digest-content] h2';
 
-    const headings = $$(this.headingSelector);
+    anchors.add(headingSelector);
+
+    const headings = $$(headingSelector);
 
     let items = [];
     forEach(headings, heading => {
@@ -36,13 +37,20 @@ class Digest {
 
     const list = h('ol.digest__list', null, items);
     const title = h('h2.digest__title', null, 'Sections');
-    const nav = h('nav.digest__nav', null, title, list);
+    const nav = h('nav.digest', null, title, list);
 
-    this.nav.appendChild(nav);
+    this.elem.appendChild(nav);
+
+    new MenuSpy(nav, {
+      enableLocationHash: false
+    });
+
+    // TODO: consider using animejs instead
+    new SmoothScroll('.digest__link');
   }
 }
 
-const elems = $$('[data-digest-content]');
+const elems = $$('[data-digest-nav]');
 
 forEach(elems, elem => new Digest(elem));
 

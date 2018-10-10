@@ -1,0 +1,42 @@
+.digest {
+  position: sticky;
+  left: 0;
+  top: 80px;
+  border-left: 1px solid $gray-light;
+  margin-bottom: 2rem;
+}
+
+.digest__title {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 14px;
+  font-family: $font-family-sans-serif;
+  padding: 1rem;
+  margin-left: 4px;
+}
+
+.digest__nav {
+  background-color: $white;
+}
+
+.digest__list {
+}
+
+.digest__item {
+  margin-bottom: 0.5rem;
+}
+
+.digest__link {
+  display: block;
+  font-size: 14px;
+  padding: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-left: 4px solid transparent;
+  transition: border-color 0.2s;
+
+  .digest__item.active & {
+    border-color: $brand-primary;
+  }
+}
+

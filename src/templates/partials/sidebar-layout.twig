@@ -1,11 +1,16 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-10 col-lg-4 col-xl-3 offset-sm-1 offset-lg-0 mb-4">
-      <a href="#midd-content" class="sr-only sr-only-focusable">Skip sidebar</a>
-      {% block sidebar %}{% endblock %}
-    </div>
+      <div class="col-sm-10 col-lg-4 col-xl-3 offset-sm-1 offset-lg-0 mb-4">
+        <a href="#midd-content" class="sr-only sr-only-focusable">Skip sidebar</a>
+        {% block sidebar %}{% endblock %}
+      </div>
 
-    <div class="col-sm-10 col-lg-8 col-xl-7 offset-sm-1 offset-lg-0">
+    {% if full_width %}
+      <div class="col-sm-10 col-lg-8 col-xl-9 offset-sm-1 offset-lg-0">
+    {% else %}
+      <div class="col-sm-10 col-lg-8 col-xl-7 offset-sm-1 offset-lg-0">
+    {% endif %}
+
       {% block content %}{% endblock %}
     </div>
   </div>
