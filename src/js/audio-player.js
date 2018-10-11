@@ -1,6 +1,5 @@
 import onresize from 'onresize';
 
-import forEach from './utils/forEach';
 import { $, $$, on, off, hide, show } from './utils/dom';
 
 const PLAYING_ATTR = 'data-playing';
@@ -153,6 +152,6 @@ class AudioPlayer {
 
 const togglers = $$('[data-audio-player]');
 
-forEach(togglers, elem => new AudioPlayer(elem));
+togglers.forEach(elem => new AudioPlayer(elem));
 
 export default AudioPlayer;

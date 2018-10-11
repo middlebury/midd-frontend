@@ -1,5 +1,3 @@
-import forEach from './utils/forEach';
-
 class Toggler {
   constructor(elem) {
     // this.isToggled = false;
@@ -58,7 +56,7 @@ class Toggler {
   closeGroup() {
     const items = document.querySelectorAll(this.group);
     if (items) {
-      forEach(items, elem => {
+      items.forEach(elem => {
         const target = this.getTarget(elem);
         this.close(elem, target);
       });
@@ -68,7 +66,7 @@ class Toggler {
   toggleLinked() {
     const items = document.querySelectorAll(this.linked);
     if (items) {
-      forEach(items, elem => {
+      items.forEach(elem => {
         const target = this.getTarget(elem);
         if (this.isToggled(target)) {
           return this.close(elem, target);
@@ -133,6 +131,6 @@ class Toggler {
 
 const togglers = document.querySelectorAll('[data-toggle-target]');
 
-forEach(togglers, elem => new Toggler(elem));
+togglers.forEach(elem => new Toggler(elem));
 
 export default Toggler;

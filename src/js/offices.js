@@ -1,7 +1,6 @@
 import debounce from 'lodash.debounce';
 import 'element-closest';
 
-import forEach from './utils/forEach';
 import { $, $$, on, hide, show } from './utils/dom';
 
 (function() {
@@ -54,11 +53,11 @@ import { $, $$, on, hide, show } from './utils/dom';
 
     hide(alert);
 
-    forEach(items, item => {
+    items.forEach(item => {
       item.classList.remove(ITEM_ACTIVE_CLASS);
     });
 
-    forEach(itemParents, parent => {
+    itemParents.forEach(parent => {
       parent.classList.remove(ITEM_PARENT_ACTIVE_CLASS);
     });
   }
@@ -68,7 +67,7 @@ import { $, $$, on, hide, show } from './utils/dom';
 
     let matchedItems = [];
 
-    forEach(items, item => {
+    items.forEach(item => {
       const title = $('.js-offices-title', item).textContent;
 
       const pattern = new RegExp(`${value}`, 'gi');
@@ -91,7 +90,7 @@ import { $, $$, on, hide, show } from './utils/dom';
 
     hide(alert);
 
-    forEach(matchedItems, item => {
+    matchedItems.forEach(item => {
       const parent = item.closest('.js-offices-group');
       elem.classList.add(ACTIVE_CLASS);
       item.classList.add(ITEM_ACTIVE_CLASS);

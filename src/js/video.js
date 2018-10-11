@@ -1,4 +1,3 @@
-import forEach from './utils/forEach';
 import decodeHtml from './utils/decodeHtml';
 
 class VideoSwap {
@@ -11,6 +10,8 @@ class VideoSwap {
     this.activeClass = 'has-video';
 
     this.handleVideoEmbedClick = this.handleVideoEmbedClick.bind(this);
+
+    this.init();
   }
 
   init() {
@@ -36,11 +37,6 @@ class VideoSwap {
 
 const elems = document.querySelectorAll('.js-video');
 
-if (elems) {
-  forEach(elems, elem => {
-    const videoSwapper = new VideoSwap(elem);
-    videoSwapper.init();
-  });
-}
+elems.forEach(elem => new VideoSwap(elem));
 
 export default VideoSwap;

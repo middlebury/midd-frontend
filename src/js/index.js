@@ -1,3 +1,4 @@
+import 'polyfill-nodelist-foreach';
 import focusWithin from 'focus-within';
 
 import './headroom';

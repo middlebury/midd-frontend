@@ -3,7 +3,6 @@ import SmoothScroll from 'smooth-scroll';
 import MenuSpy from 'menuspy';
 import h from 'h';
 
-import forEach from './utils/forEach';
 import { $$ } from './utils/dom';
 
 class Digest {
@@ -23,7 +22,7 @@ class Digest {
     const headings = $$(headingSelector);
 
     let items = [];
-    forEach(headings, heading => {
+    headings.forEach(heading => {
       const link = h(
         'a.digest__link',
         { href: '#' + heading.id },
@@ -52,6 +51,6 @@ class Digest {
 
 const elems = $$('[data-digest-nav]');
 
-forEach(elems, elem => new Digest(elem));
+elems.forEach(elem => new Digest(elem));
 
 export default Digest;

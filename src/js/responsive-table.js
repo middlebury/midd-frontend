@@ -1,5 +1,3 @@
-import forEach from './utils/forEach';
-
 class ResponsiveTable {
   constructor(elem) {
     this.elem = elem;
@@ -14,10 +12,10 @@ class ResponsiveTable {
       return;
     }
 
-    forEach(this.rows, row => {
+    this.rows.forEach(row => {
       const cells = row.querySelectorAll('td');
 
-      forEach(cells, (cell, index) => {
+      cells.forEach((cell, index) => {
         const label = this.heads[index] ? this.heads[index].innerText : '';
         if (label) {
           cell.setAttribute('data-th', label);
@@ -29,8 +27,6 @@ class ResponsiveTable {
 
 const tables = document.querySelectorAll('table');
 
-if (tables) {
-  forEach(tables, elem => new ResponsiveTable(elem));
-}
+tables.forEach(elem => new ResponsiveTable(elem));
 
 export default ResponsiveTable;

@@ -75,6 +75,7 @@
     "object-fit-images": "^3.2.3",
     "onresize": "^1.0.1",
     "pikaday": "^1.7.0",
+    "polyfill-nodelist-foreach": "^1.0.1",
     "smooth-scroll": "^14.2.1",
     "swiper": "^4.1.0"
   },
