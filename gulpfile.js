@@ -24,6 +24,7 @@ const mqPacker = require('css-mqpacker');
 const sortCSSMq = require('sort-css-media-queries');
 const cssnano = require('cssnano');
 const _ = require('lodash');
+const zip = require('gulp-zip');
 
 const rollupBabel = require('rollup-plugin-babel');
 const rollupResolve = require('rollup-plugin-node-resolve');
@@ -269,6 +270,25 @@ gulp.task('deploy', ['replace:imageurls'], () => {
       }
     )
     .pipe(gulp.dest(dest));
+});
+
+gulp.task('bundle:markup', () => {
+  return gulp
+    .src(
+      [
+        './dist/midd-wrapper.html',
+        './dist/css/main.css',
+        './dist/js/bundle.js',
+        './dist/images/midd-shield.svg',
+        './dist/images/midd-wordmark.svg',
+        './dist/images/middlebury-logo-white.svg'
+      ],
+      {
+        base: './dist/'
+      }
+    )
+    .pipe(zip(`midd-wrapper-${new Date().getTime()}.zip`))
+    .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('build', [

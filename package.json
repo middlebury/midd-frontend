@@ -7,6 +7,7 @@
     "dev": "gulp dev",
     "build": "gulp build --production",
     "build:icons": "gulp icons && gulp copy:icons",
+    "wrapper": "npm run build && gulp bundle:markup",
     "deploy": "gulp deploy --production",
     "test": "bundlesize",
     "lint": "eslint src/js/**"
@@ -47,6 +48,7 @@
     "gulp-size": "^2.1.0",
     "gulp-sourcemaps": "^2.4.1",
     "gulp-twig": "^0.7.0",
+    "gulp-zip": "^4.2.0",
     "js-yaml": "^3.8.2",
     "lodash": "^4.17.11",
     "postcss-preset-env": "^5.3.0",
