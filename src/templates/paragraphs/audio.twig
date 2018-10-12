@@ -1,32 +1,7 @@
 <div class="audio my-7">
-  <div class="audio__player" data-audio-player>
-    <audio controls data-audio>
-      <source src="https://www.middlebury.edu/institute/sites/www.middlebury.edu.institute/files/2018-02/Ace_Your_Interview_v2.mp3" type="audio/mpeg">
-    </audio>
-    <div class="audio__buttons">
-      <button class="button button--primary" data-play aria-label="Play" aria-describedby="midd-audio-title-1">
-        <span class="audio__button-text">Listen</span>
-        <svg class="icon icon--sm ml-3">
-          <use xlink:href="#icon-play" />
-        </svg>
-      </button>
-      <button class="button button--primary" data-pause>
-        <span class="audio__button-text">Pause</span>
-        <svg class="icon icon--sm ml-3">
-          <use xlink:href="#icon-pause" />
-        </svg>
-      </button>
-    </div>
-    <div class="audio__times">
-      <span data-current-time></span> / <span data-duration></span>
-    </div>
-    <div class="audio__track" data-track>
-      <div class="audio__slider" role="slider" aria-label="Current time" tabindex="0" data-slider></div>
-    </div>
-    <div class="audio__mute">
-      <button class="button button--sm" data-mute>Mute</button>
-    </div>
-  </div>
+  <audio controls class="js-audio">
+    <source src="https://www.middlebury.edu/institute/sites/www.middlebury.edu.institute/files/2018-02/Ace_Your_Interview_v2.mp3" type="audio/mpeg">
+  </audio>
   <div class="audio__body">
     <h3 class="audio__title" id="midd-audio-title-1">Audio title</h3>
     <p class="audio__text" id="midd-audio-text-1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis commodi placeat, perferendis ratione vitae officiis vero. Commodi ullam fugiat expedita qui veritatis adipisci minus quod neque! Voluptatum tempora iure quo.</p>

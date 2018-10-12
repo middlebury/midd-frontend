@@ -40,7 +40,23 @@
   padding-right: 1rem;
 }
 
-.audio__track {
+.audio__mute {
+}
+
+.audio__title {
+  margin-bottom: 0.5rem;
+}
+
+.audio__body {
+  padding: 1rem;
+  border: 1px solid $border-color;
+  border-top: 0;
+}
+
+// Slider styles
+
+// TODO: move to parial
+.slider__track {
   height: 100%;
   width: 100%;
   position: relative;
@@ -57,7 +73,7 @@
   }
 }
 
-.audio__slider {
+.slider__tab {
   text-indent: -9999px;
   display: block;
   background-color: $brand-primary;
@@ -67,23 +83,4 @@
   // position: absolute;
   // top: -7px;
   // left: 0;
-}
-
-.audio__mute {
-}
-
-.audio__title {
-  margin-bottom: 0.5rem;
-}
-
-.audio__body {
-  padding: 1rem;
-  border: 1px solid $border-color;
-  border-top: 0;
-}
-
-.js-audio-player {
-  audio {
-    // display: none;
-  }
 }

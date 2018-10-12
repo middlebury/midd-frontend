@@ -149,7 +149,11 @@ gulp.task('scripts:dev', () =>
               }
             ]
           ],
-          plugins: ['external-helpers', 'transform-class-properties']
+          plugins: [
+            ['transform-react-jsx', { pragma: 'h' }],
+            'external-helpers',
+            'transform-class-properties'
+          ]
         }),
         rollupResolve(),
         rollupCommon(),
