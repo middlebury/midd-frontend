@@ -1,9 +1,9 @@
 import AnchorJS from 'anchor-js';
 import SmoothScroll from 'smooth-scroll';
-import MenuSpy from 'menuspy';
 import h from 'h';
 
 import { $$ } from './utils/dom';
+import MenuSpy from './menu-spy';
 
 class Digest {
   constructor(elem) {
@@ -40,9 +40,7 @@ class Digest {
 
     this.elem.appendChild(nav);
 
-    new MenuSpy(nav, {
-      enableLocationHash: false
-    });
+    new MenuSpy(nav);
 
     // TODO: consider using animejs instead
     new SmoothScroll('.digest__link');

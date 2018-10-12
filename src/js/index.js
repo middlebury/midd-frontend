@@ -1,4 +1,5 @@
 import 'polyfill-nodelist-foreach';
+import 'intersection-observer';
 import focusWithin from 'focus-within';
 
 import './headroom';
