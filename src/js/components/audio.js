@@ -78,19 +78,20 @@ class AudioPlayer extends Component {
     }
   };
 
-  handleSliderChange = value => {
-    console.log(value);
-  };
-
   handleTrackClick = percent => {
     const targetTime = this.audio.duration * percent;
-
     this.audio.currentTime = targetTime;
   };
 
-  render() {
-    const { duration, currentTime, muted, playing } = this.state;
+  handleSliderLeft = () => {
+    this.audio.currentTime = this.audio.currentTime - 3;
+  };
 
+  handleSliderRight = () => {
+    this.audio.currentTime = this.audio.currentTime + 3;
+  };
+
+  render(props, { duration, currentTime, muted, playing }) {
     return (
       <div class="audio__player">
         <div class="audio__buttons">
@@ -100,10 +101,10 @@ class AudioPlayer extends Component {
             aria-describedby="midd-audio-title-1"
             onClick={this.handleBtnClick}
           >
-            <span class="audio__button-text">
+            <span class="audio__button-text mr-3">
               {playing ? 'Pause' : 'Listen'}
             </span>
-            <svg class="icon icon--sm ml-3">
+            <svg class="icon icon--sm">
               <use xlinkHref={`#icon-${playing ? 'pause' : 'play'}`} />
             </svg>
           </button>
@@ -117,7 +118,8 @@ class AudioPlayer extends Component {
           min={0}
           max={duration}
           value={currentTime}
-          onChange={this.handleSliderChange}
+          onLeftKeyDown={this.handleSliderLeft}
+          onRightKeyDown={this.handleSliderRight}
           onTrackClick={this.handleTrackClick}
         />
         <div class="audio__mute">

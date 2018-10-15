@@ -1,46 +1,35 @@
-import { h, render, Component } from 'preact';
-import onresize from 'onresize';
+import { h, Component } from 'preact';
 
 const RIGHT_ARROW_KEY = 39;
 const LEFT_ARROW_KEY = 37;
 
 class Slider extends Component {
-  state = {
-    trackWidth: 0
-  };
-
-  componentDidMount() {
-    console.log('mounted');
-    const trackWidth = this.track.offsetWidth;
-    console.log(this.track.offsetWidth);
-
-    this.setState({
-      trackWidth
-    });
-  }
-
   handleKeyDown = event => {
     if (event.keyCode === RIGHT_ARROW_KEY) {
-      this.handleRightArrowPress();
+      this.handleRightArrowDown();
     } else if (event.keyCode === LEFT_ARROW_KEY) {
-      this.handleLeftArrowPress();
+      this.handleLeftArrowDown();
     }
   };
 
-  handleRightArrowPress = () => {
-    console.log('right');
+  handleRightArrowDown = () => {
+    const { onRightKeyDown } = this.props;
+    if (onRightKeyDown) {
+      onRightKeyDown();
+    }
   };
 
-  handleLeftArrowPress = () => {
-    console.log('left');
+  handleLeftArrowDown = () => {
+    const { onLeftKeyDown } = this.props;
+    if (onLeftKeyDown) {
+      onLeftKeyDown();
+    }
   };
 
   handleTrackClick = event => {
     const { onTrackClick } = this.props;
     const sliderWidth = this.track.offsetWidth;
     const clickLocation = event.layerX;
-
-    console.log(sliderWidth);
 
     const percentage = clickLocation / sliderWidth;
 
@@ -49,32 +38,34 @@ class Slider extends Component {
     }
   };
 
-  render({ min, max, value }, { trackWidth, label }) {
-    const percentageOfSlider = max / value;
-
-    const sliderLeft = Math.round(percentageOfSlider);
-    console.log({ sliderLeft, max, value, percentageOfSlider });
+  render({ min, max, value, id, label }) {
+    const sliderLeft = (value / max) * 100;
 
     return (
-      <div
-        class="slider__track"
-        ref={c => (this.track = c)}
-        onClick={this.handleTrackClick}
-      >
+      <div class="slider">
+        <label htmlFor={id} class="slider__label">
+          {label}
+        </label>
         <div
-          class="slider__tab"
-          role="slider"
-          style={{
-            position: 'relative',
-            left: sliderLeft + '%'
-          }}
-          aria-valuemin={min}
-          aria-valuemax={max}
-          aria-valuenow={value}
-          aria-label={label}
-          tabindex="0"
-          onKeyDown={this.handleKeyDown}
-        />
+          class="slider__track"
+          ref={c => (this.track = c)}
+          onClick={this.handleTrackClick}
+        >
+          <div
+            id={id}
+            class="slider__handle"
+            role="slider"
+            style={{
+              position: 'relative',
+              left: sliderLeft + '%'
+            }}
+            aria-valuemin={min}
+            aria-valuemax={max}
+            aria-valuenow={value}
+            tabindex="0"
+            onKeyDown={this.handleKeyDown}
+          />
+        </div>
       </div>
     );
   }
