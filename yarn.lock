@@ -7153,6 +7153,10 @@ stdout-stream@^1.4.0:
   dependencies:
     readable-stream "^2.0.1"
 
+stickybits@^3.5.6:
+  version "3.5.6"
+  resolved "https://registry.yarnpkg.com/stickybits/-/stickybits-3.5.6.tgz#740925d6de78f7604b1cd69bb8e5cdfdc542f2fe"
+
 stream-combiner2@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/stream-combiner2/-/stream-combiner2-1.1.1.tgz#fb4d8a1420ea362764e21ad4780397bebcb41cbe"
