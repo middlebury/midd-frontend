@@ -139,22 +139,7 @@ gulp.task('scripts:dev', () =>
     .rollup({
       input: './src/js/index.js',
       plugins: [
-        rollupBabel({
-          exclude: 'node_modules/**',
-          presets: [
-            [
-              'env',
-              {
-                modules: false
-              }
-            ]
-          ],
-          plugins: [
-            ['transform-react-jsx', { pragma: 'h' }],
-            'external-helpers',
-            'transform-class-properties'
-          ]
-        }),
+        rollupBabel(),
         rollupResolve(),
         rollupCommon(),
         production && uglify()
