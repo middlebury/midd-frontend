@@ -149,7 +149,7 @@ gulp.task('scripts:dev', () =>
       bundle.write({
         file: './dist/js/bundle.js',
         format: 'iife',
-        sourcemap: true
+        sourcemap: !production
       })
     )
     .then(() => {
