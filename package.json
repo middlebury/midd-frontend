@@ -6,6 +6,7 @@
     "start": "gulp",
     "dev": "gulp dev",
     "build": "gulp build --production",
+    "build:scripts": "gulp scripts:dev --production",
     "build:icons": "gulp icons && gulp copy:icons",
     "wrapper": "npm run build && gulp bundle:markup",
     "deploy": "gulp deploy --production",
