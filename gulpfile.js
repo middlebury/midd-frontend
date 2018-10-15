@@ -146,16 +146,11 @@ gulp.task('scripts:dev', () =>
       ]
     })
     .then(bundle =>
-      // TODO: figure out how to only build one and import it into gatsby site
-      Promise.all([
-        bundle.write({
-          file: './dist/js/bundle.js',
-          format: 'iife',
-          name: 'MDS',
-          sourcemap: true
-        })
-        // bundle.write(docsBundle)
-      ])
+      bundle.write({
+        file: './dist/js/bundle.js',
+        format: 'iife',
+        sourcemap: true
+      })
     )
     .then(() => {
       browserSync.reload();
