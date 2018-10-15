@@ -11,5 +11,7 @@ elems.forEach(elem => {
 
   render(<AudioPlayer audio={elem} />, root);
 
+  elem.style.display = 'none';
+
   elem.parentNode.insertBefore(root, elem.nextSibling);
 });
