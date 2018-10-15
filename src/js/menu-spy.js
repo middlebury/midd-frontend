@@ -1,12 +1,8 @@
 import { $, $$ } from './utils/dom';
 
-const defaults = {
-  activeClass: 'active'
-};
-
 class MenuSpy {
-  constructor(elem, config) {
-    this.options = Object.assign({}, defaults, config);
+  constructor(elem) {
+    this.activeClass = 'active';
 
     this.elem = typeof elem === 'string' ? $(elem) : elem;
 
@@ -32,17 +28,14 @@ class MenuSpy {
   }
 
   removeActiveClass() {
-    const { activeClass } = this.options;
-    const activeLink = $(`.${activeClass}`, this.elem);
+    const activeLink = $(`.${this.activeClass}`, this.elem);
 
     if (activeLink) {
-      activeLink.classList.remove(activeClass);
+      activeLink.classList.remove(this.activeClass);
     }
   }
 
-  onChange = (changes, observer) => {
-    const { activeClass } = this.options;
-
+  onChange = changes => {
     // reverse the changes else the last item becomes highlighted
     // due to it being out of view and triggering the else if
     changes.reverse().forEach(change => {
@@ -52,7 +45,7 @@ class MenuSpy {
       if (change.intersectionRatio === 1) {
         this.removeActiveClass();
 
-        link.parentElement.classList.add(activeClass);
+        link.parentElement.classList.add(this.activeClass);
       }
       // highlights the previous item after a heading moves just under center of viewport
       else if (
@@ -76,7 +69,7 @@ class MenuSpy {
 
         this.removeActiveClass();
 
-        item.classList.add(activeClass);
+        item.classList.add(this.activeClass);
       }
     });
   };
