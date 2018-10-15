@@ -22,11 +22,11 @@
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0",
-    "babel-eslint": "^10.0.1",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-transform-modules-umd": "^7.1.0",
     "@babel/plugin-transform-react-jsx": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-eslint": "^10.0.1",
     "beeper": "^1.1.1",
     "browser-sync": "^2.23.6",
     "bundlesize": "^0.17.0",
