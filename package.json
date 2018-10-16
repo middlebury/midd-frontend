@@ -65,7 +65,7 @@
   "dependencies": {
     "anchor-js": "^4.1.1",
     "animejs": "^2.2.0",
-    "chart.js": "^2.7.1",
+    "chart.js": "^2.7.3",
     "element-closest": "^2.0.2",
     "focus-within": "^2.0.0",
     "h": "^0.1.0",
