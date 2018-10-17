@@ -1,5 +1,6 @@
 import debounce from 'lodash.debounce';
 import 'element-closest';
+import h from 'h';
 
 import { $, $$, on, hide, show } from './utils/dom';
 
@@ -19,8 +20,8 @@ import { $, $$, on, hide, show } from './utils/dom';
   const itemParents = $$('.js-offices-group', elem);
   const region = $('.js-offices-region', elem);
 
-  const alert = $('.js-offices-alert', elem);
-  const alertTemplate = alert.getAttribute('data-template');
+  const alertTemplate = 'No results found for {term}';
+  const alert = h('div.alert.alert--info');
 
   function init() {
     on(input, 'input', debounce(handleInputChange, 200));
@@ -30,6 +31,8 @@ import { $, $$, on, hide, show } from './utils/dom';
 
     button.disabled = true;
     button.style.opacity = '1';
+
+    region.appendChild(alert);
   }
 
   function setNoResultsValue(value) {
