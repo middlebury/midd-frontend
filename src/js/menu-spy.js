@@ -6,7 +6,7 @@ class MenuSpy {
 
     this.elem = typeof elem === 'string' ? $(elem) : elem;
 
-    this.links = $$('a[href^="#"]', this.elem);
+    this.links = $$('a[href^="#"]:not([href="#"])', this.elem);
 
     this.init();
   }
