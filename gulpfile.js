@@ -45,7 +45,7 @@ const paths = {
   scripts: {
     // TODO: make this so browserify can process multiple files
     src: './src/js/**/*.js',
-    dest: './dist/js/'
+    dest: './dist/js'
   },
   images: {
     src: './src/images/*.{png,jpg,svg}',
@@ -147,7 +147,7 @@ gulp.task('scripts:dev', () =>
     })
     .then(bundle =>
       bundle.write({
-        file: './dist/js/bundle.js',
+        file: paths.scripts.dest + '/bundle.js',
         format: 'iife',
         sourcemap: !production
       })
