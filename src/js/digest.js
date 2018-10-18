@@ -2,7 +2,7 @@ import AnchorJS from 'anchor-js';
 import SmoothScroll from 'smooth-scroll';
 import h from 'h';
 
-import { $$ } from './utils/dom';
+import { $, $$ } from './utils/dom';
 import MenuSpy from './menu-spy';
 
 class Digest {
@@ -44,6 +44,16 @@ class Digest {
 
     // TODO: consider using animejs instead
     new SmoothScroll('.digest__link');
+
+    if (location.hash) {
+      const el = $(location.hash);
+
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView();
+        }, 300);
+      }
+    }
   }
 }
 
