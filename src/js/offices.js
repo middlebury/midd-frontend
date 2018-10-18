@@ -21,7 +21,7 @@ import { $, $$, on, hide, show } from './utils/dom';
   const region = $('.js-offices-region', elem);
 
   const alertTemplate = 'No results found for {term}';
-  const alert = h('div.alert.alert--info');
+  const alert = h('div.alert.alert--info.js-offices-alert');
 
   function init() {
     on(input, 'input', debounce(handleInputChange, 200));
@@ -31,6 +31,8 @@ import { $, $$, on, hide, show } from './utils/dom';
 
     button.disabled = true;
     button.style.opacity = '1';
+
+    hide(alert);
 
     region.appendChild(alert);
   }
