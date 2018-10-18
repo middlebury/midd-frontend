@@ -1,0 +1,107 @@
+
+{% extends "midd-layout.twig" %}
+
+{% set page_header = {
+  title: 'Offices and Services',
+  breadcrumb: []
+} %}
+
+{% block page %}
+
+
+  {% embed 'partials/sidebar-layout.twig' %}
+    {% block sidebar %}
+
+
+      {% include 'partials/page-nav.twig' with {
+        items: [
+          { text: 'Newsroom' },
+          { text: 'News Stories' },
+          { text: 'Middlebury in the News' },
+          { text: 'People' },
+          { text: 'Campus Notes' },
+          { text: 'Suggest a Story' },
+          { text: 'Find an Expert' },
+          { text: 'For Faculty and Staff' },
+          { text: 'Communications Office' },
+        ]
+      } %}
+
+      <div class="d-flex">
+        {% for social in ['youtube', 'facebook', 'instagram', 'twitter', 'vimeo'] %}
+          <div class="mr-2">
+            <a href="" class="hover-fadeout d-inline-block p-1">
+              <svg class="icon"><use xlink:href="#icon-{{social}}" /></svg>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+
+    {% endblock %}
+    {% block content %}
+
+      <article class="mb-9">
+        <a href="">
+          <figure class="mb-3">
+            <img src="//placehold.it/800x400" alt="">
+          </figure>
+        </a>
+
+        <h3 class="f7 mb-2"><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a></h3>
+
+        <p class="mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas numquam, sapiente sunt vero et incidunt tenetur accusantium, excepturi dolores enim aspernatur. Saepe reprehenderit mollitia est deleniti sed repellendus impedit earum!</p>
+
+        <p class="f2 color-gray">May 25, 2018</p>
+
+      </article>
+
+      {% for section in ['News Stories', 'Middlebury in the News', 'Campus Notes', 'People'] %}
+
+        <section class="border-t-1 mb-6">
+          <header class="pt-3 mb-7 d-flex align-items-center justify-content-between">
+            <h2 class="f5 font-sans-serif">{{section}}</h2>
+            <a href="#" class="link-underline">View All</a>
+          </header>
+
+          <ul class="row">
+            {% set is_news = section == 'News Stories' %}
+            {% set num = is_news ? 4 : 2 %}
+            {% for i in 1..num %}
+              <li class="col-md-6">
+                <article class="mb-5">
+                  {% if is_news %}
+                    <a href="">
+                      <figure class="mb-3">
+                        {% if random(1) %}
+                          <img src="https://placeimg.com/640/400/nature" alt="">
+                        {% else %}
+                          <img src="https://placeimg.com/640/400/tech" alt="">
+                        {% endif %}
+                      </figure>
+                    </a>
+                  {% endif %}
+
+                  <h3 class="f5 mb-1"><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a></h3>
+
+                  <p class="f4 mb-2">
+                    {% if random(1) %}
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis cumque dolor rerum fuga nemo quae, natus ipsum iusto eveniet numquam doloremque tempora sit nulla optio sequi qui, consectetur ab necessitatibus.
+                    {% else %}
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis cumque dolor rerum fuga nemo quae, natus ipsum numquam qui, consectetur ab necessitatibus.
+                    {% endif %}
+                  </p>
+
+                  <p class="f3 color-gray">March 2, 2017</p>
+                </article>
+
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+      {% endfor %}
+
+
+    {% endblock %}
+  {% endembed %}
+
+{% endblock %}
