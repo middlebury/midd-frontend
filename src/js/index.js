@@ -1,3 +1,5 @@
+// TODO: object fit images?
+
 // polyfill nodelist foreach so you can
 // use document.querySelectorAll('.my-elems').forEach() in IE
 import 'polyfill-nodelist-foreach';
@@ -17,6 +19,7 @@ import './responsive-table'; // adds data-th attributes for responsive tables
 import './events-datepicker'; // make the events datepicker accessible
 import './audio-player'; // custom Preact audio player
 import './offices'; // middlebury.edu/office homepage script for filtering items shown
+import './slideshow'; // swiperjs slideshows
 
 focusWithin(document);
 
