@@ -277,6 +277,7 @@ const dev = gulp.series(build, gulp.parallel(serve, watch));
 const deploy = gulp.series(copyDeps, build, replaceImagePaths, deployDist);
 
 gulp.task('deploy', deploy);
+gulp.task('scripts', scripts);
 gulp.task('build', build);
 gulp.task('zip', bundleMarkup);
 gulp.task('default', dev);
