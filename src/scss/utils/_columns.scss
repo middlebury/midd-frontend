@@ -1,0 +1,6 @@
+.col-count-md-2 {
+  @include media(md) {
+    column-count: 2;
+    column-gap: 2rem;
+  }
+}
