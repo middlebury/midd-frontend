@@ -66,11 +66,12 @@ function findResults(value) {
 function handleInputChange(event) {
   const { value } = event.target;
 
+  hideAlert();
+
   if (!value || !value.trim()) {
     return showAll(items);
   }
 
-  hideAlert();
   hideAll(items);
 
   const matchedItems = findResults(value);
