@@ -20,7 +20,7 @@ import { $, $$, on, hide, show } from './utils/dom';
   const itemParents = $$('.js-offices-group', elem);
   const region = $('.js-offices-region', elem);
 
-  const alertTemplate = 'No results found for {term}';
+  const alertTemplate = 'No results found for &ldquo;{term}&rdquo;';
   const alert = h('div.alert.alert--info.js-offices-alert');
 
   function init() {
