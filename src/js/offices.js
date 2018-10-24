@@ -4,107 +4,105 @@ import h from 'h';
 
 import { $, $$, on, hide, show } from './utils/dom';
 
-(function() {
-  const ACTIVE_CLASS = 'has-results';
-  const NO_RESULTS_CLASS = 'is-empty';
-  const ITEM_ACTIVE_CLASS = 'is-active';
-  const ITEM_PARENT_ACTIVE_CLASS = 'is-active';
+const elem = $('.js-offices');
 
-  const elem = $('.js-offices');
+const button = $('.js-offices-button', elem);
+const input = $('.js-offices-input', elem);
+const items = $$('.js-offices-item', elem);
+const region = $('.js-offices-region', elem);
 
-  if (!elem) return;
+const alertTemplate = 'No results found for &ldquo;{term}&rdquo;';
+const alert = h('div.alert.alert--info.js-offices-alert');
 
-  const button = $('.js-offices-button', elem);
-  const input = $('.js-offices-input', elem);
-  const items = $$('.js-offices-item', elem);
-  const itemParents = $$('.js-offices-group', elem);
-  const region = $('.js-offices-region', elem);
+function setNoResultsValue(value) {
+  const msg = alertTemplate.replace('{term}', value);
+  alert.innerHTML = msg;
+}
 
-  const alertTemplate = 'No results found for &ldquo;{term}&rdquo;';
-  const alert = h('div.alert.alert--info.js-offices-alert');
+function hideAlert() {
+  hide(alert);
+}
 
-  function init() {
-    on(input, 'input', debounce(handleInputChange, 200));
+function showAlert() {
+  show(alert);
+}
 
-    input.setAttribute('aria-controls', region.getAttribute('id'));
-    region.setAttribute('aria-live', true);
+function showAll(items) {
+  items.forEach(item => {
+    // item.classList.remove('d-none');
+    // show(item);
+    item.style.display = ''; // unsets hide so inline-block class shows it
 
-    button.disabled = true;
-    button.style.opacity = '1';
+    const parent = item.closest('.js-offices-group');
+    // parent.classList.remove('d-none');
+    show(parent);
+  });
+}
 
-    hide(alert);
+function hideAll(items) {
+  items.forEach(item => {
+    // item.classList.add('d-none');
+    hide(item);
+    // item.classList.remove('d-inline-block')
 
-    region.appendChild(alert);
-  }
+    const parent = item.closest('.js-offices-group');
+    // parent.classList.add('d-none');
+    hide(parent);
+  });
+}
 
-  function setNoResultsValue(value) {
-    const msg = alertTemplate.replace('{term}', value);
-    alert.innerHTML = msg;
-  }
+function findResults(value) {
+  let matchedItems = [];
 
-  function handleInputChange(event) {
-    const { value } = event.target;
+  items.forEach(item => {
+    const title = $('.js-offices-title', item).textContent;
 
-    if (!value || !value.trim()) {
-      return reset();
+    const pattern = new RegExp(`${value}`, 'gi');
+    const matches = title.match(pattern);
+
+    if (matches) {
+      matchedItems.push(item);
     }
+  });
 
-    sift(value);
+  return matchedItems;
+}
+
+function handleInputChange(event) {
+  const { value } = event.target;
+
+  if (!value || !value.trim()) {
+    return showAll(items);
   }
 
-  function reset() {
-    elem.classList.remove(ACTIVE_CLASS);
-    elem.classList.remove(NO_RESULTS_CLASS);
+  hideAlert();
+  hideAll(items);
 
-    hide(alert);
+  const matchedItems = findResults(value);
 
-    items.forEach(item => {
-      item.classList.remove(ITEM_ACTIVE_CLASS);
-    });
-
-    itemParents.forEach(parent => {
-      parent.classList.remove(ITEM_PARENT_ACTIVE_CLASS);
-    });
+  if (matchedItems.length === 0) {
+    setNoResultsValue(value);
+    showAlert();
+    return;
   }
 
-  function sift(value) {
-    reset();
+  showAll(matchedItems);
+}
 
-    let matchedItems = [];
+function init() {
+  on(input, 'input', debounce(handleInputChange, 200));
 
-    items.forEach(item => {
-      const title = $('.js-offices-title', item).textContent;
+  input.setAttribute('aria-controls', region.getAttribute('id'));
+  region.setAttribute('aria-live', true);
 
-      const pattern = new RegExp(`${value}`, 'gi');
-      const matches = title.match(pattern);
+  button.disabled = true;
+  button.style.opacity = '1';
 
-      if (matches) {
-        matchedItems.push(item);
-      }
-    });
+  hideAlert();
 
-    if (matchedItems.length === 0) {
-      setNoResultsValue(value);
+  region.appendChild(alert);
+}
 
-      elem.classList.add(NO_RESULTS_CLASS);
-
-      show(alert);
-
-      return;
-    }
-
-    hide(alert);
-
-    matchedItems.forEach(item => {
-      const parent = item.closest('.js-offices-group');
-      elem.classList.add(ACTIVE_CLASS);
-      item.classList.add(ITEM_ACTIVE_CLASS);
-
-      if (parent) {
-        parent.classList.add(ITEM_PARENT_ACTIVE_CLASS);
-      }
-    });
-  }
-
+if (elem) {
   init();
-})();
+}
