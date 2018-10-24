@@ -29,24 +29,19 @@ function showAlert() {
 
 function showAll(items) {
   items.forEach(item => {
-    // item.classList.remove('d-none');
-    // show(item);
-    item.style.display = ''; // unsets hide so inline-block class shows it
+    // unsets hide so inline-block class shows it
+    item.style.display = '';
 
     const parent = item.closest('.js-offices-group');
-    // parent.classList.remove('d-none');
     show(parent);
   });
 }
 
 function hideAll(items) {
   items.forEach(item => {
-    // item.classList.add('d-none');
     hide(item);
-    // item.classList.remove('d-inline-block')
 
     const parent = item.closest('.js-offices-group');
-    // parent.classList.add('d-none');
     hide(parent);
   });
 }
