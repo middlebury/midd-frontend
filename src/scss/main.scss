@@ -42,6 +42,7 @@
 @import 'components/midd-header';
 @import 'components/midd-nav';
 @import 'components/midd-search';
+@import 'components/page';
 @import 'components/page-callout';
 @import 'components/page-header';
 @import 'components/page-image';
@@ -89,10 +90,6 @@
 
 .text {
   margin-bottom: spacing(6);
-}
-
-.page {
-  // padding-top: spacing(5);
 }
 
 .link-underline {
