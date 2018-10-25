@@ -30,8 +30,13 @@ const rollupBabel = require('rollup-plugin-babel');
 const rollupResolve = require('rollup-plugin-node-resolve');
 const rollupCommon = require('rollup-plugin-commonjs');
 const { uglify } = require('rollup-plugin-uglify');
+const dotenv = require('dotenv');
 
-const production = !!args.production;
+dotenv.config();
+
+const production = process.env.NODE_ENV === 'production';
+
+const THEME_DIR = process.env.THEME_DIR || args.themeDir || '';
 
 const paths = {
   html: {
@@ -61,11 +66,11 @@ const paths = {
  *
  * Use `gulp dev` in conjunction with this so browser sync server is not started.
  */
-if (!production && args.themeDir) {
-  console.log('outputing into', args.themeDir);
-  paths.styles.dest = args.themeDir + '/css/';
-  paths.scripts.dest = args.themeDir + '/js/';
-  paths.images.dest = args.themeDir + '/images/';
+if (THEME_DIR !== '') {
+  console.info('outputing into', THEME_DIR);
+  paths.styles.dest = THEME_DIR + '/css/';
+  paths.scripts.dest = THEME_DIR + '/js/';
+  paths.images.dest = THEME_DIR + '/images/';
 }
 
 const onError = function(err) {
@@ -221,8 +226,7 @@ const copyDeps = () => {
 };
 
 const deployDist = () => {
-  const dest = args.themeDir || '';
-  if (!dest) {
+  if (!THEME_DIR) {
     return console.error('No `--themeDir` argument passed'); // eslint-disable-line no-console
   }
   return gulp
@@ -237,7 +241,7 @@ const deployDist = () => {
         base: './dist'
       }
     )
-    .pipe(gulp.dest(dest));
+    .pipe(gulp.dest(THEME_DIR));
 };
 
 const bundleMarkup = () =>
@@ -275,7 +279,7 @@ const build = gulp.series(
 
 const dev = gulp.series(build, gulp.parallel(serve, watch));
 
-const deploy = gulp.series(copyDeps, build, replaceImagePaths, deployDist);
+const deploy = gulp.series(replaceImagePaths, deployDist);
 
 gulp.task('deploy', deploy);
 gulp.task('scripts', scripts);
