@@ -69,17 +69,9 @@
 }
 
 .midd-search__input {
-  // flex: 1;
-  // border: 1px solid $gray;
-  // font-family: inherit;
-  // font-size: 16px;
-  // line-height: 1;
-  // padding: 1rem;
-  // border-right: 0;
   background-color: $brand-primary-dark;
   border-color: $brand-primary-dark;
   color: $white;
-  // appearance: none;
 
   &::placeholder {
     color: $gray-light;
@@ -95,19 +87,12 @@
 }
 
 .midd-search__button {
-  // flex: 0 0 auto;
-  // padding: 1rem;
-  // font-size: 16px;
-  // line-height: 1;
-  // border: 1px solid $gray;
-  // border-left: 0;
   background-color: $brand-primary-dark;
   border-color: $brand-primary-dark;
   color: $white;
 
   @include media(lg) {
     color: $navy;
-    // border-color: 0
     background-color: $white;
   }
 }
