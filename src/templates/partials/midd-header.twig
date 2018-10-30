@@ -71,17 +71,32 @@
       </div>
 
       <div class="midd-header__search">
+
         <div class="midd-search">
-          <a href="#search" class="midd-search__button">
-            <svg class="icon midd-search__icon"><use xlink:href="#icon-search"></svg> Search
+          <a
+            href="#search"
+            class="midd-search__handle"
+            data-toggle-target=".js-midd-search"
+            data-toggle-focus=".js-midd-search-input"
+            aria-expanded="false"
+            aria-haspopup="true"
+            role="button"
+          >
+            <svg class="icon midd-search__icon midd-search__icon--search">
+              <use xlink:href="#icon-search">
+            </svg>
+            <svg class="icon midd-search__icon midd-search__icon--times">
+              <use xlink:href="#icon-times">
+            </svg>
+            Search
           </a>
 
-          <div class="midd-search__content">
+          <div class="midd-search__content js-midd-search">
             <form class="">
-              <div class="midd-search__group">
-                <label for="midd-midd-search" class="sr-only">Search</label>
-                <input type="search" class="midd-search__input" placeholder="Search" name="query" required id="midd-midd-search">
-                <button type="submit" class="midd-search__submit">
+              <label for="midd-midd-search" class="sr-only">Search</label>
+              <div class="input-group">
+                <input type="search" class="form-control form-control--sm midd-search__input js-midd-search-input" placeholder="Search" name="query" required id="midd-midd-search">
+                <button type="submit" class="button button--sm midd-search__button" aria-label="Search">
                   <svg class="icon">
                     <use xlink:href="#icon-search">
                   </svg>
