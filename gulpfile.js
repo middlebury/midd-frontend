@@ -139,7 +139,21 @@ const scripts = () =>
     .rollup({
       input: './src/js/index.js',
       plugins: [
-        rollupBabel(),
+        rollupBabel({
+          exclude: /node_modules\/(?!(dom7|ssr-window|swiper)\/).*/,
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                modules: false
+              }
+            ]
+          ],
+          plugins: [
+            ['@babel/transform-react-jsx', { pragma: 'h' }],
+            '@babel/plugin-proposal-class-properties'
+          ]
+        }),
         rollupResolve(),
         rollupCommon(),
         production && uglify()
