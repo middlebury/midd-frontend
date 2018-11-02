@@ -10,7 +10,8 @@
     "wrapper": "npm run build && gulp zip",
     "deploy": "npm run build && gulp deploy",
     "test": "bundlesize",
-    "lint": "eslint src/js/**"
+    "lint": "eslint src/js/**",
+    "format": "prettier --config ./.prettierrc --write \"src/**/*.{js,scss}\""
   },
   "repository": {
     "type": "git",
@@ -54,6 +55,7 @@
     "lodash": "^4.17.11",
     "postcss-preset-env": "^5.3.0",
     "preact": "^8.3.1",
+    "prettier": "^1.14.3",
     "rollup": "^0.66.6",
     "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-commonjs": "^9.2.0",
