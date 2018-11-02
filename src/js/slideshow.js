@@ -1,6 +1,14 @@
-import Swiper from 'swiper/dist/js/swiper';
+import {
+  Swiper,
+  Navigation,
+  Pagination,
+  A11y,
+  Keyboard
+} from 'swiper/dist/js/swiper.esm';
 
 import { $, $$, hide, on } from './utils/dom';
+
+Swiper.use([Navigation, Pagination, A11y, Keyboard]);
 
 class Slideshow {
   constructor(elem) {
