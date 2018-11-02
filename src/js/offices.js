@@ -1,26 +1,26 @@
-import debounce from "lodash.debounce";
-import "element-closest";
-import h from "h";
+import debounce from 'lodash.debounce';
+import 'element-closest';
+import h from 'h';
 
-import { $, $$, on, hide, show } from "./utils/dom";
+import { $, $$, on, hide, show } from './utils/dom';
 
 (function() {
-  const elem = $(".js-offices");
+  const elem = $('.js-offices');
 
   if (!elem) {
     return;
   }
 
-  const button = $(".js-offices-button", elem);
-  const input = $(".js-offices-input", elem);
-  const items = $$(".js-offices-item", elem);
-  const region = $(".js-offices-region", elem);
+  const button = $('.js-offices-button', elem);
+  const input = $('.js-offices-input', elem);
+  const items = $$('.js-offices-item', elem);
+  const region = $('.js-offices-region', elem);
 
-  const alertTemplate = "No results found for &ldquo;{term}&rdquo;";
-  const alert = h("div.alert.alert--info.js-offices-alert");
+  const alertTemplate = 'No results found for &ldquo;{term}&rdquo;';
+  const alert = h('div.alert.alert--info.js-offices-alert');
 
   function setNoResultsValue(value) {
-    const msg = alertTemplate.replace("{term}", value);
+    const msg = alertTemplate.replace('{term}', value);
     alert.innerHTML = msg;
   }
 
@@ -35,9 +35,9 @@ import { $, $$, on, hide, show } from "./utils/dom";
   function showAll(items) {
     items.forEach(item => {
       // unsets hide so inline-block class shows it
-      item.style.display = "";
+      item.style.display = '';
 
-      const parent = item.closest(".js-offices-group");
+      const parent = item.closest('.js-offices-group');
       show(parent);
     });
   }
@@ -46,7 +46,7 @@ import { $, $$, on, hide, show } from "./utils/dom";
     items.forEach(item => {
       hide(item);
 
-      const parent = item.closest(".js-offices-group");
+      const parent = item.closest('.js-offices-group');
       hide(parent);
     });
   }
@@ -55,9 +55,9 @@ import { $, $$, on, hide, show } from "./utils/dom";
     let matchedItems = [];
 
     items.forEach(item => {
-      const title = $(".js-offices-title", item).textContent;
+      const title = $('.js-offices-title', item).textContent;
 
-      const pattern = new RegExp(`${value}`, "gi");
+      const pattern = new RegExp(`${value}`, 'gi');
       const matches = title.match(pattern);
 
       if (matches) {
@@ -91,13 +91,13 @@ import { $, $$, on, hide, show } from "./utils/dom";
   }
 
   function init() {
-    on(input, "input", debounce(handleInputChange, 200));
+    on(input, 'input', debounce(handleInputChange, 200));
 
-    input.setAttribute("aria-controls", region.getAttribute("id"));
-    region.setAttribute("aria-live", true);
+    input.setAttribute('aria-controls', region.getAttribute('id'));
+    region.setAttribute('aria-live', true);
 
     button.disabled = true;
-    button.style.opacity = "1";
+    button.style.opacity = '1';
 
     hideAlert();
 

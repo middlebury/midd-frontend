@@ -78,7 +78,8 @@ for (let i in selects) {
       const labelElem = document.createElement('label');
       labelElem.setAttribute('class', 'sr-only');
       labelElem.setAttribute('for', select);
-      labelElem.innerText = selects[i].charAt(0).toUpperCase() + selects[i].slice(1);
+      labelElem.innerText =
+        selects[i].charAt(0).toUpperCase() + selects[i].slice(1);
 
       const parentElem = selectElem.parentNode;
       parentElem.insertBefore(labelElem, selectElem);
