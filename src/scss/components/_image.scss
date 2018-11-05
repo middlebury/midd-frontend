@@ -5,8 +5,10 @@
 
 .image--right {
   margin-bottom: spacing(4);
+
   @include media(md) {
     float: right;
+    margin-top: 0;
     margin-left: spacing(4);
   }
 }
@@ -15,6 +17,7 @@
   margin-bottom: spacing(4);
   @include media(md) {
     float: left;
+    margin-top: 0;
     margin-right: spacing(4);
   }
 }
