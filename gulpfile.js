@@ -25,13 +25,9 @@ const sortCSSMq = require('sort-css-media-queries');
 const cssnano = require('cssnano');
 const _ = require('lodash');
 const zip = require('gulp-zip');
-
-const rollupBabel = require('rollup-plugin-babel');
-const rollupResolve = require('rollup-plugin-node-resolve');
-const rollupCommon = require('rollup-plugin-commonjs');
-const { uglify } = require('rollup-plugin-uglify');
-const rollupIgnore = require('rollup-plugin-ignore');
 const dotenv = require('dotenv');
+
+const rollupConfig = require('./rollup');
 
 dotenv.config();
 
@@ -137,30 +133,7 @@ const styles = () => {
 
 const scripts = () =>
   rollup
-    .rollup({
-      input: './src/js/index.js',
-      plugins: [
-        rollupIgnore(['moment']),
-        rollupBabel({
-          exclude: /node_modules\/(?!(dom7|ssr-window|swiper)\/).*/,
-          presets: [
-            [
-              '@babel/preset-env',
-              {
-                modules: false
-              }
-            ]
-          ],
-          plugins: [
-            ['@babel/transform-react-jsx', { pragma: 'h' }],
-            '@babel/plugin-proposal-class-properties'
-          ]
-        }),
-        rollupResolve(),
-        rollupCommon(),
-        production && uglify()
-      ]
-    })
+    .rollup(rollupConfig)
     .then(bundle =>
       bundle.write({
         file: paths.scripts.dest + '/bundle.js',
