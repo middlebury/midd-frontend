@@ -30,6 +30,7 @@ const rollupBabel = require('rollup-plugin-babel');
 const rollupResolve = require('rollup-plugin-node-resolve');
 const rollupCommon = require('rollup-plugin-commonjs');
 const { uglify } = require('rollup-plugin-uglify');
+const rollupIgnore = require('rollup-plugin-ignore');
 const dotenv = require('dotenv');
 
 dotenv.config();
@@ -139,6 +140,7 @@ const scripts = () =>
     .rollup({
       input: './src/js/index.js',
       plugins: [
+        rollupIgnore(['moment']),
         rollupBabel({
           exclude: /node_modules\/(?!(dom7|ssr-window|swiper)\/).*/,
           presets: [
