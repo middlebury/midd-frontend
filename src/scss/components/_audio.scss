@@ -1,5 +1,6 @@
 .audio {
-  margin-bottom: $component-margin-bottom;
+  margin-bottom: spacing(8);
+  margin-top: spacing(8);
 }
 
 .audio__embed {
@@ -13,6 +14,10 @@
     width: 100%;
     height: 100%;
   }
+}
+
+.audio__text {
+  font-size: typescale(3);
 }
 
 // TODO: this should be pulled out and only styling the js player

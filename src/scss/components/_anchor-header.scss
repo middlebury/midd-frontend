@@ -2,6 +2,10 @@
   background-color: $gray-lighter;
   padding-top: spacing(4);
   border-bottom: 1px solid $border-color;
+
+  @include media(lg) {
+    padding-top: spacing(7);
+  }
 }
 
 .anchor-header__primary {

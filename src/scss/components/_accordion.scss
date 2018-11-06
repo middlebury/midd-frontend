@@ -48,8 +48,8 @@
 
 .accordion-item__link {
   display: flex;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 
   &:hover {
     text-decoration: none;
@@ -75,7 +75,7 @@
 }
 
 .accordion-item__content {
-  padding-bottom: 1rem;
+  padding-bottom: 1.5rem;
 
   .accordion-item.has-toggler & {
     display: none;

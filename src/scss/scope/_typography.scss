@@ -49,8 +49,8 @@
         content: '\2022';
         position: absolute;
         right: calc(100% + 8px);
-        top: 4px;
-        font-size: 12px;
+        top: 6px;
+        font-size: 10px;
       }
     }
   }
@@ -98,7 +98,7 @@
 
   dt {
     font-weight: $font-weight-medium;
-    margin-bottom: spacing(3);
+    margin-bottom: spacing(4);
 
     &:last-child {
       margin-bottom: 0;
@@ -106,7 +106,7 @@
 
     @include media(md) {
       flex: 0 0 50%;
-      padding-bottom: spacing(3);
+      padding-bottom: spacing(4);
 
       &:not(:last-of-type) {
         border-bottom: 1px solid $border-color;
@@ -115,8 +115,8 @@
   }
 
   dd {
-    padding-bottom: spacing(3);
-    margin-bottom: spacing(3);
+    padding-bottom: spacing(4);
+    margin-bottom: spacing(4);
 
     &:last-child {
       margin-bottom: 0;

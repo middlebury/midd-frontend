@@ -21,7 +21,7 @@ $link-list-gutters: (
 }
 
 .link-list__item {
-  margin-bottom: spacing(4);
+  margin-bottom: spacing(5);
 
   @include media(sm) {
     @include make-col-ready($link-list-gutters);
@@ -35,7 +35,7 @@ $link-list-gutters: (
 .link-list__box {
   border-bottom: 1px solid $border-color;
   height: 100%;
-  padding-bottom: spacing(4);
+  padding-bottom: spacing(5);
 }
 
 .link-list__link {
