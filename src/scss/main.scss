@@ -74,25 +74,19 @@
 @import 'utils/background';
 @import 'utils/border';
 @import 'utils/clearfix';
-@import 'utils/color';
 @import 'utils/columns';
 @import 'utils/display';
 @import 'utils/flex';
 @import 'utils/float';
-@import 'utils/font';
 @import 'utils/hover';
 @import 'utils/order';
 @import 'utils/screen-reader';
 @import 'utils/sizing';
 @import 'utils/spacing';
 @import 'utils/text';
-@import 'utils/type';
 @import 'utils/width';
 
 .text {
   margin-bottom: spacing(6);
 }
 
-.link-underline {
-  @include link-border;
-}

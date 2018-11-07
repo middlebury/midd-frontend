@@ -1,3 +1,17 @@
+///
+/// font sizes
+///
+
+@each $name, $size in $typescale {
+  .f#{$name} {
+    font-size: $size;
+  }
+}
+
+///
+/// text alignment
+///
+
 @each $breakpoint in map-keys($grid-breakpoints) {
   @include media-breakpoint-up($breakpoint) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
@@ -12,4 +26,75 @@
       text-align: center !important;
     }
   }
+}
+
+///
+/// text colors
+///
+
+$text-colors: (
+  'primary': $brand-primary,
+  'secondary': $brand-secondary,
+  'white': $white,
+  'gray': $gray
+);
+
+@each $name, $hex in $text-colors {
+  .text-#{$name} {
+    color: $hex;
+  }
+}
+
+///
+/// font family
+///
+
+.font-sans-serif {
+  font-family: $font-family-sans-serif;
+}
+
+.font-serif {
+  font-family: $font-family-serif;
+}
+
+///
+/// alt heading treatments
+///
+
+.title {
+  @include section-title;
+}
+
+///
+/// extra large headings
+///
+
+// TODO: do we need to add these font sizes to typescale?
+
+.display-1 {
+}
+
+.display-2 {
+}
+
+.display-3 {
+  font-size: 32px;
+  line-height: $line-height-solid;
+  font-weight: $font-weight-normal;
+
+  @include media(md) {
+    font-size: 48px;
+  }
+
+  @include media(lg) {
+    font-size: 64px;
+  }
+}
+
+///
+/// links
+///
+
+.link-underline {
+  @include link-border;
 }
