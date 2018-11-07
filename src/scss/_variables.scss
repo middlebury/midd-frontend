@@ -250,7 +250,7 @@ $caption-color: $gray !default;
 $input-btn-padding-y: spacing(3) !default;
 $input-btn-padding-x: spacing(6) !default;
 $input-btn-font-size: typescale(3) !default;
-$input-btn-line-height: lineheight('body') !default;
+$input-btn-line-height: lineheight('solid') !default;
 
 $input-btn-border-width: $border-width !default;
 $input-btn-border-color: $border-color !default;
