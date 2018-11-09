@@ -103,7 +103,13 @@ const copyIcons = () =>
     .pipe(gulp.dest('./src/templates/partials'));
 
 const styles = () => {
-  const plugins = [postcssPresetEnv()];
+  const plugins = [
+    postcssPresetEnv({
+      autoprefixer: {
+        grid: true
+      }
+    })
+  ];
 
   if (production) {
     plugins.push(
