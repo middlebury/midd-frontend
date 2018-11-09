@@ -4,14 +4,16 @@ import { $$ } from './utils/dom';
 
 import AudioPlayer from './components/audio';
 
-const elems = $$('.js-audio');
+const audioWrappers = $$('.js-audio');
 
-elems.forEach(elem => {
+audioWrappers.forEach(wrapper => {
   const root = document.createElement('div');
 
-  render(<AudioPlayer audio={elem} />, root);
+  const audioElem = wrapper.querySelector('audio');
 
-  elem.style.display = 'none';
+  render(<AudioPlayer audio={audioElem} />, root);
 
-  elem.parentNode.insertBefore(root, elem.nextSibling);
+  wrapper.style.display = 'none';
+
+  wrapper.parentNode.insertBefore(root, wrapper.nextSibling);
 });
