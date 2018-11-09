@@ -78,17 +78,7 @@ $text-colors: (
 }
 
 .display-3 {
-  font-size: 32px;
-  line-height: $line-height-solid;
-  font-weight: $font-weight-normal;
-
-  @include media(md) {
-    font-size: 48px;
-  }
-
-  @include media(lg) {
-    font-size: 64px;
-  }
+  @include display-3;
 }
 
 ///
