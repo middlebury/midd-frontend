@@ -9,7 +9,7 @@
 }
 
 .link-list__list {
-  margin-top: 48px;
+  margin-top: spacing(7);
 
   @include media(sm) {
     @include make-row();
