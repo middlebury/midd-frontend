@@ -41,7 +41,6 @@
 @import 'components/midd-header';
 @import 'components/midd-nav';
 @import 'components/midd-search';
-@import 'components/page';
 @import 'components/page-image';
 @import 'components/page-nav';
 @import 'components/pagination';
@@ -78,3 +77,7 @@
 @import 'utils/sizing';
 @import 'utils/spacing';
 @import 'utils/text';
+
+.main {
+  min-height: 85vh;
+}
