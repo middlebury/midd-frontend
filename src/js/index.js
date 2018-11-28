@@ -20,6 +20,7 @@ import './events-datepicker'; // make the events datepicker accessible
 import './audio-player'; // custom Preact audio player
 import './offices'; // middlebury.edu/office homepage script for filtering items shown
 import './slideshow'; // swiperjs slideshows
+import './mover'; // swiperjs slideshows
 
 focusWithin(document);
 

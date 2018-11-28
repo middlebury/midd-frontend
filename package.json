@@ -69,6 +69,7 @@
     "animejs": "^2.2.0",
     "chart.js": "^2.7.3",
     "element-closest": "^2.0.2",
+    "enquire.js": "^2.1.6",
     "focus-within": "^2.0.0",
     "h": "^0.1.0",
     "headroom.js": "^0.9.4",
@@ -79,8 +80,8 @@
     "object-fit-images": "^3.2.3",
     "onresize": "^1.0.1",
     "pikaday": "^1.7.0",
-    "preact": "^8.3.1",
     "polyfill-nodelist-foreach": "^1.0.1",
+    "preact": "^8.3.1",
     "smooth-scroll": "^14.2.1",
     "stickybits": "^3.5.6",
     "swiper": "^4.4.1"
