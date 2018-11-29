@@ -160,8 +160,15 @@ const html = () =>
     )
     .pipe(
       data(function(file) {
-        // TODO: how to import a glob?
-        return yaml.safeLoad(fs.readFileSync('./src/data/data.yml', 'utf8'));
+        const ymlData = yaml.safeLoad(
+          fs.readFileSync('./src/data/data.yml', 'utf8')
+        );
+
+        return Object.assign({}, ymlData, {
+          env: {
+            production
+          }
+        });
       })
     )
     .pipe(
