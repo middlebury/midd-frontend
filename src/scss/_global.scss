@@ -147,3 +147,9 @@ h6 {
 svg {
   fill: currentColor;
 }
+
+// Fixes wbr tag in e11
+// https://stackoverflow.com/questions/23756932/wbr-tag-doesnt-work-in-ie
+wbr:after {
+  content: '\00200B';
+}
