@@ -36,6 +36,11 @@
     {% block layout_footer %}{% endblock %}
 
   </div>
+
+  {% if not env.production %}
+    {% include 'partials/grid-overlay.twig' %}
+  {% endif %}
+
   {# {% include 'partials/mission-modal.twig' %} #}
   <script src="js/bundle.js" async></script>
   {% block scripts %}{% endblock %}
