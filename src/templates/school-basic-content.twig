@@ -8,34 +8,36 @@
   ]
 } %}
 
-{% embed 'partials/sidebar-layout.twig' %}
-  {% block sidebar %}
+{% block page %}
+  {% embed 'partials/sidebar-layout.twig' %}
+    {% block sidebar %}
 
-    {% include 'partials/page-nav.twig' with {
-      items: [
-        { text: 'Curriculum', href: '#' },
-        {
-          text: 'Faculty',
-          href: '#',
-          items: [
-            { text: 'Faculty sub page 1', href: '#' },
-            { text: 'Faculty sub page 2', href: '#' },
-            {
-              text: 'Faculty sub page 3',
-              href: '#',
-            },
-            { text: 'Faculty sub page 4', href: '#' },
-          ]
-        },
-        { text: 'Financing Your Education', href: '#' },
-      ]
-    } %}
+      {% include 'partials/page-nav.twig' with {
+        items: [
+          { text: 'Curriculum', href: '#' },
+          {
+            text: 'Faculty',
+            href: '#',
+            items: [
+              { text: 'Faculty sub page 1', href: '#' },
+              { text: 'Faculty sub page 2', href: '#' },
+              {
+                text: 'Faculty sub page 3',
+                href: '#',
+              },
+              { text: 'Faculty sub page 4', href: '#' },
+            ]
+          },
+          { text: 'Financing Your Education', href: '#' },
+        ]
+      } %}
 
-  {% endblock %}
-  {% block content %}
+    {% endblock %}
+    {% block content %}
 
-    {% include 'partials/basic-content.twig' %}
+      {% include 'partials/basic-content.twig' %}
 
-  {% endblock %}
-{% endembed %}
+    {% endblock %}
+  {% endembed %}
+{% endblock %}
 
