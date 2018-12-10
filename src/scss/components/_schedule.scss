@@ -4,7 +4,7 @@
 }
 
 .schedule__title {
-  @include section-title();
+  margin-bottom: spacing(6);
 }
 
 // schedule-header

@@ -9,17 +9,7 @@
         <a href="tel:" class="site-footer__tel-link">802-443-5000</a>
       </address>
 
-      <ul class="social-links social-links--light">
-        {% for item in social_links %}
-          <li class="social-links__item">
-            <a href="{{item.href}}" class="social-links__link">
-              <svg class="icon">
-                <use xlink:href="#icon-{{item.slug}}" />
-              </svg>
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
+      {% include 'partials/social-links.twig' with { light:true } %}
 
       </div>
       <div class="col-lg-8 offset-md-1">

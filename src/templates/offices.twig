@@ -9,8 +9,9 @@
 
 <div class="js-offices">
 
-  {% embed 'partials/sidebar-layout.twig' with { full_width: true } %}
-    {% block sidebar %}
+  {% embed 'partials/sidebar-layout.twig' %}
+
+    {% block nav %}
 
       <div class="form-group js-offices-form">
         <form>
@@ -32,76 +33,75 @@
       </div>
 
     {% endblock %}
+    {% block toc %}
+
+      <div class="js-sticky" data-digest-nav></div>
+
+    {% endblock %}
     {% block content %}
 
-      <div class="row">
-        <div class="col-lg-3 order-lg-2 mb-4">
+        <div class="js-offices-region" id="midd-offices" data-digest-content>
 
-          <div class="js-sticky" data-digest-nav></div>
+          {% for item in offices|groupBy('group') %}
+
+            <section class="mb-7 pt-3 border-t border-4 border-primary js-offices-group">
+
+              <h2 class="mb-7">{{item.group}}</h2>
+
+              <div class="col-count-md-2">
+
+                {% for subitem in item.items %}
+                  <article class="w-100 d-inline-block mb-5 js-offices-item">
+                    <h3 class="f4 mb-2 font-sans-serif js-offices-title">
+                      <a href="" class="link-underline">{{subitem.title}}</a>
+                    </h3>
+
+                    {% if random(2) %}
+                      <p class="f2 mb-1">
+                        152 College St<br>Middlebury, VT 05753
+                      </p>
+                    {% endif %}
+
+                    <p class="f2 mb-1">
+                      {% if random(2) %}
+                        <a href="mailto:" class="link-underline">admissions<wbr>@middlebury.edu</a><br>
+                      {% endif %}
+
+                      {% if random(2) %}
+                        <a href="tel:">(802) 555-5555</a><br>
+                      {% endif %}
+                    </p>
+
+                    <div class="d-flex">
+                      {% for social in ['youtube', 'facebook', 'instagram', 'twitter', 'vimeo'] %}
+                        {% if random(1) %}
+                          <div class="mr-2">
+                            <a href="" class="hover-fadein d-inline-block p-1">
+                              <svg class="icon"><use xlink:href="#icon-{{social}}" /></svg>
+                            </a>
+                          </div>
+                        {% endif %}
+                      {% endfor %}
+                    </div>
+
+                  </article>
+                {% endfor %}
+
+              </div>
+
+            </section>
+
+          {% endfor %}
 
         </div>
-        <div class="col-lg-9 order-lg-1">
+        {# end offices region #}
 
-          <div class="js-offices-region" id="midd-offices" data-digest-content>
+      {% endblock %}
+    {% endembed %}
 
-            {% for item in offices|groupBy('group') %}
-
-              <section class="mb-7 border-b-1 pb-7 js-offices-group">
-
-                <h2 class="mb-5">{{item.group}}</h2>
-
-                <div class="col-count-md-2">
-
-                  {% for subitem in item.items %}
-                    <article class="w-100 d-inline-block mb-5 js-offices-item">
-                      <h3 class="f4 mb-2 font-sans-serif js-offices-title">
-                        <a href="" class="link-underline">{{subitem.title}}</a>
-                      </h3>
-
-                      <p class="f2">
-                        {% if random(2) %}
-                          <a href="">admissions@middlebury.edu</a><br>
-                        {% endif %}
-
-                        {% if random(2) %}
-                          <a href="tel:">(802) 555-5555</a><br>
-                        {% endif %}
-
-                        {% if random(2) %}
-                          152 College St<br>Middlebury, VT 05753
-                        {% endif %}
-                      </p>
-
-                      <div class="d-flex">
-                        {% for social in ['youtube', 'facebook', 'instagram', 'twitter', 'vimeo'] %}
-                          {% if random(1) %}
-                            <div class="mr-2">
-                              <a href="" class="hover-fadein d-inline-block p-1">
-                                <svg class="icon"><use xlink:href="#icon-{{social}}" /></svg>
-                              </a>
-                            </div>
-                          {% endif %}
-                        {% endfor %}
-                      </div>
-
-                    </article>
-                  {% endfor %}
-
-                </div>
-
-              </section>
-
-            {% endfor %}
-
-          </div>
-
-        {% endblock %}
-      {% endembed %}
-
-    </div>
-
-  </div>
 </div>
+{# container #}
+
 
 {% endblock %}
 

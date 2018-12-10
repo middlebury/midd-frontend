@@ -1,6 +1,7 @@
 $bg-colors: (
   'primary': $brand-primary,
-  'gray-light': $gray-light
+  'gray-light': $gray-light,
+  'gray-lighter': $gray-lighter
 );
 
 @each $name, $hex in $bg-colors {
