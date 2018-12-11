@@ -21,45 +21,70 @@
 
     <div class="midd-header__secondary js-midd-header-menu">
 
-      {% set nav_example = [
+      {% set navigation = [
         {
           text: 'Our Schools',
+          href: '#',
           items: [
-            'Middlebury College',
-            'Language Schools',
-            'Bread Loaf School of English',
-            'Bread Loaf Writers\' Conference',
-            'Institute of International Studies at Monterey',
-            'C.V. Starr Schools Abroad',
-            'School of the Environment'
+            {
+              href: 'http://www.middlebury.edu',
+              text: 'Middlebury College',
+            },
+            {
+              href: 'http://www.middlebury.edu/ls',
+              text: 'Language Schools',
+            },
+            {
+              href: 'http://www.middlebury.edu/blse',
+              text: 'Bread Loaf School of English',
+            },
+            {
+              href: 'http://www.middlebury.edu/bread-loaf-conferences',
+              text: 'Bread Loaf Writers\' Conference',
+            },
+            {
+              href: 'https://www.middlebury.edu/institute/',
+              text: 'Institute of International Studies at Monterey',
+            },
+            {
+              href: 'http://www.middlebury.edu/study-abroad',
+              text: 'C.V. Starr Schools Abroad',
+            },
+            {
+              href: 'http://www.middlebury.edu/environment',
+              text: 'School of the Environment',
+            },
           ]
         },
         {
+          href: 'http://www.middlebury.edu/about',
           text: 'About Middlebury',
-          items: ['A Sense of Purpose', 'The Exerpience of Place', 'Our Approach to Learning']
         },
-        { text: 'Offices and Services' },
+        {
+          href: 'http://www.middlebury.edu/office/',
+          text: 'Offices and Services',
+        },
       ] %}
 
       <div class="midd-header__nav">
         <nav class="midd-nav">
           <ul class="midd-nav__list">
-            {% for item in nav_example %}
+            {% for item in navigation %}
               <li class="midd-nav__item midd-nav__item--top">
-                <a href="" class="midd-nav__link midd-nav__link--top">
-                  {{item.text}}
+                <a href="{{ item.href }}" class="midd-nav__link midd-nav__link--top">
+                  {{ item.text }}
                 </a>
 
                 {% if item.items %}
-                  <a href="#" role="button" class="midd-nav__button" data-toggle-target=".js-middnav-list-{{loop.index}}">
+                  <a href="#" role="button" class="midd-nav__button" data-toggle-target=".js-middnav-list-{{ loop.index }}">
                     <svg class="icon midd-nav__icon">
                       <use xlink:href="#icon-chevron-down">
                     </svg>
                   </a>
-                  <ul class="midd-nav__list js-middnav-list-{{loop.index}}">
+                  <ul class="midd-nav__list js-middnav-list-{{ loop.index }}">
                     {% for subitem in item.items %}
                       <li class="midd-nav__item">
-                        <a href="" class="midd-nav__link midd-nav__link--sub">{{subitem}}</a>
+                        <a href="{{ subitem.href }}" class="midd-nav__link midd-nav__link--sub">{{ subitem.text }}</a>
                       </li>
                     {% endfor %}
                   </ul>
