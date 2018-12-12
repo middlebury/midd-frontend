@@ -71,10 +71,17 @@ footer_nav:
 
 secondary_footer_nav:
   - text: About Middlebury
-  - text: Support Middlebury
-  - text: Work With Us
-  - text: Middlebury A-Z
-  - text: Copyright and Privacy
+    href: http://www.middlebury.edu/about
+  - text: Giving
+    href: http://www.middlebury.edu/giving
+  - text: Employment
+    href: http://www.middlebury.edu/offices/business/hr/jobseeker
+  - text: Offices and Services
+    href: http://www.middlebury.edu/office/
+  - text: Copyright
+    href: http://www.middlebury.edu/about/copyright
+  - text: Privacy
+    href: http://www.middlebury.edu/about/privacy
 
 social_links:
   - text: Instagram
