@@ -11,8 +11,6 @@ class Gallery extends Component {
     this.state = {
       open: false
     };
-
-    this.open();
   }
 
   handleButtonClick = event => {
