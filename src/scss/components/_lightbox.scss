@@ -8,7 +8,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(black, 1);
+  background-color: $black;
   z-index: 9999;
   overflow: auto;
   animation: fadeIn 0.3s;
@@ -20,21 +20,33 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-image: linear-gradient(to bottom, black 50%, transparent);
+  // background-image: linear-gradient(to bottom, $black, transparent);
+  background-color: $black;
 }
 
 .lightbox__count {
   color: $white;
   padding-top: spacing(4);
   padding-bottom: spacing(4);
+  width: 4em;
+  text-align: center;
+  font-weight: $font-weight-semibold;
 }
 
 .lightbox__button {
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-weight: bold;
+  font-weight: $font-weight-semibold;
   font-size: typescale(2);
   color: $white;
+  transition: opacity 0.2s;
+  opacity: 0.8;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+    // transform: scale(1.1);
+  }
 }
 
 .lightbox__button--close {
@@ -56,8 +68,12 @@
   // }
 }
 
+.lightbox__figure {
+  margin-bottom: spacing(9);
+}
+
 .lightbox__thumbs-list {
-  border-left: 2px solid $gray-dark;
+  border-left: 1px solid $gray-dark;
   position: fixed;
   top: 100px;
   right: 0;

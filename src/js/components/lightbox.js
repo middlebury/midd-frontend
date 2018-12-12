@@ -112,7 +112,7 @@ class Lightbox extends Component {
             onClick={this.handlePrevClick}
           />
           <div className="lightbox__count">
-            {index + 1} / {items.length}
+            {index + 1}/{items.length}
           </div>
           <LightboxButton
             label="Next"
@@ -149,7 +149,7 @@ class Lightbox extends Component {
             {items.map((img, i) => (
               <figure
                 key={i}
-                className="lightbox__figure media media--contain-caption mb-9"
+                className="lightbox__figure media media--contain-caption"
               >
                 <img src={img.src} alt={img.alt} />
                 <figcaption className="media__caption text-white">
