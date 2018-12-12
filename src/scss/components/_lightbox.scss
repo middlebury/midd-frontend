@@ -1,0 +1,95 @@
+.has-lightbox {
+  overflow: hidden;
+}
+
+.lightbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(black, 1);
+  z-index: 9999;
+  overflow: auto;
+  animation: fadeIn 0.3s;
+}
+
+.lightbox__controls {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-image: linear-gradient(to bottom, black 50%, transparent);
+}
+
+.lightbox__count {
+  color: $white;
+  padding-top: spacing(4);
+  padding-bottom: spacing(4);
+}
+
+.lightbox__button {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: typescale(2);
+  color: $white;
+}
+
+.lightbox__button--close {
+  margin-left: auto;
+}
+
+.lightbox__content {
+  display: flex;
+}
+
+.lightbox__images {
+  padding: spacing(7);
+  padding-top: spacing(9);
+  width: calc(100vw - 100px);
+
+  // img {
+  //   max-height: 100vh;
+  //   min-height: 50vh;
+  // }
+}
+
+.lightbox__thumbs-list {
+  border-left: 2px solid $gray-dark;
+  position: fixed;
+  top: 100px;
+  right: 0;
+  overflow-y: auto;
+  height: calc(100vh - 100px);
+}
+
+.lightbox__thumbs-button {
+  padding: 0;
+  border: 0;
+
+  img {
+    transition: transform 0.2s, opacity 0.2s;
+    opacity: 0.9;
+  }
+
+  &:hover,
+  &:focus {
+    img {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+  }
+}
+
+.lightbox__thumbs-item {
+  border-left: 4px solid transparent;
+  padding-left: spacing(4);
+  padding-right: spacing(4);
+  margin-bottom: spacing(4);
+
+  &.active {
+    border-color: $white;
+  }
+}
