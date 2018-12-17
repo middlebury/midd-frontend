@@ -17,7 +17,7 @@ class AudioPlayer extends Component {
 
     this.state = {
       playing: false,
-      duration: 0,
+      duration: props.audio.duration,
       currentTime: 0,
       muted: false
     };
