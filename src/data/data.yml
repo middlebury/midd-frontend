@@ -82,6 +82,8 @@ secondary_footer_nav:
     href: http://www.middlebury.edu/about/copyright
   - text: Privacy
     href: http://www.middlebury.edu/about/privacy
+  - text: Site-Editor login
+    href: '#'
 
 social_links:
   - text: Instagram
