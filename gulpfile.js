@@ -278,9 +278,9 @@ const build = gulp.series(
   gulp.parallel(html, images, styles, scripts)
 );
 
-const dev = gulp.series(build, watch);
+const dev = gulp.parallel(build, watch);
 
-const server = gulp.series(dev, serve);
+const server = gulp.parallel(dev, serve);
 
 const deploy = gulp.series(replaceImagePaths, deployDist);
 
