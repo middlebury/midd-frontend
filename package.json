@@ -66,6 +66,7 @@
     "yargs": "^12.0.2"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "anchor-js": "^4.1.1",
     "animejs": "^2.2.0",
     "chart.js": "^2.7.3",
