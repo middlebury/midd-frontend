@@ -8,6 +8,8 @@ import 'polyfill-nodelist-foreach';
 // used in menu-spy.js and triggering chart animations when they scroll into view
 import 'intersection-observer';
 
+import 'lazysizes';
+
 import stickybits from 'stickybits'; // sticky element support for ie11
 import focusWithin from 'focus-within'; // polyfill :focus-within for tab accessible menus
 

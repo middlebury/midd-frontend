@@ -75,6 +75,7 @@
     "h": "^0.1.0",
     "headroom.js": "^0.9.4",
     "intersection-observer": "^0.5.1",
+    "lazysizes": "^4.1.5",
     "lodash.debounce": "^4.0.8",
     "middlebury-design-system": "^0.10.0",
     "micromodal": "^0.3.2",
