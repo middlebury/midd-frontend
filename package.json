@@ -9,7 +9,7 @@
     "build:scripts": "NODE_ENV=production gulp scripts",
     "wrapper": "npm run build && gulp zip",
     "deploy": "gulp deploy",
-    "test": "bundlesize",
+    "bundlesize": "npm run build && bundlesize",
     "lint": "eslint src/js/**",
     "format": "prettier --config ./.prettierrc --write \"src/**/*.{js,scss}\""
   },
