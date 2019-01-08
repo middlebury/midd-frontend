@@ -1,7 +1,6 @@
 import { h, Component } from 'preact';
 
-const RIGHT_ARROW_KEY = 39;
-const LEFT_ARROW_KEY = 37;
+import { LEFT_ARROW_KEY, RIGHT_ARROW_KEY } from '../constants';
 
 class Slider extends Component {
   handleKeyDown = event => {
