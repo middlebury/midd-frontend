@@ -1,11 +1,15 @@
 // TODO: object fit images?
 
-// polyfill nodelist foreach so you can
-// use document.querySelectorAll('.my-elems').forEach() in IE
+/**
+ * polyfill nodelist foreach so you can
+ * use document.querySelectorAll('.my-elems').forEach() in IE
+ */
 import 'polyfill-nodelist-foreach';
 
-// polyfill intersection observer for ie and safari
-// used in menu-spy.js and triggering chart animations when they scroll into view
+/**
+ * Polyfill intersection observer for ie and safari
+ * used in menu-spy.js and triggering chart animations when they scroll into view.
+ */
 import 'intersection-observer';
 
 import 'lazysizes';
