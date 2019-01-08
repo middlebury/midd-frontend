@@ -1,0 +1,156 @@
+import MicroModal from 'micromodal';
+import anime from 'animejs';
+
+import { $, $$, on, off, addClass, removeClass } from './utils/dom';
+import SmoothScroll from './smooth-scroll';
+
+import { LEFT_ARROW_KEY, RIGHT_ARROW_KEY } from './constants';
+
+class Lightbox {
+  constructor(el) {
+    this.el = el;
+
+    this.nextBtn = $('[data-lightbox-next]', el);
+    this.prevBtn = $('[data-lightbox-prev]', el);
+    this.items = $$('[data-lightbox-item]', el);
+    this.count = $('[data-lightbox-count]', el);
+    this.thumbs = $$('[data-lightbox-thumb]', el);
+    this.thumbsList = $('[data-lightbox-thumbs]', el);
+
+    this.index = 0;
+    this.total = this.items.length;
+    this.animating = false;
+
+    this.observer = null;
+
+    this.smoothScroller = null;
+
+    this.init();
+  }
+
+  init() {
+    this.addListeners();
+    this.updateCount(this.index + 1);
+  }
+
+  updateCount(num) {
+    this.count.innerHTML = `${num}/${this.total}`;
+  }
+
+  destroy() {
+    off(this.el, 'keyup', this.handleKeyUp);
+    off(this.nextBtn, 'click', this.next);
+    off(this.prevBtn, 'click', this.prev);
+
+    // this.smoothScroller.destroy();
+
+    this.items.forEach(item => {
+      // this.observer.unobserve(item);
+    });
+  }
+
+  addListeners() {
+    on(this.el, 'keyup', this.handleKeyUp);
+    on(this.nextBtn, 'click', this.next);
+    on(this.prevBtn, 'click', this.prev);
+
+    this.smoothScroller = new SmoothScroll(this.thumbs, {
+      targets: this.el,
+      easing: 'easeInCubic',
+      duration: 300,
+      elasticity: 500
+    });
+
+    const options = {
+      margin: '0% 0% -50% 0%',
+      threshold: [0, 1]
+    };
+
+    this.observer = new IntersectionObserver(
+      this.handleObserverChange,
+      options
+    );
+
+    this.items.forEach(item => {
+      this.observer.observe(item);
+    });
+  }
+
+  handleObserverChange = entries => {
+    // reverse() highlights the first item instead
+    entries.reverse().forEach(entry => {
+      const link = $(`a[href="#${entry.target.id}"]`);
+      const index = [].indexOf.call(this.thumbs, link);
+
+      if (entry.intersectionRatio === 1) {
+        this.thumbs.forEach(el => {
+          removeClass(el.closest('li'), 'active');
+        });
+
+        addClass(link.closest('li'), 'active');
+
+        this.index = index;
+
+        this.updateCount(index + 1);
+      }
+    });
+  };
+
+  handleKeyUp = event => {
+    const { keyCode } = event;
+
+    if (keyCode === RIGHT_ARROW_KEY) {
+      this.next();
+    } else if (keyCode === LEFT_ARROW_KEY) {
+      this.prev();
+    }
+  };
+
+  next = () => {
+    this.scrollToImage(this.index + 1);
+  };
+
+  prev = () => {
+    this.scrollToImage(this.index - 1);
+  };
+
+  scrollToImage(index) {
+    // do not scroll if next index is below 1 or above total items or animating
+    if (this.animating || index === -1 || index === this.total) {
+      return;
+    }
+
+    this.animating = true;
+
+    const target = this.items[index];
+
+    // offset more so it shows up below fixed pager buttons
+    // TODO: handle this without a magic number
+    const scrollTop = target.offsetTop - 100;
+
+    anime({
+      targets: this.el,
+      scrollTop,
+      easing: 'easeInCubic',
+      duration: 300,
+      elasticity: 500,
+      complete: () => {
+        this.animating = false;
+      }
+    });
+  }
+}
+
+MicroModal.init({
+  onShow: modal => {
+    if (modal.hasAttribute('data-lightbox')) {
+      modal.lightbox = new Lightbox(modal);
+    }
+  },
+  onClose: modal => {
+    if (modal.lightbox) {
+      modal.lightbox.destroy();
+    }
+  },
+  disableScroll: true
+});

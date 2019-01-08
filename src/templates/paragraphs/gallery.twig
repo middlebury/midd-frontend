@@ -1,31 +1,25 @@
-<div class="gallery" data-gallery='{{gallery_data|json_encode}}'>
+<div class="gallery">
+  <h2 class="sr-only">Gallery title</h2>
 
   <div class="gallery__image">
-    <a href="">
-      <figure>
+    {# should link to drupal page rendering the gallery images #}
+    <a href="#modal-1" class="gallery__link" data-micromodal-trigger="modal-1">
+      <figure class="media">
         <img src="http://placekitten.com/1280/720" alt="">
-        <figcaption>
+        <figcaption class="media__caption">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit
         </figcaption>
       </figure>
-      <span class="button button--primary video__button">
+      <span class="button button--primary gallery__button">
         Open Gallery
         <span class="ml-3">
           <svg class="icon">
             <use xlink:href="#icon-images" />
           </svg>
         </span>
+        <span class="mx-2">|</span>
+        <span>{{gallery_data.length}} images</span>
       </span>
     </a>
   </div>
-
-  {# <noscript> #}
-    {% for item in gallery_data %}
-      <figure data-gallery-item>
-        <img src="{{item.src}}" alt="">
-        <figcaption>{{item.caption}}</figcaption>
-      </figure>
-    {% endfor %}
-  {# </noscript> #}
-
 </div>

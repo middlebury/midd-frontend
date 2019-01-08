@@ -21,7 +21,7 @@ import './audio-player'; // custom Preact audio player
 import './offices'; // middlebury.edu/office homepage script for filtering items shown
 import './slideshow'; // swiperjs slideshows
 import './mover'; // swiperjs slideshows
-import './create-galleries'; // create Preact lightbox galleries from dom
+import './gallery'; // create Preact lightbox galleries from dom
 
 focusWithin(document);
 

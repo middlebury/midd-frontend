@@ -1,0 +1,64 @@
+<div id="modal-1" aria-hidden="true" class="lightbox" role="dialog" aria-modal="true" aria-labelledby="modal-1-title" data-lightbox>
+
+  <h2 id="modal-1-title" class="sr-only">
+    Modal Title
+  </h2>
+
+  <div class="lightbox__controls">
+
+    <button class="lightbox__button" aria-label="Previous image" data-lightbox-prev>
+      <svg class="icon mr-1" aria-hidden="true">
+        <use xlink:href="#icon-chevron-left">
+      </svg>
+      <span class="d-none d-md-inline-block">
+        Prev
+      </span>
+    </button>
+
+    <div class="lightbox__count" data-lightbox-count></div>
+
+    <button class="lightbox__button" aria-label="Next" data-lightbox-next>
+      <span class="d-none d-md-inline-block">
+        Next
+      </span>
+      <svg class="icon ml-1" aria-hidden="true">
+        <use xlink:href="#icon-chevron-right">
+      </svg>
+    </button>
+
+    <button class="lightbox__button lightbox__button--close" aria-label="Close modal" data-micromodal-close>
+      Close
+      <svg class="icon ml-1" aria-hidden="true">
+        <use xlink:href="#icon-times">
+      </svg>
+    </button>
+  </div>
+
+  <ol class="lightbox__thumbs-list" data-lightbox-thumbs>
+
+    {% for item in gallery_data %}
+
+      <li class="lightbox__thumbs-item">
+        <a href="#lightbox-item-{{loop.index}}" class="lightbox__thumbs-button" role="button" data-lightbox-thumb>
+          <img data-src="{{item.thumb}}" alt="" class="lazyload">
+        </a>
+      </li>
+
+    {% endfor %}
+
+  </ol>
+
+  <div class="lightbox__images" id="modal-1-content">
+
+    {% for item in gallery_data %}
+
+      <figure class="lightbox__figure media media--contain-caption" id="lightbox-item-{{loop.index}}" data-lightbox-item>
+        <img data-src="{{item.src}}" alt="" class="lazyload" width="{{item.width}}" height="{{item.height}}">
+        <figcaption class="media__caption text-white">{{item.caption}}</figcaption>
+      </figure>
+
+    {% endfor %}
+
+  </div>
+
+</div>
