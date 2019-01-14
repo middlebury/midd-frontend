@@ -1,0 +1,124 @@
+{% extends "anchor-layout.twig" %}
+
+{% set page_header = {
+  title: 'Event detail page title',
+  breadcrumb: [
+    { text: 'Student Financial Services' },
+    { text: 'Events' },
+  ]
+} %}
+
+{% block page %}
+
+  {% embed 'partials/sidebar-layout.twig' %}
+
+    {% block sidebar %}
+      <section>
+        <header class="mb-4">
+          <h2 class="title">Speakers</h2>
+        </header>
+
+        <div class="row">
+
+          <div class="col-lg-12 col-md-6">
+            <article class="mb-3">
+              <div class="mb-2">
+                <a href="#">
+                  {% include 'partials/img.twig' with { name: 'speaker' } %}
+                </a>
+              </div>
+              <h3 class="f3">
+                <a href="#">Michael Green</a>
+              </h3>
+              <div>
+                <p class="f2">Program Manager of the Monterey State Historic Park, who will discuss the history of Cooper Molera.</p>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </section>
+
+    {% endblock %}
+    {% block content %}
+
+      <header class="mb-4" aria-labelledby="midd-event-label">
+        <div class="mb-4">
+          <p class="f3 mb-2">
+            <time datetime="">August 18, 2017 &middot; 4:00 PM&ndash;August 19, 2017 &middot; 8:00 PM</time>
+          </p>
+          <p class="f3 mb-2">TESOL Members $175; Non-members $225</p>
+          <p class="f3">Open to the Public</p>
+        </div>
+
+        {% include 'partials/share.twig' %}
+      </header>
+
+      <div class="mb-6">
+        <figure>
+          {% include 'partials/img.twig' with { name: 'featured' } %}
+          <figcaption class="media__caption">
+            This is a caption for this image.
+            <span class="media__credit">Credit</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="mb-6 typography">
+        <p>The Old Monterey Foundation, a California non-profit, public benefit corporation, was formed on February 14, 2011, with the specific mission and purpose of promoting, supporting and enhancing the artistic, cultural and historic environment of historic Downtown Monterey, California.</p>
+
+        <p>Since 2013, Old Monterey Foundation has continued its promotion of local history and art with the 2014 Jules Tavernier Lecture Series and the 2015 Marcia Devoe Lecture Series, and the Art in the Gardens Plein Aire event.</p>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+
+          <div class="mb-5">
+            <h2 class="mb-4">Where</h2>
+
+            <address class="mb-3">McCone Irvine Auditorium<br>
+            460 Pierce St<br>
+            Monterey, CA 93940</address>
+
+            <ul class="list">
+              <li class="list__item">
+                <span class="list__icon">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-compass" />
+                  </svg>
+                </span>
+                <a href="#" class="link-underline">View in Campus Map</a>
+              </li>
+              <li class="list__item">
+                <span class="list__icon">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-calendar" />
+                  </svg>
+                </span>
+                <a href="#" class="link-underline">Add to my calendar</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mb-5">
+            <h2 class="mb-4">Contact Organizer</h2>
+
+            <p>Priscilla Lorenzo<br>
+              <a href="#" class="link-underline">plorenzo@middlebury.edu</a><br>
+              <a href="tel:" class="link-underline">802-555-0000</a>
+            </p>
+          </div>
+
+        </div>
+        <div class="col-sm-6">
+          <div class="mb-4">
+            <a href="https://map.concept3d.com/?id=972&tbh&sbh#!sbc/?fh/?ph/?bm/19710?ce/19710?mc/36.59874455979822,-121.89667403697969?z/19?sbc/">
+              <img alt="Map of McCone Board Room" src="https://staticmap.concept3d.com/map/static-map/?map=972&loc=189440&scale=1&label&zoom=19">
+            </a>
+          </div>
+        </div>
+      </div>
+
+    {% endblock %}
+  {% endembed %}
+{% endblock %}
