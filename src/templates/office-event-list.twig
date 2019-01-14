@@ -1,0 +1,78 @@
+{% extends "anchor-layout.twig" %}
+
+{% set page_header = {
+  title: 'Events',
+} %}
+
+{% set filter_active = true %}
+{% set no_results = false %}
+
+{% block page %}
+
+  {% embed 'partials/sidebar-layout.twig' %}
+    {% block nav %}
+
+      <div class="d-none d-md-block">
+        <div class="form-group">
+          <label for="midd-events-datepicker" class="">Filter by date</label>
+          <input type="text" class="form-control js-events-datepicker d-none" id="midd-events-datepicker" />
+          {% if filter_active %}
+            <div class="pt-2">
+              <a href="#" class="link-underline f2">Show All Events</a>
+            </div>
+          {% endif %}
+        </div>
+
+        {% include 'partials/sidebar-search.twig' %}
+
+        <div class="page-nav">
+          <ul class="page-nav__list">
+            <li class="page-nav__item">
+              <a href="#" class="page-nav__link">
+                Plan Your Event
+              </a>
+            </li>
+            <li class="page-nav__item">
+              <a href="#" class="page-nav__link">
+                View Academic Calendar
+              </a>
+            </li>
+            <li class="page-nav__item">
+              <a href="#" class="page-nav__link">
+                Commencement
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    {% endblock %}
+    {% block content %}
+
+      {% if filter_active %}
+        <div class="alert alert--info mb-5 clearfix">
+          <span>Showing Events for March 2, 2018</span>
+          {# if float right is on link, for some reason more space gets added between the link text and border #}
+          <span class="float-right">
+            <a href="#" class="link-underline f2">Show All Events</a>
+          </span>
+        </div>
+      {% endif %}
+
+      {% if no_results %}
+        <p class="lead">There are no events on this date.</p>
+      {% endif %}
+
+      {% include 'partials/events-table.twig' %}
+
+      {% include 'partials/events-table.twig' %}
+
+      {% include 'partials/pagination.twig' %}
+
+    {% endblock %}
+
+  {% endembed %}
+
+{% endblock %}
+
