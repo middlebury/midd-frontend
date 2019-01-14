@@ -1,29 +1,10 @@
 .profile-section {
-  margin-bottom: spacing(6);
-
-  & + & {
-    padding-top: spacing(6);
-    border-top: 3px solid $border-color;
-  }
+  border-top: 4px solid $border-color;
+  padding-top: spacing(2);
+  margin-bottom: spacing(8);
 }
 
 .profile-section__title {
-  font-size: typescale(5);
-  font-family: $font-family-sans-serif;
-  font-weight: $font-weight-semibold;
-  margin-bottom: $spacing-4;
-}
-
-.profile-section__list {
-  list-style-type: disc;
-  padding-left: $spacing-5;
-}
-
-.profile-section__item {
-  font-family: $font-family-serif;
-  color: $gray;
-
-  &:not(:last-of-type) {
-    margin-bottom: $spacing-2;
-  }
+  @include section-title;
+  margin-bottom: spacing(4);
 }
