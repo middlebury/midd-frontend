@@ -57,6 +57,7 @@
   border-top: 1px solid $navy-light;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 
   @include media(lg) {
     margin-right: spacing(4);
@@ -110,6 +111,7 @@
   font-weight: $font-weight-medium;
   opacity: 0.8;
   transition: opacity 0.2s, border-color 0.2s;
+  flex: 1;
 
   @include media(lg) {
     color: $navy;
