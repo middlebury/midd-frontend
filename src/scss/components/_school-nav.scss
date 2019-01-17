@@ -120,7 +120,7 @@
 
 .school-nav__link--top {
   border-bottom: 4px solid transparent;
-  line-height: 1;
+  line-height: $line-height-solid;
 
   .school-nav__item:focus-within &,
   .school-nav__item:hover & {
@@ -132,12 +132,12 @@
   @include media(lg) {
     font-size: typescale(2);
     font-weight: $font-weight-semibold;
-    line-height: lineheight('body');
+    line-height: $line-height-body;
   }
 }
 
 .school-nav__item--util {
-  font-size: 18px;
+  font-size: typescale(4);
 }
 
 .school-nav__link--util {
