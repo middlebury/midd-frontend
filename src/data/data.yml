@@ -388,3 +388,18 @@ offices:
     group: Technology
   - title: WebMail
     group: Technology
+
+
+top_level_nav_example:
+- text: Dates and Fees
+- text: Aapplication Information
+- text: Academics
+- text: Faculity and Administration
+- text: Housing
+- text: Student Life
+- text: Faculity and Administration
+- text: Dates and Fees
+- text: Academics
+- text: Housing
+- text: Student Life
+- text: Aapplication Information
