@@ -4,7 +4,7 @@
   @include media(lg) {
     order: 1;
     flex: 1;
-    margin-left: spacing(4);
+    padding-left: spacing(4);
     background: $white;
   }
 }
