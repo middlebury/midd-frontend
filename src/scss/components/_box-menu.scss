@@ -1,0 +1,75 @@
+.box-menu {
+  border: 1px solid $blue-light;
+  margin-bottom: spacing(7);
+  background-color: $white;
+  border-top: 8px solid $blue-light;
+
+  padding-top: spacing(3);
+  padding-left: spacing(4);
+  padding-right: spacing(4);
+
+  @include media(md) {
+    margin-bottom: spacing(8);
+  }
+
+  @include media(lg) {
+    margin-bottom: spacing(9);
+  }
+}
+
+.box-menu--overlap {
+  margin-top: -#{spacing(5)};
+  @include media(md) {
+    margin-top: -#{spacing(8)};
+  }
+}
+
+// .box-menu__button {
+//   background: $blue-light;
+//   color: $white;
+//   padding: spacing(2) spacing(4);
+//   display: block;
+//   font-weight: $font-weight-semibold;
+//   text-transform: uppercase;
+//   line-height: $line-height-solid;
+//   letter-spacing: 2px;
+//   transition: background-color 0.2s;
+//   margin-bottom: spacing(3);
+
+//   &:hover,
+//   &:focus {
+//     background-color: darken($blue-light, 5%);
+//     text-decoration: none;
+//   }
+
+//   @include media(md) {
+//     pointer-events: none;
+//   }
+// }
+
+// .box-menu__icon {
+//   float: right;
+//   transition: $chevron-transition;
+
+//   .box-menu.is-toggled & {
+//     transform: $chevron-transform;
+//   }
+// }
+
+.box-menu__list {
+}
+
+.box-menu__item {
+  margin-bottom: spacing(3);
+
+  @include media(md) {
+    display: inline-block;
+    margin-right: spacing(5);
+    margin-bottom: spacing(4);
+  }
+}
+
+.box-menu__link {
+  @include link-border();
+  // line-height: $line-height-heading;
+}

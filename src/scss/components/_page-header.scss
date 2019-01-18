@@ -1,0 +1,46 @@
+.page-header {
+  padding-top: spacing(4);
+  padding-bottom: spacing(4);
+}
+
+.page-header__figure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.page-header__content {
+  .page-header--has-image & {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-top: spacing(9);
+    padding-bottom: spacing(5);
+    background-image: linear-gradient(to bottom, transparent, black);
+  }
+
+  .page-header--has-menu & {
+    padding-bottom: spacing(7);
+    @include media(md) {
+      padding-bottom: spacing(9);
+    }
+  }
+}
+
+.page-header__title {
+  @include display-3;
+}
+
+.page-header--has-image {
+  padding-bottom: 0;
+  padding-top: percentage(9 / 16);
+  height: 0;
+  position: relative;
+
+  .page-header__title {
+    color: $white;
+  }
+}
