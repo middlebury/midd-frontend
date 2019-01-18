@@ -1,10 +1,11 @@
 .school-header {
   background: $brand-primary;
   border-top: 4px solid $brand-primary;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
 
   @include media(lg) {
-    display: flex;
-    align-items: flex-start;
     background: none;
     padding: 0;
   }
@@ -28,7 +29,7 @@
   }
 }
 
-.school-header__primary {
+.school-header__brand {
   padding-top: spacing(3);
   padding-bottom: spacing(3);
   display: flex;
@@ -50,73 +51,42 @@
     // max-width: inherit;
   }
 }
+// .school-header__secondary {
+//   background: $navy;
+//   border-bottom: 1px solid $navy;
+//   flex-direction: column-reverse;
+//   display: none;
 
-.school-header__handle {
-  color: $white;
-  padding: 1rem;
-  background: none;
-  border: 0;
-  appearance: none;
+//   &.is-toggled {
+//     display: flex;
+//   }
 
-  margin-right: -1rem;
-  @include media(lg) {
-    display: none;
-  }
-}
+//   @include media(lg) {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     width: 100%;
+//     padding-left: 1.5rem;
+//     padding-right: 1.5rem;
+//     background: $white;
+//   }
+// }
 
-.school-header__icon {
-}
+// .school-header__navs {
+//   @include media(lg) {
+//     display: flex;
+//   }
+// }
 
-.school-header__icon--bars {
-  .school-header__handle.is-toggled & {
-    display: none;
-  }
-}
-.school-header__icon--times {
-  display: none;
+// .school-header__divider {
+//   margin-top: 1.5rem;
+//   height: 23px;
+//   background: $brand-primary;
+//   width: 1px;
+//   display: none;
+//   @include media(lg) {
+//     display: inline-block;
+//   }
+// }
 
-  .school-header__handle.is-toggled & {
-    display: inline-block;
-  }
-}
-
-.school-header__secondary {
-  background: $navy;
-  border-bottom: 1px solid $navy;
-  flex-direction: column-reverse;
-  display: none;
-
-  &.is-toggled {
-    display: flex;
-  }
-
-  @include media(lg) {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    background: $white;
-  }
-}
-
-.school-header__navs {
-  @include media(lg) {
-    display: flex;
-  }
-}
-
-.school-header__divider {
-  margin-top: 1.5rem;
-  height: 23px;
-  background: $brand-primary;
-  width: 1px;
-  display: none;
-  @include media(lg) {
-    display: inline-block;
-  }
-}
-
-.school-header__search {
-}
+// .school-header__search { }

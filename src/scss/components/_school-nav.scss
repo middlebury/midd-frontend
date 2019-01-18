@@ -1,8 +1,71 @@
 .school-nav {
+  order: 2;
+
+  @include media(lg) {
+    order: 1;
+    flex: 1;
+    margin-left: spacing(4);
+    background: $white;
+  }
+}
+
+.school-nav__button {
+  display: inline-block;
+  color: $white;
+  padding: spacing(3);
+  font-size: typescale(2);
+  font-weight: $font-weight-medium;
+  background: none;
+  border: 0;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  @include media(lg) {
+    display: none;
+  }
+}
+
+.school-nav__button--subnav {
+  border-left: 1px solid $navy-light;
+}
+
+.school-nav__bars {
+  .school-nav__button.is-toggled & {
+    display: none;
+  }
+}
+
+.school-nav__times {
+  display: none;
+
+  .school-nav__button.is-toggled & {
+    display: inline-block;
+  }
+}
+
+.school-nav__menu {
+  position: absolute;
+  top: 100%;
+  background: $navy;
+  right: 0;
+  display: none;
+
+  &.is-toggled {
+    display: block;
+  }
+
+  @include media(lg) {
+    background-color: transparent;
+    position: relative;
+    display: block;
+  }
 }
 
 .school-nav__list {
   width: 100%;
+
   @include media(lg) {
     display: flex;
   }
@@ -96,7 +159,7 @@
   }
 }
 
-.school-nav__icon {
+.school-nav__chevron {
   transition: $chevron-transition;
   .school-nav__handle.is-toggled & {
     transform: $chevron-transform;
