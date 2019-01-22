@@ -392,7 +392,7 @@ offices:
 
 top_level_nav_example:
 - text: Dates and Fees
-- text: Aapplication Information
+- text: Application Information
 - text: Academics
 - text: Faculity and Administration
 - text: Housing
@@ -402,4 +402,4 @@ top_level_nav_example:
 - text: Academics
 - text: Housing
 - text: Student Life
-- text: Aapplication Information
+- text: Application Information
