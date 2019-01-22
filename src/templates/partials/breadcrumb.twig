@@ -1,11 +1,14 @@
-<nav class="breadcrumb">
+<nav class="breadcrumb {{light ? 'breadcrumb--light' : ''}}" aria-labelledby="midd-breadcrumb-label">
+  <h2 class="sr-only" id="midd-breadcrumb-label">Breadcrumb</h2>
+
   <ol class="breadcrumb__list">
-    <li class="breadcrumb__item">
-      <a href="" class="breadcrumb__link">Middlebury</a>
-    </li>
     {% for item in items %}
       <li class="breadcrumb__item">
         <a href="" class="breadcrumb__link">{{item.text}}</a>
+      </li>
+    {% else %}
+      <li class="breadcrumb__item">
+        <a href="" class="breadcrumb__link">Middlebury</a>
       </li>
     {% endfor %}
   </ol>

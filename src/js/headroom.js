@@ -1,14 +1,55 @@
+import onresize from 'onresize';
 import Headroom from 'headroom.js';
 
-const headerElem = document.querySelector('.js-headroom');
+import { $ } from './utils/dom';
 
-if (headerElem) {
-  const header = new Headroom(headerElem, {
-    offset: headerElem.offsetHeight
+let headerInstance;
+let cachedOffset = 0;
+
+const isDisplayNone = el => getComputedStyle(el).display === 'none';
+
+const initStickyHeader = (elem, offset) => {
+  // set the top padding so content does not get hidden under sticky header
+  headerInstance = new Headroom(elem, {
+    offset
   });
 
-  header.init();
+  document.documentElement.style.paddingTop = offset + 'px';
 
-  document.querySelector('body').style.paddingTop =
-    headerElem.offsetHeight + 'px';
+  headerInstance.init();
+};
+
+const getOffset = elem => {
+  /**
+   * Allow headroom to be offset by a different element than the header itself.
+   *
+   * If it was offset by the header itself, it creates a gap of white space under the
+   * school navigation since the logo extends past the nav.
+   */
+  const offsetSelector = elem.getAttribute('data-headroom-offset-target');
+  const offsetEl = offsetSelector ? $(offsetSelector) : elem;
+
+  let offset = offsetEl.offsetHeight;
+  if (isDisplayNone(offsetEl)) {
+    offset = elem.offsetHeight;
+  }
+
+  return offset;
+};
+
+const headerElem = $('.js-headroom');
+if (headerElem) {
+  const offset = getOffset(headerElem);
+  initStickyHeader(headerElem, offset);
+
+  onresize.on(() => {
+    const offset = getOffset(headerElem);
+
+    if (offset !== cachedOffset) {
+      cachedOffset = offset;
+
+      headerInstance.destroy();
+      initStickyHeader(headerElem, offset);
+    }
+  });
 }

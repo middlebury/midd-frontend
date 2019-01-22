@@ -30,3 +30,10 @@
 .breadcrumb__link {
   font-size: 14px;
 }
+
+.breadcrumb--light {
+  .breadcrumb__item:after,
+  .breadcrumb__link {
+    color: $white;
+  }
+}
