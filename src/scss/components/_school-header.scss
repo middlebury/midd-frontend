@@ -46,47 +46,4 @@
 // TODO: do we need to use picture since logos widths will vary across schools?
 .school-header__logo {
   max-width: inherit;
-  @include media(lg) {
-    // width: 187px;
-    // max-width: inherit;
-  }
 }
-// .school-header__secondary {
-//   background: $navy;
-//   border-bottom: 1px solid $navy;
-//   flex-direction: column-reverse;
-//   display: none;
-
-//   &.is-toggled {
-//     display: flex;
-//   }
-
-//   @include media(lg) {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-between;
-//     width: 100%;
-//     padding-left: 1.5rem;
-//     padding-right: 1.5rem;
-//     background: $white;
-//   }
-// }
-
-// .school-header__navs {
-//   @include media(lg) {
-//     display: flex;
-//   }
-// }
-
-// .school-header__divider {
-//   margin-top: 1.5rem;
-//   height: 23px;
-//   background: $brand-primary;
-//   width: 1px;
-//   display: none;
-//   @include media(lg) {
-//     display: inline-block;
-//   }
-// }
-
-// .school-header__search { }
