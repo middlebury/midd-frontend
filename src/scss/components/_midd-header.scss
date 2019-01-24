@@ -31,11 +31,12 @@
 
 .midd-header__container {
   @include make-container();
+  position: relative;
+  display: flex;
 
   @include media(lg) {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    // align-items: flex-start;
+    // justify-content: space-between;
   }
 
   .midd-header--transparent & {
@@ -43,31 +44,7 @@
   }
 }
 
-.midd-header__primary {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
-
-.midd-header__secondary {
-  display: none;
-  flex-direction: column-reverse;
-  padding-top: spacing(5);
-
-  &.is-toggled {
-    display: flex;
-  }
-
-  @include media(lg) {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    padding-top: 0;
-  }
-}
-
-.midd-header__logo {
+.midd-header__brand {
   height: 48px;
   @include media(lg) {
     height: 64px;
@@ -77,8 +54,8 @@
 .midd-header__shield {
   width: 44px;
   position: relative;
-  left: 0;
   top: 8px;
+  z-index: 3;
 
   @include media(lg) {
     width: 67px;
@@ -88,54 +65,10 @@
 .midd-header__wordmark {
   width: 76px;
   position: relative;
-  left: 4px;
-  top: 0;
+  margin-left: 4px;
 
   @include media(lg) {
     width: 114px;
-    left: 8px;
+    margin-left: 8px;
   }
-}
-
-.midd-header__button {
-  display: inline-block;
-  color: $white;
-  font-size: typescale(2);
-  font-weight: $font-weight-semibold;
-  line-height: $line-height-solid;
-  margin-right: -#{spacing(3)};
-  padding: spacing(3);
-
-  &:hover,
-  &:active,
-  &:focus {
-    text-decoration: none;
-  }
-
-  @include media(lg) {
-    display: none;
-  }
-}
-
-.midd-header__icon {
-  margin-right: spacing(2);
-}
-
-.midd-header__icon--bars {
-  .midd-header__button.is-toggled & {
-    display: none;
-  }
-}
-
-.midd-header__icon--times {
-  display: none;
-  .midd-header__button.is-toggled & {
-    display: inline-block;
-  }
-}
-
-.midd-header__nav {
-}
-
-.midd-header__search {
 }

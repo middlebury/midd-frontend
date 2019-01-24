@@ -1,34 +1,29 @@
 .school-search {
-  margin-left: auto;
-  order: 1;
-
   @include media(lg) {
-    order: 2;
     position: relative;
-    background: $white;
   }
 }
 
-.school-search__button {
+.school-search__handle {
   color: $white;
   display: inline-block;
   padding: spacing(3);
   font-weight: $font-weight-medium;
   font-size: typescale(2);
+  line-height: $line-height-solid;
 
-  &.is-toggled,
   &:hover {
     text-decoration: none;
   }
 
   @include media(lg) {
     color: $navy;
-    padding-top: spacing(4);
-    padding-bottom: spacing(4);
+    padding: spacing(4) 0;
     border-bottom: 4px solid transparent;
     opacity: 0.8;
     transition: opacity 0.2s, border-color 0.2s;
 
+    &.is-toggled,
     &:hover {
       opacity: 1;
       border-color: $navy;
@@ -37,45 +32,37 @@
 }
 
 .school-search__content {
-  transition: 0.2s;
   position: absolute;
   top: 100%;
   right: 0;
   width: 100%;
-  display: none;
   padding: spacing(3);
   background-color: $navy;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s;
 
   &.is-toggled {
-    display: block;
+    visibility: visible;
+    opacity: 1;
   }
 
   @include media(lg) {
-    opacity: 0;
-    visibility: hidden;
     width: 400px;
     background-color: $white;
     border: 1px solid $brand-primary;
   }
-
-  &.is-toggled {
-    opacity: 1;
-    visibility: visible;
-  }
 }
 
-.school-search__icon {
-}
-
-.school-search__icon--times {
+.school-search__times {
   display: none;
-  .school-search__button.is-toggled & {
+  .school-search__handle.is-toggled & {
     display: inline-block;
   }
 }
 
-.school-search__icon--search {
-  .school-search__button.is-toggled & {
+.school-search__mag {
+  .school-search__handle.is-toggled & {
     display: none;
   }
 }

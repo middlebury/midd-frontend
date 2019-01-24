@@ -1,140 +1,100 @@
 <header class="midd-header{% if midd_header_transparent %} midd-header--transparent{% endif %}">
   <div class="midd-header__container">
-    <div class="midd-header__primary">
-      <div class="midd-header__logo">
-        <a href="">
-          <img src="images/midd-shield.svg" alt="" class="midd-header__shield">
-          <img src="images/midd-wordmark.svg" alt="" class="midd-header__wordmark">
-        </a>
-      </div>
 
-      <a href="#menu" data-toggle-target=".js-midd-header-menu" class="midd-header__button">
-        <svg class="icon midd-header__icon midd-header__icon--bars">
-          <use xlink:href="#icon-bars">
-        </svg>
-        <svg class="icon midd-header__icon midd-header__icon--times">
-          <use xlink:href="#icon-times">
-        </svg>
-        <span>Menu</span>
+    <div class="midd-header__brand">
+      <a href="">
+        <img src="images/midd-shield.svg" alt="" class="midd-header__shield">
+        <img src="images/midd-wordmark.svg" alt="" class="midd-header__wordmark">
       </a>
     </div>
 
-    <div class="midd-header__secondary js-midd-header-menu">
+    <nav class="midd-nav">
+      <button
+        class="midd-nav__handle"
+        data-toggle-target=".js-midd-nav"
+        data-toggle-group="midd-header"
+        aria-expanded="false"
+      >
+        <svg class="icon mr-1 midd-nav__bars">
+          <use xlink:href="#icon-bars">
+        </svg>
+        <svg class="icon mr-1 midd-nav__times">
+          <use xlink:href="#icon-times">
+        </svg>
+        <span class="d-none d-sm-inline">Menu</span>
+      </button>
 
-      {% set navigation = [
-        {
-          text: 'Our Schools',
-          href: '#',
-          items: [
-            {
-              href: 'http://www.middlebury.edu',
-              text: 'Middlebury College',
-            },
-            {
-              href: 'http://www.middlebury.edu/ls',
-              text: 'Language Schools',
-            },
-            {
-              href: 'http://www.middlebury.edu/blse',
-              text: 'Bread Loaf School of English',
-            },
-            {
-              href: 'http://www.middlebury.edu/bread-loaf-conferences',
-              text: 'Bread Loaf Writers\' Conference',
-            },
-            {
-              href: 'https://www.middlebury.edu/institute/',
-              text: 'Institute of International Studies at Monterey',
-            },
-            {
-              href: 'http://www.middlebury.edu/study-abroad',
-              text: 'C.V. Starr Schools Abroad',
-            },
-            {
-              href: 'http://www.middlebury.edu/environment',
-              text: 'School of the Environment',
-            },
-          ]
-        },
-        {
-          href: 'http://www.middlebury.edu/about',
-          text: 'About Middlebury',
-        },
-        {
-          href: 'http://www.middlebury.edu/office/',
-          text: 'Offices and Services',
-        },
-      ] %}
+      <ul class="midd-nav__list midd-nav__list--top js-midd-nav">
+        {% for item in midd_nav %}
+          <li class="midd-nav__item midd-nav__item--top">
+            <a href="{{ item.href }}" class="midd-nav__link midd-nav__link--top">
+              {{ item.text }}
+            </a>
 
-      <div class="midd-header__nav">
-        <nav class="midd-nav">
-          <ul class="midd-nav__list">
-            {% for item in navigation %}
-              <li class="midd-nav__item midd-nav__item--top">
-                <a href="{{ item.href }}" class="midd-nav__link midd-nav__link--top">
-                  {{ item.text }}
-                </a>
+            {% if item.items %}
+              <button
+                class="midd-nav__handle midd-nav__handle--sub"
+                data-toggle-target=".js-middnav-list-{{ loop.index }}"
+              >
+                <svg class="icon midd-nav__chevron">
+                  <use xlink:href="#icon-chevron-down">
+                </svg>
+              </button>
+              <ul class="midd-nav__list midd-nav__list--sub js-middnav-list-{{ loop.index }}">
+                {% for subitem in item.items %}
+                  <li class="midd-nav__item">
+                    <a href="{{ subitem.href }}" class="midd-nav__link midd-nav__link--sub">{{ subitem.text }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
 
-                {% if item.items %}
-                  <a href="#" role="button" class="midd-nav__button" data-toggle-target=".js-middnav-list-{{ loop.index }}">
-                    <svg class="icon midd-nav__icon">
-                      <use xlink:href="#icon-chevron-down">
-                    </svg>
-                  </a>
-                  <ul class="midd-nav__list js-middnav-list-{{ loop.index }}">
-                    {% for subitem in item.items %}
-                      <li class="midd-nav__item">
-                        <a href="{{ subitem.href }}" class="midd-nav__link midd-nav__link--sub">{{ subitem.text }}</a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                {% endif %}
-              </li>
-            {% endfor %}
-          </ul>
-        </nav>
-      </div>
+    <section class="midd-search" aria-labelledby="midd-search-label">
+      <h2 class="sr-only" id="midd-search-label">Search</h2>
+      <a
+        href="/search"
+        class="midd-search__handle"
+        role="button"
+        data-toggle-target=".js-midd-search"
+        data-toggle-group="midd-header"
+        data-toggle-focus=".js-midd-search-input"
+        aria-expanded="false"
+        aria-haspopup="true"
+      >
+        <svg class="icon midd-search__mag">
+          <use xlink:href="#icon-search">
+        </svg>
+        <svg class="icon midd-search__times">
+          <use xlink:href="#icon-times">
+        </svg>
+        <span class="d-none d-sm-inline">Search</span>
+      </a>
 
-      <div class="midd-header__search">
-
-        <div class="midd-search">
-          <a
-            href="#search"
-            class="midd-search__handle"
-            data-toggle-target=".js-midd-search"
-            data-toggle-focus=".js-midd-search-input"
-            aria-expanded="false"
-            aria-haspopup="true"
-            role="button"
-          >
-            <svg class="icon midd-search__icon midd-search__icon--search">
-              <use xlink:href="#icon-search">
-            </svg>
-            <svg class="icon midd-search__icon midd-search__icon--times">
-              <use xlink:href="#icon-times">
-            </svg>
-            Search
-          </a>
-
-          <div class="midd-search__content js-midd-search">
-            <form action="http://www.middlebury.edu/search" method="GET">
-              <label for="midd-midd-search" class="sr-only">Search</label>
-              <div class="input-group">
-                <input type="search" class="form-control form-control--sm midd-search__input js-midd-search-input" placeholder="Search" name="q2" required id="midd-midd-search">
-                <button type="submit" class="button button--sm midd-search__button" aria-label="Search">
-                  <svg class="icon">
-                    <use xlink:href="#icon-search">
-                  </svg>
-                </button>
-              </div>
-            </form>
+      <div class="midd-search__content js-midd-search">
+        <form action="http://www.middlebury.edu/search" method="GET">
+          <label for="midd-search-input" class="sr-only">Search</label>
+          <div class="input-group">
+            <input
+              type="search"
+              class="form-control form-control--sm midd-search__input js-midd-search-input"
+              id="midd-search-input"
+              placeholder="Search"
+              name="q2"
+              required
+            />
+            <button type="submit" class="button button--sm midd-search__submit" aria-label="Search">
+              <svg class="icon">
+                <use xlink:href="#icon-search">
+              </svg>
+            </button>
           </div>
-        </div>
-
+        </form>
       </div>
-    </div>
+    </section>
+
   </div>
-
-  {% block midd_header_content %}{% endblock %}
-
 </header>

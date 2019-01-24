@@ -6,7 +6,10 @@ import { $ } from './utils/dom';
 let headerInstance;
 let cachedOffset = 0;
 
-const isDisplayNone = el => getComputedStyle(el).display === 'none';
+const isHidden = el => {
+  const s = getComputedStyle(el);
+  return s.display === 'none' || s.visibility === 'hidden';
+};
 
 const initStickyHeader = (elem, offset) => {
   // set the top padding so content does not get hidden under sticky header
@@ -30,7 +33,7 @@ const getOffset = elem => {
   const offsetEl = offsetSelector ? $(offsetSelector) : elem;
 
   let offset = offsetEl.offsetHeight;
-  if (isDisplayNone(offsetEl)) {
+  if (isHidden(offsetEl)) {
     offset = elem.offsetHeight;
   }
 

@@ -1,74 +1,80 @@
 .midd-search {
+  order: 1;
+  margin-left: auto;
+
   @include media(lg) {
+    margin-left: 0;
+    order: 2;
     position: relative;
   }
 }
 
-.midd-search__content {
-  transition: 0.2s;
-  margin-bottom: spacing(3);
+.midd-search__handle {
+  display: inline-block;
+  color: $white;
+  font-weight: $font-weight-medium;
+  font-size: typescale(2);
+  line-height: $line-height-solid;
+  padding: spacing(3);
+
+  &:hover {
+    text-decoration: none;
+  }
 
   @include media(lg) {
-    width: 400px;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    opacity: 0;
-    visibility: hidden;
-    padding: 1rem;
-    background-color: $navy;
-    border-top: 1px solid $white;
-    z-index: 999;
+    border-top: 4px solid transparent;
+    transition: border-color 0.2s;
+    padding-top: calc(#{spacing(4)} - 4px);
+    padding-bottom: spacing(4);
+    padding-left: 0;
+    padding-right: 0;
+    opacity: 0.8;
 
+    &:hover,
     &.is-toggled {
-      visibility: visible;
       opacity: 1;
+      border-color: $white;
     }
   }
 }
 
-.midd-search__handle {
-  font-weight: $font-weight-medium;
-  font-size: typescale(2);
-  color: $white;
-  line-height: $line-height-solid;
-  display: none;
-  position: relative;
-  border-top: 4px solid transparent;
-  transition: border-color 0.2s;
-  opacity: 0.8;
-
-  &:hover,
-  &.is-toggled {
-    opacity: 1;
-    text-decoration: none;
-    border-color: $white;
-  }
-
-  @include media(lg) {
-    display: block;
-    padding-top: calc(#{spacing(4)} - 4px);
-    padding-bottom: spacing(4);
-  }
-}
-
-.midd-search__icon {
-  margin-right: spacing(1);
-}
-
-.midd-search__icon--search {
+.midd-search__mag {
   .midd-search__handle.is-toggled & {
     display: none;
   }
 }
 
-.midd-search__icon--times {
+.midd-search__times {
   display: none;
   .midd-search__handle.is-toggled & {
     display: inline-block;
   }
 }
 
+.midd-search__content {
+  background: $navy;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  padding: spacing(3);
+  padding-top: spacing(4); // space away from shield more
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s;
+  z-index: 2;
+
+  &.is-toggled {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  @include media(lg) {
+    width: 400px;
+    border-top: 1px solid $white;
+    padding-top: spacing(3);
+  }
+}
 .midd-search__input {
   background-color: $brand-primary-dark;
   border-color: $brand-primary-dark;
@@ -87,7 +93,7 @@
   }
 }
 
-.midd-search__button {
+.midd-search__submit {
   background-color: $brand-primary-dark;
   border-color: $brand-primary-dark;
   color: $white;

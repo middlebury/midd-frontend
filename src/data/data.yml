@@ -18,7 +18,6 @@ site_nav:
   - text: Life at Middlebury
   - text: Academics
   - text: Admissions
-  utils:
   - text: News
   - text: Events
 
@@ -403,3 +402,27 @@ top_level_nav_example:
 - text: Housing
 - text: Student Life
 - text: Application Information
+
+midd_nav:
+- text: Our Schools
+  href: '#'
+  items:
+  - href: http://www.middlebury.edu
+    text: Middlebury College
+  - href: http://www.middlebury.edu/ls
+    text: Language Schools
+  - href: http://www.middlebury.edu/blse
+    text: Bread Loaf School of English
+  - href: http://www.middlebury.edu/bread-loaf-conferences
+    text: Bread Loaf Writers' Conference
+  - href: https://www.middlebury.edu/institute/
+    text: Institute of International Studies at Monterey
+  - href: http://www.middlebury.edu/study-abroad
+    text: C.V. Starr Schools Abroad
+  - href: http://www.middlebury.edu/environment
+    text: School of the Environment
+- href: http://www.middlebury.edu/about
+  text: About Middlebury
+
+- href: http://www.middlebury.edu/office/
+  text: Offices and Services
