@@ -1,6 +1,4 @@
 .page-header {
-  padding-top: spacing(4);
-  padding-bottom: spacing(4);
 }
 
 .page-header__figure {
@@ -12,6 +10,14 @@
 }
 
 .page-header__content {
+  padding-top: spacing(4);
+  padding-bottom: spacing(4);
+
+  @include media(lg) {
+    padding-top: spacing(8);
+    padding-bottom: spacing(9);
+  }
+
   .page-header--has-image & {
     position: absolute;
     bottom: 0;
