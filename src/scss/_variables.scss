@@ -203,14 +203,17 @@ $headings-line-height: lineheight('heading') !default;
 $headings-margin-bottom: 0 !default;
 
 $h1-font-size: typescale(8) !default;
+$h1-font-size-sm: typescale(7) !default;
 $h1-margin-top: 0 !default;
 $h1-margin-bottom: spacing(4) !default;
 
 $h2-font-size: typescale(7) !default;
+$h2-font-size-sm: typescale(6) !default;
 $h2-margin-top: spacing(8) !default;
 $h2-margin-bottom: spacing(4) !default;
 
 $h3-font-size: typescale(5) !default;
+$h3-font-size-sm: typescale(4) !default;
 $h3-margin-top: spacing(5) !default;
 $h3-margin-bottom: spacing(2) !default;
 
