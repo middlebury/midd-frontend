@@ -6,7 +6,7 @@
     {% set id = loop.index %}
 
     <div class="accordion-item js-accordion-item-{{id}}">
-      <h4 class="accordion-item__title" id="accordion-item-label-{{id}}" role="tab">
+      <h3 class="accordion-item__title" id="accordion-item-label-{{id}}" role="tab">
         <a
           href="#accordion-content-{{id}}"
           class="accordion-item__link"
@@ -24,8 +24,8 @@
             </svg>
           </span>
         </a>
+      </h3>
 
-      </h4>
       <div class="accordion-item__content" id="accordion-content-{{id}}" role="tabpanel" aria-labelledby="accordion-item-label-{{id}}">
         <div class="typography">
           {{item.content}}
