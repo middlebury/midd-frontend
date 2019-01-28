@@ -1,12 +1,13 @@
 .profile-info {
+  margin-bottom: spacing(4);
 }
 
 .profile-info__title {
   font-weight: $font-weight-semibold;
-  font-size: $paragraph-font-size;
+  font-size: typescale(3);
 }
 
 .profile-info__text {
-  font-size: $paragraph-font-size;
-  margin-bottom: 1rem;
+  font-size: typescale(3);
+  margin-bottom: spacing(2);
 }

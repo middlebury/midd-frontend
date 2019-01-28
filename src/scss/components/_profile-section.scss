@@ -1,10 +1,18 @@
 .profile-section {
-  border-top: 4px solid $border-color;
+  border-top: 4px solid $navy;
   padding-top: spacing(2);
   margin-bottom: spacing(8);
+
+  @include media(md) {
+    margin-bottom: spacing(9);
+  }
+
+  @include media(lg) {
+    padding-top: spacing(3);
+  }
 }
 
 .profile-section__title {
-  @include section-title;
-  margin-bottom: spacing(4);
+  @include h2-responsive;
+  margin-bottom: spacing(5);
 }
