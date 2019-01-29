@@ -32,6 +32,7 @@
 .school-header__brand {
   padding-top: spacing(3);
   padding-bottom: spacing(3);
+  pointer-events: initial;
   @include make-gutters();
 
   @include media(lg) {
