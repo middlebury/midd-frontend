@@ -46,3 +46,27 @@
     font-size: 64px;
   }
 }
+
+@mixin h1 {
+  font-size: $h1-font-size;
+}
+
+@mixin h1-responsive {
+  font-size: $h1-font-size-sm;
+
+  @include media(lg) {
+    font-size: $h1-font-size;
+  }
+}
+
+@mixin h2 {
+  font-size: $h2-font-size;
+}
+
+@mixin h2-responsive {
+  font-size: $h2-font-size-sm;
+
+  @include media(lg) {
+    font-size: $h2-font-size;
+  }
+}
