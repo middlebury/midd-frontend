@@ -1,43 +1,19 @@
 .accordion {
 }
 
-.accordion--faq {
-  .accordion-item__link:before,
-  .accordion-item__content:before {
-    color: $gray;
-    font-size: 14px;
-    font-family: $font-family-serif;
-    line-height: 30px;
-    margin-right: 1rem;
-  }
-
-  .accordion-item__link {
-    display: flex;
-
-    &:before {
-      content: 'Q';
-    }
-
-    &:hover:before {
-      text-decoration: none;
-    }
-  }
-
-  .accordion-item__content {
-    &:before {
-      content: 'A';
-    }
-  }
-
-  .accordion-item.is-toggled .accordion-item__content {
-    display: flex;
-  }
-}
-
 .accordion-item {
   &:not(:last-of-type) {
     border-bottom: 1px solid $border-color;
   }
+}
+
+.accordion-item__char {
+  color: $gray;
+  font-size: 14px;
+  font-family: $font-family-serif;
+  line-height: 30px;
+  margin-right: 1rem;
+  align-self: flex-start;
 }
 
 .accordion-item__title {
@@ -48,26 +24,29 @@
 
 .accordion-item__link {
   display: flex;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+  color: $link-color;
+  padding: spacing(3) spacing(1);
+  font-size: typescale(4);
+  transition: background-color 0.2s;
+  cursor: pointer;
 
   &:hover {
+    background-color: $gray-lighter;
     text-decoration: none;
   }
 }
 
 .accordion-item__label {
-  .accordion-item__link:hover & {
-    text-decoration: underline;
-  }
+  flex: 1 1 auto;
+  width: 100%;
 }
 
 .accordion-item__icon {
-  flex: 0 0 auto;
-  align-self: center;
-  margin-left: auto;
   transition: $chevron-transition;
-  transform-origin: center;
+  margin-left: spacing(3);
+  flex: 0 0 auto;
 
   .accordion-item.is-toggled & {
     transform: $chevron-transform;
@@ -75,13 +54,13 @@
 }
 
 .accordion-item__content {
-  padding-bottom: 1.5rem;
+  padding: spacing(3) spacing(1);
 
   .accordion-item.has-toggler & {
     display: none;
   }
 
   .accordion-item.is-toggled & {
-    display: block;
+    display: flex; // must be flex for faq accordions
   }
 }
