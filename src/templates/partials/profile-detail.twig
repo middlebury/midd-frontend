@@ -1,113 +1,118 @@
 <div class="container">
+  {# <div class="row">
+    <div class="col-md-10 offset-md-1 col-lg-12 offset-lg-0"> #}
 
-  <div class="row">
-    <div class="col-md-4 mb-5">
       <div class="row">
+        <div class="col-md-10 offset-md-1 offset-lg-0 col-lg-4 mb-4 mb-md-7">
+          <div class="row">
 
-        <div class="col-sm-6 col-md-12 mb-4">
-          {% include 'partials/img.twig' with {
-            name: 'profile_detail'
-          } %}
-        </div>
-
-        <div class="col-sm-6 col-md-12">
-          <dl class="profile-info">
-            <dt class="profile-info__title">Office</dt>
-            <dd class="profile-info__text">E6-364</dd>
-            <dt class="profile-info__title">Tel</dt>
-            <dd class="profile-info__text"><a href="tel:6173247535">617-324-7535</a></dd>
-            <dt class="profile-info__title">Email</dt>
-            <dd class="profile-info__text"><a href="mailto:blevinger@middlebury.edu" class="link-underline">blevinger@middlebury.edu</a></dd>
-            <dt class="profile-info__title">Office Hours</dt>
-            <dd class="profile-info__text">Tuesdays 3-4pm<br>Thursdays 11am-12pm</dd>
-            <dt class="profile-info__title sr-only">CV</dt>
-            <dd class="profile-info__text"><a href="#" class="link-underline">Download CV</a></dd>
-            <dt class="profile-info__title sr-only">Elsewhere</dt>
-            <dd class="profile-info__text">
-              {% include 'partials/social-links.twig' with {
-                items: social_links
+            <div class="col-sm-6 col-lg-12 mb-3 mb-md-0 mb-lg-4">
+              {% include 'partials/img.twig' with {
+                name: 'profile_detail'
               } %}
-            </dd>
-          </dl>
-        </div>
+            </div>
 
+            <div class="col-sm-6 col-lg-12">
+              <dl>
+                <dt class="text-bold">Office</dt>
+                <dd class="mb-2">E6-364</dd>
+                <dt class="text-bold">Tel</dt>
+                <dd class="mb-2"><a href="tel:6173247535">617-324-7535</a></dd>
+                <dt class="text-bold">Email</dt>
+                <dd class="mb-2"><a href="mailto:blevinger@middlebury.edu" class="link-underline">blevinger@middlebury.edu</a></dd>
+                <dt class="text-bold">Office Hours</dt>
+                <dd class="mb-2">Tuesdays 3-4pm<br>Thursdays 11am-12pm</dd>
+                <dt class="text-bold sr-only">CV</dt>
+                <dd class="mb-2"><a href="#" class="link-underline">Download CV</a></dd>
+                <dt class="text-bold sr-only">Elsewhere</dt>
+                <dd class="mb-2">
+                  {% include 'partials/social-links.twig' with {
+                    items: social_links
+                  } %}
+                </dd>
+              </dl>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-md-10 offset-md-1 offset-lg-0 col-lg-7">
+
+          <div class="typography mb-7 mb-lg-9">
+            <p>Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas elementum augue nec nisl. Proinauctor lorem at nibh. Curabitur nulla purus, feugiat id, elementum in, lobortis quis, pede. Vivamus sodales adipiscing sapien. Vestibulum posuere nulla eget wisi.</p>
+            <p>Integer volutpat ligula eget enim. Suspendisse vitae arcu. Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas elementum augue nec nisl. Proin auctor lorem at nibh. Curabitur nulla purus, feugiat id, elementum in, lobortis quis, pede. Vivamus sodales adipiscing sapien. Vestibulum posuere nulla eget wisi.</p>
+          </div>
+
+          <section class="section" aria-labelledby="midd-profile-section-courses-label">
+            <h2 class="section__title" id="midd-profile-section-courses-label">Courses Taught</h2>
+            {% include 'partials/course-list.twig' %}
+          </section>
+
+          <section class="section" aria-labelledby="midd-profile-section-interests-label">
+            <h2 class="section__title" id="midd-profile-section-interests-label">Areas of Interest</h2>
+            <div class="typography">
+              <ul>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Nihil amet dolore ea reprehenderit voluptate beatae quod</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="section" aria-labelledby="midd-profile-section-centers-label">
+            <h2 class="section__title" id="midd-profile-section-centers-label">Research Centers</h2>
+            <div class="typography">
+              <ul>
+                <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="#">Nihil amet dolore ea reprehenderit voluptate beatae quod</a></li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="section" aria-labelledby="midd-profile-section-degrees-label">
+            <h2 class="section__title" id="midd-profile-section-degrees-label">Academic Degrees</h2>
+            <div class="typography">
+              <ul>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Nihil amet dolore ea reprehenderit voluptate beatae quod</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="section" aria-labelledby="midd-profile-section-pubs-label">
+            <h2 class="section__title" id="midd-profile-section-pubs-label">Latest Publications</h2>
+
+            <div class="typography">
+              <h3><a href="#">Islam, Islamism, and Politics in Eurasia Report</a></h3>
+              <p>Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos.</p>
+            </div>
+          </section>
+
+          <section class="section" aria-labelledby="midd-profile-section-events-label">
+            <h2 class="section__title" id="midd-profile-section-events-label">Upcoming Events</h2>
+
+            <ol class="list list--dividers list--md">
+              <li class="list__item">
+                {% include 'partials/event-teaser.twig' %}
+              </li>
+            </ol>
+          </section>
+
+          <section class="section" aria-labelledby="midd-profile-section-news-label">
+            <h2 class="section__title" id="midd-profile-section-news-label">News Feed</h2>
+
+            <ul class="list list--dividers list--md">
+              {% for i in 0..1 %}
+                <li class="list__item">
+                  {% include 'partials/story-teaser.twig' with { id: i } %}
+                </li>
+              {% endfor %}
+            </ul>
+
+          </section>
+
+        </div>
       </div>
+
+{#
     </div>
-    <div class="col-md-8">
-
-      <div class="typography mb-7 mb-lg-9">
-        <p>Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas elementum augue nec nisl. Proinauctor lorem at nibh. Curabitur nulla purus, feugiat id, elementum in, lobortis quis, pede. Vivamus sodales adipiscing sapien. Vestibulum posuere nulla eget wisi.</p>
-        <p>Integer volutpat ligula eget enim. Suspendisse vitae arcu. Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas elementum augue nec nisl. Proin auctor lorem at nibh. Curabitur nulla purus, feugiat id, elementum in, lobortis quis, pede. Vivamus sodales adipiscing sapien. Vestibulum posuere nulla eget wisi.</p>
-      </div>
-
-      <section class="profile-section" aria-labelledby="midd-profile-section-courses-label">
-        <h2 class="profile-section__title" id="midd-profile-section-courses-label">Courses Taught</h2>
-        {% include 'partials/course-list.twig' %}
-      </section>
-
-      <section class="profile-section" aria-labelledby="midd-profile-section-interests-label">
-        <h2 class="profile-section__title" id="midd-profile-section-interests-label">Areas of Interest</h2>
-        <div class="typography">
-          <ul>
-            <li>Lorem ipsum dolor sit amet</li>
-            <li>Nihil amet dolore ea reprehenderit voluptate beatae quod</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="profile-section" aria-labelledby="midd-profile-section-centers-label">
-        <h2 class="profile-section__title" id="midd-profile-section-centers-label">Research Centers</h2>
-        <div class="typography">
-          <ul>
-            <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="#">Nihil amet dolore ea reprehenderit voluptate beatae quod</a></li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="profile-section" aria-labelledby="midd-profile-section-degrees-label">
-        <h2 class="profile-section__title" id="midd-profile-section-degrees-label">Academic Degrees</h2>
-        <div class="typography">
-          <ul>
-            <li>Lorem ipsum dolor sit amet</li>
-            <li>Nihil amet dolore ea reprehenderit voluptate beatae quod</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="profile-section" aria-labelledby="midd-profile-section-pubs-label">
-        <h2 class="profile-section__title" id="midd-profile-section-pubs-label">Latest Publications</h2>
-
-        <div class="typography">
-          <h3><a href="#">Islam, Islamism, and Politics in Eurasia Report</a></h3>
-          <p>Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos.</p>
-        </div>
-      </section>
-
-      <section class="profile-section" aria-labelledby="midd-profile-section-events-label">
-        <h2 class="profile-section__title" id="midd-profile-section-events-label">Upcoming Events</h2>
-
-        <ol class="list list--dividers list--md">
-          <li class="list__item">
-            {% include 'partials/event-teaser.twig' %}
-          </li>
-        </ol>
-      </section>
-
-      <section class="profile-section" aria-labelledby="midd-profile-section-news-label">
-        <h2 class="profile-section__title" id="midd-profile-section-news-label">News Feed</h2>
-
-        <ul class="list list--dividers list--md">
-          {% for i in 0..1 %}
-            <li class="list__item">
-              {% include 'partials/story-teaser.twig' with { id: i } %}
-            </li>
-          {% endfor %}
-        </ul>
-
-      </section>
-
-    </div>
-  </div>
-
+  </div> #}
 </div>
