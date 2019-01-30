@@ -13,13 +13,14 @@
           data-toggle-target=".js-accordion-item-{{id}}"
           aria-expanded="false"
           aria-controls="accordion-content-{{id}}"
+          aria-labelledby="midd-accordion-item-label-{{id}}"
           role="button"
         >
           {% if faq %}
           <span class="accordion-item__char" aria-hidden>Q</span>
           {% endif %}
 
-          <span class="accordion-item__label">{{item.title}}</span>
+          <span class="accordion-item__label" id="midd-accordion-item-label-{{id}}">{{item.title}}</span>
 
           <svg class="accordion-item__icon icon">
             <use xlink:href="#icon-chevron-down" />
