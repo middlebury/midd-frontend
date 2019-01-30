@@ -15,11 +15,11 @@ $grid-columns: 12 !default;
 $container-max-width: 1440px !default;
 
 $grid-gutter-width: 32px !default;
-$grid-gutter-width-md: 64px !default;
+$grid-gutter-width-lg: 64px !default;
 
 $grid-gutter-widths: (
   xs: $grid-gutter-width,
-  md: $grid-gutter-width-md
+  lg: $grid-gutter-width-lg
 ) !default;
 
 $grid-breakpoints: (
