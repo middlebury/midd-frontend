@@ -1,0 +1,26 @@
+<h2 class="mb-7 mt-9">Profile team heading</h2>
+{% for i in 0..2 %}
+<div class="media-object mb-7">
+  <div class="media-object__image">
+    <a href="#">
+      {% include 'partials/img.twig' with {
+        name: 'profile_teaser'
+      } %}
+    </a>
+  </div>
+  <div class="media-object__body">
+    <h3><a href="#">Beryl Levinger</a></h3>
+    <p class="f3 mb-3">Program Chair, Master of Public Administration and International Policy and Development</p>
+    <p class="f2 mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quis, repellat iusto cum non molestiae voluptatem adipisci accusamus rerum vero harum consectetur esse obcaecati nesciunt excepturi nihil magnam, assumenda sit?</p>
+    <p class="f2 mb-2">
+      <strong>Email:</strong> <a href="mailto:blevinger@middlebury.edu" class="link-underline">blevinger@middlebury.edu</a><br>
+      <strong>Tel:</strong> 617-324-7535<br>
+      <strong>Office:</strong> McCone Building M212<br>
+      <strong>Office Hours:</strong> Tuesdays 3-4pm, Thursdays 11am-12pm
+    </p>
+    {% include 'partials/social-links.twig' with {
+      items: social_links
+    } %}
+  </div>
+</div>
+{% endfor %}
