@@ -1,8 +1,4 @@
-// lists
-
-$list-item-margin-bottom: 0.5rem;
-$list-item-margin-bottom-md: 2rem;
-$list-item-margin-bottom-lg: 3rem;
+$list-item-margin-bottom: spacing(5);
 
 .list {
   // margin-bottom: 60px;
@@ -11,14 +7,6 @@ $list-item-margin-bottom-lg: 3rem;
 .list__item {
   &:not(:last-of-type) {
     margin-bottom: $list-item-margin-bottom;
-
-    .list--md & {
-      margin-bottom: $list-item-margin-bottom-md;
-    }
-
-    .list--lg & {
-      margin-bottom: $list-item-margin-bottom-lg;
-    }
   }
 }
 
@@ -26,15 +14,7 @@ $list-item-margin-bottom-lg: 3rem;
   .list__item {
     &:not(:last-of-type) {
       border-bottom: 1px solid $border-color;
-      padding-bottom: $list-item-margin-bottom-md;
-    }
-  }
-
-  &.list--lg {
-    .list__item {
-      &:not(:last-of-type) {
-        padding-bottom: $list-item-margin-bottom-lg;
-      }
+      padding-bottom: $list-item-margin-bottom;
     }
   }
 }
