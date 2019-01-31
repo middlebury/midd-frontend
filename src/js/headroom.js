@@ -31,8 +31,8 @@ const getOffset = elem => {
    */
   const offsetSelector = elem.getAttribute('data-headroom-offset-target');
   const offsetEl = offsetSelector ? $(offsetSelector) : elem;
+  let offset = offsetEl ? offsetEl.offsetHeight : 0;
 
-  let offset = offsetEl.offsetHeight;
   if (isHidden(offsetEl)) {
     offset = elem.offsetHeight;
   }
