@@ -1,0 +1,108 @@
+{% embed 'partials/sidebar-layout.twig' %}
+  {% block nav %}
+
+    <div class="bg-gray-lighter mb-6 mb-md-8 p-4">
+      <p class="f4 mb-5">
+        <time datetime="">
+          November 15, 2017<br>
+          1:00 PM-2:30 PM
+        </time>
+      </p>
+
+      <div class="mb-5">
+        <svg class="icon text-primary">
+          <use xlink:href="#icon-map-marker">
+        </svg>
+        {# link to map? #}
+        <p class="f4"><a href="" class="link-underline">McCone Board Room</a></p>
+        <p class="f4 mt-2 text-gray">Open to the Public</p>
+      </div>
+
+      {% include 'partials/share.twig' %}
+    </div>
+
+  {% endblock %}
+  {% block content %}
+
+    <div class="mb-5">
+      <figure class="media">
+        {% include 'partials/img.twig' with {
+          name: 'featured'
+        } %}
+        <figcaption class="media__caption">{{caption|default('Lorem ipsum dolor sit amet, consectetur adipiscing elit (Photo: John Doe)')}}</figcaption>
+      </figure>
+    </div>
+
+    <div class="typography mb-7 mb-lg-9">
+      <p>Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas elementum augue nec nisl. Proinauctor lorem at nibh. Curabitur nulla purus, feugiat id, elementum in, lobortis quis, pede. Vivamus sodales adipiscing sapien. Vestibulum posuere nulla eget wisi.</p>
+      <p>Integer volutpat ligula eget enim. Suspendisse vitae arcu. Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas elementum augue nec nisl. Proin auctor lorem at nibh. Curabitur nulla purus, feugiat id, elementum in, lobortis quis, pede. Vivamus sodales adipiscing sapien. Vestibulum posuere nulla eget wisi.</p>
+    </div>
+
+
+    <section class="section" aria-labelledby="midd-event-section-speakers-label">
+      <h2 class="section__title" id="midd-event-section-speakers-label">Speakers</h2>
+
+      <ul class="list list--dividers">
+      {% for item in 0..2 %}
+
+        <li class="list__item">
+
+          <article class="media-object media-object--right">
+            <div class="media-object__image">
+              {% include 'partials/img.twig' with { name: 'speaker' } %}
+            </div>
+            <div class="media-object__body">
+              <h3 class="mb-2">
+                <a href="">Anna C. Campbell</a>
+              </h3>
+              <p class="f2">Distinguished Professor; Program Chair</p>
+            </div>
+          </article>
+        </li>
+
+      {% endfor %}
+      </ul>
+
+    </section>
+
+    <section class="section" aria-labelledby="midd-event-section-where-label">
+      <h2 class="section__title" id="midd-event-section-where-label">Where</h2>
+
+      <div class="row">
+        <div class="col-md-6">
+
+          <address class="f4">
+            Casa Fuente 442 - Pacific Lab<br>
+            Casa Fuente<br>
+            450 Pacific St<br>
+            Monterey, CA 93940
+          </address>
+
+          <a href="#" class="my-4 button button--outline button--sm button--primary">
+            <svg class="icon">
+              <use xlink:href="#icon-map-marker">
+            </svg>
+            View in Campus Map
+          </a>
+
+        </div>
+        <div class="col-md-6">
+          <a href="#">
+            <img alt="Map of Morse B106" src="https://staticmap.concept3d.com/map/static-map/?map=972&loc=185852&scale=1&label&zoom=19">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="midd-profile-section-interests-label">
+      <h2 class="section__title" id="midd-profile-section-interests-label">Contact Organizer</h2>
+      <p>
+        Testing McTesterson<br>
+        <a href="mailto:" class="link-underline">testing@example.com</a><br>
+        <a href="tel:">555-555-5555</a>
+      </p>
+    </section>
+
+  {% endblock %}
+{% endembed %}
+
