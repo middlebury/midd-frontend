@@ -29,14 +29,6 @@ $list-item-margin-bottom: spacing(5);
   }
 }
 
-.list__icon {
-  vertical-align: top;
-  margin-right: 10px;
-  position: relative;
-  top: 5px;
-  color: $green-light;
-}
-
 .list--unordered {
   list-style-type: disc;
   margin-left: 20px;
