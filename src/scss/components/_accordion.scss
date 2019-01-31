@@ -25,7 +25,6 @@
 .accordion-item__link {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   color: $link-color;
   padding: spacing(3) spacing(1);
   font-size: typescale(4);
@@ -54,7 +53,10 @@
 }
 
 .accordion-item__content {
-  padding: spacing(3) spacing(1);
+  padding-top: spacing(3);
+  padding-bottom: spacing(5);
+  padding-left: spacing(1);
+  padding-right: spacing(1);
 
   .accordion-item.has-toggler & {
     display: none;
