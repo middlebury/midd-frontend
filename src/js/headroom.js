@@ -30,12 +30,10 @@ const getOffset = elem => {
    * school navigation since the logo extends past the nav.
    */
   const offsetSelector = elem.getAttribute('data-headroom-offset-target');
-  const offsetEl = offsetSelector ? $(offsetSelector) : elem;
-  let offset = offsetEl ? offsetEl.offsetHeight : 0;
+  const offsetEl = $(offsetSelector);
 
-  if (isHidden(offsetEl)) {
-    offset = elem.offsetHeight;
-  }
+  const offset =
+    offsetEl && !isHidden(offsetEl) ? offsetEl.offsetHeight : elem.offsetHeight;
 
   return offset;
 };
