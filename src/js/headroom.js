@@ -17,7 +17,7 @@ const initStickyHeader = (elem, offset) => {
     offset
   });
 
-  document.documentElement.style.paddingTop = offset + 'px';
+  document.body.style.paddingTop = offset + 'px';
 
   headerInstance.init();
 };
