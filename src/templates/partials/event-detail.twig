@@ -1,27 +1,40 @@
 {% embed 'partials/sidebar-layout.twig' %}
   {% block nav %}
 
-    <div class="bg-gray-lighter mb-6 mb-md-8 p-4">
-      <p class="f4 mb-5">
+    <div class="bg-gray-lighter mb-2 mb-lg-5 p-3 pt-4">
+      <p class="f4 mb-5 fw5">
         <time datetime="">
           November 15, 2017<br>
           1:00 PM-2:30 PM
         </time>
       </p>
 
-      <div class="mb-5">
-        <svg class="icon text-primary">
-          <use xlink:href="#icon-map-marker">
-        </svg>
-        {# link to map? #}
-        <p class="f4"><a href="" class="link-underline">McCone Board Room</a></p>
-        <p class="f4 mt-2 text-gray">Open to the Public</p>
-      </div>
+      <address class="f4 mb-3">
+        Casa Fuente 442 - Pacific Lab<br>
+        Casa Fuente<br>
+        450 Pacific St<br>
+        Monterey, CA 93940
+      </address>
+
+      <p class="f2 mb-5">Open to the Public</p>
 
       {% include 'partials/share.twig' %}
     </div>
 
+
+    <a href="#" class="d-none d-lg-block">
+      <img alt="Map of Morse B106" src="https://staticmap.concept3d.com/map/static-map/?map=972&loc=185852&scale=1&label&zoom=19">
+    </a>
+
+    <a href="#" class="mt-2 mb-7 button button--outline button--sm button--primary button--block">
+      <svg class="icon">
+        <use xlink:href="#icon-map-marker">
+      </svg>
+      View in Campus Map
+    </a>
+
   {% endblock %}
+
   {% block content %}
 
     <div class="mb-5">
@@ -63,35 +76,6 @@
       {% endfor %}
       </ul>
 
-    </section>
-
-    <section class="section" aria-labelledby="midd-event-section-where-label">
-      <h2 class="section__title" id="midd-event-section-where-label">Where</h2>
-
-      <div class="row">
-        <div class="col-md-6">
-
-          <address class="f4">
-            Casa Fuente 442 - Pacific Lab<br>
-            Casa Fuente<br>
-            450 Pacific St<br>
-            Monterey, CA 93940
-          </address>
-
-          <a href="#" class="my-4 button button--outline button--sm button--primary">
-            <svg class="icon">
-              <use xlink:href="#icon-map-marker">
-            </svg>
-            View in Campus Map
-          </a>
-
-        </div>
-        <div class="col-md-6">
-          <a href="#">
-            <img alt="Map of Morse B106" src="https://staticmap.concept3d.com/map/static-map/?map=972&loc=185852&scale=1&label&zoom=19">
-          </a>
-        </div>
-      </div>
     </section>
 
     <section class="section" aria-labelledby="midd-profile-section-interests-label">
