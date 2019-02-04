@@ -14,5 +14,9 @@
 
 .section__title {
   @include h2-responsive;
-  margin-bottom: spacing(5);
+  margin-bottom: spacing(4);
+
+  @include media(md) {
+    margin-bottom: spacing(7);
+  }
 }
