@@ -106,3 +106,14 @@
     }
   }
 }
+
+.table--spacious {
+  td:first-child,
+  td:last-child,
+  td {
+    @include media(md) {
+      padding-top: spacing(4);
+      padding-bottom: spacing(4);
+    }
+  }
+}
