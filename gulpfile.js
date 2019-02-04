@@ -93,7 +93,8 @@ const serve = () =>
       baseDir: './dist'
     },
     open: false,
-    directory: true
+    directory: true,
+    ghostMode: false
   });
 
 const copyIcons = () =>
