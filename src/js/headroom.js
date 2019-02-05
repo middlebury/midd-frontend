@@ -41,9 +41,10 @@ const getOffset = elem => {
 };
 
 const headerElem = $('.js-headroom');
-if (headerElem) {
-  const offset = getOffset(headerElem);
-  initStickyHeader(headerElem, offset);
+if (headerElem && !$('#toolbar-administration')) {
+  window.addEventListener('load', () => {
+    const offset = getOffset(headerElem);
+    initStickyHeader(headerElem, offset);
 
   onresize.on(() => {
     const offset = getOffset(headerElem);
