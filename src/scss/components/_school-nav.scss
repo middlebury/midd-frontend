@@ -7,7 +7,6 @@
   padding: spacing(3);
   font-size: typescale(2);
   font-weight: $font-weight-medium;
-  line-height: $line-height-solid;
   background: none;
   border: 0;
 
@@ -156,13 +155,10 @@
 }
 
 .school-nav__link--top {
-  line-height: $line-height-solid;
-
   @include media(lg) {
     font-size: typescale(2);
     font-weight: $font-weight-semibold;
     border-bottom: 4px solid transparent;
-    // line-height: $line-height-solid;
 
     .school-nav__item:focus-within &,
     .school-nav__item:hover & {
