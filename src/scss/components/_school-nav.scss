@@ -111,6 +111,7 @@
   justify-content: space-between;
 
   @include media(lg) {
+    display: block;
     margin-right: spacing(4);
     border-top: 0;
     border-color: $gray-light;
