@@ -29,7 +29,7 @@ class Slider extends Component {
   handleTrackClick = event => {
     const { onTrackClick } = this.props;
     const sliderWidth = this.track.offsetWidth;
-    const clickLocation = event.layerX;
+    const clickLocation = event.pageX - this.track.getBoundingClientRect().left;
 
     const percentage = clickLocation / sliderWidth;
 
