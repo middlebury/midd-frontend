@@ -56,8 +56,7 @@ class Slider extends Component {
             class="slider__handle"
             role="slider"
             style={{
-              position: 'relative',
-              left: sliderLeft + '%'
+              width: sliderLeft + '%'
             }}
             aria-valuemin={min}
             aria-valuemax={max}
