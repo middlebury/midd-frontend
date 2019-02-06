@@ -48,10 +48,6 @@
 }
 
 @mixin h1 {
-  font-size: $h1-font-size;
-}
-
-@mixin h1-responsive {
   font-size: $h1-font-size-sm;
 
   @include media(lg) {
@@ -60,13 +56,24 @@
 }
 
 @mixin h2 {
-  font-size: $h2-font-size;
-}
-
-@mixin h2-responsive {
   font-size: $h2-font-size-sm;
-
   @include media(lg) {
     font-size: $h2-font-size;
   }
+}
+
+@mixin h3 {
+  font-size: $h3-font-size;
+}
+
+@mixin h4 {
+  font-size: $h4-font-size;
+}
+
+@mixin h5 {
+  font-size: $h5-font-size;
+}
+
+@mixin h6 {
+  font-size: $h6-font-size;
 }
