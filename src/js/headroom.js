@@ -39,7 +39,7 @@ const getOffset = elem => {
 };
 
 const headerElem = $('.js-headroom');
-if (headerElem) {
+if (headerElem && !$('#toolbar-administration')) {
   window.addEventListener('load', () => {
     const offset = getOffset(headerElem);
     initStickyHeader(headerElem, offset);
