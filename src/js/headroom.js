@@ -46,14 +46,15 @@ if (headerElem && !$('#toolbar-administration')) {
     const offset = getOffset(headerElem);
     initStickyHeader(headerElem, offset);
 
-  onresize.on(() => {
-    const offset = getOffset(headerElem);
+    onresize.on(() => {
+      const offset = getOffset(headerElem);
 
-    if (offset !== cachedOffset) {
-      cachedOffset = offset;
+      if (offset !== cachedOffset) {
+        cachedOffset = offset;
 
-      headerInstance.destroy();
-      initStickyHeader(headerElem, offset);
-    }
+        headerInstance.destroy();
+        initStickyHeader(headerElem, offset);
+      }
+    });
   });
 }
