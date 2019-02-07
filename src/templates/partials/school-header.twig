@@ -2,13 +2,14 @@
 
   <div class="school-header__brand">
     <a href="">
-      <picture class="school-header__logo">
-        {% block school_logo %}
-          <source srcset="images/midd-logo.svg" width="186" height="76" media="(min-width: 48em)">
-          <source srcset="images/midd-logo.svg" width="124" height="48" media="(min-width: 0px)">
-          <img src="images/midd-logo.svg" alt="" width="186" height="76">
-        {% endblock %}
-      </picture>
+      {% block school_logo %}
+        <img
+          src="images/midd-logo.svg"
+          srcset="images/midd-logo.svg 186w"
+          sizes="(max-width: 512px) 124px, 186px"
+          alt=""
+        />
+      {% endblock %}
     </a>
   </div>
 
