@@ -8,7 +8,9 @@
     .d#{$infix}-none {
       display: none;
     }
-    // .d#{$infix}-inline       { display: inline ; }
+    .d#{$infix}-inline {
+      display: inline;
+    }
     .d#{$infix}-inline-block {
       display: inline-block;
     }

@@ -1,0 +1,85 @@
+{% embed 'partials/sidebar-layout.twig' %}
+  {% block nav %}
+
+    <div class="row">
+      <div class="col-sm-7 col-lg-12">
+        <div class="bg-gray-lighter mb-2 mb-lg-5 p-3 pt-4">
+          <p class="f4 mb-3 fw5">
+            <time datetime="">
+              November 15, 2017<br>
+              1:00 PM-2:30 PM
+            </time>
+          </p>
+
+          <address class="f4">
+            Casa Fuente 442 - Pacific Lab<br>
+            Casa Fuente<br>
+            450 Pacific St<br>
+            Monterey, CA 93940
+          </address>
+
+          <a href="#" class="d-sm-none mb-3 mt-2 button button--outline button--sm button--primary">
+            <svg class="icon">
+              <use xlink:href="#icon-map-marker">
+            </svg>
+            View in Campus Map
+          </a>
+
+          <p class="f2 mt-3">Open to the Public</p>
+        </div>
+
+      </div>
+      <div class="col-sm-5 col-lg-12">
+
+        <div class="d-none d-sm-block">
+
+          <a href="#" class="">
+            {# TODO: lazyload #}
+            <img alt="Map of Morse B106" src="https://staticmap.concept3d.com/map/static-map/?map=972&loc=185852&scale=1&label&zoom=19">
+          </a>
+
+          <a href="#" class="mt-2 mb-7 button button--outline button--sm button--primary button--block">
+            <svg class="icon">
+              <use xlink:href="#icon-map-marker">
+            </svg>
+            View in Campus Map
+          </a>
+        </div>
+
+      </div>
+  </div>
+
+  {% endblock %}
+
+  {% block content %}
+
+    <div class="mb-5">
+      <figure class="media">
+        {% include 'partials/img.twig' with {
+          name: 'featured'
+        } %}
+        <figcaption class="media__caption">{{caption|default('Lorem ipsum dolor sit amet, consectetur adipiscing elit (Photo: John Doe)')}}</figcaption>
+      </figure>
+    </div>
+
+    <div class="typography mb-5">
+      <p>Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas elementum augue nec nisl. Proinauctor lorem at nibh. Curabitur nulla purus, feugiat id, elementum in, lobortis quis, pede. Vivamus sodales adipiscing sapien. Vestibulum posuere nulla eget wisi.</p>
+      <p>Integer volutpat ligula eget enim. Suspendisse vitae arcu. Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas elementum augue nec nisl. Proin auctor lorem at nibh. Curabitur nulla purus, feugiat id, elementum in, lobortis quis, pede. Vivamus sodales adipiscing sapien. Vestibulum posuere nulla eget wisi.</p>
+    </div>
+
+    <div class="mb-7 mb-lg-9">
+      {% include 'partials/share.twig' %}
+    </div>
+
+    <section class="section" aria-labelledby="midd-profile-section-interests-label">
+      <h2 class="section__title" id="midd-profile-section-interests-label">Contact Organizer</h2>
+      <p>
+        Testing McTesterson<br>
+        <a href="mailto:" class="link-underline">testing@example.com</a><br>
+        <a href="tel:">555-555-5555</a>
+      </p>
+    </section>
+
+  {% endblock %}
+{% endembed %}
+

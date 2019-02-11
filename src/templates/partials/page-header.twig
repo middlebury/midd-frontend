@@ -1,11 +1,26 @@
-<header class="py-4 pt-lg-8 pb-lg-9" aria-labelledby="midd-page-header-label">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-10 offset-md-1">
+<header class="page-header{% if image_src %} page-header--has-image{% endif %}{% if has_menu %} page-header--has-menu{% endif %}{% if school %} page-header--school{% endif %}" aria-labelledby="midd-page-header-label">
 
-        {% include 'partials/breadcrumb.twig' with { items: breadcrumb } %}
-        <h1 class="display-3" id="midd-page-header-label">{{title}}</h1>
+  {% if image_src %}
+    <figure class="page-header__figure">
+      <img src="{{image_src}}" alt="">
+    </figure>
+  {% endif %}
 
+  <div class="page-header__content">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+
+          {% include 'partials/breadcrumb.twig' with {
+            items: breadcrumb,
+            light: image_src is not empty }
+          %}
+          <h1 class="page-header__title" id="midd-page-header-label">{{title}}</h1>
+
+          {{after_title}}
+
+        </div>
       </div>
     </div>
   </div>

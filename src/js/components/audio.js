@@ -17,7 +17,7 @@ class AudioPlayer extends Component {
 
     this.state = {
       playing: false,
-      duration: 0,
+      duration: props.audio.duration,
       currentTime: 0,
       muted: false
     };
@@ -123,8 +123,14 @@ class AudioPlayer extends Component {
           onTrackClick={this.handleTrackClick}
         />
         <div class="audio__mute">
-          <button class="button button--sm" onClick={this.mute}>
-            {muted ? 'Unmute' : 'Mute'}
+          <button
+            class="button px-3"
+            onClick={this.mute}
+            aria-label={muted ? 'Unmute' : 'Mute'}
+          >
+            <svg className="icon" aria-hidden="true">
+              <use xlinkHref={`#icon-volume-${muted ? 'mute' : 'up'}`} />
+            </svg>
           </button>
         </div>
       </div>

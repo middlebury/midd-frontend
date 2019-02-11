@@ -93,7 +93,8 @@ const serve = () =>
       baseDir: './dist'
     },
     open: false,
-    directory: true
+    directory: true,
+    ghostMode: false
   });
 
 const copyIcons = () =>
@@ -278,12 +279,17 @@ const build = gulp.series(
   gulp.parallel(html, images, styles, scripts)
 );
 
-const dev = gulp.series(build, gulp.parallel(serve, watch));
+const dev = gulp.parallel(build, watch);
+
+const server = gulp.parallel(dev, serve);
 
 const deploy = gulp.series(replaceImagePaths, deployDist);
 
-gulp.task('deploy', deploy);
-gulp.task('scripts', scripts);
-gulp.task('build', build);
-gulp.task('zip', bundleMarkup);
-gulp.task('default', dev);
+module.exports = {
+  deploy,
+  scripts,
+  build,
+  dev,
+  zip: bundleMarkup,
+  default: server
+};

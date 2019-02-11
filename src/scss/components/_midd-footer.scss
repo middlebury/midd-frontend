@@ -5,16 +5,37 @@
 }
 
 .midd-footer__list {
-  @include media(md) {
+  @include media(lg) {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     height: 100%;
   }
 }
 
+.midd-footer__item {
+  &:not(:first-child) {
+    @include media(lg) {
+      margin-left: spacing(3);
+    }
+    @include media(xl) {
+      margin-left: spacing(4);
+    }
+  }
+}
+
 .midd-footer__link {
   color: $white;
+  font-size: typescale(2);
+  display: block;
+  padding-top: spacing(1);
+  padding-bottom: spacing(1);
+  white-space: nowrap;
+
+  @include media(lg) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }
 
 .midd-footer__button {

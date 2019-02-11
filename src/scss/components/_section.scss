@@ -1,0 +1,22 @@
+.section {
+  border-top: 4px solid $navy;
+  padding-top: spacing(2);
+  margin-bottom: spacing(8);
+
+  @include media(md) {
+    margin-bottom: spacing(9);
+  }
+
+  @include media(lg) {
+    padding-top: spacing(3);
+  }
+}
+
+.section__title {
+  @include h2;
+  margin-bottom: spacing(4);
+
+  @include media(md) {
+    margin-bottom: spacing(7);
+  }
+}

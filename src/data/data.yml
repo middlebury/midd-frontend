@@ -18,7 +18,6 @@ site_nav:
   - text: Life at Middlebury
   - text: Academics
   - text: Admissions
-  utils:
   - text: News
   - text: Events
 
@@ -71,10 +70,19 @@ footer_nav:
 
 secondary_footer_nav:
   - text: About Middlebury
-  - text: Support Middlebury
-  - text: Work With Us
-  - text: Middlebury A-Z
-  - text: Copyright and Privacy
+    href: http://www.middlebury.edu/about
+  - text: Giving
+    href: http://www.middlebury.edu/giving
+  - text: Employment
+    href: http://www.middlebury.edu/offices/business/hr/jobseeker
+  - text: Offices and Services
+    href: http://www.middlebury.edu/office/
+  - text: Copyright
+    href: http://www.middlebury.edu/about/copyright
+  - text: Privacy
+    href: http://www.middlebury.edu/about/privacy
+  - text: Site-Editor login
+    href: '#'
 
 social_links:
   - text: Instagram
@@ -169,7 +177,7 @@ image_sizes:
     - 640x360
     - 1280x720
   # publication: this is skipped for now
-  profile_spotlight_item: # 4:3
+  profile_spotlight_item: # 3:4
     srcset:
     - 90x120
     - 144x192
@@ -183,10 +191,15 @@ image_sizes:
   profile_detail: # 3:4
     srcset:
     - 300x400
-    - 432x576
-    sizes: '(max-width: 580px) 300px, 432px'
   speaker: # 3:4
-    src: 144x192
+    srcset:
+    - 144x192
+  story_teaser:
+    srcset:
+    - 128x72
+    - 160x90
+    - 240x135
+    sizes: '(max-width: 580px) 128px, (max-width: 960px) 160px, 240px'
   story_detail:
     srcset:
     - 400x225
@@ -504,3 +517,41 @@ gallery_data:
 
 
 
+
+top_level_nav_example:
+- text: Dates and Fees
+- text: Application Information
+- text: Academics
+- text: Faculity and Administration
+- text: Housing
+- text: Student Life
+- text: Faculity and Administration
+- text: Dates and Fees
+- text: Academics
+- text: Housing
+- text: Student Life
+- text: Application Information
+
+midd_nav:
+- text: Our Schools
+  href: '#'
+  items:
+  - href: http://www.middlebury.edu
+    text: Middlebury College
+  - href: http://www.middlebury.edu/ls
+    text: Language Schools
+  - href: http://www.middlebury.edu/blse
+    text: Bread Loaf School of English
+  - href: http://www.middlebury.edu/bread-loaf-conferences
+    text: Bread Loaf Writers' Conference
+  - href: https://www.middlebury.edu/institute/
+    text: Institute of International Studies at Monterey
+  - href: http://www.middlebury.edu/study-abroad
+    text: C.V. Starr Schools Abroad
+  - href: http://www.middlebury.edu/environment
+    text: School of the Environment
+- href: http://www.middlebury.edu/about
+  text: About Middlebury
+
+- href: http://www.middlebury.edu/office/
+  text: Offices and Services

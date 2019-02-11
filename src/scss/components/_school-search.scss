@@ -1,68 +1,68 @@
 .school-search {
-  padding: 1rem;
-  position: relative;
+  @include media(lg) {
+    position: relative;
+  }
+}
+
+.school-search__handle {
+  color: $white;
+  display: inline-block;
+  padding: spacing(3);
+  font-weight: $font-weight-medium;
+  font-size: typescale(2);
+  line-height: 1;
+
+  &:hover {
+    text-decoration: none;
+  }
 
   @include media(lg) {
-    padding: 0;
+    color: $navy;
+    padding: spacing(4) 0;
+    border-bottom: 4px solid transparent;
+    opacity: 0.8;
+    transition: opacity 0.2s, border-color 0.2s;
+
+    &.is-toggled,
+    &:hover {
+      opacity: 1;
+      border-color: $navy;
+    }
   }
 }
 
 .school-search__content {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  padding: spacing(3);
+  background-color: $navy;
+  visibility: hidden;
+  opacity: 0;
   transition: 0.2s;
-  margin-bottom: spacing(3);
+
+  &.is-toggled {
+    visibility: visible;
+    opacity: 1;
+  }
 
   @include media(lg) {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    opacity: 0;
-    visibility: hidden;
-    padding: 1rem;
     width: 400px;
     background-color: $white;
     border: 1px solid $brand-primary;
   }
-
-  &.is-toggled {
-    opacity: 1;
-    visibility: visible;
-  }
 }
 
-.school-search__button {
-  font-weight: $font-weight-medium;
-  font-size: typescale(2);
-  // line-height: 1;
+.school-search__times {
   display: none;
-  padding-top: spacing(4);
-  padding-bottom: spacing(4);
-  border-bottom: 4px solid transparent;
-  opacity: 0.8;
-  transition: opacity 0.2s, border-color 0.2s;
-
-  &.is-toggled,
-  &:hover {
-    text-decoration: none;
-    opacity: 1;
-    border-color: $navy;
-  }
-
-  @include media(lg) {
-    display: inline-block;
-  }
-}
-.school-search__icon {
-}
-
-.school-search__icon--times {
-  display: none;
-  .school-search__button.is-toggled & {
+  .school-search__handle.is-toggled & {
     display: inline-block;
   }
 }
 
-.school-search__icon--search {
-  .school-search__button.is-toggled & {
+.school-search__mag {
+  .school-search__handle.is-toggled & {
     display: none;
   }
 }

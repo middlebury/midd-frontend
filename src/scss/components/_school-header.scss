@@ -1,17 +1,18 @@
 .school-header {
   background: $brand-primary;
   border-top: 4px solid $brand-primary;
+  position: relative;
+  display: flex;
 
   @include media(lg) {
-    display: flex;
-    align-items: flex-start;
     background: none;
     padding: 0;
+    pointer-events: none;
   }
 
   &.headroom {
     will-change: transform;
-    transition: transform 200ms linear;
+    transition: transform 0.5s linear;
     position: fixed;
     top: 0;
     left: 0;
@@ -28,95 +29,44 @@
   }
 }
 
-.school-header__primary {
+.school-header__brand {
   padding-top: spacing(3);
   padding-bottom: spacing(3);
-  display: flex;
-  justify-content: space-between;
+  pointer-events: initial;
   @include make-gutters();
 
   @include media(lg) {
     background-color: $brand-primary;
     padding-top: spacing(4);
     padding-bottom: spacing(4);
+    transition: 1s;
+
+    .school-header.headroom--unpinned & {
+      transform: translateY(-50%);
+    }
   }
 }
 
 // TODO: do we need to use picture since logos widths will vary across schools?
 .school-header__logo {
   max-width: inherit;
-  @include media(lg) {
-    // width: 187px;
-    // max-width: inherit;
-  }
 }
 
-.school-header__handle {
-  color: $white;
-  padding: 1rem;
-  background: none;
-  border: 0;
-  appearance: none;
-
-  margin-right: -1rem;
-  @include media(lg) {
-    display: none;
-  }
-}
-
-.school-header__icon {
-}
-
-.school-header__icon--bars {
-  .school-header__handle.is-toggled & {
-    display: none;
-  }
-}
-.school-header__icon--times {
-  display: none;
-
-  .school-header__handle.is-toggled & {
-    display: inline-block;
-  }
-}
-
-.school-header__secondary {
-  background: $navy;
-  border-bottom: 1px solid $navy;
-  flex-direction: column-reverse;
-  display: none;
-
-  &.is-toggled {
-    display: flex;
-  }
+.school-header__content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100%;
+  flex: 1;
+  flex-direction: row-reverse;
 
   @include media(lg) {
-    display: flex;
-    flex-direction: row;
+    pointer-events: initial;
+    background-color: $white;
     justify-content: space-between;
-    width: 100%;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    background: $white;
+    flex-direction: row;
+    padding-right: spacing(4);
+    padding-left: spacing(4);
+    border-bottom: 1px solid $navy;
   }
-}
-
-.school-header__navs {
-  @include media(lg) {
-    display: flex;
-  }
-}
-
-.school-header__divider {
-  margin-top: 1.5rem;
-  height: 23px;
-  background: $brand-primary;
-  width: 1px;
-  display: none;
-  @include media(lg) {
-    display: inline-block;
-  }
-}
-
-.school-header__search {
 }

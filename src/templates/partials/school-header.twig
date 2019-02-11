@@ -1,74 +1,90 @@
-<header class="school-header js-headroom">
-  <div class="school-header__primary">
+<header class="school-header js-headroom {{school_color ? 'border-'~school_color : ''}}" data-headroom-offset-target=".js-site-menu">
+
+  <div class="school-header__brand">
     <a href="">
-      <picture class="school-header__logo">
-        <source src="images/midd-logo.svg" width="186" height="76">
-        <img src="images/midd-logo.svg" alt="" width="186" height="76">
-      </picture>
+      {% block school_logo %}
+        <img
+          src="images/midd-logo.svg"
+          srcset="images/midd-logo.svg 186w"
+          sizes="(max-width: 512px) 124px, 186px"
+          alt=""
+        />
+      {% endblock %}
     </a>
-    <button class="school-header__handle" data-toggle-target=".js-site-menu">
-      <svg class="icon school-header__icon school-header__icon--bars">
-        <use xlink:href="#icon-bars">
-      </svg>
-      <svg class="icon school-header__icon school-header__icon--times">
-        <use xlink:href="#icon-times">
-      </svg>
-      <span class="school-header__handle-text">Menu</span>
-    </button>
   </div>
 
-  <div class="school-header__secondary js-site-menu">
-    <div class="school-header__navs">
-      <nav class="school-nav">
-        <ul class="school-nav__list">
-          {% for item in site_nav.items %}
-            <li class="school-nav__item">
+  <div class="school-header__content">
 
-              <a href="" class="school-nav__link school-nav__link--top">{{item.text}}</a>
+    <nav class="school-nav">
 
-              {% if item.items %}
-                <button class="school-nav__handle" data-toggle-target=".js-subnav-{{loop.index}}" aria-haspopup="true" aria-expanded="false" aria-controls="subnav-{{loop.index}}">
-                  <svg class="icon school-nav__icon">
-                    <use xlink:href="#icon-chevron-down" />
-                  </svg>
-                </button>
+      <button
+        class="school-nav__handle"
+        data-toggle-target=".js-site-menu"
+        data-toggle-group="school-header"
+      >
+        <svg class="icon school-nav__bars">
+          <use xlink:href="#icon-bars">
+        </svg>
+        <svg class="icon school-nav__times">
+          <use xlink:href="#icon-times">
+        </svg>
+        <span class="d-none d-sm-inline">Menu</span>
+      </button>
 
-                <ul class="school-nav__list school-nav__list--sub js-subnav-{{loop.index}}{% if item.items.length > 5 %} school-nav__list--cols{% endif %}" id="subnav-{{loop.index}}">
-                  {% for subitem in item.items %}
-                    <li class="school-nav__item">
-                      <a href="" class="school-nav__link">{{subitem.text}}</a>
-                    </li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
+      <ul class="school-nav__list school-nav__list--top js-site-menu">
+        {% for item in site_nav.items %}
+          <li class="school-nav__item">
 
-            </li>
-          {% endfor %}
-          {% for item in site_nav.utils %}
-            <li class="school-nav__item school-nav__item--util">
-              <a href="" class="school-nav__link school-nav__link--top school-nav__link--util">{{item.text}}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </nav>
+            <a href="" class="school-nav__link school-nav__link--top">{{item.text}}</a>
+
+            {% if item.items %}
+              <button
+                class="school-nav__handle school-nav__handle--sub"
+                data-toggle-target=".js-subnav-{{loop.index}}"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="subnav-{{loop.index}}"
+              >
+                <svg class="icon school-nav__chevron">
+                  <use xlink:href="#icon-chevron-down" />
+                </svg>
+              </button>
+
+              <ul class="school-nav__list school-nav__list--sub js-subnav-{{loop.index}}{% if item.items.length > 5 %} school-nav__list--cols{% endif %}" id="subnav-{{loop.index}}">
+                {% for subitem in item.items %}
+                  <li class="school-nav__item school-nav__item--sub">
+                    <a href="" class="school-nav__link school-nav__link--sub">{{subitem.text}}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+
+          </li>
+        {% endfor %}
+      </ul>
+
     </nav>
-  </div>
-  <div class="school-header__search">
+
 
     <div class="school-search">
       <a
         href="/search"
-        class="school-search__button"
+        class="school-search__handle"
         role="button"
         aria-label="Open site search"
         aria-expanded="false"
         aria-haspopup="true"
         data-toggle-target=".js-site-search"
         data-toggle-focus=".js-site-search-input"
+        data-toggle-group="school-header"
       >
-        <svg class="icon school-search__icon school-search__icon--search"><use xlink:href="#icon-search"></svg>
-        <svg class="icon school-search__icon school-search__icon--times"><use xlink:href="#icon-times"></svg>
-        Search
+        <svg class="icon mr-1 school-search__mag">
+          <use xlink:href="#icon-search">
+        </svg>
+        <svg class="icon mr-1 school-search__times">
+          <use xlink:href="#icon-times">
+        </svg>
+        <span class="d-none d-sm-inline">Search</span>
       </a>
 
       <div class="school-search__content js-site-search">
@@ -85,7 +101,6 @@
         </form>
       </div>
     </div>
-
   </div>
 
 </header>

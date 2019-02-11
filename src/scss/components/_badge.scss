@@ -1,8 +1,12 @@
 .badge {
+  display: inline-block;
   font-size: typescale(1);
-  border: 1px solid $brand-primary;
+  color: $gray;
+  border: 1px solid currentColor;
   padding: spacing(1);
   font-weight: $font-weight-bold;
   text-transform: uppercase;
+  line-height: $line-height-solid;
+  font-family: $font-family-sans-serif;
   letter-spacing: 1px;
 }

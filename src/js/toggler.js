@@ -1,3 +1,5 @@
+const SPACE_BAR = 32;
+
 class Toggler {
   constructor(elem) {
     // this.isToggled = false;
@@ -37,11 +39,20 @@ class Toggler {
     this.target.classList.remove(this.enabledClass);
     this.target.classList.remove(this.activeClass);
     this.elem.removeEventListener('click', this.handleElemClick);
+    this.elem.removeEventListener('keydown', this.handleElemKeyDown);
   }
 
   addListeners() {
     this.elem.addEventListener('click', this.handleElemClick);
+    this.elem.addEventListener('keydown', this.handleElemKeyDown);
   }
+
+  handleElemKeyDown = e => {
+    if (e.keyCode === SPACE_BAR) {
+      e.preventDefault();
+      this.toggle();
+    }
+  };
 
   getTarget(elem) {
     const target = elem.getAttribute('data-toggle-target');

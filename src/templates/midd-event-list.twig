@@ -1,0 +1,14 @@
+{% extends "midd-layout.twig" %}
+
+{% set page_header = {
+  title: 'Events',
+  breadcrumb: [
+    { text: 'Middlebury' },
+  ]
+} %}
+
+{% block page %}
+
+  {% include 'partials/event-list.twig' %}
+
+{% endblock %}
