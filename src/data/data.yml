@@ -191,8 +191,6 @@ image_sizes:
   profile_detail: # 3:4
     srcset:
     - 300x400
-    - 432x576
-    sizes: '(max-width: 580px) 300px, 432px'
   speaker: # 3:4
     srcset:
     - 144x192

@@ -9,6 +9,18 @@
 }
 
 ///
+/// font weight
+///
+
+.fw5 {
+  font-weight: 500;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+///
 /// text alignment
 ///
 
@@ -60,10 +72,6 @@ $text-colors: (
 ///
 /// alt heading treatments
 ///
-
-.title {
-  @include section-title;
-}
 
 ///
 /// extra large headings

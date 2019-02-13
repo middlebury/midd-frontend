@@ -1,0 +1,87 @@
+{% set filter_active = true %}
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-10 offset-md-1 col-lg-4 col-xl-3 offset-lg-0 mb-4">
+
+      <form>
+        <div class="mb-5">
+          <label for="midd-sidebar-search" class="sr-only">Search Events</label>
+          <div class="input-group">
+            <input type="search" placeholder="Search events" id="midd-sidebar-search" class="form-control form-control--sm" required>
+            <button type="submit" class="button button--primary button--outline px-4 button--sm">
+              <span class="sr-only">Search</span>
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-search" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <div class="foldable mb-7">
+        <button
+          class="foldable__button"
+          data-toggle-target=".js-foldable"
+          aria-expanded="false"
+        >
+          Filter by date
+          <svg class="foldable__icon icon">
+            <use xlink:href="#icon-chevron-down" />
+          </svg>
+        </button>
+        <div class="foldable__content js-foldable">
+          <label for="midd-events-datepicker" class="label d-none d-lg-block">Filter by date</label>
+          <input type="text" class="form-control js-events-datepicker d-none" id="midd-events-datepicker" />
+          {% if filter_active %}
+            <a href="#" class="mt-2 button button--outline button--sm button--block button--primary">Clear filter</a>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="js-sidebar"></div>
+
+    </div>
+
+    <div class="col-md-10 offset-md-1 col-lg-8 col-xl-9 offset-lg-0">
+
+      {% if filter_active %}
+        <div class="bg-gray-lighter p-3 d-sm-flex justify-content-between">
+          <div class="mb-3 mb-sm-0">Showing Events for March 2, 2018</div>
+          {# if float right is on link, for some reason more space gets added between the link text and border #}
+          <div>
+            <a href="#" class="link-underline f2">Clear filter</a>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if no_results %}
+        <p class="lead">There are no events on this date.</p>
+      {% endif %}
+
+      {% include 'partials/events-table.twig' %}
+
+      {% include 'partials/events-table.twig' %}
+
+      {% include 'partials/pagination.twig' %}
+
+      <div data-move-at="(min-width:64em)" data-move-to=".js-sidebar">
+
+        <nav class="page-nav bg-gray-lighter px-3 mb-7">
+          <ul class="page-nav__list">
+            <li class="page-nav__item"><a href="#" class="page-nav__link">Plan your event</a></li>
+            <li class="page-nav__item"><a href="#" class="page-nav__link">Commencement</a></li>
+            <li class="page-nav__item"><a href="#" class="page-nav__link">Interactive Campus Map</a></li>
+            <li class="page-nav__item"><a href="#" class="page-nav__link">Printable Campus Map</a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+

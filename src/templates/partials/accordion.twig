@@ -1,4 +1,4 @@
-<div class="accordion{% if modifier %} accordion--{{modifier}}{% endif %}">
+<div class="accordion">
 
   {% for item in items %}
 
@@ -6,27 +6,32 @@
     {% set id = loop.index %}
 
     <div class="accordion-item js-accordion-item-{{id}}">
-      <h4 class="accordion-item__title" id="accordion-item-label-{{id}}" role="tab">
+      <h3 class="accordion-item__title" id="accordion-item-label-{{id}}" role="tab">
         <a
           href="#accordion-content-{{id}}"
           class="accordion-item__link"
           data-toggle-target=".js-accordion-item-{{id}}"
           aria-expanded="false"
           aria-controls="accordion-content-{{id}}"
+          aria-labelledby="midd-accordion-item-label-{{id}}"
           role="button"
         >
+          {% if faq %}
+          <span class="accordion-item__char" aria-hidden>Q</span>
+          {% endif %}
 
-          <span class="accordion-item__label">{{item.title}}</span>
+          <span class="accordion-item__label" id="midd-accordion-item-label-{{id}}">{{item.title}}</span>
 
-          <span class="accordion-item__icon">
-            <svg class="icon">
-              <use xlink:href="#icon-chevron-down" />
-            </svg>
-          </span>
+          <svg class="accordion-item__icon icon">
+            <use xlink:href="#icon-chevron-down" />
+          </svg>
         </a>
+      </h3>
 
-      </h4>
       <div class="accordion-item__content" id="accordion-content-{{id}}" role="tabpanel" aria-labelledby="accordion-item-label-{{id}}">
+        {% if faq %}
+          <span class="accordion-item__char" aria-hidden>A</span>
+        {% endif %}
         <div class="typography">
           {{item.content}}
         </div>

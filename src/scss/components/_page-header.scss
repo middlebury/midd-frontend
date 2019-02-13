@@ -1,6 +1,14 @@
 .page-header {
 }
 
+.page-header--school {
+  .page-header__content {
+    @include media(lg) {
+      padding-top: 8rem; // TODO: move to space scale?
+    }
+  }
+}
+
 .page-header__figure {
   position: absolute;
   top: 0;
@@ -10,11 +18,16 @@
 }
 
 .page-header__content {
-  padding-top: spacing(4);
+  padding-top: spacing(7);
   padding-bottom: spacing(4);
 
-  @include media(lg) {
+  @include media(md) {
+    padding-bottom: spacing(8);
     padding-top: spacing(8);
+  }
+
+  @include media(lg) {
+    padding-top: spacing(9);
     padding-bottom: spacing(9);
   }
 

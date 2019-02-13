@@ -2,14 +2,8 @@
   order: 2;
   z-index: 2;
 
-  // Pull menu toggler out of container so it's flush with
-  // opened menu buttons.
+  // Pull menu toggler out of container so it's flush with the opened menu
   margin-right: -#{spacing(3)};
-
-  @include media(md) {
-    // container padding is increased it must be offset more
-    margin-right: -#{spacing(5)};
-  }
 
   @include media(lg) {
     order: 1;
