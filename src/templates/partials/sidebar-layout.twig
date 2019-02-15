@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row">
 
-    <div class="col-md-10 offset-md-1 col-lg-3 offset-lg-0 mb-4">
+    <div class="col-md-10 offset-md-1 col-lg-3 offset-lg-0">
 
       {% block nav %}{% endblock %}
 
@@ -13,7 +13,7 @@
     </div>
 
     {% if _toc is not empty %}
-      <div class="col-md-10 offset-md-1 col-lg-2 offset-lg-0 order-lg-last mb-4">
+      <div class="col-md-10 offset-md-1 col-lg-2 offset-lg-0 order-lg-last">
         {{ _toc|raw }}
       </div>
     {% endif %}
