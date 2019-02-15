@@ -8,8 +8,24 @@
       ]
     } %}
 
+    {% embed 'partials/filter.twig' with { label: 'Filter by Category' } %}
+      {% block content %}
+        <ul>
+          {% for i in 1..3 %}
+            <li class="mb-2"><a href="">Category {{i}}</a></li>
+          {% endfor %}
+          <li class="mb-2"><a href="" class="link-active">Active Category</a></li>
+          <li class="mb-2"><a href="">Category</a></li>
+        </ul>
+      {% endblock %}
+    {% endembed %}
+
   {% endblock %}
   {% block content %}
+
+    {% include 'partials/active-filter.twig' with {
+      label: 'Category 1 '
+    } %}
 
     <ul class="list list--dividers mb-7">
 

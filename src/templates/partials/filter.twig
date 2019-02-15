@@ -1,0 +1,22 @@
+<fieldset class="filter">
+  <legend class="filter__title">{{label}}</legend>
+  <button
+    class="filter__handle"
+    data-toggle-target=".js-filter-box"
+    aria-expanded="false"
+  >
+    {{label}}
+    <svg class="filter__icon icon">
+      <use href="#icon-chevron-down" />
+    </svg>
+  </button>
+  <div class="filter__content js-filter-box">
+    {% block content %}{% endblock %}
+    <a
+      href=""
+      class="button button--block button--sm button--outline button--primary mt-3"
+    >
+      Clear filter
+    </a>
+  </div>
+</fieldset>

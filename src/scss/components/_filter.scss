@@ -1,0 +1,80 @@
+.filter {
+  border-bottom: 1px solid $border-color;
+  border-top: 4px solid $navy;
+  display: block;
+
+  @include media(lg) {
+    margin-bottom: spacing(8);
+  }
+}
+
+.filter__handle {
+  padding: spacing(3) 0;
+  border: 0;
+  background: none;
+  display: block;
+  width: 100%;
+  font-size: typescale(2);
+  font-weight: $font-weight-semibold;
+  text-align: left;
+  color: $brand-primary;
+
+  @include media(lg) {
+    display: none;
+  }
+}
+
+/**
+ * 1. makes the legend appear inside fieldset
+ */
+.filter__title {
+  width: 100%; /* 1 */
+  float: left; /* 1 */
+
+  display: none;
+  padding: spacing(3) 0;
+  font-size: typescale(2);
+  font-weight: $font-weight-semibold;
+  text-align: left;
+  color: $brand-primary;
+
+  @include media(lg) {
+    display: block;
+  }
+}
+
+.filter__icon {
+  float: right;
+  transition: $chevron-transition;
+
+  .filter__handle.is-toggled & {
+    transform: $chevron-transform;
+  }
+
+  @include media(lg) {
+    display: none !important;
+  }
+}
+
+.filter__content {
+  padding-bottom: spacing(3);
+
+  // for clearing floated legend
+  &:before {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  &.has-toggler {
+    display: none;
+
+    @include media(lg) {
+      display: block;
+    }
+  }
+
+  &.is-toggled {
+    display: block;
+  }
+}

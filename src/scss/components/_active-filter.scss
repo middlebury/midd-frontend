@@ -1,0 +1,39 @@
+.active-filter {
+  padding-bottom: spacing(3);
+  padding-top: spacing(3);
+  border-bottom: 1px solid $border-color;
+  margin-bottom: spacing(7);
+
+  @include media(sm) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include media(lg) {
+    border-top: 4px solid $navy;
+  }
+}
+
+.active-filter__label {
+}
+
+.active-filter__pipe {
+  display: none;
+
+  @include media(sm) {
+    display: inline;
+    margin-left: spacing(3);
+    margin-right: spacing(3);
+  }
+}
+
+.active-filter__count {
+}
+
+.active-filter__clear {
+  margin-left: auto;
+  margin-top: spacing(2);
+  @include media(sm) {
+    margin-top: 0;
+  }
+}

@@ -97,6 +97,11 @@ $text-colors: (
   @include link-border;
 }
 
+.link-active {
+  font-weight: $font-weight-semibold;
+  color: $sky;
+}
+
 ///
 /// lead
 ///
