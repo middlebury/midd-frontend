@@ -4,7 +4,7 @@
 .page-header--school {
   .page-header__content {
     @include media(lg) {
-      padding-top: 8rem; // TODO: move to space scale?
+      padding-top: spacing(9);
     }
   }
 }
@@ -27,8 +27,7 @@
   }
 
   @include media(lg) {
-    padding-top: spacing(9);
-    padding-bottom: spacing(9);
+    // padding-top: spacing(9); padding-bottom: spacing(9);
   }
 
   .page-header--has-image & {
