@@ -4,7 +4,7 @@
 .page-header--school {
   .page-header__content {
     @include media(lg) {
-      padding-top: spacing(9);
+      // padding-top: spacing(9);
     }
   }
 }
@@ -22,12 +22,13 @@
   padding-bottom: spacing(4);
 
   @include media(md) {
-    padding-bottom: spacing(8);
-    padding-top: spacing(8);
+    // padding-bottom: spacing(8);
+    // padding-top: spacing(8);
   }
 
   @include media(lg) {
-    // padding-top: spacing(9); padding-bottom: spacing(9);
+    padding-top: spacing(9);
+    padding-bottom: spacing(9);
   }
 
   .page-header--has-image & {

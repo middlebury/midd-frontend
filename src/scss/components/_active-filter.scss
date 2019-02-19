@@ -2,15 +2,20 @@
   padding-bottom: spacing(3);
   padding-top: spacing(3);
   border-bottom: 1px solid $border-color;
-  margin-bottom: spacing(7);
+  margin-bottom: spacing(5);
 
   @include media(sm) {
     display: flex;
     justify-content: space-between;
   }
 
+  @include media(md) {
+    margin-bottom: spacing(7);
+  }
+
   @include media(lg) {
     border-top: 4px solid $navy;
+    margin-bottom: spacing(8);
   }
 }
 

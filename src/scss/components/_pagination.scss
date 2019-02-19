@@ -1,7 +1,12 @@
 .pagination {
-  margin-bottom: spacing(9);
-  margin-top: spacing(7);
+  margin-bottom: spacing(8);
+  margin-top: spacing(8);
   text-align: center;
+
+  @include media(lg) {
+    margin-bottom: spacing(9);
+    margin-top: spacing(9);
+  }
 }
 
 .pagination__list {

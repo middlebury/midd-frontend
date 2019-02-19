@@ -32,11 +32,11 @@
   float: left; /* 1 */
 
   display: none;
-  padding: spacing(3) 0;
+  padding: spacing(2) 0;
   font-size: typescale(2);
   font-weight: $font-weight-semibold;
   text-align: left;
-  color: $brand-primary;
+  color: $black;
 
   @include media(lg) {
     display: block;
