@@ -15,7 +15,8 @@
             <li class="mb-2"><a href="">Category {{i}}</a></li>
           {% endfor %}
           <li class="mb-2"><a href="" class="link-active">Active Category</a></li>
-          <li class="mb-2"><a href="">Category</a></li>
+          {# no margin util on last item #}
+          <li class=""><a href="">Category</a></li>
         </ul>
       {% endblock %}
     {% endembed %}
