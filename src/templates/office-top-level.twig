@@ -1,0 +1,38 @@
+{% extends "midd-layout.twig" %}
+
+{% set page_header = {
+  title: 'Office of the General Counsel',
+  breadcrumb: [
+    { text: 'Middlebury' },
+    { text: 'Offices and Services' },
+  ],
+  has_menu: true
+} %}
+
+{% block page %}
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        {# set overlap if page has featured image #}
+        {% include 'partials/box-menu.twig' with {
+          office: true,
+          overlap: true,
+          items: top_level_nav_example
+        } %}
+      </div>
+
+      <div class="col-md-8 offset-md-2">
+        {% include 'partials/lead.twig' %}
+      </div>
+
+      {# iterate paragraphs here, some need to be full width #}
+      <div class="col-md-8 offset-md-2">
+        {% include 'paragraphs/text-short.twig' %}
+      </div>
+    </div>
+
+  </div>
+
+{% endblock %}
