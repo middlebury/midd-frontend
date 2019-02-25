@@ -272,11 +272,29 @@ const watch = () => {
   gulp.watch('./src/data/*.yml', html);
 };
 
+const reportFilesizes = () =>
+  gulp
+    .src('./dist/**/*.{css,js}')
+    .pipe(
+      size({
+        showFiles: true,
+        showTotal: false
+      })
+    )
+    .pipe(
+      size({
+        showFiles: true,
+        gzip: true,
+        showTotal: false
+      })
+    );
+
 const build = gulp.series(
   clean,
   copyIcons,
   copyDeps,
-  gulp.parallel(html, images, styles, scripts)
+  gulp.parallel(html, images, styles, scripts),
+  reportFilesizes
 );
 
 const dev = gulp.parallel(build, watch);
