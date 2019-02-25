@@ -1,4 +1,4 @@
-<nav class="box-menu {{ overlap ? 'box-menu--overlap' : '' }}">
+<nav class="box-menu{{ overlap ? ' box-menu--overlap' : '' }}{{office ? ' box-menu--midd' : ''}}">
   <ul class="box-menu__list">
     {% for item in items %}
       <li class="box-menu__item">
