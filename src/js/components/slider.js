@@ -29,7 +29,7 @@ class Slider extends Component {
   handleTrackClick = event => {
     const { onTrackClick } = this.props;
     const sliderWidth = this.track.offsetWidth;
-    const clickLocation = event.layerX;
+    const clickLocation = event.pageX - this.track.getBoundingClientRect().left;
 
     const percentage = clickLocation / sliderWidth;
 
@@ -56,8 +56,7 @@ class Slider extends Component {
             class="slider__handle"
             role="slider"
             style={{
-              position: 'relative',
-              left: sliderLeft + '%'
+              width: sliderLeft + '%'
             }}
             aria-valuemin={min}
             aria-valuemax={max}

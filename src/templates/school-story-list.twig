@@ -1,0 +1,15 @@
+{% extends "school-layout.twig" %}
+
+{% set page_header = {
+  title: 'News',
+  breadcrumb: [
+    { text: 'Leadership and Impact' },
+  ],
+  school: true
+} %}
+
+{% block page %}
+
+  {% include 'partials/story-list-page.twig' %}
+
+{% endblock %}

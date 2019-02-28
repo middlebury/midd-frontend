@@ -1,6 +1,6 @@
 .pagination {
-  margin-bottom: $component-margin-bottom;
-  margin-top: $component-margin-bottom;
+  margin-bottom: spacing(9);
+  margin-top: spacing(7);
   text-align: center;
 }
 
@@ -47,6 +47,7 @@
   letter-spacing: 2px;
   text-align: center;
   padding: 0.25rem 0.5rem;
+  transition: background 0.2s;
 
   &:hover,
   &:focus {

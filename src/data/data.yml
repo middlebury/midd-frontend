@@ -194,6 +194,12 @@ image_sizes:
   speaker: # 3:4
     srcset:
     - 144x192
+  story_teaser:
+    srcset:
+    - 128x72
+    - 160x90
+    - 240x135
+    sizes: '(max-width: 580px) 128px, (max-width: 960px) 160px, 240px'
   story_detail:
     srcset:
     - 400x225
