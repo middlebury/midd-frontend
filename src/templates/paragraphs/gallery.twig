@@ -1,25 +1,30 @@
 <div class="gallery">
-  <h2 class="sr-only">Gallery title</h2>
-
   <div class="gallery__image">
     {# should link to drupal page rendering the gallery images #}
-    <a href="#modal-1" class="gallery__link" data-micromodal-trigger="modal-1">
-      <figure class="media">
-        <img src="http://placekitten.com/1280/720" alt="">
-        <figcaption class="media__caption">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit
-        </figcaption>
-      </figure>
+    <a
+      href="#modal-1"
+      class="gallery__link"
+      data-micromodal-trigger="modal-1"
+      aria-describedby="gallery-1-title"
+      role="button"
+    >
+      {% include 'partials/img.twig' with { name: 'video' } %}
       <span class="button button--primary gallery__button">
         Open Gallery
-        <span class="ml-3">
+        <span class="ml-3" aria-hidden="true">
           <svg class="icon">
             <use xlink:href="#icon-images" />
           </svg>
         </span>
-        <span class="mx-2">|</span>
-        <span>{{gallery_data.length}} images</span>
+        <span class="d-none d-sm-inline">
+          <span class="mx-2" aria-hidden="true">|</span>
+          <span>{{gallery_data.length}} images</span>
+        </span>
       </span>
     </a>
+  </div>
+  <div class="gallery__body">
+    <h2 class="gallery__title" id="gallery-1-title">Gallery title</h2>
+    <p class="gallery__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, ipsum incidunt quasi enim nihil unde id. Labore nulla fugiat necessitatibus corporis at facere quas error, quaerat quo ut obcaecati. Tenetur?</p>
   </div>
 </div>

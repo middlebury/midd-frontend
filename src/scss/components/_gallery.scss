@@ -5,6 +5,8 @@
 .gallery__image {
   position: relative;
   padding-top: percentage(9 / 16);
+  height: 0;
+  overflow: hidden;
 
   img {
     position: absolute;
@@ -19,4 +21,18 @@
   position: absolute;
   bottom: 0;
   left: 0;
+}
+
+.gallery__body {
+  padding: spacing(3) spacing(4);
+  border: 1px solid $border-color;
+}
+
+.gallery__title {
+  font-size: $h3-font-size;
+  margin-bottom: $h3-margin-bottom;
+}
+
+.gallery__text {
+  font-size: typescale(3);
 }
