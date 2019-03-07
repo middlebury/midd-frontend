@@ -162,6 +162,15 @@ MicroModal.init({
   onClose: modal => {
     if (modal.lightbox) {
       modal.lightbox.destroy();
+
+      /**
+       * Unset hidden overflow on body.
+       *
+       * Micromodal is supposed to do this but it's not working in ie 11
+       * possibly due to Object.assign not being properly polyfilled.
+       **/
+      document.body.style.height = '100%';
+      document.body.style.overflow = 'auto';
     }
   },
   disableScroll: true
