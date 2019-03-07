@@ -11,7 +11,7 @@ module.exports = {
   plugins: [
     ignore(['moment']),
     babel({
-      exclude: /node_modules\/(?!(dom7|ssr-window|swiper|micromodal)\/).*/,
+      exclude: /node_modules\/(?!(dom7|ssr-window|swiper|micromodal|lozad)\/).*/,
       presets: [
         [
           '@babel/preset-env',

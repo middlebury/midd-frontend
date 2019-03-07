@@ -1,5 +1,6 @@
 import MicroModal from 'micromodal';
 import anime from 'animejs';
+import lozad from 'lozad';
 
 import { $, $$, on, off, addClass, removeClass } from './utils/dom';
 import SmoothScroll from './smooth-scroll';
@@ -16,6 +17,10 @@ class Lightbox {
     this.count = $('[data-lightbox-count]', el);
     this.thumbs = $$('[data-lightbox-thumb]', el);
     this.thumbsList = $('[data-lightbox-thumbs]', el);
+
+    // offset from top of screen, extra space to match design needs
+    // TODO: either get this via js or change css so there's no need for it.
+    this.offset = 128;
 
     this.index = 0;
     this.total = this.items.length;
@@ -74,6 +79,12 @@ class Lightbox {
     this.items.forEach(item => {
       this.observer.observe(item);
     });
+
+    // init lazy loaded images
+    const lazyThumbs = lozad(
+      '[data-lightbox-item] img, [data-lightbox-thumb] img'
+    );
+    lazyThumbs.observe();
   }
 
   handleObserverChange = entries => {
