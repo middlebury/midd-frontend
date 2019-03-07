@@ -64,11 +64,11 @@
 
 .lightbox__images {
   padding: spacing(3);
-  padding-top: spacing(9);
+  padding-top: 7rem;
 
   @include media(lg) {
     padding: spacing(5);
-    padding-top: spacing(9);
+    padding-top: 8rem;
     width: calc(100vw - 100px);
   }
 }
@@ -80,11 +80,10 @@
 .lightbox__thumbs-list {
   border-left: 1px solid $gray-dark;
   position: fixed;
-  top: 100px;
+  top: 8rem;
   right: 0;
   overflow-y: auto;
-  max-height: calc(100vh - 100px);
-
+  max-height: calc(100vh - 80px);
   display: none;
 
   @include media(lg) {
