@@ -35,11 +35,12 @@ class Lightbox {
 
   init() {
     this.addListeners();
-    this.updateCount(this.index + 1);
+    this.updateCount(this.index);
+
   }
 
-  updateCount(num) {
-    this.count.innerHTML = `${num}/${this.total}`;
+  updateCount(index) {
+    this.count.innerHTML = `${index + 1}/${this.total}`;
   }
 
   destroy() {
@@ -102,7 +103,7 @@ class Lightbox {
 
         this.index = index;
 
-        this.updateCount(index + 1);
+        this.updateCount(index);
       }
     });
   };
