@@ -3,6 +3,8 @@ const resolve = require('rollup-plugin-node-resolve');
 const commonJS = require('rollup-plugin-commonjs');
 const { uglify } = require('rollup-plugin-uglify');
 const ignore = require('rollup-plugin-ignore');
+const sizes = require('rollup-plugin-sizes');
+const filesize = require('rollup-plugin-filesize');
 
 const production = process.env.NODE_ENV === 'production';
 
@@ -28,6 +30,8 @@ module.exports = {
     }),
     resolve(),
     commonJS(),
-    production && uglify()
+    production && uglify(),
+    sizes(),
+    filesize()
   ]
 };
