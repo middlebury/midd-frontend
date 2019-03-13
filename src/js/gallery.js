@@ -63,6 +63,9 @@ class Lightbox {
     this.smoothScroller = new SmoothScroll(this.thumbs, {
       container: this.el,
       offset: this.offset,
+      complete: () => {
+        this.animating = false;
+      }
     });
 
     const options = {
