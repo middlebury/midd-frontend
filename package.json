@@ -100,7 +100,7 @@
     },
     {
       "path": "./dist/js/bundle.js",
-      "maxSize": "45 kB"
+      "maxSize": "60 kB"
     }
   ]
 }
