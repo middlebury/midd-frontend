@@ -48,10 +48,10 @@ class Lightbox {
     off(this.nextBtn, 'click', this.next);
     off(this.prevBtn, 'click', this.prev);
 
-    // this.smoothScroller.destroy();
+    this.smoothScroller.destroy();
 
     this.items.forEach(item => {
-      // this.observer.unobserve(item);
+      this.observer.unobserve(item);
     });
   }
 
