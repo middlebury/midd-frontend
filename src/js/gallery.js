@@ -125,7 +125,6 @@ class Lightbox {
   };
 
   scrollToImage(index) {
-    // do not scroll if next index is below 1 or above total items or animating
     if (this.animating || index === -1 || index === this.total) {
       return;
     }
