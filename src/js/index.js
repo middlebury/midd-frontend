@@ -7,8 +7,8 @@
 import 'polyfill-nodelist-foreach';
 
 /**
- * Polyfill intersection observer for ie and safari
- * used in menu-spy.js and triggering chart animations when they scroll into view.
+ * Polyfill intersection observer for IE and safari.
+ * Used in menu spies, lazy loaded content, delaying chart animations, etc.
  */
 import 'intersection-observer';
 
@@ -26,7 +26,7 @@ import './events-datepicker'; // make the events datepicker accessible
 import './audio-player'; // custom Preact audio player
 import './offices'; // middlebury.edu/office homepage script for filtering items shown
 import './slideshow'; // swiperjs slideshows
-import './mover'; // swiperjs slideshows
+import './mover'; // mover util for rearraning dom at a breakpoint
 import './gallery'; // create Preact lightbox galleries from dom
 
 focusWithin(document);
