@@ -87,7 +87,7 @@ class Lightbox {
   }
 
   handleObserverChange = entries => {
-    // reverse() highlights the first item instead
+    // reverse() so first item becomes highlighted
     entries.reverse().forEach(entry => {
       const link = $(`a[href="#${entry.target.id}"]`);
       const index = [].indexOf.call(this.thumbs, link);
