@@ -7,9 +7,9 @@ class SmoothScroll {
     els,
     {
       offset = 0,
-      targets = [document.documentElement, document.body],
       duration = 500,
       easing = 'linear',
+      container,
       ...rest
     } = {}
   ) {
@@ -17,8 +17,9 @@ class SmoothScroll {
 
     this.offset = offset;
 
+    this.container = container;
+
     this.config = {
-      targets,
       duration,
       easing,
       ...rest
@@ -41,18 +42,36 @@ class SmoothScroll {
 
   handleClick = event => {
     event.preventDefault();
-
     const selector = event.currentTarget.getAttribute('href');
-
     const targetEl = $(selector);
 
-    const scrollTop = targetEl.offsetTop + this.offset;
+    this.scrollTo(targetEl);
+  };
+
+  scrollTo(elem) {
+    const elementOffset = elem.getBoundingClientRect().top;
+
+    let scrollPosition = window.scrollY;
+
+    /**
+     * Must be set to both elements for animejs.
+     * See https://github.com/juliangarnier/anime/issues/197#issuecomment-314265652
+     */
+    let targets = [document.documentElement, document.body];
+
+    if (this.container) {
+      targets = this.container;
+      scrollPosition = this.container.scrollTop;
+    }
+
+    const scrollTop = elementOffset + scrollPosition - this.offset;
 
     anime({
       scrollTop,
+      targets,
       ...this.config
     });
-  };
+  }
 }
 
 export default SmoothScroll;
