@@ -7,9 +7,10 @@ class SmoothScroll {
     els,
     {
       offset = 0,
-      duration = 500,
-      easing = 'linear',
       container,
+      easing = 'easeInCubic',
+      duration = 300,
+      elasticity = 500,
       ...rest
     } = {}
   ) {
@@ -22,6 +23,7 @@ class SmoothScroll {
     this.config = {
       duration,
       easing,
+      elasticity,
       ...rest
     };
 

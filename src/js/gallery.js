@@ -61,9 +61,6 @@ class Lightbox {
     on(this.prevBtn, 'click', this.prev);
 
     this.smoothScroller = new SmoothScroll(this.thumbs, {
-      easing: 'easeInCubic',
-      duration: 300,
-      elasticity: 500
       container: this.el,
     });
 
