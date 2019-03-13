@@ -133,20 +133,9 @@ class Lightbox {
 
     const target = this.items[index];
 
-    // offset more so it shows up below fixed pager buttons
-    // TODO: handle this without a magic number
-    const scrollTop = target.offsetTop - 100;
-
-    anime({
-      targets: this.el,
-      scrollTop,
-      easing: 'easeInCubic',
-      duration: 300,
-      elasticity: 500,
-      complete: () => {
-        this.animating = false;
-      }
-    });
+    // hijack thumbnail smooth scroller to scroll to image with same animation
+    // it already changes animating flag and has offset from initializes
+    this.smoothScroller.scrollTo(target);
   }
 }
 
