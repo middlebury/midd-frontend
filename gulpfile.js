@@ -180,6 +180,16 @@ const html = () =>
         base: './src/templates',
         filters: [
           {
+            name: 'exists',
+            func: (value, args) => {
+              if (!value) {
+                console.log(args);
+                throw 'value is falsy';
+              }
+              return value;
+            }
+          },
+          {
             name: 'groupBy',
             func: (items, field) => {
               const grouped = _.groupBy(items, field[0]);

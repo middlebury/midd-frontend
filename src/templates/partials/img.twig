@@ -1,5 +1,6 @@
 {% block responsive_img %}
-  {% set image = image_styles[name] %}
+  {% set image = image_styles[name]|exists(name) %}
+
   {% set placehold = 'http://placehold.it/' %}
 
   {% set src = '' %}
