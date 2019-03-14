@@ -6,6 +6,10 @@
  */
 import 'polyfill-nodelist-foreach';
 
+// polyfills for micromodal to support ie11
+import 'mdn-polyfills/Object.assign';
+import 'mdn-polyfills/Array.from';
+
 /**
  * Polyfill intersection observer for IE and safari.
  * Used in menu spies, lazy loaded content, delaying chart animations, etc.

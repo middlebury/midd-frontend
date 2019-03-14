@@ -67,7 +67,6 @@
     "yargs": "^12.0.2"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.0.0",
     "anchor-js": "^4.1.1",
     "animejs": "^2.2.0",
     "chart.js": "^2.7.3",
@@ -80,6 +79,7 @@
     "lazysizes": "^4.1.5",
     "lodash.debounce": "^4.0.8",
     "lozad": "^1.9.0",
+    "mdn-polyfills": "^5.16.0",
     "micromodal": "^0.3.2",
     "middlebury-design-system": "^0.11.0",
     "normalize.css": "^8.0.0",
