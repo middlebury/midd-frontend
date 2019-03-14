@@ -139,7 +139,7 @@ class Lightbox {
 
     const target = this.items[index];
 
-    // hijack thumbnail smooth scroller to scroll to image with same animation
+    // use thumbnail smooth scroller instance to scroll to image with same animation
     // it already changes animating flag and has offset from initializes
     this.smoothScroller.scrollTo(target);
   }
