@@ -18,6 +18,10 @@
 
   {% endfor %}
 
+  {% if not env.production %}
+    <!--  image style: {{name}} -->
+  {% endif %}
+
   <img
     src="{{image.src|default(src)}}"
     srcset="{{srcset|reverse|join(',')}}"
