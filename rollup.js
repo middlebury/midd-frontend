@@ -11,6 +11,7 @@ const production = process.env.NODE_ENV === 'production';
 module.exports = {
   input: './src/js/index.js',
   plugins: [
+    // ignore importing optional momentjs, which comes with pikaday
     ignore(['moment']),
     babel({
       exclude: /node_modules\/(?!(dom7|ssr-window|swiper|micromodal|lozad)\/).*/,
