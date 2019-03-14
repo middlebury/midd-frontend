@@ -13,6 +13,7 @@ class Lightbox {
 
     this.nextBtn = $('[data-lightbox-next]', el);
     this.prevBtn = $('[data-lightbox-prev]', el);
+    this.closeBtn = $('[data-lightbox-close]', el);
     this.items = $$('[data-lightbox-item]', el);
     this.count = $('[data-lightbox-count]', el);
     this.thumbs = $$('[data-lightbox-thumb]', el);
@@ -37,6 +38,9 @@ class Lightbox {
     this.addListeners();
     this.updateCount(this.index);
 
+    setTimeout(() => {
+      this.closeBtn.focus();
+    }, 100);
   }
 
   updateCount(index) {
