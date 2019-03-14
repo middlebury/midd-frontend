@@ -1,5 +1,4 @@
 import MicroModal from 'micromodal';
-import anime from 'animejs';
 import lozad from 'lozad';
 
 import { $, $$, on, off, addClass, removeClass } from './utils/dom';
