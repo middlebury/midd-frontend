@@ -157,13 +157,11 @@ MicroModal.init({
       modal.lightbox.destroy();
 
       /**
-       * Unset hidden overflow on body.
-       *
-       * Micromodal is supposed to do this but it's not working in ie 11
-       * possibly due to Object.assign not being properly polyfilled.
+       * Unset hidden overflow on body until fix is merged for ie11
+       * https://github.com/ghosh/micromodal/pull/102
        **/
-      document.body.style.height = '100%';
-      document.body.style.overflow = 'auto';
+      document.body.style.height = '';
+      document.body.style.overflow = '';
     }
   },
   disableScroll: true
