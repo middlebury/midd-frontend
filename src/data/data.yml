@@ -421,6 +421,16 @@ gallery_data:
     sizes: ''
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
+  - src: http://placekitten.com/320/130
+    thumb: http://placekitten.com/64/36
+    width: 320
+    height: 130
+    alt: ''
+    srcset: ''
+    sizes: ''
+    caption: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+
+
   - src: http://placekitten.com/960/540
     thumb: http://placekitten.com/64/36
     width: 960
