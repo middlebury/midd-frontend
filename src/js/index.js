@@ -3,6 +3,9 @@
 /**
  * polyfill nodelist foreach so you can
  * use document.querySelectorAll('.my-elems').forEach() in IE
+ *
+ * @todo maybe switch to using Array.from(NodeList).forEach since we
+ * are now polyfilling it so we can ditch this foreach polyfill.
  */
 import 'polyfill-nodelist-foreach';
 
