@@ -1,8 +1,10 @@
 import { $, $$ } from './utils/dom';
 
 class MenuSpy {
-  constructor(elem) {
+  constructor(elem, { root = null } = {}) {
     this.activeClass = 'active';
+
+    this.root = root;
 
     this.elem = typeof elem === 'string' ? $(elem) : elem;
 
@@ -13,6 +15,7 @@ class MenuSpy {
 
   init() {
     const options = {
+      root: this.root,
       rootMargin: '0% 0% -50% 0%', // center of viewport
       threshold: [0, 1]
     };

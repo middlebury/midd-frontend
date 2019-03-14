@@ -5,6 +5,7 @@ import { $, $$, on, off, addClass, removeClass } from './utils/dom';
 import SmoothScroll from './smooth-scroll';
 
 import { LEFT_ARROW_KEY, RIGHT_ARROW_KEY } from './constants';
+import MenuSpy from './menu-spy';
 
 class Lightbox {
   constructor(el) {
@@ -72,8 +73,10 @@ class Lightbox {
     });
 
     const options = {
-      margin: '0% 0% -50% 0%',
-      threshold: [0, 1]
+      // margin: '0% 0% -50% 0%',
+      // threshold: [0, 1]
+      margin: '0% 0%',
+      threshold: 1
     };
 
     this.observer = new IntersectionObserver(
@@ -97,6 +100,8 @@ class Lightbox {
     entries.reverse().forEach(entry => {
       const link = $(`a[href="#${entry.target.id}"]`);
       const index = [].indexOf.call(this.thumbs, link);
+
+      console.log(index, entry.isIntersecting);
 
       if (entry.intersectionRatio === 1) {
         this.thumbs.forEach(el => {
