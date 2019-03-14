@@ -68,7 +68,8 @@
             width="{{item.width}}"
             alt=""
           />
-        <figcaption class="media__caption text-white">{{item.caption}}</figcaption>
+        {# loop index shown for dev purposes #}
+        <figcaption class="media__caption text-white">{{loop.index}} {{item.caption}}</figcaption>
       </figure>
 
     {% endfor %}
