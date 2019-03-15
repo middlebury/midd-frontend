@@ -1,6 +1,8 @@
 .image {
   margin-bottom: spacing(8);
   margin-top: spacing(8);
+  display: flex;
+  justify-content: center;
 }
 
 .image--right {
