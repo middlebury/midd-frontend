@@ -37,9 +37,38 @@
       <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2">
         {% include 'paragraphs/text-short.twig' %}
       </div>
+
+      {# videos and images render in larger columns #}
+      <div class="col-md-10 offset-md-1">
+        {% include 'paragraphs/image.twig' %}
+      </div>
+
+      <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2">
+        {% include 'paragraphs/text-short.twig' %}
+      </div>
+
+      <div class="col-md-10 offset-md-1">
+        {% include 'paragraphs/video.twig' %}
+      </div>
+
+      <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2">
+        {% include 'paragraphs/text-short.twig' %}
+      </div>
+
+      <div class="col-md-10 offset-md-1">
+        {% include 'paragraphs/image.twig' with { name: 'image_sm' } %}
+      </div>
+
+      <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2">
+        {% include 'paragraphs/text-short.twig' %}
+      </div>
+
+      {# floated images followed by text need to be rendered in same wrapper #}
+      <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2">
+        {% include 'paragraphs/image.twig' with { right: true } %}
+        {% include 'paragraphs/text-short.twig' %}
+      </div>
     </div>
-
-
 
   </div>
 
