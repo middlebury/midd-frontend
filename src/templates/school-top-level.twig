@@ -19,8 +19,8 @@
 {% block page %}
 
   <div class="container">
-
     <div class="row">
+
       <div class="col-md-10 offset-md-1">
         {# set overlap if page has featured image #}
         {% include 'partials/box-menu.twig' with {
@@ -29,45 +29,43 @@
         } %}
       </div>
 
+      {# iterate paragraphs here, some need to be full width #}
       <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2">
         {% include 'partials/lead.twig' %}
       </div>
 
-      {# iterate paragraphs here, some need to be full width #}
-      <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2">
-        {% include 'paragraphs/text-short.twig' %}
-      </div>
+      <div class="paragraphs paragraphs--wide">
 
-      {# videos and images render in larger columns #}
-      <div class="col-md-10 offset-md-1">
+        {% include 'paragraphs/text-short.twig' %}
+
         {% include 'paragraphs/image.twig' %}
-      </div>
 
-      <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2">
         {% include 'paragraphs/text-short.twig' %}
-      </div>
 
-      <div class="col-md-10 offset-md-1">
         {% include 'paragraphs/video.twig' %}
-      </div>
 
-      <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2">
         {% include 'paragraphs/text-short.twig' %}
-      </div>
 
-      <div class="col-md-10 offset-md-1">
         {% include 'paragraphs/image.twig' with { name: 'image_sm' } %}
-      </div>
 
-      <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2">
         {% include 'paragraphs/text-short.twig' %}
-      </div>
 
-      {# floated images followed by text need to be rendered in same wrapper #}
-      <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2">
         {% include 'paragraphs/image.twig' with { right: true } %}
+
         {% include 'paragraphs/text-short.twig' %}
+
+        {% include 'paragraphs/audio.twig' %}
+
+        {% include 'paragraphs/two-col-text.twig' %}
+
+        {% include 'paragraphs/schedule.twig' %}
+
+        <div class="spotlight paragraph--spotlight">
+          <h2>spotlight placeholder</h2>
+          <img src="https://placehold.it/2560x1440" alt="">
+        </div>
       </div>
+
     </div>
 
   </div>
