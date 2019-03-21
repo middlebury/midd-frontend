@@ -1,7 +1,13 @@
-{% set _image_style = left or right ? 'profile_teaser' : image_style ? image_style : 'image' %}
+{% set floated = left or right %}
+{% set _image_style = floated ? 'image_floated' : 'image' %}
 
-<div class="image{% if right %} image--right{% endif %}{% if left %} image--left{% endif %}">
-  <figure class="media media--image">
+{% if name is not empty %}
+  {% set _image_style = name %}
+{% endif %}
+
+<div class="paragraph--image image {{right ? 'image--right' : left ? 'image--left' : ''}}">
+  <figure class="media media--image media--contain-caption">
+    <!-- {{name}} -->
     {% include 'partials/img.twig' with { name: _image_style } %}
     <figcaption class="media__caption">{{caption|default('Lorem ipsum dolor sit amet, consectetur adipiscing elit (Photo: John Doe)')}}</figcaption>
   </figure>
