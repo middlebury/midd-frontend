@@ -1,57 +1,9 @@
 image_styles:
-  homepage_hero:
-    srcset:
-    - 800x450
-    - 1040x585
-    - 1200x675
-  # homepage program spotlight
-  program_spotlight: # 3:4
-    srcset:
-    - 468x624
-    - 582x776
-    sizes: '(max-width: 468px) 100vw, (max-width: 580px) 582px, 468px'
-  # related basic content/events/stories
-  card:
-    srcset:
-    - 160x90
-    - 320x180
-    - 640x360
-    sizes: '(max-width: 580px) 160px, (max-width: 960px) 320px, 640px'
-  # list of event/story
-  teaser:
-    srcset:
-    - 128x72
-    - 160x90
-    - 240x135
-    sizes: '(max-width: 580px) 128px, (max-width: 960px) 160px, 240px'
   featured:
     srcset:
     - 400x225
     - 640x360
     - 800x450
-    - 960x540
-    sizes: '(max-width: 960px) 100vw, 800px'
-  # aof, audience, faculty in the field top
-  page_hero:
-    srcset:
-    - 360x180
-    - 640x360
-    - 960x540
-  panel:
-    srcset:
-    - 400x225
-    - 640x360
-    - 960x540
-    - 1280x720
-    - 1440x810
-  notfound:
-    srcset:
-    - 400x225
-    - 640x360
-    - 960x540
-    - 1280x720
-    - 1440x810
-  # video paragraph
   video:
     srcset:
     - 400x225
@@ -78,9 +30,6 @@ image_styles:
   profile_detail: # 3:4
     srcset:
     - 300x400
-  speaker: # 3:4
-    srcset:
-    - 144x192
   story_teaser:
     srcset:
     - 128x72
@@ -100,15 +49,3 @@ image_styles:
     - 960x384
     - 1280x512
     - 1440x576
-  top_level_teaser: # 5:2
-    srcset:
-    - 160x64
-    - 240x96
-  grid_nav:
-    srcset:
-    - 128x72
-    - 160x90
-    - 320x180
-    - 400x225
-    sizes: '(max-width: 580px) 128px, (max-width: 960px) 160px, (max-width: 1200px) 400px, 320px'
-  # TODO: slidershow with lazy <picture>?
