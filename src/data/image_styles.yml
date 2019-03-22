@@ -52,3 +52,8 @@ image_styles:
     srcset:
     - 400x225
     - 640x360
+  image_text:
+    srcset:
+    - 150x200
+    - 300x400
+    sizes: '(max-width: 512px) 100px, 300px'
