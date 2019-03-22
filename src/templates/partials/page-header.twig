@@ -2,7 +2,7 @@
 
   {% if image_src %}
     <figure class="page-header__figure">
-      <img src="{{image_src}}" alt="">
+      {% include 'partials/img.twig' with { name: 'top_level' } %}
     </figure>
   {% endif %}
 
@@ -14,7 +14,7 @@
 
           {% include 'partials/breadcrumb.twig' with {
             items: breadcrumb,
-            light: image_src is not empty }
+            light: image_src  }
           %}
           <h1 class="page-header__title" id="midd-page-header-label">{{title}}</h1>
 
