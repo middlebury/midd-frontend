@@ -42,7 +42,6 @@ image_styles:
     - 640x360
     - 832x468
     - 1136x639
-    # - 1440x900
   image_floated: # 3:4
     srcset:
     - 90x120
