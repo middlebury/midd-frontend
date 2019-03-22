@@ -1,47 +1,11 @@
+# most images are 16:9 unless otherwise stated
 image_styles:
-  featured:
+  # content types
+  featured: # basic content, event detail, story detail
     srcset:
     - 400x225
     - 640x360
     - 800x450
-  video:
-    srcset:
-    - 400x225
-    - 640x360
-    - 1280x720
-  #  image paragraph
-  image:
-    srcset:
-    - 400x225
-    - 640x360
-    - 1280x720
-  # publication: this is skipped for now
-  profile_spotlight_item: # 3:4
-    srcset:
-    - 90x120
-    - 144x192
-    - 288x384
-    sizes: '(max-width: 580px) 90px, (max-width: 960px) 144px, 288px'
-  profile_teaser: # 3:4
-    srcset:
-    - 90x120
-    - 144x192
-    sizes: '(max-width: 580px) 90px, 144px'
-  profile_detail: # 3:4
-    srcset:
-    - 300x400
-  story_teaser:
-    srcset:
-    - 128x72
-    - 160x90
-    - 240x135
-    sizes: '(max-width: 580px) 128px, (max-width: 960px) 160px, 240px'
-  story_detail:
-    srcset:
-    - 400x225
-    - 640x360
-    - 960x540
-    - 1040x585
   top_level: # 5:2
     srcset:
     - 400x160
@@ -49,3 +13,42 @@ image_styles:
     - 960x384
     - 1280x512
     - 1440x576
+
+  story_teaser:
+    srcset:
+    - 128x72
+    - 160x90
+    - 240x135
+    sizes: '(max-width: 512px) 128px, (max-width: 960px) 160px, 240px'
+  profile_teaser: # 3:4
+    srcset:
+    - 90x120
+    - 144x192
+    sizes: '(max-width: 512px) 90px, 144px'
+  profile_detail: # 3:4
+    srcset:
+    - 300x400
+
+  # paragraphs
+  video:
+    srcset:
+    - 400x225
+    - 640x360
+    - 800x450
+    - 1136x639
+  image:
+    srcset:
+    - 400x225
+    - 640x360
+    - 800x450
+    - 1136x639
+    # - 1440x900
+  image_floated: # 3:4
+    srcset:
+    - 90x120
+    - 144x192
+    sizes: '(max-width: 512px) 90px, 144px'
+  image_sm: # for testing purposes
+    srcset:
+    - 400x225
+    - 640x360
