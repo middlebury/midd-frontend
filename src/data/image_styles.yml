@@ -5,7 +5,7 @@ image_styles:
     srcset:
     - 400x225
     - 640x360
-    - 800x450
+    - 832x468
   top_level: # 5:2
     srcset:
     - 400x160
@@ -34,13 +34,13 @@ image_styles:
     srcset:
     - 400x225
     - 640x360
-    - 800x450
+    - 832x468
     - 1136x639
   image:
     srcset:
     - 400x225
     - 640x360
-    - 800x450
+    - 832x468
     - 1136x639
     # - 1440x900
   image_floated: # 3:4
