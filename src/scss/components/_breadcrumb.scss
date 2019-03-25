@@ -1,6 +1,6 @@
 .breadcrumb {
   margin-bottom: spacing(2);
-  @include media(md) {
+  @include media(lg) {
     margin-bottom: spacing(3);
   }
 }
