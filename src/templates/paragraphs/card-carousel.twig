@@ -1,0 +1,41 @@
+<div class="paragraph--card-carousel">
+  <div class="container px-0">
+    <section class="card-carousel" aria-labelledby="midd-card-carousel-label">
+      <div class="row row--no-gutters">
+        <div class="col-sm-6 col-md-4 col-lg-3">
+
+          <div class="card-carousel__header">
+            <h2 class="card-carousel__title" id="midd-card-carousel-label">Program Spotlight</h2>
+            <div class="card-carousel__button">
+              <a href="#" class="button button--secondary">Explore our Programs</a>
+            </div>
+            <div class="card-carousel__controls" aria-label="program spotlight controls" role="navigation">
+              {# ids for tracking #}
+              <button class="button button--secondary button--circle js-card-carousel-prev-button" aria-label="Previous" id="midd-card-carousel-button-prev">
+                <span aria-hidden="true">&lsaquo;</span>
+              </button>
+              <button class="button button--secondary button--circle js-card-carousel-next-button" aria-label="Next" id="midd-card-carousel-button-next">
+                <span aria-hidden="true">&rsaquo;</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-sm-6 col-md-8 col-lg-9">
+          <div class="card-carousel__container swiper-container js-card-carousel">
+            <div class="card-carousel__content swiper-wrapper js-swiper-wrapper">
+
+              {% for item in 0..5 %}
+                <div class="card-carousel__item swiper-slide">
+                  {% include 'partials/card-carousel-item.twig' with {id: loop.index} %}
+                </div>
+              {% endfor %}
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

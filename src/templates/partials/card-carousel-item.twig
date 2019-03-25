@@ -1,0 +1,67 @@
+<article class="card-carousel-item js-spotlight-item-{{id}}">
+
+  <figure class="card-carousel-item__image">
+    {% include 'partials/img.twig' with { name: 'card_carousel' } %}
+  </figure>
+
+  <div class="card-carousel-item__content">
+    <div class="card-carousel-item__side card-carousel-item__side--front">
+
+        <a href="#midd-card-carousel-item-aside-{{id}}"
+          class="card-carousel-item__toggle button button--sm button--tertiary"
+          aria-label="Open Q&A with {{title}}"
+          data-toggle-target=".js-spotlight-item-{{id}}"
+          data-toggle-group="midd-card-carousel-items"
+          data-toggle-linked="spotlight-item-{{id}}">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-plus" />
+          </svg>
+        </a>
+
+      <div class="card-carousel-item__header">
+        <h3 class="card-carousel-item__title">Some name</h3>
+        <p class="card-carousel-item__text">Program here</p>
+      </div>
+      <div class="card-carousel-item__body">
+
+      </div>
+      <div class="card-carousel-item__footer">
+        <a href="#" class="card-carousel-item__label button button--light">
+          Program
+        </a>
+      </div>
+
+    </div>
+    <aside class="card-carousel-item__side card-carousel-item__side--back" id="midd-card-carousel-item-aside-{{id}}">
+
+      <button
+        class="card-carousel-item__toggle button button--sm button--primary"
+        aria-label="Close"
+        data-toggle-target=".js-spotlight-item-{{id}}"
+        data-toggle-group="midd-card-carousel-items"
+        data-toggle-linked="spotlight-item-{{id}}">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-times" />
+        </svg>
+      </button>
+
+      <div class="card-carousel-item__header">
+        <h3 class="card-carousel-item__title">{{title}}</h3>
+        <p class="card-carousel-item__text">{{type}}</p>
+      </div>
+      <div class="card-carousel-item__body">
+        <div class="typography">
+          <h4>What made the Institute special?</h4>
+          <p>I traveled to Tokyo as part of a seminar on foreign policy, trade, and security. Most of the others were policy and management students, and I was there to provide simultaneous interpretation for the speakers who addressed the class. It was an amazing real-world opportunity to practice my profession.</p>
+
+          <h4>What now?</h4>
+          <p>I’m an interpreter and translator for Faraday Future, an innovative company making high-performance electric vehicles and concept cars.</p>
+        </div>
+      </div>
+      <div class="card-carousel-item__footer">
+        <a href="#" class="link-border">Learn more about {{program}}</a>
+      </div>
+
+    </aside>
+  </div>
+</article>

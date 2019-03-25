@@ -1,0 +1,127 @@
+.statistic-block {
+  position: relative;
+  background-color: $gray;
+  margin-bottom: $component-margin-bottom;
+
+  @include media(md) {
+    overflow: hidden;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: $brand-primary;
+      opacity: 0.7;
+      z-index: 1;
+    }
+  }
+}
+
+.statistic-block__text {
+  color: $white;
+  font-size: 21px;
+  // line-height: 48px;
+}
+
+.statistic-block__media {
+  @include media(md) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  img {
+    object-fit: cover;
+    font-family: 'object-fit: cover;'; // for object-fit-images polyfill
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.statistic-block__content {
+  @include media(sm) {
+    @include make-row();
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  @include media(md) {
+    position: relative;
+    z-index: 2;
+    min-height: 700px;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.statistic-block__item {
+  padding: 2rem;
+
+  @include media(sm) {
+    @include make-col-ready();
+    @include make-col(6);
+  }
+
+  @include media(md) {
+    background-color: transparent !important;
+    padding: 4rem;
+    @include make-col(5);
+  }
+
+  @include media(lg) {
+    @include make-col(4);
+  }
+}
+
+// These modifiers have to be before panel item so background color becomes transparent on medium and up
+.statistic-block__item--primary {
+  background-color: $teal;
+}
+
+.statistic-block__item--secondary {
+  background-color: $brand-primary;
+  text-align: center;
+}
+
+.statistic-block__stats-list {
+  margin-bottom: 2.5rem;
+}
+
+.statistic-block__stats-title {
+  color: $white;
+  font-size: $h2-font-size;
+  // line-height: $h2-line-height;
+  margin-bottom: 2rem;
+}
+
+.statistic-block__stats-label {
+  display: block;
+  color: $white;
+  font-family: $font-family-serif;
+  font-size: 48px;
+  line-height: 1;
+}
+
+.statistic-block__stats-text {
+  color: $white;
+  font-size: 16px;
+  // line-height: 28px;
+
+  &:not(:last-of-type) {
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid $white;
+  }
+
+  @include media(md) {
+    font-size: $paragraph-font-size;
+    // line-height: $paragraph-line-height;
+  }
+}

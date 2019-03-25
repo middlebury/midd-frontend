@@ -1,0 +1,48 @@
+.profile-spotlight-item {
+  margin-bottom: 2rem;
+  display: flex;
+
+  @include media(md) {
+    display: block;
+    margin-bottom: 0;
+  }
+}
+
+.profile-spotlight-item__media {
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+
+  @include media(md) {
+    margin-right: 0;
+  }
+}
+
+.profile-spotlight-item__content {
+  flex: 1;
+}
+
+.profile-spotlight-item__text {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.profile-spotlight-item__name {
+  font-family: $font-family-sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 0.25rem;
+}
+
+.profile-spotlight-item__title {
+  color: $gray;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 16px;
+  margin-bottom: 1rem;
+}
+
+.profile-spotlight-item__link {
+  font-size: 14px;
+}
