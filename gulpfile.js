@@ -164,8 +164,11 @@ const html = () =>
         const ymlData = yaml.safeLoad(
           fs.readFileSync('./src/data/data.yml', 'utf8')
         );
+        const imageStyles = yaml.safeLoad(
+          fs.readFileSync('./src/data/image_styles.yml', 'utf8')
+        );
 
-        return Object.assign({}, ymlData, {
+        return Object.assign({}, ymlData, imageStyles, {
           env: {
             production
           }
@@ -176,6 +179,16 @@ const html = () =>
       twig({
         base: './src/templates',
         filters: [
+          {
+            name: 'exists',
+            func: (value, args) => {
+              if (!value) {
+                console.log(args);
+                throw 'value is falsy';
+              }
+              return value;
+            }
+          },
           {
             name: 'groupBy',
             func: (items, field) => {

@@ -1,0 +1,58 @@
+# most images are 16:9 unless otherwise stated
+image_styles:
+  # content types
+  featured: # basic content, event detail, story detail
+    srcset:
+    - 400x225
+    - 640x360
+    - 832x468
+  top_level: # 5:2
+    srcset:
+    - 400x160
+    - 640x256
+    - 960x384
+    - 1280x512
+    - 1440x576
+
+  story_teaser:
+    srcset:
+    - 128x72
+    - 160x90
+    - 240x135
+    sizes: '(max-width: 512px) 128px, (max-width: 960px) 160px, 240px'
+  profile_teaser: # 3:4
+    srcset:
+    - 90x120
+    - 144x192
+    sizes: '(max-width: 512px) 90px, 144px'
+  profile_detail: # 3:4
+    srcset:
+    - 300x400
+
+  # paragraphs
+  video:
+    srcset:
+    - 400x225
+    - 640x360
+    - 832x468
+    - 1136x639
+  image:
+    srcset:
+    - 400x225
+    - 640x360
+    - 832x468
+    - 1136x639
+  image_floated: # 3:4
+    srcset:
+    - 90x120
+    - 144x192
+    sizes: '(max-width: 512px) 90px, 144px'
+  image_sm: # for testing purposes
+    srcset:
+    - 400x225
+    - 640x360
+  image_text:
+    srcset:
+    - 150x200
+    - 300x400
+    sizes: '(max-width: 512px) 100px, 300px'

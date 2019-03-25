@@ -1,6 +1,6 @@
-<div class="media-object my-7{% if right %} media-object--right{% endif %}">
+<div class="paragraph--image-text media-object {% if right %} media-object--right{% endif %}">
   <div class="media-object__image">
-    <img src="http://placehold.it/300x400" alt="">
+    {% include 'partials/img.twig' with { name: 'image_text' } %}
   </div>
   <div class="media-object__body">
     <div class="typography">

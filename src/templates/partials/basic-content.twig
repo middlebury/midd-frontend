@@ -2,36 +2,40 @@
 
 {% include 'partials/lead.twig' %}
 
-{% include 'paragraphs/text.twig' %}
+<div class="paragraphs">
 
-{% include 'paragraphs/profile-list.twig' %}
+  {% include 'paragraphs/text.twig' %}
 
-{% include 'paragraphs/audio.twig' %}
+  {% include 'paragraphs/profile-list.twig' %}
 
-{% include 'paragraphs/schedule.twig' %}
+  {% include 'paragraphs/audio.twig' %}
 
-{% include 'paragraphs/image-with-text.twig' %}
+  {% include 'paragraphs/schedule.twig' %}
 
-{% include 'paragraphs/image-with-text.twig' with { right: true } %}
+  {% include 'paragraphs/image-with-text.twig' %}
 
-{% include 'paragraphs/faq.twig' %}
+  {% include 'paragraphs/image-with-text.twig' with { right: true } %}
 
-{% include 'paragraphs/text.twig' %}
+  {% include 'paragraphs/faq.twig' %}
 
-{% include 'paragraphs/image.twig' with { right: true } %}
+  {% include 'paragraphs/text.twig' %}
 
-{% include 'paragraphs/text-short.twig' %}
+  {% include 'paragraphs/image.twig' with { right: true } %}
 
-{% include 'paragraphs/image.twig' %}
+  {% include 'paragraphs/text-short.twig' %}
 
-{% include 'paragraphs/text-short.twig' %}
+  {% include 'paragraphs/image.twig' %}
 
-{% include 'paragraphs/two-col-text.twig' %}
+  {% include 'paragraphs/text-short.twig' %}
 
-{% include 'paragraphs/video.twig' with { transcript: true } %}
+  {% include 'paragraphs/two-col-text.twig' %}
 
-{# {% include 'paragraphs/slideshow.twig' %} #}
+  {% include 'paragraphs/video.twig' with { transcript: true } %}
 
-{% include 'paragraphs/text.twig' %}
+  {# {% include 'paragraphs/slideshow.twig' %} #}
 
-{% include 'paragraphs/link-list.twig' %}
+  {% include 'paragraphs/text.twig' %}
+
+  {% include 'paragraphs/link-list.twig' %}
+
+</div>

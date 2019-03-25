@@ -56,14 +56,7 @@
 
   {% block content %}
 
-    <div class="mb-5">
-      <figure class="media">
-        {% include 'partials/img.twig' with {
-          name: 'featured'
-        } %}
-        <figcaption class="media__caption">{{caption|default('Lorem ipsum dolor sit amet, consectetur adipiscing elit (Photo: John Doe)')}}</figcaption>
-      </figure>
-    </div>
+    {% include 'partials/page-image.twig' %}
 
     <div class="typography mb-5">
       <p>Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas elementum augue nec nisl. Proinauctor lorem at nibh. Curabitur nulla purus, feugiat id, elementum in, lobortis quis, pede. Vivamus sodales adipiscing sapien. Vestibulum posuere nulla eget wisi.</p>
