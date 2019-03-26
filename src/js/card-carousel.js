@@ -27,10 +27,10 @@ function createProgramSwiper() {
       disabledClass: 'button--disabled'
     },
     breakpoints: {
-      [config.breakpoints.md]: {
+      [config.breakpoints.lg]: {
         slidesPerView: 1
       },
-      [config.breakpoints.lg]: {
+      [config.breakpoints.xl]: {
         slidesPerView: 2
       }
     }

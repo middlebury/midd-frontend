@@ -1,9 +1,8 @@
 .statistic-block {
   position: relative;
   background-color: $gray;
-  margin-bottom: $component-margin-bottom;
 
-  @include media(md) {
+  @include media(lg) {
     overflow: hidden;
 
     &:after {
@@ -22,13 +21,14 @@
 }
 
 .statistic-block__text {
-  color: $white;
-  font-size: 21px;
-  // line-height: 48px;
+  font-size: typescale(5);
+  @include media(lg) {
+    color: $white;
+  }
 }
 
 .statistic-block__media {
-  @include media(md) {
+  @include media(lg) {
     position: absolute;
     top: 0;
     left: 0;
@@ -46,13 +46,13 @@
 }
 
 .statistic-block__content {
-  @include media(sm) {
+  @include media(md) {
     @include make-row();
     margin-left: 0;
     margin-right: 0;
   }
 
-  @include media(md) {
+  @include media(lg) {
     position: relative;
     z-index: 2;
     min-height: 700px;
@@ -62,16 +62,16 @@
 }
 
 .statistic-block__item {
-  padding: 2rem;
+  padding: spacing(5);
 
-  @include media(sm) {
+  @include media(md) {
     @include make-col-ready();
     @include make-col(6);
   }
 
-  @include media(md) {
+  @include media(lg) {
     background-color: transparent !important;
-    padding: 4rem;
+    padding: spacing(8);
     @include make-col(5);
   }
 
@@ -82,7 +82,7 @@
 
 // These modifiers have to be before panel item so background color becomes transparent on medium and up
 .statistic-block__item--primary {
-  background-color: $teal;
+  background-color: $gray-light;
 }
 
 .statistic-block__item--secondary {
@@ -91,37 +91,34 @@
 }
 
 .statistic-block__stats-list {
-  margin-bottom: 2.5rem;
+  margin-bottom: spacing(7);
 }
 
 .statistic-block__stats-title {
   color: $white;
   font-size: $h2-font-size;
-  // line-height: $h2-line-height;
-  margin-bottom: 2rem;
+  margin-bottom: spacing(5);
 }
 
 .statistic-block__stats-label {
   display: block;
   color: $white;
   font-family: $font-family-serif;
-  font-size: 48px;
-  line-height: 1;
+  font-size: 48px; // TODO: add to typescale?
+  line-height: $line-height-solid;
 }
 
 .statistic-block__stats-text {
   color: $white;
-  font-size: 16px;
-  // line-height: 28px;
+  font-size: typescale(3);
 
   &:not(:last-of-type) {
-    padding-bottom: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid $white;
+    padding-bottom: spacing(4);
+    margin-bottom: spacing(4);
+    border-bottom: 1px solid rgba($white, 0.25);
   }
 
-  @include media(md) {
-    font-size: $paragraph-font-size;
-    // line-height: $paragraph-line-height;
+  @include media(lg) {
+    font-size: typescale(4);
   }
 }
