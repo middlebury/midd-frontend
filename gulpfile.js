@@ -164,8 +164,11 @@ const html = () =>
         const ymlData = yaml.safeLoad(
           fs.readFileSync('./src/data/data.yml', 'utf8')
         );
+        const imageStyles = yaml.safeLoad(
+          fs.readFileSync('./src/data/image_styles.yml', 'utf8')
+        );
 
-        return Object.assign({}, ymlData, {
+        return Object.assign({}, ymlData, imageStyles, {
           env: {
             production
           }
@@ -176,6 +179,16 @@ const html = () =>
       twig({
         base: './src/templates',
         filters: [
+          {
+            name: 'exists',
+            func: (value, args) => {
+              if (!value) {
+                console.log(args);
+                throw 'value is falsy';
+              }
+              return value;
+            }
+          },
           {
             name: 'groupBy',
             func: (items, field) => {
@@ -272,11 +285,29 @@ const watch = () => {
   gulp.watch('./src/data/*.yml', html);
 };
 
+const reportFilesizes = () =>
+  gulp
+    .src('./dist/**/*.{css,js}')
+    .pipe(
+      size({
+        showFiles: true,
+        showTotal: false
+      })
+    )
+    .pipe(
+      size({
+        showFiles: true,
+        gzip: true,
+        showTotal: false
+      })
+    );
+
 const build = gulp.series(
   clean,
   copyIcons,
   copyDeps,
-  gulp.parallel(html, images, styles, scripts)
+  gulp.parallel(html, images, styles, scripts),
+  reportFilesizes
 );
 
 const dev = gulp.parallel(build, watch);

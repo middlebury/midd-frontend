@@ -1,24 +1,18 @@
 .image {
-  margin-bottom: spacing(8);
-  margin-top: spacing(8);
+  display: flex;
+  justify-content: center;
 }
 
+// margin is applied at .paragraphs level
 .image--right {
-  margin-bottom: spacing(4);
-
   @include media(md) {
     float: right;
-    margin-top: 0;
-    margin-left: spacing(4);
   }
 }
 
 .image--left {
-  margin-bottom: spacing(4);
   @include media(md) {
     float: left;
-    margin-top: 0;
-    margin-right: spacing(4);
   }
 }
 

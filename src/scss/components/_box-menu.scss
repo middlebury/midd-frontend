@@ -34,8 +34,16 @@
 }
 
 .box-menu__link {
-  @include link-border();
+  // @include link-border();
   // line-height: $line-height-heading;
+  @include link-border;
+  border-color: transparent;
+
+  &:hover,
+  &:focus {
+    color: $sky;
+    border-color: $sky;
+  }
 }
 
 .box-menu--midd {

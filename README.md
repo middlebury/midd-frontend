@@ -28,3 +28,14 @@ npm start
 ```bash
 npm run build
 ```
+
+### Changing output path
+
+For development on `saw.middlebury.edu`, you can build assets to a desired Drupal theme directory by creating an `.env` file in the root directory of this repo. 
+
+```
+THEME_DIR="../your/path/to/d8/web/themes/custom/middlebury_theme/"
+```
+
+Now when you run `npm run build` or `npm run dev`, assets will be output to that directory.
+

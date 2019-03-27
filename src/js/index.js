@@ -1,5 +1,3 @@
-// TODO: object fit images?
-
 /**
  * polyfill nodelist foreach so you can
  * use document.querySelectorAll('.my-elems').forEach() in IE
@@ -17,6 +15,14 @@ import 'mdn-polyfills/Array.from';
  * Polyfill intersection observer for IE and safari.
  * Used in menu spies, lazy loaded content, delaying chart animations, etc.
  */
+import 'polyfill-nodelist-foreach';
+
+// Polyfill object fit images for easier responsive images.
+// Used in card-carousel and more.
+import 'object-fit-images';
+
+// polyfill intersection observer for ie and safari
+// used in menu-spy.js and triggering chart animations when they scroll into view
 import 'intersection-observer';
 
 import stickybits from 'stickybits'; // sticky element support for ie11
@@ -33,6 +39,7 @@ import './offices'; // middlebury.edu/office homepage script for filtering items
 import './slideshow'; // swiperjs slideshows
 import './mover'; // mover util for rearraning dom at a breakpoint
 import './gallery'; // create Preact lightbox galleries from dom
+import './card-carousel';
 
 focusWithin(document);
 
