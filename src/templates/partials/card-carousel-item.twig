@@ -1,4 +1,4 @@
-<article class="card-carousel-item js-spotlight-item-{{id}}">
+<article class="card-carousel-item js-card-carousel-item-{{id}}">
 
   <figure class="card-carousel-item__image">
     {% include 'partials/img.twig' with { name: 'card_carousel' } %}
@@ -10,9 +10,9 @@
         <a href="#midd-card-carousel-item-aside-{{id}}"
           class="card-carousel-item__toggle button button--sm button--tertiary"
           aria-label="Open Q&A with {{title}}"
-          data-toggle-target=".js-spotlight-item-{{id}}"
-          data-toggle-group="midd-card-carousel-items"
-          data-toggle-linked="spotlight-item-{{id}}">
+          data-toggle-target=".js-card-carousel-item-{{id}}"
+          data-toggle-group="card-carousel"
+          data-toggle-linked="card-carousel-item-{{id}}">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-plus" />
           </svg>
@@ -37,9 +37,9 @@
       <button
         class="card-carousel-item__toggle button button--sm button--primary"
         aria-label="Close"
-        data-toggle-target=".js-spotlight-item-{{id}}"
-        data-toggle-group="midd-card-carousel-items"
-        data-toggle-linked="spotlight-item-{{id}}">
+        data-toggle-target=".js-card-carousel-item-{{id}}"
+        data-toggle-group="card-carousel"
+        data-toggle-linked="card-carousel-item-{{id}}">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-times" />
         </svg>
