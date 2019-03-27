@@ -22,6 +22,8 @@
 @import 'components/button';
 @import 'components/callout-group';
 @import 'components/callout';
+@import 'components/card-carousel-item';
+@import 'components/card-carousel';
 @import 'components/chart';
 @import 'components/datepicker';
 @import 'components/digest';
@@ -48,6 +50,7 @@
 @import 'components/page-image';
 @import 'components/page-nav';
 @import 'components/pagination';
+@import 'components/profile-spotlight-item';
 @import 'components/quote';
 @import 'components/schedule';
 @import 'components/school-header';
@@ -60,10 +63,6 @@
 @import 'components/table';
 @import 'components/transcript';
 @import 'components/video';
-
-@import 'components/card-carousel';
-@import 'components/card-carousel-item';
-@import 'components/profile-spotlight-item';
 
 // scope
 @import 'scope/typography';
