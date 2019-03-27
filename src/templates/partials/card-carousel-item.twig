@@ -24,7 +24,11 @@
       </div>
       <div class="card-carousel-item__footer">
         <a href="#" class="card-carousel-item__label button button--light">
-          Program
+          {% if random(1) %}
+            Program title
+          {% else %}
+            Program title here a bit lengthy of one it should wrap
+          {% endif %}
         </a>
       </div>
 
