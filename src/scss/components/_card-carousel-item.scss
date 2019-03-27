@@ -36,6 +36,7 @@ $spotlight-item-breakpoint: 'xs';
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .card-carousel-item__side--front {
