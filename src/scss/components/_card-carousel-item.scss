@@ -80,11 +80,6 @@ $spotlight-item-breakpoint: 'xs';
   padding: spacing(3);
   flex: 1;
   overflow-y: auto;
-
-  h4 {
-    font-family: $font-family-sans-serif;
-    font-size: typescale(3);
-  }
 }
 
 .card-carousel-item__footer {
