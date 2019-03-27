@@ -1,4 +1,4 @@
-.statistic-block {
+.stat-panel {
   position: relative;
   background-color: $gray;
 
@@ -20,14 +20,14 @@
   }
 }
 
-.statistic-block__text {
+.stat-panel__text {
   font-size: typescale(5);
   @include media(lg) {
     color: $white;
   }
 }
 
-.statistic-block__media {
+.stat-panel__media {
   @include media(lg) {
     position: absolute;
     top: 0;
@@ -45,7 +45,7 @@
   }
 }
 
-.statistic-block__content {
+.stat-panel__content {
   @include media(md) {
     @include make-row();
     margin-left: 0;
@@ -61,7 +61,7 @@
   }
 }
 
-.statistic-block__item {
+.stat-panel__item {
   padding: spacing(5);
 
   @include media(md) {
@@ -81,26 +81,26 @@
 }
 
 // These modifiers have to be before panel item so background color becomes transparent on medium and up
-.statistic-block__item--primary {
+.stat-panel__item--primary {
   background-color: $gray-light;
 }
 
-.statistic-block__item--secondary {
+.stat-panel__item--secondary {
   background-color: $brand-primary;
   text-align: center;
 }
 
-.statistic-block__stats-list {
+.stat-panel__stats-list {
   margin-bottom: spacing(7);
 }
 
-.statistic-block__stats-title {
+.stat-panel__stats-title {
   color: $white;
   font-size: $h2-font-size;
   margin-bottom: spacing(5);
 }
 
-.statistic-block__stats-label {
+.stat-panel__stats-label {
   display: block;
   color: $white;
   font-family: $font-family-serif;
@@ -108,7 +108,7 @@
   line-height: $line-height-solid;
 }
 
-.statistic-block__stats-text {
+.stat-panel__stats-text {
   color: $white;
   font-size: typescale(3);
 
