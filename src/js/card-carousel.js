@@ -19,19 +19,21 @@ function createProgramSwiper() {
   randomizeChildren(swiperWrapper);
 
   const swiperConfig = {
-    slidesPerView: 3,
+    slidesPerView: 1,
     grabCursor: true,
     navigation: {
       nextEl: '.js-card-carousel-next-button',
       prevEl: '.js-card-carousel-prev-button',
       disabledClass: 'button--disabled'
     },
+    // use min-width approach to match our css
+    breakpointsInverse: true,
     breakpoints: {
       [config.breakpoints.lg]: {
-        slidesPerView: 1
+        slidesPerView: 2
       },
       [config.breakpoints.xl]: {
-        slidesPerView: 2
+        slidesPerView: 3
       }
     }
   };
