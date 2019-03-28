@@ -17,7 +17,6 @@ const args = require('yargs').argv;
 const gulpIf = require('gulp-if');
 const size = require('gulp-size');
 const rename = require('gulp-rename');
-const rollup = require('rollup');
 const postcss = require('gulp-postcss');
 const postcssPresetEnv = require('postcss-preset-env');
 const mqPacker = require('css-mqpacker');
@@ -27,7 +26,7 @@ const _ = require('lodash');
 const zip = require('gulp-zip');
 const dotenv = require('dotenv');
 
-const rollupConfig = require('./rollup');
+const rollup = require('./rollup');
 
 dotenv.config();
 
@@ -137,19 +136,17 @@ const styles = () => {
     .pipe(browserSync.stream());
 };
 
+const bundles = [
+  {
+    input: './src/js/index.js',
+    file: paths.scripts.dest + '/bundle.js'
+  }
+];
+
 const scripts = () =>
-  rollup
-    .rollup(rollupConfig)
-    .then(bundle =>
-      bundle.write({
-        file: paths.scripts.dest + '/bundle.js',
-        format: 'iife',
-        sourcemap: !production
-      })
-    )
-    .then(() => {
-      browserSync.reload();
-    });
+  rollup(bundles).then(() => {
+    browserSync.reload();
+  });
 
 const html = () =>
   gulp

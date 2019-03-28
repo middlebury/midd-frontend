@@ -28,6 +28,11 @@
   }
 }
 
+@mixin paragraph-full-width {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
 .paragraphs {
   margin-bottom: spacing(9);
 
@@ -51,6 +56,13 @@
   @include media(lg) {
     @include make-col(8);
     @include make-col-offset(2);
+  }
+
+  .paragraph--quad-story,
+  .paragraph--stat-panel,
+  .paragraph--card-carousel {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
   }
 
   .paragraph--video,
@@ -132,6 +144,20 @@
 }
 
 .paragraph--spotlight {
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  @include paragraph-full-width;
+}
+
+.paragraph--card-carousel {
+  @include paragraph-space;
+  // @include paragraph-full-width;
+}
+
+.paragraph--quad-story {
+  @include paragraph-space;
+  // @include paragraph-full-width;
+}
+
+.paragraph--stat-panel {
+  @include paragraph-space;
+  // @include paragraph-full-width;
 }

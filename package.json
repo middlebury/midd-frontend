@@ -77,7 +77,7 @@
     "lodash.debounce": "^4.0.8",
     "middlebury-design-system": "^0.11.0",
     "normalize.css": "^8.0.0",
-    "object-fit-images": "^3.2.3",
+    "object-fit-images": "^3.2.4",
     "onresize": "^1.0.1",
     "pikaday": "^1.7.0",
     "polyfill-nodelist-foreach": "^1.0.1",

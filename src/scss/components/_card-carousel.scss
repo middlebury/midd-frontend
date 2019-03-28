@@ -1,0 +1,57 @@
+$card-carousel-height: 600px;
+
+.card-carousel {
+  // margin-bottom: $component-margin-bottom;
+}
+
+.card-carousel__header {
+  height: 100%;
+  padding: 2rem;
+  background-color: $brand-primary;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  @include media(md) {
+    text-align: left;
+    padding: 8rem 4rem 3rem;
+    height: $card-carousel-height;
+  }
+}
+
+.card-carousel__title {
+  color: $white;
+  font-size: $h1-font-size;
+  // line-height: $h1-line-height;
+  margin-bottom: 1rem;
+
+  @include media(md) {
+    margin-bottom: 3rem;
+  }
+}
+
+.card-carousel__button {
+}
+
+.card-carousel__controls {
+  margin-top: 2rem;
+  @include media(md) {
+    margin-top: auto;
+  }
+}
+
+.card-carousel__container {
+}
+
+.card-carousel__content {
+  display: flex;
+  height: $card-carousel-height;
+}
+
+.card-carousel__item {
+  @include media(md) {
+    &:not(:last-child) {
+      border-right: 1px solid $white;
+    }
+  }
+}
