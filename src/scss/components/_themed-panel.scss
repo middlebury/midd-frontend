@@ -1,0 +1,39 @@
+.themed-panel {
+  background: $black;
+
+  @include media(md) {
+    height: 0;
+    padding-top: percentage(2 / 5);
+    overflow: hidden;
+  }
+}
+
+.themed-panel__figure {
+  @include media(md) {
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      font-family: 'object-fit: cover;';
+    }
+  }
+}
+
+.themed-panel__primary {
+}
+
+.themed-panel__secondary {
+}
+
+.themed-panel__content {
+  @include media(md) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

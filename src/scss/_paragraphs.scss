@@ -161,3 +161,7 @@
   @include paragraph-space;
   // @include paragraph-full-width;
 }
+
+.paragraph--spotlight {
+  @include paragraph-space;
+}
