@@ -58,13 +58,6 @@
     @include make-col-offset(2);
   }
 
-  .paragraph--quad-story,
-  .paragraph--stat-panel,
-  .paragraph--card-carousel {
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-  }
-
   .paragraph--video,
   .paragraph--image:not(.image--left):not(.image--right) {
     @include media(lg) {
@@ -75,6 +68,16 @@
       @include make-gutters;
     }
   }
+}
+
+.paragraph--hero,
+.paragraph--spotlight,
+.paragraph--themed-panel,
+.paragraph--quad-story,
+.paragraph--stat-panel,
+.paragraph--card-carousel {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 
 .paragraph--text {
