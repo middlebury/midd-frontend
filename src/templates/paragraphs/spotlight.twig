@@ -4,35 +4,20 @@
     <section class="spotlight">
 
       <figure class="spotlight__figure">
-        <img src="/images/sa-serena.jpg" alt="" />
+        {% include 'partials/img.twig' with {
+          name: 'spotlight'
+        } %}
       </figure>
 
       <div class="spotlight__content">
+        <h2 class="spotlight__title">Diversity and Schools Abroad</h2>
 
-        <div class="spotlight__primary">
-          <h2 class="spotlight__title">Sustainability</h2>
-
-          <article class="spotlight__teaser">
-            <h3 class="h3 mb-3 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit corporis at iure reiciendis sit nam minus possimus</h3>
-            <p class="text-white">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam dicta nihil reiciendis laboriosam, exercitationem harum numquam rem sint laudantium ducimus optio provident voluptate obcaecati reprehenderit voluptates illum dignissimos corrupti!</p>
-            <a href="" class="link-underline text-white">Learn more</a>
-          </article>
-        </div>
-
-        <div class="spotlight__secondary">
-          <div class="row">
-            {% for item in 0..2 %}
-              <div class="col-md-6">
-                <article class="mb-3">
-                  <h3 class="h3 mb-2 text-white">24/7 Support</h3>
-                  <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam soluta sint rerum incidunt laudantium natus excepturi neque architecto exercitationem in iste provident ipsam voluptatum, eum mollitia harum perspiciatis et? Cumque.</p>
-                  <a href="" class="link-underline text-white">Read more</a>
-                </article>
-              </div>
-            {% endfor %}
-          </div>
+        <div class="spotlight__body typography">
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab sunt, dolore, adipisci aut saepe nemo laudantium est facilis fugiat vero excepturi nisi sint, illo deserunt impedit voluptates nostrum veniam sit!</p>
+          <p>Modi iure quos omnis mollitia cumque, iusto sunt id maxime eligendi ipsam recusandae ipsum asperiores sequi sint repellat blanditiis doloremque maiores repellendus. Rerum quasi cum omnis saepe. A, repellat cumque!</p>
         </div>
       </div>
+
     </section>
 
   </div>

@@ -1,39 +1,70 @@
 .spotlight {
-  background: $black;
-
-  @include media(md) {
-    height: 0;
-    padding-top: percentage(2 / 5);
-    overflow: hidden;
+  position: relative;
+  @include media(lg) {
+    // use padding bottom instead of margin otherwise
+    // paragraph--spotlight does not combine the margins to have
+    // the correct bottom spacing
+    padding-bottom: spacing(8);
   }
 }
 
 .spotlight__figure {
-  @include media(md) {
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+  @include media(lg) {
+    padding-top: percentage(9 / 16);
+    position: relative;
+    height: 0;
+    overflow: hidden;
+  }
+
+  img {
+    @include media(lg) {
+      @include absolute-fill;
       object-fit: cover;
       font-family: 'object-fit: cover;';
     }
   }
 }
 
-.spotlight__primary {
-}
-
-.spotlight__secondary {
-}
-
 .spotlight__content {
-  @include media(md) {
+  background: $white;
+
+  @include media(lg) {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    right: spacing(6);
+    bottom: 0;
+    width: 21em; // TODO: get rid of magic number?
+    z-index: 2;
   }
+}
+
+.spotlight__title {
+  @include h2;
+  background: $brand-primary;
+  color: $white;
+  padding-top: spacing(4);
+  padding-bottom: spacing(4);
+
+  @include media(md) {
+    // fake column offset with padding plus gutter width
+    padding-left: calc(#{percentage(1 / 12)} + #{$grid-gutter-width / 2});
+    padding-right: calc(#{percentage(1 / 12)} + #{$grid-gutter-width / 2});
+  }
+
+  // place after so largest breakpoint overrides
+  @include make-gutters;
+}
+
+.spotlight__body {
+  padding-top: spacing(4);
+  padding-bottom: spacing(4);
+  border-bottom: 8px solid $brand-primary;
+
+  @include media(md) {
+    // fake column offset with padding plus gutter width
+    padding-left: calc(#{percentage(1 / 12)} + #{$grid-gutter-width / 2});
+    padding-right: calc(#{percentage(1 / 12)} + #{$grid-gutter-width / 2});
+  }
+
+  // place after so largest breakpoint overrides
+  @include make-gutters();
 }
