@@ -191,5 +191,6 @@
   color: $white;
   margin-top: spacing(3);
   display: inline-block;
+  font-size: typescale(2);
   @include link-border;
 }
