@@ -32,7 +32,9 @@
     position: absolute;
     right: spacing(6);
     bottom: 0;
-    width: 21em; // TODO: get rid of magic number?
+    // TODO: get rid of magic number?
+    //  same as themed-panel secondary
+    width: 360px;
     z-index: 2;
   }
 }
