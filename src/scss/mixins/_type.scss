@@ -30,6 +30,13 @@
 }
 
 @mixin display-1 {
+  font-size: $typescale-7;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-heading;
+
+  @include media(md) {
+    font-size: $typescale-8;
+  }
 }
 @mixin display-2 {
 }
