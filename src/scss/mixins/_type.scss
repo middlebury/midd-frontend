@@ -38,19 +38,21 @@
     font-size: $typescale-8;
   }
 }
+
 @mixin display-2 {
 }
+
 @mixin display-3 {
-  font-size: 32px;
-  line-height: $line-height-solid;
+  font-size: $typescale-8;
+  line-height: $line-height-heading;
   font-weight: $font-weight-normal;
 
   @include media(md) {
-    font-size: 48px;
+    font-size: $typescale-9;
   }
 
   @include media(lg) {
-    font-size: 64px;
+    font-size: $typescale-10;
   }
 }
 
