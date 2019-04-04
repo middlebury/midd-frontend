@@ -19,15 +19,9 @@
 }
 
 .anchor-header__title {
-  font-size: typescale(7);
+  @include display-1;
   font-family: $font-family-serif;
-  line-height: lineheight('heading');
   margin-bottom: spacing(3);
-
-  @include media(lg) {
-    font-size: typescale(8);
-    // margin-bottom: 0;
-  }
 }
 
 .anchor-header__link {
