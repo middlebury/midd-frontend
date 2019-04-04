@@ -105,6 +105,7 @@
   @include media(xl) {
     padding-top: spacing(5);
     padding-bottom: spacing(5);
+    width: percentage(7 / 12);
   }
 }
 
