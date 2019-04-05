@@ -58,6 +58,7 @@
     @include make-col-offset(2);
   }
 
+  .paragraph--school-explorer,
   .paragraph--video,
   .paragraph--image:not(.image--left):not(.image--right) {
     @include media(lg) {
@@ -70,7 +71,7 @@
   }
 }
 
-.paragraph--hero,
+.paragraph--mega-cta,
 .paragraph--spotlight,
 .paragraph--themed-panel,
 .paragraph--quad-story,
@@ -170,5 +171,9 @@
 }
 
 .paragraph--announcement {
+  @include paragraph-space;
+}
+
+.paragraph--mega-cta {
   @include paragraph-space;
 }

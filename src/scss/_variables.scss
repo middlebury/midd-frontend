@@ -72,6 +72,7 @@ $navy-light: #174872 !default;
 $navy: #0d395f !default;
 $navy-dark: #022543 !default;
 
+$blue: #75a3cd !default;
 $blue-light: #97bbd5 !default;
 $blue-lighter: #e5f1fa !default;
 
@@ -366,3 +367,5 @@ $list-item-margin-bottom-lg: spacing(3) !default;
 
 $chevron-transform: rotate(-180deg);
 $chevron-transition: transform 0.2s ease-in-out;
+
+$z-index-dropdown-list: 999;

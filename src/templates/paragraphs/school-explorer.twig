@@ -1,0 +1,51 @@
+<section class="school-explorer">
+  <h2 class="school-explorer__title">Explore our Schools</h2>
+
+  <div class="school-explorer__actions">
+    <div class="school-explorer__item">
+
+      {% include 'partials/dropdown.twig' with {
+        items: [
+          'Arabic',
+          'Chinese',
+          'English',
+          'French',
+          'German',
+          'Italian',
+          'Japanese',
+          'Portuguese',
+          'Spanish',
+          'Russian',
+        ],
+        label: 'By Language'
+      } %}
+
+    </div>
+    <div class="school-explorer__or">or</div>
+    <div class="school-explorer__item">
+
+      {% include 'partials/dropdown.twig' with {
+        items: [
+          'Argentina',
+          'Brazil',
+          'Cameroon',
+          'Chile',
+          'China',
+          'France',
+          'Germanty',
+          'India',
+          'Italy',
+          'Japan',
+          'Jordan',
+          'Morocco',
+          'Russia',
+          'Spain',
+          'United Kingdom',
+        ],
+        label: 'By Location'
+      } %}
+
+    </div>
+  </div>
+
+</section>
