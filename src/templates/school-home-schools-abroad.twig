@@ -6,7 +6,11 @@
 
       <div class="paragraphs paragraphs--wide">
 
-        {% include 'paragraphs/hero.twig' %}
+        {% include 'paragraphs/mega-cta.twig' with {
+          pin: 'bottom-left',
+          hero: true
+        } %}
+
         {% include 'paragraphs/school-explorer.twig' %}
 
         {% include 'paragraphs/themed-panel.twig' %}

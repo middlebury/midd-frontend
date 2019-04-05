@@ -1,0 +1,26 @@
+<div class="paragraph--mega-cta">
+  <div class="container px-0">
+
+    {# alignment should be one of bottom-left, bottom-right, top-left, top-right, center #}
+
+    <section class="mega-cta mega-cta--image-{{pin}} {% if hero %} mega-cta--hero{% endif %}">
+      <figure class="mega-cta__back">
+        {# <img src="./images/sa-hero1440x810.jpg" alt="" /> #}
+        {% include 'partials/img.twig' with {
+          name: 'spotlight'
+        } %}
+      </figure>
+
+      <div class="mega-cta__front">
+        <div class="mega-cta__content">
+          <h2 class="mega-cta__title">What makes Middlebury different?</h2>
+          <p class="mega-cta__text">
+            With our support, you’ll experience total immersion in the language and culture of your country. You’ll have an authentic learning experience at a local academic institution. And you’ll have the guided independence to engage with your community, take on an internship, and make personal discoveries you’ll always remember.
+          </p>
+          <a class="button button--outline button--light" href="">Apply now</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
