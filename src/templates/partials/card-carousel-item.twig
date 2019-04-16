@@ -7,16 +7,16 @@
   <div class="card-carousel-item__content">
     <div class="card-carousel-item__side card-carousel-item__side--front">
 
-        <a href="#midd-card-carousel-item-aside-{{id}}"
-          class="card-carousel-item__toggle button button--sm button--tertiary"
           aria-label="Open Q&A with {{title}}"
-          data-toggle-target=".js-card-carousel-item-{{id}}"
-          data-toggle-group="card-carousel"
-          data-toggle-linked="card-carousel-item-{{id}}">
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-plus" />
-          </svg>
-        </a>
+      <button
+        class="card-carousel-item__toggle button button--sm button--tertiary"
+        data-toggle-target=".js-card-carousel-item-{{id}}"
+        data-toggle-group="card-carousel"
+        data-toggle-linked="card-carousel-item-{{id}}">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-plus" />
+        </svg>
+      </button>
 
       <div class="card-carousel-item__header {% if color %} card-carousel-item__header--band card-carousel-item__header--{{color}}{% endif %} ">
         <h3 class="card-carousel-item__title">Some name</h3>
