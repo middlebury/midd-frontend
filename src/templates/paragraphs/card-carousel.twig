@@ -27,7 +27,10 @@
 
               {% for item in 0..5 %}
                 <div class="card-carousel__item swiper-slide">
-                  {% include 'partials/card-carousel-item.twig' with {id: loop.index} %}
+                  {% include 'partials/card-carousel-item.twig' with {
+                    id: loop.index,
+                    color: random(['green', 'red', 'blue','brown','navy'])
+                  } %}
                 </div>
               {% endfor %}
 

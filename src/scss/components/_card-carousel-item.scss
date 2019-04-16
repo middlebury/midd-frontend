@@ -131,3 +131,23 @@ $spotlight-item-breakpoint: 'xs';
     color: $white;
   }
 }
+
+.card-carousel-item__header--band {
+  padding: spacing(2) spacing(3);
+  margin-top: spacing(9);
+  // TODO: selector that applies background gradient has higher specificity because of nested selector.
+  // Clean up that selector so we don't need important.
+  background-image: none !important;
+}
+
+$card-carousel-item-colors: (
+  green: green,
+  blue: blue,
+  red: red
+);
+
+@each $key, $hex in $card-carousel-item-colors {
+  .card-carousel-item__header--#{$key} {
+    background-color: rgba($hex, 0.75);
+  }
+}
