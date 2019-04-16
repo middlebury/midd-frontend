@@ -26,6 +26,17 @@ class Dropdown {
     on(this.btn, 'click', this.toggle);
   }
 
+  destroy() {
+    off(window, 'click', this.handleWindowClick);
+    off(window, 'touchstart', this.handleWindowClick);
+
+    off(this.elem, 'keyup', this.handleElemKeyup);
+
+    off(this.btn, 'click', this.toggle);
+
+    this.hide();
+  }
+
   handleElemKeyup = e => {
     if (e.keyCode === 27) {
       this.hide();
