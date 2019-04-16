@@ -38,6 +38,7 @@ class Dropdown {
   }
 
   handleElemKeyup = e => {
+    // TODO: replace 27 with constant esc key
     if (e.keyCode === 27) {
       this.hide();
       this.focusBtn();
