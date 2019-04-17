@@ -141,13 +141,18 @@ $spotlight-item-breakpoint: 'xs';
 }
 
 $card-carousel-item-colors: (
-  green: green,
-  blue: blue,
-  red: red
+  dark-blue: #0d395f,
+  red: #962c28,
+  green: #5e7e2c,
+  light-blue: #75a3cd,
+  maroon: #763649,
+  bronze: #907036,
+  teal: #1f9f8b,
+  orange: #c26533
 );
 
 @each $key, $hex in $card-carousel-item-colors {
   .card-carousel-item__header--#{$key} {
-    background-color: rgba($hex, 0.75);
+    background-color: rgba($hex, 0.9);
   }
 }

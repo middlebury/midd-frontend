@@ -29,7 +29,16 @@
                 <div class="card-carousel__item swiper-slide">
                   {% include 'partials/card-carousel-item.twig' with {
                     id: loop.index,
-                    color: random(['green', 'red', 'blue','brown','navy'])
+                    color: random([
+                      'dark-blue',
+                      'red',
+                      'green',
+                      'light-blue',
+                      'maroon',
+                      'bronze',
+                      'teal',
+                      'orange'
+                    ])
                   } %}
                 </div>
               {% endfor %}
