@@ -25,20 +25,23 @@
           <div class="card-carousel__container swiper-container js-card-carousel">
             <div class="card-carousel__content swiper-wrapper js-swiper-wrapper">
 
+              {# these colors will need to be stored in a select option on card carousel items #}
+              {% set card_carousel_colors = [
+                'dark-blue',
+                'red',
+                'green',
+                'light-blue',
+                'maroon',
+                'bronze',
+                'teal',
+                'orange'
+              ] %}
+
               {% for item in 0..5 %}
                 <div class="card-carousel__item swiper-slide">
                   {% include 'partials/card-carousel-item.twig' with {
                     id: loop.index,
-                    color: random([
-                      'dark-blue',
-                      'red',
-                      'green',
-                      'light-blue',
-                      'maroon',
-                      'bronze',
-                      'teal',
-                      'orange'
-                    ])
+                    color: random(card_carousel_colors)
                   } %}
                 </div>
               {% endfor %}
