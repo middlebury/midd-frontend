@@ -1,0 +1,41 @@
+.school-footer {
+  background-color: $brand-primary;
+  padding-top: spacing(6);
+  padding-bottom: spacing(6);
+}
+
+.school-footer__primary {
+  border-bottom: 1px solid $navy-light;
+  margin-bottom: spacing(4);
+}
+
+.school-footer__contact {
+  margin-bottom: spacing(4);
+}
+
+.school-footer__name {
+  @include display-1;
+  display: block;
+  font-family: $font-family-serif;
+  color: $white;
+  margin-bottom: spacing(1);
+}
+
+.school-footer__address {
+  color: $white;
+  font-size: typescale(3);
+}
+
+.school-footer__tel-link {
+  color: $white;
+  font-size: typescale(3);
+  margin-left: spacing(4);
+}
+
+.school-footer__cta {
+  margin-bottom: spacing(7);
+}
+
+.school-footer__social {
+  margin-bottom: spacing(2);
+}
