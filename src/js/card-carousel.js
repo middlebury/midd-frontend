@@ -1,5 +1,6 @@
 import Swiper from 'swiper';
 
+import { $, $$ } from './utils/dom';
 import config from './config';
 
 function randomizeChildren(elem) {
@@ -8,8 +9,8 @@ function randomizeChildren(elem) {
   }
 }
 
-function createProgramSwiper() {
-  const swiperWrapper = document.querySelector('.js-swiper-wrapper');
+function createCardCarousel(elem) {
+  const swiperWrapper = $('.js-swiper-wrapper', elem);
 
   if (!swiperWrapper || !swiperWrapper.firstChild) {
     // do nothing if no swiper wrapper
@@ -22,8 +23,8 @@ function createProgramSwiper() {
     slidesPerView: 1,
     grabCursor: true,
     navigation: {
-      nextEl: '.js-card-carousel-next-button',
-      prevEl: '.js-card-carousel-prev-button',
+      nextEl: $('.js-card-carousel-next-button', elem),
+      prevEl: $('.js-card-carousel-prev-button', elem),
       disabledClass: 'button--disabled'
     },
     // use min-width approach to match our css
@@ -38,9 +39,11 @@ function createProgramSwiper() {
     }
   };
 
-  const programSwiperElem = document.querySelector('.js-card-carousel');
+  const swiperContainer = $('.js-swiper-container', elem);
 
-  new Swiper(programSwiperElem, swiperConfig);
+  new Swiper(swiperContainer, swiperConfig);
 }
 
-createProgramSwiper();
+const carousels = $$('.js-card-carousel');
+
+carousels.forEach(el => createCardCarousel(el));
