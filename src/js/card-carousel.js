@@ -11,13 +11,16 @@ function randomizeChildren(elem) {
 
 function createCardCarousel(elem) {
   const swiperWrapper = $('.js-swiper-wrapper', elem);
+  const randomize = elem.hasAttribute('data-randomize');
 
   if (!swiperWrapper || !swiperWrapper.firstChild) {
     // do nothing if no swiper wrapper
     return;
   }
 
-  randomizeChildren(swiperWrapper);
+  if (randomize) {
+    randomizeChildren(swiperWrapper);
+  }
 
   const swiperConfig = {
     slidesPerView: 1,
