@@ -1,13 +1,13 @@
 <ul class="d-flex">
   {% for name in ['youtube', 'facebook', 'instagram', 'twitter', 'vimeo'] %}
-    {# {% if random(1) %} #}
+    {% if random(1) %}
       <li class="mr-1">
         <a href="#" class="d-inline-block {% if light %}text-white hover-fadeout{% else %}hover-fadein{% endif %} p-1">
-          <svg class="icon {% if large %} f5{% endif %}">
+          <svg class="icon">
             <use xlink:href="#icon-{{name}}" />
           </svg>
         </a>
       </li>
-    {# {% endif %} #}
+    {% endif %}
   {% endfor %}
 </ul>
