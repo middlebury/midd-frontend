@@ -1,37 +1,33 @@
 {% extends "school-home.twig" %}
 
-{% block page %}
-  <div class="container">
-    <div class="row">
+{% block content %}
 
-      <div class="paragraphs paragraphs--wide">
+  {% include 'paragraphs/mega-cta.twig' with {
+    pin: 'left-bottom',
+    hero: true
+  } %}
 
-        {% include 'paragraphs/mega-cta.twig' with {
-          pin: 'left-bottom',
-          hero: true
-        } %}
+  {% include 'paragraphs/school-explorer.twig' %}
 
-        {% include 'paragraphs/school-explorer.twig' %}
+  {% include 'paragraphs/video-group.twig' %}
 
-        {% include 'paragraphs/themed-panel.twig' %}
+  {% include 'paragraphs/themed-panel.twig' %}
 
-        {% include 'paragraphs/spotlight.twig' %}
+  {% include 'paragraphs/spotlight.twig' %}
 
-        {% include 'paragraphs/card-carousel.twig' with {
-          colors: true,
-          randomize: true
-        } %}
+  {% include 'paragraphs/card-carousel.twig' with {
+    colors: true,
+    randomize: true
+  } %}
 
-        {% include 'paragraphs/text-short.twig' %}
+  {% include 'paragraphs/text-short.twig' %}
 
-        {% include 'paragraphs/video.twig' %}
+  {% include 'paragraphs/video.twig' %}
 
-        {% include 'paragraphs/announcement.twig' %}
+  {% include 'paragraphs/announcement.twig' %}
 
-        {% include 'paragraphs/mega-cta.twig' %}
+  {% include 'paragraphs/mega-cta.twig' %}
 
-      </div>
+  {% include 'paragraphs/cta-group.twig' %}
 
-    </div>
-  </div>
 {% endblock %}

@@ -177,3 +177,13 @@
 .paragraph--mega-cta {
   @include paragraph-space;
 }
+
+.paragraph--cta-group {
+  @include paragraph-space;
+  @include paragraph-full-width;
+}
+
+.paragraph--video-group {
+  @include paragraph-space;
+  @include paragraph-full-width;
+}
