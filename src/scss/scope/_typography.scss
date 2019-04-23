@@ -180,3 +180,10 @@
     font-size: $paragraph-font-size;
   }
 }
+
+.typography--sm {
+  li,
+  p {
+    font-size: typescale(2);
+  }
+}
