@@ -10,7 +10,7 @@
             <img
               src="images/cv-star-logo.svg"
               srcset="images/cv-star-logo.svg 186w"
-              sizes="(max-width: 512px) 124px, 186px"
+              sizes="(max-width: 1024px) 124px, 186px"
               alt=""
             />
           {% endblock %}
@@ -40,7 +40,7 @@
             <ul class="school-nav__list school-nav__list--util">
               {% for item in ['Midd Students', 'Parents', 'Advisors'] %}
                 <li class="school-nav__item">
-                  <a href="" class="school-nav__link">{{item}}</a>
+                  <a href="" class="school-nav__link school-nav__link--util">{{item}}</a>
                 </li>
               {% endfor %}
             </ul>
@@ -75,20 +75,40 @@
 
                 </li>
               {% endfor %}
+
+              <li class="school-nav__item d-none d-lg-block">
+                <a
+                  href="/search"
+                  class="school-search__handle"
+                  role="button"
+                  aria-label="Toggle site search"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  data-toggle-target=".js-site-search"
+                  data-toggle-focus=".js-site-search-input"
+                  data-toggle-group="school-header"
+                >
+                  <svg class="icon mr-1 school-search__mag">
+                    <use xlink:href="#icon-search">
+                  </svg>
+                  <svg class="icon mr-1 school-search__times">
+                    <use xlink:href="#icon-times">
+                  </svg>
+                  Search
+                </a>
+              </li>
             </ul>
 
           </div>
 
-
         </nav>
-
 
         <div class="school-search">
           <a
             href="/search"
-            class="school-search__handle"
+            class="school-search__handle d-lg-none"
             role="button"
-            aria-label="Open site search"
+            aria-label="Toggle site search"
             aria-expanded="false"
             aria-haspopup="true"
             data-toggle-target=".js-site-search"

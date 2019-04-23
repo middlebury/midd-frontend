@@ -1,17 +1,11 @@
 .school-search {
-  grid-row: 2;
-
-  @include media(lg) {
-    position: relative;
-  }
 }
 
 .school-search__handle {
   display: inline-block;
   padding: spacing(3);
-  font-weight: $font-weight-medium;
   font-size: typescale(2);
-  line-height: lineheight('solid');
+  // line-height: lineheight('solid');
   color: $navy;
 
   &:hover {
@@ -19,7 +13,9 @@
   }
 
   @include media(lg) {
-    padding: spacing(4) 0;
+    font-weight: $font-weight-semibold;
+    padding-left: 0;
+    padding-right: 0;
     border-bottom: 4px solid transparent;
     opacity: 0.8;
     transition: opacity 0.2s, border-color 0.2s;

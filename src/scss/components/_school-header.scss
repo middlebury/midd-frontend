@@ -3,12 +3,6 @@
   border-top: 4px solid $brand-primary;
   position: relative;
   border-bottom: 1px solid $navy;
-  padding-top: spacing(3);
-  padding-bottom: spacing(2);
-
-  @include media(lg) {
-    padding-bottom: 0;
-  }
 
   &.headroom {
     will-change: transform;
@@ -35,24 +29,20 @@
 }
 
 .school-header__logo {
+  padding-top: spacing(2);
+  padding-bottom: spacing(2);
+  @include media(md) {
+    padding-top: spacing(3);
+  }
 }
 
 .school-header__content {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  // height: 100%;
-  // flex: 1;
   flex-direction: row-reverse;
 
   @include media(lg) {
-    // display: grid;
-    // grid-template-columns: 1fr auto;
-    // grid-template-rows: 1fr 1fr;
-    // background-color: $white;
-    // justify-content: space-between;
-    // flex-direction: row;
-    // padding-right: spacing(4);
-    // padding-left: spacing(4);
+    position: relative;
   }
 }
