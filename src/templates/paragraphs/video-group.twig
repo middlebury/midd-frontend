@@ -1,0 +1,26 @@
+<div class="paragraph--video-group">
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+        <h2 class="h2 mb-4">Video group</h2>
+        <p class="mb-5 mb-md-7">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus quam optio ratione labore possimus iusto corrupti vero fugiat explicabo officiis ex, a sunt obcaecati molestias voluptate eum earum ipsam accusantium.</p>
+      </div>
+
+      <div class="col-md-10 offset-md-1">
+        <div class="row">
+          {% for item in 1..2 %}
+            <div class="col-md-6 {% if not loop.last %} mb-5{% endif %}">
+              {% include 'partials/video.twig' with {
+                id: loop.index
+              } %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

@@ -1,5 +1,6 @@
 import Swiper from 'swiper';
 
+import { $, $$ } from './utils/dom';
 import config from './config';
 
 function randomizeChildren(elem) {
@@ -8,37 +9,44 @@ function randomizeChildren(elem) {
   }
 }
 
-function createProgramSwiper() {
-  const swiperWrapper = document.querySelector('.js-swiper-wrapper');
+function createCardCarousel(elem) {
+  const swiperWrapper = $('.js-swiper-wrapper', elem);
+  const randomize = elem.hasAttribute('data-randomize');
 
   if (!swiperWrapper || !swiperWrapper.firstChild) {
     // do nothing if no swiper wrapper
     return;
   }
 
-  randomizeChildren(swiperWrapper);
+  if (randomize) {
+    randomizeChildren(swiperWrapper);
+  }
 
   const swiperConfig = {
-    slidesPerView: 3,
+    slidesPerView: 1,
     grabCursor: true,
     navigation: {
-      nextEl: '.js-card-carousel-next-button',
-      prevEl: '.js-card-carousel-prev-button',
+      nextEl: $('.js-card-carousel-next-button', elem),
+      prevEl: $('.js-card-carousel-prev-button', elem),
       disabledClass: 'button--disabled'
     },
+    // use min-width approach to match our css
+    breakpointsInverse: true,
     breakpoints: {
       [config.breakpoints.lg]: {
-        slidesPerView: 1
+        slidesPerView: 2
       },
       [config.breakpoints.xl]: {
-        slidesPerView: 2
+        slidesPerView: 3
       }
     }
   };
 
-  const programSwiperElem = document.querySelector('.js-card-carousel');
+  const swiperContainer = $('.js-swiper-container', elem);
 
-  new Swiper(programSwiperElem, swiperConfig);
+  new Swiper(swiperContainer, swiperConfig);
 }
 
-createProgramSwiper();
+const carousels = $$('.js-card-carousel');
+
+carousels.forEach(el => createCardCarousel(el));

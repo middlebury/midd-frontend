@@ -4,3 +4,11 @@
 @import 'mixins/clearfix';
 @import 'mixins/type';
 @import 'mixins/screen-reader';
+
+@mixin absolute-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}

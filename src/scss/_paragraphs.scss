@@ -58,13 +58,7 @@
     @include make-col-offset(2);
   }
 
-  .paragraph--quad-story,
-  .paragraph--stat-panel,
-  .paragraph--card-carousel {
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-  }
-
+  .paragraph--school-explorer,
   .paragraph--video,
   .paragraph--image:not(.image--left):not(.image--right) {
     @include media(lg) {
@@ -75,6 +69,16 @@
       @include make-gutters;
     }
   }
+}
+
+.paragraph--mega-cta,
+.paragraph--spotlight,
+.paragraph--themed-panel,
+.paragraph--quad-story,
+.paragraph--stat-panel,
+.paragraph--card-carousel {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 
 .paragraph--text {
@@ -160,4 +164,26 @@
 .paragraph--stat-panel {
   @include paragraph-space;
   // @include paragraph-full-width;
+}
+
+.paragraph--spotlight {
+  @include paragraph-space;
+}
+
+.paragraph--announcement {
+  @include paragraph-space;
+}
+
+.paragraph--mega-cta {
+  @include paragraph-space;
+}
+
+.paragraph--cta-group {
+  @include paragraph-space;
+  @include paragraph-full-width;
+}
+
+.paragraph--video-group {
+  @include paragraph-space;
+  @include paragraph-full-width;
 }

@@ -40,6 +40,7 @@ import './slideshow'; // swiperjs slideshows
 import './mover'; // mover util for rearraning dom at a breakpoint
 import './gallery'; // create Preact lightbox galleries from dom
 import './card-carousel';
+import './dropdown';
 
 focusWithin(document);
 
