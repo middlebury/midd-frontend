@@ -91,10 +91,12 @@ $mega-cta-alignments: (
   margin-bottom: spacing(4);
 
   @include media(md) {
+    margin-bottom: spacing(5);
     font-size: typescale(3);
   }
 
   @include media(lg) {
+    margin-bottom: spacing(7);
     font-size: typescale(4);
   }
 }

@@ -196,6 +196,5 @@
 .school-nav__link--util {
   @include media(lg) {
     font-size: typescale(2);
-    font-weight: $font-weight-semibold;
   }
 }
