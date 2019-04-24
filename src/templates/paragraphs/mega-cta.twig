@@ -1,26 +1,34 @@
+{% set id = random(1234) %}
 <div class="paragraph--mega-cta">
   <div class="container px-0">
 
     {# alignment should be one of left-bottom, left-top, right-bottom, right-top, center #}
 
-    <figure class="mega-cta mega-cta--image-{{pin ? pin : 'bottom-left'}} {% if hero %} mega-cta--hero{% endif %}">
-      <div class="mega-cta__back">
-        {# <img src="./images/sa-hero1440x810.jpg" alt="" /> #}
+    <section class="mega-cta mega-cta--image-{{pin ? pin : 'bottom-left'}} {% if hero %} mega-cta--hero{% endif %}" aria-labelledby="midd-mega-cta-label-{{id}}">
+      <figure class="mega-cta__back">
         {% include 'partials/img.twig' with {
           name: 'spotlight'
         } %}
-      </div>
+        <figcaption class="mega-cta__caption">
+          {% include 'partials/tooltip.twig' with {
+            light: true,
+            size: 'lg',
+            id: random(1234),
+            label: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+          } %}
+        </figcaption>
+      </figure>
 
-      <figcaption class="mega-cta__front">
+      <div class="mega-cta__front">
         <div class="mega-cta__content">
-          <h2 class="mega-cta__title">What makes Middlebury different?</h2>
+          <h2 class="mega-cta__title" id="midd-mega-cta-label-{{id}}">What makes Middlebury different?</h2>
           <p class="mega-cta__text">
             With our support, you’ll experience total immersion in the language and culture of your country. You’ll have an authentic learning experience at a local academic institution. And you’ll have the guided independence to engage with your community, take on an internship, and make personal discoveries you’ll always remember.
           </p>
           <a class="button button--outline button--light" href="">Apply now</a>
         </div>
-      </figcaption>
-    </figure>
+      </div>
+    </section>
 
   </div>
 </div>
