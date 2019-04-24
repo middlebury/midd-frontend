@@ -24,7 +24,6 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    align-items: center; // prevents button from becoming full width
 
     // From grid framework.
     // Makes cols equal widths no matter amount since cta-group can be 2-4 items.
@@ -59,4 +58,5 @@
 
 .cta-group__button {
   margin-top: auto;
+  align-self: center; // prevents button from becoming full width
 }
