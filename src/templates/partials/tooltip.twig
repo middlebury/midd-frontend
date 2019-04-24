@@ -1,0 +1,8 @@
+<div class="tooltip {{light ? 'tooltip--light' : ''}}{% if size %} tooltip--{{size}}{% endif %}">
+  <button class="tooltip__button" aria-labelledby="tooltip-label-{{id}}">
+    <svg class="icon"><use xlink:href="#icon-info"></svg>
+  </button>
+  <div class="tooltip__label" role="tooltip" id="tooltip-label-{{id}}">
+    {{label}}
+  </div>
+</div>
