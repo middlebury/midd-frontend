@@ -9,14 +9,16 @@
         {% include 'partials/img.twig' with {
           name: 'spotlight'
         } %}
-        <figcaption class="mega-cta__caption">
-          {% include 'partials/tooltip.twig' with {
-            light: true,
-            size: 'lg',
-            id: random(1234),
-            label: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
-          } %}
-        </figcaption>
+        {% if caption %}
+          <figcaption class="mega-cta__caption">
+            {% include 'partials/tooltip.twig' with {
+              light: true,
+              size: 'lg',
+              id: random(1234),
+              label: caption
+            } %}
+          </figcaption>
+        {% endif %}
       </figure>
 
       <div class="mega-cta__front">
