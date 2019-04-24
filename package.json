@@ -75,7 +75,7 @@
     "headroom.js": "^0.9.4",
     "intersection-observer": "^0.5.1",
     "lodash.debounce": "^4.0.8",
-    "middlebury-design-system": "^0.11.0",
+    "middlebury-design-system": "^0.12.0",
     "normalize.css": "^8.0.0",
     "object-fit-images": "^3.2.4",
     "onresize": "^1.0.1",
