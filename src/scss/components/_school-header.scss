@@ -4,6 +4,8 @@
   position: relative;
   border-bottom: 1px solid $navy;
 
+  @include themify(border-color);
+
   &.headroom {
     will-change: transform;
     transition: transform 0.5s linear;

@@ -187,8 +187,8 @@
     .school-nav__item:focus-within &,
     .school-nav__item:hover & {
       opacity: 1;
-      border-color: $navy;
       text-decoration: none;
+      @include themify(border-color);
     }
   }
 }

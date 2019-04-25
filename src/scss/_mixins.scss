@@ -12,3 +12,12 @@
   width: 100%;
   height: 100%;
 }
+
+// applies each theme color to the property passed
+@mixin themify($prop) {
+  @each $name, $color in $themes {
+    .theme-#{$name} & {
+      #{$prop}: $color;
+    }
+  }
+}
