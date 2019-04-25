@@ -67,7 +67,7 @@ $mega-cta-alignments: (
     @include make-col(8);
   }
 
-  @include media(md) {
+  @include media(lg) {
     @include make-col(6);
   }
 
