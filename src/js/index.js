@@ -25,6 +25,7 @@ import './slideshow'; // swiperjs slideshows
 import './mover'; // swiperjs slideshows
 import './card-carousel';
 import './dropdown';
+import './drawer';
 
 focusWithin(document);
 
