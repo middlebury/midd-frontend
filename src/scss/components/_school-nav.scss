@@ -104,6 +104,11 @@
 .school-nav__link--sub {
   padding-top: spacing(3) / 2;
   padding-bottom: spacing(3) / 2;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
 }
 
 .school-nav__link--top {
