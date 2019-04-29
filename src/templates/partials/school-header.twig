@@ -1,4 +1,4 @@
-<header class="school-header js-headroom {{school_color ? 'border-'~school_color : ''}}">
+<header class="school-header js-headroom">
 
   <div class="container">
 
@@ -23,21 +23,18 @@
 
           <button
             class="school-nav__handle"
-            data-toggle-target=".js-site-menu"
-            data-toggle-group="school-header"
+            data-micromodal-trigger="drawer"
+            aria-label="Open navigation"
           >
-            <svg class="icon school-nav__bars">
+            <svg class="icon mr-1">
               <use xlink:href="#icon-bars">
-            </svg>
-            <svg class="icon school-nav__times">
-              <use xlink:href="#icon-times">
             </svg>
             <span class="d-none d-sm-inline">Menu</span>
           </button>
 
-          <div class="school-nav__menu js-site-menu">
+          <div class="school-nav__menu">
 
-            <ul class="school-nav__list school-nav__list--util">
+            <ul class="school-nav__list">
               {% for item in ['Midd Students', 'Parents', 'Advisors'] %}
                 <li class="school-nav__item">
                   <a href="" class="school-nav__link school-nav__link--util">{{item}}</a>
@@ -45,26 +42,14 @@
               {% endfor %}
             </ul>
 
-            <ul class="school-nav__list school-nav__list--top">
+            <ul class="school-nav__list">
               {% for item in site_nav.items %}
                 <li class="school-nav__item">
 
                   <a href="" class="school-nav__link school-nav__link--top">{{item.text}}</a>
 
                   {% if item.items %}
-                    <button
-                      class="school-nav__handle school-nav__handle--sub"
-                      data-toggle-target=".js-subnav-{{loop.index}}"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                      aria-controls="subnav-{{loop.index}}"
-                    >
-                      <svg class="icon school-nav__chevron">
-                        <use xlink:href="#icon-chevron-down" />
-                      </svg>
-                    </button>
-
-                    <ul class="school-nav__list school-nav__list--sub js-subnav-{{loop.index}}{% if item.items.length > 5 %} school-nav__list--cols{% endif %}" id="subnav-{{loop.index}}">
+                    <ul class="school-nav__list school-nav__list--sub {% if item.items.length > 8 %} school-nav__list--cols{% endif %}">
                       {% for subitem in item.items %}
                         <li class="school-nav__item school-nav__item--sub">
                           <a href="" class="school-nav__link school-nav__link--sub">{{subitem.text}}</a>
@@ -76,7 +61,7 @@
                 </li>
               {% endfor %}
 
-              <li class="school-nav__item d-none d-lg-block">
+              <li class="school-nav__item d-none d-xl-block">
                 <a
                   href="/search"
                   class="school-search__handle"
@@ -106,7 +91,7 @@
         <div class="school-search">
           <a
             href="/search"
-            class="school-search__handle d-lg-none"
+            class="school-search__handle d-xl-none"
             role="button"
             aria-label="Toggle site search"
             aria-expanded="false"

@@ -45,18 +45,4 @@
   .tooltip__button:hover ~ & {
     display: block;
   }
-
-  // Add the triangle to bottom right.
-  // If tooltips become used more, we'll need this to be placed based on tooltip position.
-  &:after {
-    content: '';
-    display: block;
-    height: 10px;
-    width: 10px;
-    background: white;
-    position: absolute;
-    top: calc(100% - 5px);
-    right: 8px;
-    transform: rotate(45deg);
-  }
 }

@@ -5,15 +5,15 @@
   display: inline-block;
   padding: spacing(3);
   font-size: typescale(2);
-  // line-height: lineheight('solid');
   color: $navy;
 
   &:hover {
     text-decoration: none;
   }
 
-  @include media(lg) {
-    font-weight: $font-weight-semibold;
+  @include media($school-header-breakpoint) {
+    font-weight: $font-weight-medium;
+    font-size: typescale(3);
     padding-left: 0;
     padding-right: 0;
     border-bottom: 4px solid transparent;
@@ -23,7 +23,7 @@
     &.is-toggled,
     &:hover {
       opacity: 1;
-      border-color: $navy;
+      @include themify(border-color);
     }
   }
 }
@@ -44,7 +44,7 @@
     opacity: 1;
   }
 
-  @include media(lg) {
+  @include media($school-header-breakpoint) {
     width: 400px;
     border: 1px solid $brand-primary;
   }

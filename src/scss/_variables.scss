@@ -105,6 +105,19 @@ $brand-primary-dark: $navy-dark !default;
 $brand-secondary: $green !default;
 $brand-secondary-dark: $green-dark !default;
 
+// school colors
+$color-college: $navy;
+$color-schools-abroad: $blue;
+
+////
+/// Themes
+////
+
+$themes: (
+  college: $color-college,
+  sa: $color-schools-abroad
+);
+
 ////
 /// Typography
 ////
