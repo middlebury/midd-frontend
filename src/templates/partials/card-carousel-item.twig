@@ -1,4 +1,4 @@
-<article class="card-carousel-item js-card-carousel-item-{{id}}">
+<article class="card-carousel-item js-card-carousel-item-{{id}}" aria-labelledby="midd-card-carousel-{{id}}-header">
 
   <figure class="card-carousel-item__image">
     {% include 'partials/img.twig' with { name: 'card_carousel' } %}
@@ -7,19 +7,19 @@
   <div class="card-carousel-item__content">
     <div class="card-carousel-item__side card-carousel-item__side--front">
 
-        <a href="#midd-card-carousel-item-aside-{{id}}"
-          class="card-carousel-item__toggle button button--sm button--tertiary"
-          aria-label="Open Q&A with {{title}}"
-          data-toggle-target=".js-card-carousel-item-{{id}}"
-          data-toggle-group="card-carousel"
-          data-toggle-linked="card-carousel-item-{{id}}">
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-plus" />
-          </svg>
-        </a>
+      <button
+        class="card-carousel-item__toggle button button--sm button--tertiary"
+        aria-label="Show more information for {{title}}"
+        data-toggle-target=".js-card-carousel-item-{{id}}"
+        data-toggle-group="card-carousel"
+        data-toggle-linked="card-carousel-item-{{id}}">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-plus" />
+        </svg>
+      </button>
 
-      <div class="card-carousel-item__header">
-        <h3 class="card-carousel-item__title">Some name</h3>
+      <div class="card-carousel-item__header {% if color %} card-carousel-item__header--band card-carousel-item__header--{{color}}{% endif %} ">
+        <h3 class="card-carousel-item__title" id="midd-card-carousel-{{id}}-header">Some name {{id}}</h3>
         <p class="card-carousel-item__text">Program here</p>
       </div>
       <div class="card-carousel-item__footer">
@@ -33,7 +33,7 @@
       </div>
 
     </div>
-    <aside class="card-carousel-item__side card-carousel-item__side--back" id="midd-card-carousel-item-aside-{{id}}">
+    <aside class="card-carousel-item__side card-carousel-item__side--back" id="midd-card-carousel-item-aside-{{id}}" aria-labelledby="midd-card-carousel-{{id}}-aside">
 
       <button
         class="card-carousel-item__toggle button button--sm button--primary"
@@ -47,11 +47,11 @@
       </button>
 
       <div class="card-carousel-item__header">
-        <h3 class="card-carousel-item__title">{{title}}</h3>
+        <h3 class="card-carousel-item__title" id="midd-card-carousel-{{id}}-aside">{{title}}</h3>
         <p class="card-carousel-item__text">{{type}}</p>
       </div>
       <div class="card-carousel-item__body">
-        <div class="typography">
+        <div class="typography typography--sm">
           <h4>What made the Institute special?</h4>
           <p>I traveled to Tokyo as part of a seminar on foreign policy, trade, and security. Most of the others were policy and management students, and I was there to provide simultaneous interpretation for the speakers who addressed the class. It was an amazing real-world opportunity to practice my profession.</p>
 

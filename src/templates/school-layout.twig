@@ -5,6 +5,14 @@
 {% endblock %}
 
 {% block layout_footer %}
-  {% include 'partials/footer.twig' %}
+  {% include 'partials/school-footer.twig' %}
   {% include 'partials/midd-footer.twig' %}
+{% endblock %}
+
+{% block layout_before_body_close %}
+  {% embed 'partials/drawer.twig' with { title: 'Navigation' } %}
+    {% block content %}
+      {% include 'partials/drawer-nav.twig' %}
+    {% endblock %}
+  {% endembed %}
 {% endblock %}

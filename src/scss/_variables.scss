@@ -72,6 +72,7 @@ $navy-light: #174872 !default;
 $navy: #0d395f !default;
 $navy-dark: #022543 !default;
 
+$blue: #75a3cd !default;
 $blue-light: #97bbd5 !default;
 $blue-lighter: #e5f1fa !default;
 
@@ -104,6 +105,19 @@ $brand-primary-dark: $navy-dark !default;
 $brand-secondary: $green !default;
 $brand-secondary-dark: $green-dark !default;
 
+// school colors
+$color-college: $navy;
+$color-schools-abroad: $blue;
+
+////
+/// Themes
+////
+
+$themes: (
+  college: $color-college,
+  sa: $color-schools-abroad
+);
+
 ////
 /// Typography
 ////
@@ -134,6 +148,8 @@ $typescale-5: rem(20) !default;
 $typescale-6: rem(24) !default;
 $typescale-7: rem(28) !default;
 $typescale-8: rem(36) !default;
+$typescale-9: rem(48) !default;
+$typescale-10: rem(64) !default;
 
 $typescale: () !default;
 $typescale: map-merge(
@@ -249,7 +265,7 @@ $caption-color: $gray !default;
 
 // Shared buttons and forms styles
 $input-btn-padding-y: spacing(3) !default;
-$input-btn-padding-x: spacing(6) !default;
+$input-btn-padding-x: spacing(5) !default;
 $input-btn-font-size: typescale(3) !default;
 $input-btn-line-height: lineheight('solid') !default;
 
@@ -286,7 +302,7 @@ $btn-secondary-hover-color: $brand-primary !default;
 // light
 $btn-light-bg: $white !default;
 $btn-light-color: $black !default;
-$btn-light-hover-bg: $brand-primary !default;
+$btn-light-hover-bg: $brand-primary-dark !default;
 $btn-light-hover-color: $white !default;
 $btn-light-outline-hover-bg: $white !default;
 $btn-light-outline-hover-color: $brand-primary !default;
@@ -364,3 +380,5 @@ $list-item-margin-bottom-lg: spacing(3) !default;
 
 $chevron-transform: rotate(-180deg);
 $chevron-transition: transform 0.2s ease-in-out;
+
+$z-index-dropdown-list: 999;

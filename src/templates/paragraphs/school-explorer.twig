@@ -1,0 +1,54 @@
+<div class="paragraph--school-explorer">
+  <nav class="school-explorer" aria-labelledby="midd-school-explorer-label">
+    <h2 class="school-explorer__title" id="midd-school-explorer-label">Explore our Schools</h2>
+
+    <div class="school-explorer__actions">
+      <div class="school-explorer__item">
+
+        {% include 'partials/dropdown.twig' with {
+          items: [
+            { href: '', label: 'Arabic' },
+            { href: '', label: 'Chinese' },
+            { href: '', label: 'English' },
+            { href: '', label: 'French' },
+            { href: '', label: 'German' },
+            { href: '', label: 'Italian' },
+            { href: '', label: 'Japanese' },
+            { href: '', label: 'Portuguese' },
+            { href: '', label: 'Spanish' },
+            { href: '', label: 'Russian' },
+          ],
+          label: 'By Language'
+        } %}
+
+      </div>
+      <div class="school-explorer__or">or</div>
+      <div class="school-explorer__item">
+
+        {% include 'partials/dropdown.twig' with {
+          items: [
+            { href: '', label: 'Argentina' },
+            { href: '', label: 'Brazil' },
+            { href: '', label: 'Cameroon' },
+            { href: '', label: 'Chile' },
+            { href: '', label: 'China' },
+            { href: '', label: 'France' },
+            { href: '', label: 'Germanty' },
+            { href: '', label: 'India' },
+            { href: '', label: 'Italy' },
+            { href: '', label: 'Japan' },
+            { href: '', label: 'Jordan' },
+            { href: '', label: 'Morocco' },
+            { href: '', label: 'Russia' },
+            { href: '', label: 'Spain' },
+            { href: '', label: 'United Kingdom' },
+          ],
+          label: 'By Location'
+        } %}
+
+      </div>
+    </div>
+
+  </nav>
+
+</div>

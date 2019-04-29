@@ -48,7 +48,8 @@ const paths = {
     dest: './dist/js'
   },
   images: {
-    src: './src/images/*.{png,jpg,svg}',
+    // ignore sub folders in production build since demo images may be too big.
+    src: `./src/images/${production ? '*' : '**/*'}.{png,jpg,svg}`,
     dest: './dist/images/'
   }
 };

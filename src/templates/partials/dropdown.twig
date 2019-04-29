@@ -1,0 +1,22 @@
+<div class="dropdown" data-dropdown>
+  <button
+    class="dropdown__button"
+    aria-haspopup="true"
+    aria-expanded="false"
+    data-dropdown-button
+  >
+    {{label}}
+    <svg class="icon dropdown__icon">
+      <use xlink:href="#icon-chevron-down">
+    </svg>
+  </button>
+  <ul class="dropdown__list" data-dropdown-menu>
+    {% for item in items %}
+      <li class="dropdown__item">
+        <a href="{{item.href}}" class="dropdown__link">
+          {{item.label}}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

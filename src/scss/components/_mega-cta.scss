@@ -1,0 +1,113 @@
+.mega-cta {
+  position: relative;
+  min-height: 640px;
+  background: #000;
+
+  @include media(md) {
+    height: 0;
+    padding-top: percentage(9 / 16);
+    overflow: hidden;
+  }
+  @include media(lg) {
+    min-height: auto;
+  }
+}
+
+.mega-cta__back {
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+    opacity: 0.4;
+
+    .mega-cta--hero & {
+      @include media(md) {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+$mega-cta-alignments: (
+  left-bottom: left bottom,
+  right-bottom: right bottom,
+  left-top: left top,
+  right-top: right top
+);
+
+@each $key, $pos in $mega-cta-alignments {
+  .mega-cta--image-#{$key} {
+    img {
+      object-position: $pos;
+      font-family: 'object-position: #{$pos};';
+    }
+  }
+}
+
+.mega-cta__front {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mega-cta__content {
+  text-align: center;
+  @include make-col-ready;
+
+  @include media(sm) {
+    @include make-col(8);
+  }
+
+  @include media(lg) {
+    @include make-col(6);
+  }
+
+  .mega-cta--hero & {
+    text-align: left;
+  }
+}
+
+.mega-cta__title {
+  color: $white;
+  @include display-1;
+  margin-bottom: spacing(2);
+  @include media(md) {
+    margin-bottom: spacing(3);
+  }
+}
+
+.mega-cta__text {
+  color: $white;
+  font-size: typescale(2);
+  margin-bottom: spacing(4);
+
+  @include media(md) {
+    margin-bottom: spacing(5);
+    font-size: typescale(3);
+  }
+
+  @include media(lg) {
+    margin-bottom: spacing(7);
+    font-size: typescale(4);
+  }
+}
+
+.mega-cta__caption {
+  position: absolute;
+  right: spacing(5);
+  bottom: spacing(8);
+  z-index: 2;
+
+  @include media(md) {
+    bottom: spacing(4);
+  }
+}

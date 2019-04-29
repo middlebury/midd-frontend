@@ -1,0 +1,64 @@
+.hero {
+  position: relative;
+  height: 100vh;
+
+  @include media(md) {
+    height: 0;
+    padding-top: percentage(2 / 5);
+    overflow: hidden;
+  }
+}
+
+.hero__back {
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left bottom;
+    font-family: 'object-fit: cover;';
+
+    @include media(md) {
+      object-position: center;
+    }
+  }
+}
+
+.hero__front {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__content {
+  @include make-col-ready;
+
+  @include media(sm) {
+    @include make-col(8);
+  }
+
+  @include media(md) {
+    @include make-col(6);
+  }
+}
+
+.hero__title {
+  color: $white;
+  @include h1;
+}
+
+.hero__text {
+  color: $white;
+  margin-bottom: spacing(4);
+}
+
+.hero__cta {
+  color: $white;
+}
