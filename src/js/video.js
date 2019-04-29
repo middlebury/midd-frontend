@@ -1,15 +1,14 @@
+import { on, $, $$ } from './utils/dom';
 import decodeHtml from './utils/decodeHtml';
 
 class VideoSwap {
   constructor(elem) {
     this.elem = elem;
-    this.content = elem.querySelector('.js-video-content');
-    this.link = elem.querySelector('.js-video-link');
+    this.content = $('.js-video-content', elem);
+    this.link = $('.js-video-link', elem);
     this.iframe = elem.getAttribute('data-video');
 
     this.activeClass = 'has-video';
-
-    this.handleVideoEmbedClick = this.handleVideoEmbedClick.bind(this);
 
     this.init();
   }
@@ -19,12 +18,11 @@ class VideoSwap {
   }
 
   addListeners() {
-    this.link.addEventListener('click', this.handleVideoEmbedClick);
+    on(this.link, 'click', this.handleVideoEmbedClick);
+    on(this.link, 'keydown', this.handleKeyUp);
   }
 
-  handleVideoEmbedClick(e) {
-    e.preventDefault();
-
+  showVideo() {
     this.elem.classList.add(this.activeClass);
 
     const html = decodeHtml(this.iframe);
@@ -33,9 +31,23 @@ class VideoSwap {
       this.content.innerHTML = html || this.iframe;
     }
   }
+
+  handleKeyUp = e => {
+    // spacebar
+    if (e.keyCode === 32) {
+      e.preventDefault();
+      this.showVideo();
+    }
+  };
+
+  handleVideoEmbedClick = e => {
+    e.preventDefault();
+
+    this.showVideo();
+  };
 }
 
-const elems = document.querySelectorAll('.js-video');
+const elems = $$('.js-video');
 
 elems.forEach(elem => new VideoSwap(elem));
 
