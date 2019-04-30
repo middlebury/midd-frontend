@@ -35,7 +35,6 @@ import './responsive-table'; // adds data-th attributes for responsive tables
 import './events-datepicker'; // make the events datepicker accessible
 import './audio-player'; // custom Preact audio player
 import './offices'; // middlebury.edu/office homepage script for filtering items shown
-import './slideshow'; // swiperjs slideshows
 import './mover'; // mover util for rearraning dom at a breakpoint
 import './gallery'; // create Preact lightbox galleries from dom
 import './card-carousel';
