@@ -1,10 +1,13 @@
 {% extends "school-home.twig" %}
 
+{% set theme = 'sa' %}
+
 {% block content %}
 
   {% include 'paragraphs/mega-cta.twig' with {
     pin: 'left-bottom',
-    hero: true
+    hero: true,
+    caption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
   } %}
 
   {% include 'paragraphs/school-explorer.twig' %}

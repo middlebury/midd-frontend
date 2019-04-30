@@ -21,7 +21,7 @@
   justify-content: space-between;
 
   .dropdown.is-active & {
-    background: $blue;
+    background: $navy;
     color: $white;
   }
 
@@ -69,8 +69,7 @@
   padding: spacing(2) spacing(3);
   font-weight: $font-weight-medium;
 
-  &:hover,
-  &:focus {
+  &:hover {
     background: $gray-lighter;
   }
 }

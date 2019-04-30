@@ -11,43 +11,18 @@
   background: none;
   border: 0;
 
-  @include media(lg) {
+  @include media($school-header-breakpoint) {
     display: none;
   }
 }
 
 .school-nav__menu {
-  position: absolute;
-  top: 100%;
-  background: $white;
-  right: 0;
-  opacity: 0;
-  visibility: hidden;
-  width: 100%;
-  border-top: 1px solid $navy;
-  border-bottom: 1px solid $navy;
+  display: none;
 
-  display: flex;
-  flex-direction: column-reverse;
-
-  &.is-toggled {
-    opacity: 1;
-    visibility: visible;
+  @include media($school-header-breakpoint) {
+    display: flex;
+    flex-direction: column;
   }
-
-  @include media(lg) {
-    display: block;
-    border-top: 0;
-    border-bottom: 0;
-    background-color: transparent;
-    position: relative;
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-.school-nav__handle--sub {
-  border-left: 1px solid $border-color;
 }
 
 .school-nav__bars {
@@ -64,137 +39,95 @@
   }
 }
 
-.school-nav__chevron {
-  transition: $chevron-transition;
-  .school-nav__handle.is-toggled & {
-    transform: $chevron-transform;
-  }
-}
-
 .school-nav__list {
-  width: 100%;
-
-  @include media(lg) {
-    display: flex;
-    justify-content: flex-end;
-  }
-}
-
-.school-nav__list--util {
-  border-top: 1px solid $navy;
-  @include media(lg) {
-    border-top: 0;
-  }
-}
-
-.school-nav__list--top {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .school-nav__list--cols {
-  @include media(lg) {
-    column-count: 2;
-    min-width: 500px;
+  column-count: 2;
+  min-width: 500px;
 
-    .school-nav__item {
-      width: 100%;
-      display: inline-block;
-    }
+  .school-nav__item {
+    width: 100%;
+    display: inline-block;
   }
 }
 
 .school-nav__list--sub {
-  display: none;
-
-  &.is-toggled {
-    display: block;
-  }
-
-  @include media(lg) {
-    display: block;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: $white;
-    padding: spacing(4) / 2 spacing(4);
-    border: 1px solid $navy;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
+  display: block; // unset display-flex
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: $white;
+  padding: #{spacing(3) / 2} spacing(3);
+  border: 1px solid $navy;
+  transition: opacity 0.2s;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .school-nav__item {
   position: relative;
-  border-top: 1px solid $border-color;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: block;
+  transition: opacity 0.2s;
 
-  @include media(lg) {
-    display: block;
-    border-top: 0;
-    border-color: $gray-light;
-    transition: opacity 0.2s;
+  &:not(:last-child) {
+    margin-right: spacing(5);
+  }
 
-    &:not(:last-child) {
-      margin-right: spacing(4);
-    }
-
-    &:focus-within,
-    &:hover {
-      .school-nav__list--sub {
-        visibility: visible;
-        opacity: 1;
-      }
+  &:focus-within,
+  &:hover {
+    .school-nav__list--sub {
+      visibility: visible;
+      opacity: 1;
     }
   }
 }
 
 .school-nav__link {
   display: block;
-  padding: spacing(3);
+  padding-top: spacing(3);
+  padding-bottom: spacing(3);
   color: $navy;
   font-size: typescale(3);
   font-weight: $font-weight-medium;
   opacity: 0.8;
   transition: opacity 0.2s, border-color 0.2s;
-  flex: 1;
 
-  @include media(lg) {
-    padding-left: 0;
-    padding-right: 0;
+  &:hover {
+    text-decoration: none;
+    opacity: 1;
   }
 }
 
 .school-nav__link--sub {
-  padding-left: spacing(7);
+  padding-top: spacing(3) / 2;
+  padding-bottom: spacing(3) / 2;
+  font-size: typescale(2);
 
-  @include media(lg) {
-    padding-right: 0;
-    padding-left: 0;
-    padding-top: spacing(4) / 2;
-    padding-bottom: spacing(4) / 2;
+  &:hover,
+  &:focus {
+    text-decoration: underline;
   }
 }
 
 .school-nav__link--top {
-  @include media(lg) {
-    font-size: typescale(2);
-    font-weight: $font-weight-semibold;
-    // line-height: lineheight('solid');
-    border-bottom: 4px solid transparent;
+  border-bottom: 4px solid transparent;
 
-    .school-nav__item:focus-within &,
-    .school-nav__item:hover & {
-      opacity: 1;
-      border-color: $navy;
-      text-decoration: none;
-    }
+  .school-nav__item:focus-within &,
+  .school-nav__item:hover & {
+    @include themify(border-color);
   }
 }
 
 .school-nav__link--util {
-  @include media(lg) {
-    font-size: typescale(2);
+  font-size: typescale(2);
+  border-top: 4px solid transparent;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    @include themify(border-top-color);
   }
 }

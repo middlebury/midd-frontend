@@ -8,23 +8,14 @@
   padding-bottom: spacing(5);
   text-align: center;
 
-  @include media(md) {
-    // text-align: left;
-
-    // @include make-col(10);
-    // @include make-col-offset(1);
-  }
-
   @include media(lg) {
     @include make-col-offset(0);
-    // text-align: center;
     padding-top: spacing(7);
     padding-bottom: spacing(7);
     min-height: 400px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    align-items: center; // prevents button from becoming full width
 
     // From grid framework.
     // Makes cols equal widths no matter amount since cta-group can be 2-4 items.
@@ -59,4 +50,5 @@
 
 .cta-group__button {
   margin-top: auto;
+  align-self: center; // prevents button from becoming full width
 }

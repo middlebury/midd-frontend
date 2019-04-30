@@ -67,7 +67,7 @@ $mega-cta-alignments: (
     @include make-col(8);
   }
 
-  @include media(md) {
+  @include media(lg) {
     @include make-col(6);
   }
 
@@ -101,5 +101,13 @@ $mega-cta-alignments: (
   }
 }
 
-.mega-cta__cta {
+.mega-cta__caption {
+  position: absolute;
+  right: spacing(5);
+  bottom: spacing(8);
+  z-index: 2;
+
+  @include media(md) {
+    bottom: spacing(4);
+  }
 }

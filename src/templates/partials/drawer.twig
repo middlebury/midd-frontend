@@ -1,0 +1,19 @@
+<div class="drawer" id="midd-drawer" aria-hidden="true">
+  <div class="drawer__overlay" tabindex="-1" data-micromodal-close>
+    <div class="drawer__content" role="dialog" aria-modal="true" aria-labelledby="midd-modal-1-title">
+      <div class="drawer__header">
+        <h2 class="sr-only" id="midd-modal-1-title">{{title}}</h2>
+        <button class="drawer__close" aria-label="Close modal" data-micromodal-close>
+          <svg class="icon mr-1">
+            <use xlink:href="#icon-times">
+          </svg>
+          Close
+        </button>
+      </div>
+      <div id="midd-modal-1-content">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+  </div>
+</div>
+

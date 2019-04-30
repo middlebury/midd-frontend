@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/83898/706148/css/fonts.css" />
 </head>
-<body class="{% if body_class %}{{body_class}}{% endif %}" id="midd-pagetop">
+<body class="{% if body_class %}{{body_class}}{% endif %} {% if theme %}theme-{{theme}}{% endif %}" id="midd-pagetop">
   <nav aria-labelledby="midd-skip-link">
     <a href="#midd-main" class="sr-only sr-only-focusable" id="midd-skip-link">Skip to content</a>
   </nav>
@@ -43,7 +43,7 @@
     {% include 'partials/grid-overlay.twig' %}
   {% endif %}
 
-  {# {% include 'partials/mission-modal.twig' %} #}
+  {% block layout_before_body_close %}{% endblock %}
   <script src="js/bundle.js" async></script>
   {% block scripts %}{% endblock %}
 </body>

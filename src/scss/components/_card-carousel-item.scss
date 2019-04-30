@@ -127,6 +127,7 @@ $spotlight-item-breakpoint: 'xs';
 }
 
 .card-carousel-item__text {
+  font-size: typescale(3);
   .card-carousel-item__side--front & {
     color: $white;
   }
