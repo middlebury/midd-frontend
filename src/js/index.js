@@ -10,7 +10,6 @@ import 'object-fit-images';
 // used in menu-spy.js and triggering chart animations when they scroll into view
 import 'intersection-observer';
 
-import stickybits from 'stickybits'; // sticky element support for ie11
 import focusWithin from 'focus-within'; // polyfill :focus-within for tab accessible menus
 
 import './headroom'; // sticky site headers
@@ -26,7 +25,6 @@ import './mover'; // swiperjs slideshows
 import './card-carousel';
 import './dropdown';
 import './drawer';
+import './sticky';
 
 focusWithin(document);
-
-stickybits('.js-sticky');

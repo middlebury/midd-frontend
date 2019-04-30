@@ -35,14 +35,12 @@
     {% endblock %}
     {% block toc %}
 
-      <div class="js-sticky" data-digest-nav></div>
+      <div data-digest-nav data-sticky data-sticky-offset=".js-headroom"></div>
 
     {% endblock %}
     {% block content %}
 
-      <div data-digest-content>
-        {% include 'partials/basic-content.twig' %}
-      </div>
+      {% include 'partials/basic-content.twig' %}
 
     {% endblock %}
   {% endembed %}
