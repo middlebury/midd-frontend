@@ -53,16 +53,14 @@
 
 .school-search__times {
   display: none;
-  position: relative;
-  top: 2px;
+  margin-bottom: -2px;
   .school-search__handle.is-toggled & {
     display: inline-block;
   }
 }
 
 .school-search__mag {
-  position: relative;
-  top: 2px;
+  margin-bottom: -2px;
   .school-search__handle.is-toggled & {
     display: none;
   }
