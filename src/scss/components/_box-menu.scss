@@ -1,5 +1,6 @@
 .box-menu {
-  border-top: 8px solid transparent; // TODO: needs to pick up the school color
+  box-shadow: inset 0 0 0 1px $gray-light;
+  border-top: 8px solid $navy;
   margin-bottom: spacing(7);
   background-color: $white;
 
