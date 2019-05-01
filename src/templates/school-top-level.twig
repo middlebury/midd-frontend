@@ -1,10 +1,6 @@
 {% extends "school-layout.twig" %}
 
-{% set school_color = 'blue-light' %}
-
-{% block school_logo %}
-  <img src="images/cv-star-logo.svg" alt="">
-{% endblock %}
+{% set theme = 'sa' %}
 
 {% set page_header = {
   title: 'Argentina',
@@ -29,7 +25,6 @@
         } %}
       </div>
 
-      {# iterate paragraphs here, some need to be full width #}
       <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2">
         {% include 'partials/lead.twig' %}
       </div>
