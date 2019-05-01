@@ -23,6 +23,7 @@
     object-fit: cover;
     font-family: 'object-fit: cover;';
     opacity: 0.4;
+    z-index: $z-index-mega-cta-image;
 
     .mega-cta--hero & {
       @include media(md) {
@@ -57,6 +58,7 @@ $mega-cta-alignments: (
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: $z-index-mega-cta-front;
 }
 
 .mega-cta__content {
@@ -110,7 +112,7 @@ $mega-cta-alignments: (
   position: absolute;
   right: spacing(5);
   bottom: spacing(8);
-  z-index: 2;
+  z-index: $z-index-mega-cta-caption;
 
   @include media(md) {
     bottom: spacing(4);

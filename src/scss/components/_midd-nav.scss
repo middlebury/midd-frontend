@@ -1,6 +1,6 @@
 .midd-nav {
   order: 2;
-  z-index: 2;
+  z-index: $z-index-midd-nav;
 
   // Pull menu toggler out of container so it's flush with the opened menu
   margin-right: -#{spacing(3)};
@@ -89,7 +89,7 @@
     width: 240px;
     background: $brand-primary;
     padding: spacing(2);
-    z-index: 999;
+    z-index: $z-index-midd-nav-dropdown;
     border-top: 1px solid $white;
     visibility: hidden;
     opacity: 0;
