@@ -184,7 +184,7 @@
 }
 
 .paragraph--video-group {
-  @include paragraph-space;
+  @include paragraph-space-sm;
   @include paragraph-full-width;
 }
 
