@@ -11,7 +11,7 @@
       <div class="col-md-10 offset-md-1">
         <div class="row">
           {% for item in 1..2 %}
-            <div class="col-md-6 {% if not loop.last %} mb-5{% endif %}">
+            <div class="col-md-6 {% if not loop.last %} mb-5 mb-lg-0{% endif %}">
               {% include 'partials/video.twig' with {
                 id: loop.index
               } %}
