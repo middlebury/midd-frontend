@@ -21,6 +21,7 @@
       @include absolute-fill;
       object-fit: cover;
       font-family: 'object-fit: cover;';
+      z-index: $z-index-spotlight-image;
     }
   }
 }
@@ -35,7 +36,7 @@
     // TODO: get rid of magic number?
     //  same as themed-panel secondary
     width: 360px;
-    z-index: 2;
+    z-index: $z-index-spotlight-content;
   }
 }
 

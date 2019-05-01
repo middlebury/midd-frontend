@@ -6,7 +6,7 @@
   border: 1px solid $gray-light;
   border-top: 8px solid $color-schools-abroad;
   padding: spacing(4);
-  z-index: 2;
+  z-index: $z-index-school-explorer;
   position: relative;
 
   @include media(md) {
