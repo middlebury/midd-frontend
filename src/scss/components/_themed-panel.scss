@@ -4,7 +4,7 @@ $themed-panel-overlay: linear-gradient(to bottom, transparent, #000);
  * 1. prevent issues with dropdowns and other z-index layers above this component
  */
 .themed-panel {
-  background: $black;
+  background: #000;
   position: relative; /* 1 */
   z-index: 1; /* 1 */
 
