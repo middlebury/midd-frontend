@@ -1,7 +1,9 @@
 .box-menu {
-  border-top: 8px solid $blue-light; // TODO: needs to pick up the school color
+  border-top: 8px solid transparent; // TODO: needs to pick up the school color
   margin-bottom: spacing(7);
   background-color: $white;
+
+  @include themify(border-top-color);
 
   @include media(md) {
     margin-bottom: spacing(8);
