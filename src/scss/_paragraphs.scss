@@ -187,3 +187,7 @@
   @include paragraph-space;
   @include paragraph-full-width;
 }
+
+.paragraph--themed-panel {
+  @include paragraph-space;
+}
