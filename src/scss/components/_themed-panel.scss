@@ -1,3 +1,5 @@
+$themed-panel-overlay: linear-gradient(to bottom, transparent, #000);
+
 /*
  * 1. prevent issues with dropdowns and other z-index layers above this component
  */
@@ -14,8 +16,8 @@
     &:before {
       content: '';
       display: block;
-      background-image: linear-gradient(-180deg, transparent 15%, $black 100%);
       z-index: 2;
+      background-image: $themed-panel-overlay;
       @include absolute-fill;
     }
   }
@@ -37,8 +39,8 @@
     &:before {
       content: '';
       display: block;
-      background-image: linear-gradient(-180deg, transparent 15%, $black 100%);
       z-index: 2;
+      background-image: $themed-panel-overlay;
       @include absolute-fill;
 
       @include media(xl) {
@@ -61,8 +63,8 @@
   &:before {
     content: '';
     display: block;
-    background-image: linear-gradient(-180deg, transparent 15%, $black 100%);
     z-index: 2;
+    background-image: $themed-panel-overlay;
     @include absolute-fill;
 
     @include media(md) {
@@ -136,7 +138,7 @@
     height: 100%;
     z-index: 3;
     width: 360px;
-    background: rgba($black, 0.65);
+    background: rgba(#000, 0.7);
   }
 }
 
