@@ -70,18 +70,19 @@ $mega-cta-alignments: (
   @include media(lg) {
     @include make-col(6);
   }
-
-  .mega-cta--hero & {
-    text-align: left;
-  }
 }
 
 .mega-cta__title {
   color: $white;
-  @include display-1;
   margin-bottom: spacing(2);
+  @include display-1;
+
   @include media(md) {
     margin-bottom: spacing(3);
+  }
+
+  .mega-cta--hero & {
+    text-align: left;
   }
 }
 
@@ -98,6 +99,10 @@ $mega-cta-alignments: (
   @include media(lg) {
     margin-bottom: spacing(7);
     font-size: typescale(4);
+  }
+
+  .mega-cta--hero & {
+    text-align: left;
   }
 }
 
