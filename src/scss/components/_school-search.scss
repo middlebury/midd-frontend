@@ -38,6 +38,7 @@
   visibility: hidden;
   opacity: 0;
   transition: 0.2s;
+  z-index: $z-index-school-search-content;
 
   &.is-toggled {
     visibility: visible;
@@ -52,12 +53,14 @@
 
 .school-search__times {
   display: none;
+  margin-bottom: -2px;
   .school-search__handle.is-toggled & {
     display: inline-block;
   }
 }
 
 .school-search__mag {
+  margin-bottom: -2px;
   .school-search__handle.is-toggled & {
     display: none;
   }

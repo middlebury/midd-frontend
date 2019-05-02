@@ -8,7 +8,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 50;
+    z-index: $z-index-midd-header;
   }
 
   &.headroom--pinned {
@@ -26,7 +26,7 @@
   left: 0;
   width: 100%;
   background-color: transparent;
-  z-index: 999;
+  z-index: $z-index-midd-header-transparent;
 }
 
 .midd-header__container {
@@ -55,7 +55,7 @@
   width: 44px;
   position: relative;
   top: 8px;
-  z-index: 3;
+  z-index: $z-index-midd-header-shield;
 
   @include media(lg) {
     width: 67px;

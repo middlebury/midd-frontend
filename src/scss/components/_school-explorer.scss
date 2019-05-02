@@ -3,12 +3,10 @@
  */
 .school-explorer {
   background: $white;
-  border: 1px solid $gray-light;
+  box-shadow: inset 0 0 0 1px $gray-light;
   border-top: 8px solid $color-schools-abroad;
   padding: spacing(4);
-  margin-top: -6rem;
-  margin-bottom: spacing(9);
-  z-index: 2;
+  z-index: $z-index-school-explorer;
   position: relative;
 
   @include media(md) {
