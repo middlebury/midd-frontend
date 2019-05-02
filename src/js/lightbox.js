@@ -107,6 +107,8 @@ class Lightbox {
 
         addClass(link.closest('li'), 'active');
 
+        link.scrollIntoView();
+
         this.index = index;
 
         // this.updateCount(index);
