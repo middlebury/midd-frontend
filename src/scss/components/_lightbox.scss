@@ -78,7 +78,7 @@
 }
 
 .lightbox__thumbs-list {
-  border-left: 1px solid $gray-dark;
+  // border-left: 1px solid $gray-dark;
   position: fixed;
   top: 8rem;
   right: 0;
@@ -97,7 +97,7 @@
 
   img {
     transition: transform 0.2s, opacity 0.2s;
-    opacity: 0.9;
+    opacity: 0.75;
   }
 
   &:hover,
@@ -119,6 +119,9 @@
   }
 
   &.active {
-    border-color: $white;
+    img {
+      transform: scale(1.1);
+      opacity: 1;
+    }
   }
 }
