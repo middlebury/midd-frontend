@@ -10,9 +10,9 @@ class Lightbox {
   constructor(el) {
     this.el = el;
 
-    this.nextBtn = $('[data-lightbox-next]', el);
-    this.prevBtn = $('[data-lightbox-prev]', el);
-    this.count = $('[data-lightbox-count]', el);
+    // this.nextBtn = $('[data-lightbox-next]', el);
+    // this.prevBtn = $('[data-lightbox-prev]', el);
+    // this.count = $('[data-lightbox-count]', el);
     this.closeBtn = $('[data-lightbox-close]', el);
     this.items = $$('[data-lightbox-item]', el);
     this.thumbs = $$('[data-lightbox-thumb]', el);
@@ -35,21 +35,21 @@ class Lightbox {
 
   init() {
     this.addListeners();
-    this.updateCount(this.index);
+    // this.updateCount(this.index);
 
     setTimeout(() => {
       this.closeBtn.focus();
     }, 100);
   }
 
-  updateCount(index) {
-    this.count.innerHTML = `${index + 1}/${this.total}`;
-  }
+  // updateCount(index) {
+  //   this.count.innerHTML = `${index + 1}/${this.total}`;
+  // }
 
   destroy() {
     off(this.el, 'keyup', this.handleKeyUp);
-    off(this.nextBtn, 'click', this.next);
-    off(this.prevBtn, 'click', this.prev);
+    // off(this.nextBtn, 'click', this.next);
+    // off(this.prevBtn, 'click', this.prev);
 
     this.smoothScroller.destroy();
 
@@ -60,8 +60,8 @@ class Lightbox {
 
   addListeners() {
     on(this.el, 'keyup', this.handleKeyUp);
-    on(this.nextBtn, 'click', this.next);
-    on(this.prevBtn, 'click', this.prev);
+    // on(this.nextBtn, 'click', this.next);
+    // on(this.prevBtn, 'click', this.prev);
 
     this.smoothScroller = new SmoothScroll(this.thumbs, {
       container: this.el,
@@ -109,7 +109,7 @@ class Lightbox {
 
         this.index = index;
 
-        this.updateCount(index);
+        // this.updateCount(index);
       }
     });
   };
