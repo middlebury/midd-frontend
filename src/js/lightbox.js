@@ -5,7 +5,6 @@ import { $, $$, on, off, addClass, removeClass } from './utils/dom';
 import SmoothScroll from './smooth-scroll';
 
 import { LEFT_ARROW_KEY, RIGHT_ARROW_KEY } from './constants';
-import MenuSpy from './menu-spy';
 
 class Lightbox {
   constructor(el) {
@@ -13,9 +12,9 @@ class Lightbox {
 
     this.nextBtn = $('[data-lightbox-next]', el);
     this.prevBtn = $('[data-lightbox-prev]', el);
+    this.count = $('[data-lightbox-count]', el);
     this.closeBtn = $('[data-lightbox-close]', el);
     this.items = $$('[data-lightbox-item]', el);
-    this.count = $('[data-lightbox-count]', el);
     this.thumbs = $$('[data-lightbox-thumb]', el);
     this.thumbsList = $('[data-lightbox-thumbs]', el);
 
@@ -101,8 +100,6 @@ class Lightbox {
       const link = $(`a[href="#${entry.target.id}"]`);
       const index = [].indexOf.call(this.thumbs, link);
 
-      console.log(index, entry.isIntersecting);
-
       if (entry.intersectionRatio === 1) {
         this.thumbs.forEach(el => {
           removeClass(el.closest('li'), 'active');
@@ -151,6 +148,8 @@ class Lightbox {
 }
 
 MicroModal.init({
+  openTrigger: 'data-lightbox-open',
+  closeTrigger: 'data-lightbox-close',
   onShow: modal => {
     if (modal.hasAttribute('data-lightbox')) {
       modal.lightbox = new Lightbox(modal);
