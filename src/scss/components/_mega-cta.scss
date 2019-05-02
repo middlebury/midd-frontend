@@ -59,6 +59,17 @@ $mega-cta-alignments: (
   justify-content: center;
   align-items: center;
   z-index: $z-index-mega-cta-front;
+  align-items: center;
+
+  .mega-cta--hero & {
+    align-items: flex-start;
+    padding-top: spacing(7);
+
+    @include media(md) {
+      padding-top: 0;
+      align-items: center;
+    }
+  }
 }
 
 .mega-cta__content {
