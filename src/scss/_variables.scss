@@ -382,4 +382,58 @@ $list-item-margin-bottom-lg: spacing(3) !default;
 $chevron-transform: rotate(-180deg);
 $chevron-transition: transform 0.2s ease-in-out;
 
-$z-index-dropdown-list: 999;
+///
+// z-indexes
+// Manage z-indexes across all components to prevent elements from accidentally showuping
+///
+
+// TODO: can we manage these at a component level somehow while being aware of all layers?
+
+$z-index-dropdown-list: 200;
+
+$z-index-drawer: 300;
+$z-index-drawer-overlay: 2;
+$z-index-drawer-content: 3;
+
+$z-index-top-level-image: 1;
+$z-index-top-level-content: 2;
+
+$z-index-midd-header: 200;
+$z-index-midd-header-transparent: 200;
+$z-index-midd-header-shield: 3;
+
+$z-index-midd-nav: 200;
+$z-index-midd-nav-dropdown: 200;
+
+$z-index-midd-search-content: 200;
+
+$z-index-datepicker: 200;
+
+$z-index-school-header: 100;
+
+$z-index-school-search-content: 200;
+
+$z-index-school-nav-dropdown: 200;
+
+$z-index-school-explorer: 50;
+
+$z-index-card-carousel-item-image: 2;
+$z-index-card-carousel-item-content: 3;
+
+$z-index-stat-panel-image: 1;
+$z-index-stat-panel-overlay: 2;
+$z-index-stat-panel-content: 3;
+
+$z-index-spotlight-image: 1;
+$z-index-spotlight-content: 2;
+
+$z-index-mega-cta-image: 1;
+$z-index-mega-cta-front: 2;
+$z-index-mega-cta-caption: 3;
+
+$z-index-themed-panel: 1;
+$z-index-themed-panel-overlay: 2;
+$z-index-themed-panel-content: 3;
+$z-index-themed-panel-sidebar: 4;
+
+$z-index-video-button: 1;

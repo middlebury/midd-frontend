@@ -184,6 +184,15 @@
 }
 
 .paragraph--video-group {
-  @include paragraph-space;
+  @include paragraph-space-sm;
   @include paragraph-full-width;
+}
+
+.paragraph--themed-panel {
+  @include paragraph-space;
+}
+
+.paragraph--school-explorer {
+  margin-top: -6rem;
+  margin-bottom: spacing(8);
 }

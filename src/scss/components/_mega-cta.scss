@@ -23,6 +23,7 @@
     object-fit: cover;
     font-family: 'object-fit: cover;';
     opacity: 0.4;
+    z-index: $z-index-mega-cta-image;
 
     .mega-cta--hero & {
       @include media(md) {
@@ -57,6 +58,7 @@ $mega-cta-alignments: (
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: $z-index-mega-cta-front;
 }
 
 .mega-cta__content {
@@ -70,18 +72,19 @@ $mega-cta-alignments: (
   @include media(lg) {
     @include make-col(6);
   }
-
-  .mega-cta--hero & {
-    text-align: left;
-  }
 }
 
 .mega-cta__title {
   color: $white;
-  @include display-1;
   margin-bottom: spacing(2);
+  @include display-1;
+
   @include media(md) {
     margin-bottom: spacing(3);
+  }
+
+  .mega-cta--hero & {
+    text-align: left;
   }
 }
 
@@ -99,13 +102,17 @@ $mega-cta-alignments: (
     margin-bottom: spacing(7);
     font-size: typescale(4);
   }
+
+  .mega-cta--hero & {
+    text-align: left;
+  }
 }
 
 .mega-cta__caption {
   position: absolute;
   right: spacing(5);
   bottom: spacing(8);
-  z-index: 2;
+  z-index: $z-index-mega-cta-caption;
 
   @include media(md) {
     bottom: spacing(4);
