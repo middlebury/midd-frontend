@@ -103,11 +103,3 @@
 .main {
   min-height: 85vh;
 }
-
-.modal {
-  display: none;
-
-  &.is-open {
-    display: block;
-  }
-}
