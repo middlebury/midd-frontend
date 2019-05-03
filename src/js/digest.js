@@ -1,5 +1,5 @@
 import AnchorJS from 'anchor-js';
-import SmoothScroll from 'smooth-scroll';
+import SmoothScroll from './smooth-scroll';
 import h from 'h';
 
 import { $, $$ } from './utils/dom';
@@ -48,6 +48,7 @@ class Digest {
     if (location.hash) {
       const el = $(location.hash);
 
+      // fake jump to elem since headings don't have IDs until js is loaded
       if (el) {
         setTimeout(() => {
           el.scrollIntoView();

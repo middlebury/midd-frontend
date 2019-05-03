@@ -1,5 +1,20 @@
-// polyfill nodelist foreach so you can
-// use document.querySelectorAll('.my-elems').forEach() in IE
+/**
+ * polyfill nodelist foreach so you can
+ * use document.querySelectorAll('.my-elems').forEach() in IE
+ *
+ * @todo maybe switch to using Array.from(NodeList).forEach since we
+ * are now polyfilling it so we can ditch this foreach polyfill.
+ */
+import 'polyfill-nodelist-foreach';
+
+// polyfills for micromodal to support ie11
+import 'mdn-polyfills/Object.assign';
+import 'mdn-polyfills/Array.from';
+
+/**
+ * Polyfill intersection observer for IE and safari.
+ * Used in menu spies, lazy loaded content, delaying chart animations, etc.
+ */
 import 'polyfill-nodelist-foreach';
 
 // Polyfill object fit images for easier responsive images.
@@ -20,8 +35,8 @@ import './responsive-table'; // adds data-th attributes for responsive tables
 import './events-datepicker'; // make the events datepicker accessible
 import './audio-player'; // custom Preact audio player
 import './offices'; // middlebury.edu/office homepage script for filtering items shown
-import './slideshow'; // swiperjs slideshows
-import './mover'; // swiperjs slideshows
+import './mover'; // mover util for rearraning dom at a breakpoint
+import './lightbox';
 import './card-carousel';
 import './dropdown';
 import './drawer';

@@ -1,7 +1,9 @@
-import Swiper from 'swiper';
+import { Swiper, Navigation } from 'swiper/dist/js/swiper.esm';
 
 import { $, $$ } from './utils/dom';
 import config from './config';
+
+Swiper.use([Navigation]);
 
 function randomizeChildren(elem) {
   for (let i = elem.children.length; i >= 0; i--) {

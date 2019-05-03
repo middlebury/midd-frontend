@@ -3,6 +3,8 @@
 @import 'variables';
 @import 'mixins';
 
+@import 'keyframes';
+
 // vendor
 @import '../../node_modules/normalize.css/normalize';
 @import '../../node_modules/swiper/dist/css/swiper';
@@ -38,12 +40,14 @@
 @import 'components/footer-menu';
 @import 'components/school-footer';
 @import 'components/form';
+@import 'components/gallery';
 @import 'components/grid';
 @import 'components/hero';
 @import 'components/icon';
 @import 'components/image';
 @import 'components/input-group';
 // @import 'components/journey';
+@import 'components/lightbox';
 @import 'components/link-list';
 @import 'components/list';
 @import 'components/media-object';
