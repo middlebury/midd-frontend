@@ -5,17 +5,19 @@
     <div class="school-header__main">
 
       <div class="school-header__logo">
-        <a href="">
-          {% block school_logo %}
-            <img
-              src="images/cv-star-logo.svg"
-              srcset="images/cv-star-logo.svg 186w"
-              sizes="(min-width: 1280px) 186px, 124px"
-              alt=""
-            />
-            <span class="sr-only">Middlebury C.V. Starr Schools Abroad</span>
-          {% endblock %}
-        </a>
+        {% if is_front %}<h1>{% endif %}
+          <a href="">
+            {% block school_logo %}
+              <img
+                src="images/cv-star-logo.svg"
+                srcset="images/cv-star-logo.svg 186w"
+                sizes="(min-width: 1280px) 186px, 124px"
+                alt=""
+              />
+              <span class="sr-only">Middlebury C.V. Starr Schools Abroad</span>
+            {% endblock %}
+          </a>
+        {% if is_front %}</h1>{% endif %}
       </div>
 
       <div class="school-header__content">
