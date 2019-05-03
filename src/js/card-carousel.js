@@ -1,9 +1,9 @@
-import { Swiper, Navigation } from 'swiper/dist/js/swiper.esm';
+import { Swiper, Navigation, Lazy } from 'swiper/dist/js/swiper.esm';
 
 import { $, $$ } from './utils/dom';
 import config from './config';
 
-Swiper.use([Navigation]);
+Swiper.use([Navigation, Lazy]);
 
 function randomizeChildren(elem) {
   for (let i = elem.children.length; i >= 0; i--) {
@@ -25,6 +25,8 @@ function createCardCarousel(elem) {
   }
 
   const swiperConfig = {
+    preloadImages: false,
+    lazy: { loadPrevNext: true },
     slidesPerView: 1,
     grabCursor: true,
     navigation: {

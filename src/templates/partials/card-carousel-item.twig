@@ -1,7 +1,15 @@
 <article class="card-carousel-item js-card-carousel-item-{{id}}" aria-labelledby="midd-card-carousel-{{id}}-header">
 
   <figure class="card-carousel-item__image">
-    {% include 'partials/img.twig' with { name: 'card_carousel' } %}
+    {# {% include 'partials/img.twig' with { name: 'card_carousel', } %} #}
+    {% set color = random(['000000', '222222', '666666']) %}
+    <img
+      class="swiper-lazy"
+      data-src="http://placehold.it/582x776/{{color}}"
+      data-srcset="http://placehold.it/468x624/{{color}} 468w,http://placehold.it/582x776/{{color}} 582w"
+      sizes="(max-width: 468px) 100vw, (max-width: 580px) 582px, 468px"
+      alt=""
+    >
   </figure>
 
   <div class="card-carousel-item__content">
