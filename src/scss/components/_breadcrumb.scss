@@ -7,18 +7,18 @@
 }
 
 .breadcrumb__item {
+  display: none;
+
+  @include media(md) {
+    display: block;
+  }
+
   &:not(:last-of-type) {
     margin-right: 5px;
 
     &:after {
       content: '/';
     }
-  }
-
-  display: none;
-
-  @include media(md) {
-    display: block;
   }
 
   &:last-child {
