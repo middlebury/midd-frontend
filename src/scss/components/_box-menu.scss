@@ -55,4 +55,6 @@
 
 .box-menu--overlap {
   margin-top: -#{spacing(5)};
+  position: relative;
+  z-index: $z-index-box-menu;
 }
