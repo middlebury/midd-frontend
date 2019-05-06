@@ -32,8 +32,6 @@
 }
 
 .box-menu__link {
-  // @include link-border();
-  // line-height: $line-height-heading;
   @include link-border;
   border-color: transparent;
 
