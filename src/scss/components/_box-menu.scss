@@ -8,16 +8,13 @@
   @include media(md) {
     margin-bottom: spacing(8);
   }
-
-  @include media(lg) {
-    margin-bottom: spacing(9);
-  }
 }
 
 .box-menu__list {
-  padding-top: spacing(2);
+  padding-top: spacing(4);
   padding-left: spacing(4);
   padding-right: spacing(4);
+  padding-bottom: spacing(2);
 
   @include media(md) {
     padding-top: spacing(3);
