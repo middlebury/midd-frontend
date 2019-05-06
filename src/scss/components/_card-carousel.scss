@@ -21,7 +21,7 @@ $card-carousel-height: 600px;
 
 .card-carousel__title {
   color: $white;
-  font-size: $h1-font-size;
+  @include h0;
   // line-height: $h1-line-height;
   margin-bottom: 1rem;
 

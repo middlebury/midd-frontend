@@ -17,7 +17,7 @@
 }
 
 .schedule-header__title {
-  font-size: $h3-font-size;
+  font-size: typescale(5);
   font-family: $font-family-serif;
   font-weight: $font-weight-normal;
   line-height: lineheight('heading');
@@ -74,7 +74,7 @@
 }
 
 .schedule-item__title {
-  font-size: $h4-font-size;
+  @include h4;
   font-weight: $font-weight-semibold;
   margin-bottom: spacing(2);
 }

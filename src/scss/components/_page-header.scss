@@ -48,7 +48,7 @@
 }
 
 .page-header__title {
-  @include display-3;
+  @include h1;
 }
 
 .page-header--has-image {

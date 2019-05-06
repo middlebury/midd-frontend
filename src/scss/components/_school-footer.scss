@@ -19,7 +19,7 @@
 }
 
 .school-footer__name {
-  @include display-1;
+  @include h0;
   font-family: $font-family-serif;
   color: $white;
   margin-bottom: spacing(4);
