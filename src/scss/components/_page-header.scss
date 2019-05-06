@@ -33,6 +33,16 @@
   }
 
   .page-header--has-menu & {
+    padding-bottom: spacing(1);
+    @include media(md) {
+      padding-bottom: spacing(2);
+    }
+    @include media(lg) {
+      padding-bottom: spacing(3);
+    }
+  }
+
+  .page-header--has-image.page-header--has-menu & {
     padding-bottom: spacing(7);
   }
 }
