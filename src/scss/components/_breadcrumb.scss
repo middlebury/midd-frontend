@@ -1,8 +1,4 @@
 .breadcrumb {
-  margin-bottom: spacing(2);
-  @include media(lg) {
-    margin-bottom: spacing(3);
-  }
 }
 
 .breadcrumb__list {
