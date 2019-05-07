@@ -6,15 +6,16 @@
         <div class="row">
           <div class="col-md-8 col-lg-12 mb-7">
 
-            <p class="school-footer__name">Middlebury College</p>
-            <a href="" class="button button--light">Make a gift</a>
+            <p class="school-footer__name">{{name}}</p>
+            <a href="{{cta.link}}" class="button button--light">{{cta.text}}</a>
 
           </div>
           <div class="col-md-4 col-lg-12 mb-7">
 
-            <div class="text-white f3 mb-3">
-              Middlebury, VT 05753<br>
-              <a href="tel:" class="text-white">802-443-5000</a>
+            <div class="text-white f2 mb-3">
+              <p class="mb-1 f2">{{addr}}</p>
+              <a href="mailto:" class="text-white link-underline">{{email}}</a><br>
+              <a href="tel:" class="text-white">{{tel}}</a>
             </div>
 
             {% include 'partials/social-links.twig' with {
@@ -28,10 +29,8 @@
       </div>
       <div class="col-lg-8">
         <div class="row">
-          {% for menu in footer_nav %}
-            <div class="col-md-6">
-              {% include 'partials/footer-menu.twig' with menu %}
-            </div>
+          {% for menu in menus %}
+            {% include 'partials/footer-menu.twig' with menu %}
           {% endfor %}
         </div>
       </div>
