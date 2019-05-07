@@ -23,6 +23,8 @@ site_nav:
 
 footer_nav:
   - title: Information for
+    width: 8
+    cols: true
     items:
       - text: Students
         url: /institute/students
@@ -41,19 +43,8 @@ footer_nav:
       - text: Visitors
         url: /institute/admissions/visit
   - title: Quick Links
+    width: 4
     items:
-      - text: Emergency
-        url: /institute/offices-services/security
-      - text: Campus Map
-        url: http://www.myatlascms.com/map/index.php?id=972
-      - text: Directory
-        url: https://directory.miis.edu
-      - text: Employment
-        url: https://middlebury.peopleadmin.com
-      - text: State Authorization
-        url: https://www.middlebury.edu/institute/institute-approach/about/strf
-      - text: Website Support
-        url: http://go.middlebury.edu/sitehelp
       - text: Offices and Services
         url: /institute/offices-services
       - text: BannerWeb

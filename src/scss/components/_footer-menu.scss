@@ -11,7 +11,7 @@
   margin-bottom: spacing(4);
 }
 
-.footer-menu__list {
+.footer-menu__list--cols {
   @include media(sm) {
     columns: 2;
   }
