@@ -1,6 +1,25 @@
 .page-header {
 }
 
+.page-header--has-image {
+  padding-top: percentage(2 / 5);
+  height: 0;
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+
+  img {
+    @include absolute-fill;
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+  }
+
+  .page-header__title {
+    color: $white;
+    padding-right: spacing(4); // make room for tooltip on image
+  }
+}
+
 .page-header__figure {
   position: absolute;
   top: 0;
@@ -9,12 +28,39 @@
   width: 100%;
 }
 
+.page-header__caption {
+  position: absolute;
+  right: spacing(3);
+  bottom: spacing(7);
+  z-index: $z-index-page-header-caption;
+
+  @include media(md) {
+    bottom: spacing(4);
+    right: spacing(5);
+  }
+}
+
+.page-header__main {
+  .page-header--has-image & {
+    background-image: linear-gradient(to bottom, transparent, black);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 .page-header__content {
+  @include make-col-ready();
   padding-top: spacing(5);
   padding-bottom: spacing(4);
 
   @include media(md) {
     padding-top: spacing(6);
+    @include make-col(10);
+    @include make-col-offset(1);
   }
 
   @include media(lg) {
@@ -23,22 +69,19 @@
   }
 
   .page-header--has-image & {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
     padding-top: spacing(9);
     padding-bottom: spacing(5);
-    background-image: linear-gradient(to bottom, transparent, black);
   }
 
   .page-header--has-menu & {
-    padding-bottom: spacing(1);
+    padding-bottom: spacing(3);
+
     @include media(md) {
-      padding-bottom: spacing(2);
+      padding-bottom: spacing(4);
     }
+
     @include media(lg) {
-      padding-bottom: spacing(3);
+      padding-bottom: spacing(5);
     }
   }
 
@@ -49,25 +92,4 @@
 
 .page-header__title {
   @include h1;
-}
-
-.page-header--has-image {
-  padding-bottom: 0;
-  padding-top: percentage(2 / 5);
-  height: 0;
-  position: relative;
-  overflow: hidden;
-
-  img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: auto;
-  }
-
-  .page-header__title {
-    color: $white;
-  }
 }
