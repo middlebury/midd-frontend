@@ -21,11 +21,6 @@
   .tooltip--light & {
     color: $white;
   }
-
-  .tooltip--lg & {
-    // .icon width/height is based on em, so setting font-size changes its size
-    font-size: 32px;
-  }
 }
 
 .tooltip__label {
