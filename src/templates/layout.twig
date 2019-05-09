@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{title}}</title>
+  <title>{% block page_title %}{{title}}{% endblock %}</title>
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/83898/706148/css/fonts.css" />
+  {% block webfonts %}<link rel="stylesheet" type="text/css" href="https://cloud.typography.com/83898/706148/css/fonts.css" />{% endblock %}
 </head>
 <body class="{% if body_class %}{{body_class}}{% endif %} {% if theme %}theme-{{theme}}{% endif %}" id="midd-pagetop">
   <nav aria-labelledby="midd-skip-link">
