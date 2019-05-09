@@ -200,3 +200,7 @@
 .paragraph--gallery {
   @include paragraph-space-sm;
 }
+
+.paragraph--button {
+  margin-bottom: spacing(4);
+}
