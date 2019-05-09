@@ -2,10 +2,10 @@
   <div class="midd-header__container">
 
     <div class="midd-header__brand">
-      <a href="">
+      {% if site_url is not empty %}<a href="{{ site_url }}">{% endif %}
         <img src="images/midd-shield.svg" alt="" class="midd-header__shield">
         <img src="images/midd-wordmark.svg" alt="" class="midd-header__wordmark">
-      </a>
+      {% if site_url is not empty %}</a>{% endif %}
     </div>
 
     {% if midd_nav is not empty %}

@@ -4,9 +4,9 @@
       <div class="col-lg-3">
 
         <div class="mb-4 mb-lg-0">
-          <a href="https://www.middlebury.edu">
+          {% if site_url is not empty %}<a href="{{ site_url }}">{% endif %}
             <img src="images/middlebury-logo-white.svg" alt="Middlebury" width="195" height="71">
-          </a>
+          {% if site_url is not empty %}</a>{% endif %}
         </div>
 
       </div>
