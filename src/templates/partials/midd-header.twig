@@ -8,93 +8,97 @@
       </a>
     </div>
 
-    <nav class="midd-nav">
-      <button
-        class="midd-nav__handle"
-        data-toggle-target=".js-midd-nav"
-        data-toggle-group="midd-header"
-        aria-expanded="false"
-      >
-        <svg class="icon mr-1 midd-nav__bars">
-          <use xlink:href="#icon-bars">
-        </svg>
-        <svg class="icon mr-1 midd-nav__times">
-          <use xlink:href="#icon-times">
-        </svg>
-        <span class="d-none d-sm-inline">Menu</span>
-      </button>
+    {% if midd_nav is not empty %}
+      <nav class="midd-nav">
+        <button
+          class="midd-nav__handle"
+          data-toggle-target=".js-midd-nav"
+          data-toggle-group="midd-header"
+          aria-expanded="false"
+        >
+          <svg class="icon mr-1 midd-nav__bars">
+            <use xlink:href="#icon-bars">
+          </svg>
+          <svg class="icon mr-1 midd-nav__times">
+            <use xlink:href="#icon-times">
+          </svg>
+          <span class="d-none d-sm-inline">Menu</span>
+        </button>
 
-      <ul class="midd-nav__list midd-nav__list--top js-midd-nav">
-        {% for item in midd_nav %}
-          <li class="midd-nav__item midd-nav__item--top">
-            <a href="{{ item.href }}" class="midd-nav__link midd-nav__link--top">
-              {{ item.text }}
-            </a>
+        <ul class="midd-nav__list midd-nav__list--top js-midd-nav">
+          {% for item in midd_nav %}
+            <li class="midd-nav__item midd-nav__item--top">
+              <a href="{{ item.href }}" class="midd-nav__link midd-nav__link--top">
+                {{ item.text }}
+              </a>
 
-            {% if item.items %}
-              <button
-                class="midd-nav__handle midd-nav__handle--sub"
-                data-toggle-target=".js-middnav-list-{{ loop.index }}"
-              >
-                <svg class="icon midd-nav__chevron">
-                  <use xlink:href="#icon-chevron-down">
+              {% if item.items %}
+                <button
+                  class="midd-nav__handle midd-nav__handle--sub"
+                  data-toggle-target=".js-middnav-list-{{ loop.index }}"
+                >
+                  <svg class="icon midd-nav__chevron">
+                    <use xlink:href="#icon-chevron-down">
+                  </svg>
+                </button>
+                <ul class="midd-nav__list midd-nav__list--sub js-middnav-list-{{ loop.index }}">
+                  {% for subitem in item.items %}
+                    <li class="midd-nav__item">
+                      <a href="{{ subitem.href }}" class="midd-nav__link midd-nav__link--sub">{{ subitem.text }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    {% endif %}
+
+    {% block header_search %}
+      <section class="midd-search" aria-labelledby="midd-search-label">
+        <h2 class="sr-only" id="midd-search-label">Search</h2>
+        <a
+          href="/search"
+          class="midd-search__handle"
+          role="button"
+          data-toggle-target=".js-midd-search"
+          data-toggle-group="midd-header"
+          data-toggle-focus=".js-midd-search-input"
+          aria-expanded="false"
+          aria-haspopup="true"
+        >
+          <svg class="icon midd-search__mag">
+            <use xlink:href="#icon-search">
+          </svg>
+          <svg class="icon midd-search__times">
+            <use xlink:href="#icon-times">
+          </svg>
+          <span class="d-none d-sm-inline">Search</span>
+        </a>
+
+        <div class="midd-search__content js-midd-search">
+          <form action="http://www.middlebury.edu/search" method="GET">
+            <label for="midd-search-input" class="sr-only">Search</label>
+            <div class="input-group">
+              <input
+                type="search"
+                class="form-control form-control--sm midd-search__input js-midd-search-input"
+                id="midd-search-input"
+                placeholder="Search"
+                name="q2"
+                required
+              />
+              <button type="submit" class="button button--sm midd-search__submit" aria-label="Search">
+                <svg class="icon">
+                  <use xlink:href="#icon-search">
                 </svg>
               </button>
-              <ul class="midd-nav__list midd-nav__list--sub js-middnav-list-{{ loop.index }}">
-                {% for subitem in item.items %}
-                  <li class="midd-nav__item">
-                    <a href="{{ subitem.href }}" class="midd-nav__link midd-nav__link--sub">{{ subitem.text }}</a>
-                  </li>
-                {% endfor %}
-              </ul>
-            {% endif %}
-          </li>
-        {% endfor %}
-      </ul>
-    </nav>
-
-    <section class="midd-search" aria-labelledby="midd-search-label">
-      <h2 class="sr-only" id="midd-search-label">Search</h2>
-      <a
-        href="/search"
-        class="midd-search__handle"
-        role="button"
-        data-toggle-target=".js-midd-search"
-        data-toggle-group="midd-header"
-        data-toggle-focus=".js-midd-search-input"
-        aria-expanded="false"
-        aria-haspopup="true"
-      >
-        <svg class="icon midd-search__mag">
-          <use xlink:href="#icon-search">
-        </svg>
-        <svg class="icon midd-search__times">
-          <use xlink:href="#icon-times">
-        </svg>
-        <span class="d-none d-sm-inline">Search</span>
-      </a>
-
-      <div class="midd-search__content js-midd-search">
-        <form action="http://www.middlebury.edu/search" method="GET">
-          <label for="midd-search-input" class="sr-only">Search</label>
-          <div class="input-group">
-            <input
-              type="search"
-              class="form-control form-control--sm midd-search__input js-midd-search-input"
-              id="midd-search-input"
-              placeholder="Search"
-              name="q2"
-              required
-            />
-            <button type="submit" class="button button--sm midd-search__submit" aria-label="Search">
-              <svg class="icon">
-                <use xlink:href="#icon-search">
-              </svg>
-            </button>
-          </div>
-        </form>
-      </div>
-    </section>
+            </div>
+          </form>
+        </div>
+      </section>
+    {% endblock %}
 
   </div>
 </header>
