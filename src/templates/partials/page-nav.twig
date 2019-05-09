@@ -13,14 +13,22 @@
 
 {% import _self as macros %}
 
-<div class="page-nav">
-  <button class="page-nav__button" id="midd-page-nav-label" data-toggle-target=".js-page-nav">
+<nav class="page-nav" aria-labelledby="midd-page-nav-label">
+  <button
+    class="page-nav__button"
+    data-toggle-target=".js-page-nav"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
     Additional Navigation
     <svg class="page-nav__icon icon">
       <use xlink:href="#icon-chevron-down" />
     </svg>
   </button>
-  <nav class="page-nav__content js-page-nav">
+  <div class="page-nav__content js-page-nav">
+    <h2 class="page-nav__title" id="midd-page-nav-label">
+      <a href="">{{label}}</a>
+    </h2>
 
     {{ macros.list(items) }}
 
@@ -35,6 +43,6 @@
       </ul>
 
     {% endif %}
-  </nav>
-</div>
+  </div>
+</nav>
 
