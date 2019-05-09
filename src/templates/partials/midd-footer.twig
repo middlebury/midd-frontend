@@ -12,13 +12,15 @@
       </div>
       <div class="col-lg-9">
 
-        <ul class="midd-footer__list">
-          {% for item in secondary_footer_nav %}
-            <li class="midd-footer__item">
-              <a href="{{item.href}}" class="midd-footer__link">{{item.text}}</a>
-            </li>
-          {% endfor %}
-        </ul>
+        {% if secondary_footer_nav is not empty %}
+          <ul class="midd-footer__list">
+            {% for item in secondary_footer_nav %}
+              <li class="midd-footer__item">
+                <a href="{{item.href}}" class="midd-footer__link">{{item.text}}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
 
       </div>
     </div>
