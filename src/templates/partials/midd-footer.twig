@@ -4,21 +4,23 @@
       <div class="col-lg-3">
 
         <div class="mb-4 mb-lg-0">
-          <a href="https://www.middlebury.edu">
+          {% if site_url is not empty %}<a href="{{ site_url }}">{% endif %}
             <img src="images/middlebury-logo-white.svg" alt="Middlebury" width="195" height="71">
-          </a>
+          {% if site_url is not empty %}</a>{% endif %}
         </div>
 
       </div>
       <div class="col-lg-9">
 
-        <ul class="midd-footer__list">
-          {% for item in secondary_footer_nav %}
-            <li class="midd-footer__item">
-              <a href="{{item.href}}" class="midd-footer__link">{{item.text}}</a>
-            </li>
-          {% endfor %}
-        </ul>
+        {% if secondary_footer_nav is not empty %}
+          <ul class="midd-footer__list">
+            {% for item in secondary_footer_nav %}
+              <li class="midd-footer__item">
+                <a href="{{item.href}}" class="midd-footer__link">{{item.text}}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
 
       </div>
     </div>

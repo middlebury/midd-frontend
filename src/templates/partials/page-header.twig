@@ -12,10 +12,12 @@
       <div class="row">
         <div class="col-md-10 offset-md-1">
 
-          {% include 'partials/breadcrumb.twig' with {
-            items: breadcrumb,
-            light: image_src  }
-          %}
+          {% if breadcrumb is not null %}
+            {% include 'partials/breadcrumb.twig' with {
+              items: breadcrumb,
+              light: image_src  }
+            %}
+          {% endif %}
           <h1 class="page-header__title" id="midd-page-header-label">{{title}}</h1>
 
           {{after_title}}
