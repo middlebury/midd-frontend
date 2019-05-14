@@ -2,6 +2,7 @@ import enquire from 'enquire.js';
 
 import { $, $$ } from './utils/dom';
 
+// TODO: switch enquire to matchMedia.addListener
 class Mover {
   constructor(elem) {
     this.elem = elem;
