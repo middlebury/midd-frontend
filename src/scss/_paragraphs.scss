@@ -204,3 +204,7 @@
 .paragraph--button {
   margin-bottom: spacing(4);
 }
+
+.paragraph--search {
+  @include paragraph-space-sm;
+}
