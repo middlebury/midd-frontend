@@ -105,3 +105,16 @@
 .main {
   min-height: 85vh;
 }
+
+.count {
+  display: block;
+  padding-top: spacing(2);
+  padding-bottom: spacing(2);
+  border-top: 4px solid $navy;
+  border-bottom: 1px solid $border-color;
+  font-size: typescale(3);
+  margin-bottom: spacing(4);
+  @include media(md) {
+    margin-bottom: spacing(7);
+  }
+}
