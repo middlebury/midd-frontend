@@ -81,7 +81,7 @@ $themed-panel-overlay: linear-gradient(to bottom, transparent, #000);
 
 .themed-panel__title {
   color: $white;
-  @include display-3;
+  @include h1;
   position: absolute;
   bottom: 0;
   left: 0;

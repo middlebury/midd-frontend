@@ -76,7 +76,7 @@
   }
 
   .gs-title {
-    font-size: $h3-font-size;
+    font-size: typescale(5);
     line-height: lineheight('heading');
     margin-bottom: 0.5rem;
     color: $brand-primary;
@@ -86,7 +86,7 @@
     b {
       text-decoration: none;
       font-weight: normal;
-      font-size: $h3-font-size;
+      font-size: typescale(5);
       line-height: lineheight('heading');
       color: currentColor;
     }

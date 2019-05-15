@@ -152,7 +152,8 @@ class Lightbox {
 MicroModal.init({
   openTrigger: 'data-lightbox-open',
   closeTrigger: 'data-lightbox-close',
-  onShow: modal => {
+  onShow: (modal, event) => {
+    event.preventDefault();
     if (modal.hasAttribute('data-lightbox')) {
       modal.lightbox = new Lightbox(modal);
     }

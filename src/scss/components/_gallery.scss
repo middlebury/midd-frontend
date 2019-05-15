@@ -28,8 +28,8 @@
 }
 
 .gallery__title {
-  font-size: $h3-font-size;
-  margin-bottom: $h3-margin-bottom;
+  @include h3;
+  margin-bottom: spacing(2);
 }
 
 .gallery__text {

@@ -41,7 +41,7 @@
 }
 
 .spotlight__title {
-  @include display-1;
+  @include h0;
   background: $brand-primary;
   color: $white;
   padding-top: spacing(4);

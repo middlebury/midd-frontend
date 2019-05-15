@@ -8,14 +8,10 @@
   @include media(md) {
     margin-bottom: spacing(8);
   }
-
-  @include media(lg) {
-    margin-bottom: spacing(9);
-  }
 }
 
 .box-menu__list {
-  padding-top: spacing(2);
+  padding-top: spacing(4);
   padding-left: spacing(4);
   padding-right: spacing(4);
 
@@ -35,8 +31,6 @@
 }
 
 .box-menu__link {
-  // @include link-border();
-  // line-height: $line-height-heading;
   @include link-border;
   border-color: transparent;
 
@@ -58,4 +52,6 @@
 
 .box-menu--overlap {
   margin-top: -#{spacing(5)};
+  position: relative;
+  z-index: $z-index-box-menu;
 }

@@ -39,6 +39,8 @@
   opacity: 0;
   transition: 0.2s;
   z-index: $z-index-school-search-content;
+  border-top: 1px solid $brand-primary;
+  border-bottom: 1px solid $brand-primary;
 
   &.is-toggled {
     visibility: visible;

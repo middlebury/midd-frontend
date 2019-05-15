@@ -88,7 +88,7 @@ $mega-cta-alignments: (
 .mega-cta__title {
   color: $white;
   margin-bottom: spacing(2);
-  @include display-1;
+  @include h0;
 
   @include media(md) {
     margin-bottom: spacing(3);

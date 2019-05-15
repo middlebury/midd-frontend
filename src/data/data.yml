@@ -17,6 +17,11 @@ site_nav:
     - text: Academic Calendar
   - text: Life at Middlebury
   - text: Academics
+    items:
+    - text: Liberal Arts at Middlebury
+    - text: Faculty Directory
+    - text: Departments and Programs
+    - text: The Library
   - text: Admissions
   - text: News
   - text: Events

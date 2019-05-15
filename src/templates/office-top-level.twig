@@ -1,12 +1,11 @@
 {% extends "midd-layout.twig" %}
 
 {% set page_header = {
-  title: 'Office of the General Counsel',
+  title: 'Top level without image',
   breadcrumb: [
     { text: 'Middlebury' },
     { text: 'Offices and Services' },
   ],
-  image_src: 'https://placekitten.com/2560/1024',
   has_menu: true
 } %}
 
@@ -19,7 +18,6 @@
         {# set overlap if page has featured image #}
         {% include 'partials/box-menu.twig' with {
           office: true,
-          overlap: true,
           items: top_level_nav_example
         } %}
       </div>

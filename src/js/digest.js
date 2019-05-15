@@ -35,7 +35,7 @@ class Digest {
     });
 
     const list = h('ol.digest__list', null, items);
-    const title = h('h2.digest__title', null, 'Sections');
+    const title = h('h2.digest__title', null, 'On This Page');
     const nav = h('nav.digest', null, title, list);
 
     this.elem.appendChild(nav);

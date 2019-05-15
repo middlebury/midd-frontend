@@ -120,7 +120,7 @@ $spotlight-item-breakpoint: 'xs';
 }
 
 .card-carousel-item__title {
-  font-size: $h4-font-size;
+  @include h4;
 
   .card-carousel-item__side--front & {
     color: $white;

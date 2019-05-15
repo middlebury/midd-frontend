@@ -2,13 +2,15 @@
 
 {% set theme = 'sa' %}
 
+{% set has_page_image = true %}
+
 {% set page_header = {
   title: 'Argentina',
   breadcrumb: [
     { text: 'Middlebury C.V. Star Schools Abroad' },
     { text: 'Our Schools' },
   ],
-  image_src: true,
+  image_src: has_page_image,
   has_menu: true
 } %}
 
@@ -20,7 +22,7 @@
       <div class="col-md-10 offset-md-1">
         {# set overlap if page has featured image #}
         {% include 'partials/box-menu.twig' with {
-          overlap: true,
+          overlap: has_page_image,
           items: top_level_nav_example
         } %}
       </div>

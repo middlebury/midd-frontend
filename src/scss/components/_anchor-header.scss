@@ -19,7 +19,7 @@
 }
 
 .anchor-header__title {
-  @include display-1;
+  @include h0;
   font-family: $font-family-serif;
   margin-bottom: spacing(3);
 }
