@@ -15,8 +15,6 @@ function createStickyElem(el) {
     offset = offsetAttr || 0;
   }
 
-  console.log(offsetAttr);
-
   let options = {};
   options.stickyBitStickyOffset = offset;
 
