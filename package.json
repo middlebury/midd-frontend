@@ -88,12 +88,12 @@
     "polyfill-nodelist-foreach": "^1.0.1",
     "preact": "^8.3.1",
     "stickybits": "^3.5.6",
-    "swiper": "^4.4.1"
+    "swiper": "^4.5.0"
   },
   "bundlesize": [
     {
       "path": "./dist/css/*.css",
-      "maxSize": "20 kB"
+      "maxSize": "24 kB"
     },
     {
       "path": "./dist/js/bundle.js",

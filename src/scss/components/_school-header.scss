@@ -27,6 +27,10 @@ $school-header-breakpoint: xl;
   }
 }
 
+.school-header__title {
+  font-size: 100%;
+}
+
 .school-header__main {
   display: flex;
   justify-content: space-between;

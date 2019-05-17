@@ -2,18 +2,25 @@ import stickybits from 'stickybits';
 
 import { $, $$ } from './utils/dom';
 
-const elems = $$('[data-sticky]');
-
-elems.forEach(el => {
+function createStickyElem(el) {
   // allow for custom offset based on data attribute selector
-  const offsetSelector = el.getAttribute('data-sticky-offset');
-  const offsetEl = $(offsetSelector);
+  const offsetAttr = el.getAttribute('data-sticky-offset');
 
-  let options = {};
+  let offset = 0;
 
-  if (offsetEl) {
-    options.stickyBitStickyOffset = offsetEl.offsetHeight;
+  if (isNaN(offsetAttr)) {
+    const el = $(offsetAttr);
+    offset = el ? el.offsetHeight : 0;
+  } else {
+    offset = offsetAttr || 0;
   }
 
+  let options = {};
+  options.stickyBitStickyOffset = offset;
+
   stickybits(el, options);
-});
+}
+
+const elems = $$('[data-sticky]');
+
+elems.forEach(createStickyElem);

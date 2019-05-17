@@ -91,6 +91,36 @@ $text-colors: (
   @include link-border;
 }
 
+.link-file {
+  &:after {
+    font-size: 10px;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing;
+    padding: spacing(1);
+    line-height: 1;
+    background: $navy;
+    color: $white;
+    margin-left: spacing(1);
+    position: relative;
+    top: -2px;
+  }
+}
+
+$file-types: (
+  o365: 'Office 365',
+  gdoc: 'Google Drive',
+  pdf: 'PDF'
+);
+
+@each $name, $text in $file-types {
+  .link-file--#{$name} {
+    &:after {
+      content: '#{$text}';
+    }
+  }
+}
+
 ///
 /// lead
 ///
@@ -99,4 +129,8 @@ $text-colors: (
   font-size: $lead-font-size;
   line-height: $lead-line-height;
   margin-bottom: $lead-margin-bottom;
+
+  a {
+    @include link-border;
+  }
 }
