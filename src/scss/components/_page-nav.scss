@@ -1,5 +1,8 @@
 .page-nav {
-  // margin-bottom: 4rem;
+  margin-bottom: spacing(4);
+  @include media(md) {
+    margin-bottom: spacing(6);
+  }
 }
 
 .page-nav__title {
