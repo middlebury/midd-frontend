@@ -2,6 +2,7 @@ import MicroModal from 'micromodal';
 import lozad from 'lozad';
 
 import { $, $$, on, off, addClass, removeClass } from './utils/dom';
+import onscroll from './utils/onscroll';
 import SmoothScroll from './smooth-scroll';
 
 import { LEFT_ARROW_KEY, RIGHT_ARROW_KEY } from './constants';
@@ -10,13 +11,16 @@ class Lightbox {
   constructor(el) {
     this.el = el;
 
-    // this.nextBtn = $('[data-lightbox-next]', el);
-    // this.prevBtn = $('[data-lightbox-prev]', el);
-    // this.count = $('[data-lightbox-count]', el);
+    this.nextBtn = $('[data-lightbox-next]', el);
+    this.prevBtn = $('[data-lightbox-prev]', el);
+    this.count = $('[data-lightbox-count]', el);
     this.closeBtn = $('[data-lightbox-close]', el);
     this.items = $$('[data-lightbox-item]', el);
+    this.images = $$('[data-lightbox-item] img', el);
     this.thumbs = $$('[data-lightbox-thumb]', el);
     this.thumbsList = $('[data-lightbox-thumbs]', el);
+
+    this.center = el.offsetHeight / 2;
 
     // offset from top of screen, extra space to match design needs
     // TODO: either get this via js or change css so there's no need for it.
@@ -35,33 +39,32 @@ class Lightbox {
 
   init() {
     this.addListeners();
-    // this.updateCount(this.index);
+    this.updateCount(this.index);
 
     setTimeout(() => {
       this.closeBtn.focus();
     }, 100);
   }
 
-  // updateCount(index) {
-  //   this.count.innerHTML = `${index + 1}/${this.total}`;
-  // }
+  updateCount(index) {
+    this.count.innerHTML = `${index + 1}/${this.total}`;
+  }
 
   destroy() {
     off(this.el, 'keyup', this.handleKeyUp);
-    // off(this.nextBtn, 'click', this.next);
-    // off(this.prevBtn, 'click', this.prev);
+    off(this.nextBtn, 'click', this.next);
+    off(this.prevBtn, 'click', this.prev);
 
     this.smoothScroller.destroy();
-
-    this.items.forEach(item => {
-      this.observer.unobserve(item);
-    });
+    this.scrollRaf.destroy();
   }
 
   addListeners() {
     on(this.el, 'keyup', this.handleKeyUp);
-    // on(this.nextBtn, 'click', this.next);
-    // on(this.prevBtn, 'click', this.prev);
+    on(this.nextBtn, 'click', this.next);
+    on(this.prevBtn, 'click', this.prev);
+
+    this.scrollRaf = onscroll(this.el, this.handleScroll);
 
     this.smoothScroller = new SmoothScroll(this.thumbs, {
       container: this.el,
@@ -71,22 +74,6 @@ class Lightbox {
       }
     });
 
-    const options = {
-      // margin: '0% 0% -50% 0%',
-      // threshold: [0, 1]
-      margin: '0% 0%',
-      threshold: 1
-    };
-
-    this.observer = new IntersectionObserver(
-      this.handleObserverChange,
-      options
-    );
-
-    this.items.forEach(item => {
-      this.observer.observe(item);
-    });
-
     // init lazy loaded images
     const lazyThumbs = lozad(
       '[data-lightbox-item] img, [data-lightbox-thumb] img'
@@ -94,27 +81,35 @@ class Lightbox {
     lazyThumbs.observe();
   }
 
-  handleObserverChange = entries => {
-    // reverse() so first item becomes highlighted
-    entries.reverse().forEach(entry => {
-      const link = $(`a[href="#${entry.target.id}"]`);
-      const index = [].indexOf.call(this.thumbs, link);
+  handleScroll = () => {
+    this.images.forEach((el, i) => {
+      const rect = el.getBoundingClientRect();
 
-      if (entry.intersectionRatio === 1) {
-        this.thumbs.forEach(el => {
-          removeClass(el.closest('li'), 'active');
-        });
-
-        addClass(link.closest('li'), 'active');
-
-        link.scrollIntoView();
-
-        this.index = index;
-
-        // this.updateCount(index);
+      // if top of image is above center point
+      // and bottom of image is below center point we can
+      // assume it's the 'active' image in view
+      if (rect.top < this.center && rect.top + rect.height > this.center) {
+        this.setActive(i);
       }
     });
   };
+
+  setActive(index) {
+    const id = this.items[index].id;
+    const link = $(`a[href="#${id}"]`, this.thumbsList);
+
+    this.thumbs.forEach(el => {
+      removeClass(el.closest('li'), 'active');
+    });
+
+    addClass(link.closest('li'), 'active');
+
+    link.scrollIntoView();
+
+    this.index = index;
+
+    this.updateCount(index);
+  }
 
   handleKeyUp = event => {
     const { keyCode } = event;
@@ -135,6 +130,7 @@ class Lightbox {
   };
 
   scrollToImage(index) {
+    console.log('scroll to', this.index, index);
     if (this.animating || index === -1 || index === this.total) {
       return;
     }

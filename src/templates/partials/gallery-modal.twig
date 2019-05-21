@@ -15,7 +15,7 @@
 
   <div class="lightbox__controls">
 
-    {# <button class="lightbox__button" aria-label="Previous image" data-lightbox-prev>
+    <button class="lightbox__button" aria-label="Previous image" data-lightbox-prev>
       <svg class="icon mr-1" aria-hidden="true">
         <use xlink:href="#icon-chevron-left">
       </svg>
@@ -33,7 +33,7 @@
       <svg class="icon ml-1" aria-hidden="true">
         <use xlink:href="#icon-chevron-right">
       </svg>
-    </button> #}
+    </button>
 
     <button
       class="lightbox__button lightbox__button--close"
@@ -54,6 +54,9 @@
       <li class="lightbox__thumbs-item">
         <a href="#midd-lightbox-{{id}}-item-{{loop.index}}" class="lightbox__thumbs-button" data-lightbox-thumb>
           <img data-src="{{item.thumb}}" alt="">
+          {% if not env.production %}
+            <span class="text-white">{{loop.index}}</span>
+          {% endif %}
         </a>
       </li>
 
@@ -68,7 +71,7 @@
       <figure
         class="lightbox__figure media media--contain-caption"
         id="midd-lightbox-{{id}}-item-{{loop.index}}"
-        data-lightbox-item
+        data-lightbox-item="{{loop.index}}"
       >
         {# use encoded svg to add placeholder aspect ratio #}
         {# https://css-tricks.com/preventing-content-reflow-from-lazy-loaded-images/ #}
