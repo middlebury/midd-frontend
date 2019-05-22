@@ -68,7 +68,14 @@ class Lightbox {
 
     this.smoothScroller = new SmoothScroll(this.thumbs, {
       container: this.el,
-      offset: this.offset,
+      scrollTop: (el, scrollPos) => {
+        const rect = el.getBoundingClientRect();
+        const centerEl = rect.height / 2;
+        // vertically center the target in the middle of the lightbox
+        const top = rect.top + scrollPos + centerEl - this.center;
+
+        return top;
+      },
       complete: () => {
         this.animating = false;
       }
