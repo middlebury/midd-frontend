@@ -40,9 +40,9 @@ class Lightbox {
     this.addListeners();
     this.updateCount(this.index);
 
-    setTimeout(() => {
-      this.closeBtn.focus();
-    }, 100);
+    // Since prev btn gets focused automatically by micromodal, we want to focus the close btn instead
+    // as that's a better first action for keyboard users.
+    this.closeBtn.focus();
   }
 
   updateCount(index) {
