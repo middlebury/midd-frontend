@@ -1,5 +1,6 @@
 import MicroModal from 'micromodal';
 import lozad from 'lozad';
+import anime from 'animejs';
 
 import { $, $$, on, off, addClass, removeClass } from './utils/dom';
 import onscroll from './utils/onscroll';
@@ -22,13 +23,10 @@ class Lightbox {
 
     this.center = el.offsetHeight / 2;
 
-    // offset from top of screen, extra space to match design needs
-    // TODO: either get this via js or change css so there's no need for it.
-    this.offset = 128;
-
     this.index = 0;
     this.total = this.items.length;
-    this.animating = false;
+    this.isAnimating = false;
+    this.isAnimatingThumb = false;
 
     this.observer = null;
 
@@ -76,8 +74,15 @@ class Lightbox {
 
         return top;
       },
+
+      // set animating flag so we can skip updating active one when scrolling
+      begin: () => {
+        this.isAnimating = true;
+      },
+
+      // unset the animating flag when done
       complete: () => {
-        this.animating = false;
+        this.isAnimating = false;
       }
     });
 
@@ -101,6 +106,40 @@ class Lightbox {
     });
   };
 
+  scrollThumbIntoView(index) {
+    const thumb = this.thumbs[index];
+    const rect = thumb.getBoundingClientRect();
+    const listTop = this.thumbsList.offsetTop;
+    const listHeight = this.thumbsList.offsetHeight;
+
+    // if thumb top is more than the thumblist top
+    // and thumb bottom is less than thumblist height + listtop
+    // we can assume the thumb is in view already
+    if (
+      (rect.top >= listTop && rect.bottom <= listTop + listHeight) ||
+      this.isAnimatingThumb
+    ) {
+      return;
+    }
+
+    // Use same animation settings as smooth scroller
+    const { easing, elasticity, duration } = this.smoothScroller.config;
+
+    anime({
+      targets: this.thumbsList,
+      scrollTop: thumb.offsetTop - this.thumbsList.scrollTop,
+      easing,
+      duration,
+      elasticity,
+      begin: () => {
+        this.isAnimatingThumb = true;
+      },
+      complete: () => {
+        this.isAnimatingThumb = false;
+      }
+    });
+  }
+
   setActive(index) {
     const id = this.items[index].id;
     const link = $(`a[href="#${id}"]`, this.thumbsList);
@@ -111,7 +150,7 @@ class Lightbox {
 
     addClass(link.closest('li'), 'active');
 
-    link.scrollIntoView();
+    this.scrollThumbIntoView(index);
 
     this.index = index;
 
@@ -137,11 +176,10 @@ class Lightbox {
   };
 
   scrollToImage(index) {
-    if (this.animating || index === -1 || index === this.total) {
+    // skip if animating, trying to go back from first item, or already at end of list
+    if (this.isAnimating || index === -1 || index === this.total) {
       return;
     }
-
-    this.animating = true;
 
     const target = this.items[index];
 
