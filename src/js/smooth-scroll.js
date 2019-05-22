@@ -7,6 +7,7 @@ class SmoothScroll {
     els,
     {
       offset = 0,
+      scrollTop,
       container,
       easing = 'easeInCubic',
       duration = 300,
@@ -17,6 +18,7 @@ class SmoothScroll {
     this.elems = typeof els === 'string' ? $$(els) : els;
 
     this.offset = offset;
+    this.scrollTop = scrollTop;
 
     this.container = container;
 
@@ -66,7 +68,10 @@ class SmoothScroll {
       scrollPosition = this.container.scrollTop;
     }
 
-    const scrollTop = elementOffset + scrollPosition - this.offset;
+    const scrollTop =
+      typeof this.scrollTop === 'function'
+        ? this.scrollTop(elem, scrollPosition)
+        : elementOffset + scrollPosition - this.offset;
 
     anime({
       scrollTop,
