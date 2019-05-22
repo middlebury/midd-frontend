@@ -6,7 +6,7 @@ import { $, $$, on, off, addClass, removeClass } from './utils/dom';
 import onscroll from './utils/onscroll';
 import SmoothScroll from './smooth-scroll';
 
-import { LEFT_ARROW_KEY, RIGHT_ARROW_KEY } from './constants';
+import { LEFT_ARROW_KEY, RIGHT_ARROW_KEY, SPACE } from './constants';
 
 class Lightbox {
   constructor(el) {
@@ -21,6 +21,7 @@ class Lightbox {
     this.thumbs = $$('[data-lightbox-thumb]', el);
     this.thumbsList = $('[data-lightbox-thumbs]', el);
 
+    // capture the vertical center of the lightbox
     this.center = el.offsetHeight / 2;
 
     this.index = 0;
@@ -28,8 +29,8 @@ class Lightbox {
     this.isAnimating = false;
     this.isAnimatingThumb = false;
 
+    // initialize some properties for instances of other widgets so we can destroy them later.
     this.observer = null;
-
     this.smoothScroller = null;
 
     this.init();
@@ -65,10 +66,14 @@ class Lightbox {
     on(this.nextBtn, 'click', this.next);
     on(this.prevBtn, 'click', this.prev);
 
+    // set the onscroll listener so we can destroy it on modal close
     this.scrollRaf = onscroll(this.el, this.handleScroll);
 
     this.smoothScroller = new SmoothScroll(this.thumbs, {
+      // our scroll area is the lightbox, not default body
       container: this.el,
+
+      // instead of default scrolling to the top of the image, we want to center it
       scrollTop: (el, scrollPos) => {
         const rect = el.getBoundingClientRect();
         const centerEl = rect.height / 2;
@@ -96,6 +101,9 @@ class Lightbox {
     lazyThumbs.observe();
   }
 
+  /**
+   * sets the image that is in vertical center of view as active
+   */
   handleScroll = () => {
     // skip updating the active item if we're animating to another one via thumb/controls
     if (this.isAnimating) return;
@@ -118,6 +126,11 @@ class Lightbox {
     });
   };
 
+  /**
+   * scrolls the thumbnail in the list into view if it's not already visible
+   *
+   * @param {int} index - the index of the image to scroll to
+   */
   scrollThumbIntoView(index) {
     const thumb = this.thumbs[index];
     const rect = thumb.getBoundingClientRect();
@@ -152,6 +165,11 @@ class Lightbox {
     });
   }
 
+  /**
+   * sets the active display of the thumbnail and updates count
+   *
+   * @param {int} index - index of the image to set active
+   */
   setActive(index) {
     const id = this.items[index].id;
     const link = $(`a[href="#${id}"]`, this.thumbsList);
@@ -169,6 +187,11 @@ class Lightbox {
     this.updateCount(index);
   }
 
+  /**
+   * handle left/right arrow key presses
+   *
+   * @param {Object} event - keyup event
+   */
   handleKeyUp = event => {
     const { keyCode } = event;
 
@@ -187,6 +210,11 @@ class Lightbox {
     this.scrollToImage(this.index - 1);
   };
 
+  /**
+   * Animates to the view to the chosen image.
+   *
+   * @param {int} index - index of the image to scroll to
+   */
   scrollToImage(index) {
     // skip if animating, trying to go back from first item, or already at end of list
     if (this.isAnimating || index === -1 || index === this.total) {
@@ -207,6 +235,7 @@ MicroModal.init({
   onShow: (modal, event) => {
     event.preventDefault();
     if (modal.hasAttribute('data-lightbox')) {
+      // add lightbox instead to the modal instance so we can destroy it on close
       modal.lightbox = new Lightbox(modal);
     }
   },
