@@ -100,7 +100,13 @@ class Lightbox {
       // if top of image is above center point
       // and bottom of image is below center point we can
       // assume it's the 'active' image in view
-      if (rect.top < this.center && rect.top + rect.height > this.center) {
+
+      // also do nothing if navigating to the already active image
+      if (
+        rect.top <= this.center &&
+        rect.bottom >= this.center &&
+        this.index !== i
+      ) {
         this.setActive(i);
       }
     });
