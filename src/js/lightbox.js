@@ -137,7 +137,6 @@ class Lightbox {
   };
 
   scrollToImage(index) {
-    console.log('scroll to', this.index, index);
     if (this.animating || index === -1 || index === this.total) {
       return;
     }
