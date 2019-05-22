@@ -16,8 +16,8 @@ export default function onscroll(elem = window, cb = f => f) {
     }
   };
 
-  const handleScroll = () => {
-    lastScrollY = elem.scrollY;
+  const handleScroll = event => {
+    lastScrollY = event.target.scrollTop || window.pageYOffset;
     requestTick();
   };
 
