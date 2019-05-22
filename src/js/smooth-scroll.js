@@ -2,6 +2,9 @@ import anime from 'animejs';
 
 import { $, $$, on, off } from './utils/dom';
 
+/**
+ * applies smooth scroll effect to a container of anchor (links with onpage targets) links
+ */
 class SmoothScroll {
   constructor(
     els,
