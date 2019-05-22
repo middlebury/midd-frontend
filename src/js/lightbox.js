@@ -55,6 +55,9 @@ class Lightbox {
 
     this.smoothScroller.destroy();
     this.scrollRaf.destroy();
+
+    // reset scroll position on close since everything else resets on open
+    this.el.scrollTop = 0;
   }
 
   addListeners() {
