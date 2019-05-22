@@ -94,6 +94,9 @@ class Lightbox {
   }
 
   handleScroll = () => {
+    // skip updating the active item if we're animating to another one via thumb/controls
+    if (this.isAnimating) return;
+
     this.images.forEach((el, i) => {
       const rect = el.getBoundingClientRect();
 
