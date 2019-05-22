@@ -53,7 +53,7 @@ class SmoothScroll {
   scrollTo(elem) {
     const elementOffset = elem.getBoundingClientRect().top;
 
-    let scrollPosition = window.scrollY;
+    let scrollPosition = window.pageYOffset;
 
     /**
      * Must be set to both elements for animejs.
