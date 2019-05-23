@@ -1,6 +1,16 @@
 <div>
 <!-- do not include in production -->
 <style>
+  .debug-grid-center {
+    display: block;
+    position: fixed;
+    z-index: 9999999;
+    border-bottom: 1px dashed red;
+    height: 1px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+  }
 
   .debug-grid-overlay-label {
     position: fixed;
@@ -55,6 +65,7 @@
 <input type="checkbox" class="debug-grid-overlay-input" id="debug-grid-overlay-input">
 
 <div class="debug-grid-overlay">
+  <div class="debug-grid-center"></div>
   <div class="container">
     <div class="row">
       {% for i in 1..12 %}
