@@ -6,7 +6,7 @@ import { $, $$, on, off, addClass, removeClass } from './utils/dom';
 import onscroll from './utils/onscroll';
 import SmoothScroll from './smooth-scroll';
 
-import { LEFT_ARROW_KEY, RIGHT_ARROW_KEY, SPACE } from './constants';
+import { LEFT_ARROW_KEY, RIGHT_ARROW_KEY } from './constants';
 
 class Lightbox {
   constructor(el) {
