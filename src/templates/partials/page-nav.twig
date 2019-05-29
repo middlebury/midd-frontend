@@ -27,7 +27,7 @@
   </button>
   <div class="page-nav__content js-page-nav">
     <h2 class="page-nav__title" id="midd-page-nav-label">
-      <a href="">{{label}}</a>
+      <a href="" class="page-nav__link">{{label|default("Lorem ipsum")}}</a>
     </h2>
 
     {{ macros.list(items) }}
