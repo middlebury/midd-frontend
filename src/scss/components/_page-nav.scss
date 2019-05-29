@@ -5,6 +5,20 @@
   }
 }
 
+.page-nav__title {
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing;
+  font-family: $font-family-sans-serif;
+  font-size: typescale(2);
+  border-bottom: 4px solid $border-color;
+  padding-bottom: spacing(3);
+  padding-top: spacing(3);
+
+  @include media(lg) {
+    padding-top: 0;
+  }
+}
+
 .page-nav__button {
   padding: 1rem;
   border: 1px solid $border-color;
@@ -85,13 +99,4 @@
 .page-nav__link--active {
   color: $green-dark !important; // TODO: somehow remove need for important
   font-weight: $font-weight-semibold;
-}
-
-.page-nav__link--home {
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-weight: 600;
-  color: $brand-primary;
-  font-size: 14px;
-  border-top: 0;
 }
