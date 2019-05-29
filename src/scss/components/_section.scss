@@ -12,11 +12,15 @@
   }
 }
 
+.section__header {
+  margin-bottom: spacing(8);
+}
+
 .section__title {
   @include h2;
   margin-bottom: spacing(4);
 
-  @include media(md) {
-    margin-bottom: spacing(7);
+  @include media(lg) {
+    margin-bottom: spacing(5);
   }
 }
