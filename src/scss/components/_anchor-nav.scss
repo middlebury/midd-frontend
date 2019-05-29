@@ -9,9 +9,6 @@
 }
 
 .anchor-nav__list {
-  @include media(lg) {
-    display: flex;
-  }
 }
 
 .anchor-nav__item {
@@ -19,7 +16,9 @@
 
   @include media(lg) {
     border-top: 0;
+    display: inline-block;
     margin-right: spacing(4);
+    margin-bottom: spacing(3);
   }
 }
 
