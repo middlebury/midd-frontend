@@ -31,9 +31,10 @@ figure {
 
 hr {
   background-color: $gray-light;
-  height: 2px;
+  margin-top: spacing(5);
+  margin-bottom: spacing(5);
+  height: 1px;
   border: 0;
-  margin: 0;
 }
 
 blockquote {
