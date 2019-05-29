@@ -31,18 +31,6 @@
     </h2>
 
     {{ macros.list(items) }}
-
-    {% if callouts %}
-
-      <ul class="page-nav__list page-nav__list--callouts">
-        {% for item in callouts %}
-          <li class="page-nav__item">
-            <a href="#" class="page-nav__link">{{item.text}}</a>
-          </li>
-        {% endfor %}
-      </ul>
-
-    {% endif %}
   </div>
 </nav>
 
