@@ -13,7 +13,10 @@
     <div class="anchor-header__nav js-anchor-header-nav">
       <nav class="anchor-nav">
         <ul class="anchor-nav__list">
-          {% for item in ['How to apply', 'Types of aid', 'Education Loans', 'Payment Options', 'Helpful Links'] %}
+          {% for item in [
+            'How to apply', 'Types of aid', 'Education Loans', 'Payment Options', 'Helpful Links',
+            'How to apply', 'Types of aid', 'Education Loans', 'Payment Options', 'Helpful Links'
+          ] %}
             {% set active = loop.index == 3 %}
             <li class="anchor-nav__item{% if active %} anchor-nav__item--active{% endif %}">
               <a href="" class="anchor-nav__link{% if active %} anchor-nav__link--active{% endif %}">{{item}}</a>

@@ -101,7 +101,7 @@
     }
 
     @include media(md) {
-      flex: 0 0 50%;
+      flex: 0 0 25%;
       padding-bottom: spacing(4);
 
       &:not(:last-of-type) {
@@ -124,7 +124,7 @@
     }
 
     @include media(md) {
-      flex: 0 0 50%;
+      flex: 0 0 75%;
     }
   }
 
