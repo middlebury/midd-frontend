@@ -7,6 +7,7 @@
   aria-modal="true"
   aria-labelledby="midd-lightbox-{{id}}-label"
   data-lightbox
+  tabindex="-1"
 >
   <h2 id="midd-lightbox-{{id}}-label" class="sr-only">
     {# same title as title in gallery.twig #}
@@ -15,7 +16,7 @@
 
   <div class="lightbox__controls">
 
-    {# <button class="lightbox__button" aria-label="Previous image" data-lightbox-prev>
+    <button class="lightbox__button" aria-label="Previous image" data-lightbox-prev>
       <svg class="icon mr-1" aria-hidden="true">
         <use xlink:href="#icon-chevron-left">
       </svg>
@@ -33,7 +34,7 @@
       <svg class="icon ml-1" aria-hidden="true">
         <use xlink:href="#icon-chevron-right">
       </svg>
-    </button> #}
+    </button>
 
     <button
       class="lightbox__button lightbox__button--close"
@@ -54,6 +55,9 @@
       <li class="lightbox__thumbs-item">
         <a href="#midd-lightbox-{{id}}-item-{{loop.index}}" class="lightbox__thumbs-button" data-lightbox-thumb>
           <img data-src="{{item.thumb}}" alt="">
+          {% if not env.production %}
+            <span class="text-white">{{loop.index}}</span>
+          {% endif %}
         </a>
       </li>
 

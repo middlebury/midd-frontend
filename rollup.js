@@ -35,8 +35,8 @@ module.exports = modules => {
           resolve(),
           commonJS(),
           production && uglify(),
-          sizes(),
-          filesize()
+          production && sizes(),
+          production && filesize()
         ]
       })
         .then(bundle =>

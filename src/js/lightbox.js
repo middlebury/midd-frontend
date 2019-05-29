@@ -1,7 +1,9 @@
 import MicroModal from 'micromodal';
 import lozad from 'lozad';
+import anime from 'animejs';
 
 import { $, $$, on, off, addClass, removeClass } from './utils/dom';
+import onscroll from './utils/onscroll';
 import SmoothScroll from './smooth-scroll';
 
 import { LEFT_ARROW_KEY, RIGHT_ARROW_KEY } from './constants';
@@ -10,24 +12,25 @@ class Lightbox {
   constructor(el) {
     this.el = el;
 
-    // this.nextBtn = $('[data-lightbox-next]', el);
-    // this.prevBtn = $('[data-lightbox-prev]', el);
-    // this.count = $('[data-lightbox-count]', el);
+    this.nextBtn = $('[data-lightbox-next]', el);
+    this.prevBtn = $('[data-lightbox-prev]', el);
+    this.count = $('[data-lightbox-count]', el);
     this.closeBtn = $('[data-lightbox-close]', el);
     this.items = $$('[data-lightbox-item]', el);
+    this.images = $$('[data-lightbox-item] img', el);
     this.thumbs = $$('[data-lightbox-thumb]', el);
     this.thumbsList = $('[data-lightbox-thumbs]', el);
 
-    // offset from top of screen, extra space to match design needs
-    // TODO: either get this via js or change css so there's no need for it.
-    this.offset = 128;
+    // capture the vertical center of the lightbox
+    this.center = el.offsetHeight / 2;
 
     this.index = 0;
     this.total = this.items.length;
-    this.animating = false;
+    this.isAnimating = false;
+    this.isAnimatingThumb = false;
 
+    // initialize some properties for instances of other widgets so we can destroy them later.
     this.observer = null;
-
     this.smoothScroller = null;
 
     this.init();
@@ -36,55 +39,60 @@ class Lightbox {
   init() {
     this.addListeners();
     // this.updateCount(this.index);
+    this.setActive(this.index);
 
-    setTimeout(() => {
-      this.closeBtn.focus();
-    }, 100);
+    // Since prev btn gets focused automatically by micromodal, we want to focus the close btn instead
+    // as that's a better first action for keyboard users.
+    this.closeBtn.focus();
   }
 
-  // updateCount(index) {
-  //   this.count.innerHTML = `${index + 1}/${this.total}`;
-  // }
+  updateCount(index) {
+    this.count.innerHTML = `${index + 1}/${this.total}`;
+  }
 
   destroy() {
     off(this.el, 'keyup', this.handleKeyUp);
-    // off(this.nextBtn, 'click', this.next);
-    // off(this.prevBtn, 'click', this.prev);
+    off(this.nextBtn, 'click', this.next);
+    off(this.prevBtn, 'click', this.prev);
 
     this.smoothScroller.destroy();
+    this.scrollRaf.destroy();
 
-    this.items.forEach(item => {
-      this.observer.unobserve(item);
-    });
+    // reset scroll position on close since everything else resets on open
+    this.el.scrollTop = 0;
   }
 
   addListeners() {
     on(this.el, 'keyup', this.handleKeyUp);
-    // on(this.nextBtn, 'click', this.next);
-    // on(this.prevBtn, 'click', this.prev);
+    on(this.nextBtn, 'click', this.next);
+    on(this.prevBtn, 'click', this.prev);
+
+    // set the onscroll listener so we can destroy it on modal close
+    this.scrollRaf = onscroll(this.el, this.handleScroll);
 
     this.smoothScroller = new SmoothScroll(this.thumbs, {
+      // our scroll area is the lightbox, not default body
       container: this.el,
-      offset: this.offset,
+
+      // instead of default scrolling to the top of the image, we want to center it
+      scrollTop: (el, scrollPos) => {
+        const rect = el.getBoundingClientRect();
+        const centerEl = rect.height / 2;
+        // vertically center the target in the middle of the lightbox
+        const top = rect.top + scrollPos + centerEl - this.center;
+
+        return top;
+      },
+
+      // set animating flag so we can skip updating active one when scrolling
+      begin: () => {
+        this.isAnimating = true;
+      },
+
+      // unset the animating flag when done
       complete: () => {
-        this.animating = false;
+        this.isAnimating = false;
       }
-    });
-
-    const options = {
-      // margin: '0% 0% -50% 0%',
-      // threshold: [0, 1]
-      margin: '0% 0%',
-      threshold: 1
-    };
-
-    this.observer = new IntersectionObserver(
-      this.handleObserverChange,
-      options
-    );
-
-    this.items.forEach(item => {
-      this.observer.observe(item);
     });
 
     // init lazy loaded images
@@ -94,28 +102,97 @@ class Lightbox {
     lazyThumbs.observe();
   }
 
-  handleObserverChange = entries => {
-    // reverse() so first item becomes highlighted
-    entries.reverse().forEach(entry => {
-      const link = $(`a[href="#${entry.target.id}"]`);
-      const index = [].indexOf.call(this.thumbs, link);
+  /**
+   * sets the image that is in vertical center of view as active
+   */
+  handleScroll = () => {
+    // skip updating the active item if we're animating to another one via thumb/controls
+    if (this.isAnimating) return;
 
-      if (entry.intersectionRatio === 1) {
-        this.thumbs.forEach(el => {
-          removeClass(el.closest('li'), 'active');
-        });
+    this.images.forEach((el, i) => {
+      const rect = el.getBoundingClientRect();
 
-        addClass(link.closest('li'), 'active');
+      // if top of image is above center point
+      // and bottom of image is below center point we can
+      // assume it's the 'active' image in view
 
-        link.scrollIntoView();
-
-        this.index = index;
-
-        // this.updateCount(index);
+      // also do nothing if navigating to the already active image
+      if (
+        rect.top <= this.center &&
+        rect.bottom >= this.center &&
+        this.index !== i
+      ) {
+        this.setActive(i);
       }
     });
   };
 
+  /**
+   * scrolls the thumbnail in the list into view if it's not already visible
+   *
+   * @param {int} index - the index of the image to scroll to
+   */
+  scrollThumbIntoView(index) {
+    const thumb = this.thumbs[index];
+    const rect = thumb.getBoundingClientRect();
+    const listTop = this.thumbsList.offsetTop;
+    const listHeight = this.thumbsList.offsetHeight;
+
+    // if thumb top is more than the thumblist top
+    // and thumb bottom is less than thumblist height + listtop
+    // we can assume the thumb is in view already
+    if (
+      (rect.top >= listTop && rect.bottom <= listTop + listHeight) ||
+      this.isAnimatingThumb
+    ) {
+      return;
+    }
+
+    // Use same animation settings as smooth scroller
+    const { easing, elasticity, duration } = this.smoothScroller.config;
+
+    anime({
+      targets: this.thumbsList,
+      scrollTop: thumb.offsetTop - this.thumbsList.scrollTop,
+      easing,
+      duration,
+      elasticity,
+      begin: () => {
+        this.isAnimatingThumb = true;
+      },
+      complete: () => {
+        this.isAnimatingThumb = false;
+      }
+    });
+  }
+
+  /**
+   * sets the active display of the thumbnail and updates count
+   *
+   * @param {int} index - index of the image to set active
+   */
+  setActive(index) {
+    const id = this.items[index].id;
+    const link = $(`a[href="#${id}"]`, this.thumbsList);
+
+    this.thumbs.forEach(el => {
+      removeClass(el.closest('li'), 'active');
+    });
+
+    addClass(link.closest('li'), 'active');
+
+    this.scrollThumbIntoView(index);
+
+    this.index = index;
+
+    this.updateCount(index);
+  }
+
+  /**
+   * handle left/right arrow key presses
+   *
+   * @param {Object} event - keyup event
+   */
   handleKeyUp = event => {
     const { keyCode } = event;
 
@@ -134,12 +211,16 @@ class Lightbox {
     this.scrollToImage(this.index - 1);
   };
 
+  /**
+   * Animates to the view to the chosen image.
+   *
+   * @param {int} index - index of the image to scroll to
+   */
   scrollToImage(index) {
-    if (this.animating || index === -1 || index === this.total) {
+    // skip if animating, trying to go back from first item, or already at end of list
+    if (this.isAnimating || index === -1 || index === this.total) {
       return;
     }
-
-    this.animating = true;
 
     const target = this.items[index];
 
@@ -155,6 +236,7 @@ MicroModal.init({
   onShow: (modal, event) => {
     event.preventDefault();
     if (modal.hasAttribute('data-lightbox')) {
+      // add lightbox instead to the modal instance so we can destroy it on close
       modal.lightbox = new Lightbox(modal);
     }
   },
