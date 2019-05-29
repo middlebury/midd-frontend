@@ -11,17 +11,18 @@
 }
 
 .box-menu__list {
-  padding-top: spacing(4);
-  padding-left: spacing(4);
-  padding-right: spacing(4);
+  padding: spacing(4);
 
   @include media(md) {
     padding-top: spacing(3);
+    padding-bottom: 0;
   }
 }
 
 .box-menu__item {
-  margin-bottom: spacing(3);
+  &:not(:last-child) {
+    margin-bottom: spacing(3);
+  }
 
   @include media(md) {
     display: inline-block;
