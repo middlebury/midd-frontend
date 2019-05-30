@@ -30,6 +30,14 @@
       background: $navy;
       color: $white;
       margin-left: spacing(1);
+      transition: 0.2s;
+    }
+
+    &:hover,
+    &:focus {
+      &:after {
+        transform: translateY(-4px);
+      }
     }
   }
 
