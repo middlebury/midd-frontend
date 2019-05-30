@@ -1,4 +1,4 @@
-{% extends "midd-layout.twig" %}
+{% extends "anchor-layout.twig" %}
 
 {% set page_header = {
   title: 'Top level without image',
@@ -17,7 +17,6 @@
       <div class="col-md-10 offset-md-1">
         {# set overlap if page has featured image #}
         {% include 'partials/box-menu.twig' with {
-          office: true,
           items: top_level_nav_example
         } %}
       </div>

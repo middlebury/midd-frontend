@@ -1,9 +1,19 @@
+{% set is_front = true %}
 <div class="anchor-header">
   <div class="container">
     <div class="anchor-header__primary">
-      <p class="anchor-header__title">
+      {# TODO: make this an h1 on frontpage #}
+      {% if is_front %}
+        <h1 class="anchor-header__title">
+      {% else %}
+        <p class="anchor-header__title">
+      {% endif %}
         <a href="" class="anchor-header__link">Student Financial Services</a>
-      </p>
+      {% if is_front %}
+        </h1>
+      {% else %}
+        </p>
+      {% endif %}
       <button class="anchor-header__button" data-toggle-target=".js-anchor-header-nav">
         <svg class="icon anchor-header__icon">
           <use xlink:href="#icon-chevron-down">
@@ -13,7 +23,10 @@
     <div class="anchor-header__nav js-anchor-header-nav">
       <nav class="anchor-nav">
         <ul class="anchor-nav__list">
-          {% for item in ['How to apply', 'Types of aid', 'Education Loans', 'Payment Options', 'Helpful Links'] %}
+          {% for item in [
+            'How to apply', 'Types of aid', 'Education Loans', 'Payment Options', 'Helpful Links',
+            'How to apply', 'Types of aid', 'Education Loans', 'Payment Options', 'Helpful Links'
+          ] %}
             {% set active = loop.index == 3 %}
             <li class="anchor-nav__item{% if active %} anchor-nav__item--active{% endif %}">
               <a href="" class="anchor-nav__link{% if active %} anchor-nav__link--active{% endif %}">{{item}}</a>

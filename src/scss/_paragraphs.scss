@@ -109,7 +109,7 @@
   &.image--left {
     margin-top: 0;
     margin-bottom: spacing(4);
-    margin-left: spacing(4);
+    margin-right: spacing(4);
   }
 
   &.image--right {
@@ -198,5 +198,16 @@
 }
 
 .paragraph--gallery {
+  @include paragraph-space-sm;
+}
+
+.paragraph--button {
+  margin-bottom: spacing(7);
+  @include media(md) {
+    margin-bottom: spacing(8);
+  }
+}
+
+.paragraph--search {
   @include paragraph-space-sm;
 }

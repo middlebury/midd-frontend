@@ -7,7 +7,7 @@
   border-bottom: 1px solid transparent;
   font-size: typescale(2);
   font-weight: $font-weight-medium;
-  letter-spacing: 1px;
+  letter-spacing: $letter-spacing;
   text-transform: uppercase;
   transition: border-color 0.2s;
 

@@ -13,7 +13,7 @@
 
     {% block nav %}
 
-      <div class="form-group js-offices-form">
+      <div class="form-group js-offices-form" data-sticky data-sticky-offset="32">
         <form>
           <label for="midd-office-search">Find on page</label>
           <div class="input-group">
@@ -35,7 +35,7 @@
     {% endblock %}
     {% block toc %}
 
-      <div class="js-sticky" data-digest-nav></div>
+      <div data-sticky data-digest-nav></div>
 
     {% endblock %}
     {% block content %}

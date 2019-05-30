@@ -202,6 +202,8 @@ $body-color: $black !default;
 $border-width: 1px !default;
 $border-color: $gray-light !default;
 
+$letter-spacing: 0.1em;
+
 ////
 /// Element styles
 ////
@@ -410,6 +412,7 @@ $z-index-themed-panel-content: 3;
 $z-index-themed-panel-sidebar: 4;
 
 $z-index-video-button: 1;
+$z-index-gallery-button: 1;
 
 $z-index-page-header-caption: 3;
 

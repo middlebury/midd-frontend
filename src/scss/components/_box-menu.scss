@@ -11,21 +11,22 @@
 }
 
 .box-menu__list {
-  padding-top: spacing(4);
-  padding-left: spacing(4);
-  padding-right: spacing(4);
+  padding: spacing(4);
 
   @include media(md) {
     padding-top: spacing(3);
+    padding-bottom: 0;
   }
 }
 
 .box-menu__item {
-  margin-bottom: spacing(3);
+  &:not(:last-child) {
+    margin-bottom: spacing(3);
+  }
 
   @include media(md) {
     display: inline-block;
-    margin-right: spacing(5);
+    margin-right: spacing(4);
     margin-bottom: spacing(3);
   }
 }
@@ -38,15 +39,6 @@
   &:focus {
     color: $sky;
     border-color: $sky;
-  }
-}
-
-.box-menu--midd {
-  background: $gray-lighter;
-  border-color: $navy;
-
-  .box-menu__list {
-    border-color: $gray-light;
   }
 }
 

@@ -17,7 +17,7 @@ import { $, $$, on, hide, show } from './utils/dom';
   const region = $('.js-offices-region', elem);
 
   const alertTemplate = 'No results found for &ldquo;{term}&rdquo;';
-  const alert = h('div.alert.alert--info.js-offices-alert');
+  const alert = h('div.alert.alert--status.js-offices-alert');
 
   function setNoResultsValue(value) {
     const msg = alertTemplate.replace('{term}', value);

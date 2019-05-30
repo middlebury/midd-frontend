@@ -2,11 +2,15 @@ import anime from 'animejs';
 
 import { $, $$, on, off } from './utils/dom';
 
+/**
+ * applies smooth scroll effect to a container of anchor (links with onpage targets) links
+ */
 class SmoothScroll {
   constructor(
     els,
     {
       offset = 0,
+      scrollTop,
       container,
       easing = 'easeInCubic',
       duration = 300,
@@ -17,6 +21,7 @@ class SmoothScroll {
     this.elems = typeof els === 'string' ? $$(els) : els;
 
     this.offset = offset;
+    this.scrollTop = scrollTop;
 
     this.container = container;
 
@@ -53,7 +58,7 @@ class SmoothScroll {
   scrollTo(elem) {
     const elementOffset = elem.getBoundingClientRect().top;
 
-    let scrollPosition = window.scrollY;
+    let scrollPosition = window.pageYOffset;
 
     /**
      * Must be set to both elements for animejs.
@@ -61,12 +66,21 @@ class SmoothScroll {
      */
     let targets = [document.documentElement, document.body];
 
+    let offset = 0;
+
+    if (typeof this.offset === 'function') {
+      offset = this.offset(elem);
+    }
+
     if (this.container) {
       targets = this.container;
       scrollPosition = this.container.scrollTop;
     }
 
-    const scrollTop = elementOffset + scrollPosition - this.offset;
+    const scrollTop =
+      typeof this.scrollTop === 'function'
+        ? this.scrollTop(elem, scrollPosition)
+        : elementOffset + scrollPosition - offset;
 
     anime({
       scrollTop,

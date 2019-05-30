@@ -1,0 +1,41 @@
+<div class="media-object mb-4 mb-sm-5 md-md-7">
+  <div class="media-object__image">
+    <a href="#">
+      {% include 'partials/img.twig' with {
+        name: 'profile_teaser'
+      } %}
+    </a>
+  </div>
+  <div class="media-object__body">
+    <h3><a href="#">Beryl Levinger</a></h3>
+    <p class="f2 mb-3">Program Chair, Master of Public Administration and International Policy and Development</p>
+    <p class="f3 mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quis, repellat iusto cum non molestiae voluptatem adipisci accusamus rerum vero harum consectetur esse obcaecati nesciunt excepturi nihil magnam, assumenda sit?</p>
+
+    <dl class="f2">
+      {% for item in [
+        {key: 'Email', value: 'blevinger@middlebury.edu'},
+        {key: 'Tel', value: '555-555-5555'},
+        {key: 'Office', value: 'McCone Building M212'},
+        {key: 'Office Hours', value: 'Tuesdays 3-4pm, Thursdays 11am-12pm'}
+      ] %}
+        <div class="mb-2">
+          <dt class="d-block d-sm-inline text-bold">{{item.key}}:</dt>
+
+          <dd class="d-inline">
+            {% if item.key == 'Email' %}
+              <a href="mailto:" class="link-underline">{{item.value}}</a>
+            {% elseif item.key == 'Tel' %}
+              <a href="tel:">{{item.value}}</a>
+            {% else %}
+              {{item.value}}
+            {% endif %}
+          </dd>
+        </div>
+
+      {% endfor %}
+    </dl>
+    {% include 'partials/social-links.twig' with {
+      items: social_links
+    } %}
+  </div>
+</div>

@@ -7,7 +7,9 @@
 
 // vendor
 @import '../../node_modules/normalize.css/normalize';
-@import '../../node_modules/swiper/dist/css/swiper';
+@import '../../node_modules/swiper/src/swiper';
+@import '../../node_modules/swiper/src/components/a11y/a11y';
+@import '../../node_modules/swiper/src/components/navigation/navigation';
 
 // base
 @import 'global';
@@ -17,6 +19,7 @@
 @import 'components/accordion';
 @import 'components/alert';
 @import 'components/anchor-header';
+@import 'components/anchor-nav';
 @import 'components/announcement';
 @import 'components/audio';
 @import 'components/badge';
@@ -70,7 +73,6 @@
 @import 'components/school-search';
 @import 'components/section';
 @import 'components/slider';
-@import 'components/slideshow';
 @import 'components/spotlight';
 @import 'components/stat-panel';
 @import 'components/table';
@@ -102,4 +104,17 @@
 
 .main {
   min-height: 85vh;
+}
+
+.count {
+  display: block;
+  padding-top: spacing(2);
+  padding-bottom: spacing(2);
+  border-top: 4px solid $navy;
+  border-bottom: 1px solid $border-color;
+  font-size: typescale(3);
+  margin-bottom: spacing(4);
+  @include media(md) {
+    margin-bottom: spacing(7);
+  }
 }

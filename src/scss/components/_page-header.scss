@@ -7,6 +7,7 @@
   position: relative;
   overflow: hidden;
   min-height: 300px;
+  margin-bottom: spacing(7);
 
   img {
     @include absolute-fill;
@@ -50,6 +51,10 @@
     margin-left: 0;
     margin-right: 0;
   }
+}
+
+.page-header--has-menu {
+  margin-bottom: 0;
 }
 
 .page-header__content {

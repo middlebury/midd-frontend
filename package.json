@@ -79,7 +79,7 @@
     "lodash.debounce": "^4.0.8",
     "lozad": "^1.9.0",
     "mdn-polyfills": "^5.16.0",
-    "micromodal": "^0.3.2",
+    "micromodal": "git+https://git@github.com/pomartel/micromodal.git",
     "middlebury-design-system": "^0.12.0",
     "normalize.css": "^8.0.0",
     "object-fit-images": "^3.2.4",
@@ -88,12 +88,12 @@
     "polyfill-nodelist-foreach": "^1.0.1",
     "preact": "^8.3.1",
     "stickybits": "^3.5.6",
-    "swiper": "^4.4.1"
+    "swiper": "^4.5.0"
   },
   "bundlesize": [
     {
       "path": "./dist/css/*.css",
-      "maxSize": "20 kB"
+      "maxSize": "24 kB"
     },
     {
       "path": "./dist/js/bundle.js",

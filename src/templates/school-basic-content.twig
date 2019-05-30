@@ -13,6 +13,7 @@
     {% block nav %}
 
       {% include 'partials/page-nav.twig' with {
+        label: 'Student Financial Services',
         items: [
           { text: 'Curriculum', href: '#' },
           {
@@ -24,6 +25,7 @@
               {
                 text: 'Faculty sub page 3',
                 href: '#',
+                active: true
               },
               { text: 'Faculty sub page 4', href: '#' },
             ]
