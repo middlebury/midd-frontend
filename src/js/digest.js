@@ -5,6 +5,8 @@ import h from 'h';
 import { $, $$ } from './utils/dom';
 import MenuSpy from './menu-spy';
 
+import { isLargeUp } from './utils/media';
+
 class Digest {
   constructor(elem) {
     this.elem = elem;
@@ -42,8 +44,11 @@ class Digest {
 
     new MenuSpy(nav);
 
-    // TODO: consider using animejs instead
-    new SmoothScroll('.digest__link');
+    new SmoothScroll('.digest__link', {
+      // TODO: don't tie the js-headroom to this widget as the element.
+      // we should allow for a custom selector
+      offset: () => (isLargeUp() ? $('.js-headroom').offsetHeight : 0)
+    });
 
     if (location.hash) {
       const el = $(location.hash);
