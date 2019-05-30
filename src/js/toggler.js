@@ -1,5 +1,19 @@
 const SPACE_BAR = 32;
 
+/**
+ * Multi-purpose toggler utility that adds has-toggler class when js is active
+ * and is-toggled when the data-toggle-target element is clicked.
+ *
+ * Also supports data-toggle-group="<unique-name>" for toggling all elements of that group at the same time
+ * or data-toggle-linked="<unique-name>" so you can have multiple triggers for the same element.
+ *
+ * Can also have `data-toggle-focus="<selector>" for an element to focus after toggling on.
+ * Used for focusing an input field after opening a dropdown e.g. header search.
+ *
+ * Supports spacebar and enter key presses on the data-toggle-target element for a11y and
+ * toggles aria-expanded=true|false attribute appropriately.
+ *
+ */
 class Toggler {
   constructor(elem) {
     // this.isToggled = false;
@@ -54,6 +68,8 @@ class Toggler {
     }
   };
 
+  // use query selector each time we need the target otherwise its classes are cached
+  // if we stored it in the constructor
   getTarget(elem) {
     const target = elem.getAttribute('data-toggle-target');
     return document.querySelector(target);
@@ -64,6 +80,7 @@ class Toggler {
     this.toggle();
   }
 
+  // close all toggle targets in the same group
   closeGroup() {
     const items = document.querySelectorAll(this.group);
     if (items) {
@@ -74,6 +91,7 @@ class Toggler {
     }
   }
 
+  // find all linked triggers and toggle their target
   toggleLinked() {
     const items = document.querySelectorAll(this.linked);
     if (items) {
@@ -119,6 +137,7 @@ class Toggler {
     }
   }
 
+  // if the element has the active toggle class we can assume it's active
   isToggled(elem) {
     return elem.classList.contains(this.activeClass);
   }

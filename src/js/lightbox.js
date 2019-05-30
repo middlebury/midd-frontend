@@ -8,6 +8,33 @@ import SmoothScroll from './smooth-scroll';
 
 import { LEFT_ARROW_KEY, RIGHT_ARROW_KEY } from './constants';
 
+/**
+ * Creates a lightbox gallery with prev/next buttons, a list of images and thumbnails,
+ * and a pagination count (1/10) of the active image in view.
+ *
+ *
+ * Example:
+ *
+ * <div data-lightbox>
+ *
+ *   <button data-lightbox-next>next</button>
+ *   <button data-lightbox-prev>prev</button>
+ *
+ *   <div data-lightbox-count>(the pagination will render here)</div>
+ *
+ *   <ol data-lightbox-thumbs>
+ *     <li><a href="#image-1" data-lightbox-thumb><img src="" alt=""></a></li>
+ *   </ol>
+ *
+ *   <!-- each item must have an id that corresponds with the anchor link in the thumbs -->
+ *
+ *   <figure data-lightbox-item id="image-1">
+ *     <!-- must contain an image -->
+ *     <img src="" alt="">
+ *   </figure>
+ *
+ * </div>
+ */
 class Lightbox {
   constructor(el) {
     this.el = el;
@@ -96,6 +123,7 @@ class Lightbox {
     });
 
     // init lazy loaded images
+
     const lazyThumbs = lozad(
       '[data-lightbox-item] img, [data-lightbox-thumb] img'
     );
