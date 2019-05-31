@@ -19,7 +19,7 @@
 
   <h2 class="{{featured ? 'h2' : 'h3'}} mb-1" id="midd-story-label-{{id}}">
     <a href="#">
-      {% if random(1) %}
+      {% if env.test or random(1) %}
         Longer headline starting here lorem ipsum dolor sit amet consectetur adipisicing elit
       {% else %}
         Shorter headline a few words
@@ -33,7 +33,7 @@
     {% endfor %}
   </p>
   <p class="f3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum rem dolor harum consequuntur laudantium commodi accusantium debitis quisquam eligendi deleniti itaque saepe voluptatibus soluta necessitatibus, voluptas minus possimus? Itaque, sed.</p>
-  {% if random(1) %}
+  {% if env.test or random(1) %}
     <span class="badge mt-2">Video</span>
   {% endif %}
 </article>
