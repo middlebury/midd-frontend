@@ -31,6 +31,7 @@ const rollup = require('./rollup');
 dotenv.config();
 
 const PROD = process.env.NODE_ENV === 'production';
+const TEST = process.env.CI;
 
 const THEME_DIR = process.env.THEME_DIR || args.themeDir || '';
 
@@ -168,6 +169,7 @@ const html = () =>
 
         return Object.assign({}, ymlData, imageStyles, {
           env: {
+            test: TEST,
             production: PROD
           }
         });
