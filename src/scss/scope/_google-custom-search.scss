@@ -191,6 +191,7 @@
     font-size: 14px;
     padding: 0;
     margin-bottom: 1rem;
+    color: $navy;
   }
 
   /* search result item image and snippet */
@@ -269,6 +270,12 @@
   }
 
   /* branded parts */
+
+  .gcsc-more-maybe-branding-root {
+    a {
+      color: $navy;
+    }
+  }
 
   // search for <term> on google link
   .gcsc-find-more-on-google {
