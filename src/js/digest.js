@@ -37,8 +37,15 @@ class Digest {
     });
 
     const list = h('ol.digest__list', null, items);
-    const title = h('h2.digest__title', null, 'On This Page');
-    const nav = h('nav.digest', null, title, list);
+    const title = h('h2.digest__title#midd-digest-label', null, 'On This Page');
+    const nav = h(
+      'nav.digest',
+      {
+        'aria-labelledby': 'midd-digest-label'
+      },
+      title,
+      list
+    );
 
     this.elem.appendChild(nav);
 
