@@ -37,7 +37,7 @@ const THEME_DIR = process.env.THEME_DIR || args.themeDir || '';
 
 const paths = {
   html: {
-    src: './src/templates/*.twig',
+    src: ['./src/templates/*.twig', '!./src/templates/*layout*.twig'],
     dest: './dist'
   },
   styles: {
