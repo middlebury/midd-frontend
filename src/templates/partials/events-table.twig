@@ -19,7 +19,7 @@
         <td>
           McCone Irvine Auditorium
           <br>
-          {% if random(1) %}
+          {% if env.test or random(1) %}
           <small class="f2 text-gray">Open to the Public</small>
           {% endif %}
         </td>
