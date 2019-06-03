@@ -1,0 +1,27 @@
+{% extends "anchor-layout.twig" %}
+
+{% set is_front = true %}
+
+{% block layout_header %}
+  {% include 'partials/midd-header.twig' %}
+  {% include 'partials/anchor-header.twig' %}
+  {% include 'partials/office-hours.twig' %}
+{% endblock %}
+
+{% block page %}
+
+  <div class="container">
+    <div class="row">
+      <div class="paragraphs paragraphs--wide">
+
+        {% include 'paragraphs/lib-search.twig' %}
+
+        {% include 'paragraphs/text-short.twig' %}
+
+        {% include 'paragraphs/themed-panel.twig' %}
+
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
