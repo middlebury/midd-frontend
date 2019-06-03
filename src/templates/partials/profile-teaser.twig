@@ -25,7 +25,7 @@
             {% if item.key == 'Email' %}
               <a href="mailto:" class="link-underline">{{item.value}}</a>
             {% elseif item.key == 'Tel' %}
-              <a href="tel:">{{item.value}}</a>
+              <a href="tel:" class="link-underline">{{item.value}}</a>
             {% else %}
               {{item.value}}
             {% endif %}
