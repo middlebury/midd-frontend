@@ -1,0 +1,11 @@
+<div class="tabs" data-tabs>
+  <ul class="tabs__list" data-tabs-list>
+    {% for tab in tablist %}
+      <li class="tabs__item" data-tabs-item>
+        <a href="#midd-{{tab.id}}-tabpanel" class="tabs__button" data-tabs-tab>{{tab.label}}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  {% block tabpanels %}{% endblock %}
+</div>
+

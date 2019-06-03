@@ -1,0 +1,41 @@
+.tabs {
+}
+
+.tabs__list {
+  border-bottom: 4px solid $black;
+  margin-bottom: spacing(3);
+  @include media(md) {
+    display: flex;
+  }
+}
+
+.tabs__item {
+  @include media(md) {
+    &:not(:last-child) {
+      margin-right: spacing(4);
+    }
+  }
+}
+
+.tabs__button {
+  display: inline-block;
+  padding-top: spacing(1);
+  padding-bottom: spacing(1);
+  border-top: 1px solid transparent;
+  opacity: 0.8;
+  transition: 0.2s;
+  outline: 0;
+
+  &:hover {
+    text-decoration: none;
+    border-top-color: $border-color;
+    opacity: 1;
+  }
+
+  &[aria-selected='true'] {
+    border-top-color: black;
+  }
+}
+
+.tabs__panel {
+}
