@@ -1,8 +1,8 @@
-<div class="tabs" data-tabs>
+<div class="tabs {{light ? 'tabs--light' : ''}}" data-tabs>
   <ul class="tabs__list" data-tabs-list>
     {% for tab in tablist %}
       <li class="tabs__item" data-tabs-item>
-        <a href="#midd-{{tab.id}}-tabpanel" class="tabs__button" data-tabs-tab>{{tab.label}}</a>
+        <a href="#{{tab.id}}" class="tabs__button" data-tabs-tab>{{tab.label}}</a>
       </li>
     {% endfor %}
   </ul>

@@ -2,19 +2,23 @@
   <div class="container px-0">
     <div class="lib-search">
 
-      <figure>
-        <img src="" alt="">
-      </figure>
+      <div class="lib-search__cover">
+        <figure class="lib-search__back">
+
+          {% include 'partials/img.twig' with {
+            name: 'top_level'
+          } %}
+
+        </figure>
+      </div>
 
       <div class="lib-search__content">
-
-        <div class="row">
-          <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-
-            <h2>Search</h2>
-
-            {% include 'partials/lib-search-tabs.twig' %}
-
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+              <h2 class="lib-search__title">Search</h2>
+              {% include 'partials/lib-search-tabs.twig' %}
+            </div>
           </div>
         </div>
       </div>
