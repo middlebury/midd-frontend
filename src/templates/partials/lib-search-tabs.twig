@@ -22,20 +22,21 @@
             <label for="lib-summon-search">Search Everything</label>
             <div class="input-group">
               <input class="form-control" id="lib-summon-search" size="40" name="s.q" type="text" placeholder="Enter a keyword...">
-              <button type="submit" class="button button--primary" aria-label="Search">
-                <svg class="icon">
-                  <use xlink:href="#icon-search">
-                </svg>
+              <button type="submit" class="button button--primary">
+                Search
               </button>
             </div>
+
+            <ul class="d-flex f2 mt-2">
+              <li class="mr-4">
+                <a href="http://middlebury.summon.serialssolutions.com/advanced" class="link-underline">Advanced Search</a>
+              </li>
+              <li>
+                <a href="http://mediawiki.middlebury.edu/wiki/LIS/What%27s_Summon%3F" class="link-underline">What's Summon?</a>
+              </li>
+            </ul>
           </div>
         </form>
-
-        <a href="http://middlebury.summon.serialssolutions.com/advanced" class="link-underline">Advanced Search</a>
-
-        &middot;
-
-        <a href="http://mediawiki.middlebury.edu/wiki/LIS/What%27s_Summon%3F" title="Link to Middlebury-specific FAQs about Summon." class="link-underline">What's Summon?</a>
 
       {% endblock %}
     {% endembed %}
@@ -52,75 +53,87 @@
           <div class="row">
             <div class="col-md-4">
 
-              <label for="lib-catalog-searchtype">Search By</label>
-              <select name="searchtype" class="form-control" id="lib-catalog-searchtype">
-                <option value="Y">Keyword</option>
-                <option value="t">Title</option>
-                <option value="a">Author</option>
-                <option value="d">Subject</option>
-                <option value="j">Genre</option>
-                <option value="c">LC Call Number</option>
-                <option value="h">Local Call Number</option>
-                <option value="g">Gov Docs Number</option>
-                <option value="i">ISBN/ISSN</option>
-              </select>
+              <div class="form-group">
+                <label for="lib-catalog-searchtype">Search By</label>
+                <select name="searchtype" class="form-control" id="lib-catalog-searchtype">
+                  <option value="Y">Keyword</option>
+                  <option value="t">Title</option>
+                  <option value="a">Author</option>
+                  <option value="d">Subject</option>
+                  <option value="j">Genre</option>
+                  <option value="c">LC Call Number</option>
+                  <option value="h">Local Call Number</option>
+                  <option value="g">Gov Docs Number</option>
+                  <option value="i">ISBN/ISSN</option>
+                </select>
+              </div>
 
             </div>
             <div class="col-md-8">
-              <label for="lib-catalog-search">Search MIDCAT</label>
-              <div class="input-group">
-                <input id="lib-catalog-search" class="form-control" name="searcharg" size="50" type="text">
-                <button type="submit" class="button button--primary" aria-label="Search">
-                  <svg class="icon">
-                    <use xlink:href="#icon-search">
-                  </svg>
-                </button>
+              <div class="form-group">
+                <label for="lib-catalog-search">Search MIDCAT</label>
+                <div class="input-group">
+                  <input id="lib-catalog-search" class="form-control" name="searcharg" size="50" type="text" placeholder="Search">
+                  <button type="submit" class="button button--primary">
+                    Search
+                  </button>
+                </div>
               </div>
-
             </div>
           </div>
         </form>
 
-        <div class="typography">
+        <div class="row mb-5">
+          <div class="col">
+            <h3 class="h3 f2 mb-3">MIDCAT</h3>
 
-          <div class="row">
-            <div class="col-md-6">
-              <h3>MIDCAT</h3>
-
-              <p>
-                <a href="http://mbury.iii.com/search~S2" target="_blank" title="Link to Middlebury's library catalog.">MIDCAT</a><br>
+            <dl class="contains-links f2">
+              <dt>
+                <a href="http://mbury.iii.com/search~S2">MIDCAT</a>
+              </dt>
+              <dd class="mb-2">
                 Find books, ebooks, DVDs, and more.
-              </p>
-
-              <p>
-                <a href="http://mbury.iii.com/search/X" target="_blank">Advanced Search</a><br>
+              </dd>
+              <dt>
+                <a href="http://mbury.iii.com/search/X">Advanced Search</a>
+              </dt>
+              <dd class="mb-2">
                 Customize your search.
-              </p>
-
-              <p>
-                <a href="http://mbury.iii.com/search/j?SEARCH=equipment&amp;searchscope=2" target="_blank">Equipment List</a><br>
+              </dd>
+              <dt>
+                <a href="http://mbury.iii.com/search/j?SEARCH=equipment&searchscope=2">Equipment List</a>
+              </dt>
+              <dd class="mb-2">
                 See available cameras, computers, and more.
-              </p>
-
-              <p>
-                <a href="http://mbury.iii.com/patroninfo" target="_blank">My MIDCAT</a><br>
+              </dd>
+              <dt>
+                <a href="http://mbury.iii.com/patroninfo">My MIDCAT</a><br>
+              </dt>
+              <dd class="mb-2">
                 Renew your books.
-              </p>
+              </dd>
+            </dl>
 
-            </div>
-            <div class="col-md-6">
-              <h3>Beyond Midd</h3>
-              <p><a href="http://go.middlebury.edu/worldcat" target="_blank" title="Link to WorldCat.">WorldCat Catalog</a><br>
-                Find items in libraries world-wide.
-              </p>
-
-              <p><a href="http://ill.middlebury.edu/illiad/mdy/logon.html" target="_blank">ILL</a><br>
-                Manage your interlibrary loan requests online.
-              </p>
-
-            </div>
           </div>
+          <div class="col">
+            <h3 class="h3 f2 mb-3">Beyond Midd</h3>
 
+            <dl class="contains-links f2">
+              <dt>
+                <a href="http://go.middlebury.edu/worldcat">WorldCat Catalog</a>
+              </dt>
+              <dd class="mb-2">
+                Find items in libraries world-wide.
+              </dd>
+              <dt>
+                <a href="http://ill.middlebury.edu/illiad/mdy/logon.html">ILL</a>
+              </dt>
+              <dd>
+                Manage your interlibrary loan requests online.
+              </dd>
+            </dl>
+
+          </div>
         </div>
       {% endblock %}
     {% endembed %}
@@ -194,7 +207,7 @@
                 <option value="http://middlebury.libguides.com/theatre">Theatre</option>
                 <option value="https://middlebury.libguides.com/vermont-studies">Vermont Studies</option>
               </select>
-              <input value="Go" type="submit" class="button button--primary">
+              <input value="Go" type="submit" class="button button--primary" data-select-url="#lib-guides-guide-subject">
             </div>
           </div>
         </form>
@@ -226,7 +239,7 @@
                 <option value="http://middlebury.libguides.com/video">Video, Image, and Sound Effects</option>
                 <option value="http://go.middlebury.edu/zoteromidd">Zotero @ Middlebury</option>
               </select>
-              <input value="Go" type="submit" class="button button--primary">
+              <input value="Go" type="submit" class="button button--primary" data-select-url="#lib-guides-guide-howto">
             </div>
           </div>
         </form>
@@ -244,14 +257,14 @@
                 <option value="https://middlebury.libguides.com/wrpr0202">WRPR 0202 Writing to Heal</option>
                 <option value="https://middlebury.libguides.com/wrpr0206guide">WRPR/LNGT 0206 Narratives in the News Media</option>
               </select>
-              <input value="Go" type="submit" class="button button--primary">
+              <input value="Go" type="submit" class="button button--primary" data-select-url="#lib-guides-guide-course">
             </div>
           </div>
         </form>
 
       {% endblock %}
     {% endembed %}
-    {% embed 'partials/tab.twig' %}
+    {% embed 'partials/tab.twig' with { id: 'midd-lib-journals' } %}
       {% block tabcontent %}
 
         <p class="mb-5 f4">Find print and electronic journals, magazines, and newspapers.</p>
@@ -262,7 +275,7 @@
           <input name="L" type="hidden" value="XU8KT9SN3C">
 
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6 col-lg-5">
               <div class="form-group">
 
                 <label for="lib-journals-title-begins">Find journals by title or ISSN</label>
@@ -275,7 +288,7 @@
               </div>
             </div>
 
-            <div class="col-md-8">
+            <div class="col-md-6 col-lg-7">
               <div class="form-group">
                 <label for="SS_CFocusTag">Find a Journal</label>
                 <div class="input-group">
@@ -296,7 +309,7 @@
             </li>
             {% for i in 1..26 %}
               <li class="mr-3">
-                {% set letter = range('A','Z')[loop.index] %}
+                {% set letter = range('A','Z')[loop.index - 1] %}
                 <a href="http://XU8KT9SN3C.search.serialssolutions.com/?V=1.0&L=XU8KT9SN3C&N=100&S=T_AZ&C={{letter}}" class="link-underline">
                   {{letter}}
                 </a>
@@ -310,26 +323,28 @@
           <input name="L" type="hidden" value="XU8KT9SN3C">
           <input name="S" type="hidden" value="SC">
 
-          <label for="lib-journals-subject">Browse journals by subject</label>
-          <div class="input-group">
-            <select name="C" id="lib-journals-subject" class="form-control">
-              <option>Select a subject category</option>
-              <option value="01">Art, Architecture &amp; Applied Arts</option>
-              <option value="BU">Business &amp; Economics</option>
-              <option value="11">Earth &amp; Environmental Sciences</option>
-              <option value="TE">Engineering &amp; Applied Sciences</option>
-              <option value="GI">General</option>
-              <option value="HE">Health &amp; Biological Sciences</option>
-              <option value="06">History &amp; Archaeology</option>
-              <option value="07">Journalism &amp; Communications</option>
-              <option value="08">Languages &amp; Literatures</option>
-              <option value="GO">Law, Politics &amp; Government</option>
-              <option value="10">Music, Dance, Drama &amp; Film</option>
-              <option value="RE">Philosophy &amp; Religion</option>
-              <option value="LS">Physical Sciences &amp; Mathematics</option>
-              <option value="SO">Social Sciences</option>
-            </select>
-            <input type="submit" value="Browse" class="button button--primary">
+          <div class="form-group">
+            <label for="lib-journals-subject">Browse journals by subject</label>
+            <div class="input-group">
+              <select name="C" id="lib-journals-subject" class="form-control">
+                <option>Select a subject category</option>
+                <option value="01">Art, Architecture &amp; Applied Arts</option>
+                <option value="BU">Business &amp; Economics</option>
+                <option value="11">Earth &amp; Environmental Sciences</option>
+                <option value="TE">Engineering &amp; Applied Sciences</option>
+                <option value="GI">General</option>
+                <option value="HE">Health &amp; Biological Sciences</option>
+                <option value="06">History &amp; Archaeology</option>
+                <option value="07">Journalism &amp; Communications</option>
+                <option value="08">Languages &amp; Literatures</option>
+                <option value="GO">Law, Politics &amp; Government</option>
+                <option value="10">Music, Dance, Drama &amp; Film</option>
+                <option value="RE">Philosophy &amp; Religion</option>
+                <option value="LS">Physical Sciences &amp; Mathematics</option>
+                <option value="SO">Social Sciences</option>
+              </select>
+              <input type="submit" value="Browse" class="button button--primary">
+            </div>
           </div>
         </form>
       {% endblock %}
@@ -341,9 +356,9 @@
           <h3 class="label">Browse database by title</h3>
 
           <ul class="d-flex flex-wrap">
-            {% for i in 1..26 %}
+            {% for i in 0..26 %}
               <li class="mr-3">
-                {% set letter = range('A','Z')[loop.index] %}
+                {% set letter = range('A','Z')[loop.index - 1] %}
                 <a href="https://middlebury.libguides.com/az.php?a={{letter}}" class="link-underline">
                   {{letter}}
                 </a>
@@ -352,54 +367,162 @@
           </ul>
         </div>
 
-        <a href="http://middlebury.libguides.com" class="link-underline">Find databases by subject in our research guides</a>
+        <p class="mb-5">
+          <a href="http://middlebury.libguides.com" class="link-underline">Find databases by subject in our research guides</a>
+        </p>
 
       {% endblock %}
     {% endembed %}
-    {% embed 'partials/tab.twig' %}
+    {% embed 'partials/tab.twig' with { id: 'midd-lib-reserves' } %}
       {% block tabcontent %}
 
-      <h3>Print and Media</h3>
+        <p class="f4 mb-3">Print and Media</p>
 
-      <form action="http://mbury.iii.com/search/r" method="get">
-        <div class="form-group">
-          <label for="lib-reserves-courseno">Course Number Search</label>
-          <div class="input-group">
-            <input id="lib-reserves-courseno" class="form-control" name="SEARCH" type="text" placeholder="Course number e.g. AMST0235">
-            <input type="submit" value="Search" class="button button--primary">
+        <form action="http://mbury.iii.com/search/r" method="get">
+          <div class="form-group">
+            <label for="lib-reserves-courseno">Course Number Search</label>
+            <div class="input-group">
+              <input id="lib-reserves-courseno" class="form-control" name="SEARCH" type="text" placeholder="Course number e.g. AMST0235">
+              <input type="submit" value="Search" class="button button--primary">
+            </div>
+            {# <p>(e.g., <strong>AMST0235</strong>)</p> #}
           </div>
-          {# <p>(e.g., <strong>AMST0235</strong>)</p> #}
-        </div>
-      </form>
+        </form>
 
-      <form action="http://mbury.iii.com/search/p" method="get">
-        <div class="form-group">
-          <label for="lib-reserves-instructor">Instructor Last Name</label>
-          <div class="input-group">
-            <input id="lib-reserves-instructor" name="SEARCH" type="text" class="form-control" placeholder="Last name e.g. Smith">
-            <input type="submit" value="Search" class="button button--primary">
+        <form action="http://mbury.iii.com/search/p" method="get">
+          <div class="form-group">
+            <label for="lib-reserves-instructor">Instructor Last Name</label>
+            <div class="input-group">
+              <input id="lib-reserves-instructor" name="SEARCH" type="text" class="form-control" placeholder="Last name e.g. Smith">
+              <input type="submit" value="Search" class="button button--primary">
+            </div>
+          </div>
+          {# <p>(e.g., <strong>Smith</strong>)</p> #}
+        </form>
+
+        <div class="row mb-5 contains-links f2">
+          <div class="col">
+            <h3 class="f2 mb-3">Electronic</h3>
+            <a href="http://go.middlebury.edu/eres">ERes</a>
+          </div>
+          <div class="col">
+            <h3 class="f2 mb-3">Help</h3>
+            <ul>
+              <li class="mb-3">
+                <a href="http://mediawiki.middlebury.edu/wiki/LIS/Reserves_Information_for_Faculty">For Faculty</a>
+              </li>
+              <li>
+                <a href="http://mediawiki.middlebury.edu/wiki/LIS/Reserves_Information_for_Students">For Students</a>
+              </li>
+            </ul>
           </div>
         </div>
-        {# <p>(e.g., <strong>Smith</strong>)</p> #}
-      </form>
 
-      <div class="row typography">
-        <div class="col-md-6">
-          <h3>Electronic</h3>
-          <p><a href="http://go.middlebury.edu/eres" target="_blank" title="Link to the electronic reserves system in a new window.">ERes</a></p>
-        </div>
-        <div class="col-md-6">
-          <h3>Help</h3>
-          <p>
-            <a href="http://mediawiki.middlebury.edu/wiki/LIS/Reserves_Information_for_Faculty" target="_blank" title="Link to faculty reserves info in a new window.">For Faculty</a>
-            <br>
-            <a href="http://mediawiki.middlebury.edu/wiki/LIS/Reserves_Information_for_Students" target="_blank" title="Link to student reserves info in a new window.">For Students</a>
-          </p>
-        </div>
-      </div>
+      {% endblock %}
+    {% endembed %}
+    {% embed 'partials/tab.twig' with { id: 'midd-lib-videos' } %}
+      {% block tabcontent %}
 
+        <form action="http://mbury.iii.com/search/a" method="get">
+          <input name="SORT" type="hidden" value="D">
+          <input name="searchscope" type="hidden" value="3">
+          <input name="submit.x" type="hidden" value="0">
+          <input name="submit.y" type="hidden" value="0">
+          <input name="submit" type="hidden" value="Submit">
 
+          <div class="row">
+            <div class="col-md-6 col-lg-4">
+              <div class="form-group">
+                <label for="lib-videos-type">Search videos by</label>
+                <select name="searchtype" id="lib-videos-type" class="form-control">
+                  <option value="Y">Keyword</option>
+                  <option value="t">Title</option>
+                  <option value="a">Author</option>
+                  <option value="d">Subject</option>
+                  <option value="j">Genre</option>
+                  <option value="c">LC Call Number</option>
+                  <option value="h">Local Call Number</option>
+                  <option value="g">Gov Docs Number</option>
+                  <option value="i">ISBN/ISSN</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-8">
+              <div class="form-group">
+                <label for="lib-videos-search">Search the Library for video materials</label>
+                <div class="input-group">
+                  <input id="lib-videos-search" name="searcharg" size="50" type="text" class="form-control" placeholder="Search videos">
+                  <input type="submit" value="Search" class="button button--primary">
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
 
+        <form action="http://mbury.iii.com/search/a?a" method="post">
+          <input name="searchtype" type="hidden" value="j">
+          <input name="searchscope" type="hidden" value="3">
+
+          <div class="form-group">
+            <label for="lib-videos-language">Browse videos by language</label>
+            <div class="input-group">
+              <select name="searcharg" id="lib-videos-language" class="form-control">
+                <option>Select a language...</option>
+                <option value="Arabic language film">Arabic Language Films</option>
+                <option value="Chinese language film">Chinese Language Films</option>
+                <option value="French language film">French Language Films</option>
+                <option value="German language film">German Language Films</option>
+                <option value="Hebrew language film">Hebrew Language Films</option>
+                <option value="Italian language film">Italian Language Films</option>
+                <option value="Japanese language film">Japanese Language Films</option>
+                <option value="Portuguese language film">Portuguese Language Films</option>
+                <option value="Russian language film">Russian Language Films</option>
+                <option value="Spanish language film">Spanish Language Films</option>
+              </select>
+              <input type="submit" value="Browse" class="button button--primary">
+            </div>
+          </div>
+        </form>
+
+        <form action="http://mbury.iii.com/search/a?a" method="post">
+          <input name="searchtype" type="hidden" value="j">
+          <input name="searchscope" type="hidden" value="3">
+
+          <div class="form-group">
+            <label for="lib-videos-genre">Browse videos by genre</label>
+            <div class="input-group">
+              <select name="searcharg" id="lib-videos-genre" class="form-control">
+                <option>Select a genre...</option>
+                <option value="adventure">Adventure Films</option>
+                <option value="animated">Animated Films</option>
+                <option value="anime">Anime Films</option>
+                <option value="comedy">Comedy Films</option>
+                <option value="dance">Dance Films</option>
+                <option value="detective">Detective and Mystery Films</option>
+                <option value="documentary">Documentary Films</option>
+                <option value="experimental">Experimental Films</option>
+                <option value="fantasy">Fantasy Films</option>
+                <option value="feature films">Feature Films</option>
+                <option value="film noir">Film Noir</option>
+                <option value="gangster">Gangster Films</option>
+                <option value="gay">Gay &amp; Lesbian Films</option>
+                <option value="historical">Historical Films</option>
+                <option value="horror">Horror Films</option>
+                <option value="martial arts">Martial Arts Films</option>
+                <option value="musical">Musical Films</option>
+                <option value="operas">Operas</option>
+                <option value="romance">Romance Films</option>
+                <option value="romantic comedy">Romantic Comedy Films</option>
+                <option value="science fiction">Science Fiction Films</option>
+                <option value="silent">Silent Films</option>
+                <option value="spy">Spy Films</option>
+                <option value="television">Television Programs</option>
+                <option value="thrillers">Thrillers</option>
+              </select>
+              <input type="submit" value="Browse" class="button button--primary">
+            </div>
+          </div>
+        </form>
 
       {% endblock %}
     {% endembed %}
