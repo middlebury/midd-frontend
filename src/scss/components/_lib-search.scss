@@ -4,7 +4,7 @@
 
 .lib-search__cover {
   position: relative;
-  min-height: 640px;
+  min-height: 200px;
 
   @include media(md) {
     height: 0;
