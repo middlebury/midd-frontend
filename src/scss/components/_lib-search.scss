@@ -19,8 +19,16 @@
     content: '';
     display: block;
     background-image: linear-gradient(to bottom, transparent, #000);
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
     z-index: $z-index-themed-panel-overlay;
-    @include absolute-fill;
+
+    @include media(md) {
+      height: 25%;
+    }
   }
 }
 
