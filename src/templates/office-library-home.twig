@@ -1,7 +1,6 @@
 {% extends "anchor-layout.twig" %}
 
 {% set is_front = true %}
-
 {% set page_title = 'Library' %}
 
 {% block layout_header %}
@@ -11,19 +10,11 @@
 {% endblock %}
 
 {% block page %}
-
-  <div class="container">
-    <div class="row">
-      <div class="paragraphs paragraphs--wide">
-
-        {% include 'paragraphs/lib-search.twig' %}
-
-        {% include 'paragraphs/text-short.twig' %}
-
-        {% include 'paragraphs/themed-panel.twig' %}
-
-      </div>
-    </div>
-  </div>
-
+  {% embed 'partials/top-level-layout.twig' %}
+    {% block paragraphs %}
+      {% include 'paragraphs/lib-search.twig' %}
+      {% include 'paragraphs/text-short.twig' %}
+      {% include 'paragraphs/themed-panel.twig' %}
+    {% endblock %}
+  {% endembed %}
 {% endblock %}

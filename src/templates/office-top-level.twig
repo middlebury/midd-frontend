@@ -10,43 +10,9 @@
 } %}
 
 {% block page %}
-
-  <div class="container">
-
-    <div class="row">
-      <div class="col-md-10 offset-md-1">
-        {# set overlap if page has featured image #}
-        {% include 'partials/box-menu.twig' with {
-          items: top_level_nav_example
-        } %}
-      </div>
-
-      <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2">
-        {% include 'partials/lead.twig' %}
-      </div>
-
-      {% include 'partials/top-level-paragraphs.twig' %}
-
-      {# if page has cta or address #}
-      <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2 mt-7">
-        {# slightly differs from markup on office basic content #}
-        <div class="bg-gray-lighter mb-6 p-5">
-          <div class="row">
-            {# if page has cta #}
-            <div class="col-md-6">
-              {% include 'partials/page-cta.twig' %}
-              {# if also has address #}
-              <div class="border-b my-6 d-md-none"></div>
-            </div>
-            {# if office meta #}
-            <div class="col-md-6">
-              {% include 'partials/office-meta.twig' %}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
+  {% include 'partials/top-level-layout.twig' with {
+    show_menu: true,
+    show_lead: true,
+    has_page_image: has_page_image
+  } %}
 {% endblock %}
