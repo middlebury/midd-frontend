@@ -51,10 +51,18 @@ class Digest {
 
     new MenuSpy(nav);
 
+    let offset = 0;
+    // TODO: don't tie the js-headroom to this widget as the element.
+    // we should allow for a custom selector
+    const headroom = $('.js-headroom');
+
+    if (headroom) {
+      // set offset to be a function so media is checked each time
+      offset = () => (isLargeUp() ? headroom.offsetHeight : 0);
+    }
+
     new SmoothScroll('.digest__link', {
-      // TODO: don't tie the js-headroom to this widget as the element.
-      // we should allow for a custom selector
-      offset: () => (isLargeUp() ? $('.js-headroom').offsetHeight : 0)
+      offset
     });
 
     if (location.hash) {
