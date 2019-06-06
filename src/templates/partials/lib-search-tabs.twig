@@ -2,8 +2,8 @@
 {% embed 'partials/tabs.twig' with {
   light: true,
   tablist: [
-    { label: 'Summon', id: 'midd-lib-summon' },
-    { label: 'MIDCAT+', id: 'midd-lib-midcat' },
+    { label: 'All', id: 'midd-lib-all' },
+    { label: 'MIDCAT', id: 'midd-lib-midcat' },
     { label: 'Guides', id: 'midd-lib-guides' },
     { label: 'Journals', id: 'midd-lib-journals' },
     { label: 'Database', id: 'midd-lib-database' },
@@ -13,7 +13,7 @@
 }
 %}
   {% block tabpanels %}
-    {% embed 'partials/tab.twig' with { id: 'midd-lib-summon' } %}
+    {% embed 'partials/tab.twig' with { id: 'midd-lib-all' } %}
       {% block tabcontent %}
 
         <form action="http://middlebury.summon.serialssolutions.com/search" method="GET">
