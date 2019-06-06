@@ -1,4 +1,4 @@
-import { $, $$, on, off } from './utils/dom';
+import { $, $$, on } from './utils/dom';
 
 /**
  * Accessible tabs widget
@@ -6,8 +6,10 @@ import { $, $$, on, off } from './utils/dom';
  * Adapted from https://inclusive-components.design/tabbed-interfaces/
  */
 class Tabs {
-  constructor(el) {
+  constructor(el, index) {
     this.elem = el;
+
+    this.id = index;
 
     this.tablist = $('[data-tabs-list]', el);
     this.tabs = $$('[data-tabs-tab]', el);
@@ -15,6 +17,8 @@ class Tabs {
 
     this.init();
   }
+
+  getTabId = index => `tabs-${this.id}-${index}`;
 
   init() {
     // Add the tablist role to the first <ul> in the .tabbed container
@@ -24,7 +28,7 @@ class Tabs {
     this.tabs.forEach((tab, i) => {
       tab.setAttribute('role', 'tab');
       // TODO: ids need to be unique on page
-      tab.setAttribute('id', 'tab' + (i + 1));
+      tab.setAttribute('id', this.getTabId(i));
       tab.setAttribute('tabindex', '-1');
       tab.parentNode.setAttribute('role', 'presentation');
     });
@@ -37,12 +41,17 @@ class Tabs {
       panel.hidden = true;
     });
 
-    // Initially activate the first tab and reveal the first tab panel
-    this.tabs[0].removeAttribute('tabindex');
-    this.tabs[0].setAttribute('aria-selected', 'true');
-    this.panels[0].hidden = false;
-
     this.addListeners();
+
+    // Initially activate the first tab and reveal the first tab panel
+    this.showTab(0);
+  }
+
+  showTab(index) {
+    // Make the active tab focusable by the user (Tab key)
+    this.tabs[index].removeAttribute('tabindex');
+    this.tabs[index].setAttribute('aria-selected', 'true');
+    this.panels[index].hidden = false;
   }
 
   addListeners() {
@@ -57,10 +66,15 @@ class Tabs {
 
   handleTabClick = e => {
     e.preventDefault();
-    let currentTab = $('[aria-selected]', this.tablist);
-    if (e.currentTarget !== currentTab) {
-      this.switchTab(currentTab, e.currentTarget);
+
+    const currentTab = $('[aria-selected]', this.tablist);
+
+    // do nothing if tab already shown
+    if (e.currentTarget === currentTab) {
+      return;
     }
+
+    this.switchTab(currentTab, e.currentTarget);
   };
 
   handleTabKeyDown = (e, i) => {
@@ -77,7 +91,8 @@ class Tabs {
             ? 'down'
             : null;
 
-    if (!dir) {
+    // check for null instead of !dir since dir can be index 0
+    if (dir === null) {
       return;
     }
 
@@ -89,29 +104,34 @@ class Tabs {
       return this.panels[i].focus();
     }
 
-    if (tabs[dir]) {
+    // loop tabs if on first tab or last
+    if (dir > this.tabs.length - 1) {
+      dir = 0;
+    } else if (dir === -1) {
+      dir = this.tabs.length - 1;
+    }
+
+    if (this.tabs[dir]) {
       this.switchTab(e.currentTarget, this.tabs[dir]);
     }
   };
 
   switchTab = (oldTab, newTab) => {
-    newTab.focus();
-    // Make the active tab focusable by the user (Tab key)
-    newTab.removeAttribute('tabindex');
-    // Set the selected state
-    newTab.setAttribute('aria-selected', 'true');
-    oldTab.removeAttribute('aria-selected');
-    oldTab.setAttribute('tabindex', '-1');
     // Get the indices of the new and old tabs to find the correct
     // tab panels to show and hide
-    let index = [].indexOf.call(this.tabs, newTab);
-    let oldIndex = [].indexOf.call(this.tabs, oldTab);
+    const index = [].indexOf.call(this.tabs, newTab);
+    const oldIndex = [].indexOf.call(this.tabs, oldTab);
+
+    oldTab.removeAttribute('aria-selected');
+    oldTab.setAttribute('tabindex', '-1');
     this.panels[oldIndex].hidden = true;
-    this.panels[index].hidden = false;
+
+    this.showTab(index);
+    newTab.focus();
   };
 }
 
 const tabs = $$('[data-tabs]');
-tabs.forEach(el => new Tabs(el));
+tabs.forEach((el, i) => new Tabs(el, i));
 
 export default Tabs;
