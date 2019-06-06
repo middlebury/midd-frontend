@@ -224,3 +224,9 @@
     font-size: typescale(2);
   }
 }
+
+.contains-links {
+  a {
+    @include link-border;
+  }
+}
