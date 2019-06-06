@@ -25,12 +25,7 @@
         {% include 'partials/lead.twig' %}
       </div>
 
-      {# iterate paragraphs here, some need to be full width #}
-      {% for i in 0..1 %}
-        <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2">
-          {% include 'paragraphs/text-short.twig' %}
-        </div>
-      {% endfor %}
+      {% include 'partials/top-level-paragraphs.twig' %}
 
       {# if page has cta or address #}
       <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2 mt-7">
