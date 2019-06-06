@@ -2,19 +2,18 @@
 {% embed 'partials/tabs.twig' with {
   light: true,
   tablist: [
-    { label: 'Summon', id: 'lib-summon' },
-    { label: 'MIDCAT+', id: 'lib-middcat' },
-    { label: 'Guides', id: 'lib-guides' },
-    { label: 'Journals', id: 'lib-journals' },
-    { label: 'Database', id: 'lib-database' },
-    { label: 'Reserves', id: 'lib-reserves' },
-    { label: 'Videos', id: 'lib-videos' },
+    { label: 'Summon', id: 'midd-lib-summon' },
+    { label: 'MIDCAT+', id: 'midd-lib-midcat' },
+    { label: 'Guides', id: 'midd-lib-guides' },
+    { label: 'Journals', id: 'midd-lib-journals' },
+    { label: 'Database', id: 'midd-lib-database' },
+    { label: 'Reserves', id: 'midd-lib-reserves' },
+    { label: 'Videos', id: 'midd-lib-videos' },
   ],
 }
 %}
   {% block tabpanels %}
-    {% embed 'partials/tab.twig' with {
-    } %}
+    {% embed 'partials/tab.twig' with { id: 'midd-lib-summon' } %}
       {% block tabcontent %}
 
         <form action="http://middlebury.summon.serialssolutions.com/search" method="GET">
@@ -40,7 +39,7 @@
 
       {% endblock %}
     {% endembed %}
-    {% embed 'partials/tab.twig' %}
+    {% embed 'partials/tab.twig' with { id: 'midd-lib-midcat' } %}
       {% block tabcontent %}
 
         <form action="http://mbury.iii.com/search/a?a" method="post">
@@ -125,7 +124,7 @@
         </div>
       {% endblock %}
     {% endembed %}
-    {% embed 'partials/tab.twig' %}
+    {% embed 'partials/tab.twig' with { id: 'midd-lib-guides' } %}
       {% block tabcontent %}
 
         <form method="post" action="http://middlebury.libguides.com">
@@ -335,7 +334,7 @@
         </form>
       {% endblock %}
     {% endembed %}
-    {% embed 'partials/tab.twig' %}
+    {% embed 'partials/tab.twig' with { id: 'midd-lib-database' } %}
       {% block tabcontent %}
 
         <div class="form-group">
