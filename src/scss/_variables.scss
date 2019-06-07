@@ -109,6 +109,7 @@ $brand-secondary-dark: $green-dark !default;
 // school colors
 $color-college: $navy;
 $color-schools-abroad: $blue;
+$color-language-schools: #8f9a17;
 
 ////
 /// Themes
@@ -116,7 +117,8 @@ $color-schools-abroad: $blue;
 
 $themes: (
   college: $color-college,
-  sa: $color-schools-abroad
+  sa: $color-schools-abroad,
+  ls: $color-language-schools
 );
 
 ////
