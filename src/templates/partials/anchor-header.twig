@@ -15,9 +15,7 @@
         </p>
       {% endif %}
       <button class="anchor-header__button" data-toggle-target=".js-anchor-header-nav">
-        <svg class="icon anchor-header__icon">
-          <use xlink:href="#icon-chevron-down">
-        </svg>
+        {% include 'partials/icon.twig' with { name: 'chevron-down', class: 'anchor-header__icon' } %}
       </button>
     </div>
     <div class="anchor-header__nav js-anchor-header-nav">

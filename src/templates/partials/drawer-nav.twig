@@ -15,9 +15,7 @@
             aria-expanded="false"
             aria-controls="midd-subnav-{{loop.index}}"
           >
-            <svg class="icon drawer-nav__chevron">
-              <use xlink:href="#icon-chevron-down" />
-            </svg>
+            {% include 'partials/icon.twig' with { name: 'chevron-down', class: 'drawer-nav__chevron' } %}
           </button>
 
           <ul class="drawer-nav__list drawer-nav__list--sub js-subnav-{{loop.index}}" id="midd-subnav-{{loop.index}}">

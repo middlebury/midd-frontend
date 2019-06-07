@@ -24,9 +24,9 @@
               id="midd-office-search"
             >
             <button type="submit" aria-label="Show results" class="button button--sm button--primary button--outline js-offices-button">
-              <svg class="icon">
-                <use xlink:href="#icon-search">
-              </svg>
+              {% include 'partials/icon.twig' with {
+                name: 'search',
+              } %}
             </button>
           </div>
         </form>
@@ -77,7 +77,7 @@
                         {% if env.test or random(1) %}
                           <div class="mr-2">
                             <a href="" class="hover-fadein d-inline-block p-1">
-                              <svg class="icon"><use xlink:href="#icon-{{social}}" /></svg>
+                              {% include 'partials/icon.twig' with { name: social } %}
                             </a>
                           </div>
                         {% endif %}

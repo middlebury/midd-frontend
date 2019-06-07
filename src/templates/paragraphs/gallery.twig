@@ -13,9 +13,7 @@
       <span class="button button--primary gallery__button">
         Open Gallery
         <span class="ml-3">
-          <svg class="icon">
-            <use xlink:href="#icon-images" />
-          </svg>
+          {% include 'partials/icon.twig' with { name: 'images' } %}
         </span>
         <span class="d-none d-sm-inline">
           <span class="mx-2">|</span>

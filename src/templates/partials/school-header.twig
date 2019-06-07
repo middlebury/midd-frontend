@@ -29,9 +29,7 @@
             data-drawer="midd-nav-drawer"
             aria-label="Open navigation"
           >
-            <svg class="icon mr-1">
-              <use xlink:href="#icon-bars">
-            </svg>
+            {% include 'partials/icon.twig' with { name: 'bars', class: 'mr-1' } %}
             <span class="d-none d-sm-inline">Menu</span>
           </button>
 
@@ -70,12 +68,13 @@
                     data-toggle-focus=".js-site-search-input"
                     data-toggle-group="school-header"
                   >
-                    <svg class="icon mr-1 school-search__mag">
-                      <use xlink:href="#icon-search">
-                    </svg>
-                    <svg class="icon mr-1 school-search__times">
-                      <use xlink:href="#icon-times">
-                    </svg>
+
+                    {% include 'partials/icon.twig' with {
+                      name: 'search', class: 'mr-1 school-search__mag'
+                    } %}
+                    {% include 'partials/icon.twig' with {
+                      name: 'times', class: 'mr-1 school-search__times'
+                    } %}
                     Search
                   </a>
                 </li>
@@ -109,12 +108,12 @@
             data-toggle-focus=".js-site-search-input"
             data-toggle-group="school-header"
           >
-            <svg class="icon mr-1 school-search__mag">
-              <use xlink:href="#icon-search">
-            </svg>
-            <svg class="icon mr-1 school-search__times">
-              <use xlink:href="#icon-times">
-            </svg>
+            {% include 'partials/icon.twig' with {
+              name: 'search', class: 'mr-1 school-search__mag'
+            } %}
+            {% include 'partials/icon.twig' with {
+              name: 'times', class: 'mr-1 school-search__times'
+            } %}
             <span class="d-none d-sm-inline">Search</span>
           </a>
 
@@ -123,10 +122,9 @@
               <div class="school-search__group">
                 <label for="midd-school-search" class="sr-only">Search</label>
                 <input type="search" class="school-search__input js-site-search-input" id="midd-school-search" placeholder="Search">
-                <button type="submit" class="school-search__submit" aria-label="Search">
-                  <svg class="icon">
-                    <use xlink:href="#icon-search">
-                  </svg>
+                <button type="submit" class="school-search__submit">
+                  <span class="sr-only">Search</span>
+                  {% include 'partials/icon.twig' with { name: 'search' } %}
                 </button>
               </div>
             </form>
