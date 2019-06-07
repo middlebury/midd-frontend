@@ -9,3 +9,15 @@ node_js:
 script:
   - npm run build
   - npm test
+
+# auto deploy dist folder to github branch so frontend deploys can git pull assets instead of rebuilding.
+# See #159
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  local_dir: dist
+  target_branch: master-dist
+  on:
+    branch: master
