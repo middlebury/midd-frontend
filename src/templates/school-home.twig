@@ -1,8 +1,11 @@
 {% extends "school-layout.twig" %}
 
 {% block page %}
-
-hero article
-
-
+  <div class="container">
+    <div class="row">
+      <div class="paragraphs paragraphs--wide">
+      {% block content %}{% endblock %}
+      </div>
+    </div>
+  </div>
 {% endblock %}

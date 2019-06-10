@@ -29,51 +29,49 @@
   line-height: lineheight($size);
 }
 
-@mixin display-1 {
-}
-@mixin display-2 {
-}
-@mixin display-3 {
-  font-size: 32px;
-  line-height: $line-height-solid;
+@mixin h0 {
+  font-size: $typescale-7;
   font-weight: $font-weight-normal;
+  line-height: $line-height-heading;
 
   @include media(md) {
-    font-size: 48px;
-  }
-
-  @include media(lg) {
-    font-size: 64px;
+    font-size: $typescale-8;
   }
 }
 
 @mixin h1 {
-  font-size: $h1-font-size-sm;
+  font-size: $typescale-8;
+  line-height: $line-height-heading;
+  font-weight: $font-weight-normal;
+
+  @include media(md) {
+    font-size: $typescale-9;
+  }
 
   @include media(lg) {
-    font-size: $h1-font-size;
+    font-size: $typescale-10;
   }
 }
 
 @mixin h2 {
-  font-size: $h2-font-size-sm;
+  font-size: typescale(6);
   @include media(lg) {
-    font-size: $h2-font-size;
+    font-size: typescale(7);
   }
 }
 
 @mixin h3 {
-  font-size: $h3-font-size;
+  font-size: typescale(5);
 }
 
 @mixin h4 {
-  font-size: $h4-font-size;
+  font-size: typescale(4);
 }
 
 @mixin h5 {
-  font-size: $h5-font-size;
+  font-size: typescale(3);
 }
 
 @mixin h6 {
-  font-size: $h6-font-size;
+  font-size: typescale(2);
 }

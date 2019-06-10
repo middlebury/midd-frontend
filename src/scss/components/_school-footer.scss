@@ -1,0 +1,30 @@
+.school-footer {
+  background-color: $brand-primary;
+  padding-top: spacing(5);
+  padding-bottom: spacing(5);
+
+  @include media(md) {
+    padding-top: spacing(7);
+    padding-bottom: spacing(7);
+  }
+}
+
+.school-footer__main {
+  border-bottom: 1px solid $navy-light;
+
+  @include media(lg) {
+    border-right: 1px solid $navy-light;
+    border-bottom: 0;
+  }
+}
+
+.school-footer__name {
+  @include h0;
+  font-family: $font-family-serif;
+  color: $white;
+  margin-bottom: spacing(4);
+
+  @include media(md) {
+    margin-bottom: spacing(5);
+  }
+}

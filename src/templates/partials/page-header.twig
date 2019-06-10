@@ -1,27 +1,36 @@
-<header class="page-header{% if image_src %} page-header--has-image{% endif %}{% if has_menu %} page-header--has-menu{% endif %}{% if school %} page-header--school{% endif %}" aria-labelledby="midd-page-header-label">
+<div class="container px-0">
 
-  {% if image_src %}
-    <figure class="page-header__figure">
-      <img src="{{image_src}}" alt="">
-    </figure>
-  {% endif %}
+  <header class="page-header{% if image_src %} page-header--has-image{% endif %}{% if has_menu %} page-header--has-menu{% endif %}" aria-labelledby="midd-page-header-label">
 
-  <div class="page-header__content">
+    {% if image_src %}
+      <figure class="page-header__figure">
+        {% include 'partials/img.twig' with { name: 'top_level' } %}
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-10 offset-md-1">
+        <figcaption class="page-header__caption">
+          {% include 'partials/tooltip.twig' with {
+            light: true,
+            size: 'lg',
+            id: random(1234),
+            label: 'some caption for top level image'
+          } %}
+        </figcaption>
+      </figure>
+    {% endif %}
 
-          {% include 'partials/breadcrumb.twig' with {
-            items: breadcrumb,
-            light: image_src is not empty }
-          %}
-          <h1 class="page-header__title" id="midd-page-header-label">{{title}}</h1>
+    <div class="page-header__main">
+      <div class="page-header__content">
 
-          {{after_title}}
+        {% include 'partials/breadcrumb.twig' with {
+          items: breadcrumb,
+          light: image_src  }
+        %}
 
-        </div>
+        <h1 class="page-header__title" id="midd-page-header-label">{{title}}</h1>
+
+        {{after_title}}
+
       </div>
     </div>
-  </div>
-</header>
+  </header>
+
+</div>

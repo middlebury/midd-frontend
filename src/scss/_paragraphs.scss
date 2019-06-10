@@ -1,0 +1,218 @@
+@mixin paragraph-space {
+  margin-top: spacing(7);
+  margin-bottom: spacing(7);
+
+  @include media(md) {
+    margin-top: spacing(8);
+    margin-bottom: spacing(8);
+  }
+
+  @include media(lg) {
+    margin-top: spacing(9);
+    margin-bottom: spacing(9);
+  }
+}
+
+@mixin paragraph-space-sm {
+  margin-top: spacing(6);
+  margin-bottom: spacing(5);
+
+  @include media(md) {
+    margin-top: spacing(7);
+    margin-bottom: spacing(6);
+  }
+
+  @include media(lg) {
+    margin-top: spacing(8);
+    margin-bottom: spacing(7);
+  }
+}
+
+@mixin paragraph-full-width {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.paragraphs {
+  margin-bottom: spacing(9);
+
+  > [class*='paragraph']:first-child {
+    margin-top: 0;
+  }
+
+  > [class*='paragraph']:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.paragraphs--wide {
+  @include make-col-ready();
+
+  @include media(md) {
+    @include make-col(10);
+    @include make-col-offset(1);
+  }
+
+  @include media(lg) {
+    @include make-col(8);
+    @include make-col-offset(2);
+  }
+
+  .paragraph--school-explorer,
+  .paragraph--video,
+  .paragraph--image:not(.image--left):not(.image--right) {
+    @include media(lg) {
+      // Main column is 10 wide, so we divide by remaining
+      // columns on sides to pull them out to 12 columns.
+      margin-left: calc(-100% * 2 / 12);
+      margin-right: calc(-100% * 2 / 12);
+      @include make-gutters;
+    }
+  }
+}
+
+.paragraph--mega-cta,
+.paragraph--spotlight,
+.paragraph--themed-panel,
+.paragraph--quad-story,
+.paragraph--stat-panel,
+.paragraph--card-carousel {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.paragraph--text {
+  margin-bottom: spacing(4);
+}
+
+.paragraph--video {
+  @include paragraph-space-sm;
+}
+
+.paragraph--audio {
+  @include paragraph-space-sm;
+}
+
+.paragraph--quote {
+  margin-top: spacing(7);
+  margin-bottom: spacing(7);
+
+  @include media(md) {
+    margin-top: spacing(8);
+    margin-bottom: spacing(8);
+  }
+}
+
+.paragraph--image {
+  @include paragraph-space-sm;
+
+  &.image--left {
+    margin-top: 0;
+    margin-bottom: spacing(4);
+    margin-right: spacing(4);
+  }
+
+  &.image--right {
+    margin-top: 0;
+    margin-bottom: spacing(4);
+    margin-left: spacing(4);
+  }
+}
+
+.paragraph--image-text {
+  @include paragraph-space;
+}
+
+.paragraph--two-col-text {
+  @include paragraph-space;
+}
+
+.paragraph--faq {
+  @include paragraph-space;
+}
+
+.paragraph--schedule {
+  @include paragraph-space;
+}
+
+.paragraph--chart {
+  @include paragraph-space;
+}
+
+.paragraph--link-list {
+  @include paragraph-space;
+}
+
+.paragraph--profile-list {
+  @include paragraph-space;
+}
+
+.paragraph--spotlight {
+  @include paragraph-full-width;
+}
+
+.paragraph--card-carousel {
+  @include paragraph-space;
+  // @include paragraph-full-width;
+}
+
+.paragraph--quad-story {
+  @include paragraph-space;
+  // @include paragraph-full-width;
+}
+
+.paragraph--stat-panel {
+  @include paragraph-space;
+  // @include paragraph-full-width;
+}
+
+.paragraph--spotlight {
+  @include paragraph-space;
+}
+
+.paragraph--announcement {
+  @include paragraph-space;
+}
+
+.paragraph--mega-cta {
+  @include paragraph-space;
+}
+
+.paragraph--cta-group {
+  @include paragraph-space;
+  @include paragraph-full-width;
+}
+
+.paragraph--video-group {
+  @include paragraph-space-sm;
+  @include paragraph-full-width;
+}
+
+.paragraph--themed-panel {
+  @include paragraph-space;
+}
+
+.paragraph--school-explorer {
+  margin-top: -6rem;
+  margin-bottom: spacing(8);
+}
+
+.paragraph--gallery {
+  @include paragraph-space-sm;
+}
+
+.paragraph--button {
+  margin-bottom: spacing(7);
+  @include media(md) {
+    margin-bottom: spacing(8);
+  }
+}
+
+.paragraph--search {
+  @include paragraph-space-sm;
+}
+
+.paragraph--lib-search {
+  @include paragraph-full-width;
+  @include paragraph-space;
+}

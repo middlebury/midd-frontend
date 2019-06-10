@@ -79,14 +79,8 @@ $text-colors: (
 
 // TODO: do we need to add these font sizes to typescale?
 
-.display-1 {
-}
-
-.display-2 {
-}
-
-.display-3 {
-  @include display-3;
+.h0 {
+  @include h0;
 }
 
 ///
@@ -110,4 +104,8 @@ $text-colors: (
   font-size: $lead-font-size;
   line-height: $lead-line-height;
   margin-bottom: $lead-margin-bottom;
+
+  a {
+    @include link-border;
+  }
 }

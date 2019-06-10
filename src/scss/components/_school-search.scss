@@ -1,24 +1,21 @@
 .school-search {
-  @include media(lg) {
-    position: relative;
-  }
 }
 
 .school-search__handle {
-  color: $white;
   display: inline-block;
   padding: spacing(3);
-  font-weight: $font-weight-medium;
   font-size: typescale(2);
-  line-height: 1;
+  color: $navy;
 
   &:hover {
     text-decoration: none;
   }
 
-  @include media(lg) {
-    color: $navy;
-    padding: spacing(4) 0;
+  @include media($school-header-breakpoint) {
+    font-weight: $font-weight-medium;
+    font-size: typescale(3);
+    padding-left: 0;
+    padding-right: 0;
     border-bottom: 4px solid transparent;
     opacity: 0.8;
     transition: opacity 0.2s, border-color 0.2s;
@@ -26,7 +23,7 @@
     &.is-toggled,
     &:hover {
       opacity: 1;
-      border-color: $navy;
+      @include themify(border-color);
     }
   }
 }
@@ -37,31 +34,35 @@
   right: 0;
   width: 100%;
   padding: spacing(3);
-  background-color: $navy;
+  background-color: $white;
   visibility: hidden;
   opacity: 0;
   transition: 0.2s;
+  z-index: $z-index-school-search-content;
+  border-top: 1px solid $brand-primary;
+  border-bottom: 1px solid $brand-primary;
 
   &.is-toggled {
     visibility: visible;
     opacity: 1;
   }
 
-  @include media(lg) {
+  @include media($school-header-breakpoint) {
     width: 400px;
-    background-color: $white;
     border: 1px solid $brand-primary;
   }
 }
 
 .school-search__times {
   display: none;
+  margin-bottom: -2px;
   .school-search__handle.is-toggled & {
     display: inline-block;
   }
 }
 
 .school-search__mag {
+  margin-bottom: -2px;
   .school-search__handle.is-toggled & {
     display: none;
   }
@@ -80,23 +81,9 @@
   padding: 1rem;
   border-right: 0;
   background-color: $white;
+  color: $black;
   border-color: $brand-primary-dark;
   appearance: none;
-  background-color: $navy-dark;
-  color: $white;
-
-  &::placeholder {
-    color: $white;
-
-    @include media(lg) {
-      color: initial;
-    }
-  }
-
-  @include media(lg) {
-    background-color: $white;
-    color: $black;
-  }
 }
 
 .school-search__submit {

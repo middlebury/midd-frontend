@@ -72,6 +72,7 @@ $navy-light: #174872 !default;
 $navy: #0d395f !default;
 $navy-dark: #022543 !default;
 
+$blue: #75a3cd !default;
 $blue-light: #97bbd5 !default;
 $blue-lighter: #e5f1fa !default;
 
@@ -91,6 +92,7 @@ $black: #202020 !default;
 $gray: #767676 !default;
 $gray-light: #dedede !default;
 $gray-lighter: #f8f8f8 !default;
+$gray-dark: #414142 !default;
 
 // util colors
 $danger: #dc3545 !default;
@@ -103,6 +105,21 @@ $brand-primary: $navy !default;
 $brand-primary-dark: $navy-dark !default;
 $brand-secondary: $green !default;
 $brand-secondary-dark: $green-dark !default;
+
+// school colors
+$color-college: $navy;
+$color-schools-abroad: $blue;
+$color-language-schools: #8f9a17;
+
+////
+/// Themes
+////
+
+$themes: (
+  college: $color-college,
+  sa: $color-schools-abroad,
+  ls: $color-language-schools
+);
 
 ////
 /// Typography
@@ -134,6 +151,8 @@ $typescale-5: rem(20) !default;
 $typescale-6: rem(24) !default;
 $typescale-7: rem(28) !default;
 $typescale-8: rem(36) !default;
+$typescale-9: rem(48) !default;
+$typescale-10: rem(64) !default;
 
 $typescale: () !default;
 $typescale: map-merge(
@@ -185,6 +204,8 @@ $body-color: $black !default;
 $border-width: 1px !default;
 $border-color: $gray-light !default;
 
+$letter-spacing: 0.1em;
+
 ////
 /// Element styles
 ////
@@ -202,33 +223,6 @@ $headings-font-size: typescale(4) !default;
 $headings-line-height: lineheight('heading') !default;
 $headings-margin-bottom: 0 !default;
 
-$h1-font-size: typescale(8) !default;
-$h1-font-size-sm: typescale(7) !default;
-$h1-margin-top: 0 !default;
-$h1-margin-bottom: spacing(4) !default;
-
-$h2-font-size: typescale(7) !default;
-$h2-font-size-sm: typescale(6) !default;
-$h2-margin-top: spacing(8) !default;
-$h2-margin-bottom: spacing(4) !default;
-
-$h3-font-size: typescale(5) !default;
-$h3-font-size-sm: typescale(4) !default;
-$h3-margin-top: spacing(5) !default;
-$h3-margin-bottom: spacing(2) !default;
-
-$h4-font-size: typescale(4) !default;
-$h4-margin-top: spacing(5) !default;
-$h4-margin-bottom: spacing(2) !default;
-
-$h5-font-size: typescale(3) !default;
-$h5-margin-top: spacing(5) !default;
-$h5-margin-bottom: spacing(1) !default;
-
-$h6-font-size: typescale(2) !default;
-$h6-margin-top: spacing(3) !default;
-$h6-margin-bottom: spacing(1) !default;
-
 // Paragraphs
 $paragraph-font-size: typescale(4) !default;
 $paragraph-line-height: lineheight('body') !default;
@@ -241,7 +235,7 @@ $paragraph-margin-bottom: spacing(4) !default;
 // Lead
 $lead-font-size: typescale(6) !default;
 $lead-line-height: lineheight('body') !default;
-$lead-margin-bottom: spacing(7) !default;
+$lead-margin-bottom: spacing(5) !default;
 
 // captions
 $caption-font-size: typescale(2) !default;
@@ -249,7 +243,7 @@ $caption-color: $gray !default;
 
 // Shared buttons and forms styles
 $input-btn-padding-y: spacing(3) !default;
-$input-btn-padding-x: spacing(6) !default;
+$input-btn-padding-x: spacing(5) !default;
 $input-btn-font-size: typescale(3) !default;
 $input-btn-line-height: lineheight('solid') !default;
 
@@ -286,8 +280,8 @@ $btn-secondary-hover-color: $brand-primary !default;
 // light
 $btn-light-bg: $white !default;
 $btn-light-color: $black !default;
-$btn-light-hover-bg: $gray-light !default;
-$btn-light-hover-color: $black !default;
+$btn-light-hover-bg: $brand-primary-dark !default;
+$btn-light-hover-color: $white !default;
 $btn-light-outline-hover-bg: $white !default;
 $btn-light-outline-hover-color: $brand-primary !default;
 
@@ -323,8 +317,6 @@ $label-font-size: typescale(2) !default;
 $label-font-weight: $font-weight-semibold !default;
 $label-margin-bottom: spacing(2) !default;
 
-$form-group-margin-bottom: spacing(3) !default;
-
 // input size default
 $input-padding-y: $input-btn-padding-y !default;
 $input-padding-x: $input-btn-padding-y !default;
@@ -357,9 +349,6 @@ $section-title-font-size: typescale(3) !default;
 $section-title-font-weight: $font-weight-semibold !default;
 $section-title-margin-bottom: spacing(4) !default;
 
-// component/D8 "Paragraphs"
-$component-margin-bottom: spacing(7) !default;
-
 // lists
 $list-item-margin-bottom: spacing(1) !default;
 $list-item-margin-bottom-md: spacing(2) !default;
@@ -367,3 +356,64 @@ $list-item-margin-bottom-lg: spacing(3) !default;
 
 $chevron-transform: rotate(-180deg);
 $chevron-transition: transform 0.2s ease-in-out;
+
+///
+// z-indexes
+// Manage z-indexes across all components to prevent elements from accidentally showuping
+///
+
+// TODO: can we manage these at a component level somehow while being aware of all layers?
+
+$z-index-dropdown-list: 200;
+
+$z-index-drawer: 300;
+$z-index-drawer-overlay: 2;
+$z-index-drawer-content: 3;
+
+$z-index-top-level-image: 1;
+$z-index-top-level-content: 2;
+
+$z-index-midd-header: 200;
+$z-index-midd-header-transparent: 200;
+$z-index-midd-header-shield: 3;
+
+$z-index-midd-nav: 200;
+$z-index-midd-nav-dropdown: 200;
+
+$z-index-midd-search-content: 200;
+
+$z-index-datepicker: 200;
+
+$z-index-school-header: 100;
+
+$z-index-school-search-content: 200;
+
+$z-index-school-nav-dropdown: 200;
+
+$z-index-school-explorer: 50;
+
+$z-index-card-carousel-item-image: 2;
+$z-index-card-carousel-item-content: 3;
+
+$z-index-stat-panel-image: 1;
+$z-index-stat-panel-overlay: 2;
+$z-index-stat-panel-content: 3;
+
+$z-index-spotlight-image: 1;
+$z-index-spotlight-content: 2;
+
+$z-index-mega-cta-image: 1;
+$z-index-mega-cta-front: 2;
+$z-index-mega-cta-caption: 3;
+
+$z-index-themed-panel: 1;
+$z-index-themed-panel-overlay: 2;
+$z-index-themed-panel-content: 3;
+$z-index-themed-panel-sidebar: 4;
+
+$z-index-video-button: 1;
+$z-index-gallery-button: 1;
+
+$z-index-page-header-caption: 3;
+
+$z-index-box-menu: 6;

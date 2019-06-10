@@ -17,7 +17,6 @@ const args = require('yargs').argv;
 const gulpIf = require('gulp-if');
 const size = require('gulp-size');
 const rename = require('gulp-rename');
-const rollup = require('rollup');
 const postcss = require('gulp-postcss');
 const postcssPresetEnv = require('postcss-preset-env');
 const mqPacker = require('css-mqpacker');
@@ -27,17 +26,18 @@ const _ = require('lodash');
 const zip = require('gulp-zip');
 const dotenv = require('dotenv');
 
-const rollupConfig = require('./rollup');
+const rollup = require('./rollup');
 
 dotenv.config();
 
-const production = process.env.NODE_ENV === 'production';
+const PROD = process.env.NODE_ENV === 'production';
+const TEST = process.env.CI;
 
 const THEME_DIR = process.env.THEME_DIR || args.themeDir || '';
 
 const paths = {
   html: {
-    src: './src/templates/*.twig',
+    src: ['./src/templates/*.twig', '!./src/templates/*layout*.twig'],
     dest: './dist'
   },
   styles: {
@@ -49,7 +49,8 @@ const paths = {
     dest: './dist/js'
   },
   images: {
-    src: './src/images/*.{png,jpg,svg}',
+    // ignore sub folders in production build since demo images may be too big.
+    src: `./src/images/${PROD ? '*' : '**/*'}.{png,jpg,svg}`,
     dest: './dist/images/'
   }
 };
@@ -112,7 +113,7 @@ const styles = () => {
     })
   ];
 
-  if (production) {
+  if (PROD) {
     plugins.push(
       cssnano(),
       mqPacker({
@@ -123,7 +124,7 @@ const styles = () => {
 
   return gulp
     .src(paths.styles.src)
-    .pipe(gulpIf(!production, sourcemaps.init({ loadMaps: true })))
+    .pipe(gulpIf(!PROD, sourcemaps.init({ loadMaps: true })))
     .pipe(
       plumber({
         errorHandler: onError
@@ -131,25 +132,23 @@ const styles = () => {
     )
     .pipe(sass())
     .pipe(postcss(plugins))
-    .pipe(gulpIf(!production, sourcemaps.write('./')))
+    .pipe(gulpIf(!PROD, sourcemaps.write('./')))
     .pipe(size({ showFiles: true }))
     .pipe(gulp.dest(paths.styles.dest))
     .pipe(browserSync.stream());
 };
 
+const bundles = [
+  {
+    input: './src/js/index.js',
+    file: paths.scripts.dest + '/bundle.js'
+  }
+];
+
 const scripts = () =>
-  rollup
-    .rollup(rollupConfig)
-    .then(bundle =>
-      bundle.write({
-        file: paths.scripts.dest + '/bundle.js',
-        format: 'iife',
-        sourcemap: !production
-      })
-    )
-    .then(() => {
-      browserSync.reload();
-    });
+  rollup(bundles).then(() => {
+    browserSync.reload();
+  });
 
 const html = () =>
   gulp
@@ -164,10 +163,14 @@ const html = () =>
         const ymlData = yaml.safeLoad(
           fs.readFileSync('./src/data/data.yml', 'utf8')
         );
+        const imageStyles = yaml.safeLoad(
+          fs.readFileSync('./src/data/image_styles.yml', 'utf8')
+        );
 
-        return Object.assign({}, ymlData, {
+        return Object.assign({}, ymlData, imageStyles, {
           env: {
-            production
+            test: TEST,
+            production: PROD
           }
         });
       })
@@ -176,6 +179,16 @@ const html = () =>
       twig({
         base: './src/templates',
         filters: [
+          {
+            name: 'exists',
+            func: (value, args) => {
+              if (!value) {
+                console.log(args);
+                throw 'value is falsy';
+              }
+              return value;
+            }
+          },
           {
             name: 'groupBy',
             func: (items, field) => {
@@ -272,11 +285,29 @@ const watch = () => {
   gulp.watch('./src/data/*.yml', html);
 };
 
+const reportFilesizes = () =>
+  gulp
+    .src('./dist/**/*.{css,js}')
+    .pipe(
+      size({
+        showFiles: true,
+        showTotal: false
+      })
+    )
+    .pipe(
+      size({
+        showFiles: true,
+        gzip: true,
+        showTotal: false
+      })
+    );
+
 const build = gulp.series(
   clean,
   copyIcons,
   copyDeps,
-  gulp.parallel(html, images, styles, scripts)
+  gulp.parallel(html, images, styles, scripts),
+  reportFilesizes
 );
 
 const dev = gulp.parallel(build, watch);

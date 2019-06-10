@@ -1,14 +1,12 @@
-.school-header {
-  background: $brand-primary;
-  border-top: 4px solid $brand-primary;
-  position: relative;
-  display: flex;
+$school-header-breakpoint: xl;
 
-  @include media(lg) {
-    background: none;
-    padding: 0;
-    pointer-events: none;
-  }
+.school-header {
+  background: $white;
+  border-top: 8px solid $brand-primary;
+  position: relative;
+  border-bottom: 1px solid $navy;
+
+  @include themify(border-top-color);
 
   &.headroom {
     will-change: transform;
@@ -17,7 +15,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 50;
+    z-index: $z-index-school-header;
   }
 
   &.headroom--pinned {
@@ -29,44 +27,28 @@
   }
 }
 
-.school-header__brand {
-  padding-top: spacing(3);
-  padding-bottom: spacing(3);
-  pointer-events: initial;
-  @include make-gutters();
-
-  @include media(lg) {
-    background-color: $brand-primary;
-    padding-top: spacing(4);
-    padding-bottom: spacing(4);
-    transition: 1s;
-
-    .school-header.headroom--unpinned & {
-      transform: translateY(-50%);
-    }
-  }
+.school-header__title {
+  font-size: 100%;
 }
 
-// TODO: do we need to use picture since logos widths will vary across schools?
+.school-header__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .school-header__logo {
-  max-width: inherit;
+  padding-top: spacing(2);
+  padding-bottom: spacing(2);
 }
 
 .school-header__content {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  height: 100%;
-  flex: 1;
   flex-direction: row-reverse;
 
-  @include media(lg) {
-    pointer-events: initial;
-    background-color: $white;
-    justify-content: space-between;
-    flex-direction: row;
-    padding-right: spacing(4);
-    padding-left: spacing(4);
-    border-bottom: 1px solid $navy;
+  @include media($school-header-breakpoint) {
+    position: relative;
   }
 }

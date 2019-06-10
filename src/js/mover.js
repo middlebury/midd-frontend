@@ -2,6 +2,19 @@ import enquire from 'enquire.js';
 
 import { $, $$ } from './utils/dom';
 
+/**
+ * Moves DOM elements around on the page based a breakpoint.
+ *
+ * Example:
+ *
+ * <div data-move-at="(min-width:768px)" data-move-to=".js-some-div">move me</div>
+ *
+ * will move the contents of the div into the data-move-to selector element.
+ * It will move the contents BACK after going back under the given breakpoint.
+ *
+ * warning: does not work if contents requires javascript to function.
+ * This is because the html is read and recreated which won't have its original event listeners.
+ */
 class Mover {
   constructor(elem) {
     this.elem = elem;
@@ -19,6 +32,7 @@ class Mover {
       return;
     }
 
+    // TODO: switch enquire to matchMedia.addListener
     enquire.register(this.mediaQuery, {
       match: this.handleMatch,
       unmatch: this.handleUnmatch

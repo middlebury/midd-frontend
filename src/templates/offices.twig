@@ -13,7 +13,7 @@
 
     {% block nav %}
 
-      <div class="form-group js-offices-form">
+      <div class="form-group js-offices-form" data-sticky data-sticky-offset="32">
         <form>
           <label for="midd-office-search">Find on page</label>
           <div class="input-group">
@@ -35,7 +35,7 @@
     {% endblock %}
     {% block toc %}
 
-      <div class="js-sticky" data-digest-nav></div>
+      <div data-sticky data-digest-nav></div>
 
     {% endblock %}
     {% block content %}
@@ -56,25 +56,25 @@
                       <a href="" class="link-underline">{{subitem.title}}</a>
                     </h3>
 
-                    {% if random(2) %}
+                    {% if env.test or random(1) %}
                       <p class="f2 mb-1">
                         152 College St<br>Middlebury, VT 05753
                       </p>
                     {% endif %}
 
                     <p class="f2 mb-1">
-                      {% if random(2) %}
+                      {% if env.test or random(1) %}
                         <a href="mailto:" class="link-underline">admissions<wbr>@middlebury.edu</a><br>
                       {% endif %}
 
-                      {% if random(2) %}
-                        <a href="tel:">(802) 555-5555</a><br>
+                      {% if env.test or random(1) %}
+                        <a href="tel:" class="link-underline">(802) 555-5555</a><br>
                       {% endif %}
                     </p>
 
                     <div class="d-flex">
                       {% for social in ['youtube', 'facebook', 'instagram', 'twitter', 'vimeo'] %}
-                        {% if random(1) %}
+                        {% if env.test or random(1) %}
                           <div class="mr-2">
                             <a href="" class="hover-fadein d-inline-block p-1">
                               <svg class="icon"><use xlink:href="#icon-{{social}}" /></svg>

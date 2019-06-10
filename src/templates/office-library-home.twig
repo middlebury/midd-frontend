@@ -1,0 +1,20 @@
+{% extends "anchor-layout.twig" %}
+
+{% set is_front = true %}
+{% set page_title = 'Library' %}
+
+{% block layout_header %}
+  {% include 'partials/midd-header.twig' %}
+  {% include 'partials/anchor-header.twig' %}
+  {% include 'partials/office-hours.twig' %}
+{% endblock %}
+
+{% block page %}
+  {% embed 'partials/top-level-layout.twig' %}
+    {% block paragraphs %}
+      {% include 'paragraphs/lib-search.twig' %}
+      {% include 'paragraphs/text-short.twig' %}
+      {% include 'paragraphs/themed-panel.twig' %}
+    {% endblock %}
+  {% endembed %}
+{% endblock %}

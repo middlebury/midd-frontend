@@ -5,6 +5,24 @@
 {% endblock %}
 
 {% block layout_footer %}
-  {% include 'partials/footer.twig' %}
+  {% include 'partials/school-footer.twig' with {
+    name: 'Middlebury C.V. Starr Schools Abroad',
+    addr: '356 College Street<br>Middlebury, VT 05753',
+    tel: '802-443-5745',
+    email: 'internationalprograms@middlebury.edu',
+    cta: {
+      text: 'Request Info',
+      link: 'http://go.middlebury.edu/sa-inquiry'
+    },
+    menus: footer_nav
+  } %}
   {% include 'partials/midd-footer.twig' %}
+{% endblock %}
+
+{% block layout_before_body_close %}
+  {% embed 'partials/drawer.twig' with { title: 'Navigation' } %}
+    {% block content %}
+      {% include 'partials/drawer-nav.twig' %}
+    {% endblock %}
+  {% endembed %}
 {% endblock %}

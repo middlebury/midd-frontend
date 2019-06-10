@@ -1,8 +1,23 @@
 import { $, $$ } from './utils/dom';
 
+/**
+ * Takes a list of anchor links and watches each of their targets to see if they're
+ * within the center of the viewport, so their active class can be added. Use in table of contents and
+ * highlighting the current section viewed on the page.
+ *
+ * Commonly used in combination with anchor-js (which auto adds the ids to any headings on the page)
+ * and digest.js (which creates the menu of links FROM those newly created headings with ids)
+ *
+ */
 class MenuSpy {
-  constructor(elem) {
+  /**
+   * @param {string\DOMelement} elem - the selector for an element or a dom node to watch links within
+   * @param {object} - config options for changing root element to use in IntersectionObserver
+   */
+  constructor(elem, { root = null } = {}) {
     this.activeClass = 'active';
+
+    this.root = root;
 
     this.elem = typeof elem === 'string' ? $(elem) : elem;
 
@@ -11,8 +26,10 @@ class MenuSpy {
     this.init();
   }
 
+  // start observing each anchor link target to watch
   init() {
     const options = {
+      root: this.root,
       rootMargin: '0% 0% -50% 0%', // center of viewport
       threshold: [0, 1]
     };
@@ -35,6 +52,7 @@ class MenuSpy {
     }
   }
 
+  // handle intersection observer events
   onChange = changes => {
     // reverse the changes else the last item becomes highlighted
     // due to it being out of view and triggering the else if
@@ -42,6 +60,7 @@ class MenuSpy {
       const id = change.target.id;
       const link = $(`a[href="#${id}"]`, this.elem);
 
+      // if the element is fully in view, add the active class
       if (change.intersectionRatio === 1) {
         this.removeActiveClass();
 

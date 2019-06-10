@@ -1,41 +1,49 @@
 .box-menu {
-  border: 1px solid;
-  border-top-width: 8px;
-  border-color: $blue-light;
+  box-shadow: inset 0 0 0 1px $gray-light;
+  border-top: 8px solid $navy;
   margin-bottom: spacing(7);
   background-color: $white;
-  padding-top: spacing(2);
-  padding-left: spacing(4);
-  padding-right: spacing(4);
+  @include themify(border-top-color);
 
   @include media(md) {
     margin-bottom: spacing(8);
+  }
+}
+
+.box-menu__list {
+  padding: spacing(4);
+
+  @include media(md) {
     padding-top: spacing(3);
+    padding-bottom: 0;
+  }
+}
+
+.box-menu__item {
+  &:not(:last-child) {
+    margin-bottom: spacing(3);
   }
 
-  @include media(lg) {
-    margin-bottom: spacing(9);
+  @include media(md) {
+    display: inline-block;
+    margin-right: spacing(4);
+    margin-bottom: spacing(3);
+  }
+}
+
+.box-menu__link {
+  @include link-border;
+  border-color: transparent;
+
+  &:hover,
+  &:focus {
+    color: $sky;
+    border-color: $sky;
   }
 }
 
 .box-menu--overlap {
   margin-top: -#{spacing(5)};
-}
-
-.box-menu__list {
-}
-
-.box-menu__item {
-  margin-bottom: spacing(3);
-
-  @include media(md) {
-    display: inline-block;
-    margin-right: spacing(5);
-    margin-bottom: spacing(4);
-  }
-}
-
-.box-menu__link {
-  @include link-border();
-  // line-height: $line-height-heading;
+  position: relative;
+  z-index: $z-index-box-menu;
 }
