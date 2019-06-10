@@ -261,8 +261,7 @@ class Lightbox {
 MicroModal.init({
   openTrigger: 'data-lightbox-open',
   closeTrigger: 'data-lightbox-close',
-  onShow: (modal, event) => {
-    event.preventDefault();
+  onShow: modal => {
     if (modal.hasAttribute('data-lightbox')) {
       // add lightbox instead to the modal instance so we can destroy it on close
       modal.lightbox = new Lightbox(modal);
@@ -271,13 +270,6 @@ MicroModal.init({
   onClose: modal => {
     if (modal.lightbox) {
       modal.lightbox.destroy();
-
-      /**
-       * Unset hidden overflow on body until fix is merged for ie11
-       * https://github.com/ghosh/micromodal/pull/102
-       **/
-      document.body.style.height = '';
-      document.body.style.overflow = '';
     }
   },
   disableScroll: true
