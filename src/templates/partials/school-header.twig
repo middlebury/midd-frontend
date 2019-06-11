@@ -12,7 +12,7 @@
                 src="images/cv-star-logo.svg"
                 srcset="images/cv-star-logo.svg 186w"
                 sizes="(min-width: 1280px) 186px, 124px"
-                alt=""
+                alt="Logo for Middlebury C.V. Starr Schools Abroad"
               />
               <span class="sr-only">Middlebury C.V. Starr Schools Abroad</span>
             {% endblock %}
@@ -22,7 +22,7 @@
 
       <div class="school-header__content">
 
-        <nav class="school-nav">
+        <div class="school-nav">
 
           <button
             class="school-nav__handle"
@@ -37,59 +37,65 @@
 
           <div class="school-nav__menu">
 
-            <ul class="school-nav__list">
-              {% for item in ['Midd Students', 'Parents', 'Advisors'] %}
-                <li class="school-nav__item">
-                  <a href="" class="school-nav__link school-nav__link--util">{{item}}</a>
+            <nav aria-labelledby="midd-main-nav-label">
+              <h2 class="sr-only" id="midd-main-nav-label">Main navigation</h2>
+              <ul class="school-nav__list">
+                {% for item in site_nav.items %}
+                  <li class="school-nav__item">
+
+                    <a href="" class="school-nav__link school-nav__link--top">{{item.text}}</a>
+
+                    {% if item.items %}
+                      <ul class="school-nav__list school-nav__list--sub {% if item.items.length > 8 %} school-nav__list--cols{% endif %}">
+                        {% for subitem in item.items %}
+                          <li class="school-nav__item school-nav__item--sub">
+                            <a href="" class="school-nav__link school-nav__link--sub">{{subitem.text}}</a>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+
+                  </li>
+                {% endfor %}
+
+                <li class="school-nav__item d-none d-xl-block">
+                  <a
+                    href="/search"
+                    class="school-search__handle"
+                    role="button"
+                    aria-label="Toggle site search"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                    data-toggle-target=".js-site-search"
+                    data-toggle-focus=".js-site-search-input"
+                    data-toggle-group="school-header"
+                  >
+                    <svg class="icon mr-1 school-search__mag">
+                      <use xlink:href="#icon-search">
+                    </svg>
+                    <svg class="icon mr-1 school-search__times">
+                      <use xlink:href="#icon-times">
+                    </svg>
+                    Search
+                  </a>
                 </li>
-              {% endfor %}
-            </ul>
+              </ul>
+            </nav>
 
-            <ul class="school-nav__list">
-              {% for item in site_nav.items %}
-                <li class="school-nav__item">
-
-                  <a href="" class="school-nav__link school-nav__link--top">{{item.text}}</a>
-
-                  {% if item.items %}
-                    <ul class="school-nav__list school-nav__list--sub {% if item.items.length > 8 %} school-nav__list--cols{% endif %}">
-                      {% for subitem in item.items %}
-                        <li class="school-nav__item school-nav__item--sub">
-                          <a href="" class="school-nav__link school-nav__link--sub">{{subitem.text}}</a>
-                        </li>
-                      {% endfor %}
-                    </ul>
-                  {% endif %}
-
-                </li>
-              {% endfor %}
-
-              <li class="school-nav__item d-none d-xl-block">
-                <a
-                  href="/search"
-                  class="school-search__handle"
-                  role="button"
-                  aria-label="Toggle site search"
-                  aria-expanded="false"
-                  aria-haspopup="true"
-                  data-toggle-target=".js-site-search"
-                  data-toggle-focus=".js-site-search-input"
-                  data-toggle-group="school-header"
-                >
-                  <svg class="icon mr-1 school-search__mag">
-                    <use xlink:href="#icon-search">
-                  </svg>
-                  <svg class="icon mr-1 school-search__times">
-                    <use xlink:href="#icon-times">
-                  </svg>
-                  Search
-                </a>
-              </li>
-            </ul>
+            <nav aria-labelledby="midd-secondary-nav-label">
+              <h2 class="sr-only" id="midd-secondary-nav-label">Secondary navigation</h2>
+              <ul class="school-nav__list">
+                {% for item in ['Midd Students', 'Parents', 'Advisors'] %}
+                  <li class="school-nav__item">
+                    <a href="" class="school-nav__link school-nav__link--util">{{item}}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </nav>
 
           </div>
 
-        </nav>
+        </div>
 
         <div class="school-search">
           <a

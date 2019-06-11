@@ -66,6 +66,12 @@ class SmoothScroll {
      */
     let targets = [document.documentElement, document.body];
 
+    let offset = 0;
+
+    if (typeof this.offset === 'function') {
+      offset = this.offset(elem);
+    }
+
     if (this.container) {
       targets = this.container;
       scrollPosition = this.container.scrollTop;
@@ -74,7 +80,7 @@ class SmoothScroll {
     const scrollTop =
       typeof this.scrollTop === 'function'
         ? this.scrollTop(elem, scrollPosition)
-        : elementOffset + scrollPosition - this.offset;
+        : elementOffset + scrollPosition - offset;
 
     anime({
       scrollTop,

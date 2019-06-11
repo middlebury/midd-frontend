@@ -21,7 +21,7 @@
 
   {% include 'paragraphs/card-carousel.twig' with {
     colors: true,
-    randomize: true
+    randomize: not env.test
   } %}
 
   {% include 'paragraphs/text-short.twig' %}

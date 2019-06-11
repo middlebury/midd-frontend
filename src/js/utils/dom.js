@@ -1,3 +1,8 @@
+/**
+ * Collection of jquery-like DOM utility functions for short-hand vanillajs manipulations
+ * @file
+ */
+
 export const $ = (selector, elem = document) => elem.querySelector(selector);
 export const $$ = (selector, elem = document) =>
   elem.querySelectorAll(selector);

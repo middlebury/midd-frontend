@@ -5,6 +5,8 @@ import h from 'h';
 import { $, $$ } from './utils/dom';
 import MenuSpy from './menu-spy';
 
+import { isLargeUp } from './utils/media';
+
 class Digest {
   constructor(elem) {
     this.elem = elem;
@@ -35,15 +37,33 @@ class Digest {
     });
 
     const list = h('ol.digest__list', null, items);
-    const title = h('h2.digest__title', null, 'On This Page');
-    const nav = h('nav.digest', null, title, list);
+    const title = h('h2.digest__title#midd-digest-label', null, 'On This Page');
+    const nav = h(
+      'nav.digest',
+      {
+        'aria-labelledby': 'midd-digest-label'
+      },
+      title,
+      list
+    );
 
     this.elem.appendChild(nav);
 
     new MenuSpy(nav);
 
-    // TODO: consider using animejs instead
-    new SmoothScroll('.digest__link');
+    let offset = 0;
+    // TODO: don't tie the js-headroom to this widget as the element.
+    // we should allow for a custom selector
+    const headroom = $('.js-headroom');
+
+    if (headroom) {
+      // set offset to be a function so media is checked each time
+      offset = () => (isLargeUp() ? headroom.offsetHeight : 0);
+    }
+
+    new SmoothScroll('.digest__link', {
+      offset
+    });
 
     if (location.hash) {
       const el = $(location.hash);

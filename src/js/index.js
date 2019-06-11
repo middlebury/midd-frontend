@@ -41,5 +41,7 @@ import './card-carousel';
 import './dropdown';
 import './drawer';
 import './sticky';
+import './tabs';
+import './select-url';
 
 focusWithin(document);

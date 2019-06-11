@@ -42,15 +42,6 @@
   }
 }
 
-.box-menu--midd {
-  background: $gray-lighter;
-  border-color: $navy;
-
-  .box-menu__list {
-    border-color: $gray-light;
-  }
-}
-
 .box-menu--overlap {
   margin-top: -#{spacing(5)};
   position: relative;

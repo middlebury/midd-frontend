@@ -15,26 +15,9 @@
 } %}
 
 {% block page %}
-
-  <div class="container">
-    <div class="row">
-
-      <div class="col-md-10 offset-md-1">
-        {# set overlap if page has featured image #}
-        {% include 'partials/box-menu.twig' with {
-          overlap: has_page_image,
-          items: top_level_nav_example
-        } %}
-      </div>
-
-      <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2">
-        {% include 'partials/lead.twig' %}
-      </div>
-
-      {% include 'partials/top-level-paragraphs.twig' %}
-
-    </div>
-
-  </div>
-
+  {% include 'partials/top-level-layout.twig' with {
+    show_menu: true,
+    show_lead: true,
+    has_page_image: has_page_image
+  } %}
 {% endblock %}

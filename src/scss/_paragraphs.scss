@@ -211,3 +211,8 @@
 .paragraph--search {
   @include paragraph-space-sm;
 }
+
+.paragraph--lib-search {
+  @include paragraph-full-width;
+  @include paragraph-space;
+}

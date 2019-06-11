@@ -8,6 +8,8 @@ function createStickyElem(el) {
 
   let offset = 0;
 
+  // If the attribute selector is not a number, we can assume it's a selector of an element
+  // to get the offset height from.
   if (isNaN(offsetAttr)) {
     const el = $(offsetAttr);
     offset = el ? el.offsetHeight : 0;

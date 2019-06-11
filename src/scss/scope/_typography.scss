@@ -17,11 +17,53 @@
     @include link-border;
   }
 
+  a[href*='docs.google.com'],
+  a[href*='.pdf'],
+  a[href*='middleburycollege-my.sharepoint.com'] {
+    &:after {
+      font-size: 10px;
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: $letter-spacing;
+      padding: spacing(1);
+      line-height: 1;
+      background: $navy;
+      color: $white;
+      margin-left: spacing(1);
+      transition: 0.2s;
+    }
+
+    &:hover,
+    &:focus {
+      &:after {
+        transform: translateY(-4px);
+      }
+    }
+  }
+
+  a[href*='.pdf'] {
+    &:after {
+      content: 'PDF';
+    }
+  }
+
+  a[href*='docs.google.com'] {
+    &:after {
+      content: 'Google Drive';
+    }
+  }
+
+  a[href*='middleburycollege-my.sharepoint.com'] {
+    &:after {
+      content: 'Office 365';
+    }
+  }
+
   // reset styles for jump links
-  // TODO: we should have a class for these links instead
   a[id][name] {
     color: currentColor;
     text-decoration: none;
+    border: 0;
   }
 
   ul,
@@ -180,5 +222,11 @@
   li,
   p {
     font-size: typescale(2);
+  }
+}
+
+.contains-links {
+  a {
+    @include link-border;
   }
 }

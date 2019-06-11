@@ -30,13 +30,14 @@ const rollup = require('./rollup');
 
 dotenv.config();
 
-const production = process.env.NODE_ENV === 'production';
+const PROD = process.env.NODE_ENV === 'production';
+const TEST = process.env.CI;
 
 const THEME_DIR = process.env.THEME_DIR || args.themeDir || '';
 
 const paths = {
   html: {
-    src: './src/templates/*.twig',
+    src: ['./src/templates/*.twig', '!./src/templates/*layout*.twig'],
     dest: './dist'
   },
   styles: {
@@ -49,7 +50,7 @@ const paths = {
   },
   images: {
     // ignore sub folders in production build since demo images may be too big.
-    src: `./src/images/${production ? '*' : '**/*'}.{png,jpg,svg}`,
+    src: `./src/images/${PROD ? '*' : '**/*'}.{png,jpg,svg}`,
     dest: './dist/images/'
   }
 };
@@ -112,7 +113,7 @@ const styles = () => {
     })
   ];
 
-  if (production) {
+  if (PROD) {
     plugins.push(
       cssnano(),
       mqPacker({
@@ -123,7 +124,7 @@ const styles = () => {
 
   return gulp
     .src(paths.styles.src)
-    .pipe(gulpIf(!production, sourcemaps.init({ loadMaps: true })))
+    .pipe(gulpIf(!PROD, sourcemaps.init({ loadMaps: true })))
     .pipe(
       plumber({
         errorHandler: onError
@@ -131,7 +132,7 @@ const styles = () => {
     )
     .pipe(sass())
     .pipe(postcss(plugins))
-    .pipe(gulpIf(!production, sourcemaps.write('./')))
+    .pipe(gulpIf(!PROD, sourcemaps.write('./')))
     .pipe(size({ showFiles: true }))
     .pipe(gulp.dest(paths.styles.dest))
     .pipe(browserSync.stream());
@@ -168,7 +169,8 @@ const html = () =>
 
         return Object.assign({}, ymlData, imageStyles, {
           env: {
-            production
+            test: TEST,
+            production: PROD
           }
         });
       })

@@ -4,6 +4,9 @@ import h from 'h';
 
 import { $, $$, on, hide, show } from './utils/dom';
 
+/**
+ * handles on-page search of middlebury.edu/office listing
+ */
 (function() {
   const elem = $('.js-offices');
 
@@ -15,6 +18,7 @@ import { $, $$, on, hide, show } from './utils/dom';
   const input = $('.js-offices-input', elem);
   const items = $$('.js-offices-item', elem);
   const region = $('.js-offices-region', elem);
+  const toc = $('[data-digest-nav]');
 
   const alertTemplate = 'No results found for &ldquo;{term}&rdquo;';
   const alert = h('div.alert.alert--status.js-offices-alert');
@@ -74,6 +78,7 @@ import { $, $$, on, hide, show } from './utils/dom';
     hideAlert();
 
     if (!value || !value.trim()) {
+      show(toc);
       return showAll(items);
     }
 
@@ -84,9 +89,11 @@ import { $, $$, on, hide, show } from './utils/dom';
     if (matchedItems.length === 0) {
       setNoResultsValue(value);
       showAlert();
+      hide(toc);
       return;
     }
 
+    hide(toc);
     showAll(matchedItems);
   }
 

@@ -24,7 +24,7 @@
       </div>
       <div class="card-carousel-item__footer">
         <a href="#" class="card-carousel-item__label button button--light">
-          {% if random(1) %}
+          {% if env.test or random(1) %}
             Program title
           {% else %}
             Program title here a bit lengthy of one it should wrap

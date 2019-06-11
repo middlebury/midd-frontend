@@ -1,5 +1,22 @@
 import { $, $$, on, off } from './utils/dom';
 
+/**
+ * Creates a basic dropdown widget that has a button to toggle an active class on an element.
+ *
+ * Handles aria-expanded and focusing the first link in the data-dropdown-menu.
+ *
+ * Different from toggler.js since we watch for clicks outside the element to close the dropdown
+ * Could probably be merged with toggler somehow.
+ *
+ * Example:
+ *
+ * <div data-dropdown>
+ *   <button data-dropdown-button>open dropdown</button>
+ *   <ul data-dropdown-menu>
+ *     ...
+ *   </ul>
+ * </div>
+ */
 class Dropdown {
   constructor(elem) {
     this.elem = elem;
@@ -18,6 +35,10 @@ class Dropdown {
   }
 
   addListeners() {
+    /**
+     * listen for window clicks/touch so we can close the dropdown on clicks outside
+     * dropdown and button.
+     */
     on(window, 'click', this.handleWindowClick);
     on(window, 'touchstart', this.handleWindowClick);
 
@@ -52,6 +73,8 @@ class Dropdown {
   handleWindowClick = e => {
     const node = this.elem;
 
+    // if the target isn't the button or contains the button, the click is outside
+    // the data-dropdown element
     if (event.target !== node && !node.contains(event.target)) {
       this.hide();
     }
@@ -69,7 +92,7 @@ class Dropdown {
 
   focusFirst() {
     const el = $('a', this.menu);
-    el.focus();
+    if (el) el.focus();
   }
 
   hide() {

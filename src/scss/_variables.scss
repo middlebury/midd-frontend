@@ -317,8 +317,6 @@ $label-font-size: typescale(2) !default;
 $label-font-weight: $font-weight-semibold !default;
 $label-margin-bottom: spacing(2) !default;
 
-$form-group-margin-bottom: spacing(3) !default;
-
 // input size default
 $input-padding-y: $input-btn-padding-y !default;
 $input-padding-x: $input-btn-padding-y !default;
@@ -414,6 +412,7 @@ $z-index-themed-panel-content: 3;
 $z-index-themed-panel-sidebar: 4;
 
 $z-index-video-button: 1;
+$z-index-gallery-button: 1;
 
 $z-index-page-header-caption: 3;
 
