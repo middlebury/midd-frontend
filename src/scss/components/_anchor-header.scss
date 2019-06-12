@@ -8,6 +8,16 @@
   }
 }
 
+.anchor-header--front {
+  margin-bottom: spacing(5);
+  @include media(md) {
+    margin-bottom: spacing(7);
+  }
+  @include media(lg) {
+    margin-bottom: spacing(8);
+  }
+}
+
 .anchor-header__primary {
   display: flex;
   align-items: flex-start;
