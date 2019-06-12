@@ -321,6 +321,7 @@ module.exports = {
   scripts,
   build,
   dev,
+  replaceImagePaths,
   zip: bundleMarkup,
   default: server
 };
