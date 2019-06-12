@@ -43,7 +43,9 @@
                 {% for item in site_nav.items %}
                   <li class="school-nav__item">
 
-                    <a href="" class="school-nav__link school-nav__link--top">{{item.text}}</a>
+                    {% set active = loop.index == 3 %}
+
+                    <a href="" class="school-nav__link school-nav__link--top{% if active %} school-nav__link--active{% endif %}">{{item.text}}</a>
 
                     {% if item.items %}
                       <ul class="school-nav__list school-nav__list--sub {% if item.items.length > 8 %} school-nav__list--cols{% endif %}">

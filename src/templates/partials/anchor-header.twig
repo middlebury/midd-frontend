@@ -1,5 +1,5 @@
-{% set is_front = true %}
-<div class="anchor-header">
+{% set is_front = false %}
+<div class="anchor-header{% if is_front %} anchor-header--front{% endif %}">
   <div class="container">
     <div class="anchor-header__primary">
       {# TODO: make this an h1 on frontpage #}

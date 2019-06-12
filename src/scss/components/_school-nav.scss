@@ -123,6 +123,10 @@
   }
 }
 
+.school-nav__link--active {
+  @include themify(border-color);
+}
+
 .school-nav__link--util {
   font-size: typescale(2);
   border-top: 4px solid transparent;

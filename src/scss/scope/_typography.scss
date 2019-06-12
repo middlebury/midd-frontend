@@ -47,6 +47,7 @@
     }
   }
 
+  a[href*='drive.google.com'],
   a[href*='docs.google.com'] {
     &:after {
       content: 'Google Drive';
