@@ -34,7 +34,7 @@
 }
 
 .paragraphs {
-  margin-bottom: spacing(9);
+  @include paragraph-space();
 
   > [class*='paragraph']:first-child {
     margin-top: 0;

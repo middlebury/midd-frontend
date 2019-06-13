@@ -1,16 +1,10 @@
 .pagination {
   margin-bottom: spacing(9);
   margin-top: spacing(7);
-  text-align: center;
 }
 
 .pagination__list {
-  display: inline-block;
-
-  @include media(sm) {
-    width: 100%;
-    display: flex;
-  }
+  display: flex;
 }
 
 .pagination__item {

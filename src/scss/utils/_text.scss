@@ -16,6 +16,10 @@
   font-weight: 500;
 }
 
+.fw6 {
+  font-weight: 600;
+}
+
 .text-bold {
   font-weight: bold;
 }
@@ -103,4 +107,10 @@ $text-colors: (
   a {
     @include link-border;
   }
+}
+
+.text-caps {
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing;
+  font-weight: $font-weight-medium;
 }
