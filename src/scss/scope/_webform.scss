@@ -129,4 +129,8 @@
       }
     }
   }
+
+  .element-invisible {
+    @include sr-only;
+  }
 }
