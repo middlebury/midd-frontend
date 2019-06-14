@@ -20,6 +20,8 @@
     padding: spacing(3);
     border: 1px solid $border-color;
     margin-bottom: spacing(5);
+    min-width: 0;
+    width: 100%;
 
     .form-item:last-child {
       margin-bottom: 0;
@@ -56,6 +58,8 @@
     @extend .form-control;
     margin-top: 0; // remove style coming from global form-text, which is meant for helper text
     padding: spacing(2);
+    width: auto;
+    max-width: 100%;
   }
 
   .form-select {
