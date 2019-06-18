@@ -1,28 +1,10 @@
 .button {
-  display: inline-block;
-  font-family: $font-family-base;
-  text-align: center;
-  border: $btn-border-width solid $btn-border-color;
-  cursor: pointer;
-  background-color: $input-bg;
-  color: $input-color;
-  transition: $btn-transition;
-  padding: $btn-padding-y $btn-padding-x;
-  font-size: $btn-font-size;
-  line-height: $btn-line-height;
-  border-radius: $btn-border-radius;
-  white-space: nowrap;
+  @include button-base;
+}
 
-  &:hover,
-  &:focus {
-    text-decoration: none;
-  }
-
-  &--disabled,
-  &[disabled] {
-    opacity: $btn-disabled-opacity;
-    pointer-events: none;
-  }
+.button--disabled,
+.button[disabled] {
+  @include button-disabled;
 }
 
 // Shapes
@@ -47,37 +29,43 @@
 // Sizes
 
 .button--sm {
-  font-size: $btn-font-size-sm;
-  padding: $btn-padding-y-sm $btn-padding-x-sm;
+  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm);
 }
 
 .button--lg {
-  font-size: $btn-font-size-lg;
-  padding: $btn-padding-y-lg $btn-padding-x-lg;
+  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg);
 }
 
 // Themes
 
 .button--primary {
-  background-color: $btn-primary-bg;
-  color: $btn-primary-color;
+  @include button-theme($btn-primary-color, $btn-primary-bg, $btn-border-color);
+  // background-color: $btn-primary-bg;
+  // color: $btn-primary-color;
 
-  &:hover,
-  &:focus {
-    background-color: $btn-primary-hover-bg;
-    color: $btn-primary-hover-color;
-  }
+  // &:hover,
+  // &:focus {
+  //   background-color: $btn-primary-hover-bg;
+  //   color: $btn-primary-hover-color;
+  // }
 
   &.button--outline {
-    background-color: transparent;
-    color: $btn-primary-bg;
-    border-color: $btn-primary-bg;
+    @include button-theme(
+      $btn-primary-bg,
+      transparent,
+      $btn-primary-bg,
+      $btn-primary-color,
+      $btn-primary-bg
+    );
+    // background-color: transparent;
+    // color: $btn-primary-bg;
+    // border-color: $btn-primary-bg;
 
-    &:focus,
-    &:hover {
-      color: $btn-primary-color;
-      background-color: $btn-primary-bg;
-    }
+    // &:focus,
+    // &:hover {
+    //   color: $btn-primary-color;
+    //   background-color: $btn-primary-bg;
+    // }
   }
 }
 
