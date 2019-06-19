@@ -314,8 +314,7 @@ const build = gulp.series(
   copyIcons,
   copyDeps,
   gulp.parallel(html, images, styles, scripts),
-  reportFilesizes,
-  buildIndex
+  reportFilesizes
 );
 
 const dev = gulp.parallel(build, watch);
@@ -330,6 +329,7 @@ module.exports = {
   build,
   dev,
   replaceImagePaths,
+  buildIndex,
   zip: bundleMarkup,
   default: server
 };

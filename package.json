@@ -7,6 +7,8 @@
     "dev": "gulp dev",
     "build": "NODE_ENV=production gulp build",
     "build:scripts": "NODE_ENV=production gulp scripts",
+    "build:netlify": "npm run build",
+    "postbuild:netlify": "gulp buildIndex",
     "wrapper": "npm run build && gulp zip",
     "deploy": "gulp deploy",
     "test": "npm run test:bundlesize && npm run test:visual",
