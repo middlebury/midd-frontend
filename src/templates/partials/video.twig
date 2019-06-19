@@ -13,9 +13,10 @@
       <span class="button button--primary video__button">
         Play
         <span class="ml-3">
-          <svg class="icon icon--sm">
-            <use xlink:href="#icon-play" />
-          </svg>
+          {% include 'partials/icon.twig' with {
+            name: 'play',
+            class: 'icon--sm'
+          } %}
         </span>
       </span>
     </a>

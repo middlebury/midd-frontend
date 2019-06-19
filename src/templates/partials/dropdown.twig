@@ -6,9 +6,7 @@
     data-dropdown-button
   >
     {{label}}
-    <svg class="icon dropdown__icon">
-      <use xlink:href="#icon-chevron-down">
-    </svg>
+    {% include 'partials/icon.twig' with { name: 'chevron-down', class: 'dropdown__icon' } %}
   </button>
   <ul class="dropdown__list" data-dropdown-menu>
     {% for item in items %}
