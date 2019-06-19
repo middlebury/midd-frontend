@@ -1,158 +1,25 @@
-/**
- * label
- */
-
 .label,
 label {
-  display: block;
-  font-size: $label-font-size;
-  font-weight: $label-font-weight;
-  font-family: $font-family-sans-serif;
-  margin-bottom: $label-margin-bottom;
+  @include form-label;
 }
-
-/**
- * form group
- */
 
 .form-group {
-  margin-bottom: spacing(5);
+  @include form-group;
 }
-
-/**
- * text input
- */
 
 .form-control {
-  display: block;
-  width: 100%;
-  border: $input-border-width solid $input-border-color;
-  font-family: $font-family-base;
-  font-size: $input-font-size;
-  line-height: $input-line-height;
-  background-color: $input-bg;
-  color: $input-color;
-  padding: $input-padding-y $input-padding-x;
-  border-radius: $input-border-radius;
-  appearance: none;
-
-  &:focus {
-    // background-color: $input-focus-bg;
-  }
-
-  .is-error {
-    border-color: $danger;
-  }
-
-  .is-valid {
-    border-color: $success;
-  }
+  @include form-control;
 }
-
-/**
- * textarea
- */
 
 textarea.form-control {
-  min-height: 200px;
-  resize: vertical;
+  @include form-textarea;
 }
-
-/**
- * select
- */
 
 select.form-control {
-  background-color: $white;
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAICAYAAAAiJnXPAAAAtElEQVQYlXXOsUpCcRQH4M/LRcMXcAr+W+/gIiRmECERiNBruDf3HioO1RO4uBcUEQ66RYSIhFPQ1HKC66XOcjjn/D44lZRSE0Nc4cv/VccYNzmucYJ79PD9B6jFvYuDDH084hS3qJZAFXcBHjDIsIvFM84xQV4AU5zhKT7aZXHcooNXXGIUYIQLvAT4hEpKqfhKA3Mc4Q2HWKCFzW8os19rtLEKsIx5UwyVEbzjGLPoH+XADz8MIz9yNyrhAAAAAElFTkSuQmCC');
-  background-position: right $input-padding-x center;
-  background-repeat: no-repeat;
-  padding-right: spacing(7);
-
-  &::-ms-expand {
-    display: none;
-  }
+  @include form-select;
 }
-
-/**
- * form text
- */
-
-.form-text {
-  display: block;
-  margin-top: 0.5rem;
-  font-size: 14px;
-}
-
-/**
- * feedback
- */
-
-.form-feedback {
-  .form-control {
-    border-color: $danger;
-  }
-}
-
-/**
- * form sizes
- */
 
 .form-control--sm {
   font-size: $input-font-size-sm;
   padding: $input-padding-y-sm $input-padding-x-sm;
-}
-
-.form-control--lg {
-  font-size: $input-font-size-lg;
-  padding: $input-padding-y-lg $input-padding-x-lg;
-}
-
-/**
- * form fieldset
- *
- */
-
-.form-fieldset {
-}
-
-.form-fieldset__legend {
-  font-weight: $label-font-weight;
-  font-size: $label-font-size;
-  margin-bottom: $label-margin-bottom;
-}
-
-/*
- * form file
- */
-
-.form-file {
-  display: flex;
-}
-
-.form-file__input {
-  @include sr-only();
-}
-
-.form-file__label {
-}
-
-/*
- * form-check
- */
-
-.form-check {
-  position: relative;
-  padding-left: 1.25rem;
-}
-
-.form-check__input {
-  position: absolute;
-  margin-left: -1.25rem;
-  margin-top: 0.25rem;
-}
-
-.form-check__label {
-  font-weight: $font-weight-normal;
-  margin-bottom: 0;
 }
