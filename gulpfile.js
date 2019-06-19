@@ -289,7 +289,11 @@ const watch = () => {
 const buildIndex = () =>
   gulp
     .src('./dist/*.html')
-    .pipe(indexFile())
+    .pipe(
+      indexFile({
+        relativePath: './dist/'
+      })
+    )
     .pipe(gulp.dest('./dist'));
 
 const reportFilesizes = () =>
