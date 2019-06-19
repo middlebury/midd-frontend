@@ -25,6 +25,7 @@ const cssnano = require('cssnano');
 const _ = require('lodash');
 const zip = require('gulp-zip');
 const dotenv = require('dotenv');
+const indexFile = require('gulp-index');
 
 const rollup = require('./rollup');
 
@@ -285,6 +286,12 @@ const watch = () => {
   gulp.watch('./src/data/*.yml', html);
 };
 
+const buildIndex = () =>
+  gulp
+    .src('./dist/*.html')
+    .pipe(indexFile())
+    .pipe(gulp.dest('./dist'));
+
 const reportFilesizes = () =>
   gulp
     .src('./dist/**/*.{css,js}')
@@ -307,7 +314,8 @@ const build = gulp.series(
   copyIcons,
   copyDeps,
   gulp.parallel(html, images, styles, scripts),
-  reportFilesizes
+  reportFilesizes,
+  buildIndex
 );
 
 const dev = gulp.parallel(build, watch);
