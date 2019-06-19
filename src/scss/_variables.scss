@@ -309,7 +309,40 @@ $btn-border-radius: $input-btn-border-radius !default;
 $btn-font-weight: $font-weight-normal !default;
 $btn-disabled-opacity: 0.5 !default;
 
-$btn-transition: color 0.2s, background-color 0.2s !default;
+$btn-transition: color 0.2s, background-color 0.2s, border-color 0.2s !default;
+
+$btn-themes: (
+  'primary': (
+    bg: $btn-primary-bg,
+    color: $btn-primary-color,
+    border-color: $btn-primary-bg,
+    hover-bg: $btn-primary-hover-bg,
+    hover-color: $btn-primary-hover-color,
+    hover-border-color: $btn-primary-hover-bg
+  ),
+  'primary-outline': (
+    color: $btn-primary-bg,
+    bg: transparent,
+    border-color: $btn-primary-bg,
+    hover-color: $btn-primary-color,
+    hover-bg: $btn-primary-bg
+  ),
+  'light': (
+    color: $btn-light-color,
+    bg: $btn-light-bg,
+    border-color: $btn-light-bg,
+    hover-color: $btn-light-hover-color,
+    hover-bg: $btn-light-hover-bg,
+    hover-border-color: $btn-light-hover-bg
+  ),
+  'light-outline': (
+    color: $btn-light-bg,
+    bg: transparent,
+    border-color: $btn-light-bg,
+    hover-color: $btn-light-color,
+    hover-bg: $btn-light-bg
+  )
+);
 
 // Forms
 

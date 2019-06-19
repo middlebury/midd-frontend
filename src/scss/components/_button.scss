@@ -39,79 +39,18 @@
 // Themes
 
 .button--primary {
-  @include button-theme($btn-primary-color, $btn-primary-bg, $btn-border-color);
-  // background-color: $btn-primary-bg;
-  // color: $btn-primary-color;
-
-  // &:hover,
-  // &:focus {
-  //   background-color: $btn-primary-hover-bg;
-  //   color: $btn-primary-hover-color;
-  // }
+  @include button-theme('primary');
 
   &.button--outline {
-    @include button-theme(
-      $btn-primary-bg,
-      transparent,
-      $btn-primary-bg,
-      $btn-primary-color,
-      $btn-primary-bg
-    );
-    // background-color: transparent;
-    // color: $btn-primary-bg;
-    // border-color: $btn-primary-bg;
-
-    // &:focus,
-    // &:hover {
-    //   color: $btn-primary-color;
-    //   background-color: $btn-primary-bg;
-    // }
-  }
-}
-
-.button--secondary {
-  background-color: $btn-secondary-bg;
-  color: $btn-secondary-color;
-
-  &:hover,
-  &:focus {
-    background-color: $btn-secondary-hover-bg;
-    color: $btn-secondary-hover-color;
-  }
-
-  &.button--outline {
-    background-color: transparent;
-    color: $btn-secondary-bg;
-    border-color: $btn-secondary-bg;
-
-    &:hover,
-    &:focus {
-      background-color: $btn-secondary-bg;
-      color: $btn-secondary-color;
-    }
+    @include button-theme('primary-outline');
   }
 }
 
 .button--light {
-  background-color: $btn-light-bg;
-  color: $btn-light-color;
-
-  &:hover,
-  &:focus {
-    background-color: $btn-light-hover-bg;
-    color: $btn-light-hover-color;
-  }
+  @include button-theme('light');
 
   &.button--outline {
-    background-color: transparent;
-    border-color: $btn-light-bg;
-    color: $btn-light-bg;
-
-    &:hover,
-    &:focus {
-      background-color: $btn-light-bg;
-      color: $btn-light-color;
-    }
+    @include button-theme('light-outline');
   }
 }
 

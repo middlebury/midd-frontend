@@ -4,7 +4,7 @@
   text-align: center;
   border: $btn-border-width solid $btn-border-color;
   cursor: pointer;
-  background-color: $input-bg;
+  background: transparent;
   color: $input-color;
   transition: $btn-transition;
   padding: $btn-padding-y $btn-padding-x;
@@ -19,14 +19,15 @@
   }
 }
 
-@mixin button-theme(
-  $color,
-  $bg,
-  $border-color,
-  $hover-color: $color,
-  $hover-bg: $bg,
-  $hover-border-color: $border-color
-) {
+@mixin button-theme($name, $themes: $btn-themes) {
+  $theme: map-get($themes, $name);
+  $bg: map-get($theme, 'bg');
+  $color: map-get($theme, 'color');
+  $border-color: map-get($theme, 'border-color');
+  $hover-color: map-get($theme, 'hover-color');
+  $hover-bg: map-get($theme, 'hover-bg');
+  $hover-border-color: map-get($theme, 'hover-border-color');
+
   background-color: $bg;
   color: $color;
   border-color: $border-color;

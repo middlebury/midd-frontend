@@ -79,11 +79,7 @@
 
   .button-primary {
     @include button-base;
-    @include button-theme(
-      $btn-primary-bg,
-      $btn-primary-color,
-      $btn-border-color
-    );
+    @include button-theme('primary');
   }
 
   .form-managed-file {
@@ -92,11 +88,7 @@
 
     .form-submit {
       @include button-base;
-      @include button-theme(
-        $btn-primary-bg,
-        $btn-primary-color,
-        $btn-border-color
-      );
+      @include button-theme('primary');
       @include button-size(
         $btn-padding-y-sm,
         $btn-padding-x-sm,
