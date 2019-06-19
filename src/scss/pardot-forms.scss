@@ -37,13 +37,7 @@ textarea {
 
 input[type='submit'] {
   @include button-base;
-  @include button-theme(
-    $btn-primary-color,
-    $btn-primary-bg,
-    $btn-border-color,
-    $btn-primary-hover-color,
-    $btn-primary-hover-bg
-  );
+  @include button-theme('primary');
 }
 
 // checkbox item groups
