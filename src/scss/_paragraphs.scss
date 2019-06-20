@@ -1,11 +1,14 @@
 @mixin paragraph-space {
+  margin-top: spacing(7);
   margin-bottom: spacing(7);
 
   @include media(md) {
+    margin-top: spacing(8);
     margin-bottom: spacing(8);
   }
 
   @include media(lg) {
+    margin-top: spacing(9);
     margin-bottom: spacing(9);
   }
 }
