@@ -34,7 +34,15 @@
 }
 
 .paragraphs {
-  margin-bottom: spacing(9);
+  margin-bottom: spacing(7);
+
+  @include media(md) {
+    margin-bottom: spacing(8);
+  }
+
+  @include media(lg) {
+    margin-bottom: spacing(9);
+  }
 
   > [class*='paragraph']:first-child {
     margin-top: 0;
