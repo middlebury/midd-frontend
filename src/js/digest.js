@@ -15,16 +15,24 @@ class Digest {
   }
 
   init() {
-    const anchors = new AnchorJS();
-
     const headingSelector = '[data-digest-content] h2';
-
-    anchors.add(headingSelector);
 
     const headings = $$(headingSelector);
 
+    const anchors = new AnchorJS();
+    anchors.add(headingSelector);
+
     let items = [];
     headings.forEach(heading => {
+      // if heading text begins with a number, we need to prefix some a-z text
+      // so selectors in digest nav are valid
+      if (!isNaN(heading.id.charAt(0))) {
+        const newId = 'section-' + heading.id;
+        heading.id = newId;
+        const anchor = $('a', heading);
+        anchor.href = '#' + newId;
+      }
+
       const link = h(
         'a.digest__link',
         { href: '#' + heading.id },

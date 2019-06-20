@@ -224,3 +224,9 @@
   @include paragraph-full-width;
   @include paragraph-space;
 }
+
+.paragraph--embed {
+  iframe {
+    max-width: 100%;
+  }
+}
