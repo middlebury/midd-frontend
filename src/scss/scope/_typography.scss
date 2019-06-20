@@ -17,6 +17,7 @@
     @include link-border;
   }
 
+  a[href*='drive.google.com'],
   a[href*='docs.google.com'],
   a[href*='.pdf'],
   a[href*='middleburycollege-my.sharepoint.com'] {
