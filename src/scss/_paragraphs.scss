@@ -230,3 +230,7 @@
     max-width: 100%;
   }
 }
+
+.paragraph--related-events {
+  @include paragraph-space;
+}

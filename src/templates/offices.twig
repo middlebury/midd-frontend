@@ -45,8 +45,9 @@
           {% for item in offices|groupBy('group') %}
 
             <section class="section js-offices-group">
-
-              <h2 class="section__title">{{item.group}}</h2>
+              <header class="section__header">
+                <h2 class="section__title">{{item.group}}</h2>
+              </header>
 
               <div class="col-count-md-2">
 
