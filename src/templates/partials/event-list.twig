@@ -25,9 +25,8 @@
           aria-expanded="false"
         >
           Filter by date
-          <svg class="foldable__icon icon">
-            <use xlink:href="#icon-chevron-down" />
-          </svg>
+
+          {% include 'partials/icon.twig' with { name: 'chevron-down', class: 'foldable__icon' } %}
         </button>
         <div class="foldable__content js-foldable">
           <label for="midd-events-datepicker" class="label d-none d-lg-block">Filter by date</label>
