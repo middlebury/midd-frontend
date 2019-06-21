@@ -12,6 +12,10 @@
 /// font weight
 ///
 
+.fw3 {
+  font-weight: 300;
+}
+
 .fw5 {
   font-weight: 500;
 }
@@ -103,4 +107,20 @@ $text-colors: (
   a {
     @include link-border;
   }
+}
+
+///
+/// Line height
+///
+
+.lh-solid {
+  line-height: 1;
+}
+
+.lh-heading {
+  line-height: 1.4;
+}
+
+.lh-body {
+  line-height: 1.7;
 }

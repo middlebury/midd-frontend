@@ -216,3 +216,7 @@
   @include paragraph-full-width;
   @include paragraph-space;
 }
+
+.paragraph--related-events {
+  @include paragraph-space;
+}
