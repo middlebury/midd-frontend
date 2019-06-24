@@ -25,9 +25,7 @@
 .digest__link {
   display: block;
   font-size: 14px;
-  padding: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding: spacing(1) spacing(3);
   border-left: 4px solid transparent;
   transition: border-color 0.2s;
 
