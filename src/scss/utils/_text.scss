@@ -124,13 +124,13 @@ $text-colors: (
 ///
 
 .lh-solid {
-  line-height: 1;
+  line-height: $line-height-solid;
 }
 
 .lh-heading {
-  line-height: 1.4;
+  line-height: $line-height-heading;
 }
 
 .lh-body {
-  line-height: 1.7;
+  line-height: $line-height-body;
 }
