@@ -2,8 +2,15 @@
 }
 
 .accordion-item {
+  transition: box-shadow 0.2s;
+
   &:not(:last-of-type) {
     border-bottom: 1px solid $border-color;
+  }
+
+  &:hover,
+  &.is-toggled {
+    box-shadow: 0 0 8px rgba(black, 0.1);
   }
 }
 
@@ -26,14 +33,14 @@
   display: flex;
   justify-content: space-between;
   color: $link-color;
-  padding: spacing(3) spacing(1);
+  padding: spacing(3);
   font-size: typescale(4);
   transition: background-color 0.2s;
   cursor: pointer;
 
   &:hover {
-    background-color: $gray-lighter;
     text-decoration: none;
+    background-color: $gray-lighter;
   }
 }
 
@@ -55,8 +62,8 @@
 .accordion-item__content {
   padding-top: spacing(3);
   padding-bottom: spacing(7);
-  padding-left: spacing(1);
-  padding-right: spacing(1);
+  padding-left: spacing(3);
+  padding-right: spacing(3);
 
   .accordion-item.has-toggler & {
     display: none;
