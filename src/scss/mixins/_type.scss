@@ -55,6 +55,9 @@
 
 @mixin h2 {
   font-size: typescale(6);
+  line-height: $line-height-heading;
+  font-weight: $font-weight-normal;
+
   @include media(lg) {
     font-size: typescale(7);
   }
@@ -62,16 +65,24 @@
 
 @mixin h3 {
   font-size: typescale(5);
+  line-height: $line-height-heading;
+  font-weight: $font-weight-normal;
 }
 
 @mixin h4 {
   font-size: typescale(4);
+  line-height: $line-height-heading;
+  font-weight: $font-weight-normal;
 }
 
 @mixin h5 {
   font-size: typescale(3);
+  line-height: $line-height-heading;
+  font-weight: $font-weight-normal;
 }
 
 @mixin h6 {
   font-size: typescale(2);
+  line-height: $line-height-heading;
+  font-weight: $font-weight-normal;
 }
