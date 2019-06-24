@@ -32,7 +32,10 @@
 .section__link {
   @include link-border;
   flex: 0 0 auto;
-  margin-left: spacing(3);
+
+  .section__title + & {
+    margin-left: spacing(3);
+  }
 }
 
 .section__text {
