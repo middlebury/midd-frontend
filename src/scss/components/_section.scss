@@ -27,6 +27,22 @@
   font-weight: $font-weight-normal;
   font-size: typescale(6);
   flex: 1;
+
+  // Adds border style to title and removes it when nested in section header
+  // so we don't need extra header elements in sections which do not have a cta link or blurb.
+  border-top: 4px solid $navy;
+  padding-top: spacing(2);
+  margin-bottom: spacing(5);
+
+  @include media(md) {
+    margin-bottom: spacing(7);
+  }
+
+  .section__header & {
+    border-top: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 .section__link {
