@@ -19,9 +19,7 @@
           </address>
 
           <a href="#" class="d-sm-none mb-3 mt-2 button button--outline button--sm button--primary">
-            <svg class="icon">
-              <use xlink:href="#icon-map-marker">
-            </svg>
+            {% include 'partials/icon.twig' with { name: 'map-marker' } %}
             View in Campus Map
           </a>
 
@@ -42,9 +40,7 @@
           </a>
 
           <a href="#" class="mt-2 mb-7 button button--outline button--sm button--primary button--block">
-            <svg class="icon">
-              <use xlink:href="#icon-map-marker">
-            </svg>
+            {% include 'partials/icon.twig' with { name: 'map-marker' } %}
             View in Campus Map
           </a>
         </div>

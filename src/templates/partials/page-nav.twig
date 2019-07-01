@@ -21,9 +21,7 @@
     aria-expanded="false"
   >
     Additional Navigation
-    <svg class="page-nav__icon icon">
-      <use xlink:href="#icon-chevron-down" />
-    </svg>
+    {% include 'partials/icon.twig' with { name: 'chevron-down', class: 'page-nav__icon' } %}
   </button>
   <div class="page-nav__content js-page-nav">
     <h2 class="page-nav__title" id="midd-page-nav-label">

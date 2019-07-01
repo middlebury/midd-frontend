@@ -67,33 +67,3 @@
     display: none;
   }
 }
-
-.school-search__group {
-  display: flex;
-}
-
-.school-search__input {
-  flex: 1;
-  border: 1px solid $gray;
-  font-family: inherit;
-  font-size: 16px;
-  line-height: 1;
-  padding: 1rem;
-  border-right: 0;
-  background-color: $white;
-  color: $black;
-  border-color: $brand-primary-dark;
-  appearance: none;
-}
-
-.school-search__submit {
-  flex: 0 0 auto;
-  padding: 1rem;
-  font-size: 16px;
-  line-height: 1;
-  border: 1px solid $gray;
-  border-left: 0;
-  background-color: $brand-primary-dark;
-  border-color: $brand-primary-dark;
-  color: $white;
-}

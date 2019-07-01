@@ -22,9 +22,7 @@
 
           <span class="accordion-item__label" id="midd-accordion-item-label-{{id}}">{{item.title}}</span>
 
-          <svg class="accordion-item__icon icon">
-            <use xlink:href="#icon-chevron-down" />
-          </svg>
+          {% include 'partials/icon.twig' with { name: 'chevron-down', class: 'accordion-item__icon' } %}
         </a>
       </h3>
 

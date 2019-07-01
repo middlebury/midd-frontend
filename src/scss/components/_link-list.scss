@@ -1,11 +1,4 @@
 .link-list {
-  margin-bottom: spacing(7);
-  margin-top: spacing(7);
-}
-
-.link-list__title {
-  @include h2;
-  margin-bottom: spacing(4);
 }
 
 .link-list__list {
@@ -35,10 +28,11 @@
 }
 
 .link-list__link {
-  font-size: typescale(5);
+  @include h3;
+  // font-size: typescale(5);
   font-family: $font-family-serif;
-  line-height: $headings-line-height;
-  margin-bottom: spacing(1);
+  // line-height: $headings-line-height;
+  margin-bottom: spacing(2);
   display: block;
 }
 

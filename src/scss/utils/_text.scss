@@ -12,6 +12,10 @@
 /// font weight
 ///
 
+.fw3 {
+  font-weight: 300;
+}
+
 .fw5 {
   font-weight: 500;
 }
@@ -113,4 +117,20 @@ $text-colors: (
   text-transform: uppercase;
   letter-spacing: $letter-spacing;
   font-weight: $font-weight-medium;
+}
+
+///
+/// Line height
+///
+
+.lh-solid {
+  line-height: $line-height-solid;
+}
+
+.lh-heading {
+  line-height: $line-height-heading;
+}
+
+.lh-body {
+  line-height: $line-height-body;
 }

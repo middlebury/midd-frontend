@@ -13,9 +13,7 @@
         data-toggle-target=".js-card-carousel-item-{{id}}"
         data-toggle-group="card-carousel"
         data-toggle-linked="card-carousel-item-{{id}}">
-        <svg class="icon" aria-hidden="true">
-          <use xlink:href="#icon-plus" />
-        </svg>
+        {% include 'partials/icon.twig' with { name: 'plus' } %}
       </button>
 
       <div class="card-carousel-item__header {% if color %} card-carousel-item__header--band card-carousel-item__header--{{color}}{% endif %} ">
@@ -41,9 +39,7 @@
         data-toggle-target=".js-card-carousel-item-{{id}}"
         data-toggle-group="card-carousel"
         data-toggle-linked="card-carousel-item-{{id}}">
-        <svg class="icon" aria-hidden="true">
-          <use xlink:href="#icon-times" />
-        </svg>
+        {% include 'partials/icon.twig' with { name: 'times' } %}
       </button>
 
       <div class="card-carousel-item__header">
