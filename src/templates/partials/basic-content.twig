@@ -14,7 +14,9 @@
 
   {% include 'paragraphs/profile-list.twig' %}
 
-  {% include 'paragraphs/audio.twig' %}
+  {% if not env.test %}
+    {% include 'paragraphs/audio.twig' %}
+  {% endif %}
 
   {% include 'paragraphs/announcement.twig' %}
 
