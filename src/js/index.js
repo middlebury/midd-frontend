@@ -11,12 +11,6 @@ import 'polyfill-nodelist-foreach';
 import 'mdn-polyfills/Object.assign';
 import 'mdn-polyfills/Array.from';
 
-/**
- * Polyfill intersection observer for IE and safari.
- * Used in menu spies, lazy loaded content, delaying chart animations, etc.
- */
-import 'polyfill-nodelist-foreach';
-
 // Polyfill object fit images for easier responsive images.
 // Used in card-carousel and more.
 import 'object-fit-images';
