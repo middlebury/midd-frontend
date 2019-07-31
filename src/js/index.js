@@ -37,5 +37,6 @@ import './drawer';
 import './sticky';
 import './tabs';
 import './select-url';
+import './charts';
 
 focusWithin(document);

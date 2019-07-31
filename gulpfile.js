@@ -143,6 +143,10 @@ const bundles = [
     input: './src/js/index.js',
     file: paths.scripts.dest + '/bundle.js'
   }
+  // {
+  //   input: './src/js/charts.js',
+  //   file: paths.scripts.dest + '/charts.js'
+  // }
 ];
 
 const scripts = () =>
@@ -236,7 +240,10 @@ const copyDeps = () => {
   // NOTE: Chart.bundle.min.js includes Momentjs but so far we are not using time axis
   // http://www.chartjs.org/docs/latest/getting-started/installation.html#bundled-build
   return gulp
-    .src(['./node_modules/chart.js/dist/Chart.min.js'])
+    .src([
+      './node_modules/chart.js/dist/Chart.min.js',
+      './node_modules/chartjs-plugin-deferred/dist/chartjs-plugin-deferred.min.js'
+    ])
     .pipe(gulp.dest('./dist/js'));
 };
 

@@ -71,7 +71,8 @@
   "dependencies": {
     "anchor-js": "^4.1.1",
     "animejs": "^2.2.0",
-    "chart.js": "^2.7.3",
+    "chart.js": "^2.8.0",
+    "chartjs-plugin-deferred": "^1.0.1",
     "element-closest": "^2.0.2",
     "enquire.js": "^2.1.6",
     "focus-within": "^2.0.0",
