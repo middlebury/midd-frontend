@@ -1,0 +1,35 @@
+.stats {
+}
+
+.stats__list {
+  @include make-row;
+}
+
+.stats__item {
+  margin-bottom: spacing(4);
+  @include make-col-ready;
+
+  @include media(md) {
+    margin-bottom: 0;
+    @include make-col(4);
+  }
+}
+
+.stats__label {
+  border-bottom: 1px solid $navy;
+  font-size: $typescale-10;
+  font-family: $font-family-serif;
+  line-height: $line-height-solid;
+  font-weight: 300;
+  padding-bottom: spacing(3);
+  margin-bottom: spacing(3);
+  text-align: center;
+}
+
+.stats__text {
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing;
+  font-weight: $font-weight-bold;
+  font-size: typescale(2);
+  text-align: center;
+}
