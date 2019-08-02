@@ -43,6 +43,7 @@ class MiddChart {
       valuePrefix = '',
       valueSuffix = '',
       max,
+      min,
       xLabel,
       yLabel
     } = this.config;
@@ -122,7 +123,8 @@ class MiddChart {
             maxBarThickness,
             ticks: {
               suggestedMax: max,
-              beginAtZero: true,
+              suggestedMin: min,
+              beginAtZero: !min,
               callback: xTickCallback
             }
           }
@@ -136,7 +138,8 @@ class MiddChart {
             maxBarThickness,
             ticks: {
               suggestedMax: max,
-              beginAtZero: true,
+              suggestedMin: min,
+              beginAtZero: !min,
               callback: yTickCallback
             }
           }
