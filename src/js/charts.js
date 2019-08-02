@@ -1,5 +1,5 @@
-// import 'chartjs-plugin-deferred';
-// import Chart from 'chart.js';
+import { h, render } from 'preact';
+import PercentBarChart from './components/percent-bar-chart';
 
 const colors = [
   '#0d395f',
@@ -14,6 +14,11 @@ const colors = [
 
 let Chart = window.Chart;
 
+function renderPercentBarChart(el, config) {
+  el.classList.add('chart--singlebar', 'chart--axis');
+  render(<PercentBarChart {...config} colors={colors} />, el);
+}
+
 class MiddChart {
   constructor(el, config) {
     this.el = el;
@@ -21,6 +26,10 @@ class MiddChart {
 
     this.isGroupChart = config.datasets.length > 1;
     this.isCircleChart = config.type === 'pie' || config.type === 'doughnut';
+
+    if (config.type === 'percentBar') {
+      return renderPercentBarChart(el, config);
+    }
 
     this.init();
   }
