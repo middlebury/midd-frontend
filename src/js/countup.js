@@ -1,6 +1,7 @@
 import anime from 'animejs';
 
 import { $$ } from './utils/dom';
+import { onElementInView } from './utils/on-element-in-view';
 
 function countup(el, target) {
   let data = { count: 0 };
@@ -21,16 +22,9 @@ function makeCountup(el) {
   const text = el.textContent;
   const target = parseInt(text, 10);
 
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.intersectionRatio > 0) {
-        countup(el, target);
-        io.unobserve(entry.target);
-      }
-    });
+  onElementInView(el, () => {
+    countup(el, target);
   });
-
-  io.observe(el);
 }
 
 const els = $$('[data-countup]');
