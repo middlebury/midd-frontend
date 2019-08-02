@@ -114,9 +114,7 @@ class MiddChart {
         display: true,
         text: title,
         fontSize: 14,
-        fontColor: '#222',
         fontStyle: '500',
-        fontFamily: 'whitney ssm a, whitney ssm b, arial, sans-serif',
         padding: 24
       };
     }
