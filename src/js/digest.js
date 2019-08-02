@@ -22,6 +22,7 @@ class Digest {
     const anchors = new AnchorJS();
     anchors.add(headingSelector);
 
+    // TODO: use preact to render this
     let items = [];
     headings.forEach(heading => {
       // if heading text begins with a number, we need to prefix some a-z text
