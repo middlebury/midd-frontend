@@ -91,13 +91,13 @@
               type: 'pie',
               title: 'chart 1',
               labels: ['label 1', 'label 2', 'label 3'],
-              datasets: [ { label: 'data 1', data: [1,2,3] } ]
+              datasets: [ { label: 'data 1', data: [1,2,3] },  { label: 'data 1', data: [3,2,6] }  ]
             },
             {
               type: 'doughnut',
               title: 'chart 1',
               labels: ['label 1', 'label 2', 'label 3'],
-              datasets: [ { label: 'data 1', data: [1,2,3] } ]
+              datasets: [ { label: 'data 1', data: [1,2,3] }, { label: 'data 1', data: [1,9,5] }  ]
             }
           ]
         } %}
@@ -129,7 +129,7 @@
         } %}
 
         {% include 'paragraphs/chart-group.twig' with {
-          title: 'Things are going well',
+          title: 'Line charts',
           items: [
             {
               type: 'line',
@@ -148,7 +148,7 @@
 
 
         {% include 'paragraphs/chart-group.twig' with {
-          title: 'Things are a little confusing',
+          title: 'Line charts',
           items: [
             {
               type: 'line',
