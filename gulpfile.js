@@ -93,7 +93,6 @@ const serve = () =>
     server: {
       baseDir: './dist'
     },
-    open: false,
     directory: true,
     ghostMode: false
   });
