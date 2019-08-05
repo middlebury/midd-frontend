@@ -1,9 +1,9 @@
 import { h, render } from 'preact';
 import PercentBarChart from './components/percent-bar-chart';
 
-const colors = [
 import { onElementInView } from './utils/on-element-in-view';
 
+const colors = [
   '#0d395f',
   '#1f9f8b',
   '#c26533',
