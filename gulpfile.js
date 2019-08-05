@@ -143,10 +143,6 @@ const bundles = [
     input: './src/js/index.js',
     file: paths.scripts.dest + '/bundle.js'
   }
-  // {
-  //   input: './src/js/charts.js',
-  //   file: paths.scripts.dest + '/charts.js'
-  // }
 ];
 
 const scripts = () =>
