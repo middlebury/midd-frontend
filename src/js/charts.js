@@ -2,6 +2,8 @@ import { h, render } from 'preact';
 import PercentBarChart from './components/percent-bar-chart';
 
 const colors = [
+import { onElementInView } from './utils/on-element-in-view';
+
   '#0d395f',
   '#1f9f8b',
   '#c26533',
@@ -67,12 +69,6 @@ class MiddChart {
     const yTickCallback = !isHorizontalBars ? prefixTick : f => f;
 
     let options = {
-      plugins: {
-        deferred: {
-          yOffset: '25%', // defer until 50% of the canvas height are inside the viewport
-          delay: 200 // delay of 500 ms after the canvas is considered inside the viewport
-        }
-      },
       maintainAspectRatio: true,
       legend: {
         display: false, // remove legend since we're trying to use html legend
@@ -189,6 +185,8 @@ class MiddChart {
 
     const options = this.getBaseOptions();
 
+    const PLUGIN_KEY = '$lazy';
+
     this.chart = new Chart(this.canvas, {
       type,
       data: {
@@ -202,7 +200,37 @@ class MiddChart {
         }),
         labels
       },
-      options
+      options,
+      plugins: [
+        {
+          // basic recreation of chartjs-plugin-deferred but using intersection observer
+          // and allowing us to not install the extra dependency
+          beforeInit(chart) {
+            // create the plugin config to store values
+            const model = (chart[PLUGIN_KEY] = {});
+
+            // add an is in view flag which is checked before datasets update
+            model.isInView = false;
+
+            model.io = onElementInView(chart.canvas, () => {
+              model.isInView = true;
+
+              // delay the chart update slightly since it may not have enough of it in view
+              setTimeout(() => {
+                // update the chart now that it's in view
+                chart.update();
+              }, 400);
+            });
+          },
+          beforeDatasetsUpdate(chart) {
+            // only update the dataset once it's in view
+            return chart[PLUGIN_KEY].isInView;
+          },
+          destroy(chart) {
+            chart[PLUGIN_KEY].io.unobserve();
+          }
+        }
+      ]
     });
 
     this.addLegend();
