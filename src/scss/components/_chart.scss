@@ -8,6 +8,36 @@
 .chart-group__title {
 }
 
+.chart-group__list {
+  @include make-row;
+}
+
+.chart-group__item {
+  @include make-col-ready;
+  margin-bottom: spacing(5);
+
+  .chart-group__list--2 & {
+    @include media(md) {
+      @include make-col(6);
+    }
+  }
+
+  .chart-group__list--3\+ & {
+    @include media(md) {
+      @include make-col(4);
+    }
+  }
+}
+
+.chart-group__item--stats {
+  @include media(sm) {
+    @include make-col(6);
+  }
+  @include media(md) {
+    @include make-col(4);
+  }
+}
+
 ///
 //// Single chart
 ///
@@ -18,14 +48,26 @@
   margin-right: auto;
 }
 
+.chart--singlebar {
+  max-width: none;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .chart--axis {
   .chart-legend__list {
-    display: flex;
+    @include media(md) {
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 
   .chart-legend__item {
-    &:not(:last-child) {
-      margin-right: 1rem;
+    @include media(md) {
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
     }
   }
 }
@@ -35,9 +77,9 @@
 ///
 
 .chart-legend {
+  padding: 1rem;
   display: flex;
   justify-content: center;
-  padding: 1rem;
 }
 
 .chart-legend__list {
