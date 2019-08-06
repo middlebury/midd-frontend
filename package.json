@@ -10,7 +10,7 @@
     "wrapper": "npm run build && gulp zip",
     "deploy": "gulp deploy",
     "deploy:gh": "npm run build && gh-pages -d dist -b master-dist",
-    "test": "npm run test:bundlesize && npm run test:visual",
+    "test": "npm run test:bundlesize",
     "test:visual": "percy snapshot dist",
     "test:bundlesize": "bundlesize",
     "lint": "eslint src/js/**",

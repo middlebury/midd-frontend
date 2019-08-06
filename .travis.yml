@@ -12,6 +12,7 @@ node_js:
 script:
 - npm run build
 - npm test
+# - npm run test:visual
 - gulp replaceImagePaths --imagesDir="/office/themes/custom/middlebury_theme/images/"
 deploy:
   provider: pages
