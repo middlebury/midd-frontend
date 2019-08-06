@@ -19,7 +19,9 @@
       </button>
     </div>
     <div class="anchor-header__nav js-anchor-header-nav">
-      <nav class="anchor-nav">
+      <nav class="anchor-nav" aria-labelledby="midd-anchor-nav-label">
+        <h2 class="sr-only" id="midd-anchor-nav-label">{{page_title}} Navigation</h2>
+
         <ul class="anchor-nav__list">
           {% for item in [
             'How to apply', 'Types of aid', 'Education Loans', 'Payment Options', 'Helpful Links',
