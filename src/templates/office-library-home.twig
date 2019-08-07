@@ -5,8 +5,11 @@
 
 {% block layout_header %}
   {% include 'partials/midd-header.twig' %}
-  {% include 'partials/anchor-header.twig' %}
-  {% include 'partials/office-hours.twig' %}
+  {% embed 'partials/anchor-header.twig' %}
+    {% block anchor_header_content %}
+      {% include 'partials/office-hours.twig' %}
+    {% endblock %}
+  {% endembed %}
 {% endblock %}
 
 {% block page %}

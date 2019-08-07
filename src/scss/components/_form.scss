@@ -23,3 +23,22 @@ select.form-control {
   font-size: $input-font-size-sm;
   padding: $input-padding-y-sm $input-padding-x-sm;
 }
+
+.form-check {
+  @include form-checkbox-item;
+}
+
+.form-check__input {
+  @include form-checkbox-control;
+}
+
+.form-check__label {
+  @include form-checkbox-label;
+}
+
+.form-check--inline {
+  display: inline-flex;
+  margin-right: spacing(2);
+  // align-items: center;
+  margin-bottom: 0;
+}

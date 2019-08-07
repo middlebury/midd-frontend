@@ -16,25 +16,65 @@
     {% embed 'partials/tab.twig' with { id: 'midd-lib-all' } %}
       {% block tabcontent %}
 
-        <form action="http://middlebury.summon.serialssolutions.com/search" method="GET">
-          <input name="spellcheck" type="hidden" value="true">
+        <form class="ebscohostCustomSearchBox" action="" onsubmit="return ebscoHostSearchGo(this);" method="post" style="overflow:hidden;">
+          <input id="ebscohostwindow" name="ebscohostwindow" type="hidden" value="1" />
+          <input id="ebscohosturl" name="ebscohosturl" type="hidden" value="http://search.ebscohost.com/login.aspx?direct=true&scope=site&type=0&site=eds-live&lang=en" />
+          <input id="ebscohostsearchsrc" name="ebscohostsearchsrc" type="hidden" value="db" />
+          <input id="ebscohostsearchmode" name="ebscohostsearchmode" type="hidden" value="+" />
+          <input id="ebscohostkeywords" name="ebscohostkeywords" type="hidden" value="" />
+
           <div class="form-group">
             <label for="lib-summon-search">Search Everything</label>
             <div class="input-group">
-              <input class="form-control" id="lib-summon-search" size="40" name="s.q" type="text" placeholder="Enter a keyword...">
-              <button type="submit" class="button button--primary">
-                Search
-              </button>
+              <input id="ebscohostsearchtext" class="form-control" name="ebscohostsearchtext" type="text" size="40" placeholder="Enter a keyword...">
+              <button type="submit" class="button button--primary">Search</button>
             </div>
 
-            <ul class="d-flex f2 mt-2">
-              <li class="mr-4">
-                <a href="http://middlebury.summon.serialssolutions.com/advanced" class="link-underline">Advanced Search</a>
-              </li>
-              <li>
-                <a href="http://mediawiki.middlebury.edu/wiki/LIS/What%27s_Summon%3F" class="link-underline">What's Summon?</a>
-              </li>
-            </ul>
+            <div class="form-check form-check--inline">
+              <input class="form-check__input" type="radio" name="searchFieldSelector" id="guidedField_0" value="" checked="checked"  />
+              <label class="form-check__label" for="guidedField_0">Keyword</label>
+            </div>
+
+            <div class="form-check form-check--inline">
+              <input class="form-check__input" type="radio" name="searchFieldSelector" id="guidedField_1" value="TI" />
+              <label class="form-check__label" for="guidedField_1">Title</label>
+            </div>
+
+            <div class="form-check form-check--inline">
+              <input class="form-check__input" type="radio" name="searchFieldSelector" id="guidedField_2" value="AU" />
+              <label class="form-check__label" for="guidedField_2">Author</label>
+            </div>
+
+          </div>
+
+          <div id="limiterblock" class="form-group" style="display:none;">
+            <div id="limitertitle">Limit Your Results</div>
+
+            <div class="limiter" style="display:none;">
+              <input type="checkbox" class="form-control" id="chkFullText" name="chkFullText"  />
+              <label for="chkFullText">Full Text</label>
+            </div>
+
+            <div class="limiter" style="display:none;">
+              <input type="checkbox" class="form-control" id="chkLibraryCollection" name="chkLibraryCollection"  />
+              <label for="chkLibraryCollection">Available in Library Collection</label>
+            </div>
+
+            <div class="limiter" style="display:none;">
+              <input type="checkbox" class="form-control" id="chkPeerReviewed" name="chkPeerReviewed"  />
+              <label for="chkPeerReviewed">Peer Reviewed</label>
+            </div>
+
+            <div class="limiter" style="display:none;">
+              <input type="checkbox" class="form-control" id="chkCatalogOnly" name="chkCatalogOnly"  />
+              <label for="chkCatalogOnly">Catalog Only</label>
+            </div>
+
+            <div class="limiter" style="display:none;">
+              <input type="checkbox" class="form-control" id="chkIROnly" name="chkIROnly"  />
+              <label for="chkIROnly">Institutional Repository Only</label>
+            </div>
+
           </div>
         </form>
 

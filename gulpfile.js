@@ -93,7 +93,6 @@ const serve = () =>
     server: {
       baseDir: './dist'
     },
-    open: false,
     directory: true,
     ghostMode: false
   });
@@ -310,9 +309,9 @@ const build = gulp.series(
   reportFilesizes
 );
 
-const dev = gulp.parallel(build, watch);
+const dev = gulp.parallel(build, watch, serve);
 
-const server = gulp.parallel(dev, serve);
+const devSaw = gulp.parallel(build, watch);
 
 const deploy = gulp.series(replaceImagePaths, deployDist);
 
@@ -321,7 +320,8 @@ module.exports = {
   scripts,
   build,
   dev,
+  devSaw,
   replaceImagePaths,
   zip: bundleMarkup,
-  default: server
+  default: dev
 };
