@@ -3,8 +3,9 @@
   "description": "Frontend assets for Drupal8 middlebury_theme",
   "version": "0.0.1",
   "scripts": {
-    "start": "gulp",
+    "start": "npm run dev",
     "dev": "gulp dev",
+    "dev:saw": "gulp devSaw",
     "build": "NODE_ENV=production gulp build",
     "build:scripts": "NODE_ENV=production gulp scripts",
     "wrapper": "npm run build && gulp zip",
