@@ -1,15 +1,102 @@
-.chart {
-  margin-bottom: spacing(7);
-  margin-top: spacing(7);
+///
+//// chart group
+///
+
+.chart-group {
 }
 
-.chart__title {
+.chart-group__title {
+}
+
+.chart-group__list {
+  @include make-row;
+}
+
+.chart-group__item {
+  @include make-col-ready;
   margin-bottom: spacing(5);
+
+  .chart-group__list--2 & {
+    @include media(md) {
+      @include make-col(6);
+    }
+  }
+
+  .chart-group__list--3\+ & {
+    @include media(md) {
+      @include make-col(4);
+    }
+  }
 }
 
-.chart__container {
-  position: relative;
-  height: 400px;
+.chart-group__item--stats {
+  @include media(sm) {
+    @include make-col(6);
+  }
+  @include media(md) {
+    @include make-col(4);
+  }
+}
+
+///
+//// Single chart
+///
+
+.chart {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chart--singlebar {
+  max-width: none;
   width: 100%;
-  margin: auto;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.chart--axis {
+  .chart-legend__list {
+    @include media(md) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  .chart-legend__item {
+    @include media(md) {
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+}
+
+///
+//// Chart legend
+///
+
+.chart-legend {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.chart-legend__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chart-legend__icon {
+  display: inline-block;
+  background: $gray-light;
+  width: 16px;
+  height: 8px;
+  margin-right: 8px;
+}
+
+.chart-legend__item {
+  font-size: 14px;
+  margin-bottom: 4px;
 }
