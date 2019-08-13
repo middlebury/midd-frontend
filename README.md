@@ -39,3 +39,22 @@ THEME_DIR="../your/path/to/d8/web/themes/custom/middlebury_theme/"
 
 Now when you run `npm run build` or `npm run dev`, assets will be output to that directory.
 
+
+## Slate files
+
+Assets for the Slate admissions portal templates are in `/src/slate`. 
+
+> Be sure to be working in the test environment. Go to Database -> Launch Test Environment -> click the test environment endpoint.
+
+Build slate-only assets with gulp:
+```bash
+npm run build:slate
+```
+
+Slate assets are uploaded in the File Editor (Database -> Configurations -> File Editor).
+
+```
+slate.css -> shared/build.css
+slate.js -> shared/build.js
+build.xslt -> shared/build.xslt
+```
