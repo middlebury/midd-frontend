@@ -116,20 +116,22 @@
           </header>
 
 
-          <div class="container pt-3">
-            <article id="c_main-content" class="c_pagecontent c_container cr">
-              <section class="c_page cr">
-                <section class="c_body cr">
-                  <div id="global" style="">
-                  </div>
-                  <div id="content" class="p-3">
-                    <xsl:apply-templates select="xhtml:html/xhtml:body/node()" />
-                  </div>
+          <main class="main">
+            <div class="container pt-3">
+              <article id="c_main-content" class="c_pagecontent c_container cr">
+                <section class="c_page cr">
+                  <section class="c_body cr">
+                    <div id="global" style="">
+                    </div>
+                    <div id="content" class="p-3">
+                      <xsl:apply-templates select="xhtml:html/xhtml:body/node()" />
+                    </div>
+                  </section>
                 </section>
-              </section>
-              <div class="c_clear cr" />
-            </article>
-          </div>
+                <div class="c_clear cr" />
+              </article>
+            </div>
+          </main>
 
           <footer class="midd-footer">
             <h2 class="sr-only">Additional Navigation</h2>
