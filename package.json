@@ -8,6 +8,7 @@
     "dev:saw": "gulp devSaw",
     "build": "NODE_ENV=production gulp build",
     "build:scripts": "NODE_ENV=production gulp scripts",
+    "build:slate": "BUILD_SLATE=true npm run build",
     "wrapper": "npm run build && gulp zip",
     "deploy": "gulp deploy",
     "deploy:gh": "npm run build && gh-pages -d dist -b master-dist",

@@ -34,6 +34,7 @@ const PROD = process.env.NODE_ENV === 'production';
 const TEST = process.env.CI;
 
 const THEME_DIR = process.env.THEME_DIR || args.themeDir || '';
+const BUILD_SLATE = process.env.BUILD_SLATE;
 
 const paths = {
   html: {
@@ -54,6 +55,30 @@ const paths = {
     dest: './dist/images/'
   }
 };
+
+let bundles = [
+  {
+    input: './src/js/index.js',
+    file: paths.scripts.dest + '/bundle.js'
+  }
+];
+
+if (BUILD_SLATE) {
+  console.info(`
+  ***
+  Building slate assets instead...
+  ***
+  `);
+
+  bundles = [
+    {
+      input: './src/slate/slate.js',
+      file: paths.scripts.dest + '/slate-bundle.js'
+    }
+  ];
+
+  paths.styles.src = './src/slate/**/*.scss';
+}
 
 /**
  * Change output paths if --themeDir is passed.
@@ -136,13 +161,6 @@ const styles = () => {
     .pipe(gulp.dest(paths.styles.dest))
     .pipe(browserSync.stream());
 };
-
-const bundles = [
-  {
-    input: './src/js/index.js',
-    file: paths.scripts.dest + '/bundle.js'
-  }
-];
 
 const scripts = () =>
   rollup(bundles).then(() => {
@@ -305,7 +323,9 @@ const build = gulp.series(
   clean,
   copyIcons,
   copyDeps,
-  gulp.parallel(html, images, styles, scripts),
+  gulp.parallel(
+    [!BUILD_SLATE && html, images, styles, scripts].filter(Boolean)
+  ),
   reportFilesizes
 );
 
