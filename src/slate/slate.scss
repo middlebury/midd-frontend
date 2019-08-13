@@ -13,77 +13,22 @@
 @import '../scss/keyframes';
 
 // components
-// @import '../scss/components/accordion';
-// @import '../scss/components/alert';
-// @import '../scss/components/anchor-header';
-// @import '../scss/components/anchor-nav';
-// @import '../scss/components/announcement';
-// @import '../scss/components/audio';
 @import '../scss/components/badge';
-// @import '../scss/components/box-menu';
-// @import '../scss/components/breadcrumb';
 @import '../scss/components/button';
-// @import '../scss/components/callout-group';
-// @import '../scss/components/callout';
-// @import '../scss/components/card-carousel-item';
-// @import '../scss/components/card-carousel';
-// @import '../scss/components/chart';
-// @import '../scss/components/cta-group';
-// @import '../scss/components/datepicker';
-// @import '../scss/components/digest';
 @import '../scss/components/drawer';
 @import '../scss/components/drawer-nav';
 @import '../scss/components/dropdown';
-// @import '../scss/components/faq';
-// @import '../scss/components/foldable';
-// @import '../scss/components/footer-menu';
-// @import '../scss/components/school-footer';
-// @import '../scss/components/form';
-// @import '../scss/components/gallery';
 @import '../scss/components/grid';
-// @import '../scss/components/hero';
 @import '../scss/components/icon';
-// @import '../scss/components/image';
 @import '../scss/components/input-group';
-// @import '../scss/components/journey';
-// @import '../scss/components/lib-search';
-// @import '../scss/components/lightbox';
-// @import '../scss/components/link-list';
-// @import '../scss/components/list';
-// @import '../scss/components/media-object';
-// @import '../scss/components/media';
-// @import '../scss/components/mega-cta';
 @import '../scss/components/midd-footer';
-// @import '../scss/components/midd-header';
-// @import '../scss/components/midd-nav';
-// @import '../scss/components/midd-search';
-// @import '../scss/components/office-hours';
-// @import '../scss/components/page-header';
-// @import '../scss/components/page-image';
-// @import '../scss/components/page-nav';
-// @import '../scss/components/pagination';
-// @import '../scss/components/profile-spotlight-item';
-// @import '../scss/components/quote';
-// @import '../scss/components/schedule';
-// @import '../scss/components/school-explorer';
 @import '../scss/components/school-header';
 @import '../scss/components/school-nav';
 @import '../scss/components/school-search';
-// @import '../scss/components/section';
-// @import '../scss/components/slider';
-// @import '../scss/components/spotlight';
-// @import '../scss/components/stat-panel';
 @import '../scss/components/table';
-// @import '../scss/components/tabs';
-// @import '../scss/components/themed-panel';
-// @import '../scss/components/transcript';
-// @import '../scss/components/tooltip';
-// @import '../scss/components/video';
 
 // scope
 @import '../scss/scope/typography';
-// @import '../scss/scope/google-custom-search';
-// @import '../scss/scope/webform';
 
 // utils
 @import '../scss/utils/background';
@@ -100,26 +45,20 @@
 @import '../scss/utils/text';
 @import '../scss/utils/spacing';
 
-// @import '../scss/paragraphs';
+// overwrite slate base link colors
 
 .main {
   min-height: 85vh;
-}
 
-.count {
-  display: block;
-  padding-top: spacing(2);
-  padding-bottom: spacing(2);
-  border-top: 4px solid $navy;
-  border-bottom: 1px solid $border-color;
-  font-size: typescale(3);
-  margin-bottom: spacing(4);
-  @include media(md) {
-    margin-bottom: spacing(7);
+  a {
+    color: $navy;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
-
-// overwrite slate base link colors
 
 a,
 a:visited,
