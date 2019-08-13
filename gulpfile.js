@@ -323,11 +323,11 @@ const build = gulp.series(
   clean,
   copyIcons,
   copyDeps,
-  gulp.parallel(
-    [!BUILD_SLATE && html, images, styles, scripts].filter(Boolean)
-  ),
+  gulp.parallel(html, images, styles, scripts),
   reportFilesizes
 );
+
+const buildSlate = gulp.series(clean, gulp.parallel(scripts, styles));
 
 const dev = gulp.parallel(build, watch, serve);
 
@@ -339,6 +339,7 @@ module.exports = {
   deploy,
   scripts,
   build,
+  buildSlate,
   dev,
   devSaw,
   replaceImagePaths,
