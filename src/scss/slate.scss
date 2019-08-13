@@ -1,0 +1,150 @@
+// abstracts
+@import 'functions';
+@import 'variables';
+@import 'mixins';
+
+@import 'keyframes';
+
+// vendor
+@import '../../node_modules/normalize.css/normalize';
+
+// base
+@import 'global';
+@import 'keyframes';
+
+// components
+// @import 'components/accordion';
+// @import 'components/alert';
+// @import 'components/anchor-header';
+// @import 'components/anchor-nav';
+// @import 'components/announcement';
+// @import 'components/audio';
+@import 'components/badge';
+// @import 'components/box-menu';
+// @import 'components/breadcrumb';
+@import 'components/button';
+// @import 'components/callout-group';
+// @import 'components/callout';
+// @import 'components/card-carousel-item';
+// @import 'components/card-carousel';
+// @import 'components/chart';
+// @import 'components/cta-group';
+// @import 'components/datepicker';
+// @import 'components/digest';
+@import 'components/drawer';
+@import 'components/drawer-nav';
+@import 'components/dropdown';
+// @import 'components/faq';
+// @import 'components/foldable';
+// @import 'components/footer-menu';
+// @import 'components/school-footer';
+// @import 'components/form';
+// @import 'components/gallery';
+@import 'components/grid';
+// @import 'components/hero';
+@import 'components/icon';
+// @import 'components/image';
+@import 'components/input-group';
+// @import 'components/journey';
+// @import 'components/lib-search';
+// @import 'components/lightbox';
+// @import 'components/link-list';
+// @import 'components/list';
+// @import 'components/media-object';
+// @import 'components/media';
+// @import 'components/mega-cta';
+@import 'components/midd-footer';
+// @import 'components/midd-header';
+// @import 'components/midd-nav';
+// @import 'components/midd-search';
+// @import 'components/office-hours';
+// @import 'components/page-header';
+// @import 'components/page-image';
+// @import 'components/page-nav';
+// @import 'components/pagination';
+// @import 'components/profile-spotlight-item';
+// @import 'components/quote';
+// @import 'components/schedule';
+// @import 'components/school-explorer';
+@import 'components/school-header';
+@import 'components/school-nav';
+@import 'components/school-search';
+// @import 'components/section';
+// @import 'components/slider';
+// @import 'components/spotlight';
+// @import 'components/stat-panel';
+@import 'components/table';
+// @import 'components/tabs';
+// @import 'components/themed-panel';
+// @import 'components/transcript';
+// @import 'components/tooltip';
+// @import 'components/video';
+
+// scope
+@import 'scope/typography';
+// @import 'scope/google-custom-search';
+// @import 'scope/webform';
+
+// utils
+@import 'utils/background';
+@import 'utils/border';
+@import 'utils/clearfix';
+@import 'utils/columns';
+@import 'utils/display';
+@import 'utils/flex';
+@import 'utils/float';
+@import 'utils/hover';
+@import 'utils/order';
+@import 'utils/screen-reader';
+@import 'utils/sizing';
+@import 'utils/text';
+@import 'utils/spacing';
+
+// @import 'paragraphs';
+
+.main {
+  min-height: 85vh;
+}
+
+.count {
+  display: block;
+  padding-top: spacing(2);
+  padding-bottom: spacing(2);
+  border-top: 4px solid $navy;
+  border-bottom: 1px solid $border-color;
+  font-size: typescale(3);
+  margin-bottom: spacing(4);
+  @include media(md) {
+    margin-bottom: spacing(7);
+  }
+}
+
+// overwrite slate base link colors
+
+a,
+a:visited,
+a:link {
+  color: $navy;
+}
+
+.school-header {
+  a {
+    color: $navy;
+  }
+}
+
+.midd-footer {
+  a {
+    color: $white;
+  }
+}
+
+.no-touch {
+  button:hover {
+    background: inherit;
+  }
+}
+
+.drawer-nav__link {
+  color: $white !important;
+}
