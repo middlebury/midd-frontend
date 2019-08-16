@@ -1,0 +1,67 @@
+{% extends "course-hub-layout.twig" %}
+
+{% set is_front = true %}
+{% set page_header = {
+  title: 'Fall 2019 Dashboard',
+  breadcrumb: [
+    { text: 'Middlebury' },
+    { text: 'Course Hub' },
+  ],
+} %}
+
+{% block content %}
+
+  <ul class="list list--dividers mb-7">
+
+    {% for item in [
+      {
+        title: 'AMST 0225A: Gothic and Horror',
+        syllabus: ['Institution Syllabus', 'Syllabus Text', 'Test Syllabus', 'Institution Syllabus', 'Public Syllabus', 'Syllabus Text'],
+        resources: ['Resource 1', 'Resource 2'],
+      },
+      {
+        title: 'AMST 0225A: Gothic and Horror',
+        syllabus: ['Institution Syllabus', 'Public Syllabus', 'Syllabus Text', 'Test Syllabus'],
+        resources: ['Resource 1', 'Resource 2'],
+      }
+    ] %}
+
+      <li class="list__item">
+        <article class="">
+          <h2 class="h2 mb-5"><a href="course-hub-course-detail.html" class="link-underline">{{item.title}}</a></h2>
+
+          <div class="mb-3">
+            <h3 class="f3 font-sans-serif fw5 lh-body">Syllabus</h3>
+            <ul class="d-flex flex-wrap">
+              {% for subitem in item.syllabus %}
+                <li class="mr-4 mb-2">
+                  <a href="" class="link-underline">
+                    {{subitem}}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          <div class="mb-3">
+            <h3 class="f3 font-sans-serif fw5 lh-body">Resources</h3>
+            <ul class="d-flex flex-wrap">
+              {% for subitem in item.resources %}
+                <li class="mr-4 mb-2">
+                  <a href="" class="link-underline">
+                    {{subitem}}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          <a href="course-hub-roster.html" class="link-underline">View Roster*</a>
+
+        </article>
+      </li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}
+

@@ -1,0 +1,31 @@
+{% extends "course-hub-layout.twig" %}
+
+{% set page_header = {
+  title: 'Browse Course Catalog',
+  breadcrumb: [
+    { text: 'Middlebury' },
+    { text: 'Course Hub' },
+  ],
+} %}
+
+{% block content %}
+
+
+<p style='color:red'>
+List the schools here. Remove title and blurb.
+</p>
+
+  {% include 'paragraphs/link-list.twig' with {
+    title: '',
+    text: '',
+    items: [
+      { title: 'Middlebury College' },
+      { title: 'Language School' },
+      { title: 'Breadloaf School of English' },
+      { title: 'School of the Environment' },
+      { title: 'Middlebury Schools Abroad' },
+    ]
+  } %}
+
+
+{% endblock %}
