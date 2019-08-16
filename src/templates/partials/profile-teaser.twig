@@ -36,7 +36,7 @@
     {% if actions %}
       <div class="mt-2">
         {% for action in actions %}
-          <a href="" class="f2 link-underline">{{action.label}}</a>
+          <a href="{{action.href}}" class="f2 link-underline">{{action.label}}</a>
         {% endfor %}
       </div>
     {% endif %}
