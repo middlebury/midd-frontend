@@ -1,0 +1,17 @@
+.toggler-content {
+  display: none;
+
+  &.is-toggled {
+    display: block;
+  }
+}
+
+.toggler-button {
+  > .icon {
+    transition: $chevron-transition;
+  }
+
+  &.is-toggled > .icon {
+    transform: $chevron-transform;
+  }
+}
