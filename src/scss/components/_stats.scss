@@ -16,6 +16,7 @@
   padding-bottom: spacing(2);
   margin-bottom: spacing(2);
   text-align: center;
+  white-space: nowrap;
 
   @include media(xl) {
     font-size: 88px; // TODO: add to typescale?
