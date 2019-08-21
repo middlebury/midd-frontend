@@ -1,10 +1,16 @@
-<div class="chart">
+{% set id = random(1234) %}
+<div class="paragraph--chart" id="midd-map-{{id}}" data-digest-content>
   {% if title is not empty %}
-    <h3 class="chart__title">{{title}}</h3>
+    <h2 class="h2 mb-4">{{title}}</h2>
   {% endif %}
-  {% include 'partials/world.twig' with { id: id } %}
 
-  <p>
+  {% if text is not empty %}
+    <p class="mb-5 mb-md-7">{{text|default("Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolorum, illum nesciunt quod quidem neque voluptatibus provident odit ut, ipsum doloremque minus repellat libero est corrupti omnis earum quae officia?")}}</p>
+  {% endif %}
+
+  {% include 'partials/world.twig' %}
+
+  <p class="f2" id="midd-map-text-{{id}}">
     {% for item in items %}
       {{item.name}}{% if not loop.last %}; {% endif %}
     {% endfor %}
@@ -12,11 +18,8 @@
 
   <style>
     {% for item in items %}
-      #midd-world-{{id}} #{{item.abbr|upper}}{% if not loop.last %},{% endif %}
+      #midd-map-{{id}} #{{item.abbr|upper}}{% if not loop.last %},{% endif %}
     {% endfor %}
-      {
-        fill: #0d395f;
-      }
-
+      { fill: #0d395f; }
   </style>
 </div>
