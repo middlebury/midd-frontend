@@ -7,6 +7,13 @@
     border-collapse: collapse;
   }
 
+  caption {
+    padding: spacing(2);
+    font-size: typescale(2);
+    background: $gray-lighter;
+    margin-bottom: spacing(3);
+  }
+
   thead {
   }
 
