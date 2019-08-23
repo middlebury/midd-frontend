@@ -16,6 +16,13 @@
     caption-side: bottom;
   }
 
+  // Use top margin on paragraphs within a table so cells
+  // containing one paragraph do not have extra space below them.
+  p + p {
+    margin-bottom: 0;
+    margin-top: spacing(3);
+  }
+
   thead {
   }
 
