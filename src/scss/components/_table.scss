@@ -8,10 +8,12 @@
   }
 
   caption {
-    padding: spacing(2);
     font-size: typescale(2);
+    font-style: italic;
+    padding: spacing(2);
     background: $gray-lighter;
-    margin-bottom: spacing(3);
+    // margin-bottom: spacing(3);
+    caption-side: bottom;
   }
 
   thead {
