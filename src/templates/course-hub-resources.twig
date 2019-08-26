@@ -1,0 +1,22 @@
+{% extends "course-hub-layout.twig" %}
+
+{% set page_header = {
+  title: 'AMST 0210A',
+  after_title: '<p class=lead>Mod. American Cult. 1830-1919</p>',
+  breadcrumb: [
+    { text: 'Middlebury' },
+    { text: 'Course Hub' },
+    { text: 'Schools and Programs' },
+    { text: 'Middlebury College' },
+    { text: 'Spring 2019' },
+    { text: 'American Studies' },
+  ],
+} %}
+
+{% block content %}
+
+  {% include 'paragraphs/link-list.twig' with {
+    moreLinkText: '+ Add a Resource'
+  } %}
+
+{% endblock %}
