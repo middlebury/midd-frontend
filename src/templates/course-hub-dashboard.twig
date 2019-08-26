@@ -16,13 +16,13 @@
     {% for item in [
       {
         title: 'AMST 0225A: Gothic and Horror',
-        syllabus: ['Institution Syllabus', 'Syllabus Text', 'Test Syllabus', 'Institution Syllabus', 'Public Syllabus', 'Syllabus Text'],
+        syllabus: ['Institution Syllabus', 'Syllabus Text'],
         resources: ['Resource 1', 'Resource 2'],
       },
       {
         title: 'AMST 0225A: Gothic and Horror',
         syllabus: ['Institution Syllabus', 'Public Syllabus', 'Syllabus Text', 'Test Syllabus'],
-        resources: ['Resource 1', 'Resource 2'],
+        resources: [],
       }
     ] %}
 
@@ -30,8 +30,8 @@
         <article class="">
           <h2 class="h2 mb-5"><a href="course-hub-course-detail.html" class="link-underline">{{item.title}}</a></h2>
 
-          <div class="mb-3">
-            <h3 class="f3 font-sans-serif fw5 lh-body">Syllabus</h3>
+          <div class="mb-3 d-md-flex">
+            <h3 class="f3 font-sans-serif fw5 lh-body mr-md-3">Syllabus:</h3>
             <ul class="d-flex flex-wrap">
               {% for subitem in item.syllabus %}
                 <li class="mr-4 mb-2">
@@ -43,17 +43,21 @@
             </ul>
           </div>
 
-          <div class="mb-3">
-            <h3 class="f3 font-sans-serif fw5 lh-body">Resources</h3>
-            <ul class="d-flex flex-wrap">
-              {% for subitem in item.resources %}
-                <li class="mr-4 mb-2">
-                  <a href="" class="link-underline">
-                    {{subitem}}
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
+          <div class="mb-3 d-md-flex">
+            <h3 class="f3 font-sans-serif fw5 lh-body mr-md-3">Resources:</h3>
+            {% if item.resources is not empty %}
+              <ul class="d-flex flex-wrap">
+                {% for subitem in item.resources %}
+                  <li class="mr-4 mb-2">
+                    <a href="" class="link-underline">
+                      {{subitem}}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              No resources have been added yet.
+            {% endif %}
           </div>
 
           <a href="course-hub-roster.html" class="link-underline">View Roster*</a>
