@@ -3,7 +3,7 @@
   <ul class="box-menu__list">
     {% for item in items %}
       <li class="box-menu__item">
-        <a href="" class="box-menu__link">
+        <a href="" class="box-menu__link{% if item.active %} box-menu__link--active{% endif %}">
           {{item.text}}
         </a>
       </li>
