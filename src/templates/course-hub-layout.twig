@@ -2,7 +2,16 @@
 
 {% set page_title = 'Course Hub' %}
 {% set office_header_nav = [
-  {text:'Dashboard', href: 'course-hub-dashboard.html'},
+  {
+    text:'My Terms',
+    href: 'course-hub-dashboard.html',
+    items: [
+      { text: 'Fall 2019' },
+      { text: 'Summer 2020' },
+      { text: 'Spring 2021' },
+      { text: 'View all' },
+    ]
+  },
   {text:'Browse Course Sites', href: 'course-hub-browse.html' },
   {text:'Hub Help'},
   {text:'Course Catalog ➜'},
@@ -18,67 +27,22 @@
 
     {% block nav %}
 
-      <div class="mb-7">
-        <div class="button-group">
-          <a href="course-hub-dashboard.html" class="button button--block button--sm button button--primary button--outline">My Terms</a>
-          <button class="button button--sm button--outline button--primary toggler-button" data-toggle-target=".js-my-terms">
-            {% include 'partials/icon.twig' with { name: 'chevron-down' } %}
-          </button>
-        </div>
-        <nav class="js-my-terms toggler-content bg-gray-lighter p-3 typography">
-          <ul class="">
-            <li><a href="#">Fall 2019</a></li>
-            <li><a href="#">Summer 2019</a></li>
-            <li><a href="#">Spring 2019</a></li>
-          </ul>
-        </nav>
-      </div>
-
-<p class="f2" style="color:red"> Perhaps on dashboard, this can list all schools first tier. </p>
-<p class="f2" style="color:red"> On a course detail page, could list other courses as siblings and parent (top caps label) would be the Section (american studies) </p>
-
       {% include 'partials/page-nav.twig' with {
-        label: 'Browse Courses',
-        href: 'course-hub-browse.html',
+        label: 'My Terms',
         items: [
-          { text: 'Middlebury College',
-            items: [
-              {
-                text: 'Spring 2019',
-                items: [
-                  {
-                    text: 'American Studies',
-                    items: [
-                      {
-                        active: true,
-                        text: 'AMST 0210A: Mod. American Cult. 1830-1919',
-                        items: [
-                          { text: 'Syllabus' },
-                          { text: 'Resources' },
-                          { text: 'Roster', href: 'course-hub-roster.html' },
-                          { text: 'Course Meta', href: 'course-hub-course-meta.html' },
-                        ]
-                      },
-                      { text: 'AMST 0261A: Podcasting Past Leisure' },
-                      { text: 'AMST 0304A: The Graphic Novel' },
-                      { text: 'AMST 0325A: American Misogyny' },
-                    ]
-                  }
-                ]
-              }
-            ]
-
-          },
-          { text: 'Language School' },
-          { text: 'Breadloaf School of English' },
-          { text: 'School of the Environment' },
-          { text: 'Middlebury Schools Abroad' },
+          { text: 'Fall 2019', href: 'course-hub-dashboard.html' },
+          { text: 'Summer 2019' },
+          { text: 'Spring 2019' },
+          { text: 'Winter 2018' },
+          { text: 'View All' },
         ]
       } %}
 
     {% endblock %}
     {% block content %}
-      {{_content|raw}}
+      <div class="mb-7">
+        {{_content|raw}}
+      </div>
     {% endblock %}
 
   {% endembed %}
