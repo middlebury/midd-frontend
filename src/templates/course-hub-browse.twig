@@ -10,22 +10,21 @@
 
 {% block content %}
 
+  <div class="typography">
 
-<p style='color:red'>
-List the schools here. Remove title and blurb.
-</p>
+    <ul>
+      {% for item in [
+        { title: 'Middlebury College' },
+        { title: 'Language School' },
+        { title: 'Breadloaf School of English' },
+        { title: 'School of the Environment' },
+        { title: 'Middlebury Schools Abroad' },
+      ] %}
+        <li><a href="">{{item.title}}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
 
-  {% include 'paragraphs/link-list.twig' with {
-    title: '',
-    text: '',
-    items: [
-      { title: 'Middlebury College' },
-      { title: 'Language School' },
-      { title: 'Breadloaf School of English' },
-      { title: 'School of the Environment' },
-      { title: 'Middlebury Schools Abroad' },
-    ]
-  } %}
-
+  {% include 'partials/pagination.twig' %}
 
 {% endblock %}
