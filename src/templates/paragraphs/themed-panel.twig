@@ -1,18 +1,19 @@
+{% set id = random(1234) %}
 <div class="paragraph--themed-panel">
   <div class="container px-0">
 
-    <section class="themed-panel">
+    <section class="themed-panel" aria-labelledby="themed-panel-{{id}}-title">
 
       <div class="themed-panel__main">
         <div class="themed-panel__media">
-          <h2 class="themed-panel__title">Sustainability</h2>
+          <h2 class="themed-panel__title" id="themed-panel-{{id}}-title">Sustainability</h2>
           {% include 'partials/img.twig' with {
             name: 'spotlight'
           } %}
         </div>
 
-        <article class="themed-panel__article">
-          <h3 class="themed-panel__heading h2">
+        <article class="themed-panel__article" aria-labelledby="themed-panel-{{id}}-first">
+          <h3 class="themed-panel__heading h2" id="themed-panel-{{id}}-first">
             <a href="" class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing</a>
           </h3>
           <p class="themed-panel__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam dicta nihil reiciendis laboriosam, exercitationem harum numquam rem sint laudantium ducimus optio provident voluptate obcaecati reprehenderit voluptates illum dignissimos corrupti!</p>
@@ -22,8 +23,8 @@
 
       <div class="themed-panel__secondary">
         {% for item in 0..2 %}
-          <article class="themed-panel__subarticle">
-            <h3 class="themed-panel__heading">
+          <article class="themed-panel__subarticle" aria-labelledby="themed-panel-{{id}}-{{loop.index}}">
+            <h3 class="themed-panel__heading" id="themed-panel-{{id}}-{{loop.index}}">
               <a href="" class="text-white">24/7 Support</a>
             </h3>
             <p class="themed-panel__text">Lorem ipsum dolor sit amet consectetur adipisicing ipsum dolor sit amet consectetur adipisicing elit.</p>
