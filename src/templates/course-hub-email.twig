@@ -10,9 +10,8 @@
 
 {% block content %}
 
-<p class="lead">Possible intro text helping the editor understand the form.</p>
+  <p class="lead">Possible intro text helping the editor understand the form.</p>
 
-<form action="">
 
   <div class="form-group">
     <label for="">To</label>
@@ -70,14 +69,15 @@ Your Commons Dean will receive a copy of this warning notice and at his or her d
 *If you are receiving a second warning for the term or are on academic probation from the previous term, your Commons Dean will notify your parents.
 
 CC: Commons Dean, Adviser, CTLR
-</textarea>
-  </div>
+  </textarea>
+    </div>
 
-  <div class="form-group">
-    <button type="submit" class="button button--primary">Send Message</button>
-  </div>
+    <div class="form-group d-flex align-items-center">
+      <a href="mailto:" class="button button--primary">Prepare email</a>
+      <p class="f2 ml-3">Open your default email software with the above fields prepopulated</p>
+    </div>
 
-</form>
+  </form>
 
 
 {% endblock %}
