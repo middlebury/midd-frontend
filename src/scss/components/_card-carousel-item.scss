@@ -71,7 +71,7 @@ $spotlight-item-breakpoint: 'xs';
   .card-carousel-item__side--front & {
     background-image: linear-gradient(
       to bottom,
-      rgba($black, 0.55),
+      rgba(black, 0.75) 20%,
       rgba($white, 0)
     );
   }
