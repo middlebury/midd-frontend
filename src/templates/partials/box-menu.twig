@@ -1,5 +1,5 @@
-<nav class="box-menu{{ overlap ? ' box-menu--overlap' : '' }}{{office ? ' box-menu--midd' : ''}}" aria-labelledby="midd-box-menu-label">
   <h2 class="sr-only" id="midd-box-menu-label">Box menu label (should be picked up from the page title)</h2>
+<nav class="box-menu{{ overlap ? ' box-menu--overlap' : '' }}{{office ? ' box-menu--midd' : ''}} {{class}}" aria-labelledby="midd-box-menu-label">
   <ul class="box-menu__list">
     {% for item in items %}
       <li class="box-menu__item">
