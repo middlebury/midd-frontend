@@ -42,6 +42,10 @@
   }
 }
 
+.box-menu__link--active {
+  color: $sky;
+}
+
 .box-menu--overlap {
   margin-top: -#{spacing(5)};
   position: relative;
