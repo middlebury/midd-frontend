@@ -213,6 +213,10 @@
   margin-bottom: spacing(7);
   @include media(md) {
     margin-bottom: spacing(8);
+
+    & + & {
+      margin-left: spacing(4);
+    }
   }
 }
 
