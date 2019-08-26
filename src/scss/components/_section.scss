@@ -49,8 +49,10 @@
   @include link-border;
   flex: 0 0 auto;
 
-  .section__title + & {
-    margin-left: spacing(3);
+  @include media(md) {
+    .section__title + & {
+      margin-left: spacing(3);
+    }
   }
 }
 
