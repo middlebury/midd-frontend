@@ -58,11 +58,3 @@
   border: 0;
   background-color: transparent;
 }
-
-.button-group {
-  display: flex;
-
-  .button + .button {
-    border-left: 0;
-  }
-}
