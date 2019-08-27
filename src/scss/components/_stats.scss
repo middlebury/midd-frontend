@@ -9,7 +9,7 @@
 .stats__label {
   display: block;
   border-bottom: 1px solid $navy;
-  font-size: $typescale-10;
+  font-size: $typescale-9;
   font-family: $font-family-serif;
   line-height: $line-height-solid;
   font-weight: 300;
@@ -17,10 +17,6 @@
   margin-bottom: spacing(2);
   text-align: center;
   white-space: nowrap;
-
-  @include media(xl) {
-    font-size: 88px; // TODO: add to typescale?
-  }
 }
 
 .stats__text {
