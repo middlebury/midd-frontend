@@ -87,3 +87,21 @@ a:link {
 .drawer-nav__link {
   color: $white !important;
 }
+
+#content {
+  h1,
+  .h1 {
+    @include media(lg) {
+      font-size: 3rem;
+    }
+  }
+
+  blockquote {
+    padding-left: 2rem;
+    margin: 2rem 0;
+  }
+
+  .subtabs li a {
+    height: auto;
+  }
+}
