@@ -68,21 +68,34 @@
 
       <div class="midd-search__content js-midd-search">
         <form action="http://www.middlebury.edu/search" method="GET">
-          <label for="midd-search-input" class="sr-only">Search</label>
-          <div class="input-group">
-            <input
-              type="search"
-              class="form-control form-control--sm midd-search__input js-midd-search-input"
-              id="midd-search-input"
-              placeholder="Search"
-              name="q2"
-              required
-            />
-            <button type="submit" class="button button--sm midd-search__submit">
-              <span class="sr-only">Search</span>
-              {% include 'partials/icon.twig' with { name: 'search' } %}
-            </button>
+          <div class="mb-2">
+            <label for="midd-search-input" class="sr-only">Search</label>
+            <div class="input-group">
+              <input
+                type="search"
+                class="form-control form-control--sm midd-search__input js-midd-search-input"
+                id="midd-search-input"
+                placeholder="Search"
+                name="q2"
+                required
+              />
+              <button type="submit" class="button button--sm midd-search__submit">
+                <span class="sr-only">Search</span>
+                {% include 'partials/icon.twig' with { name: 'search' } %}
+              </button>
+            </div>
           </div>
+
+          <div class="form-check form-check--inline">
+            <input type="radio" name="scope" class="form-check__input" id="midd-search-scope-site" checked>
+            <label for="midd-search-scope-site" class="form-check__label text-white">This site</label>
+          </div>
+
+          <div class="form-check form-check--inline">
+            <input type="radio" name="scope" class="form-check__input" id="midd-search-scope-all">
+            <label for="midd-search-scope-all" class="form-check__label text-white">All Middlebury</label>
+          </div>
+
         </form>
       </div>
     </section>
