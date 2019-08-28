@@ -237,7 +237,7 @@ const copyDeps = () => {
   return gulp
     .src([
       './node_modules/chart.js/dist/Chart.min.js',
-      './node_modules/iframe-resizer/js/iframeResizer.min.js'
+      './node_modules/iframe-resizer/js/iframeResizer.min.js',
       './node_modules/iframe-resizer/js/iframeResizer.contentWindow.min.js'
     ])
     .pipe(gulp.dest('./dist/js'));
