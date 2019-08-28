@@ -5,7 +5,7 @@
       <template path="/shared/base.xslt" xmlns="http://technolutions.com/framework" />
       <head>
         <!-- <link href="/shared/build-fonts.css?v=20150807174311" rel="stylesheet" /> -->
-        <link href="/shared/build.css?v=20150807174311b" rel="stylesheet" />
+        <link href="/midd.css?v=20150807174311b" rel="stylesheet" />
         <link rel="stylesheet" media="all" href="//cloud.typography.com/83898/706148/css/fonts.css"/>
         <!-- <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Domine:700,regular|Open+Sans:300,700,700italic,italic,regular|Rosarivo:italic,regular&amp;subset=latin-ext" media="all" class="cr" /> -->
         <xsl:apply-templates select="xhtml:html/xhtml:head/node()" />
@@ -205,7 +205,7 @@
             </div>
           </div>
 
-          <script src="/shared/build.js"></script>
+          <script src="/midd.js"></script>
 
 
 
