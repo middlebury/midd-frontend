@@ -34,13 +34,7 @@ const PercentBarChart = ({ labels, datasets, colors }) => {
 
   return (
     <div>
-      <div
-        style={{
-          width: '100%',
-          display: 'flex',
-          marginBottom: 24
-        }}
-      >
+      <div className="percent-bar">
         {sortedData.map((data, i) => {
           const percent = getPercentage(data.value, total);
           const width = percent.toFixed(2);
@@ -48,24 +42,18 @@ const PercentBarChart = ({ labels, datasets, colors }) => {
           return (
             <div
               key={i}
+              className="percent-bar__item"
               style={{
-                height: 32,
                 width: width + '%'
               }}
             >
               <div
+                className="percent-bar__fill"
                 style={{
-                  height: '100%',
                   background: colors[i]
                 }}
               ></div>
-              <span
-                style={{
-                  fontSize: 14
-                }}
-              >
-                {label}%
-              </span>
+              <span className="percent-bar__label">{label}%</span>
             </div>
           );
         })}

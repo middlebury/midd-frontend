@@ -31,9 +31,10 @@ $themed-panel-overlay: linear-gradient(to bottom, transparent, #000);
     height: 0;
     overflow: hidden;
 
+    // TODO: this nesting isn't right. Fix me.
     @include media(xl) {
       padding-top: 0;
-      position: initial;
+      position: static;
     }
 
     &:before {
@@ -57,7 +58,7 @@ $themed-panel-overlay: linear-gradient(to bottom, transparent, #000);
 
   @include media(md) {
     padding-top: 0;
-    position: initial;
+    position: static;
   }
 
   &:before {
