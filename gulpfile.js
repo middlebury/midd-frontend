@@ -56,6 +56,10 @@ const paths = {
   }
 };
 
+if (process.env.TWIG_INCLUDES) {
+  paths.html.src.push('./src/templates/**/*.twig');
+}
+
 /**
  * Change output paths if --themeDir is passed.
  *
