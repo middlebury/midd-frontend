@@ -1,0 +1,27 @@
+.app-header {
+  background: $navy;
+}
+
+.app-header__container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-header__logo {
+  position: relative;
+  top: 1rem;
+}
+
+.app-header__title {
+  @include h2;
+}
+
+.app-header__link {
+  color: $white;
+}
+
+.app-header__nav {
+  background: $gray-lighter;
+}

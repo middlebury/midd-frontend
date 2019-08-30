@@ -1,51 +1,25 @@
-{% extends "anchor-layout.twig" %}
+{% extends "layout.twig" %}
 
-{% set page_title = 'Course Hub' %}
-{% set office_header_nav = [
-  {
-    text:'My Terms',
-    href: 'course-hub-dashboard.html',
+{% block layout_header %}
+  {% include 'partials/app-header.twig' with {
+    title: 'Course Hub',
     items: [
-      { text: 'Fall 2019' },
-      { text: 'Summer 2020' },
-      { text: 'Spring 2021' },
-      { text: 'View all' },
+      {text:'My Terms', active:true},
+      {text:'Hub Help'},
+      {text:'Browse Course Sites'},
+      {text:'Course Catalog'},
+      {text:''},
     ]
-  },
-  {text:'Browse Course Sites', href: 'course-hub-browse.html' },
-  {text:'Hub Help'},
-  {text:'Course Catalog ➜'},
-  {text:'Schedule Builder ➜'},
-  {text:'Academic Calendar ➜'}
-] %}
+  } %}
+{% endblock %}
+
+{% block layout_footer %}
+  {% include 'partials/midd-footer.twig' %}
+{% endblock %}
 
 {% set _content = block('content') %}
 
 {% block page %}
-
-  {% embed 'partials/sidebar-layout.twig' %}
-
-    {% block nav %}
-
-      {% include 'partials/page-nav.twig' with {
-        label: 'My Terms',
-        items: [
-          { text: 'Fall 2019', href: 'course-hub-dashboard.html' },
-          { text: 'Summer 2019' },
-          { text: 'Spring 2019' },
-          { text: 'Winter 2018' },
-          { text: 'View All' },
-        ]
-      } %}
-
-    {% endblock %}
-    {% block content %}
-      <div class="mb-7">
-        {{_content|raw}}
-      </div>
-    {% endblock %}
-
-  {% endembed %}
-
+  {{_content|raw}}
 {% endblock %}
 

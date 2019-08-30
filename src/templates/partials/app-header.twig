@@ -1,0 +1,25 @@
+<header class="app-header">
+  <div class="app-header__container container">
+    <div class="app-header__logo">
+      <a href="">
+        <img src="/images/midd-shield.svg" alt="Middlebury Shield">
+      </a>
+    </div>
+
+    {% if is_front %}
+      <h1 class="app-header__title" id="midd-app-header-label">
+    {% else %}
+      <p class="app-header__title" id="midd-app-header-label">
+    {% endif %}
+      <a href="" class="app-header__link">{{title|default('Course Hub')}}</a>
+    {% if is_front %}
+      </h1>
+    {% endif %}
+
+  </div>
+  <div class="app-header__nav">
+    <div class="container">
+      {% include 'partials/anchor-nav.twig' with { items: items } %}
+    </div>
+  </div>
+</header>

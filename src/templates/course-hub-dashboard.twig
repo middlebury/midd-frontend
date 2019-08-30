@@ -3,69 +3,23 @@
 {% set is_front = true %}
 {% set page_header = {
   title: 'Fall 2019 Dashboard',
-  breadcrumb: [
-    { text: 'Middlebury' },
-    { text: 'Course Hub' },
-  ],
 } %}
 
 {% block content %}
 
-  <ul class="list list--dividers mb-7">
-
-    {% for item in [
-      {
-        title: 'AMST 0225A: Gothic and Horror',
-        syllabus: ['Institution Syllabus', 'Syllabus Text'],
-        resources: ['Resource 1', 'Resource 2'],
-      },
-      {
-        title: 'AMST 0225A: Gothic and Horror',
-        syllabus: ['Institution Syllabus', 'Public Syllabus', 'Syllabus Text', 'Test Syllabus'],
-        resources: [],
-      }
-    ] %}
-
-      <li class="list__item">
-        <article class="">
-          <h2 class="h2 mb-5"><a href="course-hub-course-detail.html" class="link-underline">{{item.title}}</a></h2>
-
-          <div class="mb-3 d-md-flex">
-            <h3 class="f3 font-sans-serif fw5 lh-body mr-md-3">Syllabus:</h3>
-            <ul class="d-flex flex-wrap">
-              {% for subitem in item.syllabus %}
-                <li class="mr-4 mb-2">
-                  <a href="" class="link-underline">
-                    {{subitem}}
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
-          </div>
-
-          <div class="mb-3 d-md-flex">
-            <h3 class="f3 font-sans-serif fw5 lh-body mr-md-3">Resources:</h3>
-            {% if item.resources is not empty %}
-              <ul class="d-flex flex-wrap">
-                {% for subitem in item.resources %}
-                  <li class="mr-4 mb-2">
-                    <a href="" class="link-underline">
-                      {{subitem}}
-                    </a>
-                  </li>
-                {% endfor %}
-              </ul>
-            {% else %}
-              No resources have been added yet.
-            {% endif %}
-          </div>
-
-          <a href="course-hub-roster.html" class="link-underline">View Roster*</a>
-
-        </article>
-      </li>
-    {% endfor %}
-  </ul>
+  <div class="container">
+    <ul class="row">
+      {% for item in 0..7 %}
+        <li class="col-md-3 col-lg-4 mb-7">
+          {% include 'partials/course-hub-card.twig' with {
+            title: 'AMST 0225A<br>Gothic and Horror',
+            syllabus: ['Institution Syllabus', 'Public Syllabus', 'Syllabus Text', 'Test Syllabus'],
+            resources: ['Resource one', 'Resource two']
+          } %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 
 {% endblock %}
 

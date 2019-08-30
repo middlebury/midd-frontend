@@ -1,0 +1,56 @@
+<article class="border-t border-navy border-4 pt-4">
+  <h2 class="h3 mb-3">
+    <a href="course-hub-course-detail.html" class="">
+      {{title}}
+    </a>
+  </h2>
+
+  <dl class="f2 mb-3">
+    <div class="d-flex mb-2">
+      <dt class="text-caps f1 mr-2">Schedule</dt>
+      <dd>11:00am-12:15pm on Tuesday, Thursday (Feb 11, 2019 to May 13, 2019)</dd>
+    </div>
+    <div class="d-flex mb-2">
+      <dt class="text-caps f1 mr-2">Location</dt>
+      <dd>Axinn Center 104</dd>
+    </div>
+    <div class="d-flex mb-2">
+      <dt class="text-caps f1 mr-2">Instructor</dt>
+      <dd><a href="">John Smith</a></dd>
+    </div>
+  </dl>
+
+  <div class="border-b border-gray-light pb-3 mb-3">
+    <a href="course-hub-roster.html" class="f2 link-underline">View Roster</a>
+  </div>
+
+  <div class="mb-3 d-md-flex">
+    <ul class="d-flex flex-wrap">
+      {% for subitem in syllabus %}
+        <li class="mr-4 mb-2">
+          <a href="" class="">
+            {{subitem}}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="mb-3 d-md-flex">
+    {% if resources is not empty %}
+      <ul class="d-flex flex-wrap">
+        {% for subitem in resources %}
+          <li class="mr-4 mb-2">
+            <a href="" class="">
+              {{subitem}}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      No resources have been added yet.
+    {% endif %}
+  </div>
+
+
+</article>
