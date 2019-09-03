@@ -43,7 +43,7 @@ const paths = {
   },
   styles: {
     src: './src/scss/**/*.scss',
-    dest: './dist/css/'
+    dest: ['./dist/css/']
   },
   scripts: {
     src: './src/js/**/*.js',
@@ -56,7 +56,7 @@ const paths = {
   }
 };
 
-if (process.env.TWIG_INCLUDES) {
+if (process.env.DOCS) {
   paths.html.src.push('./src/templates/**/*.twig');
 }
 
@@ -336,6 +336,11 @@ const buildIconSprite = () =>
     )
     .pipe(gulp.dest('./dist/icons/sprites'));
 
+const copySiteAssets = () =>
+  gulp
+    .src(['./dist/css/main.css', './dist/js/bundle.js'])
+    .pipe(gulp.dest('./docs/static'));
+
 const build = gulp.series(
   clean,
   copyDeps,
@@ -352,6 +357,7 @@ const deploy = gulp.series(replaceImagePaths, deployDist);
 
 module.exports = {
   deploy,
+  copySiteAssets,
   scripts,
   build,
   dev,
