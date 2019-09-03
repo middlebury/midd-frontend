@@ -4,7 +4,6 @@ export const AutoheightIframe = props => {
   const [height, setHeight] = React.useState(200);
 
   const sizeIframe = event => {
-    console.log(event);
     setHeight(event.target.contentWindow.document.body.scrollHeight);
   };
 
