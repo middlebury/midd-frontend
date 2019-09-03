@@ -1,6 +1,7 @@
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { css } from 'styled-components';
 
 import SEO from '../components/seo';
 
@@ -26,32 +27,16 @@ class DocPage extends React.Component {
     return (
       <>
         <SEO title={doc.name} />
-        <article
-          css={css`
-            max-width: 1000px;
-          `}
-        >
-          <header
-            css={css`
-              margin-bottom: var(--space4);
-            `}
-          >
+        <article sx={{ maxWidth: 1000 }}>
+          <header sx={{ mb: 3 }}>
             <h1
-              css={css`
-                font-size: var(--f6);
-                font-weight: normal;
-                text-transform: capitalize;
-              `}
+              sx={{ fontSize: 6, fontWeight: 400, textTransform: 'capitalize' }}
             >
               {doc.name}
             </h1>
           </header>
           <BreakpointSizer>
-            <div
-              css={css`
-                padding: var(--space4);
-              `}
-            >
+            <div sx={{ p: 4 }}>
               <AutoheightIframe srcDoc={srcDoc} />
             </div>
           </BreakpointSizer>

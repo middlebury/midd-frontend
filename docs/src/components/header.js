@@ -1,9 +1,9 @@
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import groupBy from 'lodash/groupBy';
-
-import { css } from 'styled-components';
 
 const SubMenu = ({ label, items, isOpen = false }) => {
   const [open, setOpen] = React.useState(isOpen);
@@ -13,28 +13,25 @@ const SubMenu = ({ label, items, isOpen = false }) => {
   return (
     <div>
       <button
-        className={open && 'active'}
         onClick={toggle}
-        css={css`
-          width: 100%;
-          color: var(--white);
-          background: var(--primary);
-          padding: var(--space2);
-          z-index: 2;
-          position: sticky;
-          top: 0;
-          display: flex;
-          font-weight: 600;
-          justify-content: space-between;
-          border: 0;
-          opacity: 0.8;
-          cursor: pointer;
-
-          &.active,
-          &:hover {
-            opacity: 1;
-          }
-        `}
+        sx={{
+          width: '100%',
+          color: 'white',
+          bg: 'primary',
+          p: 2,
+          zIndex: 2,
+          fontSize: 3,
+          position: 'sticky',
+          display: 'flex',
+          fontWeight: 600,
+          justifyContent: 'space-between',
+          border: 0,
+          opacity: open ? 1 : 0.8,
+          cursor: 'pointer',
+          '&:hover': {
+            opacity: 1,
+          },
+        }}
       >
         <span>{label}</span>
         <span>{open ? '-' : '+'}</span>
@@ -45,16 +42,16 @@ const SubMenu = ({ label, items, isOpen = false }) => {
             <li key={node.name}>
               <Link
                 to={node.fields.slug}
-                css={css`
-                  display: block;
-                  padding: var(--space2);
-                  color: var(--white);
-                  font-size: var(--f3);
-                  opacity: 0.8;
-                  :hover {
-                    opacity: 1;
-                  }
-                `}
+                sx={{
+                  color: 'white',
+                  p: 2,
+                  fontSize: 3,
+                  textDecoration: 'none',
+                  opacity: 0.8,
+                  ':hover': {
+                    opacity: 1,
+                  },
+                }}
               >
                 {node.name}
               </Link>
@@ -106,26 +103,10 @@ const Nav = () => {
 
 const Header = ({ siteTitle = '' }) => {
   return (
-    <header
-      css={css`
-        background: var(--primary);
-        padding: var(--space3);
-        overflow: auto;
-      `}
-    >
+    <header sx={{ bg: 'primary', p: 3, overflow: 'auto' }}>
       <div>
-        <h1
-          css={css`
-            margin-bottom: var(--space5);
-          `}
-        >
-          <Link
-            to="/"
-            css={css`
-              color: var(--white);
-              font-size: var(--f3);
-            `}
-          >
+        <h1 sx={{ mb: 5 }}>
+          <Link to="/" sx={{ color: 'white', fontSize: 3 }}>
             {siteTitle}
           </Link>
         </h1>

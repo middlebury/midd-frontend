@@ -10,6 +10,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-theme-ui',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -26,6 +27,5 @@ module.exports = {
     },
     // { resolve: 'gatsby-transformer-twig' },
     { resolve: 'gatsby-transformer-html' },
-    { resolve: 'gatsby-plugin-styled-components' },
   ],
 };
