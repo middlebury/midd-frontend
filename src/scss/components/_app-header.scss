@@ -16,6 +16,7 @@
 
 .app-header__title {
   @include h2;
+  font-family: $font-family-serif;
 }
 
 .app-header__link {
