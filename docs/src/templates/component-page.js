@@ -2,26 +2,62 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import { css } from 'styled-components';
 
-import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-import middstyles from '../../../dist/css/main.css';
+import BreakpointSizer from '../components/breakpoint-sizer';
+import CodeExample from '../components/code';
+
+import { AutoheightIframe } from '../components/autoheight-iframe';
 
 class DocPage extends React.Component {
+  state = { iframeHeight: 800 };
   render() {
     const doc = this.props.data.fileHtml;
+
     const { previous, next } = this.props.pageContext;
 
+    const srcDoc = `
+      <link href="/main.css" rel="stylesheet"/>
+      <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/83898/706148/css/fonts.css" />
+      ${doc.html}
+      <script src="/bundle.js"></script>
+    `;
+
     return (
-      <Layout location={this.props.location}>
+      <>
         <SEO title={doc.name} />
-        <article>
-          <header>
-            <h1>{doc.name}</h1>
+        <article
+          css={css`
+            max-width: 1000px;
+          `}
+        >
+          <header
+            css={css`
+              margin-bottom: var(--space4);
+            `}
+          >
+            <h1
+              css={css`
+                font-size: var(--f6);
+                font-weight: normal;
+                text-transform: capitalize;
+              `}
+            >
+              {doc.name}
+            </h1>
           </header>
-          <iframe srcDoc={doc.html} width="100%" height="800" />
+          <BreakpointSizer>
+            <div
+              css={css`
+                padding: var(--space4);
+              `}
+            >
+              <AutoheightIframe srcDoc={srcDoc} />
+            </div>
+          </BreakpointSizer>
+          <CodeExample code={doc.html} />
         </article>
-      </Layout>
+      </>
     );
   }
 }
