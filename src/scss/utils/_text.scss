@@ -9,26 +9,6 @@
 }
 
 ///
-/// font weight
-///
-
-.fw3 {
-  font-weight: 300;
-}
-
-.fw5 {
-  font-weight: 500;
-}
-
-.fw6 {
-  font-weight: 600;
-}
-
-.text-bold {
-  font-weight: bold;
-}
-
-///
 /// text alignment
 ///
 
@@ -133,4 +113,23 @@ $text-colors: (
 
 .lh-body {
   line-height: $line-height-body;
+}
+///
+/// font weight
+///
+
+.fw3 {
+  font-weight: 300;
+}
+
+.fw5 {
+  font-weight: 500;
+}
+
+.fw6 {
+  font-weight: 600;
+}
+
+.text-bold {
+  font-weight: bold;
 }
