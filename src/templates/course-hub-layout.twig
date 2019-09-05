@@ -1,14 +1,31 @@
 {% extends "layout.twig" %}
 
+{% set coursehub_layout_full_width = coursehub_layout_full_width|default(false) %}
+
+{% set page_header = {
+  app_header: true,
+  breadcrumb: page_header.breadcrumb|default(false),
+  after_title: page_header.after_title,
+  title: page_header.title
+} %}
+
 {% block layout_header %}
   {% include 'partials/app-header.twig' with {
     title: 'Course Hub',
     items: [
-      {text:'My Terms', active:true},
+      {
+        text:'My Terms',
+        active:true,
+        items: [
+          { text: 'Fall 2019' },
+          { text: 'Fall 2019' },
+          { text: 'Fall 2019' },
+          { text: 'Fall 2019' },
+        ]
+      },
       {text:'Hub Help'},
       {text:'Browse Course Sites'},
       {text:'Course Catalog'},
-      {text:''},
     ]
   } %}
 {% endblock %}
@@ -18,8 +35,22 @@
 {% endblock %}
 
 {% set _content = block('content') %}
+{% set _nav = block('nav') %}
 
 {% block page %}
-  {{_content|raw}}
+
+  {% if not coursehub_layout_full_width %}
+    {% embed 'partials/sidebar-layout.twig' %}
+      {% block nav %}
+        {{_nav|raw}}
+      {% endblock %}
+      {% block content %}
+          {{_content|raw}}
+      {% endblock %}
+    {% endembed %}
+  {% else %}
+    {{_content|raw}}
+  {% endif %}
+
 {% endblock %}
 

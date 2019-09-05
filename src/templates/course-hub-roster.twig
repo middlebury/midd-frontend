@@ -13,6 +13,19 @@
   ],
 } %}
 
+{% block nav %}
+  {% include 'partials/page-nav.twig' with {
+    label: 'My Terms',
+    items: [
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+    ]
+  } %}
+{% endblock %}
+
 {% block content %}
 
 
