@@ -1,9 +1,11 @@
+$nav-bp: lg;
+
 .nav {
 }
 
 .nav__list {
   border-bottom: 1px solid $border-color;
-  @include media(md) {
+  @include media($nav-bp) {
     display: flex;
     border-bottom: 0;
   }
@@ -14,7 +16,7 @@
   flex-wrap: wrap;
   border-top: 1px solid $border-color;
 
-  @include media(md) {
+  @include media($nav-bp) {
     margin-right: spacing(4);
   }
 }
@@ -26,7 +28,7 @@
   font-weight: $font-weight-medium;
   flex: 1;
 
-  @include media(md) {
+  @include media($nav-bp) {
     padding: spacing(4);
     padding-left: 0;
     padding-right: 0;
@@ -48,7 +50,7 @@
   margin-left: auto;
   padding: spacing(3);
 
-  @include media(md) {
+  @include media($nav-bp) {
     display: none;
   }
 }
@@ -59,7 +61,7 @@
 
 .nav__sublist {
   width: 100%;
-  @include media(md) {
+  @include media($nav-bp) {
     border: 1px solid $navy;
     background: $white;
   }
@@ -68,7 +70,7 @@
 .nav__subitem {
   border-top: 1px solid $border-color;
 
-  @include media(md) {
+  @include media($nav-bp) {
     border-top: 0;
   }
 }
@@ -79,10 +81,14 @@
   font-size: typescale(2);
   padding-left: spacing(7);
 
-  @include media(md) {
+  @include media($nav-bp) {
     padding-left: spacing(3);
     font-size: typescale(3);
     padding-top: spacing(2);
     padding-bottom: spacing(2);
   }
+}
+
+.nav__link--active {
+  color: $color-active;
 }

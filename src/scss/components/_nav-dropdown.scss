@@ -1,10 +1,12 @@
+$nav-dropdown-bp: lg;
+
 .nav-dropdown {
   position: relative;
 
   &:hover,
   &:focus-within {
     .nav-dropdown__menu {
-      @include media(md) {
+      @include media($nav-dropdown-bp) {
         opacity: 1;
         visibility: visible;
       }
@@ -15,7 +17,7 @@
 .nav-dropdown__menu {
   display: none;
 
-  @include media(md) {
+  @include media($nav-dropdown-bp) {
     display: block;
     position: absolute;
     top: 100%;
@@ -29,7 +31,7 @@
 
   &.is-toggled {
     display: block;
-    @include media(md) {
+    @include media($nav-dropdown-bp) {
       opacity: 1;
       visibility: visible;
     }
@@ -37,7 +39,7 @@
 }
 
 .nav-dropdown__button {
-  @include media(md) {
+  @include media($nav-dropdown-bp) {
     // display: none;
   }
 }
