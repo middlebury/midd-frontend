@@ -8,23 +8,50 @@
   ],
 } %}
 
+{% block sidebar %}
+  <div class="p-3 bg-gray-lighter">
+    {% include 'partials/page-cta.twig' with {
+      title: 'My Terms',
+      text: 'Log in to view courses you are in or instruct.',
+      link_href: '#',
+      link_text: 'Log in'
+    } %}
+  </div>
+{% endblock %}
+
+{% block toc %}
+  <div data-digest-nav></div>
+{% endblock %}
+
 {% block content %}
 
-  <div class="typography">
+  <div data-digest-content>
 
-    <ul>
-      {% for item in [
-        { title: 'Middlebury College' },
-        { title: 'Language School' },
-        { title: 'Breadloaf School of English' },
-        { title: 'School of the Environment' },
-        { title: 'Middlebury Schools Abroad' },
-      ] %}
-        <li><a href="">{{item.title}}</a></li>
-      {% endfor %}
-    </ul>
+    {% for item in [
+      { title: 'Middlebury College' },
+      { title: 'Language School' },
+      { title: 'Breadloaf School of English' },
+      { title: 'School of the Environment' },
+      { title: 'Middlebury Schools Abroad' },
+    ] %}
+
+      <section class="mb-9" aria-labelledby="coursehub-browse-title-{{loop.index}}">
+
+        <h2 class="h2 mb-7" id="coursehub-browse-title-{{loop.index}}">
+          <a href="">{{item.title}}</a>
+        </h2>
+
+        <ul class="row">
+          {% for year in 2010..2019 %}
+            <li class="col-md-4 mb-3">
+              <a href="" class="h3 link-underline">{{year}}&ndash;{{year + 1}}</a>
+            </li>
+          {% endfor %}
+        </ul>
+
+      </section>
+
+    {% endfor %}
   </div>
-
-  {% include 'partials/pagination.twig' %}
 
 {% endblock %}
