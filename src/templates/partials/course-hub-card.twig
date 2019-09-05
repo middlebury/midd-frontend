@@ -5,52 +5,45 @@
     </a>
   </h2>
 
-  <dl class="f2 mb-3">
-    <div class="d-flex mb-2">
-      <dt class="text-caps f1 mr-2">Schedule</dt>
+  <dl class="f2 lh6 border-b pb-3 mb-3">
+    <div class="mb-3">
+      <dt class="text-caps f1 fw6">Schedule</dt>
       <dd>11:00am-12:15pm on Tuesday, Thursday (Feb 11, 2019 to May 13, 2019)</dd>
     </div>
-    <div class="d-flex mb-2">
-      <dt class="text-caps f1 mr-2">Location</dt>
+    <div class="mb-3">
+      <dt class="text-caps f1 fw6">Location</dt>
       <dd>Axinn Center 104</dd>
     </div>
-    <div class="d-flex mb-2">
-      <dt class="text-caps f1 mr-2">Instructor</dt>
-      <dd><a href="">John Smith</a></dd>
+    {# hide for instructors? #}
+    <div class="mb-3">
+      <dt class="text-caps f1 fw6">Instructor</dt>
+      <dd>John Smith<br><a href="mailto:" class="link-underline">jsmith@middlebury.edu</a></dd>
     </div>
   </dl>
 
-  <div class="border-b border-gray-light pb-3 mb-3">
-    <a href="course-hub-roster.html" class="f2 link-underline">View Roster</a>
-  </div>
+  {% set items = syllabus|merge(resources) %}
 
-  <div class="mb-3 d-md-flex">
-    <ul class="d-flex flex-wrap">
-      {% for subitem in syllabus %}
-        <li class="mr-4 mb-2">
-          <a href="" class="">
-            {{subitem}}
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
+  <ul class="d-flex flex-wrap">
+    {% for subitem in items %}
+      <li class="mr-3 mb-2">
+        <a href="" class="f2 link-underline">
+          {{subitem}}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
 
-  <div class="mb-3 d-md-flex">
-    {% if resources is not empty %}
-      <ul class="d-flex flex-wrap">
-        {% for subitem in resources %}
-          <li class="mr-4 mb-2">
-            <a href="" class="">
-              {{subitem}}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-    {% else %}
-      No resources have been added yet.
-    {% endif %}
-  </div>
-
+  {# for admin/course owner only #}
+  <ul class="d-flex border-t pt-3 mt-3 f2">
+    <li class="mr-3">
+      <a href="course-hub-roster.html" class="link-underline">View Roster</a>
+    </li>
+    <li class="mr-3">
+      <a href="course-hub-roster.html" class="link-underline">Add Syllabus</a>
+    </li>
+    <li class="mr-3">
+      <a href="course-hub-roster.html" class="link-underline">Add Resource</a>
+    </li>
+  </ul>
 
 </article>
