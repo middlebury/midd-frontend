@@ -64,6 +64,7 @@
     opacity: 1;
   }
 
+  &.tabs__button--active,
   &[aria-selected='true'] {
     border-top-color: $black;
   }
