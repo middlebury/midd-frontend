@@ -95,7 +95,7 @@ $app-header-bp: md;
 
   position: absolute;
   top: 100%;
-  right: 0; // flush right since smaller width screen wont have room for dropdown
+  right: 0;
   width: 100%;
 
   transition: opacity 0.2s;
@@ -111,11 +111,5 @@ $app-header-bp: md;
   @include media($app-header-bp) {
     width: 400px;
     border: 1px solid $border-color;
-  }
-
-  @include media(lg) {
-    // reposition search dropdown to be flush left since there should be room now
-    left: 0;
-    right: auto;
   }
 }
