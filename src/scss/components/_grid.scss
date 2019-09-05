@@ -2,10 +2,6 @@
   @include make-container();
 }
 
-.container--fluid {
-  max-width: 100%;
-}
-
 .row {
   @include make-row();
 }
