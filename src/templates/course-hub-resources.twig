@@ -27,6 +27,7 @@
 {% endblock %}
 
 {% block content %}
+  {% include 'partials/course-hub-tabs.twig' with { active: 3 } %}
 
    {# link list component should not have paragraph--link-list in it since it's not used as a Paragraph. Leaving this note for discussion. #}
   {% include 'paragraphs/link-list.twig' with {
