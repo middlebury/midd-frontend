@@ -40,6 +40,7 @@ $app-header-bp: lg;
   font-size: typescale(2);
   font-weight: $font-weight-medium;
   padding: spacing(3);
+  border: 0;
 
   @include media($app-header-bp) {
     padding: spacing(4);
