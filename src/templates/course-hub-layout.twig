@@ -39,6 +39,8 @@
 
 {% set _content = block('content') %}
 {% set _nav = block('nav') %}
+{% set _toc = block('toc') %}
+{% set _sidebar = block('sidebar') %}
 
 {% block page %}
 
@@ -47,8 +49,14 @@
       {% block nav %}
         {{_nav|raw}}
       {% endblock %}
+      {% block sidebar %}
+        {{_sidebar|raw}}
+      {% endblock %}
       {% block content %}
-          {{_content|raw}}
+        {{_content|raw}}
+      {% endblock %}
+      {% block toc %}
+        {{_toc|raw}}
       {% endblock %}
     {% endembed %}
   {% else %}
