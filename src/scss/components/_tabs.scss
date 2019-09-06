@@ -68,6 +68,7 @@
   &.tabs__button--active,
   &[aria-selected='true'] {
     border-top-color: $black;
+    color: $color-active;
   }
 
   .tabs--light & {
@@ -81,6 +82,7 @@
 
     &[aria-selected='true'] {
       border-top-color: $white;
+      color: $white;
     }
   }
 }
