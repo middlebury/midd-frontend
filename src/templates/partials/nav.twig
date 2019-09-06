@@ -12,6 +12,9 @@
           class="nav__link{% if item.active %} nav__link--active{% endif %}"
         >
           {{item.text}}
+          {% if item.icon %}
+            {% include 'partials/icon.twig' with { name: item.icon, class: 'ml-1' } %}
+          {% endif %}
         </a>
 
         {% if has_dropdown %}
