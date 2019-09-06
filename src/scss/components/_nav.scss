@@ -18,6 +18,7 @@ $nav-bp: lg;
 
   @include media($nav-bp) {
     margin-right: spacing(4);
+    flex: 1 0 auto;
   }
 }
 
@@ -26,7 +27,7 @@ $nav-bp: lg;
   padding: spacing(3);
   font-size: typescale(3);
   font-weight: $font-weight-medium;
-  flex: 1;
+  flex: 1 0 auto;
 
   @include media($nav-bp) {
     padding: spacing(4);

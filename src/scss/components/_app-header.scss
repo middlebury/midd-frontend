@@ -56,9 +56,9 @@ $app-header-bp: lg;
 }
 
 .app-header__dropdown {
-  // pull buttons to left to line up with site title since container has padding
   margin-left: -#{spacing(3)};
   // max-width: 100%;
+  flex: 0 0 auto;
 
   @include media($app-header-bp) {
     // use relative position at larger screen so search dropdown lines up with toggle button
