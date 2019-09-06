@@ -28,9 +28,28 @@
 {% block content %}
   {% include 'partials/course-hub-tabs.twig' with { active: 3 } %}
 
-   {# link list component should not have paragraph--link-list in it since it's not used as a Paragraph. Leaving this note for discussion. #}
-  {% include 'paragraphs/link-list.twig' with {
-    moreLinkText: '+ Add a Resource'
-  } %}
+  <div class="typography mb-4">
+    <ul>
+      <li>
+        <a href="">Resource one</a>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, quis rem dolore amet animi quo hic ea est at corrupti et odio inventore neque assumenda doloremque! Nesciunt error sed vitae.</p>
+      </li>
+      <li>
+        <a href="">Resource two</a>
+      </li>
+      <li>
+        <a href="">Resource two</a>
+      </li>
+    </ul>
+  </div>
+  {# alert if no resources #}
+  <div class="alert alert--status mb-4">
+  No resources have been added yet.
+  </div>
+  {# always shown to instructor button #}
+  <div class="mb-7">
+    <a href="" class="button button--outline button--primary">+ Add a resource</a>
+  </div>
+
 
 {% endblock %}
