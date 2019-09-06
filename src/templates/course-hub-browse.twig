@@ -28,9 +28,15 @@
   <div data-digest-content>
 
     {% for item in [
-      { title: 'Middlebury College' },
+      {
+        title: 'Middlebury College',
+        items: [ 'Spring 2020', 'Winter 2020', 'Fall 2019', 'Summer Study 2019', 'Spring 2019', 'Winter 2019', 'Fall 2018', 'Summer Study 2018', 'Spring 2018', 'Winter 2018', 'Fall 2017', 'Summer Study 2017', 'Spring 2017', 'Winter 2017', 'Fall 2016', 'Summer Study 2016', 'Spring 2016', 'Winter 2016', 'Fall 2015', 'Summer Study 2015', ]
+        },
       { title: 'Language School' },
-      { title: 'Breadloaf School of English' },
+      {
+        title: 'Breadloaf School of English',
+        items: [ 'Summer 2019 - BLSE', 'Summer 2018 - BLSE', 'Summer 2017 - BLSE', 'Summer 2016 - BLSE', 'Summer 2015 - BLSE', 'Summer 2014 - BLSE', 'Summer 2013', 'Summer 2012', 'Summer 2011', 'Summer 2010', 'Summer 2009', 'Summer 2008', 'Summer 2007', 'Summer 2006', 'Summer 2005', 'Summer 2004', 'Summer 2003', ]
+      },
       { title: 'School of the Environment' },
       { title: 'Middlebury Schools Abroad' },
     ] %}
@@ -42,12 +48,14 @@
         </h2>
 
         <ul class="row">
-          {% for year in 2010..2019 %}
+        {% set terms = item.items|default(['example 1']) %}
+          {% for term in terms %}
             <li class="col-md-4 mb-3">
-              <a href="" class="h3 link-underline">{{year}}&ndash;{{year + 1}}</a>
+              <a href="" class="h3 link-underline">{{term}}</a>
             </li>
           {% endfor %}
         </ul>
+
 
       </section>
 
