@@ -13,7 +13,7 @@
         >
           {{item.text}}
           {% if item.icon %}
-            {% include 'partials/icon.twig' with { name: item.icon, class: 'ml-1' } %}
+            {% include 'partials/icon.twig' with { name: item.icon, class: 'ml-1 ' ~ item.icon_class } %}
           {% endif %}
         </a>
 
