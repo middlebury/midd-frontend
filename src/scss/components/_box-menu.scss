@@ -33,8 +33,12 @@
   }
 }
 
+/*
+ * 1. fixes bug in safari 12 where text wraps. See https://github.com/middlebury/drupal8/issues/838
+ */
 .box-menu__link {
   @include link-border;
+  display: block; /* 1 */
   border-color: transparent;
 
   &:hover,
