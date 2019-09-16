@@ -384,18 +384,16 @@ gallery_data:
 
 
 top_level_nav_example:
-- text: Dates and Fees
-- text: Application Information
-- text: Academics
-- text: Faculity and Administration
-- text: Housing
-- text: Student Life
-- text: Faculity and Administration
-- text: Dates and Fees
-- text: Academics
-- text: Housing
-- text: Student Life
-- text: Application Information
+- text: Application Instructions and Deadlines
+- text: Admission Options
+- text: Standardized Tests
+- text: Interview Policy
+- text: February Admission
+- text: Transfer Applicants
+- text: International Applicants
+- text: Undocumented Applicants
+- text: Taking a Gap Year
+- text: NESCAC Admissions Practices
 
 midd_nav:
 - text: Our Schools
