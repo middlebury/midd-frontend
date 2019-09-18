@@ -29,11 +29,6 @@ const Btn = p => (
   />
 );
 
-//       color: var(--primary);
-//       border-color: var(--gray1);
-//       border-bottom-color: white;
-// `;
-
 const BreakpointSizer = ({
   breakpoints = defaultBreakpoints,
   defaultSize = 3,
