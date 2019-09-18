@@ -1,0 +1,25 @@
+.percent-bar {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  @include media(sm) {
+    margin-bottom: spacing(4);
+  }
+}
+
+.percent-bar__item {
+  height: 32px;
+}
+
+.percent-bar__fill {
+  height: 100%;
+}
+
+.percent-bar__label {
+  font-size: typescale(2);
+  display: none;
+
+  @include media(sm) {
+    display: block;
+  }
+}

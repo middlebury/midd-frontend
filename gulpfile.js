@@ -235,7 +235,11 @@ const copyDeps = () => {
   // NOTE: Chart.bundle.min.js includes Momentjs but so far we are not using time axis
   // http://www.chartjs.org/docs/latest/getting-started/installation.html#bundled-build
   return gulp
-    .src(['./node_modules/chart.js/dist/Chart.min.js'])
+    .src([
+      './node_modules/chart.js/dist/Chart.min.js',
+      './node_modules/iframe-resizer/js/iframeResizer.min.js',
+      './node_modules/iframe-resizer/js/iframeResizer.contentWindow.min.js'
+    ])
     .pipe(gulp.dest('./dist/js'));
 };
 
@@ -322,6 +326,7 @@ module.exports = {
   dev,
   devSaw,
   replaceImagePaths,
+  copyDeps,
   zip: bundleMarkup,
   default: dev
 };

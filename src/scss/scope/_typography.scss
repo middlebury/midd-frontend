@@ -126,7 +126,6 @@
   }
 
   dl {
-    font-size: $paragraph-font-size;
     margin-bottom: spacing(5);
     margin-top: spacing(5);
 
@@ -138,15 +137,17 @@
 
   dt {
     font-weight: $font-weight-medium;
-    margin-bottom: spacing(4);
+    padding-right: spacing(4);
+    margin-bottom: spacing(1);
 
     &:last-child {
       margin-bottom: 0;
     }
 
     @include media(md) {
-      flex: 0 0 25%;
+      flex: 0 0 30%;
       padding-bottom: spacing(4);
+      margin-bottom: spacing(4);
 
       &:not(:last-of-type) {
         border-bottom: 1px solid $border-color;
@@ -168,7 +169,7 @@
     }
 
     @include media(md) {
-      flex: 0 0 75%;
+      flex: 0 0 70%;
     }
   }
 

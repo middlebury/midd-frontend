@@ -8,6 +8,7 @@
   background-color: $black;
   z-index: 9999;
   overflow: auto;
+  -webkit-overflow-scrolling: touch; // maintain scrolling inertia on ios
   animation: fadeIn 0.3s;
 
   &.is-open {
@@ -83,6 +84,7 @@
   top: 8rem;
   right: 0;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   max-height: calc(100vh - 8rem);
   display: none;
 
