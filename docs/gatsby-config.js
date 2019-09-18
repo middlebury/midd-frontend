@@ -25,7 +25,27 @@ module.exports = {
         path: `${__dirname}/../dist/partials`,
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'content',
+        path: `${__dirname}/content`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-page-creator',
+      options: {
+        path: `${__dirname}/content`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-mdx',
+      defaultLayouts: {
+        default: require.resolve('./src/components/default-page-layout.js'),
+        content: require.resolve('./src/templates/component-page.js'),
+      },
+    },
     // { resolve: 'gatsby-transformer-twig' },
-    { resolve: 'gatsby-transformer-html' },
+    // { resolve: 'gatsby-transformer-html' },
   ],
 };
