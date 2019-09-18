@@ -1,0 +1,27 @@
+{% extends "course-hub-layout.twig" %}
+
+{% set is_front = true %}
+{% set coursehub_layout_full_width = true %}
+
+{% set page_header = {
+  title: 'Fall 2019 Dashboard',
+} %}
+
+{% block content %}
+
+  <div class="container">
+    <ul class="row">
+      {% for item in 0..7 %}
+        <li class="col-md-6 col-lg-4 mb-7 mb-md-9">
+          {% include 'partials/course-hub-card.twig' with {
+            title: 'AMST 0225A<br>Gothic and Horror',
+            syllabus: ['Institution Syllabus', 'Public Syllabus', 'Syllabus Text', 'Test Syllabus'],
+            resources: ['Resource one', 'Resource two']
+          } %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+{% endblock %}
+

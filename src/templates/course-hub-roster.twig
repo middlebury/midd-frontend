@@ -1,0 +1,55 @@
+{% extends "course-hub-layout.twig" %}
+
+{% set page_header = {
+  title: 'Roster for AMST 0210A',
+  breadcrumb: [
+    { text: 'Course Hub' },
+    { text: 'Schools and Programs' },
+    { text: 'Middlebury College' },
+    { text: 'Spring 2019' },
+    { text: 'American Studies' },
+    { text: 'AMST 0210A: Mod. American Cult. 1830-1919' },
+  ],
+} %}
+
+{% block nav %}
+  {% include 'partials/page-nav.twig' with {
+    label: 'My Terms',
+    items: [
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+    ]
+  } %}
+{% endblock %}
+
+{% block content %}
+
+  {% include 'partials/course-hub-tabs.twig' with { active: 4 } %}
+
+  {% include 'partials/profile-teaser.twig' with {
+    name: 'Breen, Conor Joseph',
+    meta: [
+      { name: 'Email', value: 'cbreen@middlebury.edu', href: 'mailto:' },
+      { name: 'Advisor', value: 'Nikolina Dobreva', href: '#' },
+      { name: 'Commons', value: 'Cook' },
+      { name: 'Dean', value: 'Ian Sutherland', href: '#' },
+    ],
+    actions: [ { label: 'Create course warning email', href: 'course-hub-email.html' } ]
+  } %}
+
+  {% include 'partials/profile-teaser.twig' with {
+    name: 'Connell, James Holland (Jimmy)',
+    meta: [
+      { name: 'Email', value: 'jconnell@middlebury.edu', href: '#' },
+      { name: 'Advisor', value: 'Rachael Joo', href: '#' },
+      { name: 'Commons', value: 'Wonnacott' },
+      { name:'Dean', value: 'R. Longman', href: '#'}
+    ],
+    actions: [ { label: 'Create course warning email', href: 'course-hub-email.html' } ]
+  } %}
+
+
+{% endblock %}

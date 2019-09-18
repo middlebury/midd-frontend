@@ -1,6 +1,6 @@
 <div class="container px-0">
 
-  <header class="page-header{% if image_src %} page-header--has-image{% endif %}{% if has_menu %} page-header--has-menu{% endif %}" aria-labelledby="midd-page-header-label">
+  <header class="page-header{% if image_src %} page-header--has-image{% endif %}{% if has_menu %} page-header--has-menu{% endif %}{% if app_header %} page-header--app{% endif %}" aria-labelledby="midd-page-header-label">
 
     {% if image_src %}
       <figure class="page-header__figure">
@@ -20,14 +20,20 @@
     <div class="page-header__main">
       <div class="page-header__content">
 
-        {% include 'partials/breadcrumb.twig' with {
-          items: breadcrumb,
-          light: image_src  }
-        %}
+        {% if breadcrumb != false %}
+          {% include 'partials/breadcrumb.twig' with {
+            items: breadcrumb,
+            light: image_src  }
+          %}
+        {% endif %}
 
         <h1 class="page-header__title" id="midd-page-header-label">{{title}}</h1>
 
         {{after_title}}
+
+        {% if menu_items is not empty %}
+          {% include 'partials/box-menu.twig' with { items: menu_items, class: 'mb-0' } %}
+        {% endif %}
 
       </div>
     </div>

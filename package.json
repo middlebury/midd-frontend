@@ -11,6 +11,7 @@
     "wrapper": "npm run build && gulp zip",
     "deploy": "gulp deploy",
     "deploy:gh": "npm run build && gh-pages -d dist -b master-dist",
+    "now-build": "npm run build && mv dist public",
     "test": "npm run test:bundlesize",
     "test:visual": "percy snapshot dist",
     "test:bundlesize": "bundlesize",

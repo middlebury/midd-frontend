@@ -1,3 +1,10 @@
+@mixin button-reset() {
+  border: 0;
+  background: transparent;
+  font-size: $btn-font-size;
+  line-height: $btn-line-height;
+}
+
 @mixin button-base() {
   display: inline-block;
   font-family: $font-family-base;
@@ -5,7 +12,7 @@
   border: $btn-border-width solid $btn-border-color;
   cursor: pointer;
   background: transparent;
-  color: $input-color;
+  color: $btn-color;
   transition: $btn-transition;
   padding: $btn-padding-y $btn-padding-x;
   font-size: $btn-font-size;

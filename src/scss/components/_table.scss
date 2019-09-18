@@ -7,6 +7,22 @@
     border-collapse: collapse;
   }
 
+  caption {
+    font-size: typescale(2);
+    font-style: italic;
+    padding: spacing(2);
+    background: $gray-lighter;
+    // margin-bottom: spacing(3);
+    caption-side: bottom;
+  }
+
+  // Use top margin on paragraphs within a table so cells
+  // containing one paragraph do not have extra space below them.
+  p + p {
+    margin-bottom: 0;
+    margin-top: spacing(3);
+  }
+
   thead {
   }
 
@@ -69,6 +85,10 @@
         padding-right: spacing(4);
       }
     }
+  }
+
+  a {
+    @include link-border;
   }
 }
 

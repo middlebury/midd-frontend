@@ -33,6 +33,7 @@
   font-size: $typescale-7;
   font-weight: $font-weight-normal;
   line-height: $line-height-heading;
+  font-family: $font-family-serif;
 
   @include media(md) {
     font-size: $typescale-8;
@@ -43,6 +44,7 @@
   font-size: $typescale-8;
   line-height: $line-height-heading;
   font-weight: $font-weight-normal;
+  font-family: $font-family-serif;
 
   @include media(md) {
     font-size: $typescale-9;
@@ -57,6 +59,7 @@
   font-size: typescale(6);
   line-height: $line-height-heading;
   font-weight: $font-weight-normal;
+  font-family: $font-family-serif;
 
   @include media(lg) {
     font-size: typescale(7);
@@ -67,22 +70,26 @@
   font-size: typescale(5);
   line-height: $line-height-heading;
   font-weight: $font-weight-normal;
+  font-family: $font-family-serif;
 }
 
 @mixin h4 {
   font-size: typescale(4);
   line-height: $line-height-heading;
   font-weight: $font-weight-normal;
+  font-family: $font-family-serif;
 }
 
 @mixin h5 {
   font-size: typescale(3);
   line-height: $line-height-heading;
   font-weight: $font-weight-normal;
+  font-family: $font-family-serif;
 }
 
 @mixin h6 {
   font-size: typescale(2);
   line-height: $line-height-heading;
   font-weight: $font-weight-normal;
+  font-family: $font-family-serif;
 }
