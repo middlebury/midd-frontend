@@ -127,3 +127,13 @@
     margin-bottom: spacing(7);
   }
 }
+
+/* libchat widget button */
+.lcs_slide_out header a {
+  right: 10px !important;
+  left: auto !important;
+  top: auto !important;
+  bottom: 100% !important;
+  border: 1px solid #fff !important;
+  box-shadow: none !important;
+}
