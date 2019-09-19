@@ -51,5 +51,20 @@
     actions: [ { label: 'Create course warning email', href: 'course-hub-email.html' } ]
   } %}
 
+  {% for n in 0..3 %}
+
+  {% include 'partials/profile-teaser.twig' with {
+    name: 'Connell, James Holland (Jimmy)',
+    meta: [
+      { name: 'Email', value: 'jconnell@middlebury.edu', href: '#' },
+      { name: 'Advisor', value: 'Rachael Joo', href: '#' },
+      { name: 'Commons', value: 'Wonnacott' },
+      { name:'Dean', value: 'R. Longman', href: '#'}
+    ],
+    actions: [ { label: 'Create course warning email', href: 'course-hub-email.html' } ]
+  } %}
+
+  {% endfor %}
+
 
 {% endblock %}
