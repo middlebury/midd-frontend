@@ -21,13 +21,11 @@
         </li>
       {% endfor %}
     </ul>
+
+    {% include 'partials/course-hub-sidebar.twig' %}
+
   </div>
 
-  <div class="container">
-    {% include 'partials/course-hub-sidebar.twig' with {
-      full_width: true
-    } %}
-  </div>
 
 {% endblock %}
 
