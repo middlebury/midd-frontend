@@ -1,0 +1,37 @@
+<div class="mb-4 mb-md-7 page-break-inside-avoid">
+  <div class="mb-3">
+    <a href="#">
+      {% include 'partials/img.twig' with {
+        name: 'profile_teaser'
+      } %}
+    </a>
+  </div>
+  <h3><a href="#">{{name}}</a></h3>
+  <p class="f2 mb-3">{{role}}</p>
+  <p class="f3 mb-3">{{text}}</p>
+
+  <dl class="f2">
+    {% for item in meta %}
+      <div class="mb-2">
+        <dt class="d-block d-sm-inline text-bold">{{item.name}}:</dt>
+
+        <dd class="d-inline">
+          {% if item.href %}
+            <a href="{{item.href}}" class="link-underline">{{item.value}}</a>
+          {% else %}
+            {{item.value}}
+          {% endif %}
+        </dd>
+      </div>
+
+    {% endfor %}
+  </dl>
+
+  {% if actions %}
+    <div class="mt-4">
+      {% for action in actions %}
+        <a href="{{action.href}}" class="f2 link-underline">{{action.label}}</a>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>
