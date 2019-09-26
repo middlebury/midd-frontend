@@ -18,22 +18,23 @@
     border-top: 0;
     display: inline-block;
     margin-right: spacing(4);
+    margin-bottom: spacing(3);
   }
 }
 
 .anchor-nav__link {
   display: block;
   font-size: typescale(3);
-  padding-top: spacing(3);
-  padding-bottom: spacing(3);
+  padding: spacing(4);
 
   @include media(lg) {
-    border-bottom: 2px solid transparent;
+    padding: 0;
+    @include link-border;
+    border-color: transparent;
 
     &:hover,
     &:focus {
       color: $sky;
-      text-decoration: none;
       border-color: $sky;
     }
   }
