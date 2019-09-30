@@ -42,8 +42,14 @@ const Layout = ({ location, children }) => {
   return (
     <div sx={{ display: 'flex' }}>
       <GlobalStyles />
-      <Header siteTitle={data.site.siteMetadata.title} location={location} />
-      <main sx={{ p: 3 }}>{children}</main>
+      <div
+        sx={{
+          width: 300,
+        }}
+      >
+        <Header siteTitle={data.site.siteMetadata.title} location={location} />
+      </div>
+      <main sx={{ p: 3, flex: '1 0 auto' }}>{children}</main>
     </div>
   );
 };

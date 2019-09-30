@@ -40,12 +40,14 @@ module.exports = {
     },
     {
       resolve: 'gatsby-plugin-mdx',
-      defaultLayouts: {
-        default: require.resolve('./src/components/default-page-layout.js'),
-        content: require.resolve('./src/templates/component-page.js'),
+      options: {
+        extensions: ['.mdx', '.md'],
+        defaultLayouts: {
+          default: require.resolve('./src/components/doc-page.js'),
+        },
       },
     },
     // { resolve: 'gatsby-transformer-twig' },
-    // { resolve: 'gatsby-transformer-html' },
+    { resolve: 'gatsby-transformer-html' },
   ],
 };

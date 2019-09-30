@@ -5,13 +5,15 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import groupBy from 'lodash/groupBy';
 
-const SubMenu = ({ label, items, isOpen = false }) => {
+const SubMenu = ({ label, items = [], isOpen = false }) => {
+  // const containsActiveLink = items.every(({node}) => node.path)
+
   const [open, setOpen] = React.useState(isOpen);
 
   const toggle = () => setOpen(!open);
 
   return (
-    <div>
+    <div sx={{ mb: 4 }}>
       <button
         onClick={toggle}
         sx={{
@@ -39,12 +41,14 @@ const SubMenu = ({ label, items, isOpen = false }) => {
       {open && (
         <ul>
           {items.map(({ node }) => (
-            <li key={node.name}>
+            <li key={node.id}>
               <Link
-                to={node.fields.slug}
+                to={node.path}
                 sx={{
+                  display: 'block',
                   color: 'white',
-                  p: 2,
+                  px: 2,
+                  py: 1,
                   fontSize: 3,
                   textDecoration: 'none',
                   opacity: 0.8,
@@ -53,7 +57,7 @@ const SubMenu = ({ label, items, isOpen = false }) => {
                   },
                 }}
               >
-                {node.name}
+                {node.context.frontmatter.title}
               </Link>
             </li>
           ))}
@@ -66,14 +70,15 @@ const SubMenu = ({ label, items, isOpen = false }) => {
 const Nav = () => {
   const data = useStaticQuery(graphql`
     query navQuery {
-      allFileHtml {
+      allSitePage {
         edges {
           node {
-            name
-            html
-            source
-            fields {
-              slug
+            id
+            path
+            context {
+              frontmatter {
+                title
+              }
             }
           }
         }
@@ -81,29 +86,21 @@ const Nav = () => {
     }
   `);
 
-  const group = groupBy(data.allFileHtml.edges, 'node.source');
-
-  const url = window.location.pathname;
+  const getMenuItems = (part, items = data.allSitePage.edges) =>
+    items.filter(({ node }) => node.path.includes(part));
 
   return (
     <nav>
-      <SubMenu
-        label="Paragraphs"
-        items={group.paragraphs}
-        isOpen={url.includes('paragraphs')}
-      />
-      <SubMenu
-        label="Partials"
-        items={group.partials}
-        isOpen={url.includes('partials')}
-      />
+      <SubMenu label="Styles" items={getMenuItems('styles')} />
+      <SubMenu label="Components" items={getMenuItems('components')} />
+      <SubMenu label="Utilities" items={getMenuItems('utilities')} />
     </nav>
   );
 };
 
 const Header = ({ siteTitle = '' }) => {
   return (
-    <header sx={{ bg: 'primary', p: 3, overflow: 'auto' }}>
+    <header sx={{ bg: 'primary', p: 3, overflow: 'auto', height: '100%' }}>
       <div>
         <h1 sx={{ mb: 5 }}>
           <Link to="/" sx={{ color: 'white', fontSize: 3 }}>
