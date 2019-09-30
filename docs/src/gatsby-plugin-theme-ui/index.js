@@ -1,3 +1,5 @@
+import github from '@theme-ui/prism/presets/github.json';
+
 export default {
   colors: {
     primary: '#0d395f',
@@ -17,4 +19,9 @@ export default {
   fontSizes: [12, 14, 16, 18, 24, 32, 48, 64, 88],
   space: [0, 4, 8, 16, 24, 32, 48, 64, 96],
   breakpoints: ['512px', '768px', '1024px', '1280px', '1440px'],
+  styles: {
+    pre: {
+      ...github,
+    },
+  },
 };
