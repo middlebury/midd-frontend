@@ -17,7 +17,7 @@ export default {
     body: 'system-ui, sans-serif',
   },
   fontSizes: [12, 14, 16, 18, 24, 32, 48, 64, 88],
-  space: [0, 4, 8, 16, 24, 32, 48, 64, 96],
+  space: [0, 4, 8, 16, 24, 32, 40, 48, 64, 96],
   breakpoints: ['512px', '768px', '1024px', '1280px', '1440px'],
   styles: {
     pre: {
