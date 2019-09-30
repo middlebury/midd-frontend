@@ -11,7 +11,7 @@ export default {
   lineHeights: {
     solid: 1,
     body: 1.7,
-    heading: 1.4,
+    heading: 1.2,
   },
   fonts: {
     body: 'system-ui, sans-serif',
