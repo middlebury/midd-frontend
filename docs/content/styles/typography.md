@@ -69,18 +69,18 @@ $font-weight-bold|700
 
 ## Line heights
 
-Name|Sass|value
--|-|-
-Body text|$line-height-body|1.7
-Headings|$line-height-heading|1.2
-Solid|$line-height-solid|1
+Variable|value
+-|-
+$line-height-body|1.7
+$line-height-heading|1.2
+$line-height-solid|1
 
 
 ## Letter spacing
 
 In most cases where text is transformed to `uppercase`, we use a set letter spacing relative to the font size of the text.
 
-Sass|value
+Variable|value
 -|-
 $letter-spacing|0.1em
 
@@ -88,5 +88,4 @@ $letter-spacing|0.1em
 ## Headings
 
 TODO: h1,h2,h3,h4,h5,h6
-
 
