@@ -39,13 +39,11 @@ const components = {
   ),
   tr: props => (
     <tr
-      sx={
-        {
-          // ':nth-child(even)': {
-          // bg: '#f2f2f2',
-          // },
-        }
-      }
+      sx={{
+        ':nth-child(even)': {
+          bg: '#f2f2f2',
+        },
+      }}
       {...props}
     />
   ),
@@ -56,9 +54,7 @@ const components = {
         fontSize: 1,
         fontWeight: 600,
         textAlign: 'left',
-        // bg: '#f2f2f2',
-        // borderBottom: '2px solid',
-        // borderColor: 'black',
+        bg: '#f2f2f2',
       }}
       {...props}
     />
