@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, useThemeUI } from 'theme-ui';
+import { jsx } from 'theme-ui';
 import React from 'react';
 
 const defaultBreakpoints = [
@@ -48,7 +48,6 @@ const BreakpointSizer = ({
         ))}
       </nav>
       <div
-        style={{ width: size }}
         sx={{
           width: size,
           border: '1px solid',
