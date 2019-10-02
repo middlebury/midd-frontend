@@ -24,47 +24,37 @@
     ]
   } %}
 {% endblock %}
+{% block sidebar %}
+
+  {% include 'partials/course-hub-sidebar.twig' %}
+
+{% endblock %}
 
 {% block content %}
 
   {% include 'partials/course-hub-tabs.twig' with { active: 4 } %}
 
-  {% include 'partials/profile-teaser.twig' with {
-    name: 'Breen, Conor Joseph',
-    meta: [
-      { name: 'Email', value: 'cbreen@middlebury.edu', href: 'mailto:' },
-      { name: 'Advisor', value: 'Nikolina Dobreva', href: '#' },
-      { name: 'Commons', value: 'Cook' },
-      { name: 'Dean', value: 'Ian Sutherland', href: '#' },
-    ],
-    actions: [ { label: 'Create course warning email', href: 'course-hub-email.html' } ]
-  } %}
+  <div class="row">
 
-  {% include 'partials/profile-teaser.twig' with {
-    name: 'Connell, James Holland (Jimmy)',
-    meta: [
-      { name: 'Email', value: 'jconnell@middlebury.edu', href: '#' },
-      { name: 'Advisor', value: 'Rachael Joo', href: '#' },
-      { name: 'Commons', value: 'Wonnacott' },
-      { name:'Dean', value: 'R. Longman', href: '#'}
-    ],
-    actions: [ { label: 'Create course warning email', href: 'course-hub-email.html' } ]
-  } %}
+    {% for n in 0..3 %}
 
-  {% for n in 0..3 %}
+      <div class="col-sm-6">
 
-  {% include 'partials/profile-teaser.twig' with {
-    name: 'Connell, James Holland (Jimmy)',
-    meta: [
-      { name: 'Email', value: 'jconnell@middlebury.edu', href: '#' },
-      { name: 'Advisor', value: 'Rachael Joo', href: '#' },
-      { name: 'Commons', value: 'Wonnacott' },
-      { name:'Dean', value: 'R. Longman', href: '#'}
-    ],
-    actions: [ { label: 'Create course warning email', href: 'course-hub-email.html' } ]
-  } %}
+        {% include 'partials/coursehub-profile.twig' with {
+          name: 'Connell, James Holland (Jimmy)',
+          meta: [
+            { name: 'Email', value: 'jconnell@middlebury.edu', href: '#' },
+            { name: 'Advisor', value: 'Rachael Joo', href: '#' },
+            { name: 'Commons', value: 'Wonnacott' },
+            { name:'Dean', value: 'R. Longman', href: '#'}
+          ],
+          actions: [ { label: 'Create course warning email', href: 'course-hub-email.html' } ]
+        } %}
 
-  {% endfor %}
+      </div>
 
+    {% endfor %}
+
+  </div>
 
 {% endblock %}
