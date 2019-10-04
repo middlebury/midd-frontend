@@ -11,13 +11,9 @@
       </div>
     {% endif %}
 
-    {% if show_lead %}
-      <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2">
-        {% include 'partials/lead.twig' %}
-      </div>
-    {% endif %}
 
     <div class="paragraphs paragraphs--wide">
+      {% include 'partials/lead.twig' %}
       {% block paragraphs %}
         {% include 'partials/top-level-paragraphs.twig' %}
       {% endblock %}

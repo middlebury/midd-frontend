@@ -173,6 +173,7 @@
     }
   }
 
+  .lead + & > h2,
   h2 {
     @include h2;
     margin-top: spacing(7);
