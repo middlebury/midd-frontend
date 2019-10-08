@@ -80,7 +80,7 @@ class DefaultPageLayout extends React.Component {
     return (
       <>
         <SEO title={frontmatter.title} />
-        <article sx={{ maxWidth: 800, ml: 'auto', mr: 'auto' }}>
+        <article sx={{ maxWidth: 800 }}>
           <header sx={{ mb: 3 }}>
             <h1
               sx={{ fontSize: 6, fontWeight: 400, textTransform: 'capitalize' }}

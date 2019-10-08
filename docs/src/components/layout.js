@@ -45,11 +45,21 @@ const Layout = ({ location, children }) => {
       <div
         sx={{
           width: 300,
+          height: '100vh',
+          overflowY: 'auto',
         }}
       >
         <Header siteTitle={data.site.siteMetadata.title} location={location} />
       </div>
-      <main sx={{ p: 3, flex: '1 0 auto' }}>{children}</main>
+      <main
+        sx={{
+          overflowY: 'auto',
+          height: '100vh',
+          width: '100%',
+        }}
+      >
+        <div sx={{ p: 5 }}>{children}</div>
+      </main>
     </div>
   );
 };
