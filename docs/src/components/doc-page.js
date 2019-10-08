@@ -10,7 +10,7 @@ import ColorGrid from './color-grid';
 import Example from './doc-example';
 
 const h2 = props => (
-  <h2 sx={{ mt: 5, mb: 3, lineHeight: 'heading' }} {...props} />
+  <h2 sx={{ mt: 9, mb: 2, lineHeight: 'heading' }} {...props} />
 );
 
 const components = {
