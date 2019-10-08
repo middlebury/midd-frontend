@@ -16,7 +16,8 @@ const h2 = props => (
 const components = {
   pre: props => props.children,
   Example,
-  code: Prism,
+  code: props =>
+    props.example ? <Example {...props} /> : <Prism {...props} />,
   ColorGrid,
   h1: h2,
   h2,

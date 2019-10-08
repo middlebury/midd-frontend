@@ -21,6 +21,7 @@ export default {
   breakpoints: ['512px', '768px', '1024px', '1280px', '1440px'],
   styles: {
     pre: {
+      fontSize: 2,
       ...github,
     },
   },
