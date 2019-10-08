@@ -5,10 +5,12 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import groupBy from 'lodash/groupBy';
 
-const SubMenu = ({ label, items = [], isOpen = false }) => {
-  // const containsActiveLink = items.every(({node}) => node.path)
+const SubMenu = ({ label, items = [], isOpen = false, location }) => {
+  const containsActiveLink = items.some(
+    ({ node }) => node.path === location.pathname
+  );
 
-  const [open, setOpen] = React.useState(isOpen);
+  const [open, setOpen] = React.useState(containsActiveLink || isOpen);
 
   const toggle = () => setOpen(!open);
 
@@ -67,7 +69,7 @@ const SubMenu = ({ label, items = [], isOpen = false }) => {
   );
 };
 
-const Nav = () => {
+const Nav = ({ location }) => {
   const data = useStaticQuery(graphql`
     query navQuery {
       allSitePage {
@@ -91,14 +93,26 @@ const Nav = () => {
 
   return (
     <nav>
-      <SubMenu label="Styles" items={getMenuItems('styles')} />
-      <SubMenu label="Components" items={getMenuItems('components')} />
-      <SubMenu label="Utilities" items={getMenuItems('utilities')} />
+      <SubMenu
+        label="Styles"
+        items={getMenuItems('styles')}
+        location={location}
+      />
+      <SubMenu
+        label="Components"
+        items={getMenuItems('components')}
+        location={location}
+      />
+      <SubMenu
+        label="Utilities"
+        items={getMenuItems('utilities')}
+        location={location}
+      />
     </nav>
   );
 };
 
-const Header = ({ siteTitle = '' }) => {
+const Header = ({ location, siteTitle = '' }) => {
   return (
     <header sx={{ bg: 'primary', p: 3, overflow: 'auto', height: '100%' }}>
       <div>
@@ -108,7 +122,7 @@ const Header = ({ siteTitle = '' }) => {
           </Link>
         </h1>
       </div>
-      <Nav />
+      <Nav location={location} />
     </header>
   );
 };
