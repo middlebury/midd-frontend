@@ -2,10 +2,6 @@
 title: Colors
 ---
 
-## Brand colors
-
-Use state colors for blah blah.
-
 <ColorGrid colors={{
   '$navy-light': '#174872',
   $navy: '#0d395f',
@@ -34,8 +30,6 @@ Use state colors for blah blah.
 }} />
 
 ## State colors
-
-Use stateful colors to denote interface alerts, etc.  
 
 <ColorGrid colors={{
   $danger: '#dc3545',
