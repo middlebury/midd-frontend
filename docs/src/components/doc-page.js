@@ -14,6 +14,14 @@ const h2 = props => (
 );
 
 const components = {
+  a: props => (
+    <a
+      {...props}
+      sx={{
+        color: 'sky',
+      }}
+    />
+  ),
   pre: props => props.children,
   Example,
   code: props =>

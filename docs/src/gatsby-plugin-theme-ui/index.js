@@ -3,6 +3,7 @@ import github from '@theme-ui/prism/presets/github.json';
 export default {
   colors: {
     primary: '#0d395f',
+    sky: '#0573cd',
     white: '#fff',
     black: '#202020',
     gray1: '#dcdcdc',
