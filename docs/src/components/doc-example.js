@@ -36,7 +36,7 @@ const DocExample = ({
     `;
 
   return (
-    <div sx={{ my: 5 }}>
+    <div sx={{ mb: 5 }}>
       <BreakpointSizer>
         <div sx={{ p: 4, bg: dark ? '#333' : null }}>
           <AutoheightIframe srcDoc={srcDoc} />
