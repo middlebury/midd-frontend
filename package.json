@@ -7,7 +7,7 @@
     "dev": "gulp dev",
     "dev:saw": "gulp devSaw",
     "build": "NODE_ENV=production gulp build",
-    "build:docs": "DOCS=true NODE_ENV=production gulp build && gulp copySiteAssets",
+    "build:docs": "DOCS=true NODE_ENV=production gulp build && gulp copySiteAssets && gulp cleanAndCopyIcons",
     "build:scripts": "NODE_ENV=production gulp scripts",
     "deploy": "gulp deploy",
     "deploy:gh": "npm run build && gh-pages -d dist -b master-dist",

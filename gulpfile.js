@@ -358,6 +358,7 @@ const deploy = gulp.series(replaceImagePaths, deployDist);
 module.exports = {
   deploy,
   copySiteAssets,
+  cleanAndCopyIcons,
   scripts,
   build,
   dev,
