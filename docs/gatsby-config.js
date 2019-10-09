@@ -28,10 +28,18 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        name: 'icons',
+        path: `${__dirname}/../dist/icons/svg`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
         name: 'content',
         path: `${__dirname}/content`,
       },
     },
+    'gatsby-transformer-svg',
     {
       resolve: 'gatsby-plugin-page-creator',
       options: {

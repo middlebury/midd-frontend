@@ -3,6 +3,7 @@ import { jsx } from 'theme-ui';
 import Prism from '@theme-ui/prism';
 
 import ColorGrid from './color-grid';
+import IconGrid from './icon-grid';
 import Example from './doc-example';
 
 const h2 = props => (
@@ -11,6 +12,7 @@ const h2 = props => (
 
 export const components = {
   Example,
+  IconGrid,
   ColorGrid,
   a: props => (
     <a

@@ -3,4 +3,5 @@ title: Iconography
 ---
 
 
-icons
+
+<IconGrid />
