@@ -2,25 +2,18 @@
 import { jsx, styled } from 'theme-ui';
 import React, { useEffect, useState, useRef } from 'react';
 import Prism from '@theme-ui/prism';
-import copy from 'copy-to-clipboard';
+
+import { useCopy } from '../hooks/use-copy';
 
 const CodeExample = ({ children, language = 'language-html' }) => {
   const codeRef = useRef();
   const [showCodeToggle, setShowCodeToggle] = useState(false);
   const [open, setOpen] = useState(true);
-  const [copied, setCopied] = useState(false);
 
-  const handleCopyClick = e => {
-    copy(children);
-    setCopied(true);
-    setTimeout(() => {
-      setCopied(false);
-    }, 1000);
-  };
+  const [copied, handleCopyClick] = useCopy(children);
 
   useEffect(() => {
     const height = codeRef.current.getBoundingClientRect().height;
-    console.log(height);
     if (height > 200) {
       setOpen(false);
       setShowCodeToggle(true);
