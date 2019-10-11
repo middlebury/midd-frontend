@@ -1,0 +1,28 @@
+.themed-box {
+  box-shadow: inset 0 0 0 1px $gray-light;
+  border-top: 8px solid $navy;
+  @include themify(border-top-color);
+  background-color: $white;
+  padding: spacing(4);
+  margin-bottom: spacing(7);
+
+  @include media(md) {
+    margin-bottom: spacing(8);
+  }
+}
+
+.themed-box--compress {
+  @include media(md) {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
+.themed-box--pull-up {
+  position: relative;
+  z-index: 2;
+
+  @include media(lg) {
+    margin-top: -2rem;
+  }
+}

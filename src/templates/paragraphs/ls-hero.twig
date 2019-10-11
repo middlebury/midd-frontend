@@ -1,0 +1,39 @@
+{% set id = random(1234) %}
+{% set ls_hero_nav = [
+  { text: 'Arabic' },
+  { text: 'Hebrew' },
+  { text: 'Portugeuese' },
+  { text: 'Chinese' },
+  { text: 'Italian' },
+  { text: 'Russian' },
+  { text: 'French' },
+  { text: 'Japanese' },
+  { text: 'Spanish' },
+  { text: 'German' },
+  { text: 'Korean' },
+] %}
+<div class="paragraph--ls-hero">
+  <div class="container px-0">
+
+    <section class="ls-hero" aria-labelledby="midd-mega-cta-label-{{id}}">
+      <figure class="ls-hero__image">
+        <img src="/images/midd-languages-pattern.png" alt="">
+      </figure>
+      <div class="ls-hero__content">
+        <h2 class="ls-hero__title" id="midd-mega-cta-label-{{id}}">The Best Way to Learn a Language</h2>
+        <p class="ls-hero__text">Is to live it</p>
+        <nav class="ls-hero__nav" aria-labelledby="midd-languages-nav-label">
+          <h2 class="sr-only" id="midd-languages-nav-label">Languages navigation</h2>
+          <ul class="list list--inline">
+            {% for item in ls_hero_nav %}
+              <li class="list__item">
+                <a href="" class="list__link">{{item.text}}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+  </div>
+</div>

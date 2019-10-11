@@ -238,3 +238,8 @@
 .paragraph--related-events {
   @include paragraph-space;
 }
+
+.paragraph--ls-hero {
+  @include paragraph-full-width;
+  // @include paragraph-space;
+}
