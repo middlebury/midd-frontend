@@ -18,18 +18,3 @@ $list-item-margin-bottom: spacing(5);
     }
   }
 }
-
-.list--inline {
-  .list__item {
-    display: inline-block;
-
-    &:not(:last-child) {
-      margin-right: 1rem;
-    }
-  }
-}
-
-.list--unordered {
-  list-style-type: disc;
-  margin-left: 20px;
-}
