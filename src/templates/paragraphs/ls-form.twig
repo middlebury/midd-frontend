@@ -3,72 +3,72 @@
   <h2 class="h2 mb-4 mb-md-6">Reach out, inquire, we want to hear from you headline.</h2>
 
   <form>
-    <div class="form-group">
-      <label for="" class="label">First Name*</label>
-      <input type="text" class="form-control">
-    </div>
+    <div class="row row--sm-gutters">
+      <div class="col-md-6 col-xl-4 form-group">
+        <label for="" class="label">First Name*</label>
+        <input type="text" class="form-control">
+      </div>
 
-    <div class="form-group">
-      <label for="" class="label">Last Name*</label>
-      <input type="text" class="form-control">
-    </div>
+      <div class="col-md-6 col-xl-4 form-group">
+        <label for="" class="label">Last Name*</label>
+        <input type="text" class="form-control">
+      </div>
 
-    <div class="form-group">
-      <label for="" class="label">Email*</label>
-      <input type="text" class="form-control">
-    </div>
+      <div class="col-md-6 col-xl-4 form-group">
+        <label for="" class="label">Email*</label>
+        <input type="text" class="form-control">
+      </div>
 
-    <div class="form-group">
-      <label for="" class="label">Language of Interest*</label>
-      <select class="form-control">
-        <option>Choose...</option>
-      </select>
-    </div>
+      <div class="col-md-6 col-xl-4 form-group">
+        <label for="" class="label">Language of Interest*</label>
+        <select class="form-control">
+          <option>Choose...</option>
+        </select>
+      </div>
 
-    <div class="form-group">
-      <label for="" class="label">How did you hear about us?</label>
-      <select class="form-control">
-        <option>Choose...</option>
-      </select>
-    </div>
+      <div class="col-md-6 col-xl-4 form-group">
+        <label for="" class="label">How did you hear about us?</label>
+        <select class="form-control">
+          <option>Choose...</option>
+        </select>
+      </div>
 
-    <div class="form-group">
-      <label for="" class="label">Current University</label>
-      <input type="text" class="form-control">
-    </div>
+      <div class="col-md-6 col-xl-4 form-group">
+        <label for="" class="label">Current University</label>
+        <input type="text" class="form-control">
+      </div>
 
-    <div class="form-group">
-      <fieldset>
-        <legend class="label">Year you'd like to attend*</legend>
-        {% for year in [2020, 2021, 2022] %}
-          {% include 'partials/form-check.twig' with {
-            inline: true,
-            id: 'ls-form-year-'~year,
-            name: 'attend_year',
-            label: year
-          } %}
-        {% endfor %}
-      </fieldset>
-    </div>
+      <div class="col-md-6 col-xl-4 form-group">
+        <fieldset>
+          <legend class="label">Year you'd like to attend*</legend>
+          {% for year in [2020, 2021, 2022] %}
+            {% include 'partials/form-check.twig' with {
+              id: 'ls-form-year-'~year,
+              name: 'attend_year',
+              label: year
+            } %}
+          {% endfor %}
+        </fieldset>
+      </div>
 
-    <div class="form-group">
-      <legend  class="label">Seeking an advanced degree?</legend>
-      {% include 'partials/form-check.twig' with {
-        inline: true,
-        id: 'ls-form-adv-degree',
-        name: 'adv_degree',
-        label: 'Yes'
-      } %}
-      {% include 'partials/form-check.twig' with {
-        inline: true,
-        id: 'ls-form-adv-degree',
-        name: 'adv_degree',
-        label: 'No'
-      } %}
-    </div>
+      <div class="col-md-6 col-xl-4 form-group">
+        <legend  class="label">Seeking an advanced degree?</legend>
+        {% include 'partials/form-check.twig' with {
+          id: 'ls-form-adv-degree',
+          name: 'adv_degree',
+          label: 'Yes'
+        } %}
+        {% include 'partials/form-check.twig' with {
+          id: 'ls-form-adv-degree',
+          name: 'adv_degree',
+          label: 'No'
+        } %}
+      </div>
 
-    <div class="form-group">
-      <input type="submit" value="Request info" class="button button--primary d-block d-md-inline-block">
+      <div class="col-12 col-xl-4 form-group d-flex align-items-end justify-content-end">
+        <input type="submit" value="Request info" class="button button--primary d-block d-md-inline-block">
+      </div>
+
     </div>
   </form>
 
