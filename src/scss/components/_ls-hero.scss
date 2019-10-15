@@ -23,8 +23,17 @@
 }
 
 .ls-hero__title {
-  font-size: $typescale-8;
-  margin-bottom: spacing(5);
+  font-size: $typescale-6;
+  margin-bottom: $spacing-5;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include media(lg) {
+    max-width: 900px;
+    font-size: $typescale-8;
+    margin-bottom: $spacing-8;
+  }
 }
 
 .ls-hero__nav {
@@ -42,4 +51,7 @@
 }
 
 .ls-hero__link {
+  @include media(lg) {
+    font-size: $typescale-5;
+  }
 }
