@@ -23,28 +23,8 @@
 }
 
 .ls-hero__title {
-  margin-bottom: spacing(2);
   font-size: $typescale-8;
-
-  @include media(lg) {
-    font-size: $typescale-9;
-  }
-}
-
-.ls-hero__text {
-  text-transform: uppercase;
-  letter-spacing: $letter-spacing;
-  margin-bottom: spacing(6);
-  font-size: $typescale-5;
-
-  @include media(md) {
-    margin-bottom: spacing(3);
-    font-size: $typescale-7;
-  }
-
-  @include media(lg) {
-    margin-bottom: spacing(8);
-  }
+  margin-bottom: spacing(5);
 }
 
 .ls-hero__nav {
