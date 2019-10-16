@@ -19,18 +19,22 @@
       <figure class="ls-hero__image">
         <img src="/images/midd-languages-pattern.png" alt="">
       </figure>
-      <div class="ls-hero__content">
-        <h2 class="ls-hero__title" id="midd-mega-cta-label-{{id}}">Take the Language Pledge&reg; and dramatically improve your proficiency&mdash;in just one summer.</h2>
-        <nav class="ls-hero__nav" aria-labelledby="midd-languages-nav-label">
-          <h2 class="sr-only" id="midd-languages-nav-label">Languages navigation</h2>
-          <ul class="ls-hero__list">
-            {% for item in ls_hero_nav %}
-              <li class="ls-hero__item">
-                <a href="" class="ls-hero__link">{{item.text}}</a>
-              </li>
-            {% endfor %}
-          </ul>
-        </nav>
+      <div class="ls-hero__content container">
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <h2 class="ls-hero__title" id="midd-mega-cta-label-{{id}}">Take the Language Pledge&reg; and dramatically improve your proficiency&mdash;in just one summer.</h2>
+          </div>
+          <nav class="col-12 col-md-10 offset-md-1 col-lg-12 offset-lg-0 text-center" aria-labelledby="midd-languages-nav-label">
+            <h2 class="sr-only" id="midd-languages-nav-label">Languages navigation</h2>
+            <ul class="ls-hero__list">
+              {% for item in ls_hero_nav %}
+                <li class="ls-hero__item">
+                  <a href="" class="ls-hero__link">{{item.text}}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </nav>
+        </div>
       </div>
     </section>
 
