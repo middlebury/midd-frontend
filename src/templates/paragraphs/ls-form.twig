@@ -1,41 +1,67 @@
 <section class="themed-box themed-box--compress themed-box--pull-up">
 
-  <h2 class="h2 mb-4 mb-md-6">Reach out, inquire, we want to hear from you headline.</h2>
+  <h2 class="h2 mb-4 mb-md-6">Are you ready?</h2>
 
-  <form>
+  <form action="https://go.pardot.com/l/74172/2016-04-04/4fsyft" method="post">
     <div class="row row--sm-gutters">
       <div class="col-md-6 col-xl-4 form-group">
-        <label for="" class="label">First Name*</label>
-        <input type="text" class="form-control">
+        <label for="first_name" class="label">First Name*</label>
+        <input type="text" class="form-control" name="first_name" id="first_name" required>
       </div>
 
       <div class="col-md-6 col-xl-4 form-group">
-        <label for="" class="label">Last Name*</label>
-        <input type="text" class="form-control">
+        <label for="last_name" class="label">Last Name*</label>
+        <input type="text" class="form-control" name="last_name" id="last_name" required>
       </div>
 
       <div class="col-md-6 col-xl-4 form-group">
-        <label for="" class="label">Email*</label>
-        <input type="text" class="form-control">
+        <label for="email" class="label">Email*</label>
+        <input type="email" class="form-control" name="email" id="email" required>
       </div>
 
       <div class="col-md-6 col-xl-4 form-group">
-        <label for="" class="label">Language of Interest*</label>
-        <select class="form-control">
-          <option>Choose...</option>
+        <label for="language_of_interest" class="label">Language of Interest*</label>
+        <select class="form-control" id="language_of_interest" name="language_of_interest" required>
+          <option value="" disabled selected>Choose...</option>
+          <option value="Arabic">Arabic</option>
+          <option value="Chinese">Chinese</option>
+          <option value="French">French</option>
+          <option value="German">German</option>
+          <option value="Hebrew">Hebrew</option>
+          <option value="Italian">Italian</option>
+          <option value="Japanese">Japanese</option>
+          <option value="Korean">Korean</option>
+          <option value="Portuguese">Portuguese</option>
+          <option value="Russian">Russian</option>
+          <option value="Spanish">Spanish</option>
         </select>
       </div>
 
       <div class="col-md-6 col-xl-4 form-group">
-        <label for="" class="label">How did you hear about us?</label>
-        <select class="form-control">
-          <option>Choose...</option>
+        <label for="how_heard" class="label">How did you hear about us?</label>
+        <select class="form-control" name="how_heard" id="how_heard">
+          <option value="" disabled selected>Choose...</option>
+          <option value="Advertisement">Advertisement</option>
+          <option value="Career Services">Career Services</option>
+          <option value="Conference">Conference</option>
+          <option value="Email">Email</option>
+          <option value="Employer">Employer</option>
+          <option value="Fair/Info Session">Fair/Info Session</option>
+          <option value="Friend/Relative">Friend/Relative</option>
+          <option value="I attend(ed) Middlebury">I attend(ed) Middlebury</option>
+          <option value="Internet">Internet</option>
+          <option value="Phone">Phone</option>
+          <option value="Poster">Poster</option>
+          <option value="Professor">Professor</option>
+          <option value="Social Media">Social Media</option>
+          <option value="Study Abroad Office">Study Abroad Office</option>
+          <option value="Other">Other</option>
         </select>
       </div>
 
       <div class="col-md-6 col-xl-4 form-group">
-        <label for="" class="label">Current University</label>
-        <input type="text" class="form-control">
+        <label for="current_university" class="label">Current University</label>
+        <input type="text" class="form-control" name="current_university" id="current_university">
       </div>
 
       <div class="col-md-6 col-xl-4 form-group">
@@ -44,8 +70,10 @@
           {% for year in [2020, 2021, 2022] %}
             {% include 'partials/form-check.twig' with {
               id: 'ls-form-year-'~year,
-              name: 'attend_year',
-              label: year
+              name: 'attendance_year',
+              label: year,
+              value: year,
+              required: true
             } %}
           {% endfor %}
         </fieldset>
@@ -54,19 +82,21 @@
       <div class="col-md-6 col-xl-4 form-group">
         <legend  class="label">Seeking an advanced degree?</legend>
         {% include 'partials/form-check.twig' with {
-          id: 'ls-form-adv-degree',
-          name: 'adv_degree',
-          label: 'Yes'
+          id: 'adv-degree-yes',
+          name: 'seeking_degree',
+          label: 'Yes',
+          value: 'yes'
         } %}
         {% include 'partials/form-check.twig' with {
-          id: 'ls-form-adv-degree',
-          name: 'adv_degree',
-          label: 'No'
+          id: 'adv-degree-no',
+          name: 'seeking_degree',
+          label: 'No',
+          value: 'no'
         } %}
       </div>
 
       <div class="col-12 col-xl-4 form-group d-flex align-items-end justify-content-end">
-        <input type="submit" value="Request info" class="button button--primary d-block d-md-inline-block">
+        <input type="submit" value="Inquire Now" class="button button--primary d-block d-md-inline-block">
       </div>
 
     </div>
