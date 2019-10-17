@@ -17,7 +17,9 @@
 
     <section class="ls-hero" aria-labelledby="midd-mega-cta-label-{{id}}">
       <figure class="ls-hero__image">
-        <img src="/images/midd-languages-pattern.png" alt="">
+        {% include 'partials/img.twig' with {
+          name: 'top_level'
+        } %}
       </figure>
       <div class="ls-hero__content container">
         <div class="row w-100">
