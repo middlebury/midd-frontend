@@ -96,6 +96,7 @@ $gray-lighter: #f8f8f8 !default;
 $gray-dark: #414142 !default;
 
 // util colors
+$color-active: $sky;
 $danger: #dc3545 !default;
 $info: $blue-lighter !default;
 $warning: #ffc107 !default;
@@ -266,7 +267,7 @@ $input-btn-font-size-lg: typescale(4) !default;
 
 // base
 $btn-bg: $white !default;
-$btn-color: $black !default;
+$btn-color: $navy !default;
 
 // primary
 $btn-primary-bg: $brand-primary !default;
@@ -395,7 +396,7 @@ $chevron-transition: transform 0.2s ease-in-out;
 
 ///
 // z-indexes
-// Manage z-indexes across all components to prevent elements from accidentally showuping
+// Manage z-indexes across all components to prevent elements from accidentally overlapping incorrectly
 ///
 
 // TODO: can we manage these at a component level somehow while being aware of all layers?
@@ -453,3 +454,6 @@ $z-index-gallery-button: 1;
 $z-index-page-header-caption: 3;
 
 $z-index-box-menu: 6;
+
+$z-index-app-header-nav: 6;
+$z-index-app-header-search: 6;

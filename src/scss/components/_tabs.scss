@@ -57,6 +57,7 @@
   border-top: 1px solid transparent;
   opacity: 0.8;
   transition: 0.2s;
+  font-weight: $font-weight-medium;
 
   &:hover {
     text-decoration: none;
@@ -64,8 +65,10 @@
     opacity: 1;
   }
 
+  &.tabs__button--active,
   &[aria-selected='true'] {
     border-top-color: $black;
+    color: $color-active;
   }
 
   .tabs--light & {
@@ -79,6 +82,7 @@
 
     &[aria-selected='true'] {
       border-top-color: $white;
+      color: $white;
     }
   }
 }

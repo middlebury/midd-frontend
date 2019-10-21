@@ -25,6 +25,9 @@ const cssnano = require('cssnano');
 const _ = require('lodash');
 const zip = require('gulp-zip');
 const dotenv = require('dotenv');
+const svgSprite = require('gulp-svg-sprite');
+const svgo = require('gulp-svgo');
+const dom = require('gulp-dom');
 
 const rollup = require('./rollup');
 
@@ -99,7 +102,7 @@ const serve = () =>
 
 const copyIcons = () =>
   gulp
-    .src('./node_modules/middlebury-design-system/dist/icons/mds-icons.svg')
+    .src('./dist/icons/sprites/symbol/svg/sprite.symbol.svg')
     .pipe(rename('icons.twig'))
     .pipe(gulp.dest('./src/templates/partials'));
 
@@ -305,11 +308,57 @@ const reportFilesizes = () =>
       })
     );
 
+
+const minifySvgs = src =>
+  gulp
+    .src(src)
+    .pipe(
+      dom(function() {
+        const svg = this.querySelector('svg');
+        svg.setAttribute('fill-rule', 'evenodd');
+        return this.querySelector('body').innerHTML;
+      }, false)
+    )
+    .pipe(
+      svgo({
+        plugins: [
+          { removeTitle: true },
+          { removeXMLNS: true },
+          { removeAttrs: { attrs: '(fill|stroke)' } }
+        ]
+      })
+    );
+
+// clean up and minify svgs
+const cleanAndCopyIcons = () =>
+  minifySvgs('./src/icons/*.svg').pipe(gulp.dest('./dist/icons/svg'));
+
+// create svg sprite
+const buildIconSprite = () =>
+  minifySvgs('./src/icons/*.svg')
+    .pipe(
+      svgSprite({
+        shape: {
+          id: {
+            generator: 'icon-%s'
+          }
+        },
+        mode: {
+          symbol: {
+            // Activate the defs mode
+            bust: false, // Cache busting
+            example: true // Build a page
+          }
+        }
+      })
+    )
+    .pipe(gulp.dest('./dist/icons/sprites'));
+
 const build = gulp.series(
   clean,
-  copyIcons,
   copyDeps,
-  gulp.parallel(html, images, styles, scripts),
+  gulp.parallel(html, images, styles, scripts, buildIconSprite),
+  copyIcons,
   reportFilesizes
 );
 
