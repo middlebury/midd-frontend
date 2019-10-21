@@ -65,22 +65,20 @@
         <input type="text" class="form-control" name="current_university" id="current_university">
       </div>
 
-      <div class="col-md-6 col-xl-4 form-group">
-        <fieldset>
-          <legend class="label">Year you'd like to attend*</legend>
-          {% for year in [2020, 2021, 2022] %}
-            {% include 'partials/form-check.twig' with {
-              id: 'ls-form-year-'~year,
-              name: 'attendance_year',
-              label: year,
-              value: year,
-              required: true
-            } %}
-          {% endfor %}
-        </fieldset>
-      </div>
+      <fieldset class="col-md-6 col-xl-4 form-group">
+        <legend class="label">Year you'd like to attend*</legend>
+        {% for year in [2020, 2021, 2022] %}
+          {% include 'partials/form-check.twig' with {
+            id: 'ls-form-year-'~year,
+            name: 'attendance_year',
+            label: year,
+            value: year,
+            required: true
+          } %}
+        {% endfor %}
+      </fieldset>
 
-      <div class="col-md-6 col-xl-4 form-group">
+      <fieldset class="col-md-6 col-xl-4 form-group">
         <legend  class="label">Seeking an advanced degree?</legend>
         {% include 'partials/form-check.twig' with {
           id: 'adv-degree-yes',
@@ -94,7 +92,7 @@
           label: 'No',
           value: 'no'
         } %}
-      </div>
+      </fieldset>
 
       <div class="col-12 col-xl-4 form-group d-flex align-items-end justify-content-end">
         <input type="submit" value="Inquire Now" class="button button--primary d-block d-md-inline-block">
