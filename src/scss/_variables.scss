@@ -396,7 +396,7 @@ $chevron-transition: transform 0.2s ease-in-out;
 
 ///
 // z-indexes
-// Manage z-indexes across all components to prevent elements from accidentally showuping
+// Manage z-indexes across all components to prevent elements from accidentally overlapping incorrectly
 ///
 
 // TODO: can we manage these at a component level somehow while being aware of all layers?
