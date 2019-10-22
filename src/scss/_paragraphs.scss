@@ -77,6 +77,13 @@
       @include make-gutters;
     }
   }
+
+  .paragraph--ls-form {
+    @include media(lg) {
+      margin-left: calc(-100% * 2 / 12);
+      margin-right: calc(-100% * 2 / 12);
+    }
+  }
 }
 
 .paragraph--mega-cta,
