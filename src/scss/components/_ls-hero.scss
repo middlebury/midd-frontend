@@ -36,6 +36,7 @@
 .ls-hero__title {
   font-size: $typescale-6;
   margin-bottom: $spacing-5;
+  text-align: center;
 
   @include media(lg) {
     font-size: $typescale-8;
