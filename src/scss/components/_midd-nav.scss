@@ -52,7 +52,7 @@
   top: 100%;
   left: 0;
   width: 100%;
-  background: $navy;
+  background: $navy-dark;
   padding-top: spacing(4);
   transition: 0.2s;
   opacity: 0;
@@ -87,7 +87,7 @@
     top: 100%;
     left: 0;
     width: 240px;
-    background: $brand-primary;
+    background: $navy-dark;
     padding: spacing(2);
     z-index: $z-index-midd-nav-dropdown;
     border-top: 1px solid $white;
