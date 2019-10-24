@@ -20,6 +20,11 @@
     .flex#{$infix}-wrap {
       flex-wrap: wrap !important;
     }
+
+    .flex#{$infix}-1 {
+      flex: 1 1 0%;
+    }
+
     // .flex#{$infix}-nowrap {
     //   flex-wrap: nowrap !important;
     // }
