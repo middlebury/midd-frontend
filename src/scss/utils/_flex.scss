@@ -4,12 +4,12 @@
   @include media-breakpoint-up($breakpoint) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
-    .flex#{$infix}-row {
-      flex-direction: row !important;
-    }
-    .flex#{$infix}-column {
-      flex-direction: column !important;
-    }
+    // .flex#{$infix}-row {
+    //   flex-direction: row !important;
+    // }
+    // .flex#{$infix}-column {
+    //   flex-direction: column !important;
+    // }
     // .flex#{$infix}-row-reverse {
     //   flex-direction: row-reverse !important;
     // }
@@ -54,9 +54,9 @@
     .justify-content#{$infix}-between {
       justify-content: space-between !important;
     }
-    .justify-content#{$infix}-around {
-      justify-content: space-around !important;
-    }
+    // .justify-content#{$infix}-around {
+    //   justify-content: space-around !important;
+    // }
 
     .align-items#{$infix}-start {
       align-items: flex-start !important;
@@ -70,9 +70,9 @@
     // .align-items#{$infix}-baseline {
     //   align-items: baseline !important;
     // }
-    .align-items#{$infix}-stretch {
-      align-items: stretch !important;
-    }
+    // .align-items#{$infix}-stretch {
+    //   align-items: stretch !important;
+    // }
 
     // .align-content#{$infix}-start {
     //   align-content: flex-start !important;
