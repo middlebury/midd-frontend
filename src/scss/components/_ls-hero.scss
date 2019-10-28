@@ -59,6 +59,7 @@
 }
 
 .ls-hero__link {
+  font-weight: $font-weight-medium;
   @include media(lg) {
     font-size: $typescale-5;
   }
