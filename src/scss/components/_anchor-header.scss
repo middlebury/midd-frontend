@@ -52,6 +52,7 @@
   background: none;
   appearance: none;
   line-height: 1;
+  margin-top: spacing(1);
 
   @include media(lg) {
     display: none;
