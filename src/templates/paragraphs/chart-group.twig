@@ -14,7 +14,7 @@
           {% if item.type == 'stats' %}
 
             <div class="stats">
-              <span class="stats__label">{{item.prefix}}<span data-countup>{{item.number}}</span>{{item.suffix}}</span>
+              <span class="stats__label">{{item.prefix}}<span data-countup>{{item.number}}</span>{{item.suffix}}{% if item.other_number is defined %}<span data-countup>{{item.other_number}}</span>{% endif %}</span>
               <span class="stats__text">{{item.label}}</span>
             </div>
 
