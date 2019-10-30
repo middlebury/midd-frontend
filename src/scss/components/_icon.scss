@@ -5,6 +5,8 @@
   // Disable pointer-events on svgs so buttons with icons handle clicks correctly.
   // https://css-tricks.com/slightly-careful-sub-elements-clickable-things/
   pointer-events: none;
+  position: relative;
+  top: 0.125em;
 }
 
 .icon--sm {
