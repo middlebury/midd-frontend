@@ -237,6 +237,8 @@
 }
 
 .paragraph--embed {
+  @include paragraph-space-sm;
+
   iframe {
     max-width: 100%;
   }
