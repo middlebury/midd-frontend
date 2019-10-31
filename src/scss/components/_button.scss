@@ -29,11 +29,11 @@
 // Sizes
 
 .button--sm {
-  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm);
+  @include button-size('sm');
 }
 
 .button--lg {
-  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg);
+  @include button-size('lg');
 }
 
 // Themes

@@ -18,11 +18,7 @@
   input[type='submit'] {
     // @include button-base;
     @include button-theme('primary');
-    @include button-size(
-      $btn-padding-y-sm,
-      $btn-padding-x-sm,
-      $btn-font-size-sm
-    );
+    @include button-size('sm');
     height: 100%; // set height since its wrapped in a div and wont match flex height
   }
 }

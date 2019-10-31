@@ -47,7 +47,11 @@
   }
 }
 
-@mixin button-size($padding-y, $padding-x, $font-size) {
+@mixin button-size($size: 'default', $sizes: $btn-sizes) {
+  $font-size: map-get($sizes, 'font-size');
+  $padding-y: map-get($sizes, 'padding-y');
+  $padding-x: map-get($sizes, 'padding-x');
+
   padding: $padding-y $padding-x;
   font-size: $font-size;
 }
