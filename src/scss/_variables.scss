@@ -350,17 +350,17 @@ $btn-themes: (
 );
 
 $btn-sizes: (
-  'default': (
+  default: (
     font-size: $btn-font-size,
     padding-y: $btn-padding-y,
     padding-x: $btn-padding-x
   ),
-  'sm': (
+  sm: (
     font-size: $btn-font-size-sm,
     padding-y: $btn-padding-y-sm,
     padding-x: $btn-padding-x-sm
   ),
-  'lg': (
+  lg: (
     font-size: $btn-font-size-lg,
     padding-y: $btn-padding-y-lg,
     padding-x: $btn-padding-x-lg

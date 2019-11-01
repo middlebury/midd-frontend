@@ -29,11 +29,11 @@
 // Sizes
 
 .button--sm {
-  @include button-size('sm');
+  @include button-size(sm);
 }
 
 .button--lg {
-  @include button-size('lg');
+  @include button-size(lg);
 }
 
 // Themes
