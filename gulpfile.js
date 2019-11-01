@@ -12,7 +12,6 @@ const imagemin = require('gulp-imagemin');
 const replace = require('gulp-replace');
 const yaml = require('js-yaml');
 const del = require('del');
-const beeper = require('beeper');
 const args = require('yargs').argv;
 const gulpIf = require('gulp-if');
 const size = require('gulp-size');
@@ -77,7 +76,6 @@ const onError = function(err) {
     title: 'Gulp error in ' + err.plugin,
     message: err.toString()
   })(err);
-  beeper();
   this.emit('end');
 };
 
