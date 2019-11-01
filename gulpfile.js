@@ -23,7 +23,6 @@ const mqPacker = require('css-mqpacker');
 const sortCSSMq = require('sort-css-media-queries');
 const cssnano = require('cssnano');
 const _ = require('lodash');
-const zip = require('gulp-zip');
 const dotenv = require('dotenv');
 const svgSprite = require('gulp-svg-sprite');
 const svgo = require('gulp-svgo');
@@ -265,24 +264,6 @@ const deployDist = () => {
     .pipe(gulp.dest(THEME_DIR));
 };
 
-const bundleMarkup = () =>
-  gulp
-    .src(
-      [
-        './dist/midd-wrapper.html',
-        './dist/css/main.css',
-        './dist/js/bundle.js',
-        './dist/images/midd-shield.svg',
-        './dist/images/midd-wordmark.svg',
-        './dist/images/middlebury-logo-white.svg'
-      ],
-      {
-        base: './dist/'
-      }
-    )
-    .pipe(zip(`midd-wrapper-${new Date().getTime()}.zip`))
-    .pipe(gulp.dest('./dist'));
-
 const watch = () => {
   gulp.watch('./src/templates/**/*.twig', html);
   gulp.watch(paths.styles.src, styles);
@@ -307,7 +288,6 @@ const reportFilesizes = () =>
         showTotal: false
       })
     );
-
 
 const minifySvgs = src =>
   gulp
@@ -376,6 +356,5 @@ module.exports = {
   devSaw,
   replaceImagePaths,
   copyDeps,
-  zip: bundleMarkup,
   default: dev
 };
