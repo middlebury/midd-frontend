@@ -1,5 +1,3 @@
-import enquire from 'enquire.js';
-
 import { $, $$ } from './utils/dom';
 
 /**
@@ -32,12 +30,21 @@ class Mover {
       return;
     }
 
-    // TODO: switch enquire to matchMedia.addListener
-    enquire.register(this.mediaQuery, {
-      match: this.handleMatch,
-      unmatch: this.handleUnmatch
-    });
+    const mql = window.matchMedia(this.mediaQuery);
+
+    if (mql.matches) {
+      this.handleMatch();
+    }
+
+    mql.addListener(this.handleMediaChange);
   }
+
+  handleMediaChange = event => {
+    if (event.matches) {
+      return this.handleMatch();
+    }
+    this.handleUnmatch();
+  };
 
   handleMatch = () => {
     /**
