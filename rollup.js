@@ -18,7 +18,7 @@ module.exports = modules => {
           // ignore importing optional momentjs, which comes with pikaday
           ignore(['moment']),
           babel({
-            exclude: /node_modules\/(?!(dom7|ssr-window|swiper|micromodal|lozad)\/).*/,
+            exclude: /node_modules\/(?!(dom7|ssr-window|swiper|micromodal|lozad|focus-within)\/).*/,
             presets: [
               [
                 '@babel/preset-env',
