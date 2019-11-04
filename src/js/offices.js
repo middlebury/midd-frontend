@@ -1,4 +1,4 @@
-import debounce from 'lodash.debounce';
+import debounce from 'lodash/debounce';
 import 'element-closest';
 
 import { $, $$, on, hide, show } from './utils/dom';
