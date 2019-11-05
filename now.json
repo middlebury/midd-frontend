@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "name": "design-system",
+  "scope": "middlebury",
+  "builds": [
+    {
+      "src": "./docs/build.sh",
+      "use": "@now/static-build",
+      "config": { "distDir": "public" }
+    }
+  ],
+  "routes": [{ "src": "/(.*)", "dest": "/docs/$1" }]
+}
