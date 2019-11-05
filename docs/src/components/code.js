@@ -51,7 +51,12 @@ const CodeExample = ({ children, language = 'language-html' }) => {
           {copied ? 'Copied' : 'Copy'}
         </button>
         <div ref={codeRef}>
-          <Prism children={children} className={language} />
+          <Prism
+            children={children}
+            className={
+              language === 'language-html' ? 'language-handlebars' : language
+            }
+          />
         </div>
       </div>
       {showCodeToggle && (
