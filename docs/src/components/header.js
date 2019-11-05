@@ -25,6 +25,7 @@ const SubMenu = ({ label, items = [], isOpen = false, location }) => {
           <li key={node.id}>
             <Link
               to={node.path}
+              activeClassName="active"
               sx={{
                 display: 'block',
                 color: 'sky',
@@ -34,6 +35,9 @@ const SubMenu = ({ label, items = [], isOpen = false, location }) => {
                 opacity: 0.8,
                 ':hover': {
                   opacity: 1,
+                },
+                '&.active': {
+                  fontWeight: 700,
                 },
               }}
             >
