@@ -3,6 +3,6 @@ title: Card Carousel
 ---
 
 
-<Example file="card-carousel" />
+<Example file="card-carousel" breakpoints />
 
 
