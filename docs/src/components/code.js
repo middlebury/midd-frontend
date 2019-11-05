@@ -58,10 +58,7 @@ const CodeExample = ({ children, language = 'language-html' }) => {
         <button
           onClick={toggleMore}
           sx={{
-            position: 'absolute',
-            right: 0,
-            bottom: 0,
-            width: '100%',
+            float: 'right',
             fontSize: 1,
             border: 0,
             borderTop: '2px solid',
