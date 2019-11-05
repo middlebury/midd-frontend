@@ -44,7 +44,7 @@ const Layout = ({ location, children }) => {
       <GlobalStyles />
       <div
         sx={{
-          width: 300,
+          width: 320,
           height: '100vh',
           overflowY: 'auto',
         }}
