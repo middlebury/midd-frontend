@@ -2,9 +2,9 @@
 title: Grid 
 ---
 
-## Intro
-The base to any scalable web design system is a grid system, typically with a container/row/column combination.
 
+## Intro
+Middlebury Design System's grid is based heavily off of [Bootstrap's 12 column grid](https://getbootstrap.com/docs/4.3/layout/grid/) but with some minor feature removals and modifications.
 
 ## The Container
 

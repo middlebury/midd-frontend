@@ -5,7 +5,7 @@ title: Forms
 ## General guidelines
 
 - Use vertical aligned forms (label above field)
-- Try to supply placeholder/example content when possible
+- Try to supply example content via the `placeholder` attribute when possible
 - Use [help text](#help-text) for fields with complex requirements
 - Group multiple checkboxes/radio inputs in [fieldset with legend](#checkboxes-and-radios)
 - Error messaging must be next to the related field
@@ -58,13 +58,13 @@ title: Forms
 
 ## Checkboxes and radios
 
-Group multiple checkboxes and radios with fieldset and legend since each input should have its own label.
+Group multiple checkboxes and radios with `fieldset` and `legend` since each input should have its own label.
 
 ### Checkboxes
 
 ```html example
-<fieldset class="form-fieldset">
-  <legend class="form-fieldset__legend">Status</legend>
+<fieldset>
+  <legend class="label">Status</legend>
 
   <div class="form-check">
     <input type="checkbox" name="status" class="form-check__input" id="open">
@@ -84,8 +84,8 @@ Group multiple checkboxes and radios with fieldset and legend since each input s
 ### Radios
 
 ```html example
-<fieldset class="form-fieldset">
-  <legend class="form-fieldset__legend">Frequency</legend>
+<fieldset>
+  <legend class="label">Frequency</legend>
 
   <div class="form-check">
     <input type="radio" name="frequency" class="form-check__input" id="daily">
@@ -102,14 +102,14 @@ Group multiple checkboxes and radios with fieldset and legend since each input s
 </fieldset>
 ```
 
-## File browser
+<!-- ## File browser
 
 ```html example
 <div class="form-file">
   <input type="file" class="form-file__input" id="customFile">
   <label class="form-file__label button button--primary" for="customFile">Choose file</label>
 </div>
-```
+``` -->
 
 ## Help text
 
@@ -147,18 +147,22 @@ Display error messages alongside their field.
 
 ### Optional vs. required fields
 
-We denote all required fields and optional fields.
+- Mark all required fields with an asterisk after the label and all optional fields with `(optional)`. Doing so ensures the field's requirement is clear across varying screen sizes.
+- Use `required` attribute on required fields
+- Ensure your form's submit button has `type="submit"` attribute whether it is an `input` or `button`
 
 ```html example
-<div class="form-group">
-  <label for="email">Email*</label>
-  <input type="email" class="form-control">
-</div>
-<div class="form-group">
-  <label for="name">Name (optional)</label>
-  <input type="text" class="form-control">
-</div>
-<div class="form-group">
-  <button type="submit" class="button button--primary">Subscribe</button>
-</div>
+<form>
+  <div class="form-group">
+    <label for="email">Email*</label>
+    <input type="email" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label for="name">Name (optional)</label>
+    <input type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <button type="submit" class="button button--primary">Subscribe</button>
+  </div>
+</form>
 ```

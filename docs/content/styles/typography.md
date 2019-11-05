@@ -10,7 +10,7 @@ export const TypeBox = ({children}) => <div sx={{p: 3,bg: 'white' }}> {children}
 
 ## Font family
 
-MDS uses Whitney and Sentital web fonts provided by [typography.com]().
+Middlebury Design System uses Whitney and Sentinel web fonts provided by [typography.com]().
 
 
 ## Sans-serif font stack
