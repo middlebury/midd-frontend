@@ -11,6 +11,7 @@ const DocExample = ({
   file = '',
   dark,
   language = 'language-html',
+  breakpoints = false,
   children,
 }) => {
   const data = useStaticQuery(graphql`
@@ -37,11 +38,22 @@ const DocExample = ({
 
   return (
     <div sx={{ mb: 5 }}>
-      <BreakpointSizer>
-        <div sx={{ p: 4, bg: dark ? '#333' : null }}>
+      <div
+        sx={{
+          p: 4,
+          bg: dark ? '#333' : null,
+          border: '1px solid',
+          borderColor: 'gray1',
+        }}
+      >
+        {breakpoints ? (
+          <BreakpointSizer>
+            <AutoheightIframe srcDoc={srcDoc} />
+          </BreakpointSizer>
+        ) : (
           <AutoheightIframe srcDoc={srcDoc} />
-        </div>
-      </BreakpointSizer>
+        )}
+      </div>
       {code && <CodeExample children={code} language={language} />}
     </div>
   );
