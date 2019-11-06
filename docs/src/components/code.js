@@ -8,15 +8,16 @@ import { useCopy } from '../hooks/use-copy';
 const CodeExample = ({ children, language = 'language-html' }) => {
   const codeRef = useRef();
   const [showCodeToggle, setShowCodeToggle] = useState(false);
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const [copied, handleCopyClick] = useCopy(children);
 
   useEffect(() => {
     const height = codeRef.current.getBoundingClientRect().height;
     if (height > 200) {
-      setOpen(false);
       setShowCodeToggle(true);
+    } else {
+      setOpen(true);
     }
   }, []);
 
