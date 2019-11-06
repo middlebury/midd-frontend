@@ -23,8 +23,11 @@ export const components = {
     />
   ),
   pre: props => props.children,
-  code: props =>
-    props.example ? <Example {...props} /> : <Prism {...props} />,
+  code: props => (
+    <div sx={{ mb: 5 }}>
+      {props.example ? <Example {...props} /> : <Prism {...props} />}
+    </div>
+  ),
   h1: h2,
   h2,
   ol: props => <ol sx={{ listStyle: 'decimal', mb: 4 }} {...props} />,
