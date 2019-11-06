@@ -1,9 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import React, { useState } from 'react';
-import debounce from 'lodash/debounce';
 import { useStaticQuery, graphql } from 'gatsby';
-import DownloadLink from 'react-download-link';
 
 import { useDownload } from '../hooks/use-download';
 import { useCopy } from '../hooks/use-copy';
@@ -55,12 +53,10 @@ const IconTile = ({ name, svg }) => {
   return (
     <div
       sx={{
-        bg: 'transparent',
+        bg: 'white',
         width: '100%',
         textAlign: 'left',
         p: 2,
-        border: '1px solid',
-        borderColor: 'gray1',
         ':hover': {
           '.svg-download': {
             visibility: 'visible',
@@ -119,7 +115,14 @@ const IconGrid = () => {
         }}
       >
         {data.allSvg.nodes.map(node => (
-          <li key={node.name} sx={{ width: '25%' }}>
+          <li
+            key={node.name}
+            sx={{
+              minWidth: 200,
+              mb: 2,
+              mr: 2,
+            }}
+          >
             <IconTile name={node.name} svg={node.internal.content} />
           </li>
         ))}

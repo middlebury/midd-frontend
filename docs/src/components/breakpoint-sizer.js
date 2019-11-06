@@ -13,7 +13,7 @@ const Btn = p => (
   <button
     {...p}
     sx={{
-      bg: 'none',
+      bg: 'transparent',
       border: 0,
       fontSize: 1,
       p: 2,

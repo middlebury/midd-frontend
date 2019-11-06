@@ -103,8 +103,6 @@ const Header = ({ location, siteTitle = '' }) => {
         p: 3,
         overflow: 'auto',
         height: '100%',
-        borderRight: '1px solid',
-        borderColor: 'gray1',
       }}
     >
       <div>
