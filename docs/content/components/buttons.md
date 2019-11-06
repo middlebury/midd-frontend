@@ -11,16 +11,14 @@ title: Buttons
 
 ## Light and outline buttons
 
-```html example 
-<div class="bg-primary p-3">
-  <button class="button button--light">Primary Button</button>
-  <button class="button button--light button--outline">Outline Button</button>
-</div>
+```html example dark
+<button class="button button--light">Primary Button</button>
+<button class="button button--light button--outline">Outline Button</button>
 ```
 
 ## Button sizes
 
-No matter the button text color or background, buttons have two size modifiers. 
+Buttons have two size modifiers:
 
 - `button--sm`
 - `button--lg`
