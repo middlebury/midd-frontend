@@ -50,8 +50,8 @@ const BreakpointSizer = ({
       <div
         sx={{
           width: size,
-          border: '1px solid',
-          borderColor: 'gray1',
+          // border: '1px solid',
+          // borderColor: 'gray.1',
         }}
       >
         {children}

@@ -6,8 +6,7 @@ export default {
     sky: '#0573cd',
     white: '#fff',
     black: '#202020',
-    gray1: '#dcdcdc',
-    gray2: '#999',
+    gray: ['#f8f8f8', '#dcdcdc', '#999', '#333'],
   },
   lineHeights: {
     solid: 1,

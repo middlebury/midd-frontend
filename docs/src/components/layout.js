@@ -56,6 +56,7 @@ const Layout = ({ location, children }) => {
           overflowY: 'auto',
           height: '100vh',
           width: '100%',
+          bg: 'gray.0',
         }}
       >
         <div sx={{ p: 5 }}>{children}</div>
