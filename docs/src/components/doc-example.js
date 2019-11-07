@@ -38,13 +38,14 @@ const DocExample = ({
 
   // create the webpage the iframe will render that includes the design system css, js, and icons
   const srcDoc = `
-      <link href="/main.css" rel="stylesheet"/>
+      <base href="/">
+      <link href="css/main.css" rel="stylesheet"/>
       <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/83898/706148/css/fonts.css" />
       <div style="display:none">
         ${data.icons.internal.content /* render the icon sprite */}
       </div>
       ${code}
-      <script src="/bundle.js"></script>
+      <script src="js/bundle.js"></script>
       <style>
         /* unset body bg so docs example can change iframe background */
         body { background: transparent; }
