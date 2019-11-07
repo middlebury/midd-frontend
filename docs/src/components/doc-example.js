@@ -16,22 +16,33 @@ const DocExample = ({
 }) => {
   const data = useStaticQuery(graphql`
     query files {
-      allFileHtml {
+      files: allFileHtml {
         nodes {
           name
           html
         }
       }
+      icons: svg(name: { eq: "sprite.symbol" }) {
+        internal {
+          content
+        }
+      }
     }
   `);
 
-  const doc = data.allFileHtml.nodes.find(node => node.name === file) || {};
+  // find the desired file in html files via the file prop
+  const doc = data.files.nodes.find(node => node.name === file) || {};
 
+  // set the code to the document html or assume the children (from prism codeblocks) is the code
   const code = doc.html || children;
 
+  // create the webpage the iframe will render that includes the design system css, js, and icons
   const srcDoc = `
       <link href="/main.css" rel="stylesheet"/>
       <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/83898/706148/css/fonts.css" />
+      <div style="display:none">
+        ${data.icons.internal.content /* render the icon sprite */}
+      </div>
       ${code}
       <script src="/bundle.js"></script>
       <style>

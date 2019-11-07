@@ -35,6 +35,13 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        name: 'sprite',
+        path: `${__dirname}/../dist/icons/sprites/symbol/svg/`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
         name: 'content',
         path: `${__dirname}/content`,
       },
