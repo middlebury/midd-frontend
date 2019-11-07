@@ -67,9 +67,8 @@ const CodeExample = ({ children, language = 'language-html' }) => {
             float: 'right',
             fontSize: 1,
             border: 0,
-            borderTop: '2px solid',
-            borderColor: 'primary',
-            color: 'primary',
+            color: 'white',
+            bg: 'primary',
             cursor: 'pointer',
             p: 2,
           }}
@@ -78,7 +77,7 @@ const CodeExample = ({ children, language = 'language-html' }) => {
           <span
             sx={{
               ml: 1,
-              fontSize: 1,
+              fontSize: 0,
             }}
           >
             {open ? <span>&#9650;</span> : <span>&#9660;</span>}
