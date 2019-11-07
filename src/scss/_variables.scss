@@ -349,6 +349,24 @@ $btn-themes: (
   )
 );
 
+$btn-sizes: (
+  default: (
+    font-size: $btn-font-size,
+    padding-y: $btn-padding-y,
+    padding-x: $btn-padding-x
+  ),
+  sm: (
+    font-size: $btn-font-size-sm,
+    padding-y: $btn-padding-y-sm,
+    padding-x: $btn-padding-x-sm
+  ),
+  lg: (
+    font-size: $btn-font-size-lg,
+    padding-y: $btn-padding-y-lg,
+    padding-x: $btn-padding-x-lg
+  )
+);
+
 // Forms
 
 $label-font-size: typescale(2) !default;

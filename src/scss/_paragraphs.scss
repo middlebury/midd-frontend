@@ -218,12 +218,10 @@
 
 .paragraph--button {
   margin-bottom: spacing(7);
+  margin-right: spacing(4);
+
   @include media(md) {
     margin-bottom: spacing(8);
-
-    & + & {
-      margin-left: spacing(4);
-    }
   }
 }
 
@@ -237,6 +235,8 @@
 }
 
 .paragraph--embed {
+  @include paragraph-space-sm;
+
   iframe {
     max-width: 100%;
   }

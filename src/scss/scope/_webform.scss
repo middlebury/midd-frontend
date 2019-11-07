@@ -89,20 +89,12 @@
     .form-submit {
       @include button-base;
       @include button-theme('primary');
-      @include button-size(
-        $btn-padding-y-sm,
-        $btn-padding-x-sm,
-        $btn-font-size-sm
-      );
+      @include button-size('sm');
     }
 
     .form-file {
       @include button-base;
-      @include button-size(
-        $btn-padding-y-sm,
-        $btn-padding-x-sm,
-        $btn-font-size-sm
-      );
+      @include button-size('sm');
       background: transparent;
     }
   }

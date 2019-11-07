@@ -1,6 +1,5 @@
-import debounce from 'lodash.debounce';
+import debounce from 'lodash/debounce';
 import 'element-closest';
-import h from 'h';
 
 import { $, $$, on, hide, show } from './utils/dom';
 
@@ -21,7 +20,8 @@ import { $, $$, on, hide, show } from './utils/dom';
   const toc = $('[data-digest-nav]');
 
   const alertTemplate = 'No results found for &ldquo;{term}&rdquo;';
-  const alert = h('div.alert.alert--status.js-offices-alert');
+  const alert = document.createElement('div');
+  alert.classList.add('alert', 'alert--status', 'js-offices-alert');
 
   function setNoResultsValue(value) {
     const msg = alertTemplate.replace('{term}', value);
