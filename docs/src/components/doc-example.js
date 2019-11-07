@@ -52,27 +52,29 @@ const DocExample = ({
       </style>
     `;
 
-  return (
-    <div sx={{ mb: 5 }}>
+  let Content = ({ bp }) => (
+    <>
       <div
         sx={{
           p: 4,
-          bg: dark ? '#333' : null,
-          border: '1px solid',
-          borderColor: 'gray1',
+          bg: dark ? '#333' : 'white',
         }}
       >
-        {breakpoints ? (
-          <BreakpointSizer>
-            <AutoheightIframe srcDoc={srcDoc} />
-          </BreakpointSizer>
-        ) : (
-          <AutoheightIframe srcDoc={srcDoc} />
-        )}
+        <AutoheightIframe srcDoc={srcDoc} breakpoint={bp} />
       </div>
       {code && <CodeExample children={code} language={language} />}
-    </div>
+    </>
   );
+
+  if (breakpoints) {
+    return (
+      <BreakpointSizer>
+        <Content />
+      </BreakpointSizer>
+    );
+  }
+
+  return <Content />;
 };
 
 export default DocExample;

@@ -2,4 +2,4 @@
 title: School Header
 ---
 
-<Example file="school-header" />
+<Example file="school-header" breakpoints />
