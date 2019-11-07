@@ -6,6 +6,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { Global } from '@emotion/core';
 
 import Header from './header';
+import Footer from './footer';
 
 const GlobalStyles = () => (
   <Global
@@ -59,7 +60,8 @@ const Layout = ({ location, children }) => {
           bg: 'gray.0',
         }}
       >
-        <div sx={{ p: 5 }}>{children}</div>
+        <div sx={{ p: 5, mb: 5, minHeight: 500 }}>{children}</div>
+        <Footer />
       </main>
     </div>
   );
