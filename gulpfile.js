@@ -338,7 +338,9 @@ const buildIconSprite = () =>
 
 const copySiteAssets = () =>
   gulp
-    .src(['./dist/css/main.css', './dist/js/bundle.js'])
+    .src(['./dist/css/main.css', './dist/js/bundle.js', './dist/images/*'], {
+      base: './dist/'
+    })
     .pipe(gulp.dest('./docs/static'));
 
 const build = gulp.series(

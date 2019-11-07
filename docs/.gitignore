@@ -68,5 +68,6 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
-/static/*.css
-/static/bundle.js
+/static/images
+/static/js
+/static/css
