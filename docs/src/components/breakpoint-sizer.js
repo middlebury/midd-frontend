@@ -43,7 +43,7 @@ const BreakpointSizer = ({
       <nav>
         {breakpoints.map(({ label, size: bp }) => (
           <Btn active={size === bp} onClick={toggleSize(bp)} key={label}>
-            {label} <span sx={{ fontSize: 1, color: 'gray2' }}>{bp}px</span>
+            {label} <span sx={{ fontSize: 1, color: 'gray.2' }}>{bp}px</span>
           </Btn>
         ))}
       </nav>
