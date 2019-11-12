@@ -1,7 +1,6 @@
 .percent-bar {
   display: flex;
   width: 100%;
-  flex-wrap: wrap;
   @include media(sm) {
     margin-bottom: spacing(4);
   }
