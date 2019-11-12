@@ -17,7 +17,7 @@ const colors = [
 let Chart = window.Chart;
 
 function renderPercentBarChart(el, config) {
-  el.classList.add('chart--singlebar', 'chart--axis');
+  el.classList.add('chart--singlebar');
   render(<PercentBarChart {...config} colors={colors} />, el);
 }
 
@@ -249,6 +249,9 @@ class MiddChart {
 
     // add classes for better styling
     legendtag.classList.add('chart-legend');
+    if (!this.isCircleChart) {
+      legendtag.classList.add('chart-legend--inline');
+    }
     legendtag.querySelector('ul').classList.add('chart-legend__list');
     legendtag.querySelectorAll('li').forEach(li => {
       li.classList.add('chart-legend__item');

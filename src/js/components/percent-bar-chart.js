@@ -2,7 +2,7 @@ import { h } from 'preact';
 
 export const Legend = ({ items, colors }) => {
   return (
-    <div className="chart-legend">
+    <div className="chart-legend chart-legend--inline justify-content-start">
       <ul className="chart-legend__list">
         {items.map((item, i) => (
           <li className="chart-legend__item">

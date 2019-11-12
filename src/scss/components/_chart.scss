@@ -55,7 +55,18 @@
   margin-right: 0;
 }
 
-.chart--axis {
+///
+//// Chart legend
+///
+
+.chart-legend {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.chart-legend--inline {
   .chart-legend__list {
     @include media(md) {
       display: flex;
@@ -64,6 +75,7 @@
   }
 
   .chart-legend__item {
+    flex: 0 0 auto;
     @include media(md) {
       &:not(:last-child) {
         margin-right: 1rem;
@@ -72,20 +84,15 @@
   }
 }
 
-///
-//// Chart legend
-///
-
-.chart-legend {
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-}
-
 .chart-legend__list {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.chart-legend__item {
+  font-size: 14px;
+  margin-bottom: 4px;
 }
 
 .chart-legend__icon {
@@ -94,9 +101,4 @@
   width: 16px;
   height: 8px;
   margin-right: 8px;
-}
-
-.chart-legend__item {
-  font-size: 14px;
-  margin-bottom: 4px;
 }
