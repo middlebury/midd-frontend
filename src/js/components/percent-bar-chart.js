@@ -1,8 +1,8 @@
 import { h } from 'preact';
 
-export const Legend = ({ items, colors }) => {
+const Legend = ({ items, colors }) => {
   return (
-    <div className="chart-legend">
+    <div className="chart-legend chart-legend--inline justify-content-start">
       <ul className="chart-legend__list">
         {items.map((item, i) => (
           <li className="chart-legend__item">
@@ -20,6 +20,8 @@ export const Legend = ({ items, colors }) => {
   );
 };
 
+const toPercent = (value, total) => (value / total) * 100;
+
 const PercentBarChart = ({ labels, datasets, colors }) => {
   const data = datasets[0].data.map((value, i) => ({
     label: labels[i],
@@ -27,33 +29,48 @@ const PercentBarChart = ({ labels, datasets, colors }) => {
   }));
 
   const total = data.reduce((num, { value }) => (num += value), 0);
-  const getPercentage = (value, total) => (value / total) * 100;
 
-  const sortedData = data.sort((a, b) => a.value - b.value);
-  const sortedLabels = data.map(data => data.label);
+  const preparedData = data
+    // sort the data from lowest to greatest
+    .sort((a, b) => a.value - b.value)
+    // add the percentage for the value to the data object
+    .map(d => {
+      const percent = toPercent(d.value, total);
+      return {
+        ...d,
+        percent,
+        // change the label to include the value as a percent
+        label: `${Math.ceil(percent)}% ${d.label}`
+      };
+    });
+
+  // create the custom legend from the sorted data
+  const sortedLabels = preparedData.map(data => data.label);
 
   return (
     <div>
-      <div className="percent-bar">
-        {sortedData.map((data, i) => {
-          const percent = getPercentage(data.value, total);
-          const width = percent.toFixed(2);
-          const label = Math.floor(percent);
+      <div
+        style={{
+          display: 'flex',
+          width: '100%'
+        }}
+      >
+        {preparedData.map((data, i) => {
+          const width = data.percent.toFixed(2);
           return (
             <div
               key={i}
-              className="percent-bar__item"
               style={{
-                width: width + '%'
+                width: width + '%',
+                height: 32
               }}
             >
               <div
-                className="percent-bar__fill"
                 style={{
-                  background: colors[i]
+                  background: colors[i],
+                  height: '100%'
                 }}
               ></div>
-              <span className="percent-bar__label">{label}%</span>
             </div>
           );
         })}

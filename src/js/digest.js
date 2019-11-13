@@ -63,7 +63,7 @@ class Digest {
     render(
       <DigestNav
         // convert nodelist into array for items prop
-        items={[...headings]}
+        items={[].slice.call(headings)}
       />,
       this.elem
     );
