@@ -9446,11 +9446,6 @@ rollup-plugin-filesize@^6.2.1:
     lodash.merge "^4.6.2"
     terser "^4.1.3"
 
-rollup-plugin-ignore@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-ignore/-/rollup-plugin-ignore-1.0.5.tgz#fc16b321b29d054d728dafde808a8a52ec39f024"
-  integrity sha512-fGDl4eRMpEeSNqZ9WFR3piK47rrFgVzAIFRsJhTc9/P5t1qsScuFeEBfbXbHDnv6yh5OUth8dti+f+dswebV+Q==
-
 rollup-plugin-node-resolve@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-5.2.0.tgz#730f93d10ed202473b1fb54a5997a7db8c6d8523"
