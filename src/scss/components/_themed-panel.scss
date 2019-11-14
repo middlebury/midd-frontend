@@ -1,5 +1,3 @@
-$themed-panel-overlay: linear-gradient(to bottom, transparent, #000);
-
 /*
  * 1. prevent issues with dropdowns and other z-index layers above this component
  */
@@ -9,74 +7,51 @@ $themed-panel-overlay: linear-gradient(to bottom, transparent, #000);
   z-index: $z-index-themed-panel; /* 1 */
 
   @include media(xl) {
-    padding-top: percentage(9 / 16);
-    height: 0;
-    overflow: hidden;
-
-    &:before {
-      content: '';
-      display: block;
-      background-image: $themed-panel-overlay;
-      z-index: $z-index-themed-panel-overlay;
-      @include absolute-fill;
-    }
+    display: flex;
   }
 }
 
 .themed-panel__main {
-  position: relative;
-
   @include media(md) {
-    padding-top: percentage(9 / 16);
-    height: 0;
-    overflow: hidden;
-
-    // TODO: this nesting isn't right. Fix me.
-    @include media(xl) {
-      padding-top: 0;
-      position: static;
-    }
-
-    &:before {
-      content: '';
-      display: block;
-      background-image: $themed-panel-overlay;
-      z-index: $z-index-themed-panel-overlay;
-      @include absolute-fill;
-
-      @include media(xl) {
-        display: none;
-      }
-    }
+    position: relative;
+  }
+  @include media(xl) {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
   }
 }
 
 .themed-panel__media {
   position: relative;
-  padding-top: percentage(9 / 16);
-  overflow: hidden;
-
-  @include media(md) {
-    padding-top: 0;
+  @include media(xl) {
     position: static;
+  }
+}
+
+.themed-panel__figure {
+  position: relative;
+
+  @include media(xl) {
+    @include absolute-fill;
   }
 
   &:before {
     content: '';
     display: block;
-    background-image: $themed-panel-overlay;
+    background-image: linear-gradient(to bottom, transparent, #000);
     z-index: $z-index-themed-panel-overlay;
     @include absolute-fill;
-
-    @include media(md) {
-      display: none;
-    }
   }
 
   img {
-    @include absolute-fill;
-    object-fit: cover;
-    font-family: 'object-fit: cover;';
+    @include media(xl) {
+      @include absolute-fill;
+      object-fit: cover;
+      font-family: 'object-fit: cover;';
+    }
   }
 }
 
@@ -98,9 +73,7 @@ $themed-panel-overlay: linear-gradient(to bottom, transparent, #000);
   }
 
   @include media(xl) {
-    padding-top: spacing(5);
-    padding-bottom: spacing(5);
-    width: percentage(7 / 12);
+    position: relative;
   }
 }
 
@@ -120,6 +93,8 @@ $themed-panel-overlay: linear-gradient(to bottom, transparent, #000);
   @include media(xl) {
     padding-bottom: spacing(5);
     width: percentage(7 / 12);
+    // bottom: 0;
+    position: static;
   }
 }
 
@@ -133,13 +108,10 @@ $themed-panel-overlay: linear-gradient(to bottom, transparent, #000);
 
   @include media(xl) {
     display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    z-index: $z-index-themed-panel-sidebar;
-    width: 360px;
     background: rgba(#000, 0.7);
+    min-height: 810px;
+    flex: 0 0 360px;
+    z-index: $z-index-themed-panel-sidebar;
   }
 }
 
