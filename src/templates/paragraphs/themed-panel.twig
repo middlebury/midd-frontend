@@ -5,11 +5,16 @@
     <section class="themed-panel" aria-labelledby="themed-panel-{{id}}-title">
 
       <div class="themed-panel__main">
+
         <div class="themed-panel__media">
-          <h2 class="themed-panel__title" id="themed-panel-{{id}}-title">Sustainability</h2>
-          {% include 'partials/img.twig' with {
-            name: 'spotlight'
-          } %}
+
+          <figure class="themed-panel__figure">
+            {% include 'partials/img.twig' with {
+              name: 'spotlight'
+            } %}
+          </figure>
+
+          <h2 class="themed-panel__title" id="themed-panel-{{id}}-title">Sustainability and other things that go on and on</h2>
         </div>
 
         <article class="themed-panel__article" aria-labelledby="themed-panel-{{id}}-first">
@@ -27,7 +32,8 @@
             <h3 class="themed-panel__heading" id="themed-panel-{{id}}-{{loop.index}}">
               <a href="" class="text-white">24/7 Support</a>
             </h3>
-            <p class="themed-panel__text">Lorem ipsum dolor sit amet consectetur adipisicing ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="themed-panel__text">Lorem ipsum dolor sit amet consectetur adipisicing ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
             <a href="" class="themed-panel__cta">Read more</a>
           </article>
         {% endfor %}
