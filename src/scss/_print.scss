@@ -24,6 +24,10 @@
       display: block;
     }
 
+    .main [class*='offset-'] {
+      margin: 0 !important;
+    }
+
     .main [class*='col-'] {
       width: 100%;
       flex-basis: 100%;
