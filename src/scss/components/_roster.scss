@@ -5,6 +5,7 @@
 
 .roster__item {
   @include make-gutters;
+  height: 450px;
   float: left;
   width: 50%;
 }
