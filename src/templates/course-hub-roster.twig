@@ -44,12 +44,14 @@
 
   <div class="roster">
 
-    {% for n in 0..3 %}
+    {% set names = ['Some short name', 'Mid size name here', 'Some long name here it should wrap (nickname)'] %}
+
+    {% for n in 0..20 %}
 
       <div class="roster__item">
 
         {% include 'partials/coursehub-profile.twig' with {
-          name: 'Some longer name here goes on and on Connell, James Holland (Jimmy)',
+          name: random(names),
           meta: [
             { name: 'Email', value: 'jconnell@middlebury.edu', href: '#' },
             { name: 'Advisor', value: 'Rachael Joo', href: '#' },

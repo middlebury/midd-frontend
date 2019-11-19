@@ -15,13 +15,18 @@
     }
 
     .page-header__content {
-      padding: 0 !important;
+      padding-top: 0 !important;
+      margin: 0;
     }
 
     // Forces all rows on the roster page to be block instead of flex.
     // Otherwise break-inside won't work in chrome with ANY parent as display: flex.
     .main .row {
       display: block;
+    }
+
+    .main [class*='offset-'] {
+      margin: 0 !important;
     }
 
     .main [class*='col-'] {
