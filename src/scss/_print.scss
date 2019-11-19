@@ -1,0 +1,33 @@
+@media print {
+  img {
+    break-inside: avoid;
+  }
+
+  .print-hide {
+    display: none !important;
+  }
+
+  .roster-page {
+    .midd-footer,
+    .breadcrumb,
+    .app-header {
+      display: none !important;
+    }
+
+    .page-header__content {
+      padding: 0 !important;
+    }
+
+    // Forces all rows on the roster page to be block instead of flex.
+    // Otherwise break-inside won't work in chrome with ANY parent as display: flex.
+    .main .row {
+      display: block;
+    }
+
+    .main [class*='col-'] {
+      width: 100%;
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+  }
+}
