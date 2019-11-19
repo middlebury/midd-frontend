@@ -1,0 +1,10 @@
+.roster {
+  @include clearfix;
+  @include make-negative-gutters;
+}
+
+.roster__item {
+  @include make-gutters;
+  float: left;
+  width: 50%;
+}

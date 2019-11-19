@@ -1,5 +1,7 @@
 {% extends "course-hub-layout.twig" %}
 
+{% set body_class = 'roster-page' %}
+
 {% set page_header = {
   title: 'Roster for AMST 0210A',
   breadcrumb: [
@@ -13,35 +15,41 @@
 } %}
 
 {% block nav %}
-  {% include 'partials/page-nav.twig' with {
-    label: 'My Terms',
-    items: [
-      {text: 'Fall 2019'},
-      {text: 'Fall 2019'},
-      {text: 'Fall 2019'},
-      {text: 'Fall 2019'},
-      {text: 'Fall 2019'},
-    ]
-  } %}
+  <div class="print-hide">
+    {% include 'partials/page-nav.twig' with {
+      label: 'My Terms',
+      items: [
+        {text: 'Fall 2019'},
+        {text: 'Fall 2019'},
+        {text: 'Fall 2019'},
+        {text: 'Fall 2019'},
+        {text: 'Fall 2019'},
+      ]
+    } %}
+  </div>
 {% endblock %}
 {% block sidebar %}
 
-  {% include 'partials/course-hub-sidebar.twig' %}
+  <div class="print-hide">
+    {% include 'partials/course-hub-sidebar.twig' %}
+  </div>
 
 {% endblock %}
 
 {% block content %}
 
-  {% include 'partials/course-hub-tabs.twig' with { active: 4 } %}
+  <div class="print-hide">
+    {% include 'partials/course-hub-tabs.twig' with { active: 4 } %}
+  </div>
 
-  <div class="row">
+  <div class="roster">
 
     {% for n in 0..3 %}
 
-      <div class="col-sm-6">
+      <div class="roster__item">
 
         {% include 'partials/coursehub-profile.twig' with {
-          name: 'Connell, James Holland (Jimmy)',
+          name: 'Some longer name here goes on and on Connell, James Holland (Jimmy)',
           meta: [
             { name: 'Email', value: 'jconnell@middlebury.edu', href: '#' },
             { name: 'Advisor', value: 'Rachael Joo', href: '#' },

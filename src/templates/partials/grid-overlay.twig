@@ -1,6 +1,12 @@
 <div>
 <!-- do not include in production -->
 <style>
+  @print {
+    [class*='debug-grid'] {
+      display: none !important;
+    }
+  }
+
   .debug-grid-center {
     display: block;
     position: fixed;
