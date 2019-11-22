@@ -250,3 +250,7 @@
   @include paragraph-full-width;
   // @include paragraph-space;
 }
+
+.paragraph {
+  @include paragraph-space();
+}

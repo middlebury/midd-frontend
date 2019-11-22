@@ -417,3 +417,47 @@ midd_nav:
   text: About Middlebury
 - href: http://www.middlebury.edu/office/
   text: Offices and Services
+
+
+system_status:
+- name: Internet<br>(Northbound Link)
+- name: Internet<br>(Southbound Link)
+- name: Email
+  link: "#"
+- name: Self-Service Banner (SSB)
+- name: Internet Native Banner (INB)
+- name: Oracle Finance
+- name: Google Apps
+  link: "#"
+- name: Office365
+  link: "#"
+- name: VPN
+- name: Zoom
+  link: "#"
+- name: Directory
+- name: GO
+- name: WordPress
+- name: Canvas
+
+printer_status:
+- name: LIB142
+- name: LIB242
+- name: LIB242K
+- name: LIB303
+- name: LIB_PUBLIC_COLOR1
+- name: LIB Poster Printer
+- name: LAF122
+- name: BIH_155_COPY
+- name: MBH155
+- name: BIH203K
+- name: BIH203K
+- name: BIH505
+- name: BIH632
+- name: MBH Poster Printer
+- name: AXN105
+- name: CFA_PUBLIC
+- name: MiddXPress
+- name: MNR214
+- name: RAJLAB
+- name: SDL122a
+- name: PRTWOOD<br>Proctor Lounge
