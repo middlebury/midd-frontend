@@ -8,6 +8,7 @@
     "dev:saw": "gulp devSaw",
     "build": "NODE_ENV=production gulp build",
     "build:scripts": "NODE_ENV=production gulp scripts",
+    "build:icons": "NODE_ENV=production gulp icons",
     "deploy": "gulp deploy",
     "deploy:gh": "npm run build && gh-pages -d dist -b master-dist",
     "now-build": "npm run build && mv dist public",
