@@ -1,9 +1,3 @@
-$status-icon-colors: (
-  down: $danger,
-  up: $success,
-  warning: $warning
-);
-
 .status-report {
   @include media(md) {
     column-count: 2;
@@ -33,11 +27,5 @@ $status-icon-colors: (
 
   .icon {
     top: 0; // unset .icon top position which is intended elsewhere for lining up with text
-  }
-}
-
-@each $name, $color in $status-icon-colors {
-  .status-report__icon--#{$name} {
-    background: $color;
   }
 }
