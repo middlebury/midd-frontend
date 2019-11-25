@@ -38,8 +38,8 @@ $school-header-breakpoint: xl;
 }
 
 .school-header__logo {
-  padding-top: spacing(2);
-  padding-bottom: spacing(2);
+  padding-top: $spacing-2;
+  padding-bottom: $spacing-2;
 }
 
 .school-header__content {

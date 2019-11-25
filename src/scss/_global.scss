@@ -31,8 +31,8 @@ figure {
 
 hr {
   background-color: $gray-light;
-  margin-top: spacing(5);
-  margin-bottom: spacing(5);
+  margin-top: $spacing-5;
+  margin-bottom: $spacing-5;
   height: 1px;
   border: 0;
 }

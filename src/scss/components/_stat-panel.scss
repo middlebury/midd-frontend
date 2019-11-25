@@ -21,7 +21,7 @@
 }
 
 .stat-panel__text {
-  font-size: typescale(5);
+  font-size: $typescale-5;
   @include media(lg) {
     color: $white;
   }
@@ -62,7 +62,7 @@
 }
 
 .stat-panel__item {
-  padding: spacing(5);
+  padding: $spacing-5;
 
   @include media(md) {
     @include make-col-ready();
@@ -71,7 +71,7 @@
 
   @include media(lg) {
     background-color: transparent !important;
-    padding: spacing(8);
+    padding: $spacing-8;
     @include make-col(5);
   }
 
@@ -91,13 +91,13 @@
 }
 
 .stat-panel__stats-list {
-  margin-bottom: spacing(7);
+  margin-bottom: $spacing-7;
 }
 
 .stat-panel__stats-title {
   color: $white;
-  font-size: typescale(7);
-  margin-bottom: spacing(5);
+  font-size: $typescale-7;
+  margin-bottom: $spacing-5;
 }
 
 .stat-panel__stats-label {
@@ -110,15 +110,15 @@
 
 .stat-panel__stats-text {
   color: $white;
-  font-size: typescale(3);
+  font-size: $typescale-3;
 
   &:not(:last-of-type) {
-    padding-bottom: spacing(4);
-    margin-bottom: spacing(4);
+    padding-bottom: $spacing-4;
+    margin-bottom: $spacing-4;
     border-bottom: 1px solid rgba($white, 0.25);
   }
 
   @include media(lg) {
-    font-size: typescale(4);
+    font-size: $typescale-4;
   }
 }

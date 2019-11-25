@@ -1,7 +1,7 @@
 .page-nav {
-  margin-bottom: spacing(4);
+  margin-bottom: $spacing-4;
   @include media(md) {
-    margin-bottom: spacing(8);
+    margin-bottom: $spacing-8;
   }
 }
 
@@ -9,7 +9,7 @@
   text-transform: uppercase;
   letter-spacing: $letter-spacing;
   font-family: $font-family-sans-serif;
-  font-size: typescale(2);
+  font-size: $typescale-2;
   border-bottom: 4px solid $border-color;
   font-weight: $font-weight-semibold;
 }

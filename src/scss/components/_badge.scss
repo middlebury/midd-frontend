@@ -1,9 +1,9 @@
 .badge {
   display: inline-block;
-  font-size: typescale(1);
+  font-size: $typescale-1;
   color: $gray;
   border: 1px solid currentColor;
-  padding: spacing(1);
+  padding: $spacing-1;
   font-weight: $font-weight-bold;
   text-transform: uppercase;
   line-height: $line-height-solid;

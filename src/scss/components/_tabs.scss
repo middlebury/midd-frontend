@@ -23,7 +23,7 @@
 
 .tabs__list {
   border-bottom: 4px solid $black;
-  margin-bottom: spacing(5);
+  margin-bottom: $spacing-5;
   display: flex;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -46,14 +46,14 @@
   }
 
   &:not(:last-child) {
-    margin-right: spacing(4);
+    margin-right: $spacing-4;
   }
 }
 
 .tabs__button {
   display: inline-block;
-  padding-top: spacing(2);
-  padding-bottom: spacing(2);
+  padding-top: $spacing-2;
+  padding-bottom: $spacing-2;
   border-top: 1px solid transparent;
   opacity: 0.8;
   transition: 0.2s;

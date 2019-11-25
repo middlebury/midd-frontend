@@ -1,5 +1,5 @@
 .masquerade {
-  margin-bottom: spacing(6);
+  margin-bottom: $spacing-6;
 
   h2 {
     @include form-label;

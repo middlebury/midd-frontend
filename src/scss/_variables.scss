@@ -224,45 +224,45 @@ $link-hover-decoration: underline !default;
 // Headings
 $headings-font-family: $font-family-serif !default;
 $headings-font-weight: $font-weight-medium !default;
-$headings-font-size: typescale(4) !default;
-$headings-line-height: lineheight('heading') !default;
+$headings-font-size: $typescale-4 !default;
+$headings-line-height: $line-height-heading !default;
 $headings-margin-bottom: 0 !default;
 
 // Paragraphs
-$paragraph-font-size: typescale(4) !default;
-$paragraph-line-height: lineheight('body') !default;
-$paragraph-margin-bottom: spacing(4) !default;
+$paragraph-font-size: $typescale-4 !default;
+$paragraph-line-height: $line-height-body !default;
+$paragraph-margin-bottom: $spacing-4 !default;
 
 ////
 /// Component variables
 ////
 
 // Lead
-$lead-font-size: typescale(6) !default;
-$lead-line-height: lineheight('body') !default;
-$lead-margin-bottom: spacing(5) !default;
+$lead-font-size: $typescale-6 !default;
+$lead-line-height: $line-height-body !default;
+$lead-margin-bottom: $spacing-5 !default;
 
 // captions
-$caption-font-size: typescale(2) !default;
+$caption-font-size: $typescale-2 !default;
 $caption-color: $gray !default;
 
 // Shared buttons and forms styles
-$input-btn-padding-y: spacing(3) !default;
-$input-btn-padding-x: spacing(5) !default;
-$input-btn-font-size: typescale(3) !default;
-$input-btn-line-height: lineheight('solid') !default;
+$input-btn-padding-y: $spacing-3 !default;
+$input-btn-padding-x: $spacing-5 !default;
+$input-btn-font-size: $typescale-3 !default;
+$input-btn-line-height: $line-height-solid !default;
 
 $input-btn-border-width: $border-width !default;
 $input-btn-border-color: $border-color !default;
 $input-btn-border-radius: 0 !default;
 
-$input-btn-padding-y-sm: spacing(2) !default;
-$input-btn-padding-x-sm: spacing(3) !default;
-$input-btn-font-size-sm: typescale(2) !default;
+$input-btn-padding-y-sm: $spacing-2 !default;
+$input-btn-padding-x-sm: $spacing-3 !default;
+$input-btn-font-size-sm: $typescale-2 !default;
 
-$input-btn-padding-y-lg: spacing(4) !default;
-$input-btn-padding-x-lg: spacing(4) !default;
-$input-btn-font-size-lg: typescale(4) !default;
+$input-btn-padding-y-lg: $spacing-4 !default;
+$input-btn-padding-x-lg: $spacing-4 !default;
+$input-btn-font-size-lg: $typescale-4 !default;
 
 // Buttons
 
@@ -369,9 +369,9 @@ $btn-sizes: (
 
 // Forms
 
-$label-font-size: typescale(2) !default;
+$label-font-size: $typescale-2 !default;
 $label-font-weight: $font-weight-semibold !default;
-$label-margin-bottom: spacing(2) !default;
+$label-margin-bottom: $spacing-2 !default;
 
 // input size default
 $input-padding-y: $input-btn-padding-y !default;
@@ -401,14 +401,14 @@ $input-focus-bg: $input-bg !default;
 $input-focus-border-color: $green-light !default;
 
 // sections
-$section-title-font-size: typescale(3) !default;
+$section-title-font-size: $typescale-3 !default;
 $section-title-font-weight: $font-weight-semibold !default;
-$section-title-margin-bottom: spacing(4) !default;
+$section-title-margin-bottom: $spacing-4 !default;
 
 // lists
-$list-item-margin-bottom: spacing(1) !default;
-$list-item-margin-bottom-md: spacing(2) !default;
-$list-item-margin-bottom-lg: spacing(3) !default;
+$list-item-margin-bottom: $spacing-1 !default;
+$list-item-margin-bottom-md: $spacing-2 !default;
+$list-item-margin-bottom-lg: $spacing-3 !default;
 
 $chevron-transform: rotate(-180deg);
 $chevron-transition: transform 0.2s ease-in-out;

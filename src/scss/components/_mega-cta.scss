@@ -63,7 +63,7 @@ $mega-cta-alignments: (
 
   .mega-cta--hero & {
     align-items: flex-start;
-    padding-top: spacing(7);
+    padding-top: $spacing-7;
 
     @include media(md) {
       padding-top: 0;
@@ -87,11 +87,11 @@ $mega-cta-alignments: (
 
 .mega-cta__title {
   color: $white;
-  margin-bottom: spacing(2);
+  margin-bottom: $spacing-2;
   @include h0;
 
   @include media(md) {
-    margin-bottom: spacing(3);
+    margin-bottom: $spacing-3;
   }
 
   .mega-cta--hero & {
@@ -101,17 +101,17 @@ $mega-cta-alignments: (
 
 .mega-cta__text {
   color: $white;
-  font-size: typescale(2);
-  margin-bottom: spacing(4);
+  font-size: $typescale-2;
+  margin-bottom: $spacing-4;
 
   @include media(md) {
-    margin-bottom: spacing(5);
-    font-size: typescale(3);
+    margin-bottom: $spacing-5;
+    font-size: $typescale-3;
   }
 
   @include media(lg) {
-    margin-bottom: spacing(7);
-    font-size: typescale(4);
+    margin-bottom: $spacing-7;
+    font-size: $typescale-4;
   }
 
   .mega-cta--hero & {
@@ -121,11 +121,11 @@ $mega-cta-alignments: (
 
 .mega-cta__caption {
   position: absolute;
-  right: spacing(5);
-  bottom: spacing(8);
+  right: $spacing-5;
+  bottom: $spacing-8;
   z-index: $z-index-mega-cta-caption;
 
   @include media(md) {
-    bottom: spacing(4);
+    bottom: $spacing-4;
   }
 }

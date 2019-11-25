@@ -1,22 +1,22 @@
 .section {
-  margin-bottom: spacing(8);
+  margin-bottom: $spacing-8;
 
   @include media(md) {
-    margin-bottom: spacing(9);
+    margin-bottom: $spacing-9;
   }
 }
 
 .section__header {
   border-top: 4px solid $navy;
-  padding-top: spacing(2);
-  margin-bottom: spacing(5);
+  padding-top: $spacing-2;
+  margin-bottom: $spacing-5;
 
   @include media(md) {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-bottom: spacing(7);
+    margin-bottom: $spacing-7;
   }
 }
 
@@ -25,17 +25,17 @@
   text-transform: uppercase;
   font-family: $font-family-sans-serif;
   font-weight: $font-weight-normal;
-  font-size: typescale(6);
+  font-size: $typescale-6;
   flex: 1;
 
   // Adds border style to title and removes it when nested in section header
   // so we don't need extra header elements in sections which do not have a cta link or blurb.
   border-top: 4px solid $navy;
-  padding-top: spacing(2);
-  margin-bottom: spacing(5);
+  padding-top: $spacing-2;
+  margin-bottom: $spacing-5;
 
   @include media(md) {
-    margin-bottom: spacing(7);
+    margin-bottom: $spacing-7;
   }
 
   .section__header & {
@@ -51,13 +51,13 @@
 
   @include media(md) {
     .section__title + & {
-      margin-left: spacing(3);
+      margin-left: $spacing-3;
     }
   }
 }
 
 .section__text {
-  margin-top: spacing(2);
+  margin-top: $spacing-2;
   flex: 0 0 100%;
 
   a {

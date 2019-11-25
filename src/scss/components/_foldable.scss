@@ -3,11 +3,11 @@
 }
 
 .foldable__button {
-  padding: spacing(3);
+  padding: $spacing-3;
   border: 1px solid $border-color;
   width: 100%;
   background: none;
-  font-size: typescale(2);
+  font-size: $typescale-2;
   font-weight: $font-weight-semibold;
   text-align: left;
   color: $brand-primary;
@@ -27,7 +27,7 @@
 }
 
 .foldable__content {
-  padding: spacing(3);
+  padding: $spacing-3;
   border: 1px solid $border-color;
   border-top: 0;
   background-color: $gray-lighter;

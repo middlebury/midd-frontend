@@ -4,11 +4,11 @@
   border-top: 8px solid $navy;
   @include themify(border-top-color);
   background-color: $white;
-  padding: spacing(4);
-  margin-bottom: spacing(7);
+  padding: $spacing-4;
+  margin-bottom: $spacing-7;
 
   @include media(md) {
-    margin-bottom: spacing(8);
+    margin-bottom: $spacing-8;
   }
 }
 

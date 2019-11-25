@@ -4,14 +4,14 @@
 
 .cta-group__item {
   @include make-col-ready;
-  padding-top: spacing(5);
-  padding-bottom: spacing(5);
+  padding-top: $spacing-5;
+  padding-bottom: $spacing-5;
   text-align: center;
 
   @include media(lg) {
     @include make-col-offset(0);
-    padding-top: spacing(7);
-    padding-bottom: spacing(7);
+    padding-top: $spacing-7;
+    padding-bottom: $spacing-7;
     min-height: 300px;
     display: flex;
     flex-direction: column;
@@ -36,15 +36,15 @@
 
 .cta-group__title {
   @include h2;
-  margin-bottom: spacing(2);
+  margin-bottom: $spacing-2;
 }
 
 .cta-group__text {
-  font-size: typescale(4);
-  margin-bottom: spacing(4);
+  font-size: $typescale-4;
+  margin-bottom: $spacing-4;
 
   @include media(lg) {
-    margin-bottom: spacing(7);
+    margin-bottom: $spacing-7;
   }
 }
 

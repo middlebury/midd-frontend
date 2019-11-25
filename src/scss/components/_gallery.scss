@@ -42,15 +42,15 @@
 }
 
 .gallery__body {
-  padding: spacing(3) spacing(4);
+  padding: $spacing-3 $spacing-4;
   border: 1px solid $border-color;
 }
 
 .gallery__title {
   @include h3;
-  margin-bottom: spacing(2);
+  margin-bottom: $spacing-2;
 }
 
 .gallery__text {
-  font-size: typescale(3);
+  font-size: $typescale-3;
 }

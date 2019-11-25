@@ -14,7 +14,7 @@
 
 .chart-group__item {
   @include make-col-ready;
-  margin-bottom: spacing(5);
+  margin-bottom: $spacing-5;
 
   .chart-group__list--2 & {
     @include media(md) {

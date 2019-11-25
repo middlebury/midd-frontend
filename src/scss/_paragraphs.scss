@@ -1,30 +1,30 @@
 @mixin paragraph-space {
-  margin-top: spacing(7);
-  margin-bottom: spacing(7);
+  margin-top: $spacing-7;
+  margin-bottom: $spacing-7;
 
   @include media(md) {
-    margin-top: spacing(8);
-    margin-bottom: spacing(8);
+    margin-top: $spacing-8;
+    margin-bottom: $spacing-8;
   }
 
   @include media(lg) {
-    margin-top: spacing(9);
-    margin-bottom: spacing(9);
+    margin-top: $spacing-9;
+    margin-bottom: $spacing-9;
   }
 }
 
 @mixin paragraph-space-sm {
-  margin-top: spacing(6);
-  margin-bottom: spacing(5);
+  margin-top: $spacing-6;
+  margin-bottom: $spacing-5;
 
   @include media(md) {
-    margin-top: spacing(7);
-    margin-bottom: spacing(6);
+    margin-top: $spacing-7;
+    margin-bottom: $spacing-6;
   }
 
   @include media(lg) {
-    margin-top: spacing(8);
-    margin-bottom: spacing(7);
+    margin-top: $spacing-8;
+    margin-bottom: $spacing-7;
   }
 }
 
@@ -34,14 +34,14 @@
 }
 
 .paragraphs {
-  margin-bottom: spacing(7);
+  margin-bottom: $spacing-7;
 
   @include media(md) {
-    margin-bottom: spacing(8);
+    margin-bottom: $spacing-8;
   }
 
   @include media(lg) {
-    margin-bottom: spacing(9);
+    margin-bottom: $spacing-9;
   }
 
   > [class*='paragraph']:first-child {
@@ -97,7 +97,7 @@
 }
 
 .paragraph--text {
-  margin-bottom: spacing(4);
+  margin-bottom: $spacing-4;
 }
 
 .paragraph--video {
@@ -109,12 +109,12 @@
 }
 
 .paragraph--quote {
-  margin-top: spacing(7);
-  margin-bottom: spacing(7);
+  margin-top: $spacing-7;
+  margin-bottom: $spacing-7;
 
   @include media(md) {
-    margin-top: spacing(8);
-    margin-bottom: spacing(8);
+    margin-top: $spacing-8;
+    margin-bottom: $spacing-8;
   }
 }
 
@@ -123,14 +123,14 @@
 
   &.image--left {
     margin-top: 0;
-    margin-bottom: spacing(4);
-    margin-right: spacing(4);
+    margin-bottom: $spacing-4;
+    margin-right: $spacing-4;
   }
 
   &.image--right {
     margin-top: 0;
-    margin-bottom: spacing(4);
-    margin-left: spacing(4);
+    margin-bottom: $spacing-4;
+    margin-left: $spacing-4;
   }
 }
 
@@ -209,7 +209,7 @@
 
 .paragraph--school-explorer {
   margin-top: -6rem;
-  margin-bottom: spacing(8);
+  margin-bottom: $spacing-8;
 }
 
 .paragraph--gallery {
@@ -217,11 +217,11 @@
 }
 
 .paragraph--button {
-  margin-bottom: spacing(7);
-  margin-right: spacing(4);
+  margin-bottom: $spacing-7;
+  margin-right: $spacing-4;
 
   @include media(md) {
-    margin-bottom: spacing(8);
+    margin-bottom: $spacing-8;
   }
 }
 
