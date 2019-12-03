@@ -128,3 +128,20 @@ $mega-cta-alignments: (
     bottom: $spacing-4;
   }
 }
+
+.mega-cta--blse {
+  .mega-cta__text {
+    color: $yellow;
+    font-size: $typescale-6;
+    @include media(lg) {
+      font-size: $typescale-8;
+    }
+  }
+
+  .mega-cta__content {
+    text-align: left;
+    @include media(lg) {
+      @include make-col(8);
+    }
+  }
+}
