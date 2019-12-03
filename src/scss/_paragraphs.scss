@@ -66,6 +66,7 @@
     @include make-col-offset(2);
   }
 
+  .paragraph--expand,
   .paragraph--school-explorer,
   .paragraph--video,
   .paragraph--image:not(.image--left):not(.image--right) {
@@ -207,11 +208,6 @@
   @include paragraph-space;
 }
 
-.paragraph--school-explorer {
-  margin-top: -6rem;
-  margin-bottom: $spacing-8;
-}
-
 .paragraph--gallery {
   @include paragraph-space-sm;
 }
@@ -249,4 +245,14 @@
 .paragraph--ls-hero {
   @include paragraph-full-width;
   // @include paragraph-space;
+}
+
+.paragraph--pull-up {
+  margin-top: -6rem;
+  position: relative;
+  z-index: 2;
+
+  @include media(lg) {
+    margin-top: -8rem;
+  }
 }
