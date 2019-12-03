@@ -16,6 +16,9 @@
 @import 'keyframes';
 @import 'print';
 
+// objects
+@import 'paragraphs';
+
 // components
 @import 'components/accordion';
 @import 'components/alert';
@@ -111,8 +114,6 @@
 @import 'utils/spacing';
 @import 'utils/text';
 @import 'utils/toggler';
-
-@import 'paragraphs';
 
 .main {
   min-height: 85vh;
