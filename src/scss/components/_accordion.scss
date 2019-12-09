@@ -24,17 +24,17 @@
 }
 
 .accordion-item__title {
-  font-size: typescale(4);
+  font-size: $typescale-4;
   font-family: $font-family-sans-serif;
-  line-height: lineheight('body');
+  line-height: $line-height-body;
 }
 
 .accordion-item__link {
   display: flex;
   justify-content: space-between;
   color: $link-color;
-  padding: spacing(3);
-  font-size: typescale(4);
+  padding: $spacing-3;
+  font-size: $typescale-4;
   transition: background-color 0.2s;
   cursor: pointer;
 
@@ -51,7 +51,7 @@
 
 .accordion-item__icon {
   transition: $chevron-transition;
-  margin-left: spacing(3);
+  margin-left: $spacing-3;
   flex: 0 0 auto;
 
   .accordion-item.is-toggled & {
@@ -60,10 +60,10 @@
 }
 
 .accordion-item__content {
-  padding-top: spacing(3);
-  padding-bottom: spacing(7);
-  padding-left: spacing(3);
-  padding-right: spacing(3);
+  padding-top: $spacing-3;
+  padding-bottom: $spacing-7;
+  padding-left: $spacing-3;
+  padding-right: $spacing-3;
 
   .accordion-item.has-toggler & {
     display: none;

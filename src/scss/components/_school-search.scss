@@ -3,8 +3,8 @@
 
 .school-search__handle {
   display: inline-block;
-  padding: spacing(3);
-  font-size: typescale(2);
+  padding: $spacing-3;
+  font-size: $typescale-2;
   color: $navy;
 
   &:hover {
@@ -13,7 +13,7 @@
 
   @include media($school-header-breakpoint) {
     font-weight: $font-weight-medium;
-    font-size: typescale(3);
+    font-size: $typescale-3;
     padding-left: 0;
     padding-right: 0;
     border-bottom: 4px solid transparent;
@@ -33,7 +33,7 @@
   top: 100%;
   right: 0;
   width: 100%;
-  padding: spacing(3);
+  padding: $spacing-3;
   background-color: $white;
   visibility: hidden;
   opacity: 0;

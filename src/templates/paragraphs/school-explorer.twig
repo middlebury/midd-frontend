@@ -1,9 +1,9 @@
-<div class="paragraph--school-explorer">
-  <nav class="school-explorer" aria-labelledby="midd-school-explorer-label">
-    <h2 class="school-explorer__title" id="midd-school-explorer-label">Explore our Schools</h2>
+<div class="paragraph--expand paragraph--pull-up">
+  <nav class="themed-box themed-box--compress" aria-labelledby="midd-school-explorer-label">
+    <h2 class="h2 f6 mb-3" id="midd-school-explorer-label">Explore our Schools</h2>
 
-    <div class="school-explorer__actions">
-      <div class="school-explorer__item">
+    <div class="d-md-flex align-items-center">
+      <div class="flex-auto">
 
         {% include 'partials/dropdown.twig' with {
           items: [
@@ -22,8 +22,8 @@
         } %}
 
       </div>
-      <div class="school-explorer__or">or</div>
-      <div class="school-explorer__item">
+      <div class="font-serif text-center p-3">or</div>
+      <div class="flex-auto">
 
         {% include 'partials/dropdown.twig' with {
           items: [

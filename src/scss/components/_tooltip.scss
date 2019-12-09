@@ -29,8 +29,8 @@
   right: 0;
   bottom: calc(100% + 10px);
   background: $white;
-  padding: spacing(2);
-  font-size: typescale(2);
+  padding: $spacing-2;
+  font-size: $typescale-2;
   box-shadow: 0 0 8px rgba(black, 0.5);
   min-width: 230px;
   max-width: 100vw;

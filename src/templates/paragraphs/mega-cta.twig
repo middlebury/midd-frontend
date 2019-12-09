@@ -1,10 +1,10 @@
 {% set id = random(1234) %}
-<div class="paragraph--mega-cta">
+<div class="paragraph paragraph--full">
   <div class="container px-0">
 
     {# alignment should be one of left-bottom, left-top, right-bottom, right-top, center #}
 
-    <section class="mega-cta mega-cta--image-{{pin ? pin : 'bottom-left'}} {% if hero %} mega-cta--hero{% endif %}" aria-labelledby="midd-mega-cta-label-{{id}}">
+    <section class="mega-cta mega-cta--image-{{pin ? pin : 'bottom-left'}} {% if hero %} mega-cta--hero{% endif %}{% if blse %} mega-cta--blse{% endif %}" aria-labelledby="midd-mega-cta-label-{{id}}">
       <figure class="mega-cta__back">
         {% include 'partials/img.twig' with {
           name: 'spotlight'
@@ -23,10 +23,15 @@
 
       <div class="mega-cta__front">
         <div class="mega-cta__content">
-          <h2 class="mega-cta__title" id="midd-mega-cta-label-{{id}}">What makes Middlebury different?</h2>
+          {% if title %}
+            <h2 class="mega-cta__title" id="midd-mega-cta-label-{{id}}">{{title|default('What makes Middlebury different?')}}</h2>
+          {% endif %}
+          {% if text %}
           <p class="mega-cta__text">
-            With our support, you’ll experience total immersion in the language and culture of your country. You’ll have an authentic learning experience at a local academic institution. And you’ll have the guided independence to engage with your community, take on an internship, and make personal discoveries you’ll always remember.
+            {{text}}
+            {# With our support, you’ll experience total immersion in the language and culture of your country. You’ll have an authentic learning experience at a local academic institution. And you’ll have the guided independence to engage with your community, take on an internship, and make personal discoveries you’ll always remember. #}
           </p>
+          {% endif %}
           <a class="button button--outline button--light" href="">Apply now</a>
         </div>
       </div>

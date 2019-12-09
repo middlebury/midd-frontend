@@ -16,6 +16,9 @@
 @import 'keyframes';
 @import 'print';
 
+// objects
+@import 'paragraphs';
+
 // components
 @import 'components/accordion';
 @import 'components/alert';
@@ -74,7 +77,6 @@
 @import 'components/quote';
 @import 'components/roster';
 @import 'components/schedule';
-@import 'components/school-explorer';
 @import 'components/school-footer';
 @import 'components/school-header';
 @import 'components/school-nav';
@@ -113,22 +115,20 @@
 @import 'utils/text';
 @import 'utils/toggler';
 
-@import 'paragraphs';
-
 .main {
   min-height: 85vh;
 }
 
 .count {
   display: block;
-  padding-top: spacing(2);
-  padding-bottom: spacing(2);
+  padding-top: $spacing-2;
+  padding-bottom: $spacing-2;
   border-top: 4px solid $navy;
   border-bottom: 1px solid $border-color;
-  font-size: typescale(3);
-  margin-bottom: spacing(4);
+  font-size: $typescale-3;
+  margin-bottom: $spacing-4;
   @include media(md) {
-    margin-bottom: spacing(7);
+    margin-bottom: $spacing-7;
   }
 }
 

@@ -53,9 +53,9 @@
 .ls-hero__item {
   display: inline-block;
   text-align: center;
-  margin-right: spacing(4) / 2;
-  margin-left: spacing(4) / 2;
-  margin-bottom: spacing(2);
+  margin-right: $spacing-4 / 2;
+  margin-left: $spacing-4 / 2;
+  margin-bottom: $spacing-2;
 }
 
 .ls-hero__link {

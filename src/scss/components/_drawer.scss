@@ -41,14 +41,14 @@
 
 .drawer__header {
   text-align: right;
-  padding-top: spacing(3);
-  padding-bottom: spacing(3);
+  padding-top: $spacing-3;
+  padding-bottom: $spacing-3;
 }
 
 .drawer__close {
   background: none;
   border: 0;
   color: $white;
-  padding: spacing(3);
-  font-size: typescale(2);
+  padding: $spacing-3;
+  font-size: $typescale-2;
 }

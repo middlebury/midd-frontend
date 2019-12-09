@@ -10,7 +10,7 @@ $school-header-breakpoint: xl;
 
   &.headroom {
     will-change: transform;
-    transition: transform 0.5s linear;
+    transition: transform 0.4s ease-in-out;
     position: fixed;
     top: 0;
     left: 0;
@@ -38,8 +38,8 @@ $school-header-breakpoint: xl;
 }
 
 .school-header__logo {
-  padding-top: spacing(2);
-  padding-bottom: spacing(2);
+  padding-top: $spacing-2;
+  padding-bottom: $spacing-2;
 }
 
 .school-header__content {

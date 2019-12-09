@@ -1,6 +1,6 @@
 .anchor-nav {
-  margin-left: -#{spacing(3)};
-  margin-right: -#{spacing(3)};
+  margin-left: -#{$spacing-3};
+  margin-right: -#{$spacing-3};
 
   @include media(lg) {
     margin-left: 0;
@@ -17,15 +17,15 @@
   @include media(lg) {
     border-top: 0;
     display: inline-block;
-    margin-right: spacing(4);
-    margin-bottom: spacing(3);
+    margin-right: $spacing-4;
+    margin-bottom: $spacing-3;
   }
 }
 
 .anchor-nav__link {
   display: block;
-  font-size: typescale(3);
-  padding: spacing(4);
+  font-size: $typescale-3;
+  padding: $spacing-4;
 
   @include media(lg) {
     padding: 0;

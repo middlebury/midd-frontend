@@ -38,7 +38,7 @@ select.form-control {
 
 .form-check--inline {
   display: inline-flex;
-  margin-right: spacing(3);
+  margin-right: $spacing-3;
   // align-items: center;
   margin-bottom: 0;
 }

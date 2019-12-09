@@ -17,20 +17,20 @@ $nav-bp: lg;
   border-top: 1px solid $border-color;
 
   @include media($nav-bp) {
-    margin-right: spacing(4);
+    margin-right: $spacing-4;
     flex: 1 0 auto;
   }
 }
 
 .nav__link {
   display: block;
-  padding: spacing(3);
-  font-size: typescale(3);
+  padding: $spacing-3;
+  font-size: $typescale-3;
   font-weight: $font-weight-medium;
   flex: 1 0 auto;
 
   @include media($nav-bp) {
-    padding: spacing(4);
+    padding: $spacing-4;
     padding-left: 0;
     padding-right: 0;
     font-weight: $font-weight-normal;
@@ -49,7 +49,7 @@ $nav-bp: lg;
   @include button-reset;
   border-left: 1px solid $border-color;
   margin-left: auto;
-  padding: spacing(3);
+  padding: $spacing-3;
 
   @include media($nav-bp) {
     display: none;
@@ -78,15 +78,15 @@ $nav-bp: lg;
 
 .nav__sublink {
   display: block;
-  padding: spacing(3);
-  font-size: typescale(2);
-  padding-left: spacing(7);
+  padding: $spacing-3;
+  font-size: $typescale-2;
+  padding-left: $spacing-7;
 
   @include media($nav-bp) {
-    padding-left: spacing(3);
-    font-size: typescale(3);
-    padding-top: spacing(2);
-    padding-bottom: spacing(2);
+    padding-left: $spacing-3;
+    font-size: $typescale-3;
+    padding-top: $spacing-2;
+    padding-bottom: $spacing-2;
   }
 }
 

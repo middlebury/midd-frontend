@@ -29,7 +29,7 @@
 }
 
 .callout__title {
-  font-size: typescale(3);
+  font-size: $typescale-3;
 
   @include media(lg) {
     margin-bottom: 0.5rem;

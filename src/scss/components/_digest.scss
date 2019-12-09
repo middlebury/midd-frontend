@@ -5,10 +5,10 @@
 .digest__title {
   text-transform: uppercase;
   letter-spacing: $letter-spacing;
-  font-size: typescale(2);
+  font-size: $typescale-2;
   font-family: $font-family-sans-serif;
-  padding: spacing(3);
-  margin-left: spacing(1);
+  padding: $spacing-3;
+  margin-left: $spacing-1;
 }
 
 .digest__nav {
@@ -19,13 +19,13 @@
 }
 
 .digest__item {
-  margin-bottom: spacing(2);
+  margin-bottom: $spacing-2;
 }
 
 .digest__link {
   display: block;
-  font-size: typescale(2);
-  padding: spacing(1) spacing(3);
+  font-size: $typescale-2;
+  padding: $spacing-1 $spacing-3;
   border-left: 4px solid transparent;
   transition: border-color 0.2s;
 

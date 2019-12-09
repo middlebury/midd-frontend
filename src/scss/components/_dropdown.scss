@@ -9,7 +9,7 @@
   line-height: inherit;
   border: 1px solid $border-color;
   background: $white;
-  padding: spacing(3);
+  padding: $spacing-3;
   line-height: 1;
   width: 100%;
   display: block;
@@ -67,7 +67,7 @@
 
 .dropdown__link {
   display: block;
-  padding: spacing(2) spacing(3);
+  padding: $spacing-2 $spacing-3;
   font-weight: $font-weight-medium;
 
   &:hover {

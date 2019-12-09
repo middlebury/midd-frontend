@@ -15,7 +15,7 @@
 }
 
 .audio__text {
-  font-size: typescale(3);
+  font-size: $typescale-3;
 }
 
 // TODO: this should be pulled out and only styling the js player
@@ -39,7 +39,7 @@
   // width: 300px;
   flex: 0 0 120px;
   text-align: center;
-  font-size: typescale(2);
+  font-size: $typescale-2;
   padding-left: 1rem;
   padding-right: 1rem;
 }
