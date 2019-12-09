@@ -76,6 +76,12 @@
 
 .lightbox__figure {
   margin-bottom: $spacing-9;
+
+  .media__caption {
+    a {
+      color: $white;
+    }
+  }
 }
 
 .lightbox__thumbs-list {
