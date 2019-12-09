@@ -282,7 +282,7 @@ gallery_data:
     alt: ''
     srcset: ''
     sizes: ''
-    caption: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    caption: Lorem ipsum <a href="#">dolor</a> sit amet consectetur adipisicing elit.
 
   - src: http://placekitten.com/1440/810
     thumb: http://placekitten.com/64/36
