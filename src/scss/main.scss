@@ -16,6 +16,9 @@
 @import 'keyframes';
 @import 'print';
 
+// objects
+@import 'paragraphs';
+
 // components
 @import 'components/accordion';
 @import 'components/alert';
@@ -74,7 +77,6 @@
 @import 'components/quote';
 @import 'components/roster';
 @import 'components/schedule';
-@import 'components/school-explorer';
 @import 'components/school-footer';
 @import 'components/school-header';
 @import 'components/school-nav';
@@ -112,8 +114,6 @@
 @import 'utils/spacing';
 @import 'utils/text';
 @import 'utils/toggler';
-
-@import 'paragraphs';
 
 .main {
   min-height: 85vh;

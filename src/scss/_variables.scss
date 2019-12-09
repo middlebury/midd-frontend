@@ -84,6 +84,7 @@ $green: #1f9f8b !default;
 $green-light: #23b39c !default;
 
 $teal: #017c9f !default;
+$yellow: #ffc107 !default;
 
 // shades
 $white: #fff !default;
@@ -99,7 +100,7 @@ $gray-dark: #414142 !default;
 $color-active: $sky;
 $danger: #dc3545 !default;
 $info: $blue-lighter !default;
-$warning: #ffc107 !default;
+$warning: $yellow !default;
 $success: #5e7d31 !default;
 
 // brand colors
@@ -113,7 +114,7 @@ $color-college: $navy;
 $color-schools-abroad: $blue;
 $color-language-schools: #8f9a17;
 $color-school-english: #c26533;
-$color-writers-conference: #ffc107;
+$color-writers-conference: $yellow;
 
 ////
 /// Themes

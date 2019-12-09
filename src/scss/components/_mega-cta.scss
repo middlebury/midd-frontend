@@ -59,7 +59,6 @@ $mega-cta-alignments: (
   justify-content: center;
   align-items: center;
   z-index: $z-index-mega-cta-front;
-  align-items: center;
 
   .mega-cta--hero & {
     align-items: flex-start;
@@ -127,5 +126,22 @@ $mega-cta-alignments: (
 
   @include media(md) {
     bottom: $spacing-4;
+  }
+}
+
+.mega-cta--blse {
+  .mega-cta__text {
+    color: $yellow;
+    font-size: $typescale-6;
+    @include media(lg) {
+      font-size: $typescale-8;
+    }
+  }
+
+  .mega-cta__content {
+    text-align: left;
+    @include media(lg) {
+      @include make-col(8);
+    }
   }
 }
