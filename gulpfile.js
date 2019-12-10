@@ -335,10 +335,11 @@ const buildIconSprite = () =>
 const build = gulp.series(
   clean,
   copyDeps,
-  gulp.parallel(html, images, styles, scripts, buildIconSprite),
-  copyIcons,
+  gulp.parallel(html, images, styles, scripts),
   reportFilesizes
 );
+
+const buildIcons = gulp.series(buildIconSprite, copyIcons);
 
 const dev = gulp.parallel(build, watch, serve);
 
@@ -352,6 +353,7 @@ module.exports = {
   build,
   dev,
   devSaw,
+  icons: buildIcons,
   replaceImagePaths,
   copyDeps,
   default: dev

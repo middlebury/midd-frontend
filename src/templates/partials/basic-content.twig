@@ -10,6 +10,10 @@
     <p>Sapiente cumque, quibusdam illo eaque itaque deleniti hic quos perspiciatis aut, nostrum at aspernatur deserunt dolor delectus officia odio aperiam atque eligendi, sit ab tempora expedita quod accusantium autem. Repellat!</p>
   </div>
 
+  {% include 'paragraphs/status-report.twig' %}
+
+  {% include 'paragraphs/status-report.twig' with { items: printer_status } %}
+
   {% include 'paragraphs/gallery.twig' %}
 
   {% include 'paragraphs/related-events-list.twig' %}
