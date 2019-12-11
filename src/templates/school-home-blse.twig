@@ -29,3 +29,17 @@
   {% include 'paragraphs/button-box.twig' %}
 
 {% endblock %}
+
+{% block layout_footer %}
+  {% include 'partials/school-footer.twig' with {
+    name: 'Middlebury Bread Loaf School of English',
+    addr: '356 College Street<br>Middlebury, VT 05753',
+    tel: '802-443-5745',
+    email: 'blse@middlebury.edu',
+    cta: {
+      text: 'Request Info',
+      link: 'http://go.middlebury.edu/sa-inquiry'
+    },
+  } %}
+  {% include 'partials/midd-footer.twig' %}
+{% endblock %}
