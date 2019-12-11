@@ -10,21 +10,82 @@
 }
 
 .school-footer__main {
-  border-bottom: 1px solid $navy-light;
+  @include make-col-ready;
 
   @include media(lg) {
-    border-right: 1px solid $navy-light;
-    border-bottom: 0;
+    @include make-col(4);
   }
 }
 
-.school-footer__name {
+.school-footer__primary {
+  @include make-col-ready;
+
+  @include media(md) {
+    @include make-col(5);
+  }
+
+  @include media(lg) {
+    @include make-col(12);
+  }
+
+  .school-footer--lite & {
+    @include media(lg) {
+      @include make-col(5);
+    }
+  }
+}
+
+.school-footer__secondary {
+  @include make-col-ready;
+  padding-top: $spacing-5;
+  padding-bottom: $spacing-5;
+
+  @include media(md) {
+    @include make-col(4);
+    margin-left: auto;
+  }
+
+  @include media(lg) {
+    @include make-col(12);
+    padding-bottom: 0;
+  }
+
+  .school-footer--lite & {
+    padding-bottom: 0;
+    @include media(md) {
+      border-left: 1px solid $navy-light;
+      padding-top: $spacing-3;
+      padding-bottom: $spacing-3;
+    }
+
+    @include media(lg) {
+      @include make-col(4);
+    }
+  }
+}
+
+.school-footer__text {
   @include h0;
-  font-family: $font-family-serif;
   color: $white;
   margin-bottom: $spacing-4;
 
   @include media(md) {
     margin-bottom: $spacing-5;
+  }
+}
+
+.school-footer__nav {
+  @include make-col-ready;
+  border-top: 1px solid $navy-light;
+
+  @include media(md) {
+    margin-top: $spacing-5;
+  }
+
+  @include media(lg) {
+    @include make-col(8);
+    border-left: 1px solid $navy-light;
+    border-top: 0;
+    margin-top: 0;
   }
 }

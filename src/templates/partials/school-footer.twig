@@ -1,16 +1,21 @@
-<footer class="school-footer">
+{% set has_menus = menus is not empty %}
+<footer class="school-footer{% if not has_menus %} school-footer--lite{% endif %}">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-4 school-footer__main">
+    {% if has_menus %}
+      <div class="row">
+        <div class="school-footer__main">
+    {% endif %}
 
         <div class="row">
-          <div class="col-md-8 col-lg-12 mb-7">
+          <div class="school-footer__primary">
 
-            <p class="school-footer__name">{{name}}</p>
+            {# use same markup for slogan #}
+            <p class="school-footer__text">{{name}}</p>
+
             <a href="{{cta.link}}" class="button button--light">{{cta.text}}</a>
 
           </div>
-          <div class="col-md-4 col-lg-12 mb-7">
+          <div class="school-footer__secondary">
 
             <div class="text-white f2 mb-3">
               <p class="mb-1 f2">{{addr}}</p>
@@ -25,15 +30,19 @@
 
           </div>
 
+      {% if has_menus %}
         </div>
       </div>
-      <div class="col-lg-8">
-        <div class="row">
-          {% for menu in menus %}
-            {% include 'partials/footer-menu.twig' with menu %}
-          {% endfor %}
+      {% endif %}
+      {% if has_menus %}
+        <div class="school-footer__nav">
+          <div class="row">
+            {% for menu in menus %}
+              {% include 'partials/footer-menu.twig' with menu %}
+            {% endfor %}
+          </div>
         </div>
-      </div>
+      {% endif %}
     </div>
   </div>
 </footer>
