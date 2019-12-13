@@ -3,6 +3,7 @@
   @include media(lg) {
     margin-top: 0;
   }
+  @include print-hide;
 }
 
 .footer-menu__title {

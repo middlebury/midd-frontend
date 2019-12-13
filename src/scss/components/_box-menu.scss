@@ -5,6 +5,8 @@
   background-color: $white;
   @include themify(border-top-color);
 
+  @include print-hide;
+
   @include media(md) {
     margin-bottom: $spacing-8;
   }
