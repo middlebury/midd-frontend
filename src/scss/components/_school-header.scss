@@ -16,6 +16,10 @@ $school-header-breakpoint: xl;
     left: 0;
     width: 100%;
     z-index: $z-index-school-header;
+
+    @media print {
+      position: relative;
+    }
   }
 
   &.headroom--pinned {
@@ -24,6 +28,10 @@ $school-header-breakpoint: xl;
 
   &.headroom--unpinned {
     transform: translateY(-100%);
+  }
+
+  @media print {
+    border: 0;
   }
 }
 
