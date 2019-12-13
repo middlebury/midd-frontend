@@ -6,6 +6,10 @@
   @include media(lg) {
     padding-top: $spacing-7;
   }
+
+  @media print {
+    border-bottom: 0;
+  }
 }
 
 .anchor-header--front {
@@ -53,6 +57,7 @@
   appearance: none;
   line-height: 1;
   margin-top: $spacing-1;
+  @include print-hide;
 
   @include media(lg) {
     display: none;
