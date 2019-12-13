@@ -34,6 +34,10 @@
   display: flex;
   flex-wrap: wrap;
   @include make-negative-gutters();
+
+  @media print {
+    display: block;
+  }
 }
 
 @mixin make-col-ready($gutters: $grid-gutter-widths) {
