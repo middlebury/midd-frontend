@@ -4,6 +4,9 @@
   box-sizing: border-box;
 }
 
+/*
+ * 1. prevent chrome from hiding background images and colors by default when printing
+ */
 body {
   font-family: $font-family-base;
   line-height: $line-height-body;
@@ -13,6 +16,12 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-print-color-adjust: exact; /* 1 */
+
+  @media print {
+    // remove padding top added for sticky headers
+    padding-top: 0 !important;
+  }
 }
 
 // remove ios border radius

@@ -5,6 +5,8 @@
   // Pull menu toggler out of container so it's flush with the opened menu
   margin-right: -#{$spacing-3};
 
+  @include print-hide;
+
   @include media(lg) {
     order: 1;
     margin-left: auto;

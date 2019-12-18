@@ -241,6 +241,10 @@
   @include media(lg) {
     margin-top: -8rem;
   }
+
+  @media print {
+    margin-top: 0;
+  }
 }
 
 .paragraph {

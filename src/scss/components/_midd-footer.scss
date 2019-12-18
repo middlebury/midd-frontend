@@ -2,6 +2,7 @@
   background-color: $navy-dark;
   padding-top: $spacing-4;
   padding-bottom: $spacing-4;
+  @include print-hide;
 }
 
 .midd-footer__list {

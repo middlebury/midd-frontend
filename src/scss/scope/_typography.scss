@@ -224,6 +224,26 @@
     margin-bottom: $spacing-5;
     font-size: $paragraph-font-size;
   }
+
+  @media print {
+    a[href]:after {
+      content: '(' attr(href) ')';
+      background: transparent;
+      color: $black;
+      text-transform: none;
+      letter-spacing: 0;
+      font-size: inherit;
+      margin: 0;
+      padding: 0;
+      word-break: break-word;
+      font-style: italic;
+      white-space: nowrap;
+    }
+
+    abbr[title]:after {
+      content: '(' attr(title) ')';
+    }
+  }
 }
 
 .typography--sm {

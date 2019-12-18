@@ -14,7 +14,6 @@
 // base
 @import 'global';
 @import 'keyframes';
-@import 'print';
 
 // objects
 @import 'paragraphs';
@@ -115,6 +114,8 @@
 @import 'utils/spacing';
 @import 'utils/text';
 @import 'utils/toggler';
+
+@import 'print';
 
 .main {
   min-height: 85vh;
