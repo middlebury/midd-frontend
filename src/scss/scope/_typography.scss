@@ -173,11 +173,26 @@
     }
   }
 
-  // maintain vertical h2 top margin when...
-  // ...there is a text component followed by another
+  // Maintain vertical h2 top margin when
+  // there is a text component followed by another
+  // or intro text before a text component.
+  //
+  // These styles are duplicated with the below h2 ruleset
+  // because @at-root seems to make the styles root for the entire list of selectors
+  // instead of the single selector it is used in front of.
+  // See https://stackoverflow.com/q/36902927/2193516
   @at-root .paragraph--text + .paragraph--text > h2,
-  // ...there is intro text before the text component
-  .lead + & > h2,
+    .lead + & > h2 {
+    @include h2;
+    margin-top: $spacing-7;
+    margin-bottom: $spacing-4;
+
+    @include media(lg) {
+      margin-top: $spacing-8;
+      margin-bottom: $spacing-5;
+    }
+  }
+
   h2 {
     @include h2;
     margin-top: $spacing-7;
