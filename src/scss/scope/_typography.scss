@@ -175,7 +175,7 @@
 
   // maintain vertical h2 top margin when...
   // ...there is a text component followed by another
-  & + & > h2,
+  @at-root .paragraph--text + .paragraph--text > h2,
   // ...there is intro text before the text component
   .lead + & > h2,
   h2 {
