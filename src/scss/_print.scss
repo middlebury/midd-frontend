@@ -1,38 +1,36 @@
 @media print {
+  * {
+    background: transparent !important;
+    color: $black !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: georgia, serif;
+
+    > a {
+      text-decoration: none !important;
+    }
+  }
+
+  p {
+    font-family: arial, sans-serif;
+  }
+
+  a {
+    color: $black !important;
+    border: 0 !important;
+  }
+
   img {
     break-inside: avoid;
   }
 
   .print-hide {
-    display: none !important;
-  }
-
-  .roster-page {
-    .midd-footer,
-    .breadcrumb,
-    .app-header {
-      display: none !important;
-    }
-
-    .page-header__content {
-      padding-top: 0 !important;
-      margin: 0;
-    }
-
-    // Forces all rows on the roster page to be block instead of flex.
-    // Otherwise break-inside won't work in chrome with ANY parent as display: flex.
-    .main .row {
-      display: block;
-    }
-
-    .main [class*='offset-'] {
-      margin: 0 !important;
-    }
-
-    .main [class*='col-'] {
-      width: 100%;
-      flex-basis: 100%;
-      max-width: 100%;
-    }
+    @include print-hide;
   }
 }
