@@ -1,6 +1,7 @@
 .anchor-nav {
   margin-left: -#{$spacing-3};
   margin-right: -#{$spacing-3};
+  @include print-hide;
 
   @include media(lg) {
     margin-left: 0;

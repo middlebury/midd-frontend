@@ -1,5 +1,10 @@
 .container {
   @include make-container();
+
+  @media print {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .row {

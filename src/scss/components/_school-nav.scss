@@ -1,4 +1,5 @@
 .school-nav {
+  @include print-hide;
 }
 
 .school-nav__handle {

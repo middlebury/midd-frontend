@@ -1,6 +1,7 @@
 $nav-bp: lg;
 
 .nav {
+  @include print-hide;
 }
 
 .nav__list {

@@ -8,11 +8,19 @@
   @include media(md) {
     float: right;
   }
+
+  @media print {
+    float: none !important;
+  }
 }
 
 .image--left {
   @include media(md) {
     float: left;
+  }
+
+  @media print {
+    float: none !important;
   }
 }
 

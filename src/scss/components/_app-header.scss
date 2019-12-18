@@ -7,6 +7,10 @@ $app-header-bp: lg;
 .app-header__wrap {
   @include make-container;
   display: flex;
+
+  @media print {
+    display: block;
+  }
 }
 
 .app-header__wrap--main {
@@ -19,20 +23,29 @@ $app-header-bp: lg;
   position: relative;
   top: 1rem;
   z-index: 2;
+
+  @media print {
+    float: right;
+  }
 }
 
 .app-header__title {
   @include h2;
-  font-family: $font-family-serif;
 }
 
 .app-header__link {
   color: $white;
+
+  @media print {
+    display: block;
+    margin-top: $spacing-3;
+  }
 }
 
 .app-header__secondary {
   background: $gray-lighter;
   position: relative;
+  @include print-hide;
 }
 
 .app-header__button {

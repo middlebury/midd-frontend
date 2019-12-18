@@ -5,6 +5,8 @@
   position: relative;
   right: 0;
 
+  @include print-hide;
+
   &:after {
     content: '';
     display: block;
@@ -27,6 +29,8 @@
   display: flex;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+
+  @include print-hide;
 
   @include media(md) {
     overflow-x: auto;

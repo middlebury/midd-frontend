@@ -3,6 +3,7 @@
   @include media(md) {
     margin-bottom: $spacing-8;
   }
+  @include print-hide;
 }
 
 .page-nav__title {

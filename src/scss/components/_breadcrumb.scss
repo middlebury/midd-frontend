@@ -1,4 +1,5 @@
 .breadcrumb {
+  @include print-hide;
 }
 
 .breadcrumb__list {
