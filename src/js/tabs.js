@@ -86,10 +86,10 @@ class Tabs {
       e.which === 37
         ? index - 1
         : e.which === 39
-          ? index + 1
-          : e.which === 40
-            ? 'down'
-            : null;
+        ? index + 1
+        : e.which === 40
+        ? 'down'
+        : null;
 
     // check for null instead of !dir since dir can be index 0
     if (dir === null) {
