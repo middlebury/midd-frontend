@@ -6,19 +6,24 @@
   $gutter: $grid-gutter-width,
   $breakpoints: $grid-breakpoints
 ) {
+  // use placeholders and extend so selectors are combined when css is generated
+  %grid-column {
+    @include make-col-ready;
+  }
+
   @each $breakpoint in map-keys($breakpoints) {
     $infix: breakpoint-infix($breakpoint, $breakpoints);
 
     // Allow columns to stretch full width below their breakpoints
     @for $i from 1 through $columns {
       .col#{$infix}-#{$i} {
-        @include make-col-ready();
+        @extend %grid-column;
       }
     }
 
     .col#{$infix},
     .col#{$infix}-auto {
-      @include make-col-ready();
+      @extend %grid-column;
     }
 
     @include media-breakpoint-up($breakpoint, $breakpoints) {
