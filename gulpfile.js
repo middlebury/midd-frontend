@@ -26,6 +26,7 @@ const dotenv = require('dotenv');
 const svgSprite = require('gulp-svg-sprite');
 const svgo = require('gulp-svgo');
 const dom = require('gulp-dom');
+const stylelint = require('gulp-stylelint');
 
 const rollup = require('./rollup');
 
@@ -102,6 +103,15 @@ const copyIcons = () =>
     .src('./dist/icons/sprites/symbol/svg/sprite.symbol.svg')
     .pipe(rename('icons.twig'))
     .pipe(gulp.dest('./src/templates/partials'));
+
+const lintStyles = () => {
+  return gulp.src(paths.styles.src).pipe(
+    stylelint({
+      failAfterError: false,
+      reporters: [{ formatter: 'string', console: true }]
+    })
+  );
+};
 
 const styles = () => {
   const plugins = [
@@ -264,7 +274,7 @@ const deployDist = () => {
 
 const watch = () => {
   gulp.watch('./src/templates/**/*.twig', html);
-  gulp.watch(paths.styles.src, styles);
+  gulp.watch(paths.styles.src, gulp.parallel(styles, lintStyles));
   gulp.watch(paths.images.src, images);
   gulp.watch(paths.scripts.src, scripts);
   gulp.watch('./src/data/*.yml', html);
@@ -335,7 +345,7 @@ const buildIconSprite = () =>
 const build = gulp.series(
   clean,
   copyDeps,
-  gulp.parallel(html, images, styles, scripts),
+  gulp.parallel(html, images, lintStyles, styles, scripts),
   reportFilesizes
 );
 
