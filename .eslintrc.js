@@ -1,41 +1,30 @@
 module.exports = {
   root: true,
   parser: 'babel-eslint',
-  extends: 'eslint:recommended',
-
-  env: {
-    browser: true,
-    es6: true,
-    node: true
+  extends: ['xo/esnext', 'xo/browser', 'prettier'],
+  plugins: ['react', 'prettier'],
+  globals: {
+    drupalSettings: true
   },
-
-  parserOptions: {
-    ecmaVersion: 6,
-    sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true
-    }
-  },
-
-  plugins: ['react'],
-
   settings: {
+    // set JSX pragma to h for Preact
     react: {
       pragma: 'h'
     }
   },
-
+  // View all possible rules at http://eslint.org/docs/rules/
   rules: {
-    // http://eslint.org/docs/rules/
-    'no-undef': 'error',
-    'no-unused-vars': 'warn',
+    // enable eslint to output prettier conflicts based on the prettierconfig
+    'prettier/prettier': 'error',
 
+    // override xo
+    'capitalized-comments': 'off',
+
+    'no-console': 'error',
+
+    // Set Preact settings via react plugin
     // https://github.com/yannickcr/eslint-plugin-react#list-of-supported-rules
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error'
-  },
-
-  globals: {
-    drupalSettings: true
   }
 };
