@@ -1,3 +1,5 @@
+// stylelint-disable scss/no-duplicate-dollar-variables
+
 // adds make-gutters from bootstrap alpha.6
 // https://github.com/twbs/bootstrap/blob/v4.0.0-alpha.6/scss/mixins/_grid.scss
 @mixin make-gutters($gutters: $grid-gutter-widths) {

@@ -16,12 +16,15 @@
   @include make-col-ready;
   margin-bottom: $spacing-5;
 
+  // TODO: clever class names we should change to pass stylelint class pattern
+  // stylelint-disable-next-line
   .chart-group__list--2 & {
     @include media(md) {
       @include make-col(6);
     }
   }
 
+  // stylelint-disable-next-line
   .chart-group__list--3\+ & {
     @include media(md) {
       @include make-col(4);

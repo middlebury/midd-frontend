@@ -16,6 +16,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* stylelint-disable-next-line property-no-vendor-prefix */
   -webkit-print-color-adjust: exact; /* 1 */
 
   @media print {

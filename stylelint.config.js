@@ -43,6 +43,10 @@ module.exports = {
     'scss/partial-no-import': null,
 
     // allow older color manipulation functions
-    'scss/function-color-relative': null
+    'scss/function-color-relative': null,
+
+    // Override no-missing-generic-font from xo since we use object-fit polyfill
+    // which requires `font-family: 'object-fit: <value>;';`
+    'font-family-no-missing-generic-family-keyword': null
   }
 };

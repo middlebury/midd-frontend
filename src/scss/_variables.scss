@@ -5,7 +5,7 @@
 $screen-sm: 512px !default;
 $screen-md: 768px !default;
 $screen-lg: 1024px !default;
-$screen-xl: 1280px !default; // TODO: Do we need xl? There's no col-xl-* or media(xl) usage
+$screen-xl: 1280px !default;
 
 ////
 /// Grid configuration
@@ -45,21 +45,17 @@ $spacing-7: rem(48) !default;
 $spacing-8: rem(64) !default;
 $spacing-9: rem(96) !default;
 
-$spacing: () !default;
-$spacing: map-merge(
-  (
-    0: $spacing-0,
-    1: $spacing-1,
-    2: $spacing-2,
-    3: $spacing-3,
-    4: $spacing-4,
-    5: $spacing-5,
-    6: $spacing-6,
-    7: $spacing-7,
-    8: $spacing-8,
-    9: $spacing-9
-  ),
-  $spacing
+$spacing: (
+  0: $spacing-0,
+  1: $spacing-1,
+  2: $spacing-2,
+  3: $spacing-3,
+  4: $spacing-4,
+  5: $spacing-5,
+  6: $spacing-6,
+  7: $spacing-7,
+  8: $spacing-8,
+  9: $spacing-9
 );
 
 ////
@@ -160,19 +156,15 @@ $typescale-8: rem(36) !default;
 $typescale-9: rem(48) !default;
 $typescale-10: rem(64) !default;
 
-$typescale: () !default;
-$typescale: map-merge(
-  (
-    1: $typescale-1,
-    2: $typescale-2,
-    3: $typescale-3,
-    4: $typescale-4,
-    5: $typescale-5,
-    6: $typescale-6,
-    7: $typescale-7,
-    8: $typescale-8
-  ),
-  $typescale
+$typescale: (
+  1: $typescale-1,
+  2: $typescale-2,
+  3: $typescale-3,
+  4: $typescale-4,
+  5: $typescale-5,
+  6: $typescale-6,
+  7: $typescale-7,
+  8: $typescale-8
 );
 
 // font weights
@@ -187,14 +179,10 @@ $line-height-solid: 1;
 $line-height-heading: 1.4;
 $line-height-body: 1.7;
 
-$line-heights: () !default;
-$line-heights: map-merge(
-  (
-    'body': $line-height-body,
-    'heading': $line-height-heading,
-    'solid': $line-height-solid
-  ),
-  $line-heights
+$line-heights: (
+  'body': $line-height-body,
+  'heading': $line-height-heading,
+  'solid': $line-height-solid
 );
 
 // Base
@@ -418,8 +406,6 @@ $chevron-transition: transform 0.2s ease-in-out;
 // z-indexes
 // Manage z-indexes across all components to prevent elements from accidentally overlapping incorrectly
 ///
-
-// TODO: can we manage these at a component level somehow while being aware of all layers?
 
 $z-index-dropdown-list: 200;
 

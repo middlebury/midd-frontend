@@ -43,7 +43,7 @@
 
 .page-header__main {
   .page-header--has-image & {
-    background-image: linear-gradient(to bottom, transparent, black);
+    background-image: linear-gradient(to bottom, transparent, $black);
     position: absolute;
     bottom: 0;
     left: 0;

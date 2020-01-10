@@ -3,8 +3,6 @@
 @import 'variables';
 @import 'mixins';
 
-@import 'keyframes';
-
 // vendor
 @import '../../node_modules/normalize.css/normalize';
 @import '../../node_modules/swiper/src/swiper';
@@ -135,6 +133,7 @@
 }
 
 /* libchat widget button */
+// stylelint-disable-next-line selector-class-pattern
 .lcs_slide_out header a {
   right: 10px !important;
   left: auto !important;

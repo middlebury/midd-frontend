@@ -156,6 +156,7 @@
 
 .paragraph--spotlight {
   @include paragraph-full-width;
+  @include paragraph-space;
 }
 
 .paragraph--card-carousel {
@@ -171,10 +172,6 @@
 .paragraph--stat-panel {
   @include paragraph-space;
   // @include paragraph-full-width;
-}
-
-.paragraph--spotlight {
-  @include paragraph-space;
 }
 
 .paragraph--announcement {

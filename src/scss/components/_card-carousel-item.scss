@@ -71,7 +71,7 @@ $spotlight-item-breakpoint: 'xs';
   .card-carousel-item__side--front & {
     background-image: linear-gradient(
       to bottom,
-      rgba(black, 0.75) 20%,
+      rgba($black, 0.75) 20%,
       rgba($white, 0)
     );
   }
@@ -137,9 +137,7 @@ $spotlight-item-breakpoint: 'xs';
 .card-carousel-item__header--band {
   padding: $spacing-2 $spacing-3;
   margin-top: $spacing-9;
-  // TODO: selector that applies background gradient has higher specificity because of nested selector.
-  // Clean up that selector so we don't need important.
-  background-image: none !important;
+  background: none;
 }
 
 $card-carousel-item-colors: (
