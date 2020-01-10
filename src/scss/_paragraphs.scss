@@ -54,7 +54,7 @@
 }
 
 .paragraphs--wide {
-  @include make-col-ready();
+  @include make-col-ready;
 
   @include media(md) {
     @include make-col(10);

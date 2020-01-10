@@ -100,7 +100,7 @@
 
 .themed-panel__secondary {
   padding-bottom: $spacing-5;
-  @include make-gutters();
+  @include make-gutters;
 
   @include media(md) {
     display: flex;

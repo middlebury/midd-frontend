@@ -30,7 +30,7 @@
 }
 
 .midd-header__container {
-  @include make-container();
+  @include make-container;
   position: relative;
   display: flex;
 

@@ -58,7 +58,7 @@
   .pagination__item--previous & {
     padding-left: 0;
     padding-right: 0;
-    @include link-border();
+    @include link-border;
 
     &:focus,
     &:hover {

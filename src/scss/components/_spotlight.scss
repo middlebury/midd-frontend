@@ -71,5 +71,5 @@
   }
 
   // place after so largest breakpoint overrides
-  @include make-gutters();
+  @include make-gutters;
 }

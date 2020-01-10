@@ -111,12 +111,10 @@ $app-header-bp: lg;
   border-bottom: 1px solid $border-color;
   border-top: 1px solid $border-color;
   padding: $spacing-3;
-
   position: absolute;
   top: 100%;
   right: 0;
   width: 100%;
-
   transition: opacity 0.2s;
   visibility: hidden;
   opacity: 0;

@@ -27,13 +27,13 @@
   margin-right: auto;
   margin-left: auto;
   max-width: $container-max-width;
-  @include make-gutters();
+  @include make-gutters;
 }
 
 @mixin make-row($gutters: $grid-gutter-widths) {
   display: flex;
   flex-wrap: wrap;
-  @include make-negative-gutters();
+  @include make-negative-gutters;
 
   @media print {
     display: block;
