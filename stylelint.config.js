@@ -1,14 +1,11 @@
+const reLowercase = /^[a-z]+([-a-z\d]+)*$/;
+
 module.exports = {
   plugins: ['stylelint-scss'],
   rules: {
     /**
      * Property order rules
      */
-
-    /**
-     * Sass rules
-     */
-    'scss/at-rule-no-unknown': true,
 
     'at-rule-blacklist': null,
     'at-rule-empty-line-before': [
@@ -143,10 +140,35 @@ module.exports = {
     'no-extra-semicolons': true,
     'no-invalid-double-slash-comments': true,
     'no-missing-end-of-source-newline': true,
-    'no-unknown-animations': true,
+    'no-unknown-animations': null,
     'number-leading-zero': 'always',
     'number-max-precision': 4,
     'number-no-trailing-zeros': true,
+
+    'order/order': [
+      [
+        'custom-properties',
+        'dollar-variables',
+        {
+          type: 'at-rule',
+          name: 'include',
+          hasBlock: false
+        },
+        'declarations',
+        'rules',
+        {
+          type: 'at-rule',
+          name: 'include',
+          hasBlock: false
+        },
+        {
+          type: 'at-rule',
+          name: 'include',
+          hasBlock: true
+        }
+      ]
+    ],
+    'order/properties-alphabetical-order': null,
 
     'property-blacklist': null,
     'property-case': 'lower',
@@ -161,6 +183,63 @@ module.exports = {
         ignore: ['after-comment']
       }
     ],
+
+    /**
+     * scss rules
+     */
+
+    'scss/at-each-key-value-single-line': true,
+    'scss/at-else-closing-brace-newline-after': 'always-last-in-chain',
+    'scss/at-else-closing-brace-space-after': 'always-intermediate',
+    'scss/at-else-empty-line-before': 'never',
+    'scss/at-else-if-parentheses-space-before': 'always',
+    'scss/at-extend-no-missing-placeholder': true,
+    'scss/at-function-named-arguments': null,
+    'scss/at-function-parentheses-space-before': 'never',
+    'scss/at-function-pattern': reLowercase,
+    'scss/at-if-closing-brace-newline-after': 'always-last-in-chain',
+    'scss/at-if-closing-brace-space-after': 'always-intermediate',
+    'scss/at-if-no-null': null,
+    'scss/at-import-no-partial-leading-underscore': true,
+    'scss/at-import-partial-extension': 'never',
+    'scss/at-import-partial-extension-blacklist': null,
+    'scss/at-import-partial-extension-whitelist': null,
+    'scss/at-mixin-argumentless-call-parentheses': 'never',
+    'scss/at-mixin-named-arguments': null,
+    'scss/at-mixin-parentheses-space-before': 'never',
+    'scss/at-mixin-pattern': reLowercase,
+    'scss/at-rule-conditional-no-parentheses': true,
+    'scss/at-rule-no-unknown': true,
+    'scss/dollar-variable-colon-newline-after': 'always-multi-line',
+    'scss/dollar-variable-colon-space-after': 'always',
+    'scss/dollar-variable-colon-space-before': 'never',
+    'scss/dollar-variable-default': null,
+    'scss/dollar-variable-empty-line-before': null,
+    'scss/dollar-variable-no-missing-interpolation': true,
+    'scss/dollar-variable-pattern': reLowercase,
+    'scss/percent-placeholder-pattern': 'always',
+    'scss/double-slash-comment-empty-line-before': null,
+    'scss/double-slash-comment-inline': null,
+    'scss/double-slash-comment-whitespace-inside': 'always',
+    'scss/comment-no-loud': null,
+    'scss/declaration-nested-properties': 'never',
+    'scss/declaration-nested-properties-no-divided-groups': null,
+    'scss/dimension-no-non-numeric-values': true,
+    'scss/function-color-relative': null,
+    'scss/function-quote-no-quoted-strings-inside': true,
+    'scss/function-unquote-no-unquoted-strings-inside': true,
+    'scss/map-keys-quotes': null,
+    'scss/media-feature-value-dollar-variable': 'always',
+    'scss/operator-no-newline-after': null,
+    'scss/operator-no-newline-before': null,
+    'scss/operator-no-unspaced': true,
+    'scss/partial-no-import': null,
+    'scss/selector-nest-combinators': null,
+    'scss/selector-no-redundant-nesting-selector': null,
+    'scss/selector-no-union-class-name': true,
+    'scss/no-dollar-variables': null,
+    'scss/no-duplicate-dollar-variables': true,
+    'scss/no-duplicate-mixins': true,
 
     'selector-attribute-brackets-space-inside': 'never',
     'selector-attribute-operator-blacklist': null,
@@ -179,8 +258,8 @@ module.exports = {
     'selector-list-comma-newline-before': 'never-multi-line',
     'selector-list-comma-space-after': 'always-single-line',
     'selector-list-comma-space-before': 'never',
-    'selector-max-attribute': 1,
-    'selector-max-class': 2,
+    'selector-max-attribute': 2,
+    'selector-max-class': 3,
     'selector-max-combinators': null,
     'selector-max-compound-selectors': null,
     'selector-max-empty-lines': 0,
