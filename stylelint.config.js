@@ -1,3 +1,5 @@
+/* eslint-env node */
+
 const reLowerCase = /([a-z][a-z\d]*(-[a-z\d]+)*)/;
 const reName = new RegExp(
   `^${reLowerCase.source}((--|__)${reLowerCase.source})*$`
