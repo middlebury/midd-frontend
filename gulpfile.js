@@ -29,6 +29,7 @@ const svgSprite = require('gulp-svg-sprite');
 const svgo = require('gulp-svgo');
 const dom = require('gulp-dom');
 const stylelint = require('gulp-stylelint');
+const eslint = require('gulp-eslint');
 
 const rollup = require('./rollup');
 
@@ -156,6 +157,12 @@ const bundles = [
   }
 ];
 
+const lintScripts = () =>
+  gulp
+    .src(paths.scripts.src)
+    .pipe(eslint())
+    .pipe(eslint.format());
+
 const scripts = () =>
   rollup(bundles).then(() => {
     browserSync.reload();
@@ -278,7 +285,7 @@ const watch = () => {
   gulp.watch('./src/templates/**/*.twig', html);
   gulp.watch(paths.styles.src, gulp.parallel(styles, lintStyles));
   gulp.watch(paths.images.src, images);
-  gulp.watch(paths.scripts.src, scripts);
+  gulp.watch(paths.scripts.src, gulp.parallel(scripts, lintScripts));
   gulp.watch('./src/data/*.yml', html);
 };
 
@@ -347,7 +354,7 @@ const buildIconSprite = () =>
 const build = gulp.series(
   clean,
   copyDeps,
-  gulp.parallel(html, images, lintStyles, styles, scripts),
+  gulp.parallel(html, images, lintStyles, styles, lintScripts, scripts),
   reportFilesizes
 );
 
@@ -365,8 +372,11 @@ module.exports = {
   build,
   dev,
   devSaw,
+  cleanAndCopyIcons,
   icons: buildIcons,
   replaceImagePaths,
+  lintScripts,
+  lintStyles,
   copyDeps,
   default: dev
 };
