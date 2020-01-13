@@ -67,13 +67,15 @@ $spotlight-item-breakpoint: 'xs';
   padding: $spacing-3;
   padding-right: $spacing-6;
   padding-bottom: $spacing-4;
+  background-image: linear-gradient(
+    to bottom,
+    rgba($black, 0.75) 20%,
+    rgba($white, 0)
+  );
 
-  .card-carousel-item__side--front & {
-    background-image: linear-gradient(
-      to bottom,
-      rgba($black, 0.75) 20%,
-      rgba($white, 0)
-    );
+  .card-carousel-item__side--back & {
+    // remove gradient from card back header
+    background: 0;
   }
 }
 
@@ -137,7 +139,6 @@ $spotlight-item-breakpoint: 'xs';
 .card-carousel-item__header--band {
   padding: $spacing-2 $spacing-3;
   margin-top: $spacing-9;
-  background: none;
 }
 
 $card-carousel-item-colors: (
@@ -153,6 +154,6 @@ $card-carousel-item-colors: (
 
 @each $key, $hex in $card-carousel-item-colors {
   .card-carousel-item__header--#{$key} {
-    background-color: rgba($hex, 0.9);
+    background: rgba($hex, 0.9);
   }
 }
