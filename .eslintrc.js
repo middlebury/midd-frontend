@@ -22,6 +22,7 @@ module.exports = {
 
     'no-console': 'error',
     'no-return-assign': 'off',
+    'no-unused-vars': 'warn',
 
     // Set Preact settings via react plugin
     // https://github.com/yannickcr/eslint-plugin-react#list-of-supported-rules
