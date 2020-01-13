@@ -79,7 +79,7 @@ class Tabs {
 
   handleTabKeyDown = (e, i) => {
     // Get the index of the current tab in the tabs node list
-    let index = [].indexOf.call(this.tabs, e.currentTarget);
+    const index = [].indexOf.call(this.tabs, e.currentTarget);
     // Work out which key the user is pressing and
     // Calculate the new tab's index where appropriate
     let dir =

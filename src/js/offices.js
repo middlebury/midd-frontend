@@ -56,7 +56,7 @@ import { $, $$, on, hide, show } from './utils/dom';
   }
 
   function findResults(value) {
-    let matchedItems = [];
+    const matchedItems = [];
 
     items.forEach(item => {
       const title = $('.js-offices-title', item).textContent;

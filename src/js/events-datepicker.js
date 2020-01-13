@@ -56,7 +56,7 @@ if (datePicker) {
     bound: false,
     minDate: new Date(),
     defaultDate,
-    setDefaultDate: !!defaultDate,
+    setDefaultDate: Boolean(defaultDate),
     onSelect(date) {
       const dateStr = dateToStr(date);
 

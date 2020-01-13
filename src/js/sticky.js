@@ -17,7 +17,7 @@ function createStickyElem(el) {
     offset = offsetAttr || 0;
   }
 
-  let options = {};
+  const options = {};
   options.stickyBitStickyOffset = offset;
 
   stickybits(el, options);

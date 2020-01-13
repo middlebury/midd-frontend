@@ -42,6 +42,7 @@ class Toggler {
     if (!this.target) {
       return;
     }
+
     this.addListeners();
     this.elem.classList.add(this.enabledClass);
     this.target.classList.add(this.enabledClass);
@@ -100,6 +101,7 @@ class Toggler {
         if (this.isToggled(target)) {
           return this.close(elem, target);
         }
+
         this.open(elem, target);
       });
     }
@@ -109,6 +111,7 @@ class Toggler {
     if (target) {
       target.classList.add(this.activeClass);
     }
+
     if (elem) {
       elem.classList.add(this.activeClass);
       this.setAriaExpanded(elem, true);
@@ -131,6 +134,7 @@ class Toggler {
     if (target) {
       target.classList.remove(this.activeClass);
     }
+
     if (elem) {
       elem.classList.remove(this.activeClass);
       this.setAriaExpanded(elem, false);
