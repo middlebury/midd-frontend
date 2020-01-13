@@ -21,6 +21,7 @@ module.exports = {
     'capitalized-comments': 'off',
 
     'no-console': 'error',
+    'no-return-assign': 'off',
 
     // Set Preact settings via react plugin
     // https://github.com/yannickcr/eslint-plugin-react#list-of-supported-rules
