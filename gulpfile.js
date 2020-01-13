@@ -1,3 +1,5 @@
+/* eslint-env node */
+/* eslint-disable no-console */
 const fs = require('fs');
 const gulp = require('gulp');
 const twig = require('gulp-twig');
