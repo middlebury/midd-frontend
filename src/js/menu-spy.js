@@ -22,6 +22,8 @@ class MenuSpy {
     this.elem = typeof elem === 'string' ? $(elem) : elem;
 
     this.links = $$('a[href^="#"]:not([href="#"])', this.elem);
+
+    this.init();
   }
 
   // start observing each anchor link target to watch
