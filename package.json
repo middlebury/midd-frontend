@@ -50,7 +50,7 @@
     "gulp-dom": "^1.0.0",
     "gulp-eslint": "^6.0.0",
     "gulp-if": "^3.0.0",
-    "gulp-imagemin": "^5.0.3",
+    "gulp-imagemin": "^6.2.0",
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
