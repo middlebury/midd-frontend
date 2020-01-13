@@ -177,7 +177,7 @@ const html = () =>
       })
     )
     .pipe(
-      data(function(file) {
+      data(function() {
         const ymlData = yaml.safeLoad(
           fs.readFileSync('./src/data/data.yml', 'utf8')
         );
@@ -202,8 +202,9 @@ const html = () =>
             func: (value, args) => {
               if (!value) {
                 console.log(args);
-                throw 'value is falsy';
+                throw new Error('value is falsy');
               }
+
               return value;
             }
           },
@@ -266,6 +267,7 @@ const deployDist = () => {
   if (!THEME_DIR) {
     return console.error('No `--themeDir` argument passed'); // eslint-disable-line no-console
   }
+
   return gulp
     .src(
       [
