@@ -2,7 +2,7 @@
 // https://github.com/twbs/bootstrap/blob/v4.0.0-alpha.6/scss/utilities/_display.scss
 
 @each $breakpoint, $variant in $responsive-variants {
-  @include media($breakpoint) {
+  @include breakpoint($breakpoint) {
     .d#{$variant}-none {
       display: none;
     }

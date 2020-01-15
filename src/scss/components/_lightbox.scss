@@ -48,7 +48,7 @@
   border: 0;
   padding: $spacing-3;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     padding: $spacing-5;
   }
 
@@ -67,7 +67,7 @@
   padding: $spacing-3;
   padding-top: 7rem;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     padding: $spacing-5;
     padding-top: 8rem;
     width: calc(100vw - 100px);
@@ -94,7 +94,7 @@
   max-height: calc(100vh - 8rem);
   display: none;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     display: block;
   }
 }

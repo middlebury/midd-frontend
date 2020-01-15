@@ -1,6 +1,6 @@
 .spotlight {
   position: relative;
-  @include media(lg) {
+  @include breakpoint(lg) {
     // use padding bottom instead of margin otherwise
     // paragraph--spotlight does not combine the margins to have
     // the correct bottom spacing
@@ -9,7 +9,7 @@
 }
 
 .spotlight__figure {
-  @include media(lg) {
+  @include breakpoint(lg) {
     padding-top: percentage(9 / 16);
     position: relative;
     height: 0;
@@ -17,7 +17,7 @@
   }
 
   img {
-    @include media(lg) {
+    @include breakpoint(lg) {
       @include absolute-fill;
       object-fit: cover;
       font-family: 'object-fit: cover;';
@@ -29,7 +29,7 @@
 .spotlight__content {
   background: $white;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     position: absolute;
     right: $spacing-6;
     bottom: 0;
@@ -47,7 +47,7 @@
   padding-top: $spacing-4;
   padding-bottom: $spacing-4;
 
-  @include media(md) {
+  @include breakpoint(md) {
     // fake column offset with padding plus gutter width
     padding-left: calc(#{percentage(1 / 12)} + #{$grid-gutter-width / 2});
     padding-right: calc(#{percentage(1 / 12)} + #{$grid-gutter-width / 2});
@@ -62,7 +62,7 @@
   padding-bottom: $spacing-4;
   border-bottom: 8px solid $brand-primary;
 
-  @include media(md) {
+  @include breakpoint(md) {
     // fake column offset with padding plus gutter width
     padding-top: $spacing-5;
     padding-bottom: $spacing-5;

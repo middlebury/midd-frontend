@@ -1,7 +1,7 @@
 .section {
   margin-bottom: $spacing-8;
 
-  @include media(md) {
+  @include breakpoint(md) {
     margin-bottom: $spacing-9;
   }
 }
@@ -11,7 +11,7 @@
   padding-top: $spacing-2;
   margin-bottom: $spacing-5;
 
-  @include media(md) {
+  @include breakpoint(md) {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -34,7 +34,7 @@
   padding-top: $spacing-2;
   margin-bottom: $spacing-5;
 
-  @include media(md) {
+  @include breakpoint(md) {
     margin-bottom: $spacing-7;
   }
 
@@ -49,7 +49,7 @@
   @include link-border;
   flex: 0 0 auto;
 
-  @include media(md) {
+  @include breakpoint(md) {
     .section__title + & {
       margin-left: $spacing-3;
     }

@@ -1,5 +1,5 @@
 @each $breakpoint, $variant in $responsive-variants {
-  @include media($breakpoint) {
+  @include breakpoint($breakpoint) {
     @each $prop, $abbrev in (bottom: b, right: r, left: l, top: t) {
       .border#{$variant}-#{$abbrev} {
         border-#{$prop}: 1px solid $border-color;

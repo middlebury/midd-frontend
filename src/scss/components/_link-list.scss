@@ -4,7 +4,7 @@
 .link-list__list {
   margin-top: $spacing-7;
 
-  @include media(sm) {
+  @include breakpoint(sm) {
     @include make-row;
   }
 }
@@ -12,11 +12,11 @@
 .link-list__item {
   margin-bottom: $spacing-5;
 
-  @include media(sm) {
+  @include breakpoint(sm) {
     @include make-col-ready;
     @include make-col(6);
   }
-  @include media(md) {
+  @include breakpoint(md) {
     @include make-col(4);
   }
 }

@@ -12,7 +12,7 @@
     text-decoration: none;
   }
 
-  @include media($school-header-breakpoint) {
+  @include breakpoint($school-header-breakpoint) {
     font-weight: $font-weight-medium;
     font-size: $typescale-3;
     padding-left: 0;
@@ -48,7 +48,7 @@
     opacity: 1;
   }
 
-  @include media($school-header-breakpoint) {
+  @include breakpoint($school-header-breakpoint) {
     width: 400px;
     border: 1px solid $brand-primary;
   }

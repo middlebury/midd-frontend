@@ -7,7 +7,7 @@
 
   @include print-hide;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     order: 1;
     margin-left: auto;
     margin-right: 0;
@@ -24,7 +24,7 @@
   background: none;
   border: 0;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     display: none;
   }
 }
@@ -65,7 +65,7 @@
     visibility: visible;
   }
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     opacity: 1;
     visibility: visible;
     display: flex;
@@ -83,7 +83,7 @@
     display: block;
   }
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     display: block;
     position: absolute;
     top: 100%;
@@ -108,7 +108,7 @@
 .midd-nav__item {
   border-top: 1px solid $navy-light;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     border-top: 0;
     flex: 1 0 auto;
   }
@@ -119,7 +119,7 @@
   flex-wrap: wrap;
   position: relative;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     border-top: 0;
     margin-right: $spacing-4;
   }
@@ -130,7 +130,7 @@
   color: $white;
   display: block;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     font-weight: $font-weight-medium;
     font-size: $typescale-2;
     transition: 0.2s;
@@ -147,12 +147,12 @@
   padding: $spacing-4 $spacing-3;
   line-height: $line-height-solid;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     padding-left: $spacing-5;
     padding-right: $spacing-5;
   }
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     border-top: 4px solid transparent;
     padding-top: calc(#{$spacing-4} - 4px);
     padding-bottom: $spacing-4;
@@ -172,7 +172,7 @@
   // inset sub menu items
   padding-left: $spacing-6;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     padding-left: $spacing-4 / 2;
   }
 }

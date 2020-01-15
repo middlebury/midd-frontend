@@ -34,7 +34,7 @@
   position: relative;
   display: flex;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     // align-items: flex-start;
     // justify-content: space-between;
   }
@@ -46,7 +46,7 @@
 
 .midd-header__brand {
   height: 48px;
-  @include media(lg) {
+  @include breakpoint(lg) {
     height: 64px;
   }
 }
@@ -57,7 +57,7 @@
   top: 8px;
   z-index: $z-index-midd-header-shield;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     width: 67px;
   }
 }
@@ -67,7 +67,7 @@
   position: relative;
   margin-left: 4px;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     width: 114px;
     margin-left: 8px;
   }

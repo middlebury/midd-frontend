@@ -17,7 +17,7 @@
     width: 4rem;
     background-image: linear-gradient(to right, transparent, $black);
 
-    @include media(md) {
+    @include breakpoint(md) {
       display: none;
     }
   }
@@ -32,7 +32,7 @@
 
   @include print-hide;
 
-  @include media(md) {
+  @include breakpoint(md) {
     overflow-x: auto;
   }
 
@@ -44,7 +44,7 @@
 .tabs__item {
   &:last-child {
     padding-right: 4rem;
-    @include media(md) {
+    @include breakpoint(md) {
       padding-right: 0;
     }
   }

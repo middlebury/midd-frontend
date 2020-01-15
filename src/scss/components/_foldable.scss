@@ -12,7 +12,7 @@
   text-align: left;
   color: $brand-primary;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     display: none;
   }
 }
@@ -32,7 +32,7 @@
   border-top: 0;
   background-color: $gray-lighter;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     padding: 0;
     border: 0;
     background-color: transparent;
@@ -41,7 +41,7 @@
   &.has-toggler {
     display: none;
 
-    @include media(lg) {
+    @include breakpoint(lg) {
       display: block;
     }
   }

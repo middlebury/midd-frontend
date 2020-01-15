@@ -126,7 +126,7 @@
   border-bottom: 1px solid $border-color;
   font-size: $typescale-3;
   margin-bottom: $spacing-4;
-  @include media(md) {
+  @include breakpoint(md) {
     margin-bottom: $spacing-7;
   }
 }

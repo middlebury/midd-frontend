@@ -1,7 +1,7 @@
 /// @link https://github.com/twbs/bootstrap/blob/v4-dev/scss/utilities/_flex.scss
 
 @each $breakpoint, $variant in $responsive-variants {
-  @include media($breakpoint) {
+  @include breakpoint($breakpoint) {
     // .flex#{$variant}-row {
     //   flex-direction: row !important;
     // }

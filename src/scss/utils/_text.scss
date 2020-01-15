@@ -13,7 +13,7 @@
 ///
 
 @each $breakpoint, $variant in $responsive-variants {
-  @include media($breakpoint) {
+  @include breakpoint($breakpoint) {
     .text#{$variant}-left {
       text-align: left !important;
     }

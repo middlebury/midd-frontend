@@ -6,7 +6,7 @@ $nav-bp: lg;
 
 .nav__list {
   border-bottom: 1px solid $border-color;
-  @include media($nav-bp) {
+  @include breakpoint($nav-bp) {
     display: flex;
     border-bottom: 0;
   }
@@ -17,7 +17,7 @@ $nav-bp: lg;
   flex-wrap: wrap;
   border-top: 1px solid $border-color;
 
-  @include media($nav-bp) {
+  @include breakpoint($nav-bp) {
     margin-right: $spacing-4;
     flex: 1 0 auto;
   }
@@ -30,7 +30,7 @@ $nav-bp: lg;
   font-weight: $font-weight-medium;
   flex: 1 0 auto;
 
-  @include media($nav-bp) {
+  @include breakpoint($nav-bp) {
     padding: $spacing-4;
     padding-left: 0;
     padding-right: 0;
@@ -52,7 +52,7 @@ $nav-bp: lg;
   margin-left: auto;
   padding: $spacing-3;
 
-  @include media($nav-bp) {
+  @include breakpoint($nav-bp) {
     display: none;
   }
 }
@@ -63,7 +63,7 @@ $nav-bp: lg;
 
 .nav__sublist {
   width: 100%;
-  @include media($nav-bp) {
+  @include breakpoint($nav-bp) {
     border: 1px solid $navy;
     background: $white;
   }
@@ -72,7 +72,7 @@ $nav-bp: lg;
 .nav__subitem {
   border-top: 1px solid $border-color;
 
-  @include media($nav-bp) {
+  @include breakpoint($nav-bp) {
     border-top: 0;
   }
 }
@@ -83,7 +83,7 @@ $nav-bp: lg;
   font-size: $typescale-2;
   padding-left: $spacing-7;
 
-  @include media($nav-bp) {
+  @include breakpoint($nav-bp) {
     padding-left: $spacing-3;
     font-size: $typescale-3;
     padding-top: $spacing-2;

@@ -2,12 +2,12 @@
   margin-top: $spacing-7;
   margin-bottom: $spacing-7;
 
-  @include media(md) {
+  @include breakpoint(md) {
     margin-top: $spacing-8;
     margin-bottom: $spacing-8;
   }
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     margin-top: $spacing-9;
     margin-bottom: $spacing-9;
   }
@@ -17,12 +17,12 @@
   margin-top: $spacing-6;
   margin-bottom: $spacing-5;
 
-  @include media(md) {
+  @include breakpoint(md) {
     margin-top: $spacing-7;
     margin-bottom: $spacing-6;
   }
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     margin-top: $spacing-8;
     margin-bottom: $spacing-7;
   }
@@ -36,11 +36,11 @@
 .paragraphs {
   margin-bottom: $spacing-7;
 
-  @include media(md) {
+  @include breakpoint(md) {
     margin-bottom: $spacing-8;
   }
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     margin-bottom: $spacing-9;
   }
 
@@ -56,12 +56,12 @@
 .paragraphs--wide {
   @include make-col-ready;
 
-  @include media(md) {
+  @include breakpoint(md) {
     @include make-col(10);
     @include make-col-offset(1);
   }
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     @include make-col(8);
     @include make-col-offset(2);
   }
@@ -69,7 +69,7 @@
   .paragraph--expand,
   .paragraph--video,
   .paragraph--image:not(.image--left):not(.image--right) {
-    @include media(lg) {
+    @include breakpoint(lg) {
       // Main column is 10 wide, so we divide by remaining
       // columns on sides to pull them out to 12 columns.
       // More on these techniques here:
@@ -106,7 +106,7 @@
   margin-top: $spacing-7;
   margin-bottom: $spacing-7;
 
-  @include media(md) {
+  @include breakpoint(md) {
     margin-top: $spacing-8;
     margin-bottom: $spacing-8;
   }
@@ -206,7 +206,7 @@
   margin-bottom: $spacing-7;
   margin-right: $spacing-4;
 
-  @include media(md) {
+  @include breakpoint(md) {
     margin-bottom: $spacing-8;
   }
 }
@@ -237,7 +237,7 @@
   position: relative;
   z-index: 2;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     margin-top: -8rem;
   }
 

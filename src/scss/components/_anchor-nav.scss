@@ -3,7 +3,7 @@
   margin-right: -#{$spacing-3};
   @include print-hide;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     margin-left: 0;
     margin-right: 0;
   }
@@ -15,7 +15,7 @@
 .anchor-nav__item {
   border-top: 1px solid $border-color;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     border-top: 0;
     display: inline-block;
     margin-right: $spacing-4;
@@ -28,7 +28,7 @@
   font-size: $typescale-3;
   padding: $spacing-4;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     padding: 0;
     @include link-border;
     border-color: transparent;

@@ -30,7 +30,7 @@
 
 .audio__button-text {
   display: none;
-  @include media(md) {
+  @include breakpoint(md) {
     display: inline;
   }
 }

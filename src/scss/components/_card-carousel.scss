@@ -12,7 +12,7 @@ $card-carousel-height: 600px;
   flex-direction: column;
   text-align: center;
 
-  @include media(md) {
+  @include breakpoint(md) {
     text-align: left;
     padding: 8rem 4rem 3rem;
     height: $card-carousel-height;
@@ -25,7 +25,7 @@ $card-carousel-height: 600px;
   // line-height: $h1-line-height;
   margin-bottom: 1rem;
 
-  @include media(md) {
+  @include breakpoint(md) {
     margin-bottom: 3rem;
   }
 }
@@ -35,7 +35,7 @@ $card-carousel-height: 600px;
 
 .card-carousel__controls {
   margin-top: 2rem;
-  @include media(md) {
+  @include breakpoint(md) {
     margin-top: auto;
   }
 }
@@ -49,7 +49,7 @@ $card-carousel-height: 600px;
 }
 
 .card-carousel__item {
-  @include media(md) {
+  @include breakpoint(md) {
     &:not(:last-child) {
       border-right: 1px solid $white;
     }

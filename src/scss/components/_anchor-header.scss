@@ -3,7 +3,7 @@
   padding-top: $spacing-4;
   border-bottom: 1px solid $border-color;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     padding-top: $spacing-7;
   }
 
@@ -14,10 +14,10 @@
 
 .anchor-header--front {
   margin-bottom: $spacing-5;
-  @include media(md) {
+  @include breakpoint(md) {
     margin-bottom: $spacing-7;
   }
-  @include media(lg) {
+  @include breakpoint(lg) {
     margin-bottom: $spacing-8;
   }
 }
@@ -27,7 +27,7 @@
   align-items: flex-start;
   justify-content: space-between;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     display: block;
   }
 }
@@ -59,7 +59,7 @@
   margin-top: $spacing-1;
   @include print-hide;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     display: none;
   }
 }
@@ -76,7 +76,7 @@
   &.has-toggler {
     display: none;
 
-    @include media(lg) {
+    @include breakpoint(lg) {
       display: block;
     }
   }

@@ -3,7 +3,7 @@
   margin-left: auto;
   @include print-hide;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     margin-left: 0;
     order: 2;
     position: relative;
@@ -22,7 +22,7 @@
     text-decoration: none;
   }
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     border-top: 4px solid transparent;
     transition: border-color 0.2s;
     padding-top: calc(#{$spacing-4} - 4px);
@@ -72,7 +72,7 @@
     opacity: 1;
   }
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     width: 400px;
     border-top: 1px solid $white;
     padding-top: $spacing-3;

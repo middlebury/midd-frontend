@@ -1,5 +1,5 @@
 .w-md-40 {
-  @include media(md) {
+  @include breakpoint(md) {
     width: 40%;
   }
 }

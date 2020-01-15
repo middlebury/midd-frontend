@@ -8,7 +8,7 @@
   padding-bottom: $spacing-5;
   text-align: center;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     @include make-col-offset(0);
     padding-top: $spacing-7;
     padding-bottom: $spacing-7;
@@ -27,7 +27,7 @@
   &:not(:last-of-type) {
     border-bottom: 1px solid $border-color;
 
-    @include media(lg) {
+    @include breakpoint(lg) {
       border-bottom: 0;
       border-right: 1px solid $border-color;
     }
@@ -43,7 +43,7 @@
   font-size: $typescale-4;
   margin-bottom: $spacing-4;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     margin-bottom: $spacing-7;
   }
 }

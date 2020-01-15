@@ -3,7 +3,7 @@
   padding-top: percentage(2 / 5);
   min-height: 480px;
 
-  @include media(md) {
+  @include breakpoint(md) {
     min-height: auto;
   }
 }
@@ -37,7 +37,7 @@
   margin-bottom: $spacing-5;
   text-align: center;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     font-size: $typescale-8;
     margin-bottom: $spacing-8;
   }
@@ -59,7 +59,7 @@
 
 .ls-hero__link {
   font-weight: $font-weight-medium;
-  @include media(lg) {
+  @include breakpoint(lg) {
     font-size: $typescale-5;
   }
 }

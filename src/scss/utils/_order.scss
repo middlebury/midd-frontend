@@ -5,7 +5,7 @@
 // }
 
 @each $breakpoint, $variant in $responsive-variants {
-  @include media($breakpoint) {
+  @include breakpoint($breakpoint) {
     .order#{$variant}-first {
       order: -1;
     }

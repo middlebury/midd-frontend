@@ -7,13 +7,13 @@
   padding: $spacing-4;
   margin-bottom: $spacing-7;
 
-  @include media(md) {
+  @include breakpoint(md) {
     margin-bottom: $spacing-8;
   }
 }
 
 .themed-box--compress {
-  @include media(md) {
+  @include breakpoint(md) {
     padding-left: 10%;
     padding-right: 10%;
   }

@@ -10,7 +10,7 @@
   background-color: $blue-lighter;
   padding: $spacing-2;
 
-  @include media(sm) {
+  @include breakpoint(sm) {
     display: flex;
     align-items: center;
   }
@@ -22,7 +22,7 @@
   font-weight: $font-weight-normal;
   line-height: lineheight('heading');
 
-  @include media(sm) {
+  @include breakpoint(sm) {
     width: 30%;
   }
 }
@@ -42,7 +42,7 @@
     border-top: 1px solid $border-color;
   }
 
-  @include media(sm) {
+  @include breakpoint(sm) {
     display: flex;
   }
 }
@@ -51,7 +51,7 @@
   display: inline-block;
   margin-bottom: $spacing-2;
 
-  @include media(sm) {
+  @include breakpoint(sm) {
     width: 30%;
     padding-right: $spacing-3;
   }
@@ -68,7 +68,7 @@
 }
 
 .schedule-item__body {
-  @include media(sm) {
+  @include breakpoint(sm) {
     width: 70%;
   }
 }

@@ -20,7 +20,7 @@
       @extend %grid-column;
     }
 
-    @include media($breakpoint) {
+    @include breakpoint($breakpoint) {
       // Provide basic `.col-{bp}` classes for equal-width flexbox columns
       .col#{$variant} {
         flex-basis: 0;

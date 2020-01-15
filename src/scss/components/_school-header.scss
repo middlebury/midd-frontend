@@ -56,7 +56,7 @@ $school-header-breakpoint: xl;
   justify-content: flex-start;
   flex-direction: row-reverse;
 
-  @include media($school-header-breakpoint) {
+  @include breakpoint($school-header-breakpoint) {
     position: relative;
   }
 }

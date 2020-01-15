@@ -8,7 +8,7 @@
   padding-right: ($grid-gutter-width / 2);
   padding-left: ($grid-gutter-width / 2);
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     padding-right: ($grid-gutter-width-lg / 2);
     padding-left: ($grid-gutter-width-lg / 2);
   }
@@ -18,7 +18,7 @@
   margin-right: ($grid-gutter-width / -2);
   margin-left: ($grid-gutter-width / -2);
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     margin-right: ($grid-gutter-width-lg / -2);
     margin-left: ($grid-gutter-width-lg / -2);
   }

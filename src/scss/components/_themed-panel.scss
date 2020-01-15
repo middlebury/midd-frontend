@@ -6,16 +6,16 @@
   position: relative; /* 1 */
   z-index: $z-index-themed-panel; /* 1 */
 
-  @include media(xl) {
+  @include breakpoint(xl) {
     display: flex;
   }
 }
 
 .themed-panel__main {
-  @include media(md) {
+  @include breakpoint(md) {
     position: relative;
   }
-  @include media(xl) {
+  @include breakpoint(xl) {
     position: static;
     display: flex;
     flex-direction: column;
@@ -26,7 +26,7 @@
 
 .themed-panel__media {
   position: relative;
-  @include media(xl) {
+  @include breakpoint(xl) {
     position: static;
   }
 }
@@ -34,7 +34,7 @@
 .themed-panel__figure {
   position: relative;
 
-  @include media(xl) {
+  @include breakpoint(xl) {
     @include absolute-fill;
   }
 
@@ -47,7 +47,7 @@
   }
 
   img {
-    @include media(xl) {
+    @include breakpoint(xl) {
       @include absolute-fill;
       object-fit: cover;
       font-family: 'object-fit: cover;';
@@ -68,11 +68,11 @@
 
   @include make-gutters;
 
-  @include media(md) {
+  @include breakpoint(md) {
     top: 0;
   }
 
-  @include media(xl) {
+  @include breakpoint(xl) {
     position: relative;
   }
 }
@@ -81,7 +81,7 @@
   padding-top: $spacing-3;
   @include make-gutters;
 
-  @include media(md) {
+  @include breakpoint(md) {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -90,7 +90,7 @@
     padding-bottom: $spacing-4;
   }
 
-  @include media(xl) {
+  @include breakpoint(xl) {
     padding-bottom: $spacing-5;
     width: percentage(9 / 12);
     // bottom: 0;
@@ -102,11 +102,11 @@
   padding-bottom: $spacing-5;
   @include make-gutters;
 
-  @include media(md) {
+  @include breakpoint(md) {
     display: flex;
   }
 
-  @include media(xl) {
+  @include breakpoint(xl) {
     display: block;
     background: rgba(#000, 0.7);
     min-height: 810px;
@@ -120,25 +120,25 @@
   padding-top: $spacing-5;
   margin-top: $spacing-5;
 
-  @include media(md) {
+  @include breakpoint(md) {
     border-top: 0;
     margin-top: 0;
     padding-top: $spacing-4;
     padding-bottom: $spacing-4;
   }
 
-  @include media(xl) {
+  @include breakpoint(xl) {
     margin-top: $spacing-7;
     padding-top: 0;
     padding-bottom: 0;
   }
 
   &:not(:last-of-type) {
-    @include media(md) {
+    @include breakpoint(md) {
       margin-right: $spacing-5;
     }
 
-    @include media(xl) {
+    @include breakpoint(xl) {
       margin-right: 0;
     }
   }

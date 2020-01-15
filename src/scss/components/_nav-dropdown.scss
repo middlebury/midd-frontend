@@ -6,7 +6,7 @@ $nav-dropdown-bp: lg;
   &:hover,
   &:focus-within {
     .nav-dropdown__menu {
-      @include media($nav-dropdown-bp) {
+      @include breakpoint($nav-dropdown-bp) {
         opacity: 1;
         visibility: visible;
       }
@@ -17,7 +17,7 @@ $nav-dropdown-bp: lg;
 .nav-dropdown__menu {
   display: none;
 
-  @include media($nav-dropdown-bp) {
+  @include breakpoint($nav-dropdown-bp) {
     display: block;
     position: absolute;
     top: 100%;
@@ -31,7 +31,7 @@ $nav-dropdown-bp: lg;
 
   &.is-toggled {
     display: block;
-    @include media($nav-dropdown-bp) {
+    @include breakpoint($nav-dropdown-bp) {
       opacity: 1;
       visibility: visible;
     }
@@ -39,7 +39,7 @@ $nav-dropdown-bp: lg;
 }
 
 .nav-dropdown__button {
-  @include media($nav-dropdown-bp) {
+  @include breakpoint($nav-dropdown-bp) {
     // display: none;
   }
 }

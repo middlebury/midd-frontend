@@ -1,7 +1,7 @@
 // https://github.com/twbs/bootstrap/blob/v4.0.0-beta/scss/utilities/_spacing.scss
 
 @each $breakpoint, $variant in $responsive-variants {
-  @include media($breakpoint) {
+  @include breakpoint($breakpoint) {
     @each $prop, $abbrev in (margin: m, padding: p) {
       @each $size, $length in $spacing {
         .#{$abbrev}#{$variant}-#{$size} {

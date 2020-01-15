@@ -1,6 +1,6 @@
 // stylelint-disable scss/no-duplicate-dollar-variables
 
-@mixin media($breakpoint) {
+@mixin breakpoint($breakpoint) {
   @if $breakpoint == '' {
     @content;
   } @else {
