@@ -1,31 +1,29 @@
 // https://github.com/twbs/bootstrap/blob/v4.0.0-beta/scss/utilities/_spacing.scss
 
-@each $breakpoint in map-keys($grid-breakpoints) {
-  @include media-breakpoint-up($breakpoint) {
-    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
-
+@each $breakpoint, $variant in $responsive-variants {
+  @include media($breakpoint) {
     @each $prop, $abbrev in (margin: m, padding: p) {
       @each $size, $length in $spacing {
-        .#{$abbrev}#{$infix}-#{$size} {
+        .#{$abbrev}#{$variant}-#{$size} {
           #{$prop}: $length !important;
         }
-        .#{$abbrev}t#{$infix}-#{$size} {
+        .#{$abbrev}t#{$variant}-#{$size} {
           #{$prop}-top: $length !important;
         }
-        .#{$abbrev}r#{$infix}-#{$size} {
+        .#{$abbrev}r#{$variant}-#{$size} {
           #{$prop}-right: $length !important;
         }
-        .#{$abbrev}b#{$infix}-#{$size} {
+        .#{$abbrev}b#{$variant}-#{$size} {
           #{$prop}-bottom: $length !important;
         }
-        .#{$abbrev}l#{$infix}-#{$size} {
+        .#{$abbrev}l#{$variant}-#{$size} {
           #{$prop}-left: $length !important;
         }
-        .#{$abbrev}x#{$infix}-#{$size} {
+        .#{$abbrev}x#{$variant}-#{$size} {
           #{$prop}-right: $length !important;
           #{$prop}-left: $length !important;
         }
-        .#{$abbrev}y#{$infix}-#{$size} {
+        .#{$abbrev}y#{$variant}-#{$size} {
           #{$prop}-top: $length !important;
           #{$prop}-bottom: $length !important;
         }
@@ -33,16 +31,16 @@
     }
 
     // Some special margin utils
-    // .m#{$infix}-auto  { margin:        auto; }
-    // .mt#{$infix}-auto { margin-top:    auto; }
-    // .mr#{$infix}-auto { margin-right:  auto; }
-    // .mb#{$infix}-auto { margin-bottom: auto; }
-    // .ml#{$infix}-auto { margin-left:   auto; }
-    // .mx#{$infix}-auto {
+    // .m#{$variant}-auto  { margin:        auto; }
+    // .mt#{$variant}-auto { margin-top:    auto; }
+    // .mr#{$variant}-auto { margin-right:  auto; }
+    // .mb#{$variant}-auto { margin-bottom: auto; }
+    // .ml#{$variant}-auto { margin-left:   auto; }
+    // .mx#{$variant}-auto {
     //   margin-right: auto;
     //   margin-left:  auto;
     // }
-    // .my#{$infix}-auto {
+    // .my#{$variant}-auto {
     //   margin-top:    auto;
     //   margin-bottom: auto;
     // }
