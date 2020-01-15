@@ -17,18 +17,25 @@ $container-max-width: 1440px !default;
 $grid-gutter-width: rem(32) !default;
 $grid-gutter-width-lg: rem(64) !default;
 
-$grid-gutter-widths: (
-  xs: $grid-gutter-width,
-  lg: $grid-gutter-width-lg
-) !default;
-
-$grid-breakpoints: (
+$breakpoints: (
   xs: 0,
   sm: $screen-sm,
   md: $screen-md,
   lg: $screen-lg,
   xl: $screen-xl
 ) !default;
+
+////
+//// Responsive variants
+//// Used for easily generating responsive utility classes or grid columns.
+////
+$responsive-variants: (
+  '': '',
+  sm: '-sm',
+  md: '-md',
+  lg: '-lg',
+  xl: '-xl'
+);
 
 ////
 /// Spacing

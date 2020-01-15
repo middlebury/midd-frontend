@@ -1,39 +1,21 @@
 // stylelint-disable scss/no-duplicate-dollar-variables
 
-@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
-  $min: map-get($breakpoints, $name);
-
-  @if $min != 0 {
-    @return $min;
+@mixin media($breakpoint) {
+  @if $breakpoint == '' {
+    @content;
   } @else {
-    @return null;
-  }
-}
+    $value: map-get($breakpoints, $breakpoint);
 
-@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
-  @if not breakpoint-min($name, $breakpoints) {
-    @return '';
-  } @else {
-    @return '-#{$name}';
-  }
-}
-
-// Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
-// Makes the @content apply to the given breakpoint and wider.
-@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
-  $min: breakpoint-min($name, $breakpoints);
-  @if $min {
-    @media only screen and (min-width: $min) {
-      @content;
+    // If the key exists in the map
+    @if $value != '' {
+      // Prints a media query based on the value
+      @media only screen and (min-width: $value) {
+        @content;
+      }
+    } @else {
+      // If the key doesn't exist in the map
+      @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
     }
-  } @else {
-    @content;
-  }
-}
-
-// alias media-breakpoint-up
-@mixin media($bp) {
-  @include media-breakpoint-up($bp) {
-    @content;
   }
 }
