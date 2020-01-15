@@ -6,7 +6,7 @@ import { onElementInView } from './utils/on-element-in-view';
 const isFloat = n => Number(n) === n && n % 1 !== 0;
 
 function countup(el, target) {
-  let data = { count: 0 };
+  const data = { count: 0 };
 
   const round = !isFloat(target);
 

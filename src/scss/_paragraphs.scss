@@ -1,34 +1,34 @@
-@mixin paragraph-space {
+%paragraph-space {
   margin-top: $spacing-7;
   margin-bottom: $spacing-7;
 
-  @include media(md) {
+  @include breakpoint(md) {
     margin-top: $spacing-8;
     margin-bottom: $spacing-8;
   }
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     margin-top: $spacing-9;
     margin-bottom: $spacing-9;
   }
 }
 
-@mixin paragraph-space-sm {
+%paragraph-space-sm {
   margin-top: $spacing-6;
   margin-bottom: $spacing-5;
 
-  @include media(md) {
+  @include breakpoint(md) {
     margin-top: $spacing-7;
     margin-bottom: $spacing-6;
   }
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     margin-top: $spacing-8;
     margin-bottom: $spacing-7;
   }
 }
 
-@mixin paragraph-full-width {
+%paragraph-full-width {
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
 }
@@ -36,11 +36,11 @@
 .paragraphs {
   margin-bottom: $spacing-7;
 
-  @include media(md) {
+  @include breakpoint(md) {
     margin-bottom: $spacing-8;
   }
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     margin-bottom: $spacing-9;
   }
 
@@ -54,14 +54,14 @@
 }
 
 .paragraphs--wide {
-  @include make-col-ready();
+  @include make-col-ready;
 
-  @include media(md) {
+  @include breakpoint(md) {
     @include make-col(10);
     @include make-col-offset(1);
   }
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     @include make-col(8);
     @include make-col-offset(2);
   }
@@ -69,9 +69,11 @@
   .paragraph--expand,
   .paragraph--video,
   .paragraph--image:not(.image--left):not(.image--right) {
-    @include media(lg) {
+    @include breakpoint(lg) {
       // Main column is 10 wide, so we divide by remaining
       // columns on sides to pull them out to 12 columns.
+      // More on these techniques here:
+      // https://css-tricks.com/full-width-containers-limited-width-parents/
       margin-left: calc(-100% * 2 / 12);
       margin-right: calc(-100% * 2 / 12);
       @include make-gutters;
@@ -85,7 +87,7 @@
 .paragraph--quad-story,
 .paragraph--stat-panel,
 .paragraph--card-carousel {
-  @include paragraph-full-width;
+  @extend %paragraph-full-width;
 }
 
 .paragraph--text {
@@ -93,25 +95,25 @@
 }
 
 .paragraph--video {
-  @include paragraph-space-sm;
+  @extend %paragraph-space-sm;
 }
 
 .paragraph--audio {
-  @include paragraph-space-sm;
+  @extend %paragraph-space-sm;
 }
 
 .paragraph--quote {
   margin-top: $spacing-7;
   margin-bottom: $spacing-7;
 
-  @include media(md) {
+  @include breakpoint(md) {
     margin-top: $spacing-8;
     margin-bottom: $spacing-8;
   }
 }
 
 .paragraph--image {
-  @include paragraph-space-sm;
+  @extend %paragraph-space-sm;
 
   &.image--left {
     margin-top: 0;
@@ -127,102 +129,99 @@
 }
 
 .paragraph--image-text {
-  @include paragraph-space;
+  @extend %paragraph-space;
 }
 
 .paragraph--two-col-text {
-  @include paragraph-space;
+  @extend %paragraph-space;
 }
 
 .paragraph--faq {
-  @include paragraph-space;
+  @extend %paragraph-space;
 }
 
 .paragraph--schedule {
-  @include paragraph-space;
+  @extend %paragraph-space;
 }
 
 .paragraph--chart {
-  @include paragraph-space;
+  @extend %paragraph-space;
 }
 
 .paragraph--link-list {
-  @include paragraph-space;
+  @extend %paragraph-space;
 }
 
 .paragraph--profile-list {
-  @include paragraph-space;
+  @extend %paragraph-space;
 }
 
 .paragraph--spotlight {
-  @include paragraph-full-width;
+  @extend %paragraph-full-width;
+  @extend %paragraph-space;
 }
 
 .paragraph--card-carousel {
-  @include paragraph-space;
-  // @include paragraph-full-width;
+  @extend %paragraph-space;
+  // @extend %paragraph-full-width;
 }
 
 .paragraph--quad-story {
-  @include paragraph-space;
-  // @include paragraph-full-width;
+  @extend %paragraph-space;
+  // @extend %paragraph-full-width;
 }
 
 .paragraph--stat-panel {
-  @include paragraph-space;
-  // @include paragraph-full-width;
-}
-
-.paragraph--spotlight {
-  @include paragraph-space;
+  @extend %paragraph-space;
+  // @extend %paragraph-full-width;
 }
 
 .paragraph--announcement {
-  @include paragraph-space;
+  @extend %paragraph-space;
 }
 
 .paragraph--mega-cta {
-  @include paragraph-space;
+  @extend %paragraph-space;
 }
 
 .paragraph--cta-group {
-  @include paragraph-space;
-  @include paragraph-full-width;
+  @extend %paragraph-space;
+  @extend %paragraph-full-width;
 }
 
 .paragraph--video-group {
-  @include paragraph-space-sm;
-  @include paragraph-full-width;
+  @extend %paragraph-space-sm;
+  @extend %paragraph-full-width;
 }
 
 .paragraph--themed-panel {
-  @include paragraph-space;
+  @extend %paragraph-space;
 }
 
 .paragraph--gallery {
-  @include paragraph-space-sm;
+  @extend %paragraph-space-sm;
 }
 
 .paragraph--button {
   margin-bottom: $spacing-7;
   margin-right: $spacing-4;
 
-  @include media(md) {
+  @include breakpoint(md) {
     margin-bottom: $spacing-8;
   }
 }
 
 .paragraph--search {
-  @include paragraph-space-sm;
+  @extend %paragraph-space-sm;
 }
 
 .paragraph--lib-search {
-  @include paragraph-full-width;
-  @include paragraph-space;
+  @extend %paragraph-full-width;
+  @extend %paragraph-space;
 }
 
 .paragraph--embed {
-  @include paragraph-space-sm;
+  @extend %paragraph-space-sm;
 
   iframe {
     max-width: 100%;
@@ -230,7 +229,7 @@
 }
 
 .paragraph--related-events {
-  @include paragraph-space;
+  @extend %paragraph-space;
 }
 
 .paragraph--pull-up {
@@ -238,11 +237,15 @@
   position: relative;
   z-index: 2;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     margin-top: -8rem;
+  }
+
+  @media print {
+    margin-top: 0;
   }
 }
 
 .paragraph {
-  @include paragraph-space;
+  @extend %paragraph-space;
 }

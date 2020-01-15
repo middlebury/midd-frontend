@@ -4,19 +4,18 @@
 //   }
 // }
 
-@each $breakpoint in map-keys($grid-breakpoints) {
-  $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
-  @include media-breakpoint-up($breakpoint) {
-    .order#{$infix}-first {
+@each $breakpoint, $variant in $responsive-variants {
+  @include breakpoint($breakpoint) {
+    .order#{$variant}-first {
       order: -1;
     }
 
-    .order#{$infix}-last {
+    .order#{$variant}-last {
       order: 9999;
     }
 
     @for $i from 0 through $grid-columns {
-      .order#{$infix}-#{$i} {
+      .order#{$variant}-#{$i} {
         order: $i;
       }
     }

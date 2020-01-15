@@ -12,17 +12,17 @@
 /// text alignment
 ///
 
-@each $breakpoint in map-keys($grid-breakpoints) {
-  @include media-breakpoint-up($breakpoint) {
-    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
-
-    .text#{$infix}-left {
+@each $breakpoint, $variant in $responsive-variants {
+  @include breakpoint($breakpoint) {
+    .text#{$variant}-left {
       text-align: left !important;
     }
-    .text#{$infix}-right {
+
+    .text#{$variant}-right {
       text-align: right !important;
     }
-    .text#{$infix}-center {
+
+    .text#{$variant}-center {
       text-align: center !important;
     }
   }

@@ -1,8 +1,9 @@
 .footer-menu {
   margin-top: $spacing-5;
-  @include media(lg) {
+  @include breakpoint(lg) {
     margin-top: 0;
   }
+  @include print-hide;
 }
 
 .footer-menu__title {
@@ -12,7 +13,7 @@
 }
 
 .footer-menu__list--cols {
-  @include media(sm) {
+  @include breakpoint(sm) {
     columns: 2;
   }
 }

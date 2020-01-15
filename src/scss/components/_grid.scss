@@ -1,9 +1,14 @@
 .container {
-  @include make-container();
+  @include make-container;
+
+  @media print {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .row {
-  @include make-row();
+  @include make-row;
 }
 
 .row--no-gutters {
@@ -28,4 +33,4 @@
   }
 }
 
-@include make-grid-columns();
+@include make-grid-columns;

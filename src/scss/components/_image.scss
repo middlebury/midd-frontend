@@ -5,20 +5,28 @@
 
 // margin is applied at .paragraphs level
 .image--right {
-  @include media(md) {
+  @include breakpoint(md) {
     float: right;
+  }
+
+  @media print {
+    float: none !important;
   }
 }
 
 .image--left {
-  @include media(md) {
+  @include breakpoint(md) {
     float: left;
+  }
+
+  @media print {
+    float: none !important;
   }
 }
 
 .image--right,
 .image--left {
-  @include media(md) {
+  @include breakpoint(md) {
     .media {
       display: table;
     }

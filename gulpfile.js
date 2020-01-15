@@ -1,3 +1,5 @@
+/* eslint-env node */
+/* eslint-disable no-console */
 const fs = require('fs');
 const gulp = require('gulp');
 const twig = require('gulp-twig');
@@ -26,6 +28,8 @@ const dotenv = require('dotenv');
 const svgSprite = require('gulp-svg-sprite');
 const svgo = require('gulp-svgo');
 const dom = require('gulp-dom');
+const stylelint = require('gulp-stylelint');
+const eslint = require('gulp-eslint');
 
 const rollup = require('./rollup');
 
@@ -103,6 +107,15 @@ const copyIcons = () =>
     .pipe(rename('icons.twig'))
     .pipe(gulp.dest('./src/templates/partials'));
 
+const lintStyles = () => {
+  return gulp.src(paths.styles.src).pipe(
+    stylelint({
+      failAfterError: false,
+      reporters: [{ formatter: 'string', console: true }]
+    })
+  );
+};
+
 const styles = () => {
   const plugins = [
     postcssPresetEnv({
@@ -144,6 +157,12 @@ const bundles = [
   }
 ];
 
+const lintScripts = () =>
+  gulp
+    .src(paths.scripts.src)
+    .pipe(eslint())
+    .pipe(eslint.format());
+
 const scripts = () =>
   rollup(bundles).then(() => {
     browserSync.reload();
@@ -158,7 +177,7 @@ const html = () =>
       })
     )
     .pipe(
-      data(function(file) {
+      data(function() {
         const ymlData = yaml.safeLoad(
           fs.readFileSync('./src/data/data.yml', 'utf8')
         );
@@ -183,8 +202,9 @@ const html = () =>
             func: (value, args) => {
               if (!value) {
                 console.log(args);
-                throw 'value is falsy';
+                throw new Error('value is falsy');
               }
+
               return value;
             }
           },
@@ -247,6 +267,7 @@ const deployDist = () => {
   if (!THEME_DIR) {
     return console.error('No `--themeDir` argument passed'); // eslint-disable-line no-console
   }
+
   return gulp
     .src(
       [
@@ -264,9 +285,9 @@ const deployDist = () => {
 
 const watch = () => {
   gulp.watch('./src/templates/**/*.twig', html);
-  gulp.watch(paths.styles.src, styles);
+  gulp.watch(paths.styles.src, gulp.parallel(styles, lintStyles));
   gulp.watch(paths.images.src, images);
-  gulp.watch(paths.scripts.src, scripts);
+  gulp.watch(paths.scripts.src, gulp.parallel(scripts, lintScripts));
   gulp.watch('./src/data/*.yml', html);
 };
 
@@ -335,7 +356,7 @@ const buildIconSprite = () =>
 const build = gulp.series(
   clean,
   copyDeps,
-  gulp.parallel(html, images, styles, scripts),
+  gulp.parallel(html, images, lintStyles, styles, lintScripts, scripts),
   reportFilesizes
 );
 
@@ -353,8 +374,11 @@ module.exports = {
   build,
   dev,
   devSaw,
+  cleanAndCopyIcons,
   icons: buildIcons,
   replaceImagePaths,
+  lintScripts,
+  lintStyles,
   copyDeps,
   default: dev
 };

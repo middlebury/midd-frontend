@@ -5,6 +5,8 @@
   position: relative;
   right: 0;
 
+  @include print-hide;
+
   &:after {
     content: '';
     display: block;
@@ -13,9 +15,9 @@
     top: 0;
     height: 100%;
     width: 4rem;
-    background-image: linear-gradient(to right, transparent, black);
+    background-image: linear-gradient(to right, transparent, $black);
 
-    @include media(md) {
+    @include breakpoint(md) {
       display: none;
     }
   }
@@ -28,7 +30,9 @@
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 
-  @include media(md) {
+  @include print-hide;
+
+  @include breakpoint(md) {
     overflow-x: auto;
   }
 
@@ -40,7 +44,7 @@
 .tabs__item {
   &:last-child {
     padding-right: 4rem;
-    @include media(md) {
+    @include breakpoint(md) {
       padding-right: 0;
     }
   }
@@ -76,7 +80,7 @@
 
     &:hover {
       text-decoration: none;
-      border-top-color: rgba(white, 0.5);
+      border-top-color: rgba($white, 0.5);
       opacity: 1;
     }
 

@@ -43,6 +43,7 @@ class Mover {
     if (event.matches) {
       return this.handleMatch();
     }
+
     this.handleUnmatch();
   };
 

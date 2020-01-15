@@ -3,12 +3,12 @@
   min-height: 640px;
   background: #000;
 
-  @include media(md) {
+  @include breakpoint(md) {
     height: 0;
     padding-top: percentage(9 / 16);
     overflow: hidden;
   }
-  @include media(lg) {
+  @include breakpoint(lg) {
     min-height: auto;
   }
 }
@@ -26,7 +26,7 @@
     z-index: $z-index-mega-cta-image;
 
     .mega-cta--hero & {
-      @include media(md) {
+      @include breakpoint(md) {
         opacity: 1;
       }
     }
@@ -64,7 +64,7 @@ $mega-cta-alignments: (
     align-items: flex-start;
     padding-top: $spacing-7;
 
-    @include media(md) {
+    @include breakpoint(md) {
       padding-top: 0;
       align-items: center;
     }
@@ -75,11 +75,11 @@ $mega-cta-alignments: (
   text-align: center;
   @include make-col-ready;
 
-  @include media(sm) {
+  @include breakpoint(sm) {
     @include make-col(8);
   }
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     @include make-col(6);
   }
 }
@@ -89,7 +89,7 @@ $mega-cta-alignments: (
   margin-bottom: $spacing-2;
   @include h0;
 
-  @include media(md) {
+  @include breakpoint(md) {
     margin-bottom: $spacing-3;
   }
 
@@ -103,12 +103,12 @@ $mega-cta-alignments: (
   font-size: $typescale-2;
   margin-bottom: $spacing-4;
 
-  @include media(md) {
+  @include breakpoint(md) {
     margin-bottom: $spacing-5;
     font-size: $typescale-3;
   }
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     margin-bottom: $spacing-7;
     font-size: $typescale-4;
   }
@@ -124,7 +124,7 @@ $mega-cta-alignments: (
   bottom: $spacing-8;
   z-index: $z-index-mega-cta-caption;
 
-  @include media(md) {
+  @include breakpoint(md) {
     bottom: $spacing-4;
   }
 }
@@ -133,14 +133,14 @@ $mega-cta-alignments: (
   .mega-cta__text {
     color: $yellow;
     font-size: $typescale-6;
-    @include media(lg) {
+    @include breakpoint(lg) {
       font-size: $typescale-8;
     }
   }
 
   .mega-cta__content {
     text-align: left;
-    @include media(lg) {
+    @include breakpoint(lg) {
       @include make-col(8);
     }
   }

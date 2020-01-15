@@ -35,7 +35,7 @@
   line-height: $line-height-heading;
   font-family: $font-family-serif;
 
-  @include media(md) {
+  @include breakpoint(md) {
     font-size: $typescale-8;
   }
 }
@@ -46,11 +46,11 @@
   font-weight: $font-weight-normal;
   font-family: $font-family-serif;
 
-  @include media(md) {
+  @include breakpoint(md) {
     font-size: $typescale-9;
   }
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     font-size: $typescale-10;
   }
 }
@@ -61,7 +61,7 @@
   font-weight: $font-weight-normal;
   font-family: $font-family-serif;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     font-size: $typescale-7;
   }
 }

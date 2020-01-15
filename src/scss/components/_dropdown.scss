@@ -6,13 +6,11 @@
 .dropdown__button {
   font-family: inherit;
   font-weight: $font-weight-medium;
-  line-height: inherit;
   border: 1px solid $border-color;
   background: $white;
   padding: $spacing-3;
   line-height: 1;
   width: 100%;
-  display: block;
   text-align: left;
   color: $navy;
   cursor: pointer;

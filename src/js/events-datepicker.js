@@ -56,7 +56,7 @@ if (datePicker) {
     bound: false,
     minDate: new Date(),
     defaultDate,
-    setDefaultDate: !!defaultDate,
+    setDefaultDate: Boolean(defaultDate),
     onSelect(date) {
       const dateStr = dateToStr(date);
 
@@ -67,25 +67,25 @@ if (datePicker) {
 
 const selects = ['month', 'year'];
 
-for (let i in selects) {
-  if (selects.hasOwnProperty(i)) {
-    const select = 'pika-select-' + selects[i];
-    const selectElem = document.querySelector('.' + select);
+selects.forEach((name, i) => {
+  const select = 'pika-select-' + name;
+  const selectElem = document.querySelector('.' + select);
 
-    if (selectElem) {
-      selectElem.setAttribute('id', select);
-
-      const labelElem = document.createElement('label');
-      labelElem.setAttribute('class', 'sr-only');
-      labelElem.setAttribute('for', select);
-      labelElem.innerText =
-        selects[i].charAt(0).toUpperCase() + selects[i].slice(1);
-
-      const parentElem = selectElem.parentNode;
-      parentElem.insertBefore(labelElem, selectElem);
-    }
+  if (!selectElem) {
+    return;
   }
-}
+
+  selectElem.setAttribute('id', select);
+
+  const labelElem = document.createElement('label');
+  labelElem.setAttribute('class', 'sr-only');
+  labelElem.setAttribute('for', select);
+  labelElem.innerText =
+    selects[i].charAt(0).toUpperCase() + selects[i].slice(1);
+
+  const parentElem = selectElem.parentNode;
+  parentElem.insertBefore(labelElem, selectElem);
+});
 
 const pikaTitle = document.querySelector('.pika-title');
 

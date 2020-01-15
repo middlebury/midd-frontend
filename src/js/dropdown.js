@@ -1,5 +1,7 @@
 import { $, $$, on, off } from './utils/dom';
 
+import { ESC_KEY } from './constants';
+
 /**
  * Creates a basic dropdown widget that has a button to toggle an active class on an element.
  *
@@ -59,8 +61,7 @@ class Dropdown {
   }
 
   handleElemKeyup = e => {
-    // TODO: replace 27 with constant esc key
-    if (e.keyCode === 27) {
+    if (e.keyCode === ESC_KEY) {
       this.hide();
       this.focusBtn();
     }
@@ -70,7 +71,7 @@ class Dropdown {
     this.btn.focus();
   }
 
-  handleWindowClick = e => {
+  handleWindowClick = event => {
     const node = this.elem;
 
     // if the target isn't the button or contains the button, the click is outside

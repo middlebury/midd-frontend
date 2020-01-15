@@ -16,7 +16,7 @@ const colors = [
   '#962c28'
 ];
 
-let Chart = window.Chart;
+const { Chart } = window;
 
 function renderPercentBarChart(el, config) {
   el.classList.add('chart--singlebar');
@@ -67,10 +67,11 @@ class MiddChart {
 
     const prefixTick = value => `${valuePrefix}${value}${valueSuffix}`;
 
-    const xTickCallback = isHorizontalBars ? prefixTick : f => f;
-    const yTickCallback = !isHorizontalBars ? prefixTick : f => f;
+    const noop = () => {};
+    const xTickCallback = isHorizontalBars ? prefixTick : noop;
+    const yTickCallback = isHorizontalBars ? noop : prefixTick;
 
-    let options = {
+    const options = {
       maintainAspectRatio: true,
       legend: {
         display: false, // remove legend since we're trying to use html legend
@@ -122,7 +123,7 @@ class MiddChart {
         xAxes: [
           {
             scaleLabel: {
-              display: !!xLabel,
+              display: Boolean(xLabel),
               labelString: xLabel
             },
             maxBarThickness,
@@ -137,7 +138,7 @@ class MiddChart {
         yAxes: [
           {
             scaleLabel: {
-              display: !!yLabel,
+              display: Boolean(yLabel),
               labelString: yLabel
             },
             maxBarThickness,
@@ -158,9 +159,9 @@ class MiddChart {
   getItemColor(i) {
     if (this.isCircleChart) {
       return colors;
-    } else {
-      return colors[i];
     }
+
+    return colors[i];
   }
 
   init() {
@@ -209,7 +210,9 @@ class MiddChart {
           // and allowing us to not install the extra dependency
           beforeInit(chart) {
             // create the plugin config to store values
-            const model = (chart[PLUGIN_KEY] = {});
+            chart[PLUGIN_KEY] = {};
+
+            const model = chart[PLUGIN_KEY];
 
             // add an is in view flag which is checked before datasets update
             model.isInView = false;
@@ -254,6 +257,7 @@ class MiddChart {
     if (!this.isCircleChart) {
       legendtag.classList.add('chart-legend--inline');
     }
+
     legendtag.querySelector('ul').classList.add('chart-legend__list');
     legendtag.querySelectorAll('li').forEach(li => {
       li.classList.add('chart-legend__item');
@@ -268,15 +272,15 @@ function parseJsonData(data) {
   let result;
   try {
     result = JSON.parse(data);
-  } catch (e) {
-    console.error('problem parsing json:', data);
+  } catch (error) {
+    // do nothing
   }
 
   return result;
 }
 
 function parseConfig(el) {
-  let { datasets, labels, chart: type, ...rest } = el.dataset;
+  const { datasets, labels, chart: type, ...rest } = el.dataset;
 
   return {
     ...rest,

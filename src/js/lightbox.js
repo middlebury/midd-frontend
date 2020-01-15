@@ -200,7 +200,7 @@ class Lightbox {
    * @param {int} index - index of the image to set active
    */
   setActive(index) {
-    const id = this.items[index].id;
+    const { id } = this.items[index];
     const link = $(`a[href="#${id}"]`, this.thumbsList);
 
     this.thumbs.forEach(el => {

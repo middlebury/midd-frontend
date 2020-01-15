@@ -16,24 +16,27 @@
   @include make-col-ready;
   margin-bottom: $spacing-5;
 
+  // TODO: clever class names we should change to pass stylelint class pattern
+  // stylelint-disable-next-line
   .chart-group__list--2 & {
-    @include media(md) {
+    @include breakpoint(md) {
       @include make-col(6);
     }
   }
 
+  // stylelint-disable-next-line
   .chart-group__list--3\+ & {
-    @include media(md) {
+    @include breakpoint(md) {
       @include make-col(4);
     }
   }
 }
 
 .chart-group__item--stats {
-  @include media(sm) {
+  @include breakpoint(sm) {
     @include make-col(6);
   }
-  @include media(md) {
+  @include breakpoint(md) {
     @include make-col(4);
   }
 }
@@ -68,7 +71,7 @@
 
 .chart-legend--inline {
   .chart-legend__list {
-    @include media(md) {
+    @include breakpoint(md) {
       display: flex;
       flex-wrap: wrap;
     }
@@ -76,7 +79,7 @@
 
   .chart-legend__item {
     flex: 0 0 auto;
-    @include media(md) {
+    @include breakpoint(md) {
       &:not(:last-child) {
         margin-right: 1rem;
       }

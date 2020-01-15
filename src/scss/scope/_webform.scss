@@ -65,7 +65,7 @@
 
   .form-type-radio,
   .form-type-checkbox {
-    @include form-checkbox-item();
+    @include form-checkbox-item;
 
     input[type='checkbox'],
     input[type='radio'] {
@@ -112,12 +112,12 @@
   }
 
   .webform-container-inline {
-    @include media(sm) {
+    @include breakpoint(sm) {
       display: flex;
     }
 
     .form-item {
-      @include media(sm) {
+      @include breakpoint(sm) {
         flex: 0 0 auto;
         margin-bottom: 0;
       }

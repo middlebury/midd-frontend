@@ -34,7 +34,6 @@
   $hover-color: map-get($theme, 'hover-color');
   $hover-bg: map-get($theme, 'hover-bg');
   $hover-border-color: map-get($theme, 'hover-border-color');
-
   background-color: $bg;
   color: $color;
   border-color: $border-color;
@@ -52,7 +51,6 @@
   $font-size: map-get($btn-map, 'font-size');
   $padding-y: map-get($btn-map, 'padding-y');
   $padding-x: map-get($btn-map, 'padding-x');
-
   padding: $padding-y $padding-x;
   font-size: $font-size;
 }

@@ -57,7 +57,7 @@ class MenuSpy {
     // reverse the changes else the last item becomes highlighted
     // due to it being out of view and triggering the else if
     changes.reverse().forEach(change => {
-      const id = change.target.id;
+      const { id } = change.target;
       const link = $(`a[href="#${id}"]`, this.elem);
 
       // if the element is fully in view, add the active class

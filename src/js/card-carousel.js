@@ -46,7 +46,7 @@ function createCardCarousel(elem) {
 
   const swiperContainer = $('.js-swiper-container', elem);
 
-  new Swiper(swiperContainer, swiperConfig);
+  return new Swiper(swiperContainer, swiperConfig);
 }
 
 const carousels = $$('.js-card-carousel');

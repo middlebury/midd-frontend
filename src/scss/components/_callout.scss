@@ -3,14 +3,14 @@
   padding-bottom: 1rem;
   text-align: center;
 
-  @include media(sm) {
+  @include breakpoint(sm) {
     display: flex;
     align-items: center;
     text-align: left;
     height: 100%;
   }
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     min-height: 300px;
     flex-direction: column;
     text-align: center;
@@ -23,7 +23,7 @@
   padding-right: 1rem;
   max-width: 100%;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     padding-right: 0;
   }
 }
@@ -31,7 +31,7 @@
 .callout__title {
   font-size: $typescale-3;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     margin-bottom: 0.5rem;
   }
 }
@@ -44,7 +44,7 @@
   margin-left: auto;
   max-width: 100%;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     margin-top: auto;
     margin-left: 0;
     padding-bottom: 3rem;

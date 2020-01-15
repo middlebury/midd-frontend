@@ -1,4 +1,5 @@
 .school-nav {
+  @include print-hide;
 }
 
 .school-nav__handle {
@@ -11,7 +12,7 @@
   background: none;
   border: 0;
 
-  @include media($school-header-breakpoint) {
+  @include breakpoint($school-header-breakpoint) {
     display: none;
   }
 }
@@ -19,7 +20,7 @@
 .school-nav__menu {
   display: none;
 
-  @include media($school-header-breakpoint) {
+  @include breakpoint($school-header-breakpoint) {
     display: flex;
     flex-direction: column-reverse;
   }

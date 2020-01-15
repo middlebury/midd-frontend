@@ -1,4 +1,5 @@
 .breadcrumb {
+  @include print-hide;
 }
 
 .breadcrumb__list {
@@ -9,7 +10,7 @@
 .breadcrumb__item {
   display: none;
 
-  @include media(md) {
+  @include breakpoint(md) {
     display: block;
   }
 

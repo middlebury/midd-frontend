@@ -7,6 +7,10 @@ $app-header-bp: lg;
 .app-header__wrap {
   @include make-container;
   display: flex;
+
+  @media print {
+    display: block;
+  }
 }
 
 .app-header__wrap--main {
@@ -19,20 +23,29 @@ $app-header-bp: lg;
   position: relative;
   top: 1rem;
   z-index: 2;
+
+  @media print {
+    float: right;
+  }
 }
 
 .app-header__title {
   @include h2;
-  font-family: $font-family-serif;
 }
 
 .app-header__link {
   color: $white;
+
+  @media print {
+    display: block;
+    margin-top: $spacing-3;
+  }
 }
 
 .app-header__secondary {
   background: $gray-lighter;
   position: relative;
+  @include print-hide;
 }
 
 .app-header__button {
@@ -42,7 +55,7 @@ $app-header-bp: lg;
   padding: $spacing-3;
   border: 0;
 
-  @include media($app-header-bp) {
+  @include breakpoint($app-header-bp) {
     padding: $spacing-4;
     padding-left: 0;
     padding-right: 0;
@@ -62,12 +75,12 @@ $app-header-bp: lg;
   // HACK: pull buttons to left to line up with site title since container has padding
   &:first-child {
     margin-left: -#{$spacing-3};
-    @include media($app-header-bp) {
+    @include breakpoint($app-header-bp) {
       margin-left: 0;
     }
   }
 
-  @include media($app-header-bp) {
+  @include breakpoint($app-header-bp) {
     // use relative position at larger screen so search dropdown lines up with toggle button
     position: relative;
   }
@@ -86,7 +99,7 @@ $app-header-bp: lg;
     display: block;
   }
 
-  @include media($app-header-bp) {
+  @include breakpoint($app-header-bp) {
     display: block;
     position: relative;
     top: 0;
@@ -98,12 +111,10 @@ $app-header-bp: lg;
   border-bottom: 1px solid $border-color;
   border-top: 1px solid $border-color;
   padding: $spacing-3;
-
   position: absolute;
   top: 100%;
   right: 0;
   width: 100%;
-
   transition: opacity 0.2s;
   visibility: hidden;
   opacity: 0;
@@ -114,7 +125,7 @@ $app-header-bp: lg;
     visibility: visible;
   }
 
-  @include media($app-header-bp) {
+  @include breakpoint($app-header-bp) {
     width: 400px;
     border: 1px solid $border-color;
   }

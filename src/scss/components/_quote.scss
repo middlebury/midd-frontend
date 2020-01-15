@@ -5,7 +5,7 @@
   margin-bottom: $spacing-7;
   padding: $spacing-5 $spacing-3;
 
-  @include media(md) {
+  @include breakpoint(md) {
     margin-top: $spacing-7;
     margin-bottom: $spacing-7;
   }
@@ -17,7 +17,7 @@
   line-height: lineheight('heading');
   margin-bottom: $spacing-2;
 
-  @include media(md) {
+  @include breakpoint(md) {
     font-size: $typescale-6;
   }
 

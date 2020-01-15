@@ -3,7 +3,7 @@
   padding-top: $spacing-5;
   padding-bottom: $spacing-5;
 
-  @include media(md) {
+  @include breakpoint(md) {
     padding-top: $spacing-7;
     padding-bottom: $spacing-7;
   }
@@ -12,7 +12,7 @@
 .school-footer__main {
   @include make-col-ready;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     @include make-col(4);
   }
 }
@@ -20,16 +20,16 @@
 .school-footer__primary {
   @include make-col-ready;
 
-  @include media(md) {
+  @include breakpoint(md) {
     @include make-col(5);
   }
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     @include make-col(12);
   }
 
   .school-footer--lite & {
-    @include media(lg) {
+    @include breakpoint(lg) {
       @include make-col(5);
     }
   }
@@ -40,25 +40,25 @@
   padding-top: $spacing-5;
   padding-bottom: $spacing-5;
 
-  @include media(md) {
+  @include breakpoint(md) {
     @include make-col(4);
     margin-left: auto;
   }
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     @include make-col(12);
     padding-bottom: 0;
   }
 
   .school-footer--lite & {
     padding-bottom: 0;
-    @include media(md) {
+    @include breakpoint(md) {
       border-left: 1px solid $navy-light;
       padding-top: $spacing-3;
       padding-bottom: $spacing-3;
     }
 
-    @include media(lg) {
+    @include breakpoint(lg) {
       @include make-col(4);
     }
   }
@@ -69,7 +69,7 @@
   color: $white;
   margin-bottom: $spacing-4;
 
-  @include media(md) {
+  @include breakpoint(md) {
     margin-bottom: $spacing-5;
   }
 }
@@ -78,11 +78,11 @@
   @include make-col-ready;
   border-top: 1px solid $navy-light;
 
-  @include media(md) {
+  @include breakpoint(md) {
     margin-top: $spacing-5;
   }
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     @include make-col(8);
     border-left: 1px solid $navy-light;
     border-top: 0;

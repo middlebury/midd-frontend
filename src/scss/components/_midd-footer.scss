@@ -2,10 +2,11 @@
   background-color: $navy-dark;
   padding-top: $spacing-4;
   padding-bottom: $spacing-4;
+  @include print-hide;
 }
 
 .midd-footer__list {
-  @include media(lg) {
+  @include breakpoint(lg) {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -15,10 +16,10 @@
 
 .midd-footer__item {
   &:not(:first-child) {
-    @include media(lg) {
+    @include breakpoint(lg) {
       margin-left: $spacing-3;
     }
-    @include media(xl) {
+    @include breakpoint(xl) {
       margin-left: $spacing-4;
     }
   }
@@ -32,7 +33,7 @@
   padding-bottom: $spacing-1;
   white-space: nowrap;
 
-  @include media(lg) {
+  @include breakpoint(lg) {
     padding-top: 0;
     padding-bottom: 0;
   }

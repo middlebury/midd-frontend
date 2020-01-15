@@ -129,7 +129,7 @@
     margin-bottom: $spacing-5;
     margin-top: $spacing-5;
 
-    @include media(md) {
+    @include breakpoint(md) {
       display: flex;
       flex-wrap: wrap;
     }
@@ -144,7 +144,7 @@
       margin-bottom: 0;
     }
 
-    @include media(md) {
+    @include breakpoint(md) {
       flex: 0 0 30%;
       padding-bottom: $spacing-4;
       margin-bottom: $spacing-4;
@@ -168,22 +168,37 @@
       border-bottom: 1px solid $border-color;
     }
 
-    @include media(md) {
+    @include breakpoint(md) {
       flex: 0 0 70%;
     }
   }
 
-  // maintain vertical h2 top margin when...
-  // ...there is a text component followed by another
-  & + & > h2,
-  // ...there is intro text before the text component
-  .lead + & > h2,
+  // Maintain vertical h2 top margin when
+  // there is a text component followed by another
+  // or intro text before a text component.
+  //
+  // These styles are duplicated with the below h2 ruleset
+  // because @at-root seems to make the styles root for the entire list of selectors
+  // instead of the single selector it is used in front of.
+  // See https://stackoverflow.com/q/36902927/2193516
+  @at-root .paragraph--text + .paragraph--text > h2,
+    .lead + & > h2 {
+    @include h2;
+    margin-top: $spacing-7;
+    margin-bottom: $spacing-4;
+
+    @include breakpoint(lg) {
+      margin-top: $spacing-8;
+      margin-bottom: $spacing-5;
+    }
+  }
+
   h2 {
     @include h2;
     margin-top: $spacing-7;
     margin-bottom: $spacing-4;
 
-    @include media(lg) {
+    @include breakpoint(lg) {
       margin-top: $spacing-8;
       margin-bottom: $spacing-5;
     }
@@ -214,7 +229,7 @@
   }
 
   table {
-    @extend .table;
+    @extend %table;
   }
 
   blockquote {
@@ -223,6 +238,26 @@
     margin-top: $spacing-5;
     margin-bottom: $spacing-5;
     font-size: $paragraph-font-size;
+  }
+
+  @media print {
+    a[href]:after {
+      content: '(' attr(href) ')';
+      background: transparent;
+      color: $black;
+      text-transform: none;
+      letter-spacing: 0;
+      font-size: inherit;
+      margin: 0;
+      padding: 0;
+      word-break: break-word;
+      font-style: italic;
+      white-space: nowrap;
+    }
+
+    abbr[title]:after {
+      content: '(' attr(title) ')';
+    }
   }
 }
 

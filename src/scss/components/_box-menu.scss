@@ -5,7 +5,9 @@
   background-color: $white;
   @include themify(border-top-color);
 
-  @include media(md) {
+  @include print-hide;
+
+  @include breakpoint(md) {
     margin-bottom: $spacing-8;
   }
 }
@@ -13,7 +15,7 @@
 .box-menu__list {
   padding: $spacing-4;
 
-  @include media(md) {
+  @include breakpoint(md) {
     display: flex;
     flex-wrap: wrap;
     padding-top: $spacing-3;
@@ -26,7 +28,7 @@
     margin-bottom: $spacing-3;
   }
 
-  @include media(md) {
+  @include breakpoint(md) {
     flex: 0 0 auto;
     margin-right: $spacing-4;
     margin-bottom: $spacing-3;

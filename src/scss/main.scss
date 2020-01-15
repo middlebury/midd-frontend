@@ -3,18 +3,14 @@
 @import 'variables';
 @import 'mixins';
 
-@import 'keyframes';
-
 // vendor
 @import '../../node_modules/normalize.css/normalize';
 @import '../../node_modules/swiper/src/swiper';
 @import '../../node_modules/swiper/src/components/a11y/a11y';
-@import '../../node_modules/swiper/src/components/navigation/navigation';
 
 // base
 @import 'global';
 @import 'keyframes';
-@import 'print';
 
 // objects
 @import 'paragraphs';
@@ -116,6 +112,8 @@
 @import 'utils/text';
 @import 'utils/toggler';
 
+@import 'print';
+
 .main {
   min-height: 85vh;
 }
@@ -128,12 +126,13 @@
   border-bottom: 1px solid $border-color;
   font-size: $typescale-3;
   margin-bottom: $spacing-4;
-  @include media(md) {
+  @include breakpoint(md) {
     margin-bottom: $spacing-7;
   }
 }
 
 /* libchat widget button */
+// stylelint-disable-next-line selector-class-pattern
 .lcs_slide_out header a {
   right: 10px !important;
   left: auto !important;

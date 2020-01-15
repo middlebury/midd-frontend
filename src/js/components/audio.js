@@ -5,7 +5,7 @@ import Slider from './slider';
 
 function formatTime(seconds) {
   let minutes = Math.floor(seconds / 60);
-  minutes = minutes >= 10 ? minutes : '' + minutes;
+  minutes = minutes >= 10 ? minutes : String(minutes);
   seconds = Math.floor(seconds % 60);
   seconds = seconds >= 10 ? seconds : '0' + seconds;
   return minutes + ':' + seconds;
@@ -84,11 +84,11 @@ class AudioPlayer extends Component {
   };
 
   handleSliderLeft = () => {
-    this.audio.currentTime = this.audio.currentTime - 3;
+    this.audio.currentTime -= 3;
   };
 
   handleSliderRight = () => {
-    this.audio.currentTime = this.audio.currentTime + 3;
+    this.audio.currentTime += 3;
   };
 
   render(props, { duration, currentTime, muted, playing }) {

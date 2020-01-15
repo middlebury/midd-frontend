@@ -68,7 +68,7 @@ class Digest {
       this.elem
     );
 
-    new MenuSpy(this.elem);
+    const menuSpy = new MenuSpy(this.elem);
 
     let offset = 0;
     // TODO: don't tie the js-headroom to this widget as the element.
@@ -80,7 +80,7 @@ class Digest {
       offset = () => (isLargeUp() ? headroom.offsetHeight : 0);
     }
 
-    new SmoothScroll('.digest__link', {
+    const smoothScroll = new SmoothScroll('.digest__link', {
       offset
     });
 

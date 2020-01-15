@@ -1,6 +1,6 @@
 .roster {
   @include clearfix;
-  @include make-negative-gutters;
+  @include make-row-gutters;
 }
 
 .roster__item {
