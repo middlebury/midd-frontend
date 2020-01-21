@@ -19,6 +19,9 @@ import 'object-fit-images';
 // used in menu-spy.js and triggering chart animations when they scroll into view
 import 'intersection-observer';
 
+// polyfill Element.closest()
+import 'element-closest';
+
 import focusWithin from 'focus-within'; // polyfill :focus-within for tab accessible menus
 
 import './headroom'; // sticky site headers
@@ -39,5 +42,6 @@ import './tabs';
 import './select-url';
 import './charts';
 import './countup';
+import './flowchart';
 
 focusWithin(document);
