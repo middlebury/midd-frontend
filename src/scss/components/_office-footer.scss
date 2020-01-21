@@ -19,6 +19,17 @@
   padding-bottom: $spacing-4;
   padding-top: $spacing-4;
 
+  @include breakpoint(md) {
+    padding-bottom: $spacing-5;
+    padding-top: $spacing-5;
+  }
+
+  @include breakpoint(lg) {
+    @include make-col(4);
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
   &:not(:last-child) {
     border-bottom: 1px solid $border-color;
 
@@ -26,11 +37,5 @@
       border-bottom: 0;
       border-right: 1px solid $border-color;
     }
-  }
-
-  @include breakpoint(lg) {
-    @include make-col(4);
-    padding-top: 0;
-    padding-bottom: 0;
   }
 }
