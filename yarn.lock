@@ -9700,10 +9700,10 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier-plugin-twig-melody@^0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/prettier-plugin-twig-melody/-/prettier-plugin-twig-melody-0.2.3.tgz#9703034c4f21f49fe71aeb4fceb93bf30f663871"
-  integrity sha512-2XUziG0J74Vo6c6HeLmYyV7IwC7ENEKQLx3jjkpTZjPlkdWEm6KJ2Tik0vI5A3o2t0lkjpQnMrgJs2noT+zibQ==
+prettier-plugin-twig-melody@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-twig-melody/-/prettier-plugin-twig-melody-0.3.1.tgz#1072d86711f46fa5719c365ef2dcf9cd45a69452"
+  integrity sha512-ngjzoT7YPfQaebSqQlZRHKhdSun8XrQqz8C2s/rOPErWoVNuxNsXz1KI+44Jt2HYgxE55XQQZQ2M++SajsOqmg==
   dependencies:
     babel-types "^6.26.0"
     melody-extension-core "^1.6.0"
