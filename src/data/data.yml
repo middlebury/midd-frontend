@@ -4,27 +4,27 @@ site_title: Middlebury College
 
 site_nav:
   items:
-  - text: About the College
-    items:
-    - text: Liberal Arts at Middlebury
-    - text: Faculty Directory
-    - text: Departments and Programs
-    - text: The Library
-    - text: J-Term
-    - text: Summer Studies
-    - text: Study Abroad
-    - text: Academic Resources and Centers
-    - text: Academic Calendar
-  - text: Life at Middlebury
-  - text: Academics
-    items:
-    - text: Liberal Arts at Middlebury
-    - text: Faculty Directory
-    - text: Departments and Programs
-    - text: The Library
-  - text: Admissions
-  - text: News
-  - text: Events
+    - text: About the College
+      items:
+        - text: Liberal Arts at Middlebury
+        - text: Faculty Directory
+        - text: Departments and Programs
+        - text: The Library
+        - text: J-Term
+        - text: Summer Studies
+        - text: Study Abroad
+        - text: Academic Resources and Centers
+        - text: Academic Calendar
+    - text: Life at Middlebury
+    - text: Academics
+      items:
+        - text: Liberal Arts at Middlebury
+        - text: Faculty Directory
+        - text: Departments and Programs
+        - text: The Library
+    - text: Admissions
+    - text: News
+    - text: Events
 
 footer_nav:
   - title: Information for
@@ -62,7 +62,6 @@ footer_nav:
         url: https://middlebury.zoom.us
       - text: Site Editor Login
         url: https://www.middlebury.edu/institute/saml/login?destination=/
-
 
 secondary_footer_nav:
   - text: About Middlebury
@@ -311,7 +310,6 @@ gallery_data:
     sizes: ''
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
-
   - src: http://placekitten.com/960/540
     thumb: http://placekitten.com/64/36
     width: 960
@@ -380,84 +378,129 @@ gallery_data:
     sizes: ''
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
 
-
-
-
 top_level_nav_example:
-- text: Application Instructions and Deadlines
-- text: Admission Options
-- text: Standardized Tests
-- text: Interview Policy
-- text: February Admission
-- text: Transfer Applicants
-- text: International Applicants
-- text: Undocumented Applicants
-- text: Taking a Gap Year
-- text: NESCAC Admissions Practices
+  - text: Application Instructions and Deadlines
+  - text: Admission Options
+  - text: Standardized Tests
+  - text: Interview Policy
+  - text: February Admission
+  - text: Transfer Applicants
+  - text: International Applicants
+  - text: Undocumented Applicants
+  - text: Taking a Gap Year
+  - text: NESCAC Admissions Practices
 
 midd_nav:
-- text: Our Schools
-  href: '#'
-  items:
-  - href: http://www.middlebury.edu
-    text: Middlebury College
-  - href: http://www.middlebury.edu/ls
-    text: Language Schools
-  - href: http://www.middlebury.edu/blse
-    text: Bread Loaf School of English
-  - href: http://www.middlebury.edu/bread-loaf-conferences
-    text: Bread Loaf Writers' Conference
-  - href: https://www.middlebury.edu/institute/
-    text: Institute of International Studies at Monterey
-  - href: http://www.middlebury.edu/study-abroad
-    text: C.V. Starr Schools Abroad
-  - href: http://www.middlebury.edu/environment
-    text: School of the Environment
-- href: http://www.middlebury.edu/about
-  text: About Middlebury
-- href: http://www.middlebury.edu/office/
-  text: Offices and Services
-
+  - text: Our Schools
+    href: '#'
+    items:
+      - href: http://www.middlebury.edu
+        text: Middlebury College
+      - href: http://www.middlebury.edu/ls
+        text: Language Schools
+      - href: http://www.middlebury.edu/blse
+        text: Bread Loaf School of English
+      - href: http://www.middlebury.edu/bread-loaf-conferences
+        text: Bread Loaf Writers' Conference
+      - href: https://www.middlebury.edu/institute/
+        text: Institute of International Studies at Monterey
+      - href: http://www.middlebury.edu/study-abroad
+        text: C.V. Starr Schools Abroad
+      - href: http://www.middlebury.edu/environment
+        text: School of the Environment
+  - href: http://www.middlebury.edu/about
+    text: About Middlebury
+  - href: http://www.middlebury.edu/office/
+    text: Offices and Services
 
 system_status:
-- name: Internet<br>(Northbound Link)
-- name: Internet<br>(Southbound Link)
-- name: Email
-  link: "#"
-- name: Self-Service Banner (SSB)
-- name: Internet Native Banner (INB)
-- name: Oracle Finance
-- name: Google Apps
-  link: "#"
-- name: Office365
-  link: "#"
-- name: VPN
-- name: Zoom
-  link: "#"
-- name: Directory
-- name: GO
-- name: WordPress
-- name: Canvas
+  - name: Internet<br>(Northbound Link)
+  - name: Internet<br>(Southbound Link)
+  - name: Email
+    link: '#'
+  - name: Self-Service Banner (SSB)
+  - name: Internet Native Banner (INB)
+  - name: Oracle Finance
+  - name: Google Apps
+    link: '#'
+  - name: Office365
+    link: '#'
+  - name: VPN
+  - name: Zoom
+    link: '#'
+  - name: Directory
+  - name: GO
+  - name: WordPress
+  - name: Canvas
 
 printer_status:
-- name: LIB142
-- name: LIB242
-- name: LIB242K
-- name: LIB303
-- name: LIB_PUBLIC_COLOR1
-- name: LIB Poster Printer
-- name: LAF122
-- name: BIH_155_COPY
-- name: MBH155
-- name: BIH203K
-- name: BIH203K
-- name: BIH505
-- name: BIH632
-- name: MBH Poster Printer
-- name: AXN105
-- name: CFA_PUBLIC
-- name: MiddXPress
-- name: MNR214
-- name: RAJLAB
-- name: SDL122a
-- name: PRTWOOD<br>Proctor Lounge
+  - name: LIB142
+  - name: LIB242
+  - name: LIB242K
+  - name: LIB303
+  - name: LIB_PUBLIC_COLOR1
+  - name: LIB Poster Printer
+  - name: LAF122
+  - name: BIH_155_COPY
+  - name: MBH155
+  - name: BIH203K
+  - name: BIH203K
+  - name: BIH505
+  - name: BIH632
+  - name: MBH Poster Printer
+  - name: AXN105
+  - name: CFA_PUBLIC
+  - name: MiddXPress
+  - name: MNR214
+  - name: RAJLAB
+  - name: SDL122a
+  - name: PRTWOOD<br>Proctor Lounge
+
+flowchart_data:
+  - id: 1
+    title: Do you need chat functionality?
+    choices:
+      - text: Yes
+        to: 2
+      - text: No
+        to: 3
+  - id: 2
+    title: Will your chats include sensitive data or will you be collaborating with external guests?
+    text: Specifically will include sensitive content, not just discussion around sensitive topics – distinguish between “Change the SSN” and “Change SSN from xxx-xx-xxxx to...”
+    choices:
+      - text: Yes
+        to: 4
+      - text: No
+        to: 5
+  - id: 3
+    text: Do not use chat.
+  - id: 4
+    title: Has you department or collaborants selected a tool?
+    choices:
+      - text: Yes
+        to: 5
+      - text: No
+        to: 7
+  - id: 5
+    title: Teams or Zoom?
+    choices:
+      - text: Yes
+        to: 6
+      - text: No
+        to: 8
+  - id: 6
+    text: Use Teams or Zoom.
+  - id: 7
+    title: Simple Chat? (vs. a more fully featured, integrated capability?)
+    text: Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+    choices:
+      - text: Yes
+        to: 9
+      - text: No
+        to: 10
+  - id: 8
+    text: Use select tool but consider switching to Teams or Zoom.
+  - id: 9
+    text: We suggest Teams. <a href="#">Set up your Teams account</a>.
+  - id: 10
+    text: We suggest Zoom. <a href="#">Set up your Zoom account</a>.
