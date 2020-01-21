@@ -1,8 +1,12 @@
 .office-footer {
   background: $gray-lighter;
-  padding-top: $spacing-5;
-  padding-bottom: $spacing-5;
   text-align: center;
+  border-top: 1px solid $border-color;
+
+  @include breakpoint(lg) {
+    padding-top: $spacing-5;
+    padding-bottom: $spacing-5;
+  }
 }
 
 .office-footer__row {
@@ -25,7 +29,7 @@
   }
 
   @include breakpoint(lg) {
-    @include make-col(3);
+    @include make-col(4);
     padding-top: 0;
     padding-bottom: 0;
   }
