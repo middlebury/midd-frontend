@@ -1,0 +1,32 @@
+.office-footer {
+  background: $gray-lighter;
+  padding-top: $spacing-5;
+  padding-bottom: $spacing-5;
+  text-align: center;
+}
+
+.office-footer__row {
+  @include make-row;
+  justify-content: center;
+}
+
+.office-footer__col {
+  @include make-col-ready;
+  padding-bottom: $spacing-4;
+  padding-top: $spacing-4;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $border-color;
+
+    @include breakpoint(lg) {
+      border-bottom: 0;
+      border-right: 1px solid $border-color;
+    }
+  }
+
+  @include breakpoint(lg) {
+    @include make-col(3);
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
