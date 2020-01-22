@@ -2,8 +2,8 @@
 /* eslint-disable no-console */
 const { rollup } = require('rollup');
 const babel = require('rollup-plugin-babel');
-const resolve = require('rollup-plugin-node-resolve');
-const commonJS = require('rollup-plugin-commonjs');
+const resolve = require('@rollup/plugin-node-resolve');
+const commonJS = require('@rollup/plugin-commonjs');
 const { uglify } = require('rollup-plugin-uglify');
 const sizes = require('rollup-plugin-sizes');
 const filesize = require('rollup-plugin-filesize');
