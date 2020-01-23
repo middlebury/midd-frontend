@@ -371,6 +371,7 @@ const deploy = gulp.series(replaceImagePaths, deployDist);
 module.exports = {
   deploy,
   scripts,
+  styles,
   build,
   dev,
   devSaw,
