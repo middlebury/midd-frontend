@@ -8377,11 +8377,6 @@ onetime@^5.1.0:
   dependencies:
     mimic-fn "^2.1.0"
 
-onresize@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/onresize/-/onresize-1.0.1.tgz#cddf4c9575907553f2caeb2469434a9f700daa8d"
-  integrity sha1-zd9MlXWQdVPyyuskaUNKn3ANqo0=
-
 openurl@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/openurl/-/openurl-1.1.1.tgz#3875b4b0ef7a52c156f0db41d4609dbb0f94b387"
