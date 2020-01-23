@@ -182,7 +182,7 @@
   // instead of the single selector it is used in front of.
   // See https://stackoverflow.com/q/36902927/2193516
   @at-root .paragraph--text + .paragraph--text > h2,
-    .lead + & > h2 {
+    .lead + .paragraph--text > h2 {
     @include h2;
     margin-top: $spacing-7;
     margin-bottom: $spacing-4;
