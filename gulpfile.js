@@ -19,7 +19,7 @@ const gulpIf = require('gulp-if');
 const size = require('gulp-size');
 const rename = require('gulp-rename');
 const postcss = require('gulp-postcss');
-const postcssPresetEnv = require('postcss-preset-env');
+const autoprefixer = require('autoprefixer');
 const mqPacker = require('css-mqpacker');
 const sortCSSMq = require('sort-css-media-queries');
 const cssnano = require('cssnano');
@@ -117,13 +117,7 @@ const lintStyles = () => {
 };
 
 const styles = () => {
-  const plugins = [
-    postcssPresetEnv({
-      autoprefixer: {
-        grid: true
-      }
-    })
-  ];
+  const plugins = [autoprefixer()];
 
   if (PROD) {
     plugins.push(
