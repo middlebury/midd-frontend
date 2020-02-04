@@ -30,7 +30,7 @@ jobs:
         target_branch: master-dist
         on:
           branch: master
-    - if: branch = master
+    - if: branch = master && type = pull_request
       script:
         - npm run build
         - npm run build:icons
