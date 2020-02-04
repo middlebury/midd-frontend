@@ -14,7 +14,7 @@
     "deploy:gh": "npm run build && gh-pages -d dist -b master-dist",
     "now-build": "npm run build && mv dist public",
     "test": "npm run test:bundlesize",
-    "test:visual": "percy snapshot dist/*.html",
+    "test:visual": "percy snapshot dist --ignore-files '/icons/**'",
     "test:bundlesize": "bundlesize",
     "lint": "npm run lint:js && npm run lint:styles",
     "lint:js": "eslint src/js/**",
