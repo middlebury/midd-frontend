@@ -19,7 +19,7 @@ jobs:
         - npm run build
         - npm run build:icons
         - npm test
-    - if: branch = percy-master-249
+    - if: branch = master
       script:
         - npm run build
         - npm run build:icons
