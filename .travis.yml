@@ -21,9 +21,11 @@ jobs:
         - npm test
     - if: branch = percy-master-249
       script:
+        - npm run build
+        - npm run build:icons
+        - npm test
         - npm run test:visual
-    - if: branch = master
-    - script:
+      before_deploy:
         - gulp replaceImagePaths --imagesDir="/office/themes/custom/middlebury_theme/images/"
       deploy:
         provider: pages
