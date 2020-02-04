@@ -19,12 +19,6 @@ jobs:
         - npm run build
         - npm run build:icons
         - npm test
-    - if: branch = master
-      script:
-        - npm run build
-        - npm run build:icons
-        - npm test
-        - npm run test:visual
       before_deploy:
         - gulp replaceImagePaths --imagesDir="/office/themes/custom/middlebury_theme/images/"
       deploy:
@@ -36,3 +30,9 @@ jobs:
         target_branch: master-dist
         on:
           branch: master
+    - if: branch = master
+      script:
+        - npm run build
+        - npm run build:icons
+        - npm test
+        - npm run test:visual
