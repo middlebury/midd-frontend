@@ -5,25 +5,34 @@ before_install:
 cache:
   yarn: true
   directories:
-  - node_modules
+    - node_modules
 notifications:
   email: false
   slack:
     secure: jz4cNijwPP1TTLQWvUf8Tjnc2j0vTN6IHNO7Z0370JVddZxkoQGIMrGVGIo8aVw6TJUcKuy40HzkmKEgjgnEV06X8KWMbrh6FVMAOe96yJjEvA8RAlzDYIS9zrm0anr7Ea/YAD1ToBwRuU4s2wL5d1EUFw5hQavC0dVx7vP4zbQf/8HTwsmc/N9uQMKjksHXsGs1n0bPJaxHwXtWjuw1G1QKDK0wTV4inN1emip75RPKjpiCwYRMoHECwIB4T3PM0XKBjvkgh02Wl4bbEL85bupaxcJ/O8PIVj7vNF4pC0elUjJTvgNGbm1SRHjoldP3BcBotx++lHqbiRdKAduRJaQ0UT7DmTyzP8tz1mrJ0AwuepHUy/HvlO8EDtpSkcomoIiGxyVzlDBAMqb4XilyNb4/CQ+yp6yEpbHMiH0eW67x9qC59lJmdaSwToiDkbPgXgya3le+sYFV2kkbgmwHHtOHadFBYXqQW49wLDOYqbpglwodEIUA1qabhI7Gu7It3IJs5hzh5DcGYei1BgrVfQxP/EO7mIiVPWwPk1jxn2FPA/cxyBuu1OTKew4RItVuJXOOIK+3XS+v0/eSFDkR5NqYE/v/tr+jmaLpgIVqnpBcJY7vbN9RnZRX+73+fXQ6ckzgZsV3FInLTcMH7kcoDXKLrrgsiLA2k3bKhA9IkCk=
 node_js:
-- 12.14.1
-script:
-- npm run build
-- npm run build:icons
-- npm test
-# - npm run test:visual
-- gulp replaceImagePaths --imagesDir="/office/themes/custom/middlebury_theme/images/"
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: "$GITHUB_TOKEN"
-  keep_history: true
-  local_dir: dist
-  target_branch: master-dist
-  on:
-    branch: master
+  - 12.14.1
+
+jobs:
+  include:
+    - script:
+        - npm run build
+        - npm run build:icons
+        - npm test
+    - if: branch = master
+      script:
+        - npm run build
+        - npm run build:icons
+        - npm test
+        - npm run test:visual
+      before_deploy:
+        - gulp replaceImagePaths --imagesDir="/office/themes/custom/middlebury_theme/images/"
+      deploy:
+        provider: pages
+        cleanup: true
+        github_token: '$GITHUB_TOKEN'
+        keep_history: true
+        local_dir: dist
+        target_branch: master-dist
+        on:
+          branch: master
