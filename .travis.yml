@@ -13,12 +13,12 @@ notifications:
 node_js:
   - 12.14.1
 
-script:
-  - npm run build
-  - npm run build:icons
-  - npm test
 jobs:
   include:
+    - script:
+        - npm run build
+        - npm run build:icons
+        - npm test
     - if: branch = percy-master-249
       script:
         - npm run test:visual
