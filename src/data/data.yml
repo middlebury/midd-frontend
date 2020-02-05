@@ -4,27 +4,27 @@ site_title: Middlebury College
 
 site_nav:
   items:
-  - text: About the College
-    items:
-    - text: Liberal Arts at Middlebury
-    - text: Faculty Directory
-    - text: Departments and Programs
-    - text: The Library
-    - text: J-Term
-    - text: Summer Studies
-    - text: Study Abroad
-    - text: Academic Resources and Centers
-    - text: Academic Calendar
-  - text: Life at Middlebury
-  - text: Academics
-    items:
-    - text: Liberal Arts at Middlebury
-    - text: Faculty Directory
-    - text: Departments and Programs
-    - text: The Library
-  - text: Admissions
-  - text: News
-  - text: Events
+    - text: About the College
+      items:
+        - text: Liberal Arts at Middlebury
+        - text: Faculty Directory
+        - text: Departments and Programs
+        - text: The Library
+        - text: J-Term
+        - text: Summer Studies
+        - text: Study Abroad
+        - text: Academic Resources and Centers
+        - text: Academic Calendar
+    - text: Life at Middlebury
+    - text: Academics
+      items:
+        - text: Liberal Arts at Middlebury
+        - text: Faculty Directory
+        - text: Departments and Programs
+        - text: The Library
+    - text: Admissions
+    - text: News
+    - text: Events
 
 footer_nav:
   - title: Information for
@@ -62,7 +62,6 @@ footer_nav:
         url: https://middlebury.zoom.us
       - text: Site Editor Login
         url: https://www.middlebury.edu/institute/saml/login?destination=/
-
 
 secondary_footer_nav:
   - text: About Middlebury
@@ -311,7 +310,6 @@ gallery_data:
     sizes: ''
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
-
   - src: http://placekitten.com/960/540
     thumb: http://placekitten.com/64/36
     width: 960
@@ -380,44 +378,40 @@ gallery_data:
     sizes: ''
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
 
-
-
-
 top_level_nav_example:
-- text: Application Instructions and Deadlines
-- text: Admission Options
-- text: Standardized Tests
-- text: Interview Policy
-- text: February Admission
-- text: Transfer Applicants
-- text: International Applicants
-- text: Undocumented Applicants
-- text: Taking a Gap Year
-- text: NESCAC Admissions Practices
+  - text: Application Instructions and Deadlines
+  - text: Admission Options
+  - text: Standardized Tests
+  - text: Interview Policy
+  - text: February Admission
+  - text: Transfer Applicants
+  - text: International Applicants
+  - text: Undocumented Applicants
+  - text: Taking a Gap Year
+  - text: NESCAC Admissions Practices
 
 midd_nav:
-- text: Our Schools
-  href: '#'
-  items:
-  - href: http://www.middlebury.edu
-    text: Middlebury College
-  - href: http://www.middlebury.edu/ls
-    text: Language Schools
-  - href: http://www.middlebury.edu/blse
-    text: Bread Loaf School of English
-  - href: http://www.middlebury.edu/bread-loaf-conferences
-    text: Bread Loaf Writers' Conference
-  - href: https://www.middlebury.edu/institute/
-    text: Institute of International Studies at Monterey
-  - href: http://www.middlebury.edu/study-abroad
-    text: C.V. Starr Schools Abroad
-  - href: http://www.middlebury.edu/environment
-    text: School of the Environment
-- href: http://www.middlebury.edu/about
-  text: About Middlebury
-- href: http://www.middlebury.edu/office/
-  text: Offices and Services
-
+  - text: Our Schools
+    href: '#'
+    items:
+      - href: http://www.middlebury.edu
+        text: Middlebury College
+      - href: http://www.middlebury.edu/ls
+        text: Language Schools
+      - href: http://www.middlebury.edu/blse
+        text: Bread Loaf School of English
+      - href: http://www.middlebury.edu/bread-loaf-conferences
+        text: Bread Loaf Writers' Conference
+      - href: https://www.middlebury.edu/institute/
+        text: Institute of International Studies at Monterey
+      - href: http://www.middlebury.edu/study-abroad
+        text: C.V. Starr Schools Abroad
+      - href: http://www.middlebury.edu/environment
+        text: School of the Environment
+  - href: http://www.middlebury.edu/about
+    text: About Middlebury
+  - href: http://www.middlebury.edu/office/
+    text: Offices and Services
 
 system_status:
 - name: Internet<br>(Northbound Link)
@@ -440,24 +434,24 @@ system_status:
 - name: Canvas
 
 printer_status:
-- name: LIB142
-- name: LIB242
-- name: LIB242K
-- name: LIB303
-- name: LIB_PUBLIC_COLOR1
-- name: LIB Poster Printer
-- name: LAF122
-- name: BIH_155_COPY
-- name: MBH155
-- name: BIH203K
-- name: BIH203K
-- name: BIH505
-- name: BIH632
-- name: MBH Poster Printer
-- name: AXN105
-- name: CFA_PUBLIC
-- name: MiddXPress
-- name: MNR214
-- name: RAJLAB
-- name: SDL122a
-- name: PRTWOOD<br>Proctor Lounge
+  - name: LIB142
+  - name: LIB242
+  - name: LIB242K
+  - name: LIB303
+  - name: LIB_PUBLIC_COLOR1
+  - name: LIB Poster Printer
+  - name: LAF122
+  - name: BIH_155_COPY
+  - name: MBH155
+  - name: BIH203K
+  - name: BIH203K
+  - name: BIH505
+  - name: BIH632
+  - name: MBH Poster Printer
+  - name: AXN105
+  - name: CFA_PUBLIC
+  - name: MiddXPress
+  - name: MNR214
+  - name: RAJLAB
+  - name: SDL122a
+  - name: PRTWOOD<br>Proctor Lounge
