@@ -4,7 +4,8 @@ module.exports = {
   extends: ['xo/esnext', 'xo/browser', 'prettier'],
   plugins: ['react', 'prettier'],
   globals: {
-    drupalSettings: true
+    drupalSettings: true,
+    process: true
   },
   settings: {
     // set JSX pragma to h for Preact
