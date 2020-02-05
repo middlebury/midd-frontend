@@ -18,9 +18,7 @@ script:
   - npm run build:icons
   - npm test
   - if [ $TRAVIS_BRANCH == "master" && $TRAVIS_PULL_REQUEST == "true" ]; then npm run test:visual; fi
-before_deploy:
   - gulp replaceImagePaths --imagesDir="/office/themes/custom/middlebury_theme/images/"
-  - ls dist
 deploy:
   provider: pages
   cleanup: true
