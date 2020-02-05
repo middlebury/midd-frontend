@@ -17,7 +17,7 @@ script:
   - npm run build
   - npm run build:icons
   - npm test
-  # - if [ $TRAVIS_BRANCH == "master" && $TRAVIS_PULL_REQUEST == "true" ]; then npm run test:visual; fi
+  - if [ $TRAVIS_BRANCH == "master" && $TRAVIS_PULL_REQUEST == "true" ]; then npm run test:visual; fi
   - gulp replaceImagePaths --imagesDir="/office/themes/custom/middlebury_theme/images/"
 deploy:
   provider: pages
