@@ -74,9 +74,14 @@
 
     {% for n in 0..20 %}
       <div class="roster__item">
+        {% set name = random(names) %}
+
+        {% if env.test %}
+          {% set name = names[0] %}
+        {% endif %}
 
         {% include 'partials/coursehub-profile.twig' with {
-          name: random(names),
+          name: name,
           meta: [
             {
               name: 'Email',
