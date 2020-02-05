@@ -13,26 +13,21 @@ notifications:
 node_js:
   - 12.14.1
 
-jobs:
-  include:
-    - script:
-        - npm run build
-        - npm run build:icons
-        - npm test
-      before_deploy:
-        - gulp replaceImagePaths --imagesDir="/office/themes/custom/middlebury_theme/images/"
-      deploy:
-        provider: pages
-        cleanup: true
-        github_token: '$GITHUB_TOKEN'
-        keep_history: true
-        local_dir: dist
-        target_branch: master-dist
-        on:
-          branch: master
-    - if: branch = master && type = pull_request
-      script:
-        - npm run build
-        - npm run build:icons
-        - npm test
-        - npm run test:visual
+script:
+  - npm run build
+  - npm run build:icons
+  - npm test
+  - if: branch = master && type = pull_request
+    scripts:
+      - npm run test:visual
+before_deploy:
+  - gulp replaceImagePaths --imagesDir="/office/themes/custom/middlebury_theme/images/"
+deploy:
+  provider: pages
+  cleanup: true
+  github_token: '$GITHUB_TOKEN'
+  keep_history: true
+  local_dir: dist
+  target_branch: master-dist
+  on:
+    branch: master
