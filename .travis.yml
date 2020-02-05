@@ -17,9 +17,7 @@ script:
   - npm run build
   - npm run build:icons
   - npm test
-  - if: branch = master && type = pull_request
-    scripts:
-      - npm run test:visual
+  - if [ $TRAVIS_BRANCH == "master" ]; then npm run test:visual; fi
 before_deploy:
   - gulp replaceImagePaths --imagesDir="/office/themes/custom/middlebury_theme/images/"
 deploy:
