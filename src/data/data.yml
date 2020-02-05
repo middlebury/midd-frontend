@@ -414,24 +414,27 @@ midd_nav:
     text: Offices and Services
 
 system_status:
-- name: Internet<br>(Northbound Link)
-- name: Internet<br>(Southbound Link)
-- name: Email
-  link: "#"
-- name: Self-Service Banner (SSB)
-- name: Internet Native Banner (INB)
-- name: Oracle Finance
-- name: Google Apps
-  link: "#"
-- name: Office365
-  link: "#"
-- name: VPN
-- name: Zoom
-  link: "#"
-- name: Directory
-- name: GO
-- name: WordPress
-- name: Canvas
+  - name: Internet<br>(Northbound Link)
+    type: success
+  - name: Internet<br>(Southbound Link)
+    type: warning
+  - name: Email
+    type: danger
+    link: '#'
+  - name: Self-Service Banner (SSB)
+  - name: Internet Native Banner (INB)
+  - name: Oracle Finance
+  - name: Google Apps
+    link: '#'
+  - name: Office365
+    link: '#'
+  - name: VPN
+  - name: Zoom
+    link: '#'
+  - name: Directory
+  - name: GO
+  - name: WordPress
+  - name: Canvas
 
 printer_status:
   - name: LIB142
