@@ -6,13 +6,12 @@
   font-weight: $font-weight-semibold;
   font-size: $typescale-3;
   transition: background 0.2s;
-  padding-top: $spacing-2;
+  padding-top: $spacing-1;
   padding-bottom: $spacing-2;
   @include make-gutters;
 
   @include breakpoint(md) {
-    padding-top: $spacing-2;
-    padding-bottom: $spacing-2;
+    padding-bottom: $spacing-1;
   }
 
   &:hover,
