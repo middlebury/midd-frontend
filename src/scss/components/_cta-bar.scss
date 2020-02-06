@@ -40,16 +40,6 @@
 }
 
 .cta-bar__button {
-  background: $white;
-  padding: $spacing-1;
-  color: $navy;
-  font-size: $typescale-2;
-  display: inline-block;
-  border: 1px solid $white;
   transition: opacity 0.2s;
-  @include button-size('sm');
-
-  @include breakpoint(md) {
-    display: inline-block;
-  }
+  background: $white;
 }
