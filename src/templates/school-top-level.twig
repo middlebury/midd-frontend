@@ -1,4 +1,4 @@
-{% extends "school-layout.twig" %}
+{% extends 'school-layout.twig' %}
 
 {% set theme = 'sa' %}
 
@@ -7,12 +7,24 @@
 {% set page_header = {
   title: 'Argentina',
   breadcrumb: [
-    { text: 'Middlebury C.V. Star Schools Abroad' },
-    { text: 'Our Schools' },
+    {
+      text: 'Middlebury C.V. Star Schools Abroad'
+    },
+    {
+      text: 'Our Schools'
+    }
   ],
   image_src: has_page_image,
   has_menu: true
 } %}
+
+{% block before_page_header %}
+  {% include 'partials/cta-bar.twig' with {
+    link: '#',
+    text: 'Admitted Students Deposit Here',
+    button: 'Deposit Now'
+  } %}
+{% endblock %}
 
 {% block page %}
   {% include 'partials/top-level-layout.twig' with {
