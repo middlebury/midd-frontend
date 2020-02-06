@@ -67,9 +67,8 @@ class MiddChart {
 
     const prefixTick = value => `${valuePrefix}${value}${valueSuffix}`;
 
-    const noop = () => {};
-    const xTickCallback = isHorizontalBars ? prefixTick : noop;
-    const yTickCallback = isHorizontalBars ? noop : prefixTick;
+    const xTickCallback = isHorizontalBars ? prefixTick : tick => tick;
+    const yTickCallback = isHorizontalBars ? tick => tick : prefixTick;
 
     const options = {
       maintainAspectRatio: true,

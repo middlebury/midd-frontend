@@ -415,8 +415,11 @@ midd_nav:
 
 system_status:
   - name: Internet<br>(Northbound Link)
+    type: success
   - name: Internet<br>(Southbound Link)
+    type: warning
   - name: Email
+    type: danger
     link: '#'
   - name: Self-Service Banner (SSB)
   - name: Internet Native Banner (INB)
