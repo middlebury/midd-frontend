@@ -25,6 +25,16 @@ body {
   }
 }
 
+button {
+  padding: 0;
+  background: 0;
+  border: 0;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+  cursor: pointer;
+}
+
 // remove ios border radius
 input,
 textarea {
