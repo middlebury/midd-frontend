@@ -1,0 +1,27 @@
+{% set id = random(1234) %}
+<div class="filter">
+  <h3 class="filter__title">
+    <button class="filter__button"
+      data-toggle-target=".js-filter-{{ id }}"
+      aria-expanded="true">
+      {{ title|default('Filter label') }}
+
+      {% include 'partials/icon.twig' with {
+        name: 'minus',
+        class: 'toggled-hide'
+      } %}
+      {% include 'partials/icon.twig' with {
+        name: 'plus',
+        class: 'toggled-show'
+      } %}
+    </button>
+  </h3>
+
+  <ul class="filter__list js-filter-{{ id }} is-toggled-hide">
+    {% for item in items %}
+      <li class="filter__item">
+        <a href="" class="filter__link">{{ item.text }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
