@@ -4,15 +4,18 @@
 
 .cta-group__item {
   @include make-col-ready;
-  padding-top: $spacing-5;
-  padding-bottom: $spacing-5;
+  padding-top: $spacing-4;
+  padding-bottom: $spacing-4;
   text-align: center;
 
+  @include breakpoint(md) {
+    padding-top: $spacing-5;
+    padding-bottom: $spacing-5;
+  }
+
   @include breakpoint(lg) {
-    @include make-col-offset(0);
-    padding-top: $spacing-7;
-    padding-bottom: $spacing-7;
-    min-height: 300px;
+    padding-top: 0;
+    padding-bottom: 0;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -43,8 +46,8 @@
   font-size: $typescale-4;
   margin-bottom: $spacing-4;
 
-  @include breakpoint(lg) {
-    margin-bottom: $spacing-7;
+  @include breakpoint(md) {
+    margin-bottom: $spacing-5;
   }
 }
 
