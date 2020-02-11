@@ -1,16 +1,16 @@
 {% set id = random(1000) %}
 
-<div class="paragraph px-5 bg-blue-lighter" id="{{ id }}" data-flowchart>
-  {#     <h2 class="h2 mb-5">
+<div class="paragraph flowchart bg-blue-lighter" id="{{ id }}" data-flowchart>
+  {#                        <h2 class="h2 mb-5">
     Flowchart
   </h2> #}
 
   {% for item in flowchart_data %}
     <div id="flowchart-{{ id }}-{{ item.id }}"
-      class="border-b py-5 flowchart-item"
+      class="border-b p-5 pl-7"
       data-flowchart-item>
       {% if item.title is not empty %}
-        <h3 class="h3 mb-2">
+        <h3 class="h3 mb-2 flowchart__title">
           {{ item.title }}
         </h3>
       {% endif %}
@@ -22,19 +22,17 @@
       {% endif %}
 
       {% if item.choices is not empty %}
-        <nav class="mt-4">
-          <ul class="d-flex">
-            {% for choice in item.choices %}
-              <li class="mr-3">
-                <a href="#flowchart-{{ id }}-{{ choice.to }}"
-                  class="button button--outline button--primary button--sm"
-                  data-flowchart-btn>
-                  {{ choice.text }}
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        </nav>
+        <div class="mt-4 radios">
+          {% for choice in item.choices %}
+            <div class="radios__item">
+              <a href="#flowchart-{{ id }}-{{ choice.to }}"
+                class="radios__label"
+                data-flowchart-btn>
+                {{ choice.text }}
+              </a>
+            </div>
+          {% endfor %}
+        </div>
       {% endif %}
     </div>
   {% endfor %}

@@ -27,52 +27,71 @@ import { $, $$, on, off } from './utils/dom';
  */
 class Flowchart {
   constructor(el) {
-    this.root = el;
+    this.elem = el;
 
     this.items = $$('[data-flowchart-item]', el);
     this.btns = $$('[data-flowchart-btn]', el);
 
-    // store the answered ids so we can backtrack
+    this.activeClass = 'radios__label--active';
+
+    // Store the ids of answered questions so we can backtrack
+    // if the user changes their answer to a given question
     this.shownIds = [];
 
     this.init();
   }
 
   init() {
-    this.addListeners();
-  }
+    this.elem.setAttribute('aria-live', 'polite');
 
-  addListeners() {
-    // hide all items except first question
+    // Hide all items except first question.
     this.items.forEach((el, i) => {
-      // ensure the first item is shown
+      el.setAttribute('tabindex', '-1');
+
+      // Do nothing if iterating on the first item e.g. do not hide it
       if (i === 0) {
+        // Add the first item to list of shown ids
         this.shownIds.push(el.id);
         return;
       }
 
-      // el.classList.add('opacity-50', 'hover:opacity-100');
-
-      // show the first item
+      // hide other items
       el.hidden = true;
     });
 
+    this.addListeners();
+  }
+
+  addListeners() {
     this.btns.forEach(btn => on(btn, 'click', this.handleBtnClick));
   }
 
   handleBtnClick = event => {
     event.preventDefault();
 
-    const idSelector = event.target.getAttribute('href').replace('#', '');
+    const elem = event.target;
 
-    const target = $('#' + idSelector);
-    const parent = event.target.closest('[data-flowchart-item]');
+    const idSelector = elem.getAttribute('href').replace('#', '');
+    const parent = elem.closest('[data-flowchart-item]');
+
+    // remove active state style from other answers in the chosen question
+    const btns = $$(
+      `[data-flowchart-item][hidden] [data-flowchart-btn],
+      #${parent.id} [data-flowchart-btn]`,
+      this.elem
+    );
+
+    // remove active state style from necessary buttons
+    btns.forEach(el => el.classList.remove(this.activeClass));
+
+    // set the chosen answer as active
+    event.target.classList.add(this.activeClass);
+
+    const target = $('#' + idSelector, this.elem);
 
     const itemIdIndex = this.shownIds.indexOf(parent.id);
 
     // if the button being clicked is in a previous question
-    // How do we know if it's in a prev question?
-    // -> the id has been stored in shownIds
     if (itemIdIndex >= 0) {
       // get all the ids after the question with an answer being modified
       const afterCurrentItemIds = this.shownIds.filter(
@@ -85,8 +104,6 @@ class Flowchart {
 
       this.shownIds = beforeCurrentItemIds;
 
-      // remove those ids from the shownIds / hide them
-
       // hide all items shown after the updated question
       afterCurrentItemIds.forEach(id => {
         const el = $('#' + id);
@@ -95,20 +112,27 @@ class Flowchart {
     }
 
     // show the next target
-
     this.shownIds.push(idSelector);
 
-    target.classList.remove('opacity-50');
     target.removeAttribute('hidden');
 
-    // smooth scroll to the target
+    anime({
+      targets: [target],
+      translateX: [-40, 0],
+      duration: 400
+    });
 
-    const elementOffset = target.getBoundingClientRect().top;
+    target.focus();
+
+    // // scroll the target to the center of the viewport
+    const rect = target.getBoundingClientRect();
     const scrollPosition = window.pageYOffset;
+    const scrollTop =
+      rect.top + scrollPosition + rect.height / 2 - window.innerHeight / 2;
 
     anime({
       targets: [document.documentElement, document.body],
-      scrollTop: elementOffset + scrollPosition,
+      scrollTop,
       easing: 'easeInCubic',
       duration: 400,
       elasticity: 500
