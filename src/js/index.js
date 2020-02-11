@@ -10,6 +10,7 @@ import 'polyfill-nodelist-foreach';
 // polyfills for micromodal to support ie11
 import 'mdn-polyfills/Object.assign';
 import 'mdn-polyfills/Array.from';
+import 'mdn-polyfills/Element.prototype.closest';
 
 // Polyfill object fit images for easier responsive images.
 // Used in card-carousel and more.
@@ -18,9 +19,6 @@ import 'object-fit-images';
 // polyfill intersection observer for ie and safari
 // used in menu-spy.js and triggering chart animations when they scroll into view
 import 'intersection-observer';
-
-// polyfill Element.closest()
-import 'element-closest';
 
 import focusWithin from 'focus-within'; // polyfill :focus-within for tab accessible menus
 
