@@ -24,6 +24,9 @@
     .d#{$variant}-flex {
       display: flex;
     }
-    // .d#{$variant}-inline-flex  { display: inline-flex ; }
+
+    .d#{$variant}-inline-flex {
+      display: inline-flex;
+    }
   }
 }
