@@ -477,6 +477,7 @@ flowchart_data:
         to: 5
   - id: 3
     text: Do not use chat.
+    answer: true
   - id: 4
     title: Has you department or collaborants selected a tool?
     choices:
@@ -493,6 +494,7 @@ flowchart_data:
         to: 8
   - id: 6
     text: Use Teams or Zoom.
+    answer: true
   - id: 7
     title: Simple Chat? (vs. a more fully featured, integrated capability?)
     text: Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -503,7 +505,10 @@ flowchart_data:
         to: 10
   - id: 8
     text: Use select tool but consider switching to Teams or Zoom.
+    answer: true
   - id: 9
     text: We suggest Teams. <a href="#">Set up your Teams account</a>.
+    answer: true
   - id: 10
     text: We suggest Zoom. <a href="#">Set up your Zoom account</a>.
+    answer: true

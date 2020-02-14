@@ -1,13 +1,24 @@
 .flowchart {
   counter-reset: flowchart;
+  background: $blue-lighter;
 }
 
 .flowchart__item {
-  padding-left: 3rem !important;
+  padding: $spacing-5;
+  padding-left: $spacing-7;
 
-  &:focus {
-    outline: 2px solid $color-active;
+  &:not(:last-child) {
+    border-bottom: 1px solid $border-color;
   }
+}
+
+.flowchart__item--active {
+  border-left: 4px solid $navy;
+}
+
+.flowchart__item--answer {
+  background: $navy;
+  color: $white;
 }
 
 .flowchart__title {

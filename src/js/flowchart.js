@@ -1,6 +1,6 @@
 import anime from 'animejs';
 
-import { $, $$, on, off } from './utils/dom';
+import { $, $$, on, off, removeClass, addClass, hasClass } from './utils/dom';
 
 /**
  * Creates a flowchart of question and answers a user can click through
@@ -32,7 +32,8 @@ class Flowchart {
     this.items = $$('[data-flowchart-item]', el);
     this.btns = $$('[data-flowchart-btn]', el);
 
-    this.activeClass = 'radios__label--active';
+    this.btnActiveClass = 'radios__label--active';
+    this.itemActiveClass = 'flowchart__item--active';
 
     // Store the ids of answered questions so we can backtrack
     // if the user changes their answer to a given question
@@ -52,6 +53,7 @@ class Flowchart {
       if (i === 0) {
         // Add the first item to list of shown ids
         this.shownIds.push(el.id);
+        addClass(el, this.itemActiveClass);
         return;
       }
 
@@ -69,27 +71,26 @@ class Flowchart {
   handleBtnClick = event => {
     event.preventDefault();
 
-    const elem = event.target;
+    const btn = event.target;
+    const btnParent = btn.closest('[data-flowchart-item]');
+    const targetId = btn.getAttribute('href').replace('#', '');
+    const target = $('#' + targetId, this.elem);
+    const itemIdIndex = this.shownIds.indexOf(btnParent.id);
 
-    const idSelector = elem.getAttribute('href').replace('#', '');
-    const parent = elem.closest('[data-flowchart-item]');
+    this.items.forEach(item => removeClass(item, this.itemActiveClass));
 
     // remove active state style from other answers in the chosen question
     const btns = $$(
       `[data-flowchart-item][hidden] [data-flowchart-btn],
-      #${parent.id} [data-flowchart-btn]`,
+      #${btnParent.id} [data-flowchart-btn]`,
       this.elem
     );
 
     // remove active state style from necessary buttons
-    btns.forEach(el => el.classList.remove(this.activeClass));
+    btns.forEach(el => removeClass(el, this.btnActiveClass));
 
     // set the chosen answer as active
-    event.target.classList.add(this.activeClass);
-
-    const target = $('#' + idSelector, this.elem);
-
-    const itemIdIndex = this.shownIds.indexOf(parent.id);
+    addClass(btn, this.btnActiveClass);
 
     // if the button being clicked is in a previous question
     if (itemIdIndex >= 0) {
@@ -112,7 +113,7 @@ class Flowchart {
     }
 
     // show the next target
-    this.shownIds.push(idSelector);
+    this.shownIds.push(targetId);
 
     target.removeAttribute('hidden');
 
@@ -123,6 +124,9 @@ class Flowchart {
     });
 
     target.focus();
+    if (!hasClass(target, 'flowchart__item--answer')) {
+      addClass(target, this.itemActiveClass);
+    }
 
     // // scroll the target to the center of the viewport
     const rect = target.getBoundingClientRect();
