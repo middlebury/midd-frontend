@@ -1,0 +1,24 @@
+<div class="bg-blue-lighter py-lg-7 text-center border-t border-navy">
+  <div class="container">
+    <h2 class="h2 pt-4 pt-md-5 pt-lg-0 mb-lg-7">
+      What do you want?
+    </h2>
+
+    <div class="cta-group">
+      {% for i in 0..3 %}
+        <div class="cta-group__item">
+          <p class="cta-group__text">
+            {% if env.test or random(1) %}
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            {% else %}
+              Lorem ipsum dolor sit
+            {% endif %}
+          </p>
+          <a href="" class="cta-group__button button button--primary">
+            Call to action
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
