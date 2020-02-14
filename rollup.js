@@ -7,7 +7,6 @@ const commonJS = require('@rollup/plugin-commonjs');
 const { uglify } = require('rollup-plugin-uglify');
 const sizes = require('rollup-plugin-sizes');
 const filesize = require('rollup-plugin-filesize');
-const replace = require('@rollup/plugin-replace');
 
 const production = process.env.NODE_ENV === 'production';
 
@@ -17,7 +16,6 @@ module.exports = modules => {
       return rollup({
         input: module.input,
         plugins: [
-          replace({ 'process.env.CI': process.env.CI }),
           babel({
             exclude: /node_modules\/(?!(dom7|ssr-window|swiper|micromodal|lozad|focus-within)\/).*/,
             presets: [

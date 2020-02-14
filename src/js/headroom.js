@@ -13,8 +13,7 @@ if (headerElem && !$('#toolbar-administration')) {
     offset
   });
 
-  if (!process.env.CI) {
-    document.body.style.paddingTop = offset + 'px';
-    headerInstance.init();
-  }
+  document.body.style.paddingTop = offset + 'px';
+
+  headerInstance.init();
 }
