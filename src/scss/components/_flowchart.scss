@@ -19,6 +19,8 @@
 .flowchart__item--answer {
   background: $navy;
   color: $white;
+
+  @include links-current;
 }
 
 .flowchart__title {

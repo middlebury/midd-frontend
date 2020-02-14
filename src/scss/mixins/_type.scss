@@ -93,3 +93,9 @@
   font-weight: $font-weight-normal;
   font-family: $font-family-serif;
 }
+
+@mixin links-current {
+  a {
+    color: currentColor;
+  }
+}
