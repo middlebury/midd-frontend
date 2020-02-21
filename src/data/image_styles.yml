@@ -74,3 +74,12 @@ image_styles:
     - 960x540
     - 1280x720
     - 1440x810
+  collection_card:
+    srcset:
+      - 400x225
+      - 640x360
+  collection_featured:
+    srcset:
+      - 400x225
+      - 640x360
+      - 1024x576
