@@ -22,6 +22,19 @@
   border: 1px solid $border-color;
 }
 
+.filter__legend {
+  float: left;
+  width: 100%;
+}
+
+.filter__body {
+  &:before {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
 .filter__button {
   display: flex;
   justify-content: space-between;
