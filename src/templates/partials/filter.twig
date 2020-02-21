@@ -1,6 +1,6 @@
 {% set id = random(1234) %}
-<div class="filter">
-  <h3 class="filter__title">
+<fieldset class="filter">
+  <legend class="filter__legend">
     <button class="filter__button"
       data-toggle-target=".js-filter-{{ id }}"
       aria-expanded="true">
@@ -15,13 +15,21 @@
         class: 'toggled-show'
       } %}
     </button>
-  </h3>
+  </legend>
 
-  <ul class="filter__list js-filter-{{ id }} is-toggled-hide">
+  <div class="filter__body js-filter-{{
+    id
+    }} is-toggled-hide checkboxes checkboxes--filter">
     {% for item in items %}
-      <li class="filter__item">
-        <a href="" class="filter__link">{{ item.text }}</a>
-      </li>
+      <div class="checkboxes__item">
+        <input type="checkbox"
+          class="checkboxes__input"
+          id="checkbox-item-{{ id }}-{{ loop.index }}" />
+        <label for="checkbox-item-{{ id }}-{{ loop.index }}"
+          class="checkboxes__label">
+          {{ item.text }}
+        </label>
+      </div>
     {% endfor %}
-  </ul>
-</div>
+  </div>
+</fieldset>
