@@ -93,21 +93,22 @@
     {% endblock %}
     {% block content %}
       <div class="mb-5 d-flex border-t border-4 border-navy py-2">
-        <button class="button button--sm">
+        <a href="" class="button button--sm">
           {% include 'partials/icon.twig' with {
             name: 'times'
           } %}Photograph
-        </button>
-        <button class="button button--sm">
+        </a>
+        <a href="" class="button button--sm">
           {% include 'partials/icon.twig' with {
             name: 'times'
           } %}1980
-        </button>
-        <button class="button button--sm" class="ml-auto">
+        </a>
+        <a href="" class="ml-auto button button--sm">
           {% include 'partials/icon.twig' with {
-            name: 'times'
+            name: 'redo',
+            class: 'mr-1'
           } %}Clear Filters
-        </button>
+        </a>
       </div>
 
       <div class="mb-8">
