@@ -23,11 +23,11 @@
       {% endif %}
 
       {% if item.choices is not empty %}
-        <div class="mt-4 radios">
+        <div class="mt-4">
           {% for choice in item.choices %}
-            <div class="radios__item">
+            <div class="radio">
               <a href="#flowchart-{{ id }}-{{ choice.to }}"
-                class="radios__label"
+                class="radio__label"
                 data-flowchart-btn>
                 {{ choice.text }}
               </a>

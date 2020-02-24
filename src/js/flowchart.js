@@ -32,7 +32,7 @@ class Flowchart {
     this.items = $$('[data-flowchart-item]', el);
     this.btns = $$('[data-flowchart-btn]', el);
 
-    this.btnActiveClass = 'radios__label--active';
+    this.btnActiveClass = 'radio__label--checked';
     this.itemActiveClass = 'flowchart__item--active';
 
     // Store the ids of answered questions so we can backtrack
