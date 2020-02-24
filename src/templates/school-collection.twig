@@ -34,56 +34,62 @@
         ]
       } %}
 
-      <div class="filters">
-        <div class="filters__header">
-          <h2 class="filters__title">
-            Filters
-          </h2>
-          <a href="" class="filters__clear button button--sm">
-            {% include 'partials/icon.twig' with {
-              name: 'times',
-              class: 'mr-1'
-            } %}Clear
-          </a>
+      <form>
+        <div class="filters">
+          <div class="filters__header">
+            <h2 class="filters__title">
+              Filters
+            </h2>
+            <a href="" class="button button--sm px-0">
+              {% include 'partials/icon.twig' with {
+                name: 'redo',
+                class: 'mr-1'
+              } %}Clear
+            </a>
+          </div>
+          {% include 'partials/filter.twig' with {
+            title: 'Medium',
+            items: [
+              {
+                text: 'Photograph'
+              },
+              {
+                text: 'Short Story'
+              },
+              {
+                text: 'Poem'
+              },
+              {
+                text: 'Audio'
+              },
+              {
+                text: 'Video'
+              }
+            ]
+          } %}
+          {% include 'partials/filter.twig' with {
+            title: 'Decades',
+            items: [
+              {
+                text: '1980-90'
+              },
+              {
+                text: '1970-80'
+              },
+              {
+                text: '1960-70'
+              },
+              {
+                text: '1940-50'
+              }
+            ]
+          } %}
+
+          <input type="submit"
+            class="button button--primary button--block"
+            value="Apply Filters" />
         </div>
-        {% include 'partials/filter.twig' with {
-          title: 'Medium',
-          items: [
-            {
-              text: 'Photograph'
-            },
-            {
-              text: 'Short Story'
-            },
-            {
-              text: 'Poem'
-            },
-            {
-              text: 'Audio'
-            },
-            {
-              text: 'Video'
-            }
-          ]
-        } %}
-        {% include 'partials/filter.twig' with {
-          title: 'Decades',
-          items: [
-            {
-              text: '1980-90'
-            },
-            {
-              text: '1970-80'
-            },
-            {
-              text: '1960-70'
-            },
-            {
-              text: '1940-50'
-            }
-          ]
-        } %}
-      </div>
+      </form>
     {% endblock %}
     {% block content %}
       <div class="mb-5 d-flex border-t border-4 border-navy py-2">
