@@ -110,9 +110,9 @@
         } %}
       </div>
 
-      <ul class="masonry">
+      <ul class="col-count-md-2 col-count-xl-3">
         {% for item in 0..7 %}
-          <li class="masonry__item">
+          <li class="w-100 d-inline-block mb-8">
             {% include 'partials/collection-card.twig' with {} %}
           </li>
         {% endfor %}
