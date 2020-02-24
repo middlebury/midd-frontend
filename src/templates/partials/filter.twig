@@ -17,16 +17,14 @@
     </button>
   </legend>
 
-  <div class="filter__body js-filter-{{
-    id
-    }} is-toggled-hide checkboxes checkboxes--filter">
+  <div class="filter__body js-filter-{{ id }}">
     {% for item in items %}
-      <div class="checkboxes__item">
+      <div class="checkbox checkbox--filter">
         <input type="checkbox"
-          class="checkboxes__input"
+          class="checkbox__input"
           id="checkbox-item-{{ id }}-{{ loop.index }}" />
         <label for="checkbox-item-{{ id }}-{{ loop.index }}"
-          class="checkboxes__label">
+          class="checkbox__label">
           {{ item.text }}
         </label>
       </div>
