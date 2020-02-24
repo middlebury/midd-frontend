@@ -33,6 +33,20 @@
     display: block;
     clear: both;
   }
+
+  &.has-toggler {
+    display: none;
+    @include breakpoint(lg) {
+      display: block;
+    }
+  }
+
+  &.is-toggled {
+    display: block;
+    @include breakpoint(lg) {
+      display: none;
+    }
+  }
 }
 
 .filter__button {
@@ -51,24 +65,34 @@
   &:focus {
     background: $gray-lighter;
   }
-}
 
-.filter__title {
-}
+  &.has-toggler {
+    .filter__icon-open {
+      display: block;
+      @include breakpoint(lg) {
+        display: none;
+      }
+    }
+    .filter__icon-close {
+      display: none;
+      @include breakpoint(lg) {
+        display: block;
+      }
+    }
+  }
 
-.filter__list {
-}
-
-.filter__item {
-}
-
-.filter__link {
-  display: block;
-  padding: $spacing-3;
-  transition: background 0.2s;
-
-  &:hover,
-  &:focus {
-    background: $gray-lighter;
+  &.is-toggled {
+    .filter__icon-open {
+      display: none;
+      @include breakpoint(lg) {
+        display: block;
+      }
+    }
+    .filter__icon-close {
+      display: block;
+      @include breakpoint(lg) {
+        display: none;
+      }
+    }
   }
 }
