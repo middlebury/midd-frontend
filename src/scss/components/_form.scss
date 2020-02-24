@@ -1,4 +1,5 @@
-.label {
+.label,
+label {
   @include form-label;
 }
 
