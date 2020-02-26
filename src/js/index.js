@@ -10,6 +10,7 @@ import 'polyfill-nodelist-foreach';
 // polyfills for micromodal to support ie11
 import 'mdn-polyfills/Object.assign';
 import 'mdn-polyfills/Array.from';
+import 'mdn-polyfills/Element.prototype.closest';
 
 // Polyfill object fit images for easier responsive images.
 // Used in card-carousel and more.

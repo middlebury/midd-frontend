@@ -2,10 +2,9 @@
 {% set _sidebar = block('sidebar') %}
 <div class="container">
   <div class="row">
-
     <div class="col-md-10 offset-md-1 col-lg-3 offset-lg-0 mb-4">
-
-      {% block nav %}{% endblock %}
+      {% block nav %}
+      {% endblock %}
 
       {% if _sidebar is not empty %}
         <div class="js-sidebar"></div>
@@ -18,18 +17,19 @@
       </div>
     {% endif %}
 
-    <div class="col-md-10 offset-md-1 col-lg-7 offset-lg-0">
-
-      {% block content %}{% endblock %}
+    <div class="col-md-10 offset-md-1 {{
+      toc
+        ? 'col-lg-7'
+        : 'col-lg-9'
+      }} offset-lg-0">
+      {% block content %}
+      {% endblock %}
 
       {% if _sidebar is not empty %}
         <div data-move-at="(min-width:64em)" data-move-to=".js-sidebar">
-          {{_sidebar|raw}}
+          {{ _sidebar|raw }}
         </div>
       {% endif %}
-
     </div>
-
-
   </div>
 </div>

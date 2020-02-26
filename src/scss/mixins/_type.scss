@@ -16,6 +16,14 @@
   margin-bottom: $spacing-5;
 }
 
+@mixin small-caps {
+  font-family: $font-family-sans-serif;
+  font-size: $typescale-2;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing;
+  font-weight: $font-weight-semibold;
+}
+
 @mixin break-words {
   word-break: break-word;
   hyphens: auto;
