@@ -16,11 +16,11 @@
   border: 1px solid $border-color;
   width: 100%;
   background: none;
-  font-size: 14px;
+  font-size: $typescale-2;
   font-weight: $font-weight-semibold;
   // font-family: inherit;
   text-align: left;
-  color: $brand-primary;
+  color: $color-primary;
 
   @include breakpoint(lg) {
     display: none;

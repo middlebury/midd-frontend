@@ -1,18 +1,18 @@
 $pd-text-color: $black;
-$pd-title-color: $brand-primary;
+$pd-title-color: $color-primary;
 $pd-title-bg: $white;
 $pd-picker-bg: $white;
 $pd-picker-border: $border-color;
 $pd-picker-border-bottom: $border-color;
 $pd-picker-shadow: none;
 $pd-th-color: $black;
-$pd-day-color: $brand-primary;
+$pd-day-color: $color-primary;
 $pd-day-bg: transparent;
-$pd-day-hover-color: $brand-primary;
+$pd-day-hover-color: $color-primary;
 $pd-day-hover-bg: $gray-light;
-$pd-day-today-color: $brand-primary;
+$pd-day-today-color: $color-primary;
 $pd-day-selected-color: $white;
-$pd-day-selected-bg: $brand-primary;
+$pd-day-selected-bg: $color-primary;
 $pd-day-selected-shadow: transparent;
 $pd-day-disabled-color: #999;
 $pd-week-color: #999;
@@ -52,7 +52,7 @@ $pd-font-family: $font-family-sans-serif;
 .pika-next {
   &:focus {
     opacity: 1;
-    outline: 1px solid $brand-primary;
+    outline: 1px solid $color-primary;
   }
 }
 

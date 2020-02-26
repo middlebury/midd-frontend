@@ -22,7 +22,7 @@
   a[href*='.pdf'],
   a[href*='middleburycollege-my.sharepoint.com'] {
     &:after {
-      font-size: 10px;
+      font-size: rem(10);
       display: inline-block;
       text-transform: uppercase;
       letter-spacing: $letter-spacing;
