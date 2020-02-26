@@ -3,74 +3,83 @@ image_styles:
   # content types
   featured: # basic content, event detail, story detail
     srcset:
-    - 400x225
-    - 640x360
-    - 832x468
+      - 400x225
+      - 640x360
+      - 832x468
   top_level: # 5:2
     srcset:
-    - 400x160
-    - 640x256
-    - 960x384
-    - 1280x512
-    - 1440x576
+      - 400x160
+      - 640x256
+      - 960x384
+      - 1280x512
+      - 1440x576
 
   story_teaser:
     srcset:
-    - 128x72
-    - 160x90
-    - 240x135
+      - 128x72
+      - 160x90
+      - 240x135
     sizes: '(max-width: 512px) 128px, (max-width: 960px) 160px, 240px'
   profile_teaser: # 3:4
     srcset:
-    - 90x120
-    - 144x192
+      - 90x120
+      - 144x192
     sizes: '(max-width: 512px) 90px, 144px'
   profile_detail: # 3:4
     srcset:
-    - 300x400
+      - 300x400
 
   # paragraphs
   video:
     srcset:
-    - 400x225
-    - 640x360
-    - 832x468
-    - 1136x639
+      - 400x225
+      - 640x360
+      - 832x468
+      - 1136x639
   image:
     srcset:
-    - 400x225
-    - 640x360
-    - 832x468
-    - 1136x639
+      - 400x225
+      - 640x360
+      - 832x468
+      - 1136x639
   image_floated: # 3:4
     srcset:
-    - 90x120
-    - 144x192
+      - 90x120
+      - 144x192
     sizes: '(max-width: 512px) 90px, 144px'
   image_sm: # for testing purposes
     srcset:
-    - 400x225
-    - 640x360
+      - 400x225
+      - 640x360
   image_text:
     srcset:
-    - 150x200
-    - 300x400
+      - 150x200
+      - 300x400
     sizes: '(max-width: 512px) 100px, 300px'
   profile_spotlight_item: # 3:4
     srcset:
-    - 90x120
-    - 144x192
-    - 288x384
+      - 90x120
+      - 144x192
+      - 288x384
     sizes: '(max-width: 512px) 90px, (max-width: 768px) 144px, 288px'
   card_carousel: # 3:4
     srcset:
-    - 468x624
-    - 582x776
+      - 468x624
+      - 582x776
     sizes: '(max-width: 468px) 100vw, (max-width: 580px) 582px, 468px'
   spotlight:
     srcset:
-    - 400x225
-    - 640x360
-    - 960x540
-    - 1280x720
-    - 1440x810
+      - 400x225
+      - 640x360
+      - 960x540
+      - 1280x720
+      - 1440x810
+  collection_card:
+    srcset:
+      - 400x225
+      - 640x360
+  collection_featured:
+    srcset:
+      - 400x225
+      - 640x360
+      - 1024x576
