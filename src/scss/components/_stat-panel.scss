@@ -13,7 +13,7 @@
       left: 0;
       bottom: 0;
       right: 0;
-      background-color: $brand-primary;
+      background-color: $color-primary;
       opacity: 0.7;
       z-index: $z-index-stat-panel-overlay;
     }
@@ -86,7 +86,7 @@
 }
 
 .stat-panel__item--secondary {
-  background-color: $brand-primary;
+  background-color: $color-primary;
   text-align: center;
 }
 

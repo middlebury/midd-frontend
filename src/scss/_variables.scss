@@ -107,10 +107,10 @@ $warning: $yellow !default;
 $success: #5e7d31 !default;
 
 // brand colors
-$brand-primary: $navy !default;
-$brand-primary-dark: $navy-dark !default;
 $brand-secondary: $green !default;
 $brand-secondary-dark: $green-dark !default;
+$color-primary: $navy !default;
+$color-primary-dark: $navy-dark !default;
 
 // school colors
 $color-college: $navy;
@@ -212,9 +212,9 @@ $letter-spacing: 0.1em;
 ////
 
 // Links
-$link-color: $brand-primary !default;
+$link-color: $color-primary !default;
 $link-decoration: none !default;
-$link-hover-color: $brand-primary !default;
+$link-hover-color: $color-primary !default;
 $link-hover-decoration: underline !default;
 
 // Headings
@@ -267,24 +267,24 @@ $btn-bg: $white !default;
 $btn-color: $navy !default;
 
 // primary
-$btn-primary-bg: $brand-primary !default;
+$btn-primary-bg: $color-primary !default;
 $btn-primary-color: $white !default;
-$btn-primary-hover-bg: lighten($brand-primary, 10%) !default;
+$btn-primary-hover-bg: lighten($color-primary, 10%) !default;
 $btn-primary-hover-color: $white !default;
 
 // secondary
 $btn-secondary-bg: $gray-light !default;
-$btn-secondary-color: $brand-primary !default;
+$btn-secondary-color: $color-primary !default;
 $btn-secondary-hover-bg: $green-light !default;
-$btn-secondary-hover-color: $brand-primary !default;
+$btn-secondary-hover-color: $color-primary !default;
 
 // light
 $btn-light-bg: $white !default;
-$btn-light-color: $brand-primary !default;
-$btn-light-hover-bg: $brand-primary-dark !default;
+$btn-light-color: $color-primary !default;
+$btn-light-hover-bg: $color-primary-dark !default;
 $btn-light-hover-color: $white !default;
 $btn-light-outline-hover-bg: $white !default;
-$btn-light-outline-hover-color: $brand-primary !default;
+$btn-light-outline-hover-color: $color-primary !default;
 
 // button size default
 $btn-padding-y: $input-btn-padding-y !default;

@@ -24,7 +24,7 @@
   font-weight: $font-weight-semibold;
   // font-family: inherit;
   text-align: left;
-  color: $brand-primary;
+  color: $color-primary;
 
   @include breakpoint(lg) {
     display: none;

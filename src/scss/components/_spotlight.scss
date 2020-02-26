@@ -42,7 +42,7 @@
 
 .spotlight__title {
   @include h0;
-  background: $brand-primary;
+  background: $color-primary;
   color: $white;
   padding-top: $spacing-4;
   padding-bottom: $spacing-4;
@@ -60,7 +60,7 @@
 .spotlight__body {
   padding-top: $spacing-4;
   padding-bottom: $spacing-4;
-  border-bottom: 8px solid $brand-primary;
+  border-bottom: 8px solid $color-primary;
 
   @include breakpoint(md) {
     // fake column offset with padding plus gutter width

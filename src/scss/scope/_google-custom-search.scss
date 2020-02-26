@@ -108,12 +108,12 @@
 
     .gsc-tabHeader.gsc-tabhInactive {
       background: none;
-      color: $brand-primary;
+      color: $color-primary;
       border: 0;
     }
 
     .gsc-tabhActive {
-      // background-color: $brand-primary;
+      // background-color: $color-primary;
       // color: $white;
       border-color: $navy;
     }
@@ -167,7 +167,7 @@
 
   .gs-title {
     @include h3;
-    color: $brand-primary;
+    color: $color-primary;
     font-family: $font-family-serif;
     text-decoration: none;
     margin-bottom: 0;
@@ -266,7 +266,7 @@
   }
 
   .gsc-cursor-current-page {
-    background-color: $brand-primary;
+    background-color: $color-primary;
     color: $white;
   }
 
