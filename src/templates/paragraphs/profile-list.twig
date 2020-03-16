@@ -1,17 +1,35 @@
-{% set items = items|default([
-  {
-    name: 'Beryl Levinger',
-    role: 'Program Chair, Master of Public Administration and International Policy and Development',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quis, repellat iusto cum non molestiae voluptatem adipisci accusamus rerum vero harum consectetur esse obcaecati nesciunt excepturi nihil magnam, assumenda sit?',
-    meta: [
-      {name: 'Email', value: 'blevinger@middlebury.edu', href: 'mailto:'},
-      {name: 'Tel', value: '555-555-5555', href: 'tel:'},
-      {name: 'Office', value: 'McCone Building M212'},
-      {name: 'Office Hours', value: 'Tuesdays 3-4pm, Thursdays 11am-12pm'}
-    ],
-    social: social_links
-  }
-]) %}
+{% set items =
+  items|default(
+    [
+      {
+        name: 'Beryl Levinger',
+        role: 'Program Chair, Master of Public Administration and International Policy and Development',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quis, repellat iusto cum non molestiae voluptatem adipisci accusamus rerum vero harum consectetur esse obcaecati nesciunt excepturi nihil magnam, assumenda sit?',
+        meta: [
+          {
+            name: 'Email',
+            value: 'blevinger@middlebury.edu',
+            href: 'mailto:'
+          },
+          {
+            name: 'Tel',
+            value: '555-555-5555',
+            href: 'tel:'
+          },
+          {
+            name: 'Office',
+            value: 'McCone Building M212'
+          },
+          {
+            name: 'Office Hours',
+            value: 'Tuesdays 3-4pm, Thursdays 11am-12pm'
+          }
+        ],
+        social: social_links
+      }
+    ]
+  )
+%}
 
 <section class="section paragraph--profile-list" data-digest-content>
   <header class="section__header">
