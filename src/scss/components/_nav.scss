@@ -2,6 +2,17 @@ $nav-bp: lg;
 
 .nav {
   @include print-hide;
+
+  // Pulls the menu out to be flush with viewport
+  // since anchor header has a container with constant padding.
+  .anchor-header__nav & {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    @include breakpoint($nav-bp) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
 }
 
 .nav__list {
