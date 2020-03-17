@@ -9,6 +9,7 @@ $nav-bp: lg;
   @include breakpoint($nav-bp) {
     display: flex;
     border-bottom: 0;
+    flex-wrap: wrap;
   }
 }
 
@@ -19,7 +20,8 @@ $nav-bp: lg;
 
   @include breakpoint($nav-bp) {
     margin-right: $spacing-4;
-    flex: 1 0 auto;
+    flex: 0 0 auto;
+    border-top: 0;
   }
 }
 
