@@ -13,7 +13,10 @@
         >
           {{item.text}}
           {% if has_dropdown %}
-            {% include 'partials/icon.twig' with { name: 'chevron-down', class: 'ml-1' } %}
+            {% include 'partials/icon.twig' with {
+              name: 'chevron-down',
+              class: 'ml-1 d-none d-lg-inline'
+            } %}
           {% endif %}
         </a>
 
