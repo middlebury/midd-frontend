@@ -2,6 +2,17 @@ $nav-bp: lg;
 
 .nav {
   @include print-hide;
+
+  // Pulls the menu out to be flush with viewport
+  // since anchor header has a container with constant padding.
+  .anchor-header__nav & {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    @include breakpoint($nav-bp) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
 }
 
 .nav__list {
@@ -9,6 +20,7 @@ $nav-bp: lg;
   @include breakpoint($nav-bp) {
     display: flex;
     border-bottom: 0;
+    flex-wrap: wrap;
   }
 }
 
@@ -19,7 +31,8 @@ $nav-bp: lg;
 
   @include breakpoint($nav-bp) {
     margin-right: $spacing-4;
-    flex: 1 0 auto;
+    flex: 0 0 auto;
+    border-top: 0;
   }
 }
 
@@ -31,7 +44,6 @@ $nav-bp: lg;
   flex: 1 0 auto;
 
   @include breakpoint($nav-bp) {
-    padding: $spacing-4;
     padding-left: 0;
     padding-right: 0;
     font-weight: $font-weight-normal;

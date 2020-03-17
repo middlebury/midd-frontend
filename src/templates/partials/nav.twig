@@ -12,15 +12,21 @@
           class="nav__link{% if item.active %} nav__link--active{% endif %}"
         >
           {{item.text}}
-          {% if item.icon %}
-            {% include 'partials/icon.twig' with { name: item.icon, class: 'ml-1 ' ~ item.icon_class } %}
+          {% if has_dropdown %}
+            {% include 'partials/icon.twig' with {
+              name: 'chevron-down',
+              class: 'ml-1 d-none d-lg-inline'
+            } %}
           {% endif %}
         </a>
 
         {% if has_dropdown %}
           <button class="nav__button" data-toggle-target=".js-dropdown-{{loop.index}}">
-            <span class="sr-only">Toggle My Terms menu</span>
-            {% include 'partials/icon.twig' with { name: 'chevron-down', class: 'toggled-flip'} %}
+            <span class="sr-only">Toggle {{item.text}} menu</span>
+            {% include 'partials/icon.twig' with {
+              name: 'chevron-down',
+              class: 'toggled-flip'
+            } %}
           </button>
           <ul class="nav__sublist nav-dropdown__menu js-dropdown-{{loop.index}}">
             {% for subitem in item.items %}

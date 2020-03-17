@@ -1,25 +1,48 @@
-{% set items = items|default([
-  {
-    name: 'Beryl Levinger',
-    role: 'Program Chair, Master of Public Administration and International Policy and Development',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quis, repellat iusto cum non molestiae voluptatem adipisci accusamus rerum vero harum consectetur esse obcaecati nesciunt excepturi nihil magnam, assumenda sit?',
-    meta: [
-      {name: 'Email', value: 'blevinger@middlebury.edu', href: 'mailto:'},
-      {name: 'Tel', value: '555-555-5555', href: 'tel:'},
-      {name: 'Office', value: 'McCone Building M212'},
-      {name: 'Office Hours', value: 'Tuesdays 3-4pm, Thursdays 11am-12pm'}
-    ],
-    social: social_links
-  }
-]) %}
+{% set items =
+  items|default(
+    [
+      {
+        name: 'Beryl Levinger',
+        role: 'Program Chair, Master of Public Administration and International Policy and Development',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quis, repellat iusto cum non molestiae voluptatem adipisci accusamus rerum vero harum consectetur esse obcaecati nesciunt excepturi nihil magnam, assumenda sit?',
+        meta: [
+          {
+            name: 'Email',
+            value: 'blevinger@middlebury.edu',
+            href: 'mailto:'
+          },
+          {
+            name: 'Tel',
+            value: '555-555-5555',
+            href: 'tel:'
+          },
+          {
+            name: 'Office',
+            value: 'McCone Building M212'
+          },
+          {
+            name: 'Office Hours',
+            value: 'Tuesdays 3-4pm, Thursdays 11am-12pm'
+          }
+        ],
+        social: social_links
+      }
+    ]
+  )
+%}
 
 <section class="section paragraph--profile-list" data-digest-content>
-  {% if title or text %}
-    <header class="section__header">
-      <h2 class="section__title">{{title|default("Profile team heading")}}</h2>
-      <p class="section__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores pariatur amet vitae soluta quidem minus nostrum veritatis quos ducimus in cupiditate, repellendus aliquid aliquam mollitia rem excepturi ipsam ad! Debitis.</p>
-    </header>
-  {% endif %}
+  <header class="section__header">
+    <h2 class="section__title">
+      {{ title|default('Profile team heading') }}
+    </h2>
+    <p class="section__text">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores pariatur
+      amet vitae soluta quidem minus nostrum veritatis quos ducimus in
+      cupiditate, repellendus aliquid aliquam mollitia rem excepturi ipsam ad!
+      Debitis.
+    </p>
+  </header>
   {% for item in items %}
     {% include 'partials/profile-teaser.twig' with item %}
   {% endfor %}
