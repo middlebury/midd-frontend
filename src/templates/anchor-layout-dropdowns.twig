@@ -1,5 +1,7 @@
 {% extends 'layout.twig' %}
 
+{% set page_title = 'Student Financial Services' %}
+
 {% set office_header_nav =
   office_header_nav|default(
     [
@@ -16,6 +18,9 @@
       {
         text: 'Payment Options',
         items: [
+          {
+            text: 'Payment Options'
+          },
           {
             text: 'Helpful Links'
           },
