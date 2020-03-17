@@ -19,17 +19,10 @@
       </button>
     </div>
     <div class="anchor-header__nav js-anchor-header-nav">
-      {% if enable_dropdowns %}
-        {% include 'partials/nav.twig' with {
-          label: page_title ~ ' Navigation',
-          items: office_header_nav
-        } %}
-      {% else %}
-        {% include 'partials/anchor-nav.twig' with {
-          label: page_title ~ ' Navigation',
-          items: office_header_nav
-        } %}
-      {% endif %}
+      {% include 'partials/nav.twig' with {
+        label: page_title ~ ' Navigation',
+        items: office_header_nav
+      } %}
     </div>
   </div>
   {% block anchor_header_content %}{% endblock %}
