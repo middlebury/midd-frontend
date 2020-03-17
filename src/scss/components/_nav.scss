@@ -44,7 +44,6 @@ $nav-bp: lg;
   flex: 1 0 auto;
 
   @include breakpoint($nav-bp) {
-    padding: $spacing-4;
     padding-left: 0;
     padding-right: 0;
     font-weight: $font-weight-normal;
