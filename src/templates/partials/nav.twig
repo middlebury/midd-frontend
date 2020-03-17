@@ -19,8 +19,11 @@
 
         {% if has_dropdown %}
           <button class="nav__button" data-toggle-target=".js-dropdown-{{loop.index}}">
-            <span class="sr-only">Toggle My Terms menu</span>
-            {% include 'partials/icon.twig' with { name: 'chevron-down', class: 'toggled-flip'} %}
+            <span class="sr-only">Toggle {{item.text}} menu</span>
+            {% include 'partials/icon.twig' with {
+              name: 'chevron-down',
+              class: 'toggled-flip'
+            } %}
           </button>
           <ul class="nav__sublist nav-dropdown__menu js-dropdown-{{loop.index}}">
             {% for subitem in item.items %}
