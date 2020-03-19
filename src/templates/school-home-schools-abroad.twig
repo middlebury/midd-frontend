@@ -1,10 +1,9 @@
-{% extends "school-home.twig" %}
+{% extends 'school-home.twig' %}
 
 {% set theme = 'sa' %}
 {% set is_front = true %}
 
 {% block content %}
-
   {% include 'paragraphs/mega-cta.twig' with {
     pin: 'left-bottom',
     hero: true,
@@ -33,5 +32,4 @@
   {% include 'paragraphs/mega-cta.twig' %}
 
   {% include 'paragraphs/cta-group.twig' %}
-
 {% endblock %}
