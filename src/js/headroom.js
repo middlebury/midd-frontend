@@ -16,4 +16,14 @@ if (headerElem && !$('#toolbar-administration')) {
   document.body.style.paddingTop = offset + 'px';
 
   headerInstance.init();
+
+  // hide sticky header if user navigated to page via anchor hash link
+  // fixes https://github.com/middlebury/midd-frontend/issues/241
+  if (window.location.hash) {
+    // unpin after a delay so user is given some context as
+    // to where they are via header
+    setTimeout(function() {
+      headerInstance.unpin();
+    }, 1000);
+  }
 }
