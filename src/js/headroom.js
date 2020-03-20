@@ -10,7 +10,11 @@ if (headerElem && !$('#toolbar-administration')) {
   offset = headerElem.offsetHeight;
 
   const headerInstance = new Headroom(headerElem, {
-    offset
+    offset,
+    tolerance: {
+      up: 10,
+      down: 0
+    }
   });
 
   document.body.style.paddingTop = offset + 'px';
