@@ -83,3 +83,6 @@ image_styles:
       - 400x225
       - 640x360
       - 1024x576
+  portrait_video:
+    srcset:
+      - 306x554
