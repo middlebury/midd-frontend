@@ -37,7 +37,7 @@ class SmoothScroll {
    * @param {string|Element} els  - selector or element which contain the anchor links
    * @param {object} [options] - config object with various settings for animation and more
    */
-  constructor(els, options) {
+  constructor(els, options = {}) {
     /**
      * @prop {(number|function)} [offset] - an integer to offset the scroll by or a function which gets passeD the target element
      * @prop {scrollTop} [scrollTop] - override the scroll top
