@@ -29,3 +29,9 @@
     display: none !important;
   }
 }
+
+@mixin contains-links {
+  a {
+    @include link-border;
+  }
+}

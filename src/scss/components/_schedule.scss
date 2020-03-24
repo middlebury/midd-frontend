@@ -81,6 +81,7 @@
 
 .schedule-item__text {
   font-size: $typescale-3;
+  @include contains-links;
 }
 
 .schedule-item__name {
