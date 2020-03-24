@@ -6,30 +6,32 @@ import { $, $$, on, off } from './utils/dom';
  * applies smooth scroll effect to a container of anchor (links with onpage targets) links
  */
 class SmoothScroll {
-  constructor(
-    els,
-    {
+  constructor(els, options) {
+    const {
       offset = 0,
       scrollTop,
       container,
       easing = 'easeInCubic',
       duration = 300,
       elasticity = 500,
-      ...rest
-    } = {}
-  ) {
+      replaceState = false
+    } = options;
+
     this.elems = typeof els === 'string' ? $$(els) : els;
 
     this.offset = offset;
     this.scrollTop = scrollTop;
+
+    this.options = {
+      replaceState
+    };
 
     this.container = container;
 
     this.config = {
       duration,
       easing,
-      elasticity,
-      ...rest
+      elasticity
     };
 
     this.init();
@@ -52,10 +54,10 @@ class SmoothScroll {
     const selector = event.currentTarget.getAttribute('href');
     const targetEl = $(selector);
 
-    this.scrollTo(targetEl);
+    this.scrollTo(targetEl, selector);
   };
 
-  scrollTo(elem) {
+  scrollTo(elem, selector) {
     const elementOffset = elem.getBoundingClientRect().top;
 
     let scrollPosition = window.pageYOffset;
@@ -85,8 +87,16 @@ class SmoothScroll {
     anime({
       scrollTop,
       targets,
-      ...this.config
+      ...this.config,
+      complete: () => {
+        this.onScrollDone(elem, selector);
+      }
     });
+  }
+  onScrollDone(elem, selector) {
+    if (this.options.replaceState) {
+      history.replaceState(null, null, document.location.pathname + selector);
+    }
   }
 }
 
