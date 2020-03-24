@@ -1,9 +1,9 @@
 import { $ } from './utils/dom';
+import onscroll from './utils/onscroll';
 
 const btn = $('.js-to-top-btn');
 btn.hidden = true;
 
-let timeout;
 
 // Set threshold to 4x client height so we don't
 // show the button on short pages.
@@ -17,12 +17,4 @@ const updateBtn = () => {
   }
 };
 
-function handleScroll(event) {
-  if (timeout) {
-    window.cancelAnimationFrame(timeout);
-  }
-
-  timeout = window.requestAnimationFrame(updateBtn);
-}
-
-window.addEventListener('scroll', handleScroll, false);
+onscroll(updateBtn);
