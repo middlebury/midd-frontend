@@ -1,6 +1,6 @@
 // taken from https://developer.mozilla.org/en-US/docs/Web/API/Document/scroll_event#Scroll_event_throttling
 
-export default function onscroll(elem = window, cb = f => f) {
+export default function onscroll(cb, elem = window) {
   let lastScrollY = 0;
   let ticking = false;
 
