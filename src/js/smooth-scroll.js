@@ -68,11 +68,8 @@ class SmoothScroll {
      */
     let targets = [document.documentElement, document.body];
 
-    let offset = 0;
-
-    if (typeof this.offset === 'function') {
-      offset = this.offset(elem);
-    }
+    const offset =
+      typeof this.offset === 'function' ? this.offset(elem) : this.offset;
 
     if (this.container) {
       targets = this.container;
