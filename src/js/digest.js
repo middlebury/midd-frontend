@@ -82,6 +82,7 @@ class Digest {
 
     const smoothScroll = new SmoothScroll('.digest__link', {
       offset: getOffset,
+      replaceState: true
     });
 
     if (location.hash) {
