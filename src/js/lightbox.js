@@ -177,7 +177,7 @@ class Lightbox {
     }
 
     // Use same animation settings as smooth scroller
-    const { easing, elasticity, duration } = this.smoothScroller.config;
+    const { easing, elasticity, duration } = this.smoothScroller.animeOptions;
 
     anime({
       targets: this.thumbsList,
