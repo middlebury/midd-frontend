@@ -6,7 +6,9 @@ import SmoothScroll from './smooth-scroll';
 const btn = $('.js-to-top-btn');
 btn.hidden = true;
 
-new SmoothScroll('.js-to-top-btn');
+// Pass the button as an array since smooth scroll expects a selector or
+// array of items currently.
+const btnSmoothScroll = new SmoothScroll([btn]);
 
 // Set the required scroll length to 3x browser height so we don't
 // show the button on short pages.
