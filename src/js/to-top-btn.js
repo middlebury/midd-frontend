@@ -8,11 +8,11 @@ btn.hidden = true;
 
 new SmoothScroll('.js-to-top-btn');
 
-// Set threshold to 3x browser height so we don't
+// Set the required scroll length to 3x browser height so we don't
 // show the button on short pages.
 const threshold = window.innerHeight * 3;
 
-const updateBtn = () => {
+const hideOrShowBtn = () => {
   if (window.pageYOffset > threshold) {
     btn.hidden = false;
   } else {
@@ -20,4 +20,4 @@ const updateBtn = () => {
   }
 };
 
-onscroll(updateBtn);
+onscroll(hideOrShowBtn);
