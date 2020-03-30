@@ -44,17 +44,6 @@
 
   </div>
 
-  <a href="#midd-pagetop" class="button button--sm to-top-btn js-to-top-btn">
-    {% include 'partials/icon.twig' with {
-      name: 'caret-up',
-      class: 'mb-1'
-    } %}
-    <span class="text-caps d-block">
-      <span class="sr-only">Back to</span>
-      Top
-    </span>
-  </a>
-
   {% if not env.production %}
     {% include 'partials/grid-overlay.twig' %}
   {% endif %}
