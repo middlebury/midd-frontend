@@ -25,13 +25,6 @@
 }
 
 .portrait-video__link {
-  &:focus,
-  &:hover {
-    .portrait-video__title {
-      transform: translateY(-1rem);
-    }
-  }
-
   &:after {
     content: '';
     display: block;
@@ -46,6 +39,9 @@
   &:focus {
     &:after {
       opacity: 1;
+    }
+    .portrait-video__title {
+      transform: translateY(-1rem);
     }
   }
 }
