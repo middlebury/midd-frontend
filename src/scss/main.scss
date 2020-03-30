@@ -144,3 +144,9 @@
   border: 1px solid #fff !important;
   box-shadow: none !important;
 }
+
+// Push Olark chat button away from right edge more
+// to make space for back to top button.
+.olark-launch-button {
+  right: 100px !important;
+}
