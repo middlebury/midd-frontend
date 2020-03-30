@@ -32,7 +32,12 @@
   font-size: $typescale-2;
   font-family: $font-family-sans-serif;
   padding: $spacing-3;
-  margin-left: $spacing-1;
+  padding-left: $spacing-3 + $spacing-1;
+  @include breakpoint(lg) {
+    background: $white;
+    position: sticky;
+    top: 0;
+  }
 }
 
 .digest__nav {
