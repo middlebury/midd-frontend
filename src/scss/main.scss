@@ -90,6 +90,7 @@
 @import 'components/themed-box';
 @import 'components/themed-panel';
 @import 'components/tooltip';
+@import 'components/top-btn';
 @import 'components/transcript';
 @import 'components/video';
 
@@ -142,4 +143,10 @@
   bottom: 100% !important;
   border: 1px solid #fff !important;
   box-shadow: none !important;
+}
+
+// Push Olark chat button away from right edge more
+// to make space for back to top button.
+.olark-launch-button {
+  right: 100px !important;
 }

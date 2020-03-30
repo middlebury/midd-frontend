@@ -37,7 +37,7 @@ class SmoothScroll {
    * @param {string|Element} els  - selector or element which contain the anchor links
    * @param {object} [options] - config object with various settings for animation and more
    */
-  constructor(els, options) {
+  constructor(els, options = {}) {
     /**
      * @prop {(number|function)} [offset] - an integer to offset the scroll by or a function which gets passeD the target element
      * @prop {scrollTop} [scrollTop] - override the scroll top
@@ -48,7 +48,9 @@ class SmoothScroll {
      * @prop {bool} [replaceState] - Updates the hash in the url with the target.
      * Uses history.replaceState instead of pushState to prevent bloating
      * browser history and to not break current back button behavior since the
-     * digest nav did not update the url hash before.
+     * digest nav did not update the url hash begin.
+     * @prop {function} [complete] - function to call after scrolling animation is done.
+     * @prop {function} [begin] - function to call begin scrolling animation starts.
      */
     const {
       offset = 0,
@@ -57,7 +59,9 @@ class SmoothScroll {
       easing = 'easeInCubic',
       duration = 300,
       elasticity = 500,
-      replaceState = false
+      replaceState = false,
+      begin,
+      complete
     } = options;
 
     this.elems = typeof els === 'string' ? $$(els) : els;
@@ -71,10 +75,12 @@ class SmoothScroll {
 
     this.container = container;
 
-    this.config = {
+    this.animeOptions = {
       duration,
       easing,
-      elasticity
+      elasticity,
+      begin,
+      complete
     };
 
     this.init();
@@ -142,10 +148,15 @@ class SmoothScroll {
         ? this.scrollTop(elem, scrollPosition)
         : elementOffset + scrollPosition - offset;
 
+    const { duration, easing, elasticity, begin } = this.animeOptions;
+
     anime({
       scrollTop,
       targets,
-      ...this.config,
+      duration,
+      easing,
+      elasticity,
+      begin,
       complete: () => {
         this.onScrollDone(elem, selector);
       }
@@ -158,6 +169,10 @@ class SmoothScroll {
    * @param {string} selector - selector for the target element
    */
   onScrollDone(elem, selector) {
+    if (typeof this.animeOptions.complete === 'function') {
+      this.animeOptions.complete();
+    }
+
     if (this.options.replaceState) {
       history.replaceState(null, null, document.location.pathname + selector);
     }

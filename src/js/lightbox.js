@@ -95,7 +95,7 @@ class Lightbox {
     on(this.prevBtn, 'click', this.prev);
 
     // set the onscroll listener so we can destroy it on modal close
-    this.scrollRaf = onscroll(this.el, this.handleScroll);
+    this.scrollRaf = onscroll(this.handleScroll, this.el);
 
     this.smoothScroller = new SmoothScroll(this.thumbs, {
       // our scroll area is the lightbox, not default body
@@ -177,7 +177,7 @@ class Lightbox {
     }
 
     // Use same animation settings as smooth scroller
-    const { easing, elasticity, duration } = this.smoothScroller.config;
+    const { easing, elasticity, duration } = this.smoothScroller.animeOptions;
 
     anime({
       targets: this.thumbsList,
