@@ -4,10 +4,7 @@
 .media__caption {
   font-size: $typescale-2;
   padding-top: $spacing-2;
-
-  a {
-    @include link-border;
-  }
+  @include contains-links;
 }
 
 // TODO: dedupe with .image float classes?
