@@ -5,10 +5,22 @@
   {% set _image_style = name %}
 {% endif %}
 
-<div class="paragraph--image image {{right ? 'image--right' : left ? 'image--left' : ''}}">
+<div class="paragraph--image image {{
+  right
+    ? 'image--right'
+    : left ? 'image--left' : ''
+  }}">
   <figure class="media media--image media--contain-caption">
     <!-- {{name}} -->
-    {% include 'partials/img.twig' with { name: _image_style } %}
-    <figcaption class="media__caption">{{caption|default('Lorem ipsum dolor sit amet, consectetur adipiscing elit (Photo: John Doe)')}}</figcaption>
+    {% include 'partials/img.twig' with {
+      name: _image_style
+    } %}
+    <figcaption class="media__caption">
+      {{
+        caption|default(
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit (Photo: John Doe) Lorem ipsum dolor sit amet, consectetur adipiscing elit (Photo: John Doe)'
+        )
+      }}
+    </figcaption>
   </figure>
 </div>
