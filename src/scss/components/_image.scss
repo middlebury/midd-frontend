@@ -23,15 +23,3 @@
     float: none !important;
   }
 }
-
-.image--right,
-.image--left {
-  .media {
-    display: table;
-  }
-
-  .media__caption {
-    display: table-caption;
-    caption-side: bottom;
-  }
-}
