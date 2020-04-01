@@ -26,14 +26,12 @@
 
 .image--right,
 .image--left {
-  @include breakpoint(md) {
-    .media {
-      display: table;
-    }
+  .media {
+    display: table;
+  }
 
-    .media__caption {
-      display: table-caption;
-      caption-side: bottom;
-    }
+  .media__caption {
+    display: table-caption;
+    caption-side: bottom;
   }
 }
