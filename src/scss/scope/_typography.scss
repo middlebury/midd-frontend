@@ -269,7 +269,5 @@
 }
 
 .contains-links {
-  a {
-    @include link-border;
-  }
+  @include contains-links;
 }

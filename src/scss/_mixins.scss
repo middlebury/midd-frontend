@@ -29,3 +29,18 @@
     display: none !important;
   }
 }
+
+@mixin contains-links {
+  a {
+    @include link-border;
+  }
+}
+
+// detect ie10-11
+// source: https://stackoverflow.com/a/35063378/2193516
+@mixin ie {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    /* add your IE10-IE11 css here */
+    @content;
+  }
+}

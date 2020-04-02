@@ -70,18 +70,19 @@ class Digest {
 
     const menuSpy = new MenuSpy(this.elem);
 
-    let offset = 0;
     // TODO: don't tie the js-headroom to this widget as the element.
     // we should allow for a custom selector
     const headroom = $('.js-headroom');
 
-    if (headroom) {
-      // set offset to be a function so media is checked each time
-      offset = () => (isLargeUp() ? headroom.offsetHeight : 0);
-    }
+    // Offset by sticky header on schools or base offset on office site.
+    // This is a function call instead of static value since header height
+    // changes across breakpoints.
+    const baseOffset = 50;
+    const getOffset = () => (headroom ? headroom.offsetHeight : baseOffset);
 
     const smoothScroll = new SmoothScroll('.digest__link', {
-      offset
+      offset: getOffset,
+      replaceState: true
     });
 
     if (location.hash) {

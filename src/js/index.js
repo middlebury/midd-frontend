@@ -40,5 +40,6 @@ import './tabs';
 import './select-url';
 import './charts';
 import './countup';
+import './to-top-btn';
 
 focusWithin(document);

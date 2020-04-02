@@ -1,6 +1,12 @@
-// taken from https://developer.mozilla.org/en-US/docs/Web/API/Document/scroll_event#Scroll_event_throttling
-
-export default function onscroll(elem = window, cb = f => f) {
+/**
+ * Optimized onscroll event listener using requestAnimationFrame.
+ *
+ * Source: https://developer.mozilla.org/en-US/docs/Web/API/Document/scroll_event#Scroll_event_throttling
+ *
+ * @param {function} cb - update function to run on available frame
+ * @param {Element} elem - container to add scroll listener to
+ */
+export default function onscroll(cb, elem = window) {
   let lastScrollY = 0;
   let ticking = false;
 

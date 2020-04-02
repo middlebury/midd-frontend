@@ -111,7 +111,7 @@
     },
     {
       "path": "./dist/js/bundle.js",
-      "maxSize": "53 kB"
+      "maxSize": "54 kB"
     }
   ],
   "resolutions": {
