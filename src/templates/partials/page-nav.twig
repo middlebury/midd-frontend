@@ -14,20 +14,29 @@
 {% import _self as macros %}
 
 <nav class="page-nav" aria-labelledby="midd-page-nav-label">
-  <button
-    class="page-nav__button"
-    data-toggle-target=".js-page-nav"
-    aria-haspopup="true"
-    aria-expanded="false"
-  >
-    Additional Navigation
-    {% include 'partials/icon.twig' with { name: 'chevron-down', class: 'page-nav__icon' } %}
-  </button>
-  <div class="page-nav__content js-page-nav">
+  <div class="page-nav__header">
     <h2 class="page-nav__title" id="midd-page-nav-label">
       <a href="{{href}}" class="page-nav__link">{{label|default("Lorem ipsum")}}</a>
     </h2>
+    <button
+      class="page-nav__button"
+      data-toggle-target=".js-page-nav"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <span class="sr-only">Toggle {{label}} Navigation</span>
+      {% include 'partials/icon.twig' with {
+        name: 'bars',
+        class: 'toggled-hide'
+      } %}
+      {% include 'partials/icon.twig' with {
+        name: 'times',
+        class: 'toggled-show'
+      } %}
 
+    </button>
+  </div>
+  <div class="page-nav__content js-page-nav">
     {{ macros.list(items) }}
   </div>
 </nav>

@@ -1,25 +1,37 @@
 .page-nav {
   margin-bottom: $spacing-4;
+  border: 1px solid $border-color;
+
   @include breakpoint(md) {
     margin-bottom: $spacing-8;
   }
+
+  @include breakpoint(lg) {
+    border: 0;
+  }
+
   @include print-hide;
 }
 
+.page-nav__header {
+  display: flex;
+}
+
 .page-nav__title {
-  border-bottom: 4px solid $border-color;
   @include small-caps;
+  flex: 1 1 auto;
+
+  @include breakpoint(lg) {
+    border-bottom: 4px solid $border-color;
+  }
 }
 
 .page-nav__button {
-  padding: 1rem;
-  border: 1px solid $border-color;
-  width: 100%;
-  background: none;
+  flex: 0 0 auto;
+  padding: $input-btn-padding-x-sm;
+  border-left: 1px solid $border-color;
   font-size: $typescale-2;
   font-weight: $font-weight-semibold;
-  // font-family: inherit;
-  text-align: left;
   color: $color-primary;
 
   @include breakpoint(lg) {
@@ -27,20 +39,7 @@
   }
 }
 
-.page-nav__icon {
-  float: right;
-  transition: $chevron-transition;
-
-  .page-nav__button.is-toggled & {
-    transform: $chevron-transform;
-  }
-}
-
 .page-nav__content {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  border: 1px solid $border-color;
-  border-top: 0;
   background-color: #f2f2f2;
 
   @include breakpoint(lg) {
@@ -79,8 +78,15 @@
 
 .page-nav__link {
   display: block;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: $spacing-3;
+  padding-bottom: $spacing-3;
+  padding-left: $spacing-3;
+  padding-right: $spacing-3;
+
+  @include breakpoint(lg) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .page-nav__link--active {
