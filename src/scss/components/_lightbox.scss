@@ -23,7 +23,6 @@
   left: 0;
   width: 100%;
   background-image: linear-gradient(to bottom, $black, transparent);
-  // background-color: $black;
 }
 
 .lightbox__count {
@@ -55,7 +54,6 @@
   &:hover,
   &:focus {
     opacity: 1;
-    // transform: scale(1.1);
   }
 }
 
@@ -88,7 +86,6 @@
  * 1. prevents thumbs list expanding too wide before images lazily load. This happens in some cases on medium size screens. See #295
  */
 .lightbox__thumbs-list {
-  // border-left: 1px solid $gray-dark;
   position: fixed;
   top: 8rem;
   right: 0;
