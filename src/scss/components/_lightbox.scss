@@ -84,6 +84,9 @@
   }
 }
 
+/*
+ * 1. prevents thumbs list expanding too wide before images lazily load. This happens in some cases on medium size screens. See #295
+ */
 .lightbox__thumbs-list {
   // border-left: 1px solid $gray-dark;
   position: fixed;
@@ -93,6 +96,7 @@
   -webkit-overflow-scrolling: touch;
   max-height: calc(100vh - 8rem);
   display: none;
+  width: 130px; /* 1 */
 
   @include breakpoint(lg) {
     display: block;
