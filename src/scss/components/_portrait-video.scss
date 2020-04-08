@@ -6,6 +6,8 @@
 .portrait-video__content {
   position: relative;
   padding-bottom: percentage(16 / 9);
+  background: $gray-light;
+  overflow: hidden;
 
   img,
   iframe {

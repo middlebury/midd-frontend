@@ -8,7 +8,10 @@
       aria-label="Play video"
       aria-describedby="midd-video-label-{{id}}"
     >
-      {% include 'partials/img.twig' with { name: 'portrait_video' } %}
+      {% include 'partials/img.twig' with {
+        name: 'portrait_video',
+        lazy: true
+      } %}
 
       <div class="portrait-video__body">
         <h3 class="portrait-video__title" id="midd-video-label-{{id}}">

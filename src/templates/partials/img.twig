@@ -1,4 +1,23 @@
+{% macro img(src, srcset, sizes, lazy, placeholder) %}
+  {% if lazy %}
+    <img src="{{ placeholder }}"
+      data-src="{{ src }}"
+      data-srcset="{{ srcset }}"
+      data-sizes="{{ sizes }}"
+      class="js-lazy"
+      alt="" />
+  {% else %}
+    <img src="{{ src }}" srcset="{{ srcset }}" sizes="{{ sizes }}" alt="" />
+  {% endif %}
+{% endmacro %}
+
+{% import _self as macros %}
+
 {% block responsive_img %}
+  {# set a selection of random colors so not all lazy images are gray boxes #}
+  {% set colors = ['017c9f', 'ffc107', '8f9a17', 'c26533'] %}
+
+  {# get the image sizes from the yaml data file #}
   {% set image = image_styles[name]|exists(name) %}
 
   {% set placehold = 'https://placehold.it/' %}
@@ -9,29 +28,43 @@
 
   {# dependant on the sizes always starting small and ending in large #}
   {% for size in image.srcset %}
-
     {% set dimensions = size|split('x') %}
     {% set width = dimensions[0] %}
 
-    {% set src = placehold ~ size %}
+    {# set lazy images to different colors #}
+    {% set color = lazy ? random(colors) : '333333' %}
 
-    {% set srcset = [placehold ~ size ~ ' ' ~ width ~ 'w']|merge(srcset) %}
+    {% set src = placehold ~ size ~ '/' ~ color ~ '/ffffff' %}
 
+    {% set srcset = [src ~ ' ' ~ width ~ 'w']|merge(srcset) %}
   {% endfor %}
 
   {% if not env.production %}
-    <!--  image style: {{name}} -->
+    <!-- image style: {{name}} -->
   {% endif %}
 
-  <img
-    src="{{image.src|default(src)}}"
-    srcset="{{srcset|reverse|join(',')}}"
-    {% if image.sizes %}
-      sizes="{{image.sizes}}"
-    {% else %}
-      sizes="(max-width: {{width}}px) 100vw, {{width}}px"
-    {% endif %}
-    alt=""
-  />
+  {% set macro_src = image.src|default(src) %}
+  {% set macro_srcset = srcset|reverse|join(',') %}
+  {% set macro_sizes = image.sizes
+    ? '(max-width: ' ~ width ~ 'px) 100vw, ' ~ width ~ 'px'
+    : ''
+  %}
 
+  {% if lazy %}
+    {{
+      macros.img(
+        macro_src,
+        macro_srcset,
+        macro_sizes,
+        lazy,
+        'https://placehold.it/60x40/ff00000'
+      )
+    }}
+
+    <noscript>
+      {{ macros.img(macro_src, macro_srcset, macro_sizes) }}
+    </noscript>
+  {% else %}
+    {{ macros.img(macro_src, macro_srcset, macro_sizes) }}
+  {% endif %}
 {% endblock %}

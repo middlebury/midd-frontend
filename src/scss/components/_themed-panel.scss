@@ -33,6 +33,7 @@
 
 .themed-panel__figure {
   position: relative;
+  overflow: hidden;
 
   @include breakpoint(xl) {
     @include absolute-fill;

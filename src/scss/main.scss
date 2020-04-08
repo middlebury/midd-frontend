@@ -150,3 +150,15 @@
 #olark-wrapper .olark-launch-button {
   right: 100px !important;
 }
+
+.js-lazy {
+  filter: blur(30px);
+  transition: filter 0.4s, transform 0.4s;
+  transform: scale(1.1);
+
+  &[data-loaded] {
+    filter: none;
+    transform: scale(1);
+  }
+
+}

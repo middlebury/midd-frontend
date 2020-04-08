@@ -22,6 +22,8 @@ import 'intersection-observer';
 
 import focusWithin from 'focus-within'; // polyfill :focus-within for tab accessible menus
 
+import lozad from 'lozad';
+
 import './headroom'; // sticky site headers
 import './toggler'; // toggler util used in transcript toggle, accordions, and more
 import './video'; // for lazy loading iframes until a video thumbnail is clicked
@@ -43,3 +45,8 @@ import './countup';
 import './to-top-btn';
 
 focusWithin(document);
+
+const lazyImages = lozad('.js-lazy', {
+  threshold: 0.5
+});
+lazyImages.observe();

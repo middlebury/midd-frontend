@@ -4,7 +4,10 @@
 
     {% if image_src %}
       <figure class="page-header__figure">
-        {% include 'partials/img.twig' with { name: 'top_level' } %}
+        {% include 'partials/img.twig' with {
+          name: 'top_level',
+          lazy: true
+        } %}
 
         <figcaption class="page-header__caption">
           {% include 'partials/tooltip.twig' with {

@@ -7,7 +7,8 @@
     <section class="mega-cta mega-cta--image-{{pin ? pin : 'bottom-left'}} {% if hero %} mega-cta--hero{% endif %}{% if blse %} mega-cta--blse{% endif %}" aria-labelledby="midd-mega-cta-label-{{id}}">
       <figure class="mega-cta__back">
         {% include 'partials/img.twig' with {
-          name: 'spotlight'
+          name: 'spotlight',
+          lazy: true
         } %}
         {% if caption %}
           <figcaption class="mega-cta__caption">

@@ -6,8 +6,11 @@
       data-lightbox-open="midd-lightbox-1"
       aria-label="Open gallery"
       aria-describedby="midd-gallery-1-label midd-gallery-1-count"
-      {% include 'partials/img.twig' with { name: 'video' } %}
       role="button">
+      {% include 'partials/img.twig' with {
+        name: 'video',
+        lazy: true
+      } %}
       <span class="button button--primary gallery__button">
         Open Gallery
         <span class="ml-3">
