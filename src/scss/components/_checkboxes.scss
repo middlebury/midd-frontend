@@ -30,6 +30,7 @@
     margin-right: $spacing-2;
     margin-top: $spacing-1;
     border: 1px solid currentColor;
+    flex-shrink: 0;
   }
 }
 
