@@ -9,6 +9,23 @@
   <p class="f3 mb-3">{{text}}</p>
 
   <dl class="f2">
+    <div class="mb-2">
+      <dt class="d-block d-sm-inline text-bold">Pronounciation:</dt>
+      <dd class="d-inline">
+        <div class="name-spoken">" Jonathan Doe-Smith "</div>
+        <div class="name-pronounciation print-hide">
+          <audio controls="controls">
+            <source src="//path/to/a/file" type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="name-phonetic">
+          <span class="name-phonetic-spelling">[ JON-a-than doe-smith ]</span>
+          <span class="phonetic-spelling-key print-hide">
+            <a href="https://www.cmu.edu/hub/registrar/docs/phonetic-spelling-instructions.pdf" target="_blank">Key</a>
+          </span>
+        </div>
+      </dd>
+    </div>
     {% for item in meta %}
       <div class="mb-2">
         <dt class="d-block d-sm-inline text-bold">{{item.name}}:</dt>

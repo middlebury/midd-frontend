@@ -5,7 +5,7 @@
 
 .roster__item {
   @include make-gutters;
-  height: 450px;
+  height: 570px;
   break-inside: avoid;
   float: left;
   width: 50%;
@@ -13,5 +13,11 @@
   img {
     max-height: 180px;
     width: auto;
+  }
+}
+
+@media print {
+  .roster__item {
+    height: 450px;
   }
 }
