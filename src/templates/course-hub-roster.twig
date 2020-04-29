@@ -63,7 +63,7 @@
     } %}
   </div>
 
-  <div class="roster">
+  <div>
     {% set names =
       [
         'Some short name',
@@ -73,7 +73,7 @@
     %}
 
     {% for n in 0..20 %}
-      <div class="roster__item">
+      <div class="break-inside-avoid">
         {% set name = random(names) %}
 
         {% if env.test %}
