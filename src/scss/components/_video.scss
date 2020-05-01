@@ -55,4 +55,8 @@
 
 .video__text {
   font-size: $typescale-3;
+
+  a {
+    @include link-border;
+  }
 }

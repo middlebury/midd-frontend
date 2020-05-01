@@ -56,7 +56,6 @@ $app-header-bp: lg;
   border: 0;
 
   @include breakpoint($app-header-bp) {
-    padding: $spacing-4;
     padding-left: 0;
     padding-right: 0;
     font-size: $typescale-3;

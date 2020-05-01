@@ -7,12 +7,8 @@
 }
 
 .page-nav__title {
-  text-transform: uppercase;
-  letter-spacing: $letter-spacing;
-  font-family: $font-family-sans-serif;
-  font-size: $typescale-2;
   border-bottom: 4px solid $border-color;
-  font-weight: $font-weight-semibold;
+  @include small-caps;
 }
 
 .page-nav__button {
@@ -20,11 +16,11 @@
   border: 1px solid $border-color;
   width: 100%;
   background: none;
-  font-size: 14px;
+  font-size: $typescale-2;
   font-weight: $font-weight-semibold;
   // font-family: inherit;
   text-align: left;
-  color: $brand-primary;
+  color: $color-primary;
 
   @include breakpoint(lg) {
     display: none;

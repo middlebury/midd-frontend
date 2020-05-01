@@ -21,3 +21,19 @@
     display: none;
   }
 }
+
+.is-toggled.is-toggled-show {
+  display: block;
+}
+
+.is-toggled.is-toggled-hide {
+  display: none;
+}
+
+.has-toggler.has-toggler-hide {
+  display: none;
+}
+
+.has-toggler.has-toggler-show {
+  display: block;
+}

@@ -1,20 +1,37 @@
 {% include 'partials/page-image.twig' %}
 
 <div class="paragraphs">
-
   {% include 'partials/lead.twig' %}
 
   {% include 'paragraphs/flowchart.twig' %}
 
+  {% include 'paragraphs/portrait-video-group.twig' %}
+
   <div class="paragraph--text typography">
-    <h2>Heading after into</h2>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus facilis consectetur adipisci minus libero natus assumenda pariatur, architecto nisi sed rerum ad rem recusandae? Sapiente blanditiis consectetur maxime incidunt voluptatibus?</p>
-    <p>Sapiente cumque, quibusdam illo eaque itaque deleniti hic quos perspiciatis aut, nostrum at aspernatur deserunt dolor delectus officia odio aperiam atque eligendi, sit ab tempora expedita quod accusantium autem. Repellat!</p>
+    <h2>
+      Heading after into
+    </h2>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus facilis
+      consectetur adipisci minus libero natus assumenda pariatur, architecto
+      nisi sed rerum ad rem recusandae? Sapiente blanditiis consectetur maxime
+      incidunt voluptatibus?
+    </p>
+    <p>
+      Sapiente cumque, quibusdam illo eaque itaque deleniti hic quos
+      perspiciatis aut, nostrum at aspernatur deserunt dolor delectus officia
+      odio aperiam atque eligendi, sit ab tempora expedita quod accusantium
+      autem. Repellat!
+    </p>
   </div>
+
+  {% include 'paragraphs/video-group.twig' %}
 
   {% include 'paragraphs/status-report.twig' %}
 
-  {% include 'paragraphs/status-report.twig' with { items: printer_status } %}
+  {% include 'paragraphs/status-report.twig' with {
+    items: printer_status
+  } %}
 
   {% include 'paragraphs/gallery.twig' %}
 
@@ -36,28 +53,31 @@
 
   {% include 'paragraphs/image-with-text.twig' %}
 
-  {% include 'paragraphs/image-with-text.twig' with { right: true } %}
+  {% include 'paragraphs/image-with-text.twig' with {
+    right: true
+  } %}
 
   {% include 'paragraphs/faq.twig' %}
 
   {% include 'paragraphs/text.twig' %}
 
-  {% include 'paragraphs/image.twig' with { right: true } %}
+  {% include 'paragraphs/image.twig' with {
+    right: true
+  } %}
 
   {% include 'paragraphs/text-short.twig' %}
 
   {% include 'paragraphs/image.twig' %}
 
-
   {% include 'paragraphs/two-col-text.twig' %}
 
-  {% include 'paragraphs/video.twig' with { transcript: true } %}
+  {% include 'paragraphs/video.twig' with {
+    transcript: true
+  } %}
 
   {# {% include 'paragraphs/slideshow.twig' %} #}
 
   {% include 'paragraphs/text.twig' %}
-
-
 
   {% include 'paragraphs/button.twig' %}
 
@@ -68,5 +88,4 @@
   {% include 'paragraphs/link-list.twig' %}
 
   {% include 'paragraphs/embed.twig' %}
-
 </div>

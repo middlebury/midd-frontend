@@ -1,6 +1,29 @@
 .digest {
   border-left: 1px solid $gray-light;
   @include print-hide;
+
+  @include breakpoint(lg) {
+    max-height: 70vh;
+    overflow-y: auto;
+
+    // force scrollbars to display to convey scrollable digest nav
+
+    // firefox
+    scrollbar-color: $gray-light $white;
+    scrollbar-width: auto;
+
+    // for safari and chrome
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+      width: 7px;
+    }
+
+    // for safari and chrome
+    &::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
 }
 
 .digest__title {
@@ -9,7 +32,12 @@
   font-size: $typescale-2;
   font-family: $font-family-sans-serif;
   padding: $spacing-3;
-  margin-left: $spacing-1;
+  padding-left: $spacing-3 + $spacing-1;
+  @include breakpoint(lg) {
+    background: $white;
+    position: sticky;
+    top: 0;
+  }
 }
 
 .digest__nav {
@@ -31,6 +59,6 @@
   transition: border-color 0.2s;
 
   .digest__item.active & {
-    border-color: $brand-primary;
+    border-color: $color-primary;
   }
 }

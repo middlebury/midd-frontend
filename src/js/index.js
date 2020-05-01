@@ -41,5 +41,6 @@ import './select-url';
 import './charts';
 import './countup';
 import './flowchart';
+import './to-top-btn';
 
 focusWithin(document);

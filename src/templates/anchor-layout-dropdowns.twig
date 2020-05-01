@@ -1,0 +1,67 @@
+{% extends 'layout.twig' %}
+
+{% set page_title = 'Student Financial Services' %}
+
+{% set office_header_nav =
+  office_header_nav|default(
+    [
+      {
+        text: 'How to apply',
+        active: true
+      },
+      {
+        text: 'Types of aid'
+      },
+      {
+        text: 'Education Loans'
+      },
+      {
+        text: 'Payment Options',
+        items: [
+          {
+            text: 'Payment Options'
+          },
+          {
+            text: 'Helpful Links'
+          },
+          {
+            text: 'How to apply'
+          },
+          {
+            text: 'Types of aid'
+          },
+          {
+            text: 'Education Loans'
+          }
+        ]
+      },
+      {
+        text: 'Helpful Links'
+      },
+      {
+        text: 'How to apply'
+      },
+      {
+        text: 'Types of aid'
+      },
+      {
+        text: 'Education Loans'
+      },
+      {
+        text: 'Payment Options'
+      },
+      {
+        text: 'Helpful Links'
+      }
+    ]
+  )
+%}
+
+{% block layout_header %}
+  {% include 'partials/midd-header.twig' %}
+  {% include 'partials/anchor-header.twig' %}
+{% endblock %}
+
+{% block layout_footer %}
+  {% include 'partials/midd-footer.twig' %}
+{% endblock %}

@@ -19,7 +19,6 @@
 @import 'components/accordion';
 @import 'components/alert';
 @import 'components/anchor-header';
-@import 'components/anchor-nav';
 @import 'components/announcement';
 @import 'components/app-header';
 @import 'components/audio';
@@ -30,6 +29,7 @@
 @import 'components/card-carousel-item';
 @import 'components/card-carousel';
 @import 'components/chart';
+@import 'components/checkboxes';
 @import 'components/cta-bar';
 @import 'components/cta-group';
 @import 'components/datepicker';
@@ -39,6 +39,7 @@
 @import 'components/dropdown';
 @import 'components/faq';
 @import 'components/flowchart';
+@import 'components/filter';
 @import 'components/foldable';
 @import 'components/footer-menu';
 @import 'components/form';
@@ -70,6 +71,7 @@
 @import 'components/page-image';
 @import 'components/page-nav';
 @import 'components/pagination';
+@import 'components/portrait-video';
 @import 'components/profile-spotlight-item';
 @import 'components/quote';
 @import 'components/radios';
@@ -90,6 +92,7 @@
 @import 'components/themed-box';
 @import 'components/themed-panel';
 @import 'components/tooltip';
+@import 'components/top-btn';
 @import 'components/transcript';
 @import 'components/video';
 
@@ -142,4 +145,10 @@
   bottom: 100% !important;
   border: 1px solid #fff !important;
   box-shadow: none !important;
+}
+
+// Push Olark chat button away from right edge more
+// to make space for back to top button.
+#olark-wrapper .olark-launch-button {
+  right: 100px !important;
 }

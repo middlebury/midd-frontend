@@ -79,6 +79,14 @@
       @include make-gutters;
     }
   }
+
+  .paragraphs--wide__offset {
+    @include breakpoint(lg) {
+      @include make-col-offset(1);
+      @include make-col-ready;
+      @include make-col(10);
+    }
+  }
 }
 
 .paragraph--full,
