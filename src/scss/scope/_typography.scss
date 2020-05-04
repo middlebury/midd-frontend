@@ -208,24 +208,28 @@
     @include h3;
     margin-top: $spacing-5;
     margin-bottom: $spacing-2;
+    font-weight: $font-weight-semibold;
   }
 
   h4 {
     @include h4;
     margin-top: $spacing-5;
     margin-bottom: $spacing-1;
+    font-weight: $font-weight-semibold;
   }
 
   h5 {
     @include h5;
     margin-top: $spacing-5;
     margin-bottom: $spacing-1;
+    font-weight: $font-weight-semibold;
   }
 
   h6 {
     @include h6;
     margin-top: $spacing-5;
     margin-bottom: $spacing-1;
+    font-weight: $font-weight-semibold;
   }
 
   table {
