@@ -458,3 +458,57 @@ printer_status:
   - name: RAJLAB
   - name: SDL122a
   - name: PRTWOOD<br>Proctor Lounge
+
+flowchart_data:
+  - id: 1
+    title: Do you need chat functionality?
+    choices:
+      - text: Yes
+        to: 2
+      - text: No
+        to: 3
+  - id: 2
+    title: Will your chats include sensitive data or will you be collaborating with external guests?
+    text: Specifically will include sensitive content, not just discussion around sensitive topics – distinguish between “Change the SSN” and “Change SSN from xxx-xx-xxxx to...”
+    choices:
+      - text: Yes
+        to: 4
+      - text: No
+        to: 5
+  - id: 3
+    text: Do not use chat.
+    answer: true
+  - id: 4
+    title: Has you department or collaborants selected a tool?
+    choices:
+      - text: Yes
+        to: 5
+      - text: No
+        to: 7
+  - id: 5
+    title: Teams or Zoom?
+    choices:
+      - text: Yes
+        to: 6
+      - text: No
+        to: 8
+  - id: 6
+    text: Use Teams or Zoom.
+    answer: true
+  - id: 7
+    title: Simple Chat? (vs. a more fully featured, integrated capability?)
+    text: Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+    choices:
+      - text: Yes
+        to: 9
+      - text: No
+        to: 10
+  - id: 8
+    text: Use select tool but consider switching to Teams or Zoom.
+    answer: true
+  - id: 9
+    text: We suggest Teams. <a href="#">Set up your Teams account</a>.
+    answer: true
+  - id: 10
+    text: We suggest Zoom. <a href="#">Set up your Zoom account</a>.
+    answer: true
