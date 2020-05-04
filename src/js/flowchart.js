@@ -131,8 +131,7 @@ class Flowchart {
     // // scroll the target to the center of the viewport
     const rect = target.getBoundingClientRect();
     const scrollPosition = window.pageYOffset;
-    const scrollTop =
-      rect.top + scrollPosition + rect.height / 2 - window.innerHeight / 2;
+    const scrollTop = rect.top + scrollPosition - window.innerHeight / 2;
 
     anime({
       targets: [document.documentElement, document.body],
