@@ -92,9 +92,7 @@ $text-colors: (
 }
 
 .text-caps {
-  text-transform: uppercase;
-  letter-spacing: $letter-spacing;
-  font-weight: $font-weight-medium;
+  @include small-caps;
 }
 
 ///
