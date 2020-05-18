@@ -14,7 +14,7 @@
 .quote__text {
   color: $blue-dark;
   font-size: $typescale-5;
-  line-height: lineheight('heading');
+  line-height: $line-height-heading;
   margin-bottom: $spacing-2;
 
   @include breakpoint(md) {

@@ -176,7 +176,7 @@
       text-decoration: none;
       font-weight: normal;
       font-size: $typescale-5;
-      line-height: lineheight('heading');
+      line-height: $line-height-heading;
       color: currentColor;
     }
 
