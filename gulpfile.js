@@ -214,6 +214,17 @@ const html = () =>
 
               return groupArr;
             }
+          },
+          {
+            name: 'cast_to_array',
+            func: items => {
+              return Object.keys(items).map(key => {
+                return {
+                  ...items[key],
+                  key
+                };
+              });
+            }
           }
         ]
       })
