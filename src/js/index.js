@@ -42,5 +42,6 @@ import './charts';
 import './countup';
 import './flowchart';
 import './to-top-btn';
+import './helpfulness';
 
 focusWithin(document);
