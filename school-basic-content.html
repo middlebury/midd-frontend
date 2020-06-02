@@ -79,7 +79,7 @@
           <path fill-rule="nonzero" d="M4 12.455V11h16v1.455z" />
         </symbol>
         <symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-pause">
-          <path d="M3 0h6v24H3zm12 0h6v24h-6z" />
+          <path clip-rule="evenodd" d="M9 3H7v18h2V3zm7 0h2v18h-2V3z" />
         </symbol>
         <symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-play">
           <path fill-rule="nonzero" d="M21 12L3 24V0z" />
@@ -328,81 +328,121 @@
               </div>
               <div class="paragraphs">
                 <p class="lead paragraph--lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste iusto blanditiis dolorem illum accusantium, praesentium labore cumque fugit eos, quasi corporis voluptas aut! Doloremque similique dolorem enim, quos ipsam soluta!</p>
-                <div class="paragraph flowchart" id="526" data-flowchart>
-                  <div id="flowchart-526-1" class="flowchart__item " data-flowchart-item>
+                <div class="paragraph helpfulness print-hide">
+                  <h2 class="h3 mb-3"> Was this page helpful? </h2>
+                  <form action="/~imcbride/helpfulness/announcements/faq" method="post" id="helpfulness-block-form" accept-charset="UTF-8">
+                    <div id="edit-helpfulness-rating">
+                      <div class="js-form-item form-item js-form-type-radio form-item-helpfulness-rating js-form-item-helpfulness-rating">
+                        <input data-drupal-selector="edit-helpfulness-rating-1" type="radio" id="edit-helpfulness-rating-1" name="helpfulness_rating" value="1" class="form-radio" />
+                        <label for="edit-helpfulness-rating-1" class="option"> Yes </label>
+                      </div>
+                      <div class="js-form-item form-item js-form-type-radio form-item-helpfulness-rating js-form-item-helpfulness-rating">
+                        <input data-drupal-selector="edit-helpfulness-rating-0" type="radio" id="edit-helpfulness-rating-0" name="helpfulness_rating" value="0" class="form-radio" />
+                        <label for="edit-helpfulness-rating-0" class="option"> No </label>
+                      </div>
+                    </div>
+                    <div class="js-form-item form-item js-form-type-textarea form-item-helpfulness-comments js-form-item-helpfulness-comments">
+                      <label for="edit-helpfulness-comments">
+                        <div class="helpfulness_yes_title">
+                          <p> Thanks. Any other comments? </p>
+                        </div>
+                        <div class="helpfulness_no_title">
+                          <p> Sorry to hear that. Please tell me more! </p>
+                        </div>
+                      </label>
+                      <div>
+                        <textarea data-drupal-selector="edit-helpfulness-comments" aria-describedby="edit-helpfulness-comments--description" id="edit-helpfulness-comments" name="helpfulness_comments" rows="5" cols="60" class="form-textarea"></textarea>
+                      </div>
+                      <div id="edit-helpfulness-comments--description" class="description">
+                        <div class="helpfulness_yes_description">
+                          <p> We appreciate the feedback. </p>
+                        </div>
+                        <div class="helpfulness_no_description">
+                          <p> Please include your email if you want us to follow up with you. </p>
+                        </div>
+                      </div>
+                    </div>
+                    <input autocomplete="off" data-drupal-selector="form-fdflpoar6zmeejttcltk3z3sv-dcanulunqi74le-zm" type="hidden" name="form_build_id" value="form-FDFLPoAR6zMeejTtcltk3Z3sV_DcAnUlUNQi74le-ZM" />
+                    <input data-drupal-selector="edit-helpfulness-block-form-form-token" type="hidden" name="form_token" value="3pZdgZADg754_m5fCg1cjveJOlIMNHqf3_ft3NxDVN8" />
+                    <input data-drupal-selector="edit-helpfulness-block-form" type="hidden" name="form_id" value="helpfulness_block_form" />
+                    <input data-drupal-selector="edit-submit" type="submit" id="edit-submit" name="op" value="Submit" class="button button--primary js-form-submit form-submit" />
+                  </form>
+                </div>
+                <div class="paragraph flowchart" id="345" data-flowchart>
+                  <div id="flowchart-345-1" class="flowchart__item " data-flowchart-item>
                     <h3 class="h3 mb-2 flowchart__title"> Do you need chat functionality? </h3>
                     <div class="mt-4">
                       <div class="radio">
-                        <a href="#flowchart-526-2" class="radio__label" data-flowchart-btn> Yes </a>
+                        <a href="#flowchart-345-2" class="radio__label" data-flowchart-btn> Yes </a>
                       </div>
                       <div class="radio">
-                        <a href="#flowchart-526-3" class="radio__label" data-flowchart-btn> No </a>
+                        <a href="#flowchart-345-3" class="radio__label" data-flowchart-btn> No </a>
                       </div>
                     </div>
                   </div>
-                  <div id="flowchart-526-2" class="flowchart__item " data-flowchart-item>
+                  <div id="flowchart-345-2" class="flowchart__item " data-flowchart-item>
                     <h3 class="h3 mb-2 flowchart__title"> Will your chats include sensitive data or will you be collaborating with external guests? </h3>
                     <div class="typography"> Specifically will include sensitive content, not just discussion around sensitive topics – distinguish between “Change the SSN” and “Change SSN from xxx-xx-xxxx to...” </div>
                     <div class="mt-4">
                       <div class="radio">
-                        <a href="#flowchart-526-4" class="radio__label" data-flowchart-btn> Yes </a>
+                        <a href="#flowchart-345-4" class="radio__label" data-flowchart-btn> Yes </a>
                       </div>
                       <div class="radio">
-                        <a href="#flowchart-526-5" class="radio__label" data-flowchart-btn> No </a>
+                        <a href="#flowchart-345-5" class="radio__label" data-flowchart-btn> No </a>
                       </div>
                     </div>
                   </div>
-                  <div id="flowchart-526-3" class="flowchart__item  flowchart__item--answer" data-flowchart-item>
+                  <div id="flowchart-345-3" class="flowchart__item  flowchart__item--answer" data-flowchart-item>
                     <span class="d-block text-caps mb-5">Based on your answers</span>
                     <div class="typography"> Do not use chat. </div>
                   </div>
-                  <div id="flowchart-526-4" class="flowchart__item " data-flowchart-item>
+                  <div id="flowchart-345-4" class="flowchart__item " data-flowchart-item>
                     <h3 class="h3 mb-2 flowchart__title"> Has you department or collaborants selected a tool? </h3>
                     <div class="mt-4">
                       <div class="radio">
-                        <a href="#flowchart-526-5" class="radio__label" data-flowchart-btn> Yes </a>
+                        <a href="#flowchart-345-5" class="radio__label" data-flowchart-btn> Yes </a>
                       </div>
                       <div class="radio">
-                        <a href="#flowchart-526-7" class="radio__label" data-flowchart-btn> No </a>
+                        <a href="#flowchart-345-7" class="radio__label" data-flowchart-btn> No </a>
                       </div>
                     </div>
                   </div>
-                  <div id="flowchart-526-5" class="flowchart__item " data-flowchart-item>
+                  <div id="flowchart-345-5" class="flowchart__item " data-flowchart-item>
                     <h3 class="h3 mb-2 flowchart__title"> Teams or Zoom? </h3>
                     <div class="mt-4">
                       <div class="radio">
-                        <a href="#flowchart-526-6" class="radio__label" data-flowchart-btn> Yes </a>
+                        <a href="#flowchart-345-6" class="radio__label" data-flowchart-btn> Yes </a>
                       </div>
                       <div class="radio">
-                        <a href="#flowchart-526-8" class="radio__label" data-flowchart-btn> No </a>
+                        <a href="#flowchart-345-8" class="radio__label" data-flowchart-btn> No </a>
                       </div>
                     </div>
                   </div>
-                  <div id="flowchart-526-6" class="flowchart__item  flowchart__item--answer" data-flowchart-item>
+                  <div id="flowchart-345-6" class="flowchart__item  flowchart__item--answer" data-flowchart-item>
                     <span class="d-block text-caps mb-5">Based on your answers</span>
                     <div class="typography"> Use Teams or Zoom. </div>
                   </div>
-                  <div id="flowchart-526-7" class="flowchart__item " data-flowchart-item>
+                  <div id="flowchart-345-7" class="flowchart__item " data-flowchart-item>
                     <h3 class="h3 mb-2 flowchart__title"> Simple Chat? (vs. a more fully featured, integrated capability?) </h3>
                     <div class="typography"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. </div>
                     <div class="mt-4">
                       <div class="radio">
-                        <a href="#flowchart-526-9" class="radio__label" data-flowchart-btn> Yes </a>
+                        <a href="#flowchart-345-9" class="radio__label" data-flowchart-btn> Yes </a>
                       </div>
                       <div class="radio">
-                        <a href="#flowchart-526-10" class="radio__label" data-flowchart-btn> No </a>
+                        <a href="#flowchart-345-10" class="radio__label" data-flowchart-btn> No </a>
                       </div>
                     </div>
                   </div>
-                  <div id="flowchart-526-8" class="flowchart__item  flowchart__item--answer" data-flowchart-item>
+                  <div id="flowchart-345-8" class="flowchart__item  flowchart__item--answer" data-flowchart-item>
                     <span class="d-block text-caps mb-5">Based on your answers</span>
                     <div class="typography"> Use select tool but consider switching to Teams or Zoom. </div>
                   </div>
-                  <div id="flowchart-526-9" class="flowchart__item  flowchart__item--answer" data-flowchart-item>
+                  <div id="flowchart-345-9" class="flowchart__item  flowchart__item--answer" data-flowchart-item>
                     <span class="d-block text-caps mb-5">Based on your answers</span>
                     <div class="typography"> We suggest Teams. <a href="#">Set up your Teams account</a>. </div>
                   </div>
-                  <div id="flowchart-526-10" class="flowchart__item  flowchart__item--answer" data-flowchart-item>
+                  <div id="flowchart-345-10" class="flowchart__item  flowchart__item--answer" data-flowchart-item>
                     <span class="d-block text-caps mb-5">Based on your answers</span>
                     <div class="typography"> We suggest Zoom. <a href="#">Set up your Zoom account</a>. </div>
                   </div>
@@ -418,10 +458,10 @@
                     <div class="col-md-6 col-lg-4 mb-7">
                       <figure class="portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                         <div class="portrait-video__content js-video-content">
-                          <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-997">
+                          <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-200">
                             <img src="https://placehold.it/306x554" srcset="https://placehold.it/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
                             <div class="portrait-video__body">
-                              <h3 class="portrait-video__title" id="midd-video-label-997"> What do students do after graduation? </h3>
+                              <h3 class="portrait-video__title" id="midd-video-label-200"> What do students do after graduation? </h3>
                               <span class="button button--primary button--sm button--block mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
                                   <use xlink:href="#icon-play">
                                 </svg>
@@ -429,12 +469,12 @@
                             </div>
                           </a>
                         </div>
-                        <div class="transcript js-transcript-997 mt-2">
-                          <a href="#midd-transcript-997" class="transcript__button" data-toggle-target=".js-transcript-997" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                        <div class="transcript js-transcript-200 mt-2">
+                          <a href="#midd-transcript-200" class="transcript__button" data-toggle-target=".js-transcript-200" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                               <use xlink:href="#icon-chevron-down">
                             </svg>
                           </a>
-                          <div class="transcript__body" id="midd-transcript-997">
+                          <div class="transcript__body" id="midd-transcript-200">
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -445,10 +485,10 @@
                     <div class="col-md-6 col-lg-4 mb-7">
                       <figure class="portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                         <div class="portrait-video__content js-video-content">
-                          <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-1144">
+                          <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-811">
                             <img src="https://placehold.it/306x554" srcset="https://placehold.it/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
                             <div class="portrait-video__body">
-                              <h3 class="portrait-video__title" id="midd-video-label-1144"> What do students do after graduation? </h3>
+                              <h3 class="portrait-video__title" id="midd-video-label-811"> What do students do after graduation? </h3>
                               <span class="button button--primary button--sm button--block mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
                                   <use xlink:href="#icon-play">
                                 </svg>
@@ -456,12 +496,12 @@
                             </div>
                           </a>
                         </div>
-                        <div class="transcript js-transcript-1144 mt-2">
-                          <a href="#midd-transcript-1144" class="transcript__button" data-toggle-target=".js-transcript-1144" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                        <div class="transcript js-transcript-811 mt-2">
+                          <a href="#midd-transcript-811" class="transcript__button" data-toggle-target=".js-transcript-811" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                               <use xlink:href="#icon-chevron-down">
                             </svg>
                           </a>
-                          <div class="transcript__body" id="midd-transcript-1144">
+                          <div class="transcript__body" id="midd-transcript-811">
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -472,10 +512,10 @@
                     <div class="col-md-6 col-lg-4 mb-7">
                       <figure class="portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                         <div class="portrait-video__content js-video-content">
-                          <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-968">
+                          <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-360">
                             <img src="https://placehold.it/306x554" srcset="https://placehold.it/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
                             <div class="portrait-video__body">
-                              <h3 class="portrait-video__title" id="midd-video-label-968"> What do students do after graduation? </h3>
+                              <h3 class="portrait-video__title" id="midd-video-label-360"> What do students do after graduation? </h3>
                               <span class="button button--primary button--sm button--block mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
                                   <use xlink:href="#icon-play">
                                 </svg>
@@ -483,12 +523,12 @@
                             </div>
                           </a>
                         </div>
-                        <div class="transcript js-transcript-968 mt-2">
-                          <a href="#midd-transcript-968" class="transcript__button" data-toggle-target=".js-transcript-968" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                        <div class="transcript js-transcript-360 mt-2">
+                          <a href="#midd-transcript-360" class="transcript__button" data-toggle-target=".js-transcript-360" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                               <use xlink:href="#icon-chevron-down">
                             </svg>
                           </a>
-                          <div class="transcript__body" id="midd-transcript-968">
+                          <div class="transcript__body" id="midd-transcript-360">
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -499,10 +539,10 @@
                     <div class="col-md-6 col-lg-4 mb-7">
                       <figure class="portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                         <div class="portrait-video__content js-video-content">
-                          <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-414">
+                          <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-556">
                             <img src="https://placehold.it/306x554" srcset="https://placehold.it/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
                             <div class="portrait-video__body">
-                              <h3 class="portrait-video__title" id="midd-video-label-414"> What do students do after graduation? </h3>
+                              <h3 class="portrait-video__title" id="midd-video-label-556"> What do students do after graduation? </h3>
                               <span class="button button--primary button--sm button--block mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
                                   <use xlink:href="#icon-play">
                                 </svg>
@@ -510,12 +550,12 @@
                             </div>
                           </a>
                         </div>
-                        <div class="transcript js-transcript-414 mt-2">
-                          <a href="#midd-transcript-414" class="transcript__button" data-toggle-target=".js-transcript-414" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                        <div class="transcript js-transcript-556 mt-2">
+                          <a href="#midd-transcript-556" class="transcript__button" data-toggle-target=".js-transcript-556" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                               <use xlink:href="#icon-chevron-down">
                             </svg>
                           </a>
-                          <div class="transcript__body" id="midd-transcript-414">
+                          <div class="transcript__body" id="midd-transcript-556">
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -526,10 +566,10 @@
                     <div class="col-md-6 col-lg-4 mb-7">
                       <figure class="portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                         <div class="portrait-video__content js-video-content">
-                          <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-257">
+                          <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-412">
                             <img src="https://placehold.it/306x554" srcset="https://placehold.it/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
                             <div class="portrait-video__body">
-                              <h3 class="portrait-video__title" id="midd-video-label-257"> What do students do after graduation? </h3>
+                              <h3 class="portrait-video__title" id="midd-video-label-412"> What do students do after graduation? </h3>
                               <span class="button button--primary button--sm button--block mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
                                   <use xlink:href="#icon-play">
                                 </svg>
@@ -537,12 +577,12 @@
                             </div>
                           </a>
                         </div>
-                        <div class="transcript js-transcript-257 mt-2">
-                          <a href="#midd-transcript-257" class="transcript__button" data-toggle-target=".js-transcript-257" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                        <div class="transcript js-transcript-412 mt-2">
+                          <a href="#midd-transcript-412" class="transcript__button" data-toggle-target=".js-transcript-412" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                               <use xlink:href="#icon-chevron-down">
                             </svg>
                           </a>
-                          <div class="transcript__body" id="midd-transcript-257">
+                          <div class="transcript__body" id="midd-transcript-412">
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -569,7 +609,7 @@
                       <!-- video iframe html should be escaped -->
                       <figure class="video js-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                         <div class="video__content js-video-content">
-                          <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-661">
+                          <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-62">
                             <img src="https://placehold.it/1136x639" srcset="https://placehold.it/400x225 400w,https://placehold.it/640x360 640w,https://placehold.it/832x468 832w,https://placehold.it/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
                             <span class="button button--primary video__button"> Play <span class="ml-3">
                                 <svg class="icon  " focusable="false" aria-hidden="true">
@@ -580,14 +620,14 @@
                           </a>
                         </div>
                         <figcaption class="video__body">
-                          <h3 class="video__title" id="midd-video-label-661">Practical Skills for Positive Change</h3>
+                          <h3 class="video__title" id="midd-video-label-62">Practical Skills for Positive Change</h3>
                           <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
-                          <div class="transcript js-transcript-661 ">
-                            <a href="#midd-transcript-661" class="transcript__button" data-toggle-target=".js-transcript-661" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                          <div class="transcript js-transcript-62 ">
+                            <a href="#midd-transcript-62" class="transcript__button" data-toggle-target=".js-transcript-62" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                                 <use xlink:href="#icon-chevron-down">
                               </svg>
                             </a>
-                            <div class="transcript__body" id="midd-transcript-661">
+                            <div class="transcript__body" id="midd-transcript-62">
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -600,7 +640,7 @@
                       <!-- video iframe html should be escaped -->
                       <figure class="video js-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                         <div class="video__content js-video-content">
-                          <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-930">
+                          <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-168">
                             <img src="https://placehold.it/1136x639" srcset="https://placehold.it/400x225 400w,https://placehold.it/640x360 640w,https://placehold.it/832x468 832w,https://placehold.it/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
                             <span class="button button--primary video__button"> Play <span class="ml-3">
                                 <svg class="icon  " focusable="false" aria-hidden="true">
@@ -611,14 +651,14 @@
                           </a>
                         </div>
                         <figcaption class="video__body">
-                          <h3 class="video__title" id="midd-video-label-930">Practical Skills for Positive Change</h3>
+                          <h3 class="video__title" id="midd-video-label-168">Practical Skills for Positive Change</h3>
                           <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
-                          <div class="transcript js-transcript-930 ">
-                            <a href="#midd-transcript-930" class="transcript__button" data-toggle-target=".js-transcript-930" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                          <div class="transcript js-transcript-168 ">
+                            <a href="#midd-transcript-168" class="transcript__button" data-toggle-target=".js-transcript-168" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                                 <use xlink:href="#icon-chevron-down">
                               </svg>
                             </a>
-                            <div class="transcript__body" id="midd-transcript-930">
+                            <div class="transcript__body" id="midd-transcript-168">
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -631,7 +671,7 @@
                       <!-- video iframe html should be escaped -->
                       <figure class="video js-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                         <div class="video__content js-video-content">
-                          <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-827">
+                          <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-509">
                             <img src="https://placehold.it/1136x639" srcset="https://placehold.it/400x225 400w,https://placehold.it/640x360 640w,https://placehold.it/832x468 832w,https://placehold.it/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
                             <span class="button button--primary video__button"> Play <span class="ml-3">
                                 <svg class="icon  " focusable="false" aria-hidden="true">
@@ -642,14 +682,14 @@
                           </a>
                         </div>
                         <figcaption class="video__body">
-                          <h3 class="video__title" id="midd-video-label-827">Practical Skills for Positive Change</h3>
+                          <h3 class="video__title" id="midd-video-label-509">Practical Skills for Positive Change</h3>
                           <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
-                          <div class="transcript js-transcript-827 ">
-                            <a href="#midd-transcript-827" class="transcript__button" data-toggle-target=".js-transcript-827" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                          <div class="transcript js-transcript-509 ">
+                            <a href="#midd-transcript-509" class="transcript__button" data-toggle-target=".js-transcript-509" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                                 <use xlink:href="#icon-chevron-down">
                               </svg>
                             </a>
-                            <div class="transcript__body" id="midd-transcript-827">
+                            <div class="transcript__body" id="midd-transcript-509">
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -662,7 +702,7 @@
                       <!-- video iframe html should be escaped -->
                       <figure class="video js-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                         <div class="video__content js-video-content">
-                          <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-1127">
+                          <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-605">
                             <img src="https://placehold.it/1136x639" srcset="https://placehold.it/400x225 400w,https://placehold.it/640x360 640w,https://placehold.it/832x468 832w,https://placehold.it/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
                             <span class="button button--primary video__button"> Play <span class="ml-3">
                                 <svg class="icon  " focusable="false" aria-hidden="true">
@@ -673,14 +713,14 @@
                           </a>
                         </div>
                         <figcaption class="video__body">
-                          <h3 class="video__title" id="midd-video-label-1127">Practical Skills for Positive Change</h3>
+                          <h3 class="video__title" id="midd-video-label-605">Practical Skills for Positive Change</h3>
                           <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
-                          <div class="transcript js-transcript-1127 ">
-                            <a href="#midd-transcript-1127" class="transcript__button" data-toggle-target=".js-transcript-1127" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                          <div class="transcript js-transcript-605 ">
+                            <a href="#midd-transcript-605" class="transcript__button" data-toggle-target=".js-transcript-605" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                                 <use xlink:href="#icon-chevron-down">
                               </svg>
                             </a>
-                            <div class="transcript__body" id="midd-transcript-1127">
+                            <div class="transcript__body" id="midd-transcript-605">
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -693,7 +733,7 @@
                       <!-- video iframe html should be escaped -->
                       <figure class="video js-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                         <div class="video__content js-video-content">
-                          <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-554">
+                          <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-581">
                             <img src="https://placehold.it/1136x639" srcset="https://placehold.it/400x225 400w,https://placehold.it/640x360 640w,https://placehold.it/832x468 832w,https://placehold.it/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
                             <span class="button button--primary video__button"> Play <span class="ml-3">
                                 <svg class="icon  " focusable="false" aria-hidden="true">
@@ -704,14 +744,14 @@
                           </a>
                         </div>
                         <figcaption class="video__body">
-                          <h3 class="video__title" id="midd-video-label-554">Practical Skills for Positive Change</h3>
+                          <h3 class="video__title" id="midd-video-label-581">Practical Skills for Positive Change</h3>
                           <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
-                          <div class="transcript js-transcript-554 ">
-                            <a href="#midd-transcript-554" class="transcript__button" data-toggle-target=".js-transcript-554" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                          <div class="transcript js-transcript-581 ">
+                            <a href="#midd-transcript-581" class="transcript__button" data-toggle-target=".js-transcript-581" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                                 <use xlink:href="#icon-chevron-down">
                               </svg>
                             </a>
-                            <div class="transcript__body" id="midd-transcript-554">
+                            <div class="transcript__body" id="midd-transcript-581">
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -760,10 +800,10 @@
                       </div>
                     </li>
                     <li class="status-report__item">
-                      <span class="status-report__icon bg-success">
-                        <span class="sr-only">Available</span>
+                      <span class="status-report__icon bg-gray">
+                        <span class="sr-only">Paused</span>
                         <svg class="icon  " focusable="false" aria-hidden="true">
-                          <use xlink:href="#icon-check">
+                          <use xlink:href="#icon-pause">
                         </svg>
                       </span>
                       <div>
@@ -1964,7 +2004,7 @@
                   <!-- video iframe html should be escaped -->
                   <figure class="video js-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                     <div class="video__content js-video-content">
-                      <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-13">
+                      <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-726">
                         <img src="https://placehold.it/1136x639" srcset="https://placehold.it/400x225 400w,https://placehold.it/640x360 640w,https://placehold.it/832x468 832w,https://placehold.it/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
                         <span class="button button--primary video__button"> Play <span class="ml-3">
                             <svg class="icon  " focusable="false" aria-hidden="true">
@@ -1975,14 +2015,14 @@
                       </a>
                     </div>
                     <figcaption class="video__body">
-                      <h3 class="video__title" id="midd-video-label-13">Practical Skills for Positive Change</h3>
+                      <h3 class="video__title" id="midd-video-label-726">Practical Skills for Positive Change</h3>
                       <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
-                      <div class="transcript js-transcript-13 ">
-                        <a href="#midd-transcript-13" class="transcript__button" data-toggle-target=".js-transcript-13" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                      <div class="transcript js-transcript-726 ">
+                        <a href="#midd-transcript-726" class="transcript__button" data-toggle-target=".js-transcript-726" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                             <use xlink:href="#icon-chevron-down">
                           </svg>
                         </a>
-                        <div class="transcript__body" id="midd-transcript-13">
+                        <div class="transcript__body" id="midd-transcript-726">
                           <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                           <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                           <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>

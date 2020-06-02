@@ -79,7 +79,7 @@
           <path fill-rule="nonzero" d="M4 12.455V11h16v1.455z" />
         </symbol>
         <symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-pause">
-          <path d="M3 0h6v24H3zm12 0h6v24h-6z" />
+          <path clip-rule="evenodd" d="M9 3H7v18h2V3zm7 0h2v18h-2V3z" />
         </symbol>
         <symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-play">
           <path fill-rule="nonzero" d="M21 12L3 24V0z" />
@@ -265,12 +265,12 @@
               <img src="https://placehold.it/1440x576" srcset="https://placehold.it/400x160 400w,https://placehold.it/640x256 640w,https://placehold.it/960x384 960w,https://placehold.it/1280x512 1280w,https://placehold.it/1440x576 1440w" sizes="(max-width: 1440px) 100vw, 1440px" alt="" />
               <figcaption class="page-header__caption">
                 <div class="tooltip tooltip--light">
-                  <button class="tooltip__button" aria-labelledby="midd-tooltip-label-828">
+                  <button class="tooltip__button" aria-labelledby="midd-tooltip-label-456">
                     <svg class="icon f5 icon--lg" focusable="false" aria-hidden="true">
                       <use xlink:href="#icon-info">
                     </svg>
                   </button>
-                  <div class="tooltip__label" role="tooltip" id="midd-tooltip-label-828"> some caption for top level image </div>
+                  <div class="tooltip__label" role="tooltip" id="midd-tooltip-label-456"> some caption for top level image </div>
                 </div>
               </figcaption>
             </figure>
@@ -389,10 +389,10 @@
                     </div>
                   </li>
                   <li class="status-report__item">
-                    <span class="status-report__icon bg-success">
-                      <span class="sr-only">Available</span>
+                    <span class="status-report__icon bg-gray">
+                      <span class="sr-only">Paused</span>
                       <svg class="icon  " focusable="false" aria-hidden="true">
-                        <use xlink:href="#icon-check">
+                        <use xlink:href="#icon-pause">
                       </svg>
                     </span>
                     <div>
@@ -1088,16 +1088,16 @@
               </div>
               <div class="paragraph--themed-panel">
                 <div class="container px-0">
-                  <section class="themed-panel" aria-labelledby="themed-panel-222-title">
+                  <section class="themed-panel" aria-labelledby="themed-panel-242-title">
                     <div class="themed-panel__main">
                       <div class="themed-panel__media">
                         <figure class="themed-panel__figure">
                           <img src="https://placehold.it/1440x810" srcset="https://placehold.it/400x225 400w,https://placehold.it/640x360 640w,https://placehold.it/960x540 960w,https://placehold.it/1280x720 1280w,https://placehold.it/1440x810 1440w" sizes="(max-width: 1440px) 100vw, 1440px" alt="" />
                         </figure>
-                        <h2 class="themed-panel__title" id="themed-panel-222-title">Sustainability and other things that go on and on</h2>
+                        <h2 class="themed-panel__title" id="themed-panel-242-title">Sustainability and other things that go on and on</h2>
                       </div>
-                      <article class="themed-panel__article" aria-labelledby="themed-panel-222-first">
-                        <h3 class="themed-panel__heading h2" id="themed-panel-222-first">
+                      <article class="themed-panel__article" aria-labelledby="themed-panel-242-first">
+                        <h3 class="themed-panel__heading h2" id="themed-panel-242-first">
                           <a href="" class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing</a>
                         </h3>
                         <p class="themed-panel__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam dicta nihil reiciendis laboriosam, exercitationem harum numquam rem sint laudantium ducimus optio provident voluptate obcaecati reprehenderit voluptates illum dignissimos corrupti!</p>
@@ -1105,22 +1105,22 @@
                       </article>
                     </div>
                     <div class="themed-panel__secondary">
-                      <article class="themed-panel__subarticle" aria-labelledby="themed-panel-222-1">
-                        <h3 class="themed-panel__heading" id="themed-panel-222-1">
+                      <article class="themed-panel__subarticle" aria-labelledby="themed-panel-242-1">
+                        <h3 class="themed-panel__heading" id="themed-panel-242-1">
                           <a href="" class="text-white">24/7 Support</a>
                         </h3>
                         <p class="themed-panel__text">Lorem ipsum dolor sit amet consectetur adipisicing ipsum dolor sit amet consectetur adipisicing elit. </p>
                         <a href="" class="themed-panel__cta">Read more</a>
                       </article>
-                      <article class="themed-panel__subarticle" aria-labelledby="themed-panel-222-2">
-                        <h3 class="themed-panel__heading" id="themed-panel-222-2">
+                      <article class="themed-panel__subarticle" aria-labelledby="themed-panel-242-2">
+                        <h3 class="themed-panel__heading" id="themed-panel-242-2">
                           <a href="" class="text-white">24/7 Support</a>
                         </h3>
                         <p class="themed-panel__text">Lorem ipsum dolor sit amet consectetur adipisicing ipsum dolor sit amet consectetur adipisicing elit. </p>
                         <a href="" class="themed-panel__cta">Read more</a>
                       </article>
-                      <article class="themed-panel__subarticle" aria-labelledby="themed-panel-222-3">
-                        <h3 class="themed-panel__heading" id="themed-panel-222-3">
+                      <article class="themed-panel__subarticle" aria-labelledby="themed-panel-242-3">
+                        <h3 class="themed-panel__heading" id="themed-panel-242-3">
                           <a href="" class="text-white">24/7 Support</a>
                         </h3>
                         <p class="themed-panel__text">Lorem ipsum dolor sit amet consectetur adipisicing ipsum dolor sit amet consectetur adipisicing elit. </p>
@@ -1193,7 +1193,7 @@
                 <!-- video iframe html should be escaped -->
                 <figure class="video js-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                   <div class="video__content js-video-content">
-                    <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-511">
+                    <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-294">
                       <img src="https://placehold.it/1136x639" srcset="https://placehold.it/400x225 400w,https://placehold.it/640x360 640w,https://placehold.it/832x468 832w,https://placehold.it/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
                       <span class="button button--primary video__button"> Play <span class="ml-3">
                           <svg class="icon  " focusable="false" aria-hidden="true">
@@ -1204,14 +1204,14 @@
                     </a>
                   </div>
                   <figcaption class="video__body">
-                    <h3 class="video__title" id="midd-video-label-511">Practical Skills for Positive Change</h3>
+                    <h3 class="video__title" id="midd-video-label-294">Practical Skills for Positive Change</h3>
                     <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
-                    <div class="transcript js-transcript-511 ">
-                      <a href="#midd-transcript-511" class="transcript__button" data-toggle-target=".js-transcript-511" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                    <div class="transcript js-transcript-294 ">
+                      <a href="#midd-transcript-294" class="transcript__button" data-toggle-target=".js-transcript-294" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                           <use xlink:href="#icon-chevron-down">
                         </svg>
                       </a>
-                      <div class="transcript__body" id="midd-transcript-511">
+                      <div class="transcript__body" id="midd-transcript-294">
                         <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                         <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                         <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
