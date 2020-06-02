@@ -104,7 +104,7 @@ class AudioPlayer extends Component {
             <span class="audio__button-text mr-3">
               {playing ? 'Pause' : 'Listen'}
             </span>
-            <svg class="icon icon--sm">
+            <svg class="icon">
               <use xlinkHref={`#icon-${playing ? 'pause' : 'play'}`} />
             </svg>
           </button>

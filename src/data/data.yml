@@ -422,6 +422,7 @@ system_status:
     type: danger
     link: '#'
   - name: Self-Service Banner (SSB)
+    type: paused
   - name: Internet Native Banner (INB)
   - name: Oracle Finance
   - name: Google Apps
