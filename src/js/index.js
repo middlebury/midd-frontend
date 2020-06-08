@@ -35,5 +35,6 @@ import './countup';
 import './flowchart';
 import './to-top-btn';
 import './helpfulness';
+import './zoomable';
 
 focusWithin(document);

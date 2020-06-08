@@ -96,6 +96,7 @@
     "lodash": "^4.17.15",
     "lozad": "^1.15.0",
     "mdn-polyfills": "^5.20.0",
+    "medium-zoom": "^1.0.5",
     "micromodal": "git+https://git@github.com/zebapy/micromodal.git",
     "normalize.css": "^8.0.1",
     "object-fit-images": "^3.2.4",
