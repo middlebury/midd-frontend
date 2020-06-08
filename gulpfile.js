@@ -342,6 +342,9 @@ const buildIconSprite = () =>
   minifySvgs('./src/icons/*.svg')
     .pipe(
       svgSprite({
+        svg: {
+          xmlDeclaration: false
+        },
         shape: {
           id: {
             generator: 'icon-%s'
