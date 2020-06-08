@@ -23,7 +23,7 @@
 /// @example html
 ///   <a href="#target" class="radio__label radio__label--checked">Yes</a>
 
-.radio__input--checked {
+.radio__label--checked {
   @include radio-input-checked-label;
 }
 
