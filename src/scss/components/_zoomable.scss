@@ -1,0 +1,9 @@
+// medium-zoom z index fixes
+
+.medium-zoom-overlay {
+  z-index: $z-index-medium-zoom-overlay;
+}
+
+.medium-zoom-image {
+  z-index: $z-index-medium-zoom-image;
+}
