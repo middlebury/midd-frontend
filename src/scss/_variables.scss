@@ -117,6 +117,7 @@ $color-schools-abroad: $blue;
 $color-language-schools: #8f9a17;
 $color-school-english: #c26533;
 $color-writers-conference: $yellow;
+$color-institute: #97bbd5;
 
 ////
 /// Themes
@@ -124,6 +125,7 @@ $color-writers-conference: $yellow;
 
 $themes: (
   college: $color-college,
+  institute: $color-institute,
   sa: $color-schools-abroad,
   ls: $color-language-schools,
   blse: $color-school-english,
