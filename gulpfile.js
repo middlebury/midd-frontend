@@ -19,10 +19,6 @@ const gulpIf = require('gulp-if');
 const size = require('gulp-size');
 const rename = require('gulp-rename');
 const postcss = require('gulp-postcss');
-const autoprefixer = require('autoprefixer');
-const mqPacker = require('css-mqpacker');
-const sortCSSMq = require('sort-css-media-queries');
-const cssnano = require('cssnano');
 const _ = require('lodash');
 const dotenv = require('dotenv');
 const svgSprite = require('gulp-svg-sprite');
@@ -31,6 +27,7 @@ const dom = require('gulp-dom');
 const stylelint = require('gulp-stylelint');
 const eslint = require('gulp-eslint');
 
+const postcssConfig = require('./postcss.config');
 const rollup = require('./rollup');
 
 dotenv.config();
@@ -117,17 +114,6 @@ const lintStyles = () => {
 };
 
 const styles = () => {
-  const plugins = [autoprefixer()];
-
-  if (PROD) {
-    plugins.push(
-      cssnano(),
-      mqPacker({
-        sort: sortCSSMq
-      })
-    );
-  }
-
   return gulp
     .src(paths.styles.src)
     .pipe(gulpIf(!PROD, sourcemaps.init({ loadMaps: true })))
@@ -137,7 +123,7 @@ const styles = () => {
       })
     )
     .pipe(sass())
-    .pipe(postcss(plugins))
+    .pipe(postcss(postcssConfig))
     .pipe(gulpIf(!PROD, sourcemaps.write('./')))
     .pipe(size({ showFiles: true }))
     .pipe(gulp.dest(paths.styles.dest))
