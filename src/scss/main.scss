@@ -148,6 +148,8 @@
 
 // Push Olark chat button away from right edge more
 // to make space for back to top button.
+
+// stylelint-disable selector-max-id
 #olark-wrapper .olark-launch-button {
   right: 100px !important;
 }

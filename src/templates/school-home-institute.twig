@@ -1,0 +1,36 @@
+{% extends 'school-home.twig' %}
+
+{% set theme = 'institute' %}
+{% set is_front = true %}
+
+{% block layout_header %}
+  {% embed 'partials/school-header.twig' %}
+    {% block school_logo %}
+      <img src="images/miis-logo.svg"
+        srcset="images/miis-logo.svg 361w"
+        sizes="(min-width: 1280px) 361px, 248px"
+        alt="Logo for Middlebury Institute of International Studies at Monterey" />
+      <span class="sr-only">
+        Middlebury Institute of International Studies at Monterey
+      </span>
+    {% endblock %}
+  {% endembed %}
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
+
+{% block layout_footer %}
+  {% include 'partials/school-footer.twig' with {
+    name: 'Middlebury Bread Loaf School of English',
+    addr: '356 College Street<br>Middlebury, VT 05753',
+    tel: '802-443-5745',
+    email: 'blse@middlebury.edu',
+    cta: {
+      text: 'Request Info',
+      link: 'http://go.middlebury.edu/sa-inquiry'
+    }
+  } %}
+  {% include 'partials/midd-footer.twig' %}
+{% endblock %}

@@ -53,10 +53,11 @@ class Digest {
       // so selectors in digest nav are valid
       // check if the first char is a number
       if (!isNaN(heading.id.charAt(0))) {
-        const newId = 'section-' + heading.id;
-        heading.id = newId;
+        const sectionId = 'section-' + heading.id;
+        const id = sectionId.replace(/&nbsp;/g, '-');
+        heading.id = id;
         const anchor = $('a', heading);
-        anchor.href = '#' + newId;
+        anchor.href = '#' + id;
       }
     });
 
