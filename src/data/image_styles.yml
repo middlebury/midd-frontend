@@ -8,6 +8,8 @@ image_styles:
       - 400x225
       - 640x360
       - 832x468
+    zoom:
+      - 2560x1440
   top_level: # 5:2
     title: Top Level
     ratio: '5:2'
@@ -56,13 +58,17 @@ image_styles:
       - 640x360
       - 832x468
       - 1136x639
-  image_floated: # 3:4
-    title: Image component with left/right alignment
-    ratio: '3:4'
+    zoom:
+      - 2500x2500 # arbitrary max size. Height should scale automatically based on the width of the image.
+  image_floated:
+    title: |
+      TEST: floated image for testing only
     srcset:
       - 90x120
       - 144x192
     sizes: '(max-width: 512px) 90px, 144px'
+    zoom:
+      - 2500x2500 # arbitrary max size. Height should scale automatically based on the width of the image.
   image_sm: # for testing purposes
     title: |
       TEST: Small image for testing only

@@ -18,6 +18,10 @@
       sizes="{{ attrs.sizes }}"
     {% endif %}
 
+    {% if attrs.zoom %}
+      data-zoom-src="{{ attrs.zoom.src }}"
+    {% endif %}
+
     alt=""
   />
 {% endblock %}
