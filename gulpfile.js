@@ -94,6 +94,7 @@ const clean = () =>
 const serve = () =>
   browserSync.init({
     notify: false,
+    open: false,
     server: {
       baseDir: './dist'
     },
@@ -162,6 +163,51 @@ const scripts = () =>
     browserSync.reload();
   });
 
+const buildSrcSet = sizes => {
+  if (!sizes) return;
+
+  const prefix = 'https://placehold.it/';
+
+  const last = sizes[sizes.length - 1];
+  const src = prefix + last;
+
+  let width;
+
+  const srcset = sizes.map(size => {
+    width = size.split('x')[0];
+
+    return `${prefix}${size} ${width}w`;
+  });
+
+  return {
+    src,
+    srcset,
+    width
+  };
+};
+
+const getResponsiveImageStyles = img => {
+  const { src, srcset, width } = buildSrcSet(img.srcset);
+
+  const sizes = img.sizes
+    ? img.sizes
+    : `(max-width: ${width}px) 100vw, ${width}px)`;
+
+  const zoom = buildSrcSet(img.zoom);
+
+  const attrs = {
+    src,
+    zoom
+  };
+
+  if (srcset.length > 1) {
+    attrs.srcset = srcset.join(',');
+    attrs.sizes = sizes;
+  }
+
+  return attrs;
+};
+
 const html = () =>
   gulp
     .src(paths.html.src)
@@ -191,6 +237,10 @@ const html = () =>
       twig({
         base: './src/templates',
         filters: [
+          {
+            name: 'getResponsiveImage',
+            func: getResponsiveImageStyles
+          },
           {
             name: 'exists',
             func: (value, args) => {
