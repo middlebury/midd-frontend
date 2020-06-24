@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [master, gh-actions]
+  pull_request:
+    branches: [master, gh-actions]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Install
+        run: npm ci
+      - name: build
+        run: npm run build
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Percy Test
+        uses: percy/exec-action@v0.1.1
+        with:
+          command: 'cypress run'
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./dist
+          publish_branch: actions-master-dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}
