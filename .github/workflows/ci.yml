@@ -12,12 +12,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
+
       - name: Install
         run: npm ci
+
       - name: build
         run: npm run build
 
+      - name: Build icons
+        run: npm run build:icons
+
       - name: Percy Test
+        if: ${{ github.ref == 'refs/head/master' && github.events.pull_request }}
         run: 'npm run test:visual'
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
