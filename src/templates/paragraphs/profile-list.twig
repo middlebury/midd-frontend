@@ -34,8 +34,13 @@
 <section class="section paragraph--profile-list" data-digest-content>
   <header class="section__header">
     <h2 class="section__title">
-      {{ title|default('Profile team heading') }}
+      {{
+        title|default(
+          'Profile team heading Excepteur officia consectetur deserunt duis Aliquip ea pariatur enim labore officia&nbsp;ipsum..'
+        )
+      }}
     </h2>
+    <a href="" class="section__link">{{ moreLinkText|default('View all') }}</a>
     <p class="section__text">
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores pariatur
       amet vitae soluta quidem minus nostrum veritatis quos ducimus in
