@@ -19,7 +19,7 @@ jobs:
         run: npm run build:icons
 
       - name: Percy Test
-        if: github.ref == 'refs/head/master' && github.event.pull_request
+        if: github.ref == 'refs/heads/master' && github.event.pull_request
         run: 'npm run test:visual'
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
