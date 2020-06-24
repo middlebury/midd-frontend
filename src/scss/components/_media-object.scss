@@ -1,22 +1,31 @@
-// TODO: change this so image dictates the width, not forcing a width
-
 .media-object {
-  display: flex;
+  @include breakpoint(sm) {
+    display: flex;
+  }
 }
 
 .media-object__image {
-  margin-right: $spacing-4;
-  min-width: 100px;
+  margin-bottom: $spacing-2;
+
+  @include breakpoint(sm) {
+    margin-right: $spacing-4;
+    min-width: 100px;
+    margin-bottom: 0;
+  }
 }
 
 .media-object__body {
-  flex: 1;
+  @include breakpoint(sm) {
+    flex: 1;
+  }
 }
 
 .media-object--right {
   .media-object__image {
-    order: 2;
-    margin-right: 0;
-    margin-left: $spacing-4;
+    @include breakpoint(sm) {
+      order: 2;
+      margin-right: 0;
+      margin-left: $spacing-4;
+    }
   }
 }
