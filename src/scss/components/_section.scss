@@ -26,7 +26,9 @@
   font-family: $font-family-sans-serif;
   font-weight: $font-weight-normal;
   font-size: $typescale-6;
-  flex: 0 0 auto;
+  // % unit is defined on flex basis value for ie11
+  // https://stackoverflow.com/a/42630660/2193516
+  flex: 1 1 0%;
 
   // Adds border style to title and removes it when nested in section header
   // so we don't need extra header elements in sections which do not have a cta link or blurb.
