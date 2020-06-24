@@ -1,11 +1,5 @@
 name: CI
 
-on:
-  push:
-    branches: [master, gh-actions]
-  pull_request:
-    branches: [master, gh-actions]
-
 jobs:
   build:
     runs-on: ubuntu-latest
