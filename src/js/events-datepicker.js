@@ -60,7 +60,7 @@ if (datePicker) {
     onSelect(date) {
       const dateStr = dateToStr(date);
 
-      location.href = eventsBase + 'events/all/' + dateStr;
+      window.location.href = eventsBase + 'events/all/' + dateStr;
     }
   });
 }

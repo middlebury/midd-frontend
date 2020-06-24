@@ -32,10 +32,10 @@ class MiddChart {
     this.isCircleChart = config.type === 'pie' || config.type === 'doughnut';
 
     if (config.type === 'percentBar') {
-      return renderPercentBarChart(el, config);
+      renderPercentBarChart(el, config);
+    } else {
+      this.init();
     }
-
-    this.init();
   }
 
   setDefaultGlobals() {

@@ -85,8 +85,10 @@ function renderDigestNav(elem, headings) {
     replaceState: true
   });
 
-  if (location.hash) {
-    const el = $(location.hash);
+  const { hash } = window.location;
+
+  if (hash) {
+    const el = $(hash);
 
     // fake jump to elem since headings don't have IDs until js is loaded
     if (el) {
