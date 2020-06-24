@@ -174,7 +174,11 @@ class SmoothScroll {
     }
 
     if (this.options.replaceState) {
-      history.replaceState(null, null, document.location.pathname + selector);
+      window.history.replaceState(
+        null,
+        null,
+        document.location.pathname + selector
+      );
     }
   }
 }

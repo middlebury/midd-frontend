@@ -1,0 +1,37 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Install
+        run: npm ci
+
+      - name: build
+        run: npm run build
+
+      - name: Build icons
+        run: npm run build:icons
+
+      - name: Percy Test
+        if: github.ref == 'refs/head/master' && github.event.pull_request
+        run: 'npm run test:visual'
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+
+      - name: Replace images
+        if: github.ref == 'refs/head/master'
+        run: gulp replaceImagePaths --imagesDir="/office/themes/custom/middlebury_theme/images/"
+
+      - name: Deploy
+        if: github.ref == 'refs/head/master'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./dist
+          publish_branch: master-dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}

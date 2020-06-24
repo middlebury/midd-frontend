@@ -5,8 +5,6 @@ import SmoothScroll from './smooth-scroll';
 import { $, $$ } from './utils/dom';
 import MenuSpy from './menu-spy';
 
-import { isLargeUp } from './utils/media';
-
 const DigestNav = ({ items = [] }) => {
   return (
     <nav className="digest" aria-labelledby="midd-digest-label">
@@ -28,79 +26,83 @@ const DigestNav = ({ items = [] }) => {
   );
 };
 
-class Digest {
-  constructor(elem) {
-    this.elem = elem;
+function addHeadingAnchors() {
+  // Store the selector since we need to manually update headings
+  // as well as apply AnochrJS to them.
+  const headingSelector = '[data-digest-content] h2';
 
-    this.init();
+  // Get all headings in the data-digest-content
+  const headings = $$(headingSelector);
+
+  if (!headings.length) {
+    return null;
   }
 
-  init() {
-    // Store the selector since we need to manually update headings
-    // as well as apply AnochrJS to them.
-    const headingSelector = '[data-digest-content] h2';
+  // create a new instance of anchorjs which creates the anchor links within each heading
+  const anchors = new AnchorJS();
+  anchors.add(headingSelector);
 
-    // Get all headings in the data-digest-content
-    const headings = $$(headingSelector);
+  // ensure all heading ids start with a-z
+  headings.forEach(heading => {
+    // if heading text begins with a number, we need to prefix some a-z text
+    // so selectors in digest nav are valid
+    // check if the first char is a number
+    if (!isNaN(heading.id.charAt(0))) {
+      const sectionId = 'section-' + heading.id;
+      const id = sectionId.replace(/&nbsp;/g, '-');
+      heading.id = id;
+      const anchor = $('a', heading);
+      anchor.href = '#' + id;
+    }
+  });
 
-    // create a new instance of anchorjs which creates the anchor links within each heading
-    const anchors = new AnchorJS();
-    anchors.add(headingSelector);
+  return headings;
+}
 
-    // ensure all heading ids start with a-z
-    headings.forEach(heading => {
-      // if heading text begins with a number, we need to prefix some a-z text
-      // so selectors in digest nav are valid
-      // check if the first char is a number
-      if (!isNaN(heading.id.charAt(0))) {
-        const sectionId = 'section-' + heading.id;
-        const id = sectionId.replace(/&nbsp;/g, '-');
-        heading.id = id;
-        const anchor = $('a', heading);
-        anchor.href = '#' + id;
-      }
-    });
+function renderDigestNav(elem, headings) {
+  render(
+    <DigestNav
+      // convert nodelist into array for items prop
+      items={[].slice.call(headings)}
+    />,
+    elem
+  );
 
-    render(
-      <DigestNav
-        // convert nodelist into array for items prop
-        items={[].slice.call(headings)}
-      />,
-      this.elem
-    );
+  const menuSpy = new MenuSpy(elem);
 
-    const menuSpy = new MenuSpy(this.elem);
+  // TODO: don't tie the js-headroom to this widget as the element.
+  // we should allow for a custom selector
+  const headroom = $('.js-headroom');
 
-    // TODO: don't tie the js-headroom to this widget as the element.
-    // we should allow for a custom selector
-    const headroom = $('.js-headroom');
+  // Offset by sticky header on schools or base offset on office site.
+  // This is a function call instead of static value since header height
+  // changes across breakpoints.
+  const baseOffset = 50;
+  const getOffset = () => (headroom ? headroom.offsetHeight : baseOffset);
 
-    // Offset by sticky header on schools or base offset on office site.
-    // This is a function call instead of static value since header height
-    // changes across breakpoints.
-    const baseOffset = 50;
-    const getOffset = () => (headroom ? headroom.offsetHeight : baseOffset);
+  const smoothScroll = new SmoothScroll('.digest__link', {
+    offset: getOffset,
+    replaceState: true
+  });
 
-    const smoothScroll = new SmoothScroll('.digest__link', {
-      offset: getOffset,
-      replaceState: true
-    });
+  const { hash } = window.location;
 
-    if (location.hash) {
-      const el = $(location.hash);
+  if (hash) {
+    const el = $(hash);
 
-      // fake jump to elem since headings don't have IDs until js is loaded
-      if (el) {
-        setTimeout(() => {
-          el.scrollIntoView();
-        }, 300);
-      }
+    // fake jump to elem since headings don't have IDs until js is loaded
+    if (el) {
+      setTimeout(() => {
+        el.scrollIntoView();
+      }, 300);
     }
   }
 }
 
+const headings = addHeadingAnchors();
+
 const elems = $$('[data-digest-nav]');
 
-elems.forEach(elem => new Digest(elem));
-
-export default Digest;
+elems.forEach(elem => {
+  renderDigestNav(elem, headings);
+});
