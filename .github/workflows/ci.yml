@@ -16,20 +16,12 @@ jobs:
         run: npm ci
       - name: build
         run: npm run build
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
+
       - name: Percy Test
-        uses: percy/exec-action@v0.1.1
-        with:
-          command: 'cypress run'
+        run: 'npm run test:visual'
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
-  deploy:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
