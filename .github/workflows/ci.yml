@@ -24,6 +24,10 @@ jobs:
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
+      - name: Replace images
+        if: github.ref == 'refs/head/master'
+        run: gulp replaceImagePaths --imagesDir="/office/themes/custom/middlebury_theme/images/"
+
       - name: Deploy
         if: github.ref == 'refs/head/master'
         uses: peaceiris/actions-gh-pages@v3
