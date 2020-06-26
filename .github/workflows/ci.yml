@@ -6,16 +6,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: 8398a7/action-slack@v3
-        with:
-          status: ${{ job.status }}
-          author_name: Frontend build
-          fields: repo,commit,message,author
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        if: always()
-
       - name: Checkout
         uses: actions/checkout@v2
 
@@ -59,3 +49,17 @@ jobs:
           publish_dir: ./dist
           publish_branch: master-dist
           github_token: ${{ secrets.GITHUB_TOKEN }}
+
+  notify:
+    needs: build
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          author_name: Frontend build
+          fields: repo,commit,message,author
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        if: always()
