@@ -52,6 +52,7 @@ jobs:
 
   notify:
     needs: build
+    runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
     steps:
       - uses: 8398a7/action-slack@v3
