@@ -19,7 +19,7 @@
     "lint": "npm run lint:js && npm run lint:styles",
     "lint:js": "eslint src/js/**",
     "lint:styles": "stylelint src/scss/*",
-    "preinstall": "npx npm-force-resolutions",
+    "force-resolutions": "npx npm-force-resolutions",
     "format": "prettier --config ./.prettierrc --write \"src/**/*.{js,scss}\""
   },
   "repository": {
