@@ -1,6 +1,8 @@
-{% extends "layout.twig" %}
+{% extends 'layout.twig' %}
 
-{% set coursehub_layout_full_width = coursehub_layout_full_width|default(false) %}
+{% set coursehub_layout_full_width =
+  coursehub_layout_full_width|default(false)
+%}
 
 {% set page_header = {
   app_header: true,
@@ -14,22 +16,40 @@
     title: 'Course Hub',
     items: [
       {
-        text:'My Terms',
+        text: 'My Terms',
         icon: 'chevron-down',
         icon_class: 'd-none d-lg-inline',
         active: true,
         items: [
-          { text: 'Fall 2019' },
-          { text: 'Fall 2019' },
-          { text: 'Fall 2019' },
-          { text: 'Fall 2019' },
+          {
+            text: 'Fall 2019'
+          },
+          {
+            text: 'Fall 2019'
+          },
+          {
+            text: 'Fall 2019'
+          },
+          {
+            text: 'Fall 2019'
+          }
         ]
       },
-      {text:'Browse Course Sites'},
-      {text:'Hub Help'},
-      {text:'Course Catalog'},
-      {text:'Schedule Builder'},
-      {text:'Academic Calendar'},
+      {
+        text: 'Browse Course Sites'
+      },
+      {
+        text: 'Hub Help'
+      },
+      {
+        text: 'Course Catalog'
+      },
+      {
+        text: 'Schedule Builder'
+      },
+      {
+        text: 'Academic Calendar'
+      }
     ]
   } %}
 {% endblock %}
@@ -38,31 +58,30 @@
   {% include 'partials/midd-footer.twig' %}
 {% endblock %}
 
-{% set _content = block('content') %}
-{% set _nav = block('nav') %}
-{% set _toc = block('toc') %}
-{% set _sidebar = block('sidebar') %}
-
 {% block page %}
+  {% set _content = block('content') %}
+  {% set _nav = block('nav') %}
+  {% set _toc = block('toc') %}
+  {% set _sidebar = block('sidebar') %}
 
   {% if not coursehub_layout_full_width %}
     {% embed 'partials/sidebar-layout.twig' %}
       {% block nav %}
-        {{_nav|raw}}
+        {{ _nav|raw }}
       {% endblock %}
       {% block sidebar %}
-        {{_sidebar|raw}}
+        {{ _sidebar|raw }}
       {% endblock %}
       {% block content %}
-        {{_content|raw}}
+        {{ _content|raw }}
       {% endblock %}
       {% block toc %}
-        {{_toc|raw}}
+        {{ _toc|raw }}
       {% endblock %}
     {% endembed %}
   {% else %}
-    {{_content|raw}}
+    {% block content %}
+      {{ _content|raw }}
+    {% endblock %}
   {% endif %}
-
 {% endblock %}
-
