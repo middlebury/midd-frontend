@@ -1,6 +1,7 @@
 import anime from 'animejs';
 
 import { $, $$, on, off, removeClass, addClass, hasClass } from './utils/dom';
+import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
 
 /**
  * Creates a flowchart of question and answers a user can click through
@@ -117,10 +118,12 @@ class Flowchart {
 
     target.removeAttribute('hidden');
 
+    const duration = PREFERS_REDUCED_MOTION ? 0 : 400;
+
     anime({
       targets: [target],
       translateX: [-40, 0],
-      duration: 400
+      duration
     });
 
     target.focus();
@@ -137,8 +140,8 @@ class Flowchart {
       targets: [document.documentElement, document.body],
       scrollTop,
       easing: 'easeInCubic',
-      duration: 400,
-      elasticity: 500
+      elasticity: 500,
+      duration
     });
   };
 }

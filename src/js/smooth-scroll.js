@@ -1,6 +1,7 @@
 import anime from 'animejs';
 
 import { $, $$, on, off } from './utils/dom';
+import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
 
 /**
  * Applies smooth scroll effect to a container of anchor (links with onpage targets) links.
@@ -75,8 +76,10 @@ class SmoothScroll {
 
     this.container = container;
 
+    const reducedDuration = PREFERS_REDUCED_MOTION ? 0 : duration;
+
     this.animeOptions = {
-      duration,
+      duration: reducedDuration,
       easing,
       elasticity,
       begin,
