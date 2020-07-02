@@ -32,6 +32,9 @@ jobs:
       - name: Build icons
         run: npm run build:icons
 
+      - name: Test
+        run: npm run test
+
       - name: Percy Test
         if: github.ref == 'refs/heads/master' && github.event.pull_request
         run: 'npm run test:visual'
