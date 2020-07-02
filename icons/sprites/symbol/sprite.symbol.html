@@ -33,6 +33,7 @@ They might well be outsourced to an external stylesheet of course.
 	.svg-icon-chevron-up-dims { width: 24px; height: 24px; }
 	.svg-icon-compass-dims { width: 24px; height: 24px; }
 	.svg-icon-envelope-dims { width: 24px; height: 24px; }
+	.svg-icon-external-link-dims { width: 24px; height: 24px; }
 	.svg-icon-facebook-dims { width: 24px; height: 24px; }
 	.svg-icon-images-dims { width: 24px; height: 24px; }
 	.svg-icon-info-dims { width: 24px; height: 24px; }
@@ -88,6 +89,7 @@ for further details on how to create this embeddable sprite variant.
 		<symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-chevron-up"><path d="M4.079 17H1L12 7l11 10h-3.079L12 9.799 4.079 17z" fill-rule="nonzero"/></symbol>
 		<symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-compass"><path d="M12 24C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12zm6-18l-8 2.74L15.26 14 18 6zM6 18l8-2.74-1.162-1.163L8.72 15.28l1.182-4.117L8.74 10 6 18z"/></symbol>
 		<symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-envelope"><path d="M24 4.302V18a2 2 0 01-2 2H2a2 2 0 01-2-2V4.302l12 10 12-10zM2.762 4h18.476L12 11.698 2.762 4z"/></symbol>
+		<symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-external-link"><path d="M22.154 22.154H1.846V1.846h9.23V0H0v24h24V12.923h-1.846v9.23z"/><path d="M16.615 0v1.846h4.237L9.498 13.191l1.311 1.31L22.154 3.149v4.237H24V0h-7.385z"/></symbol>
 		<symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-facebook"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.35C0 23.407.593 24 1.325 24h11.494v-9.294H9.691v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.324 0 2.463.098 2.795.143v3.24h-1.918c-1.504 0-1.795.715-1.795 1.763v2.313h3.586l-.467 3.622h-3.12V24h6.116c.732 0 1.325-.593 1.325-1.325V1.325C24 .593 23.407 0 22.675 0"/></symbol>
 		<symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-images"><path d="M20 13v4h-4v4H0v-2h14v-7H2v7H0v-9h4V6h4V2h16v11h-4zm0-2h2V4H10v2h10v5zM6 10h10v5h2V8H6v2z" fill-rule="nonzero"/></symbol>
 		<symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-info"><path d="M12 24C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12zm2.514-17.448c0-.846-.576-1.35-1.368-1.35-1.116 0-1.746.918-1.746 1.728 0 .828.594 1.332 1.368 1.332a1.725 1.725 0 001.746-1.71zm-1.062 4.536c0-1.026-.72-1.71-1.728-1.71-1.404 0-2.412 1.116-3.24 3.06l.936.36c.486-1.08.9-1.782 1.296-1.782.144 0 .252.072.252.342 0 .918-1.494 3.564-1.494 5.04 0 1.116.774 1.782 1.854 1.782 1.278 0 2.358-.954 3.06-2.862l-.936-.324c-.522 1.206-.864 1.512-1.152 1.512-.18 0-.324-.09-.324-.36 0-.936 1.476-3.6 1.476-5.058z"/></symbol>
@@ -289,6 +291,17 @@ embedded above. They may be styled via CSS.
 						
 					</div>
 					<h2>icon-envelope</h2>
+				</li>
+				<li title="icon-external-link">
+					<div class="icon-box">
+						
+						<!-- icon-external-link -->
+						<svg class="svg-icon-external-link-dims">
+							<use xlink:href="#icon-external-link"></use>
+						</svg>
+						
+					</div>
+					<h2>icon-external-link</h2>
 				</li>
 				<li title="icon-facebook">
 					<div class="icon-box">
@@ -674,6 +687,17 @@ SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
 					</div>
 					<h2>icon-envelope</h2>
 				</li>
+				<li title="icon-external-link">
+					<div class="icon-box">
+						
+						<!-- icon-external-link -->
+						<svg class="svg-icon-external-link-dims">
+							<use xlink:href="svg/sprite.symbol.svg#icon-external-link"></use>
+						</svg>
+						
+					</div>
+					<h2>icon-external-link</h2>
+				</li>
 				<li title="icon-facebook">
 					<div class="icon-box">
 						
@@ -891,7 +915,7 @@ SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
 
 		</section>
 		<footer>
-			<p>Generated at Wed, 01 Jul 2020 17:41:40 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
+			<p>Generated at Thu, 02 Jul 2020 15:31:54 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
 		</footer>
 	</body>
 </html>
