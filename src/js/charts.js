@@ -2,6 +2,7 @@ import { h, render } from 'preact';
 import PercentBarChart from './components/percent-bar-chart';
 
 import { onElementInView } from './utils/on-element-in-view';
+import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
 
 const colors = [
   '#0d395f',
@@ -47,6 +48,9 @@ class MiddChart {
     Chart.defaults.global.defaultFontSize = 14;
 
     Chart.defaults.doughnut.cutoutPercentage = 80;
+    Chart.defaults.global.animation.duration = PREFERS_REDUCED_MOTION
+      ? 0
+      : 1000;
   }
 
   getBaseOptions() {
@@ -212,6 +216,12 @@ class MiddChart {
             chart[PLUGIN_KEY] = {};
 
             const model = chart[PLUGIN_KEY];
+
+            // Don't restart for chart animation
+            // since there's no animation duration anyway.
+            if (PREFERS_REDUCED_MOTION) {
+              return;
+            }
 
             // add an is in view flag which is checked before datasets update
             model.isInView = false;

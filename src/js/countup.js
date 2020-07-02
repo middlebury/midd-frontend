@@ -2,6 +2,7 @@ import anime from 'animejs';
 
 import { $$ } from './utils/dom';
 import { onElementInView } from './utils/on-element-in-view';
+import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
 
 const isFloat = n => Number(n) === n && n % 1 !== 0;
 
@@ -10,10 +11,12 @@ function countup(el, target) {
 
   const round = !isFloat(target);
 
+  const duration = PREFERS_REDUCED_MOTION ? 0 : 2000;
+
   anime({
     targets: data,
     count: [0, target],
-    duration: 2000,
+    duration,
     round,
     delay: 200,
     easing: 'easeOutSine',
