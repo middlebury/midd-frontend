@@ -77,6 +77,10 @@ $text-colors: (
   @include link-border;
 }
 
+.link-external {
+  @include link-external;
+}
+
 ///
 /// lead
 ///
