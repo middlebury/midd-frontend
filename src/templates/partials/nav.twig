@@ -9,7 +9,8 @@
       >
         <a
           href="{{item.href}}"
-          class="nav__link{% if item.active %} nav__link--active{% endif %}"
+          class="nav__link{% if item.active %} nav__link--active{% endif %}
+          {% if item.external %} link-external{% endif %}"
         >
           {{item.text}}
           {% if has_dropdown %}
