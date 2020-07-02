@@ -38,17 +38,17 @@ jobs:
           BUNDLESIZE_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Percy Test
-        if: github.base_ref == 'refs/heads/master'
+        if: github.base_ref == 'master'
         run: 'npm run test:visual'
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
       - name: Replace images
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'master'
         run: gulp replaceImagePaths --imagesDir="/office/themes/custom/middlebury_theme/images/"
 
       - name: Deploy
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'master'
         uses: peaceiris/actions-gh-pages@v3
         with:
           publish_dir: ./dist
@@ -58,7 +58,7 @@ jobs:
   notify:
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'master'
     steps:
       - uses: 8398a7/action-slack@v3
         with:
