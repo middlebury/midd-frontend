@@ -1,16 +1,8 @@
-/**
- * polyfill nodelist foreach so you can
- * use document.querySelectorAll('.my-elems').forEach() in IE
- *
- * @todo maybe switch to using Array.from(NodeList).forEach since we
- * are now polyfilling it so we can ditch this foreach polyfill.
- */
-import 'polyfill-nodelist-foreach';
-
 // polyfills for micromodal to support ie11
 import 'mdn-polyfills/Object.assign';
 import 'mdn-polyfills/Array.from';
 import 'mdn-polyfills/Element.prototype.closest';
+import 'mdn-polyfills/NodeList.prototype.forEach';
 
 // Polyfill object fit images for easier responsive images.
 // Used in card-carousel and more.
