@@ -42,18 +42,21 @@ function addHeadingAnchors() {
   const anchors = new AnchorJS();
   anchors.add(headingSelector);
 
-  // ensure all heading ids start with a-z
   headings.forEach(heading => {
+    // Replace nbsps in heading id caused by d8 typogrify module.
+    // These nonbreaking spaces are intended to prevent tyographic widows.
+    let newId = heading.id.replace(/\s/g, '-').replace(/-+/g, '-');
+
     // if heading text begins with a number, we need to prefix some a-z text
     // so selectors in digest nav are valid
-    // check if the first char is a number
-    if (!isNaN(heading.id.charAt(0))) {
-      const sectionId = 'section-' + heading.id;
-      const id = sectionId.replace(/&nbsp;/g, '-');
-      heading.id = id;
-      const anchor = $('a', heading);
-      anchor.href = '#' + id;
+    if (!isNaN(newId.charAt(0))) {
+      newId = 'section-' + newId;
     }
+
+    const anchor = $('a', heading);
+    anchor.href = '#' + newId;
+
+    heading.id = newId;
   });
 
   return headings;
