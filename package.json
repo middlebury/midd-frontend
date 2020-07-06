@@ -100,7 +100,6 @@
     "normalize.css": "^8.0.1",
     "object-fit-images": "^3.2.4",
     "pikaday": "^1.8.0",
-    "polyfill-nodelist-foreach": "^1.0.1",
     "preact": "^10.4.4",
     "stickybits": "^3.7.7",
     "swiper": "^4.5.0"
