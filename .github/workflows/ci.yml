@@ -38,7 +38,7 @@ jobs:
           BUNDLESIZE_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Percy Test
-        if: github.base_ref == 'master'
+        if: github.base_ref == 'master' || github.ref == 'refs/heads/master'
         run: 'npm run test:visual'
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
