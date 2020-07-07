@@ -17,3 +17,10 @@
   right: 100px !important;
 }
 
+.typography .anchorjs-link,
+.anchorjs-link {
+  border: 0;
+  &:hover {
+    text-decoration: none;
+  }
+}
