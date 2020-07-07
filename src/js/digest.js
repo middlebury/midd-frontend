@@ -29,7 +29,9 @@ const DigestNav = ({ items = [] }) => {
 function addHeadingAnchors() {
   // Store the selector since we need to manually update headings
   // as well as apply AnochrJS to them.
-  const headingSelector = '[data-digest-content] h2';
+  // first-child gets section__titles and > h2 gets children of text components
+  const headingSelector =
+    '[data-digest-content] h2:first-child, [data-digest-content] > h2';
 
   // Get all headings in the data-digest-content
   const headings = $$(headingSelector);
@@ -45,18 +47,18 @@ function addHeadingAnchors() {
   headings.forEach(heading => {
     // Replace nbsps in heading id caused by d8 typogrify module.
     // These nonbreaking spaces are intended to prevent tyographic widows.
-    let newId = heading.id.replace(/\s/g, '-').replace(/-+/g, '-');
+    let id = heading.id.replace(/\s/g, '-').replace(/-+/g, '-');
 
     // if heading text begins with a number, we need to prefix some a-z text
     // so selectors in digest nav are valid
-    if (!isNaN(newId.charAt(0))) {
-      newId = 'section-' + newId;
+    if (!isNaN(id.charAt(0))) {
+      id = 'section-' + id;
     }
 
-    const anchor = $('a', heading);
-    anchor.href = '#' + newId;
+    const anchor = $('.anchorjs-link', heading);
+    anchor.href = '#' + id;
 
-    heading.id = newId;
+    heading.id = id;
   });
 
   return headings;
