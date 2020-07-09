@@ -5,6 +5,18 @@ import SmoothScroll from './smooth-scroll';
 import { $, $$ } from './utils/dom';
 import MenuSpy from './menu-spy';
 
+const isSelectorValid = selector => {
+  const queryCheck = s => document.createDocumentFragment().querySelector(s);
+
+  try {
+    queryCheck(selector);
+  } catch {
+    return false;
+  }
+
+  return true;
+};
+
 const DigestNav = ({ items = [] }) => {
   return (
     <nav className="digest" aria-labelledby="midd-digest-label">
@@ -47,7 +59,13 @@ function addHeadingAnchors() {
   headings.forEach(heading => {
     // Replace nbsps in heading id caused by d8 typogrify module.
     // These nonbreaking spaces are intended to prevent tyographic widows.
-    let id = heading.id.replace(/\s/g, '-').replace(/-+/g, '-');
+    let id = heading.id
+      // replace spaces e.g. nbsp
+      .replace(/\s/g, '-')
+      // replace single/double curly quotes and degree character
+      .replace(/[\u201C\u201D\u2018\u2019°]/g, '')
+      // replace double hyphens with one
+      .replace(/-+/g, '-');
 
     // if heading text begins with a number, we need to prefix some a-z text
     // so selectors in digest nav are valid
@@ -91,6 +109,11 @@ function renderDigestNav(elem, headings) {
   });
 
   const { hash } = window.location;
+
+  if (!isSelectorValid(hash)) {
+    console.warn('Invalid selector', hash); // eslint-disable-line
+    return;
+  }
 
   if (hash) {
     const el = $(hash);
