@@ -5,6 +5,18 @@ import SmoothScroll from './smooth-scroll';
 import { $, $$ } from './utils/dom';
 import MenuSpy from './menu-spy';
 
+const isSelectorValid = selector => {
+  const queryCheck = s => document.createDocumentFragment().querySelector(s);
+
+  try {
+    queryCheck(selector);
+  } catch {
+    return false;
+  }
+
+  return true;
+};
+
 const DigestNav = ({ items = [] }) => {
   return (
     <nav className="digest" aria-labelledby="midd-digest-label">
@@ -91,6 +103,11 @@ function renderDigestNav(elem, headings) {
   });
 
   const { hash } = window.location;
+
+  if (!isSelectorValid(hash)) {
+    console.warn('Invalid selector', hash); // eslint-disable-line
+    return;
+  }
 
   if (hash) {
     const el = $(hash);
