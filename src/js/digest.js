@@ -83,6 +83,9 @@ function addHeadingAnchors() {
 }
 
 function renderDigestNav(elem, headings) {
+
+  if(!headings) return;
+
   render(
     <DigestNav
       // convert nodelist into array for items prop
