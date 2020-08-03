@@ -179,12 +179,14 @@ const html = () =>
           fs.readFileSync('./src/data/image_styles.yml', 'utf8')
         );
 
-        return Object.assign({}, ymlData, imageStyles, {
+        return {
+          ...ymlData,
+          ...imageStyles,
           env: {
             test: TEST,
             production: PROD
           }
-        });
+        };
       })
     )
     .pipe(
