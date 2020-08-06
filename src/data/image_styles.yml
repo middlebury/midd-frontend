@@ -123,4 +123,4 @@ image_styles:
     ratio: 'any'
     srcset:
       - 400x225
-      - 608x342
+      - 640x360
