@@ -118,3 +118,9 @@ image_styles:
     ratio: 'fixme: 153:277'
     srcset:
       - 306x554
+  schedule:
+    title: Schedule of Events item
+    ratio: 'any'
+    srcset:
+      - 400x225
+      - 640x360
