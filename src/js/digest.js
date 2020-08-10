@@ -83,8 +83,7 @@ function addHeadingAnchors() {
 }
 
 function renderDigestNav(elem, headings) {
-
-  if(!headings) return;
+  if (!headings) return;
 
   render(
     <DigestNav
