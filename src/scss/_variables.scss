@@ -137,9 +137,9 @@ $themes: (
 ////
 
 // font families
+// prettier-ignore
 $font-family-sans-serif: (
-  'whitney ssm a',
-  'whitney ssm b',
+  'Open Sans',
   tahoma,
   geneva,
   sans-serif
@@ -147,8 +147,7 @@ $font-family-sans-serif: (
 
 // prettier-ignore
 $font-family-serif: (
-  'sentinel ssm a',
-  'sentinel ssm b',
+  'Domine',
   georgia,
   serif
 ) !default;
