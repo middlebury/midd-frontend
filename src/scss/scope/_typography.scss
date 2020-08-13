@@ -83,6 +83,7 @@
   ol {
     margin-bottom: $paragraph-margin-bottom;
     padding-left: $spacing-3;
+    font-size: $paragraph-font-size;
 
     ul,
     ol {
@@ -126,7 +127,6 @@
   }
 
   li {
-    font-size: $paragraph-font-size;
     &:not(:last-of-type) {
       margin-bottom: $spacing-1;
     }
@@ -139,6 +139,11 @@
   dl {
     margin-bottom: $spacing-5;
     margin-top: $spacing-5;
+
+    li,
+    p {
+      font-size: $typescale-3;
+    }
 
     @include breakpoint(md) {
       display: flex;
