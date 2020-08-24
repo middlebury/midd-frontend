@@ -82,13 +82,14 @@
   ul,
   ol {
     margin-bottom: $paragraph-margin-bottom;
-    padding-left: $spacing-3;
+    padding-left: $spacing-5;
+    padding-right: $spacing-5;
     font-size: $paragraph-font-size;
 
     ul,
     ol {
-      margin-top: $spacing-2;
-      margin-bottom: $spacing-2;
+      margin-top: $spacing-3;
+      margin-bottom: $spacing-3;
       padding-left: $spacing-4;
     }
   }
@@ -128,7 +129,7 @@
 
   li {
     &:not(:last-of-type) {
-      margin-bottom: $spacing-1;
+      margin-bottom: $spacing-3;
     }
 
     p:last-of-type {
