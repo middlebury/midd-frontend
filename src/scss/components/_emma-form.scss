@@ -10,7 +10,8 @@
 }
 
 .e2ma_signup_message {
-  @include form-group;
+  @include h2;
+  margin-bottom: $spacing-4;
 }
 
 .e2ma_signup_form_row {
