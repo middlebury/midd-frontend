@@ -1,7 +1,8 @@
-import { h, Component } from 'preact';
+import { h, Component, Fragment } from 'preact';
 
 import { on } from '../utils/dom';
 import Slider from './slider';
+import Icon from './icon';
 
 function formatTime(seconds) {
   let minutes = Math.floor(seconds / 60);
@@ -91,24 +92,36 @@ class AudioPlayer extends Component {
     this.audio.currentTime += 3;
   };
 
-  render(props, { duration, currentTime, muted, playing }) {
+  render(
+    { btnOnly, outline, playIcon = 'play', size },
+    { duration, currentTime, muted, playing }
+  ) {
+    const btnClasses = `button button--primary ${size &&
+      `button--${size}`} ${outline && 'button--outline'}`;
+
+    const playBtn = (
+      <button
+        class={btnClasses}
+        aria-label={playing ? 'Pause' : 'Play'}
+        aria-describedby="midd-audio-title-1"
+        onClick={this.handleBtnClick}
+      >
+        <span class="audio__button-text mr-2">
+          {playing ? 'Pause' : 'Listen'}
+        </span>
+        <svg class="icon ">
+          <use xlinkHref={`#icon-${playing ? 'pause' : playIcon}`} />
+        </svg>
+      </button>
+    );
+
+    if (btnOnly) {
+      return playBtn;
+    }
+
     return (
       <div class="audio__player">
-        <div class="audio__buttons">
-          <button
-            class="button button--primary"
-            aria-label={playing ? 'Pause' : 'Play'}
-            aria-describedby="midd-audio-title-1"
-            onClick={this.handleBtnClick}
-          >
-            <span class="audio__button-text mr-3">
-              {playing ? 'Pause' : 'Listen'}
-            </span>
-            <svg class="icon">
-              <use xlinkHref={`#icon-${playing ? 'pause' : 'play'}`} />
-            </svg>
-          </button>
-        </div>
+        <div class="audio__buttons">{playBtn}</div>
         <div class="audio__times">
           <span>{formatTime(currentTime)}</span> /{' '}
           <span>{formatTime(duration)}</span>
