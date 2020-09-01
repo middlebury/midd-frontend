@@ -1,7 +1,10 @@
-.float-left {
-  float: left;
-}
-
-.float-right {
-  float: right;
+@each $breakpoint, $variant in $responsive-variants {
+  @include breakpoint($breakpoint) {
+    .float#{$variant}-right {
+      float: right;
+    }
+    .float#{$variant}-left {
+      float: left;
+    }
+  }
 }

@@ -141,53 +141,15 @@
     margin-bottom: $spacing-5;
     margin-top: $spacing-5;
 
-    li,
-    p {
-      font-size: $typescale-3;
-    }
-
-    @include breakpoint(md) {
-      display: flex;
-      flex-wrap: wrap;
-    }
+    @include terms;
   }
 
   dt {
-    font-weight: $font-weight-medium;
-    padding-right: $spacing-4;
-    margin-bottom: $spacing-1;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    @include breakpoint(md) {
-      width: 30%;
-      padding-bottom: $spacing-4;
-      margin-bottom: $spacing-4;
-
-      &:not(:last-of-type) {
-        border-bottom: 1px solid $border-color;
-      }
-    }
+    @include terms-title;
   }
 
   dd {
-    padding-bottom: $spacing-4;
-    margin-bottom: $spacing-4;
-
-    &:last-child {
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    &:not(:last-of-type) {
-      border-bottom: 1px solid $border-color;
-    }
-
-    @include breakpoint(md) {
-      width: 70%;
-    }
+    @include terms-text;
   }
 
   // Maintain vertical h2 top margin when

@@ -123,20 +123,18 @@ $text-colors: (
 /// font weight
 ///
 
-.fw3 {
-  font-weight: 300;
+.font-medium {
+  font-weight: $font-weight-medium;
 }
 
-.fw5 {
-  font-weight: 500;
+.font-semibold {
+  font-weight: $font-weight-semibold;
 }
 
-.fw6 {
-  font-weight: 600;
-}
-
+.font-bold,
+// text-bold is deprecated
 .text-bold {
-  font-weight: bold;
+  font-weight: $font-weight-bold;
 }
 
 .whitespace-no-wrap {
