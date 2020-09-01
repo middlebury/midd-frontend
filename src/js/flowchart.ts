@@ -1,5 +1,3 @@
-// @ts-expect-error ts-migrate(2578) FIXME: Unused '@ts-expect-error' directive.
-// @ts-expect-error ts-migrate(7016) FIXME: Try `npm install @types/animejs` if it exists or a... Remove this comment to see the full error message
 import anime from 'animejs';
 
 import { $, $$, on, off, removeClass, addClass, hasClass } from './utils/dom';
@@ -9,10 +7,8 @@ import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
  * Creates a flowchart of question and answers a user can click through
  * to resolve on a final answer to the user based on their questions.
  *
- * @class Flowchart
- * @params el{HTML element} - html element that has data-flowchart attribute.
- *
- * @example html
+ * @example
+ * ```html
  * <div data-flowchart>
  *  <div id="flowchart-item-1" data-flowchart-item>
  *    <h2>Do you like oranges?</h2>
@@ -26,16 +22,17 @@ import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
  *    <p>You don't like oranges.</p>
  *  </div>
  * </div>
- *
+ * ```
  */
 class Flowchart {
-  btnActiveClass: any;
-  btns: any;
-  elem: any;
-  itemActiveClass: any;
-  items: any;
-  shownIds: any;
-  constructor(el: any) {
+  btnActiveClass: string;
+  btns: HTMLElement[];
+  elem: HTMLElement;
+  itemActiveClass: string;
+  items: HTMLElement[];
+  shownIds: string[];
+
+  constructor(el: HTMLElement) {
     this.elem = el;
 
     this.items = $$('[data-flowchart-item]', el);
@@ -55,7 +52,7 @@ class Flowchart {
     this.elem.setAttribute('aria-live', 'polite');
 
     // Hide all items except first question.
-    this.items.forEach((el: any, i: any) => {
+    this.items.forEach((el: HTMLElement, i: number) => {
       el.setAttribute('tabindex', '-1');
 
       // Do nothing if iterating on the first item e.g. do not hide it
@@ -74,19 +71,31 @@ class Flowchart {
   }
 
   addListeners() {
-    this.btns.forEach((btn: any) => on(btn, 'click', this.handleBtnClick));
+    this.btns.forEach((btn: HTMLElement) =>
+      on(btn, 'click', this.handleBtnClick)
+    );
   }
 
-  handleBtnClick = (event: any) => {
+  handleBtnClick = (event: Event) => {
     event.preventDefault();
 
-    const btn = event.target;
+    const btn = event.target as HTMLElement;
     const btnParent = btn.closest('[data-flowchart-item]');
-    const targetId = btn.getAttribute('href').replace('#', '');
+    const targetId = btn.getAttribute('href')?.replace('#', '');
     const target = $('#' + targetId, this.elem);
+
+    if (!btnParent) return;
+
     const itemIdIndex = this.shownIds.indexOf(btnParent.id);
 
-    this.items.forEach((item: any) => removeClass(item, this.itemActiveClass));
+    if (!target || !targetId) {
+      console.warn('no target or target ID for flowchart', btn);
+      return;
+    }
+
+    this.items.forEach((item: HTMLElement) =>
+      removeClass(item, this.itemActiveClass)
+    );
 
     // remove active state style from other answers in the chosen question
     const btns = $$(
@@ -96,7 +105,7 @@ class Flowchart {
     );
 
     // remove active state style from necessary buttons
-    btns.forEach(el => removeClass(el, this.btnActiveClass));
+    btns.forEach((el) => removeClass(el, this.btnActiveClass));
 
     // set the chosen answer as active
     addClass(btn, this.btnActiveClass);
@@ -105,19 +114,21 @@ class Flowchart {
     if (itemIdIndex >= 0) {
       // get all the ids after the question with an answer being modified
       const afterCurrentItemIds = this.shownIds.filter(
-        (id: any, index: any) => index > itemIdIndex
+        (id: string, index: number) => index > itemIdIndex
       );
 
       const beforeCurrentItemIds = this.shownIds.filter(
-        (id: any, index: any) => index <= itemIdIndex
+        (id: string, index: number) => index <= itemIdIndex
       );
 
       this.shownIds = beforeCurrentItemIds;
 
       // hide all items shown after the updated question
-      afterCurrentItemIds.forEach((id: any) => {
+      afterCurrentItemIds.forEach((id: string) => {
         const el = $('#' + id);
-        el.hidden = true;
+        if (el) {
+          el.hidden = true;
+        }
       });
     }
 
@@ -156,4 +167,4 @@ class Flowchart {
 
 const els = $$('[data-flowchart]');
 
-els.forEach(el => new Flowchart(el));
+els.forEach((el) => new Flowchart(el));

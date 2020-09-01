@@ -4,10 +4,10 @@ const INACTIVE_CLASS = 'helpfulness--unanswered';
 const NO_CLASS = 'helpfulness--no';
 const YES_CLASS = 'helpfulness--yes';
 
-function addHelpfulnessToggles(elem: any) {
+function addHelpfulnessToggles(elem: HTMLElement) {
   elem.classList.add(INACTIVE_CLASS);
 
-  function toggleRadioContent(value: any) {
+  function toggleRadioContent(value: string) {
     elem.classList.remove(INACTIVE_CLASS);
 
     if (value === '1') {
@@ -19,19 +19,20 @@ function addHelpfulnessToggles(elem: any) {
     }
   }
 
-  function handleRadioChange(event: any) {
+  function handleRadioChange(event: Event) {
     event.preventDefault();
-    toggleRadioContent(event.target.value);
+    const { value } = event.target as HTMLInputElement;
+    toggleRadioContent(value);
   }
 
   const radioSelector = 'input[type=radio][name=helpfulness_rating]';
 
   // listen for changes on radios and toggle between labels and descriptions
-  const radios = $$(radioSelector, elem);
-  radios.forEach(radio => on(radio, 'change', handleRadioChange));
+  const radios = $$(radioSelector, elem) as HTMLInputElement[];
+  radios.forEach((radio) => on(radio, 'change', handleRadioChange));
 
   // show already checked box on load
-  const checkedRadio = $(`${radioSelector}:checked`, elem);
+  const checkedRadio = $(`${radioSelector}:checked`, elem) as HTMLInputElement;
 
   if (checkedRadio) {
     toggleRadioContent(checkedRadio.value);

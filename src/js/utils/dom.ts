@@ -22,7 +22,7 @@ export const show = (elem: HTMLElement, display = 'block') => {
 };
 
 export const on = (
-  elem: HTMLElement | Window | Document,
+  elem: HTMLElement | Document | Window,
   eventType: string,
   cb: (...args: any[]) => void
 ) => elem.addEventListener(eventType, cb);

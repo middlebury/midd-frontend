@@ -8,20 +8,27 @@ import { $, $$ } from './utils/dom';
  * Commonly used in combination with anchor-js (which auto adds the ids to any headings on the page)
  * and digest.js (which creates the menu of links FROM those newly created headings with ids)
  *
+ *
+ * @example
+ * ```html
+ * <ul data-spyme>
+ *   <li><a href="#target-1">target 1</a></li>
+ *   <li><a href="#target-2">target 2</a></li>
+ *   <li><a href="#target-2">target 3</a></li>
+ * </ul>
+ * ```
+ *
+ * ```js
+ * const spy = new MenuSpy('[data-spyme]');
+ * ```
  */
 class MenuSpy {
-  activeClass: any;
-  elem: any;
-  links: any;
-  root: any;
-  /**
-   * @param {string\DOMelement} elem - the selector for an element or a dom node to watch links within
-   * @param {object} - config options for changing root element to use in IntersectionObserver
-   */
-  constructor(elem: any, { root = null } = {}) {
-    this.activeClass = 'active';
+  activeClass: string;
+  elem: HTMLElement | null;
+  links: HTMLAnchorElement[];
 
-    this.root = root;
+  constructor(elem: string | HTMLElement) {
+    this.activeClass = 'active';
 
     this.elem = typeof elem === 'string' ? $(elem) : elem;
 
@@ -33,16 +40,27 @@ class MenuSpy {
   // start observing each anchor link target to watch
   init() {
     const options = {
-      root: this.root,
+      root: null,
       rootMargin: '0% 0% -50% 0%', // center of viewport
       threshold: [0, 1]
     };
 
     const observer = new IntersectionObserver(this.onChange, options);
 
-    this.links.forEach((link: any) => {
+    this.links.forEach((link: HTMLElement) => {
       const selector = link.getAttribute('href');
+
+      if (!selector) {
+        console.warn('no selector for ', link);
+        return;
+      }
+
       const el = $(selector);
+
+      if (!el) {
+        console.warn('no element found for selector', el);
+        return;
+      }
 
       observer.observe(el);
     });
@@ -64,11 +82,13 @@ class MenuSpy {
       const { id } = change.target;
       const link = $(`a[href="#${id}"]`, this.elem);
 
+      if (!link) return;
+
       // if the element is fully in view, add the active class
       if (change.intersectionRatio === 1) {
         this.removeActiveClass();
 
-        link.parentElement.classList.add(this.activeClass);
+        link.parentElement?.classList.add(this.activeClass);
       }
       // highlights the previous item after a heading moves just under center of viewport
       else if (
@@ -78,9 +98,7 @@ class MenuSpy {
         change.boundingClientRect.y > 0
       ) {
         // get the index of the current active item
-        // @ts-expect-error ts-migrate(2578) FIXME: Unused '@ts-expect-error' directive.
-        // @ts-expect-error ts-migrate(2345) FIXME: Argument of type 'any' is not assignable to parame... Remove this comment to see the full error message
-        const idx = [].indexOf.call(this.links, link);
+        const idx = this.links.indexOf(link);
 
         // do nothing if there's no previous items
         if (idx === 0) {
@@ -92,9 +110,9 @@ class MenuSpy {
 
         const item = prevLink.parentElement;
 
-        this.removeActiveClass();
+        item?.classList.add(this.activeClass);
 
-        item.classList.add(this.activeClass);
+        this.removeActiveClass();
       }
     });
   };

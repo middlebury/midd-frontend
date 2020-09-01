@@ -10,23 +10,24 @@ import { ESC_KEY } from './constants';
  * Different from toggler.js since we watch for clicks outside the element to close the dropdown
  * Could probably be merged with toggler somehow.
  *
- * Example:
- *
+ * @example
+ * ```html
  * <div data-dropdown>
  *   <button data-dropdown-button>open dropdown</button>
  *   <ul data-dropdown-menu>
  *     ...
  *   </ul>
  * </div>
+ * ```
  */
 class Dropdown {
   activeClass: string;
-  btn: HTMLElement;
-  elem: HTMLElement;
-  menu: HTMLElement;
+  btn: HTMLElement | null;
+  elem: HTMLElement | null;
+  menu: HTMLElement | null;
   isOpen: boolean;
 
-  constructor(elem: any) {
+  constructor(elem: HTMLElement) {
     this.elem = elem;
 
     this.btn = $('[data-dropdown-button]', elem);
