@@ -7,7 +7,8 @@
     "dev": "gulp dev",
     "dev:saw": "gulp devSaw",
     "build": "NODE_ENV=production gulp build",
-    "build:scripts": "NODE_ENV=production gulp scripts",
+    "build:scripts": "microbundle -i ./src/js/index.ts -o ./dist/js/bundle.js",
+    "watch:scripts": "npm run build:scripts -- --watch",
     "build:styles": "NODE_ENV=production gulp styles",
     "build:icons": "NODE_ENV=production gulp icons",
     "deploy": "gulp deploy",
@@ -20,7 +21,7 @@
     "lint:js": "eslint src/js/**",
     "lint:styles": "stylelint src/scss/*",
     "force-resolutions": "npx npm-force-resolutions",
-    "format": "prettier --config ./.prettierrc --write \"src/**/*.{js,scss,twig}\""
+    "format": "prettier --config ./.prettierrc --write \"src/**/*.{js,scss}\""
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,11 @@
     "@rollup/plugin-babel": "^5.0.4",
     "@rollup/plugin-commonjs": "^13.0.0",
     "@rollup/plugin-node-resolve": "^8.1.0",
+    "@types/anchor-js": "^4.2.0",
+    "@types/animejs": "^3.1.2",
+    "@types/lodash": "^4.14.161",
+    "@types/lozad": "^1.9.0",
+    "@types/micromodal": "^0.3.2",
     "autoprefixer": "^9.8.4",
     "babel-eslint": "^10.1.0",
     "browser-sync": "^2.26.7",
@@ -71,6 +77,7 @@
     "gulp-svgo": "^2.2.1",
     "gulp-twig": "^1.2.0",
     "js-yaml": "^3.14.0",
+    "microbundle": "^0.12.3",
     "percy": "^0.26.9",
     "prettier": "^1.19.1",
     "prettier-plugin-twig-melody": "^0.4.6",
@@ -83,9 +90,13 @@
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-xo-scss": "^0.12.0",
     "stylelint-prettier": "^1.1.2",
+    "ts-migrate": "^0.1.2",
     "yargs": "^15.3.1"
   },
   "dependencies": {
+    "@types/focus-within": "^1.0.0",
+    "@types/headroom.js": "^0.11.0",
+    "@types/swiper": "^5.4.0",
     "anchor-js": "^4.2.2",
     "animejs": "^3.2.0",
     "chart.js": "^2.9.3",
@@ -102,7 +113,7 @@
     "pikaday": "^1.8.0",
     "preact": "^10.4.4",
     "stickybits": "^3.7.7",
-    "swiper": "^4.5.0"
+    "swiper": "^6.1.2"
   },
   "bundlesize": [
     {
