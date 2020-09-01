@@ -10,6 +10,26 @@
 {% block content %}
 
   <div class="container">
+    <div class="alert alert--status alert--dismissible mb-5">
+      <div>
+        <p class="f3">
+          You can now set your name pronunciation and pronouns on your profile.
+        </p>
+        <a href="" class="button button--primary button--sm mt-2">
+          Update your profile
+        </a>
+        <button class="button button--primary button--sm button--outline mt-2">
+          Remind me later
+        </button>
+      </div>
+      <button class="alert__dismiss">
+        <span class="sr-only">Dismiss</span>
+        {% include 'partials/icon.twig' with {
+          name: 'times'
+        } %}
+      </button>
+    </div>
+
     <ul class="row">
       {% for item in 0..7 %}
         <li class="col-md-6 col-lg-4 mb-7 mb-md-9">
