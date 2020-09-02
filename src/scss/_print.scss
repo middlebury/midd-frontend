@@ -33,4 +33,30 @@
   .print-hide {
     @include print-hide;
   }
+
+  // hacks: force styles mostly as-is for print layout though we want them to unnapply on small non-print screens.
+  // Should revert this back to use some sort of `roster` specific styles and not utils.
+  .roster {
+    .media-object {
+      @include clearfix;
+    }
+
+    .media-object__image {
+      float: left;
+      width: 200px;
+      margin-right: $spacing-3;
+    }
+
+    .media-object__body {
+      float: left;
+    }
+
+    .float-md-left {
+      float: left;
+    }
+
+    .pr-md-3 {
+      padding-right: $spacing-3;
+    }
+  }
 }

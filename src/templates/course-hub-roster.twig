@@ -63,14 +63,12 @@
     } %}
   </div>
 
-  <div>
-    {% set names =
-      [
-        'Some short name',
-        'Mid size name here',
-        'Some long name here it should wrap (nickname)'
-      ]
-    %}
+  <div class="roster">
+    {% set names = [
+      'Some short name',
+      'Mid size name here',
+      'Some long name here it should wrap (nickname)'
+    ] %}
 
     {% for n in 0..20 %}
       <div class="break-inside-avoid">
