@@ -62,9 +62,12 @@
   transition: background 0.2s;
   text-align: left;
 
-  &:hover,
-  &:focus {
+  &:hover {
     background: $gray-lighter;
+  }
+
+  &:focus {
+    outline: 1px dashed $color-primary;
   }
 
   &.has-toggler {

@@ -63,6 +63,8 @@ if (datePicker) {
       window.location.href = eventsBase + 'events/all/' + dateStr;
     }
   });
+
+  datePicker.style.display = 'none';
 }
 
 const selects = ['month', 'year'];

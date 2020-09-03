@@ -1,0 +1,57 @@
+<form>
+  <div class="filters">
+    <div class="filters__header">
+      <h2 class="filters__title">
+        Filters
+      </h2>
+      <a href="" class="button button--sm px-0">
+        {% include 'partials/icon.twig' with {
+          name: 'redo',
+          class: 'mr-1'
+        } %}Clear
+      </a>
+    </div>
+
+    {% embed 'partials/filter.twig'
+      with {
+        id: 'event-date-filter',
+        title: 'Date'
+      }
+    %}
+      {% block filter_content %}
+        <label for="midd-events-datepicker" class="sr-only">
+          Filter by date
+        </label>
+        {# do not init datepicker on CI since it defaults to current day and breaks visual diff day change #}
+        {% if not env.test %}
+          <input type="text"
+            class="form-control js-events-datepicker"
+            id="midd-events-datepicker" />
+        {% endif %}
+      {% endblock %}
+    {% endembed %}
+
+    {% include 'partials/filter.twig' with {
+      title: 'Categories',
+      items: [
+        {
+          text: 'Photograph'
+        },
+        {
+          text: 'Short Story'
+        },
+        {
+          text: 'Poem'
+        },
+        {
+          text: 'Audio'
+        },
+        {
+          text: 'Video'
+        }
+      ]
+    } %}
+
+    <input type="submit" class="sr-only sr-focusable" value="Apply Filters" />
+  </div>
+</form>
