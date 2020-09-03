@@ -184,7 +184,9 @@ const html = () =>
           ...imageStyles,
           env: {
             test: TEST,
-            production: PROD
+            production: PROD,
+            // store if this is vercel, so we can change templates for deploy previews
+            vercel: Boolean(process.env.VERCEL_URL)
           }
         };
       })

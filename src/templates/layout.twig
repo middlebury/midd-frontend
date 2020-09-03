@@ -6,6 +6,8 @@
   <title>{{title}}</title>
   <link rel="stylesheet" href="css/main.css">
   <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  {# dont index these files if vercel deployment #}
+  {% if env.vercel %} <meta name="robots" content="noindex" /> {% endif %}
 </head>
 <body class="{% if body_class %}{{body_class}}{% endif %} {% if theme %}theme-{{theme}}{% endif %}" id="midd-pagetop">
   <nav aria-labelledby="midd-skip-link">
