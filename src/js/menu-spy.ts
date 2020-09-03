@@ -24,7 +24,7 @@ import { $, $$ } from './utils/dom';
  */
 class MenuSpy {
   activeClass: string;
-  elem: HTMLElement | null;
+  elem: HTMLElement;
   links: HTMLAnchorElement[];
 
   constructor(elem: string | HTMLElement) {
@@ -32,7 +32,10 @@ class MenuSpy {
 
     this.elem = typeof elem === 'string' ? $(elem) : elem;
 
-    this.links = $$('a[href^="#"]:not([href="#"])', this.elem);
+    this.links = $$(
+      'a[href^="#"]:not([href="#"])',
+      this.elem
+    ) as HTMLAnchorElement[];
 
     this.init();
   }

@@ -1,6 +1,11 @@
-import { h } from 'preact';
+import { h, FunctionComponent } from 'preact';
 
-const Icon = ({ icon, className, ...rest }: any) => (
+interface IconProps {
+  icon: string;
+  className?: string;
+}
+
+const Icon: FunctionComponent<IconProps> = ({ icon, className, ...rest }) => (
   <svg className={`icon ${className}`} {...rest}>
     <use xlinkHref={`#icon-${icon}`} />
   </svg>

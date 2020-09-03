@@ -22,9 +22,9 @@ import { ESC_KEY } from './constants';
  */
 class Dropdown {
   activeClass: string;
-  btn: HTMLElement | null;
-  elem: HTMLElement | null;
-  menu: HTMLElement | null;
+  btn: HTMLElement;
+  elem: HTMLElement;
+  menu: HTMLElement;
   isOpen: boolean;
 
   constructor(elem: HTMLElement) {
@@ -52,7 +52,6 @@ class Dropdown {
     on(window, 'touchstart', this.handleWindowClick);
 
     on(this.elem, 'keyup', this.handleElemKeyup);
-
     on(this.btn, 'click', this.toggle);
   }
 
@@ -75,15 +74,17 @@ class Dropdown {
   };
 
   focusBtn() {
-    this.btn.focus();
+    this.btn?.focus();
   }
 
   handleWindowClick = (event: MouseEvent) => {
     const node = this.elem;
 
+    const target = event.target as HTMLElement;
+
     // if the target isn't the button or contains the button, the click is outside
     // the data-dropdown element
-    if (event.target !== node && !node.contains(event.target)) {
+    if (event.target !== node && !node.contains(target)) {
       this.hide();
     }
   };

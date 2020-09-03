@@ -21,7 +21,7 @@ interface SmoothScrollOptions {
   container?: HTMLElement;
 
   /** an integer to offset the scroll by or a function which gets passeD the target element */
-  offset: SmoothScrollOffset;
+  offset?: SmoothScrollOffset;
 
   /** override the scroll top */
   scrollTop?: ScrollTopCallback;
@@ -44,13 +44,13 @@ interface SmoothScrollOptions {
   /**
    * animation easing. Options based on animejs easing https://animejs.com/documentation/#linearEasing
    */
-  easing: EasingOptions;
+  easing?: EasingOptions;
 
   /** animation speed duration for animejs */
-  duration: number;
+  duration?: number;
 
   /** animation elasticity for animejs */
-  elasticity: number;
+  elasticity?: number;
 }
 
 const smoothScrollDefaults: SmoothScrollOptions = {
@@ -168,7 +168,7 @@ class SmoothScroll {
    * @param {string} selector - selector for the target element
    */
   scrollTo(elem: HTMLElement, selector: string) {
-    const { offset, scrollTop, container } = this.options;
+    const { offset = 0, scrollTop, container } = this.options;
 
     const elementOffset = elem.getBoundingClientRect().top;
 
@@ -183,22 +183,22 @@ class SmoothScroll {
       document.body
     ];
 
-    const _offset = typeof offset === 'function' ? offset(elem) : offset;
+    const finalOffset = typeof offset === 'function' ? offset(elem) : offset;
 
     if (container) {
       targets = container;
       scrollPosition = container.scrollTop;
     }
 
-    const _scrollTop =
+    const finalScrollTop =
       typeof scrollTop === 'function'
         ? scrollTop(elem, scrollPosition)
-        : elementOffset + scrollPosition - _offset;
+        : elementOffset + scrollPosition - finalOffset;
 
     const { duration, easing, elasticity, begin, complete } = this.animeOptions;
 
     this.anime = anime({
-      scrollTop: _scrollTop,
+      scrollTop: finalScrollTop,
       targets,
       duration,
       easing,

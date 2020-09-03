@@ -119,7 +119,7 @@ class Lightbox {
       container: this.el,
 
       // instead of default scrolling to the top of the image, we want to center it
-      scrollTop: (el: any, scrollPos: any) => {
+      scrollTop: (el: HTMLElement, scrollPos: number) => {
         const rect = el.getBoundingClientRect();
         const centerEl = rect.height / 2;
         // vertically center the target in the middle of the lightbox

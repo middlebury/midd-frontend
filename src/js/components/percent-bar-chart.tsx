@@ -1,6 +1,13 @@
-import { h } from 'preact';
+import { h, FunctionComponent } from 'preact';
 
-const Legend = ({ items, colors }: any) => {
+import { DataSet } from '../charts';
+
+interface LegendProps {
+  items: HTMLElement[];
+  colors: string[];
+}
+
+const Legend: FunctionComponent<LegendProps> = ({ items, colors }) => {
   return (
     <div className="chart-legend chart-legend--inline justify-content-start">
       <ul className="chart-legend__list">
@@ -20,15 +27,33 @@ const Legend = ({ items, colors }: any) => {
   );
 };
 
-const toPercent = (value: any, total: any) => (value / total) * 100;
+const toPercent = (value: number, total: number): number =>
+  (value / total) * 100;
 
-const PercentBarChart = ({ labels, datasets, colors }: any) => {
-  const data = datasets[0].data.map((value: any, i: any) => ({
-    label: labels[i],
+interface PercentBarProps {
+  labels: string[];
+  datasets: DataSet[];
+  colors: string[];
+}
+
+const PercentBarChart: FunctionComponent<PercentBarProps> = ({
+  labels,
+  datasets,
+  colors
+}) => {
+  // reconstruct a data array with the first dataset since the component only supports
+  // rendering one dataset.
+  const firstDataSet = datasets[0];
+
+  const data = firstDataSet.data.map((value: number, idx: number) => ({
+    label: labels[idx],
     value
   }));
 
-  const total = data.reduce((num: any, { value }: any) => (num += value), 0);
+  const total = data.reduce(
+    (total: number, datum: any) => (total += datum.value),
+    0
+  );
 
   const preparedData = data
     // sort the data from lowest to greatest

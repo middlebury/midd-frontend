@@ -4,6 +4,7 @@ import SmoothScroll from './smooth-scroll';
 
 import { $, $$ } from './utils/dom';
 import MenuSpy from './menu-spy';
+import { head } from 'lodash';
 
 const isSelectorValid = (selector: string) => {
   const queryCheck = (s: string) =>
@@ -25,7 +26,7 @@ const DigestNav = ({ items = [] }) => {
         On this page
       </h2>
       <ol className="digest__list">
-        {items.map((item: any, i: number) => {
+        {items.map((item: HTMLElement, i: number) => {
           return (
             <li key={i} className="digest__item">
               <a href={`#${item.id}`} className="digest__link">
@@ -39,7 +40,7 @@ const DigestNav = ({ items = [] }) => {
   );
 };
 
-function addHeadingAnchors(): NodeList | null {
+function addHeadingAnchors(): HTMLElement[] | null {
   // Store the selector since we need to manually update headings
   // as well as apply AnochrJS to them.
   // first-child gets section__titles and > h2 gets children of text components
@@ -70,7 +71,7 @@ function addHeadingAnchors(): NodeList | null {
 
     // if heading text begins with a number, we need to prefix some a-z text
     // so selectors in digest nav are valid
-    if (!isNaN(id.charAt(0))) {
+    if (!isNaN(Number(id.charAt(0)))) {
       id = 'section-' + id;
     }
 
@@ -83,9 +84,7 @@ function addHeadingAnchors(): NodeList | null {
   return headings;
 }
 
-function renderDigestNav(elem: HTMLElement, headings: NodeList) {
-  if (!headings) return;
-
+function renderDigestNav(elem: HTMLElement, headings: HTMLElement[]) {
   render(
     <DigestNav
       // convert nodelist into array for items prop
@@ -98,7 +97,7 @@ function renderDigestNav(elem: HTMLElement, headings: NodeList) {
 
   // TODO: don't tie the js-headroom to this widget as the element.
   // we should allow for a custom selector
-  const headroom = $('.js-headroom');
+  const headroom = $('.js-headroom') as HTMLElement;
 
   // Offset by sticky header on schools or base offset on office site.
   // This is a function call instead of static value since header height
@@ -135,5 +134,9 @@ const headings = addHeadingAnchors();
 const elems = $$('[data-digest-nav]');
 
 elems.forEach((elem) => {
+  if (!headings) {
+    return;
+  }
+
   renderDigestNav(elem, headings);
 });

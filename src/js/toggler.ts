@@ -1,3 +1,5 @@
+import { $, $$ } from './utils/dom';
+
 const SPACE_BAR = 32;
 
 /**
@@ -16,7 +18,7 @@ const SPACE_BAR = 32;
  */
 class Toggler {
   /** Element which will be clicked/enter key/space key press to triggle a toggle */
-  elem: Element;
+  elem: HTMLElement;
 
   /**
    * Class to add when the toggler is enabled on the elements.
@@ -31,21 +33,21 @@ class Toggler {
    * Selector for element to focus after toggle has happened.
    * Example: Used in focusing input of a search dropdown
    */
-  focusTargetSelector?: string;
+  focusTargetSelector: string | null;
 
   /** element to focus  */
-  focusTarget?: HTMLElement;
+  focusTarget?: HTMLElement | null;
 
   /** selector for group items */
-  group?: string;
+  group: string | null;
 
   /** selector for linked items items */
-  linked?: string;
+  linked: string | null;
 
   /** target element to toggle */
   target: HTMLElement;
 
-  constructor(elem: Element) {
+  constructor(elem: HTMLElement) {
     // this.isToggled = false;
     this.elem = elem;
     this.target = this.getTarget(this.elem);
@@ -64,13 +66,13 @@ class Toggler {
     this.focusTargetSelector = elem.getAttribute('data-toggle-focus');
 
     if (this.focusTargetSelector) {
-      this.focusTarget = document.querySelector(this.focusTargetSelector);
+      this.focusTarget = $(this.focusTargetSelector);
     }
 
     this.init();
   }
 
-  private init() {
+  init() {
     if (!this.target) {
       return;
     }
@@ -81,7 +83,7 @@ class Toggler {
   }
 
   // destroy method is not currently called in our apps but could be if you want to disable a toggler
-  public destroy() {
+  destroy() {
     this.elem.classList.remove(this.enabledClass);
     this.elem.classList.remove(this.activeClass);
     this.target.classList.remove(this.enabledClass);
@@ -90,12 +92,12 @@ class Toggler {
     this.elem.removeEventListener('keydown', this.handleElemKeyDown);
   }
 
-  private addListeners() {
+  addListeners() {
     this.elem.addEventListener('click', this.handleElemClick);
     this.elem.addEventListener('keydown', this.handleElemKeyDown);
   }
 
-  private handleElemKeyDown = (e: any) => {
+  handleElemKeyDown = (e: KeyboardEvent) => {
     if (e.keyCode === SPACE_BAR) {
       e.preventDefault();
       this.toggle();
@@ -104,19 +106,23 @@ class Toggler {
 
   // use query selector each time we need the target otherwise its classes are cached
   // if we stored it in the constructor
-  private getTarget(elem: any) {
+  getTarget(elem: HTMLElement) {
     const target = elem.getAttribute('data-toggle-target');
-    return document.querySelector(target);
+    if (target) {
+      return $(target);
+    }
   }
 
-  private handleElemClick(e: any) {
+  handleElemClick(e: Event) {
     e.preventDefault();
     this.toggle();
   }
 
   // close all toggle targets in the same group
-  private closeGroup() {
-    const items = document.querySelectorAll(this.group);
+  closeGroup() {
+    if (!this.group) return;
+
+    const items = $$(this.group);
     if (items) {
       items.forEach((elem) => {
         const target = this.getTarget(elem);
@@ -126,8 +132,11 @@ class Toggler {
   }
 
   // find all linked triggers and toggle their target
-  private toggleLinked() {
-    const items = document.querySelectorAll(this.linked);
+  toggleLinked() {
+    if (!this.linked) return;
+
+    const items = $$(this.linked);
+
     if (items) {
       items.forEach((elem) => {
         const target = this.getTarget(elem);
@@ -140,7 +149,7 @@ class Toggler {
     }
   }
 
-  private open(elem: any, target: any) {
+  open(elem: HTMLElement, target: HTMLElement) {
     if (target) {
       target.classList.add(this.activeClass);
     }
@@ -158,13 +167,13 @@ class Toggler {
     }
   }
 
-  private setAriaExpanded(elem: any, state: any) {
+  setAriaExpanded(elem: HTMLElement, state: boolean) {
     if (elem.hasAttribute('aria-expanded')) {
-      elem.setAttribute('aria-expanded', state);
+      elem.setAttribute('aria-expanded', String(state));
     }
   }
 
-  private close(elem: any, target: any) {
+  close(elem: HTMLElement, target: HTMLElement) {
     if (target) {
       target.classList.remove(this.activeClass);
     }
@@ -176,11 +185,11 @@ class Toggler {
   }
 
   // if the element has the active toggle class we can assume it's active
-  private isToggled(elem: any) {
+  isToggled(elem: HTMLElement) {
     return elem.classList.contains(this.activeClass);
   }
 
-  private toggle() {
+  toggle() {
     if (!this.isToggled(this.target)) {
       if (this.group) {
         this.closeGroup();
@@ -197,7 +206,7 @@ class Toggler {
   }
 }
 
-const togglers = document.querySelectorAll('[data-toggle-target]');
+const togglers = $$('[data-toggle-target]');
 
 togglers.forEach((elem) => new Toggler(elem));
 

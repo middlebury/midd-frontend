@@ -46,15 +46,17 @@ class AudioPlayer extends Component<AudioPlayerProps, AudioPlayerState> {
     on(this.audio, 'ended', this.pause);
   }
 
-  handleMetaDataLoad = (event: any) => {
+  handleMetaDataLoad = (event: Event) => {
+    const target = event.target as HTMLAudioElement;
     this.setState({
-      duration: event.target.duration
+      duration: target.duration
     });
   };
 
-  handleUpdateTime = (event: any) => {
+  handleUpdateTime = (event: Event) => {
+    const target = event.target as HTMLAudioElement;
     this.setState({
-      currentTime: event.target.currentTime
+      currentTime: target.currentTime
     });
   };
 

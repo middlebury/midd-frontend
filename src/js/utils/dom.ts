@@ -3,8 +3,10 @@
  * @file
  */
 
-export const $ = (selector: string, elem: HTMLElement | Document = document) =>
-  elem.querySelector<HTMLElement>(selector);
+export const $ = (
+  selector: string,
+  elem: HTMLElement | Document = document
+): any => elem.querySelector(selector);
 
 export const $$ = (
   selector: string,
