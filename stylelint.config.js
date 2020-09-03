@@ -49,6 +49,14 @@ module.exports = {
 
     // Override no-missing-generic-font from xo since we use object-fit polyfill
     // which requires `font-family: 'object-fit: <value>;';`
-    'font-family-no-missing-generic-family-keyword': null
+    'font-family-no-missing-generic-family-keyword': null,
+
+    // Disallow qualifying a selector by type.
+    'selector-no-qualifying-type': [
+      true,
+      {
+        ignore: ['attribute']
+      }
+    ]
   }
 };

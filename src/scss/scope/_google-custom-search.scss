@@ -1,9 +1,12 @@
 // stylelint-disable selector-max-id
 // stylelint-disable selector-id-pattern
-// ID selector is needed for specificity.
+// reason: ID selector is needed for specificity.
 
 // stylelint-disable selector-class-pattern
-// Classnames out of our control
+// reason: Classnames out of our control
+
+// stylelint-disable selector-no-qualifying-type
+// reason: limited selector options when working with gcs
 
 #___gcse_0 {
   .gsc-control-cse {

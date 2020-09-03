@@ -11,10 +11,14 @@ label {
   @include form-control;
 }
 
+// TODO: change form-control classes to be unique for their purpose and not use clever qualifying type
+// stylelint-disable-next-line selector-no-qualifying-type
 textarea.form-control {
   @include form-textarea;
 }
 
+// TODO: change form-control classes to be unique for their purpose and not use clever qualifying type
+// stylelint-disable-next-line selector-no-qualifying-type
 select.form-control {
   @include form-select;
 }
