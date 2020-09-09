@@ -107,11 +107,11 @@
   "bundlesize": [
     {
       "path": "./dist/css/*.css",
-      "maxSize": "25 kB"
+      "maxSize": "30 kB"
     },
     {
       "path": "./dist/js/bundle.js",
-      "maxSize": "55 kB"
+      "maxSize": "60 kB"
     }
   ],
   "resolutions": {
