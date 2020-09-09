@@ -124,3 +124,9 @@ image_styles:
     srcset:
       - 400x225
       - 640x360
+
+  event_teaser:
+    title: Event teaser
+    ratio: 'any'
+    srcset:
+      - 240x135

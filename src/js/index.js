@@ -19,7 +19,7 @@ import './toggler'; // toggler util used in transcript toggle, accordions, and m
 import './video'; // for lazy loading iframes until a video thumbnail is clicked
 import './digest'; // table of contents creator
 import './responsive-table'; // adds data-th attributes for responsive tables
-// import './events-datepicker'; // make the events datepicker accessible
+import './events-datepicker'; // make the events datepicker accessible
 import './audio-player'; // custom Preact audio player
 import './offices'; // middlebury.edu/office homepage script for filtering items shown
 import './mover'; // mover util for rearraning dom at a breakpoint
