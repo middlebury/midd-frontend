@@ -8,6 +8,7 @@ module.exports = {
   mode: PROD ? 'production' : 'development',
   entry: './src/js/index.ts',
   devtool: PROD ? false : 'inline-source-map',
+  stats: 'normal',
   module: {
     rules: [
       {
