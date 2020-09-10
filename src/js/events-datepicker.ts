@@ -1,7 +1,17 @@
-// @ts-expect-error ts-migrate(7016) FIXME: Try `npm install @types/pikaday` if it exists or a... Remove this comment to see the full error message
 import Pikaday from 'pikaday';
 
-const pad = (n: any) => (n >= 10 ? n : '0' + n);
+declare global {
+  interface Window {
+    drupalSettings: {
+      path: {
+        baseUrl: string;
+        currentPath: string;
+      };
+    };
+  }
+}
+
+const pad = (n: number): string => (n >= 10 ? String(n) : `0${n}`);
 
 const getDateObj = (
   dateStr: string
@@ -11,25 +21,25 @@ const getDateObj = (
   year: number;
 } => {
   const dateParts = dateStr.split('-');
-  let [year, month, day] = dateParts;
+  const [year, month, day] = dateParts;
 
-  year = parseInt(year, 10);
-  month = parseInt(month, 10) - 1;
-  day = parseInt(day, 10);
-
-  return { day, month, year };
+  return {
+    year: parseInt(year, 10),
+    month: parseInt(month, 10) - 1,
+    day: parseInt(day, 10)
+  };
 };
 
-const dateToStr = (date: any) => {
-  let day = date.getDate();
-  let month = date.getMonth() + 1;
+const dateToStr = (date: Date) => {
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
 
-  day = pad(day);
-  month = pad(month);
+  const padDay = pad(day);
+  const paddedMonth = pad(month);
 
   const year = date.getFullYear();
 
-  const dateStr = `${year}-${month}-${day}`;
+  const dateStr = `${year}-${padDay}-${paddedMonth}`;
 
   return dateStr;
 };
@@ -37,11 +47,10 @@ const dateToStr = (date: any) => {
 let eventsBase = '/';
 let eventsPath = '/';
 
-// @ts-expect-error ts-migrate(2304) FIXME: Cannot find name 'drupalSettings'.
+const { drupalSettings } = window;
+
 if (typeof drupalSettings !== 'undefined') {
-  // @ts-expect-error ts-migrate(2304) FIXME: Cannot find name 'drupalSettings'.
   eventsBase = drupalSettings.path.baseUrl;
-  // @ts-expect-error ts-migrate(2304) FIXME: Cannot find name 'drupalSettings'.
   eventsPath = drupalSettings.path.currentPath;
 }
 
@@ -58,7 +67,9 @@ if (dateStr) {
   defaultDate = new Date(year, month, day);
 }
 
-const datePicker = document.querySelector('.js-events-datepicker');
+const datePicker = document.querySelector(
+  '.js-events-datepicker'
+) as HTMLElement;
 
 if (datePicker) {
   const picker = new Pikaday({
@@ -67,7 +78,7 @@ if (datePicker) {
     minDate: new Date(),
     defaultDate,
     setDefaultDate: Boolean(defaultDate),
-    onSelect(date: any) {
+    onSelect(date: Date) {
       const dateStr = dateToStr(date);
 
       window.location.href = eventsBase + 'events/all/' + dateStr;
@@ -79,7 +90,7 @@ if (datePicker) {
 
 const selects = ['month', 'year'];
 
-selects.forEach((name, i) => {
+selects.forEach((name: string, i: number) => {
   const select = 'pika-select-' + name;
   const selectElem = document.querySelector('.' + select);
 
@@ -96,8 +107,6 @@ selects.forEach((name, i) => {
     selects[i].charAt(0).toUpperCase() + selects[i].slice(1);
 
   const parentElem = selectElem.parentNode;
-  // @ts-expect-error ts-migrate(2578) FIXME: Unused '@ts-expect-error' directive.
-  // @ts-expect-error ts-migrate(2531) FIXME: Object is possibly 'null'.
   parentElem.insertBefore(labelElem, selectElem);
 });
 
