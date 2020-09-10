@@ -113,7 +113,7 @@ function renderDigestNav(elem: HTMLElement, headings: HTMLElement[]) {
   const { hash } = window.location;
 
   if (!isSelectorValid(hash)) {
-    console.warn('Invalid selector', hash); // eslint-disable-line
+    console.warn('Invalid selector', hash);
     return;
   }
 

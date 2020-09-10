@@ -1,5 +1,3 @@
-/* eslint-env node */
-/* eslint-disable no-console */
 const fs = require('fs');
 const gulp = require('gulp');
 const twig = require('gulp-twig');
@@ -29,7 +27,6 @@ const svgSprite = require('gulp-svg-sprite');
 const svgo = require('gulp-svgo');
 const dom = require('gulp-dom');
 const stylelint = require('gulp-stylelint');
-const eslint = require('gulp-eslint');
 const webpack = require('webpack-stream');
 
 dotenv.config();
@@ -143,11 +140,6 @@ const styles = () => {
     .pipe(gulp.dest(paths.styles.dest));
 };
 
-const lintScripts = () =>
-  gulp
-    .src(paths.scripts.src)
-    .pipe(eslint())
-    .pipe(eslint.format());
 
 const scripts = () =>
   gulp
@@ -272,7 +264,7 @@ const copyDeps = () => {
 
 const deployDist = () => {
   if (!THEME_DIR) {
-    return console.error('No `--themeDir` argument passed'); // eslint-disable-line no-console
+    return console.error('No `--themeDir` argument passed');
   }
 
   return gulp
@@ -387,7 +379,6 @@ module.exports = {
   cleanAndCopyIcons,
   icons: buildIcons,
   replaceImagePaths,
-  lintScripts,
   lintStyles,
   copyDeps,
   default: dev
