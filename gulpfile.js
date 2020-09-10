@@ -93,6 +93,7 @@ const clean = () =>
 
 const serve = () =>
   browserSync.init({
+    files: './dist/**/*',
     notify: false,
     server: {
       baseDir: './dist'
@@ -140,8 +141,7 @@ const styles = () => {
     .pipe(postcss(plugins))
     .pipe(gulpIf(!PROD, sourcemaps.write('./')))
     .pipe(size({ showFiles: true }))
-    .pipe(gulp.dest(paths.styles.dest))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest(paths.styles.dest));
 };
 
 const lintScripts = () =>
@@ -228,8 +228,7 @@ const html = () =>
       })
     )
     .pipe(prettify())
-    .pipe(gulp.dest(paths.html.dest))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest(paths.html.dest));
 
 const images = () =>
   gulp
@@ -243,8 +242,7 @@ const images = () =>
         })
       ])
     )
-    .pipe(gulp.dest(paths.images.dest))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest(paths.images.dest));
 
 const replaceImagePaths = () => {
   const imagesDir = args.imagesDir || '/images/';
@@ -290,10 +288,7 @@ const watch = () => {
   gulp.watch('./src/templates/**/*.twig', html);
   gulp.watch(paths.styles.src, gulp.parallel(styles, lintStyles));
   gulp.watch(paths.images.src, images);
-  gulp.watch(
-    paths.scripts.watch,
-    gulp.series(scripts, () => browserSync.reload())
-  );
+  gulp.watch(paths.scripts.watch, scripts);
   gulp.watch('./src/data/*.yml', html);
 };
 
