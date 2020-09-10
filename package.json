@@ -72,7 +72,6 @@
     "gulp-svgo": "^2.2.1",
     "gulp-twig": "^1.2.0",
     "js-yaml": "^3.14.0",
-    "microbundle": "^0.12.3",
     "percy": "^0.26.9",
     "prettier": "^1.19.1",
     "prettier-plugin-twig-melody": "^0.4.6",
