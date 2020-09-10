@@ -5,8 +5,8 @@
 
 // vendor
 @import '../../node_modules/normalize.css/normalize';
-@import '../../node_modules/swiper/src/swiper';
-@import '../../node_modules/swiper/src/components/a11y/a11y';
+@import '../../node_modules/swiper/swiper.scss';
+@import '../../node_modules/swiper/components/a11y/a11y.scss';
 
 // base
 @import 'global';
