@@ -30,8 +30,7 @@ const svgo = require('gulp-svgo');
 const dom = require('gulp-dom');
 const stylelint = require('gulp-stylelint');
 const eslint = require('gulp-eslint');
-
-const rollup = require('./rollup');
+const webpack = require('webpack-stream');
 
 dotenv.config();
 
@@ -50,8 +49,8 @@ const paths = {
     dest: './dist/css/'
   },
   scripts: {
-    src: './src/js/**/*.js',
-    dest: './dist/js'
+    src: './src/js/index.ts',
+    dest: './dist/js/'
   },
   images: {
     // ignore sub folders in production build since demo images may be too big.
@@ -93,6 +92,7 @@ const clean = () =>
 
 const serve = () =>
   browserSync.init({
+    files: './dist/**/*',
     notify: false,
     server: {
       baseDir: './dist'
@@ -140,16 +140,8 @@ const styles = () => {
     .pipe(postcss(plugins))
     .pipe(gulpIf(!PROD, sourcemaps.write('./')))
     .pipe(size({ showFiles: true }))
-    .pipe(gulp.dest(paths.styles.dest))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest(paths.styles.dest));
 };
-
-const bundles = [
-  {
-    input: './src/js/index.js',
-    file: paths.scripts.dest + '/bundle.js'
-  }
-];
 
 const lintScripts = () =>
   gulp
@@ -158,9 +150,17 @@ const lintScripts = () =>
     .pipe(eslint.format());
 
 const scripts = () =>
-  rollup(bundles).then(() => {
-    browserSync.reload();
-  });
+  gulp
+    .src(paths.scripts.src)
+    .pipe(webpack(require('./webpack.config')))
+    .on('error', function handleError() {
+      // we want the build to fail in production builds due to TS errors...
+      if (PROD) return;
+      // ...but recover from errors in development.
+      // https://github.com/shama/webpack-stream/issues/34#issuecomment-171644957
+      this.emit('end');
+    })
+    .pipe(gulp.dest(paths.scripts.dest));
 
 const html = () =>
   gulp
@@ -184,7 +184,9 @@ const html = () =>
           ...imageStyles,
           env: {
             test: TEST,
-            production: PROD
+            production: PROD,
+            // store if this is vercel, so we can change templates for deploy previews
+            vercel: Boolean(process.env.VERCEL_URL)
           }
         };
       })
@@ -209,7 +211,7 @@ const html = () =>
             func: (items, field) => {
               const grouped = _.groupBy(items, field[0]);
 
-              const groupArr = Object.keys(grouped).map(key => ({
+              const groupArr = Object.keys(grouped).map((key) => ({
                 group: key,
                 items: grouped[key]
               }));
@@ -219,8 +221,8 @@ const html = () =>
           },
           {
             name: 'cast_to_array',
-            func: items => {
-              return Object.keys(items).map(key => {
+            func: (items) => {
+              return Object.keys(items).map((key) => {
                 return {
                   ...items[key],
                   key
@@ -232,8 +234,7 @@ const html = () =>
       })
     )
     .pipe(prettify())
-    .pipe(gulp.dest(paths.html.dest))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest(paths.html.dest));
 
 const images = () =>
   gulp
@@ -247,8 +248,7 @@ const images = () =>
         })
       ])
     )
-    .pipe(gulp.dest(paths.images.dest))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest(paths.images.dest));
 
 const replaceImagePaths = () => {
   const imagesDir = args.imagesDir || '/images/';
@@ -294,7 +294,6 @@ const watch = () => {
   gulp.watch('./src/templates/**/*.twig', html);
   gulp.watch(paths.styles.src, gulp.parallel(styles, lintStyles));
   gulp.watch(paths.images.src, images);
-  gulp.watch(paths.scripts.src, gulp.parallel(scripts, lintScripts));
   gulp.watch('./src/data/*.yml', html);
 };
 
@@ -315,7 +314,7 @@ const reportFilesizes = () =>
       })
     );
 
-const minifySvgs = src =>
+const minifySvgs = (src) =>
   gulp
     .src(src)
     .pipe(
@@ -366,7 +365,7 @@ const buildIconSprite = () =>
 const build = gulp.series(
   clean,
   copyDeps,
-  gulp.parallel(html, images, lintStyles, styles, lintScripts, scripts),
+  gulp.parallel(html, images, lintStyles, styles, scripts),
   reportFilesizes
 );
 

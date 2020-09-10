@@ -65,6 +65,9 @@ input[type='checkbox'] + label {
   border-color: $danger;
 }
 
+// Error might be on another element that isn't p tag we want.
+// This could be changed to use another class selector possibly.
+// stylelint-disable-next-line selector-no-qualifying-type
 p.error {
   margin-top: 0.5rem;
   margin-bottom: 0;

@@ -4,11 +4,7 @@ npm-debug.log*
 node_modules
 dist
 .env
-
 .DS_Store
-.vscode
-
-
 .cache
-
 .now
+.vercel
