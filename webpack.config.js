@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 const PROD = process.env.NODE_ENV === 'production';
 
@@ -21,5 +22,11 @@ module.exports = {
   },
   output: {
     filename: 'bundle.js'
-  }
+  },
+  plugins: [
+    // ignore moment imported by pikaday
+    new webpack.IgnorePlugin({
+      resourceRegExp: /moment$/
+    })
+  ]
 };
