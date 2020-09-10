@@ -154,6 +154,13 @@ const scripts = () =>
   gulp
     .src(paths.scripts.src)
     .pipe(webpack(require('./webpack.config')))
+    .on('error', function handleError() {
+      // we want the build to fail in production builds due to TS errors...
+      if (PROD) return;
+      // ...but recover from errors in development.
+      // https://github.com/shama/webpack-stream/issues/34#issuecomment-171644957
+      this.emit('end');
+    })
     .pipe(gulp.dest(paths.scripts.dest));
 
 const html = () =>
