@@ -24,6 +24,10 @@ type AudioPlayerState = {
 interface AudioPlayerProps {
   id: string;
   audio: HTMLAudioElement;
+  btnOnly?: boolean;
+  playIcon?: string;
+  outline?: boolean;
+  size?: string;
 }
 
 class AudioPlayer extends Component<AudioPlayerProps, AudioPlayerState> {

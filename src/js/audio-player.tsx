@@ -11,7 +11,18 @@ audioWrappers.forEach((wrapper: HTMLElement, index: number) => {
 
   const audioElem = wrapper.querySelector('audio') as HTMLAudioElement;
 
-  render(<AudioPlayer audio={audioElem} id={`audio-player-${index}`} />, root);
+  const { btnOnly, size, outline, playIcon } = wrapper.dataset;
+
+  const props = {
+    id: `audio-player-${index}`,
+    btnOnly: btnOnly !== undefined,
+    outline: outline !== undefined,
+    audio: audioElem,
+    playIcon,
+    size
+  };
+
+  render(<AudioPlayer {...props} />, root);
 
   wrapper.style.display = 'none';
 
