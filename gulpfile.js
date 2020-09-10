@@ -50,8 +50,7 @@ const paths = {
   },
   scripts: {
     src: './src/js/index.ts',
-    dest: './dist/js/',
-    watch: './src/js/**/*.ts'
+    dest: './dist/js/'
   },
   images: {
     // ignore sub folders in production build since demo images may be too big.
@@ -295,7 +294,6 @@ const watch = () => {
   gulp.watch('./src/templates/**/*.twig', html);
   gulp.watch(paths.styles.src, gulp.parallel(styles, lintStyles));
   gulp.watch(paths.images.src, images);
-  gulp.watch(paths.scripts.watch, scripts);
   gulp.watch('./src/data/*.yml', html);
 };
 
