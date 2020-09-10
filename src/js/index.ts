@@ -23,7 +23,10 @@ import 'object-fit-images';
 // https://caniuse.com/intersectionobserver
 import 'intersection-observer';
 
-import focusWithin from 'focus-within'; // polyfill :focus-within for tab accessible menus
+// polyfill :focus-within for tab accessible menus
+// https://caniuse.com/css-focus-within
+import 'focus-within-polyfill';
+
 /**
  * Custom JS imports
  */
@@ -50,4 +53,4 @@ import './flowchart';
 import './to-top-btn';
 import './helpfulness';
 
-focusWithin(document);
+// focusWithin();
