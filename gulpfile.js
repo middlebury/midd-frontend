@@ -211,7 +211,7 @@ const html = () =>
             func: (items, field) => {
               const grouped = _.groupBy(items, field[0]);
 
-              const groupArr = Object.keys(grouped).map(key => ({
+              const groupArr = Object.keys(grouped).map((key) => ({
                 group: key,
                 items: grouped[key]
               }));
@@ -221,8 +221,8 @@ const html = () =>
           },
           {
             name: 'cast_to_array',
-            func: items => {
-              return Object.keys(items).map(key => {
+            func: (items) => {
+              return Object.keys(items).map((key) => {
                 return {
                   ...items[key],
                   key
@@ -296,7 +296,6 @@ const watch = () => {
   gulp.watch('./src/templates/**/*.twig', html);
   gulp.watch(paths.styles.src, gulp.parallel(styles, lintStyles));
   gulp.watch(paths.images.src, images);
-  gulp.watch(paths.scripts.src, gulp.parallel(scripts, lintScripts));
   gulp.watch('./src/data/*.yml', html);
 };
 
@@ -317,7 +316,7 @@ const reportFilesizes = () =>
       })
     );
 
-const minifySvgs = src =>
+const minifySvgs = (src) =>
   gulp
     .src(src)
     .pipe(
