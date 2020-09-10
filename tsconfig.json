@@ -12,5 +12,5 @@
     "allowJs": true
   },
   "include": ["src/js/**/*.ts"],
-  "exclude": ["./src/js/journey.ts", "./src/js/events-datepicker.ts"]
+  "exclude": ["./src/js/journey.ts"]
 }
