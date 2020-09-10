@@ -30,8 +30,7 @@ const svgo = require('gulp-svgo');
 const dom = require('gulp-dom');
 const stylelint = require('gulp-stylelint');
 const eslint = require('gulp-eslint');
-
-const rollup = require('./rollup');
+const webpack = require('webpack-stream');
 
 dotenv.config();
 
@@ -50,8 +49,9 @@ const paths = {
     dest: './dist/css/'
   },
   scripts: {
-    src: './src/js/**/*.js',
-    dest: './dist/js'
+    src: './src/js/index.ts',
+    dest: './dist/js/',
+    watch: './src/js/**/*.ts'
   },
   images: {
     // ignore sub folders in production build since demo images may be too big.
@@ -144,13 +144,6 @@ const styles = () => {
     .pipe(browserSync.stream());
 };
 
-const bundles = [
-  {
-    input: './src/js/index.js',
-    file: paths.scripts.dest + '/bundle.js'
-  }
-];
-
 const lintScripts = () =>
   gulp
     .src(paths.scripts.src)
@@ -158,9 +151,10 @@ const lintScripts = () =>
     .pipe(eslint.format());
 
 const scripts = () =>
-  rollup(bundles).then(() => {
-    browserSync.reload();
-  });
+  gulp
+    .src(paths.scripts.src)
+    .pipe(webpack(require('./webpack.config')))
+    .pipe(gulp.dest(paths.scripts.dest));
 
 const html = () =>
   gulp
@@ -296,6 +290,10 @@ const watch = () => {
   gulp.watch('./src/templates/**/*.twig', html);
   gulp.watch(paths.styles.src, gulp.parallel(styles, lintStyles));
   gulp.watch(paths.images.src, images);
+  gulp.watch(
+    paths.scripts.watch,
+    gulp.series(scripts, () => browserSync.reload())
+  );
   gulp.watch('./src/data/*.yml', html);
 };
 
@@ -367,7 +365,7 @@ const buildIconSprite = () =>
 const build = gulp.series(
   clean,
   copyDeps,
-  gulp.parallel(html, images, lintStyles, styles, lintScripts, scripts),
+  gulp.parallel(html, images, lintStyles, styles, scripts),
   reportFilesizes
 );
 
