@@ -19,7 +19,6 @@
     "lint": "npm run lint:js && npm run lint:styles",
     "lint:js": "eslint src/js/**",
     "lint:styles": "stylelint src/scss/*",
-    "force-resolutions": "npx npm-force-resolutions",
     "format": "prettier --config ./.prettierrc --write \"src/**/*.{js,ts,scss}\""
   },
   "repository": {
@@ -114,10 +113,5 @@
       "path": "./dist/js/bundle.js",
       "maxSize": "60 kB"
     }
-  ],
-  "resolutions": {
-    "minimist": "^1.2.2",
-    "yargs-parser": "^18.1.2",
-    "http-proxy": "^1.18.1"
-  }
+  ]
 }
