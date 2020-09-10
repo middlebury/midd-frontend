@@ -2,10 +2,31 @@
 
 TODO: add TOC here
 
-## Requirements
+## Prior Reading
 
-- [NodejS](https://nodejs.org/en/download/) 12.x
-  - You can use [`n`](https://www.npmjs.com/package/n) (mac only) or [nvm](https://github.com/nvm-sh/nvm) package to manage Node versions on your machine
+There are various tools and libraries to be somewhat familiar with prior to working with this codebase. It's not required to read 100% of each of their docs but if you at least begin to skim or find "Intro to x" articles online for given items below, it would be helpful as you browse this codebase. 
+
+### CSS 
+- [Sass](https://sass-lang.com/) - The core tool used to organize CSS files into partials while provding variables, mixins, and more.
+- [BEM](https://en.bem.info/methodology/quick-start/) - BEM is a CSS methodology used for sane organization of a large component driven CSS codebase. 
+- [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/) - Some ideas are borrowed from ITCSS methods as well though not 100% applied to the CSS architecture.
+- [PostCSS](https://postcss.org/) - A build tool for adding vendor prefixes, organizing media queries, and minifying. 
+
+### Javascript 
+- [TypeScript](https://www.typescriptlang.org/) - Codebase previously used [Babel](https://babeljs.io/) but was moved to TypeScript since it 'includes the kitchen sink' in terms of future JS features  
+- [Preact](https://preactjs.com/) - Used to create javascript components which render as a whole and do not rely too much on existing elements in the view. See `./src/js/components/audio.tsx` for an example of one.
+
+### Build Tools
+- [NodeJS](https://nodejs.dev/) - To run build tools and manage dependencies
+- [Gulp](https://gulpjs.com/) - Runs various build tasks like CSS/JS build process, optimizing images, building SVG icons, converting Twig files to HTML, and serving everything locally on a local server.
+- [Webpack](https://webpack.js.org/) - Compiles TypeScript, import JS modules, and minify
+
+
+## Required software
+
+[NodejS](https://nodejs.org/en/download/) (at least version 12 or higher) must be installed on your computer or development server to run the various build tools and install packages.
+
+You can use [n](https://www.npmjs.com/package/n) (mac only) or [nvm](https://github.com/nvm-sh/nvm) package to manage Node versions on your machine
 
 ## Quick start
 
@@ -38,15 +59,13 @@ npm start
 ## Deploying to production
 
 1. Once `develop` branch is in a production-ready state, open a pull request to merge it into `master`.
-2. Let CI run, check out your preview link, approve visual diff test.
-   - Visual diff test will run using [Percy](https://percy.io/).
-   - You'll likely need to approve the visual diff changes or you can bypass it as a repo admin.
-   - The test only runs on pull requests into `master` to conservatively stay within the free plan usage. Merging into master is the main situation you need the visual diffs anyway.
+2. Let GitHub actions run a build to ensure all assets compile correctly. 
 3. Once merged, the [GitHub Actions CI workflow](https://github.com/middlebury/midd-frontend/actions?query=workflow%3ACI) automatically builds the updated `master` branch using `npm run build` and commits the built assets to a [`master-dist`](https://github.com/middlebury/midd-frontend/tree/master-dist) branch. That branch is then pulled down via ITS' deployment scripts for deploying to production.
 
 > You can certainly avoid GitHub pull request workflows and merge things locally on your machine then push to `master` but it's ideal run the CI scripts to help catch possible issues.
 
-> Percy visual diffs aren't in a perfect condition but they work for the most part. See https://github.com/middlebury/midd-frontend/issues/347
+<!-- > Percy visual diffs aren't in a perfect condition but they work for the most part. See https://github.com/middlebury/midd-frontend/issues/347 -->
+
 
 ### Possible improvements
 
@@ -75,25 +94,22 @@ Various scripts runnable with `npm run <script name>`.
 
 > `npm start` is native to npm so you don't have to type `run` in it. Other scripts you need the above format.
 
-```js
-"start": "npm run dev", // alias for dev script
-"dev": "gulp dev", // start local dev server, watches assets, etc
-"dev:saw": "gulp devSaw", // only watches assets, does not start server since
-"build": "NODE_ENV=production gulp build", // compile all assets for production build
-"build:scripts": "NODE_ENV=production gulp scripts", // build JS. Useful for debugging JS build.
-"build:styles": "NODE_ENV=production gulp styles", // build CSS. Useful for debugging CSS build.
-"build:icons": "NODE_ENV=production gulp icons", // build svg icon sprite
-"deploy": "gulp deploy", // deploy runs
-"deploy:gh": "npm run build && gh-pages -d dist -b master-dist", // if CI workflow deploy isn't functioning, you can run this to ship to master-dist branch
-"now-build": "npm run build && mv dist public", // this runs on vercel platform to simply move the output directory
-"test": "npm run test:bundlesize", // root test script. Later would test more at once like unit tests if they were present.
-"test:visual": "percy snapshot dist --snapshot-files \"*.html\"", // run percy visual diff
-"test:bundlesize": "bundlesize", // [bundlesize](https://github.com/siddharthkp/bundlesize) test
-"lint": "npm run lint:js && npm run lint:styles", // root lint script to run others
-"lint:js": "eslint src/js/**", // lint JS
-"lint:styles": "stylelint src/scss/*", // lint SCSS
-"format": "prettier --config ./.prettierrc --write \"src/**/*.{js,scss,twig}\"" // code style format files with Prettier
-```
+- `start` -  alias for dev script
+- `dev` -  start local dev server, watches assets, etc
+- `dev:saw` -  only watches assets, does not start server since
+- `build` -  compile all assets for production build
+- `build:scripts` -  build JS. Useful for debugging JS build.
+- `build:styles` -  build CSS. Useful for debugging CSS build.
+- `build:icons` -  build svg icon sprite
+- `deploy` -  deploy copies built assets from the build output file to a desired theme directory. 
+- `deploy:gh` -  if CI workflow deploy isn't functioning, you can run this to ship to master-dist branch
+- `now-build` -  this runs on vercel platform to simply move the output directory
+- `test` -  root test script. Later would test more at once like unit tests if they were present.
+<!-- - `test:visual` -  run percy visual diff -->
+- `test:bundlesize` -  [bundlesize](https://github.com/siddharthkp/bundlesize) test
+- `lint` -  root lint script to run others
+- `lint:styles`: /scss/*", // lint SCSS
+- `format`: /.prettierrc --write \"src/**/*.{js,scss,twig}\"" // code style format files with Prettier
 
 ## Build tools and config
 
