@@ -278,12 +278,12 @@
         </div>
         <div class="container">
           <div class="row">
-            <div class="col-md-10 offset-md-1 col-lg-4 col-xl-3 offset-lg-0 mb-4">
+            <div class="col-md-10 offset-md-1 col-lg-3 offset-lg-0 mb-4">
               <form>
                 <div class="mb-5">
-                  <label for="midd-sidebar-search" class="sr-only">Search Events</label>
+                  <label for="midd-sidebar-search" class="label">Search Events</label>
                   <div class="input-group">
-                    <input type="search" placeholder="Search events" id="midd-sidebar-search" class="form-control form-control--sm" required>
+                    <input type="search" placeholder="Type keywords..." id="midd-sidebar-search" class="form-control form-control--sm" required />
                     <button type="submit" class="button button--primary button--outline px-4 button--sm">
                       <span class="sr-only">Search</span>
                       <svg class="icon  " focusable="false" aria-hidden="true">
@@ -293,211 +293,359 @@
                   </div>
                 </div>
               </form>
-              <div class="foldable mb-7">
-                <button class="foldable__button" data-toggle-target=".js-foldable" aria-expanded="false"> Filter by date <svg class="icon foldable__icon " focusable="false" aria-hidden="true">
-                    <use xlink:href="#icon-chevron-down">
-                  </svg>
-                </button>
-                <div class="foldable__content js-foldable">
-                  <label for="midd-events-datepicker" class="label d-none d-lg-block">Filter by date</label>
-                  <input type="text" class="form-control d-none" id="midd-events-datepicker" />
-                  <a href="#" class="mt-2 button button--outline button--sm button--block button--primary">Clear filter</a>
+              <form>
+                <div class="filters">
+                  <div class="filters__header">
+                    <h2 class="filters__title"> Filters </h2>
+                    <a href="" class="button button--sm px-0">
+                      <svg class="icon mr-1 " focusable="false" aria-hidden="true">
+                        <use xlink:href="#icon-redo">
+                      </svg> Clear </a>
+                  </div>
+                  <fieldset class="filter">
+                    <legend class="filter__legend">
+                      <button class="filter__button" data-toggle-target=".js-filter-812" aria-expanded="true"> Date <svg class="icon filter__icon-close " focusable="false" aria-hidden="true">
+                          <use xlink:href="#icon-minus">
+                        </svg>
+                        <svg class="icon filter__icon-open " focusable="false" aria-hidden="true">
+                          <use xlink:href="#icon-plus">
+                        </svg>
+                      </button>
+                    </legend>
+                    <div class="filter__body js-filter-812">
+                      <label for="midd-events-datepicker" class="sr-only"> Filter by date </label>
+                    </div>
+                  </fieldset>
+                  <fieldset class="filter">
+                    <legend class="filter__legend">
+                      <button class="filter__button" data-toggle-target=".js-filter-335" aria-expanded="true"> Categories <svg class="icon filter__icon-close " focusable="false" aria-hidden="true">
+                          <use xlink:href="#icon-minus">
+                        </svg>
+                        <svg class="icon filter__icon-open " focusable="false" aria-hidden="true">
+                          <use xlink:href="#icon-plus">
+                        </svg>
+                      </button>
+                    </legend>
+                    <div class="filter__body js-filter-335">
+                      <div class="checkbox checkbox--filter">
+                        <input type="checkbox" class="checkbox__input" id="checkbox-item-335-1" />
+                        <label for="checkbox-item-335-1" class="checkbox__label"> Photograph </label>
+                      </div>
+                      <div class="checkbox checkbox--filter">
+                        <input type="checkbox" class="checkbox__input" id="checkbox-item-335-2" />
+                        <label for="checkbox-item-335-2" class="checkbox__label"> Short Story </label>
+                      </div>
+                      <div class="checkbox checkbox--filter">
+                        <input type="checkbox" class="checkbox__input" id="checkbox-item-335-3" />
+                        <label for="checkbox-item-335-3" class="checkbox__label"> Poem </label>
+                      </div>
+                      <div class="checkbox checkbox--filter">
+                        <input type="checkbox" class="checkbox__input" id="checkbox-item-335-4" />
+                        <label for="checkbox-item-335-4" class="checkbox__label"> Audio </label>
+                      </div>
+                      <div class="checkbox checkbox--filter">
+                        <input type="checkbox" class="checkbox__input" id="checkbox-item-335-5" />
+                        <label for="checkbox-item-335-5" class="checkbox__label"> Video </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <input type="submit" class="sr-only sr-focusable" value="Apply Filters" />
                 </div>
-              </div>
-              <div class="js-sidebar"></div>
+              </form>
             </div>
-            <div class="col-md-10 offset-md-1 col-lg-8 col-xl-9 offset-lg-0">
-              <div class="bg-gray-lighter p-3 d-sm-flex justify-content-between">
-                <div class="mb-3 mb-sm-0">Showing Events for March 2, 2018</div>
-                <div>
-                  <a href="#" class="link-underline f2">Clear filter</a>
-                </div>
+            <div class="col-md-10 offset-md-1 col-lg-7 offset-lg-0">
+              <div class="mb-5 d-flex bg-gray-lighter py-2">
+                <a href="" class="button button--sm">
+                  <svg class="icon  " focusable="false" aria-hidden="true">
+                    <use xlink:href="#icon-times">
+                  </svg> Photograph </a>
+                <a href="" class="button button--sm">
+                  <svg class="icon  " focusable="false" aria-hidden="true">
+                    <use xlink:href="#icon-times">
+                  </svg> 1980 </a>
+                <a href="" class="ml-auto button button--sm">
+                  <svg class="icon mr-1 " focusable="false" aria-hidden="true">
+                    <use xlink:href="#icon-redo">
+                  </svg> Clear Filters </a>
               </div>
               <section class="section">
-                <h2 class="section__title">Tuesday, May 22, 2018</h2>
-                <table class="table table--no-mobile-headers table--fixed table--spacious">
-                  <thead>
-                    <tr>
-                      <th>Date</th>
-                      <th>Time</th>
-                      <th class="w-md-40">Event</th>
-                      <th>Location</th>
-                    </tr>
-                  </thead>
-                  <tr>
-                    <td>Jul 25, 2018</td>
-                    <td>6:00 PM</td>
-                    <td><a href="" class="h4">Building a Sustainable Career in Social Impact – Breaking into the Field</a></td>
-                    <td> McCone Irvine Auditorium <br>
-                      <small class="f2 text-gray">Open to the Public</small>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Jul 25, 2018</td>
-                    <td>6:00 PM</td>
-                    <td><a href="" class="h4">Building a Sustainable Career in Social Impact – Breaking into the Field</a></td>
-                    <td> McCone Irvine Auditorium <br>
-                      <small class="f2 text-gray">Open to the Public</small>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Jul 25, 2018</td>
-                    <td>6:00 PM</td>
-                    <td><a href="" class="h4">Building a Sustainable Career in Social Impact – Breaking into the Field</a></td>
-                    <td> McCone Irvine Auditorium <br>
-                      <small class="f2 text-gray">Open to the Public</small>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Jul 25, 2018</td>
-                    <td>6:00 PM</td>
-                    <td><a href="" class="h4">Building a Sustainable Career in Social Impact – Breaking into the Field</a></td>
-                    <td> McCone Irvine Auditorium <br>
-                      <small class="f2 text-gray">Open to the Public</small>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Jul 25, 2018</td>
-                    <td>6:00 PM</td>
-                    <td><a href="" class="h4">Building a Sustainable Career in Social Impact – Breaking into the Field</a></td>
-                    <td> McCone Irvine Auditorium <br>
-                      <small class="f2 text-gray">Open to the Public</small>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Jul 25, 2018</td>
-                    <td>6:00 PM</td>
-                    <td><a href="" class="h4">Building a Sustainable Career in Social Impact – Breaking into the Field</a></td>
-                    <td> McCone Irvine Auditorium <br>
-                      <small class="f2 text-gray">Open to the Public</small>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Jul 25, 2018</td>
-                    <td>6:00 PM</td>
-                    <td><a href="" class="h4">Building a Sustainable Career in Social Impact – Breaking into the Field</a></td>
-                    <td> McCone Irvine Auditorium <br>
-                      <small class="f2 text-gray">Open to the Public</small>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Jul 25, 2018</td>
-                    <td>6:00 PM</td>
-                    <td><a href="" class="h4">Building a Sustainable Career in Social Impact – Breaking into the Field</a></td>
-                    <td> McCone Irvine Auditorium <br>
-                      <small class="f2 text-gray">Open to the Public</small>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Jul 25, 2018</td>
-                    <td>6:00 PM</td>
-                    <td><a href="" class="h4">Building a Sustainable Career in Social Impact – Breaking into the Field</a></td>
-                    <td> McCone Irvine Auditorium <br>
-                      <small class="f2 text-gray">Open to the Public</small>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Jul 25, 2018</td>
-                    <td>6:00 PM</td>
-                    <td><a href="" class="h4">Building a Sustainable Career in Social Impact – Breaking into the Field</a></td>
-                    <td> McCone Irvine Auditorium <br>
-                      <small class="f2 text-gray">Open to the Public</small>
-                    </td>
-                  </tr>
-                </table>
+                <h2 class="section__title"> Sunday, May 23 </h2>
+                <ul class="list list--dividers list--md">
+                  <li class="list__item">
+                    <article class="d-flex" aria-labelledby="midd-event-0-header">
+                      <time datetime="" class="text-center mt-1 lh-solid">
+                        <span class="f3 d-block">Jun</span>
+                        <span class="f7 d-block">24</span>
+                      </time>
+                      <div class="pl-3 clearfix">
+                        <figure class="mb-2 float-md-right ml-md-3">
+                          <a href="">
+                            <img src="https://placehold.it/240x135" srcset="https://placehold.it/240x135 240w" sizes="(max-width: 240px) 100vw, 240px" alt="" />
+                          </a>
+                        </figure>
+                        <h3 class="h3" id="midd-event-0-header">
+                          <a href="#" title=" on June 24, 2017 &middot; 11:45 AM"> Museum of Art Lecture Series </a>
+                        </h3>
+                        <time datetime="" class="d-block font-medium">11:45 AM</time>
+                        <p class="f3 my-3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores illum quas, voluptat... </p>
+                        <p class="f3 font-medium"> McCone Irvine Auditorium </p>
+                        <small class="f2 text-gray">Open to the Public</small>
+                      </div>
+                    </article>
+                  </li>
+                  <li class="list__item">
+                    <article class="d-flex" aria-labelledby="midd-event-1-header">
+                      <time datetime="" class="text-center mt-1 lh-solid">
+                        <span class="f3 d-block">Jun</span>
+                        <span class="f7 d-block">24</span>
+                      </time>
+                      <div class="pl-3 clearfix">
+                        <figure class="mb-2 float-md-right ml-md-3">
+                          <a href="">
+                            <img src="https://placehold.it/240x135" srcset="https://placehold.it/240x135 240w" sizes="(max-width: 240px) 100vw, 240px" alt="" />
+                          </a>
+                        </figure>
+                        <h3 class="h3" id="midd-event-1-header">
+                          <a href="#" title=" on June 24, 2017 &middot; 11:45 AM"> Museum of Art Lecture Series </a>
+                        </h3>
+                        <time datetime="" class="d-block font-medium">11:45 AM</time>
+                        <p class="f3 my-3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores illum quas, voluptat... </p>
+                        <p class="f3 font-medium"> McCone Irvine Auditorium </p>
+                        <small class="f2 text-gray">Open to the Public</small>
+                      </div>
+                    </article>
+                  </li>
+                  <li class="list__item">
+                    <article class="d-flex" aria-labelledby="midd-event-2-header">
+                      <time datetime="" class="text-center mt-1 lh-solid">
+                        <span class="f3 d-block">Jun</span>
+                        <span class="f7 d-block">24</span>
+                      </time>
+                      <div class="pl-3 clearfix">
+                        <figure class="mb-2 float-md-right ml-md-3">
+                          <a href="">
+                            <img src="https://placehold.it/240x135" srcset="https://placehold.it/240x135 240w" sizes="(max-width: 240px) 100vw, 240px" alt="" />
+                          </a>
+                        </figure>
+                        <h3 class="h3" id="midd-event-2-header">
+                          <a href="#" title=" on June 24, 2017 &middot; 11:45 AM"> Museum of Art Lecture Series </a>
+                        </h3>
+                        <time datetime="" class="d-block font-medium">11:45 AM</time>
+                        <p class="f3 my-3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores illum quas, voluptat... </p>
+                        <p class="f3 font-medium"> McCone Irvine Auditorium </p>
+                        <small class="f2 text-gray">Open to the Public</small>
+                      </div>
+                    </article>
+                  </li>
+                  <li class="list__item">
+                    <article class="d-flex" aria-labelledby="midd-event-3-header">
+                      <time datetime="" class="text-center mt-1 lh-solid">
+                        <span class="f3 d-block">Jun</span>
+                        <span class="f7 d-block">24</span>
+                      </time>
+                      <div class="pl-3 clearfix">
+                        <figure class="mb-2 float-md-right ml-md-3">
+                          <a href="">
+                            <img src="https://placehold.it/240x135" srcset="https://placehold.it/240x135 240w" sizes="(max-width: 240px) 100vw, 240px" alt="" />
+                          </a>
+                        </figure>
+                        <h3 class="h3" id="midd-event-3-header">
+                          <a href="#" title=" on June 24, 2017 &middot; 11:45 AM"> Museum of Art Lecture Series </a>
+                        </h3>
+                        <time datetime="" class="d-block font-medium">11:45 AM</time>
+                        <p class="f3 my-3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores illum quas, voluptat... </p>
+                        <p class="f3 font-medium"> McCone Irvine Auditorium </p>
+                        <small class="f2 text-gray">Open to the Public</small>
+                      </div>
+                    </article>
+                  </li>
+                </ul>
               </section>
               <section class="section">
-                <h2 class="section__title">Tuesday, May 22, 2018</h2>
-                <table class="table table--no-mobile-headers table--fixed table--spacious">
-                  <thead>
-                    <tr>
-                      <th>Date</th>
-                      <th>Time</th>
-                      <th class="w-md-40">Event</th>
-                      <th>Location</th>
-                    </tr>
-                  </thead>
-                  <tr>
-                    <td>Jul 25, 2018</td>
-                    <td>6:00 PM</td>
-                    <td><a href="" class="h4">Building a Sustainable Career in Social Impact – Breaking into the Field</a></td>
-                    <td> McCone Irvine Auditorium <br>
-                      <small class="f2 text-gray">Open to the Public</small>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Jul 25, 2018</td>
-                    <td>6:00 PM</td>
-                    <td><a href="" class="h4">Building a Sustainable Career in Social Impact – Breaking into the Field</a></td>
-                    <td> McCone Irvine Auditorium <br>
-                      <small class="f2 text-gray">Open to the Public</small>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Jul 25, 2018</td>
-                    <td>6:00 PM</td>
-                    <td><a href="" class="h4">Building a Sustainable Career in Social Impact – Breaking into the Field</a></td>
-                    <td> McCone Irvine Auditorium <br>
-                      <small class="f2 text-gray">Open to the Public</small>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Jul 25, 2018</td>
-                    <td>6:00 PM</td>
-                    <td><a href="" class="h4">Building a Sustainable Career in Social Impact – Breaking into the Field</a></td>
-                    <td> McCone Irvine Auditorium <br>
-                      <small class="f2 text-gray">Open to the Public</small>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Jul 25, 2018</td>
-                    <td>6:00 PM</td>
-                    <td><a href="" class="h4">Building a Sustainable Career in Social Impact – Breaking into the Field</a></td>
-                    <td> McCone Irvine Auditorium <br>
-                      <small class="f2 text-gray">Open to the Public</small>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Jul 25, 2018</td>
-                    <td>6:00 PM</td>
-                    <td><a href="" class="h4">Building a Sustainable Career in Social Impact – Breaking into the Field</a></td>
-                    <td> McCone Irvine Auditorium <br>
-                      <small class="f2 text-gray">Open to the Public</small>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Jul 25, 2018</td>
-                    <td>6:00 PM</td>
-                    <td><a href="" class="h4">Building a Sustainable Career in Social Impact – Breaking into the Field</a></td>
-                    <td> McCone Irvine Auditorium <br>
-                      <small class="f2 text-gray">Open to the Public</small>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Jul 25, 2018</td>
-                    <td>6:00 PM</td>
-                    <td><a href="" class="h4">Building a Sustainable Career in Social Impact – Breaking into the Field</a></td>
-                    <td> McCone Irvine Auditorium <br>
-                      <small class="f2 text-gray">Open to the Public</small>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Jul 25, 2018</td>
-                    <td>6:00 PM</td>
-                    <td><a href="" class="h4">Building a Sustainable Career in Social Impact – Breaking into the Field</a></td>
-                    <td> McCone Irvine Auditorium <br>
-                      <small class="f2 text-gray">Open to the Public</small>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Jul 25, 2018</td>
-                    <td>6:00 PM</td>
-                    <td><a href="" class="h4">Building a Sustainable Career in Social Impact – Breaking into the Field</a></td>
-                    <td> McCone Irvine Auditorium <br>
-                      <small class="f2 text-gray">Open to the Public</small>
-                    </td>
-                  </tr>
-                </table>
+                <h2 class="section__title"> Sunday, May 23 </h2>
+                <ul class="list list--dividers list--md">
+                  <li class="list__item">
+                    <article class="d-flex" aria-labelledby="midd-event-0-header">
+                      <time datetime="" class="text-center mt-1 lh-solid">
+                        <span class="f3 d-block">Jun</span>
+                        <span class="f7 d-block">24</span>
+                      </time>
+                      <div class="pl-3 clearfix">
+                        <figure class="mb-2 float-md-right ml-md-3">
+                          <a href="">
+                            <img src="https://placehold.it/240x135" srcset="https://placehold.it/240x135 240w" sizes="(max-width: 240px) 100vw, 240px" alt="" />
+                          </a>
+                        </figure>
+                        <h3 class="h3" id="midd-event-0-header">
+                          <a href="#" title=" on June 24, 2017 &middot; 11:45 AM"> Museum of Art Lecture Series </a>
+                        </h3>
+                        <time datetime="" class="d-block font-medium">11:45 AM</time>
+                        <p class="f3 my-3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores illum quas, voluptat... </p>
+                        <p class="f3 font-medium"> McCone Irvine Auditorium </p>
+                        <small class="f2 text-gray">Open to the Public</small>
+                      </div>
+                    </article>
+                  </li>
+                  <li class="list__item">
+                    <article class="d-flex" aria-labelledby="midd-event-1-header">
+                      <time datetime="" class="text-center mt-1 lh-solid">
+                        <span class="f3 d-block">Jun</span>
+                        <span class="f7 d-block">24</span>
+                      </time>
+                      <div class="pl-3 clearfix">
+                        <figure class="mb-2 float-md-right ml-md-3">
+                          <a href="">
+                            <img src="https://placehold.it/240x135" srcset="https://placehold.it/240x135 240w" sizes="(max-width: 240px) 100vw, 240px" alt="" />
+                          </a>
+                        </figure>
+                        <h3 class="h3" id="midd-event-1-header">
+                          <a href="#" title=" on June 24, 2017 &middot; 11:45 AM"> Museum of Art Lecture Series </a>
+                        </h3>
+                        <time datetime="" class="d-block font-medium">11:45 AM</time>
+                        <p class="f3 my-3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores illum quas, voluptat... </p>
+                        <p class="f3 font-medium"> McCone Irvine Auditorium </p>
+                        <small class="f2 text-gray">Open to the Public</small>
+                      </div>
+                    </article>
+                  </li>
+                  <li class="list__item">
+                    <article class="d-flex" aria-labelledby="midd-event-2-header">
+                      <time datetime="" class="text-center mt-1 lh-solid">
+                        <span class="f3 d-block">Jun</span>
+                        <span class="f7 d-block">24</span>
+                      </time>
+                      <div class="pl-3 clearfix">
+                        <figure class="mb-2 float-md-right ml-md-3">
+                          <a href="">
+                            <img src="https://placehold.it/240x135" srcset="https://placehold.it/240x135 240w" sizes="(max-width: 240px) 100vw, 240px" alt="" />
+                          </a>
+                        </figure>
+                        <h3 class="h3" id="midd-event-2-header">
+                          <a href="#" title=" on June 24, 2017 &middot; 11:45 AM"> Museum of Art Lecture Series </a>
+                        </h3>
+                        <time datetime="" class="d-block font-medium">11:45 AM</time>
+                        <p class="f3 my-3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores illum quas, voluptat... </p>
+                        <p class="f3 font-medium"> McCone Irvine Auditorium </p>
+                        <small class="f2 text-gray">Open to the Public</small>
+                      </div>
+                    </article>
+                  </li>
+                  <li class="list__item">
+                    <article class="d-flex" aria-labelledby="midd-event-3-header">
+                      <time datetime="" class="text-center mt-1 lh-solid">
+                        <span class="f3 d-block">Jun</span>
+                        <span class="f7 d-block">24</span>
+                      </time>
+                      <div class="pl-3 clearfix">
+                        <figure class="mb-2 float-md-right ml-md-3">
+                          <a href="">
+                            <img src="https://placehold.it/240x135" srcset="https://placehold.it/240x135 240w" sizes="(max-width: 240px) 100vw, 240px" alt="" />
+                          </a>
+                        </figure>
+                        <h3 class="h3" id="midd-event-3-header">
+                          <a href="#" title=" on June 24, 2017 &middot; 11:45 AM"> Museum of Art Lecture Series </a>
+                        </h3>
+                        <time datetime="" class="d-block font-medium">11:45 AM</time>
+                        <p class="f3 my-3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores illum quas, voluptat... </p>
+                        <p class="f3 font-medium"> McCone Irvine Auditorium </p>
+                        <small class="f2 text-gray">Open to the Public</small>
+                      </div>
+                    </article>
+                  </li>
+                </ul>
+              </section>
+              <section class="section">
+                <h2 class="section__title"> Sunday, May 23 </h2>
+                <ul class="list list--dividers list--md">
+                  <li class="list__item">
+                    <article class="d-flex" aria-labelledby="midd-event-0-header">
+                      <time datetime="" class="text-center mt-1 lh-solid">
+                        <span class="f3 d-block">Jun</span>
+                        <span class="f7 d-block">24</span>
+                      </time>
+                      <div class="pl-3 clearfix">
+                        <figure class="mb-2 float-md-right ml-md-3">
+                          <a href="">
+                            <img src="https://placehold.it/240x135" srcset="https://placehold.it/240x135 240w" sizes="(max-width: 240px) 100vw, 240px" alt="" />
+                          </a>
+                        </figure>
+                        <h3 class="h3" id="midd-event-0-header">
+                          <a href="#" title=" on June 24, 2017 &middot; 11:45 AM"> Museum of Art Lecture Series </a>
+                        </h3>
+                        <time datetime="" class="d-block font-medium">11:45 AM</time>
+                        <p class="f3 my-3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores illum quas, voluptat... </p>
+                        <p class="f3 font-medium"> McCone Irvine Auditorium </p>
+                        <small class="f2 text-gray">Open to the Public</small>
+                      </div>
+                    </article>
+                  </li>
+                  <li class="list__item">
+                    <article class="d-flex" aria-labelledby="midd-event-1-header">
+                      <time datetime="" class="text-center mt-1 lh-solid">
+                        <span class="f3 d-block">Jun</span>
+                        <span class="f7 d-block">24</span>
+                      </time>
+                      <div class="pl-3 clearfix">
+                        <figure class="mb-2 float-md-right ml-md-3">
+                          <a href="">
+                            <img src="https://placehold.it/240x135" srcset="https://placehold.it/240x135 240w" sizes="(max-width: 240px) 100vw, 240px" alt="" />
+                          </a>
+                        </figure>
+                        <h3 class="h3" id="midd-event-1-header">
+                          <a href="#" title=" on June 24, 2017 &middot; 11:45 AM"> Museum of Art Lecture Series </a>
+                        </h3>
+                        <time datetime="" class="d-block font-medium">11:45 AM</time>
+                        <p class="f3 my-3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores illum quas, voluptat... </p>
+                        <p class="f3 font-medium"> McCone Irvine Auditorium </p>
+                        <small class="f2 text-gray">Open to the Public</small>
+                      </div>
+                    </article>
+                  </li>
+                  <li class="list__item">
+                    <article class="d-flex" aria-labelledby="midd-event-2-header">
+                      <time datetime="" class="text-center mt-1 lh-solid">
+                        <span class="f3 d-block">Jun</span>
+                        <span class="f7 d-block">24</span>
+                      </time>
+                      <div class="pl-3 clearfix">
+                        <figure class="mb-2 float-md-right ml-md-3">
+                          <a href="">
+                            <img src="https://placehold.it/240x135" srcset="https://placehold.it/240x135 240w" sizes="(max-width: 240px) 100vw, 240px" alt="" />
+                          </a>
+                        </figure>
+                        <h3 class="h3" id="midd-event-2-header">
+                          <a href="#" title=" on June 24, 2017 &middot; 11:45 AM"> Museum of Art Lecture Series </a>
+                        </h3>
+                        <time datetime="" class="d-block font-medium">11:45 AM</time>
+                        <p class="f3 my-3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores illum quas, voluptat... </p>
+                        <p class="f3 font-medium"> McCone Irvine Auditorium </p>
+                        <small class="f2 text-gray">Open to the Public</small>
+                      </div>
+                    </article>
+                  </li>
+                  <li class="list__item">
+                    <article class="d-flex" aria-labelledby="midd-event-3-header">
+                      <time datetime="" class="text-center mt-1 lh-solid">
+                        <span class="f3 d-block">Jun</span>
+                        <span class="f7 d-block">24</span>
+                      </time>
+                      <div class="pl-3 clearfix">
+                        <figure class="mb-2 float-md-right ml-md-3">
+                          <a href="">
+                            <img src="https://placehold.it/240x135" srcset="https://placehold.it/240x135 240w" sizes="(max-width: 240px) 100vw, 240px" alt="" />
+                          </a>
+                        </figure>
+                        <h3 class="h3" id="midd-event-3-header">
+                          <a href="#" title=" on June 24, 2017 &middot; 11:45 AM"> Museum of Art Lecture Series </a>
+                        </h3>
+                        <time datetime="" class="d-block font-medium">11:45 AM</time>
+                        <p class="f3 my-3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores illum quas, voluptat... </p>
+                        <p class="f3 font-medium"> McCone Irvine Auditorium </p>
+                        <small class="f2 text-gray">Open to the Public</small>
+                      </div>
+                    </article>
+                  </li>
+                </ul>
               </section>
               <nav class="pagination">
                 <ul class="pagination__list">
@@ -517,16 +665,6 @@
                   </li>
                 </ul>
               </nav>
-              <div data-move-at="(min-width:64em)" data-move-to=".js-sidebar">
-                <nav class="page-nav bg-gray-lighter px-3 mb-7">
-                  <ul class="page-nav__list">
-                    <li class="page-nav__item"><a href="#" class="page-nav__link">Plan your event</a></li>
-                    <li class="page-nav__item"><a href="#" class="page-nav__link">Commencement</a></li>
-                    <li class="page-nav__item"><a href="#" class="page-nav__link">Interactive Campus Map</a></li>
-                    <li class="page-nav__item"><a href="#" class="page-nav__link">Printable Campus Map</a></li>
-                  </ul>
-                </nav>
-              </div>
             </div>
           </div>
         </div>
