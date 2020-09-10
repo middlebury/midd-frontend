@@ -42,7 +42,7 @@ class MenuSpy {
 
   // start observing each anchor link target to watch
   init() {
-    const options = {
+    const options: IntersectionObserverInit = {
       root: null,
       rootMargin: '0% 0% -50% 0%', // center of viewport
       threshold: [0, 1]

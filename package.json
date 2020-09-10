@@ -37,6 +37,7 @@
     "@types/lodash": "^4.14.161",
     "@types/lozad": "^1.9.0",
     "@types/micromodal": "^0.3.2",
+    "@types/pikaday": "^1.7.4",
     "@types/swiper": "^5.4.0",
     "autoprefixer": "^9.8.4",
     "babel-eslint": "^10.1.0",

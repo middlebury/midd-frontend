@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "module": "ES2015",
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "target": "es3",
     "jsx": "react",
     "jsxFactory": "h",
