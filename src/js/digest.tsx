@@ -60,7 +60,7 @@ function addHeadingAnchors(): HTMLElement[] | null {
 
   headings.forEach((heading) => {
     // Replace nbsps in heading id caused by d8 typogrify module.
-    // These nonbreaking spaces are intended to prevent tyographic widows.
+    // These nonbreaking spaces are intended to prevent typographic widows.
     let id = heading.id
       // replace spaces e.g. nbsp
       .replace(/\s/g, '-')

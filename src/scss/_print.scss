@@ -34,7 +34,7 @@
     @include print-hide;
   }
 
-  // hacks: force styles mostly as-is for print layout though we want them to unnapply on small non-print screens.
+  // hacks: force styles mostly as-is for print layout though we want them to unapply on small non-print screens.
   // Should revert this back to use some sort of `roster` specific styles and not utils.
   .roster {
     .media-object {
