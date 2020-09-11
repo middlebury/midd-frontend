@@ -71,7 +71,7 @@ if (THEME_DIR !== '') {
   paths.images.dest = THEME_DIR + '/images/';
 }
 
-const onError = function(err) {
+const onError = function (err) {
   notify.onError({
     title: 'Gulp error in ' + err.plugin,
     message: err.toString()
@@ -140,7 +140,6 @@ const styles = () => {
     .pipe(gulp.dest(paths.styles.dest));
 };
 
-
 const scripts = () =>
   gulp
     .src(paths.scripts.src)
@@ -163,7 +162,7 @@ const html = () =>
       })
     )
     .pipe(
-      data(function() {
+      data(function () {
         const ymlData = yaml.safeLoad(
           fs.readFileSync('./src/data/data.yml', 'utf8')
         );
@@ -310,7 +309,7 @@ const minifySvgs = (src) =>
   gulp
     .src(src)
     .pipe(
-      dom(function() {
+      dom(function () {
         const svg = this.querySelector('svg');
         svg.setAttribute('fill-rule', 'evenodd');
         return this.querySelector('body').innerHTML;
