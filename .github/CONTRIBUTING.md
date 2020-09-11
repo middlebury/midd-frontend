@@ -4,7 +4,7 @@ TODO: add TOC here
 
 ## Prior Reading
 
-There are various tools and libraries to be somewhat familiar with prior to working with this codebase. It's not required to read 100% of each of their docs but if you at least begin to skim or find "Intro to x" articles online for given items below, it would be helpful as you browse this codebase.
+There are various tools and libraries to be somewhat familiar with prior to working with this codebase. It's not required to read 100% of each of their docs but if you at least begin to skim or find "Intro to x" articles online, it may be helpful.
 
 ### CSS
 
@@ -16,7 +16,7 @@ There are various tools and libraries to be somewhat familiar with prior to work
 ### Javascript
 
 - [TypeScript](https://www.typescriptlang.org/) - Codebase previously used [Babel](https://babeljs.io/) but was moved to TypeScript since it 'includes the kitchen sink' in terms of future JS features
-- [Preact](https://preactjs.com/) - Used to create javascript components which render as a whole and do not rely too much on existing elements in the view. See `./src/js/components/audio.tsx` for an example of one.
+- [Preact](https://preactjs.com/) - Used to create javascript components which render as a whole and do not rely too much on existing elements in the view. See `./src/js/components/audio.tsx` for an example.
 
 ### Build Tools
 
@@ -65,7 +65,7 @@ js | JavaScript/TypeScript files. Root contains mostly custom JavaScript widgets
 js/components | [Preact](https://preactjs.com/) components like the custom audio player
 js/utils | Small reusable utilities used throughout the JS widgets
 scss| Sass/CSS files. Root contains some configuration files and `main.scss` to be the root file which imports all partial files. Also contains `pardot-forms.scss` which is compiled as a separate stylesheet to be uploaded to Pardot.
-scss/components | Reusable [BEM] components, small components like buttons, or component styles tied to a full Drupal Paragraph.  
+scss/components | Various components like buttons, accordions, or styles tied to a full Drupal Paragraph component.
 scss/mixins | [SCSS mixins](https://sass-lang.com/documentation/at-rules/mixin)
 scss/scope | Scope styles are typically when you can only apply 1 wrapper class to an element and intend to select elements within that wrapper. Example: `.typography` class wraps WYSIWYG content because the elements rendered as output do not have unique classes.
 scss/utils | Utility classes like `clearfix` or `float-right`. Most of these classes have 1 CSS declaration. Inspired by [Bootstrap utilities](https://getbootstrap.com/docs/4.5/utilities) and [Tailwindcss](https://tailwindcss.com/) approaches for utilities.
@@ -137,42 +137,32 @@ command|description
 `now-build` | Runs on [Vercel](http://vercel.com/) platform to build _and_ move the output directory
 `test` | Root test script. Later would test more at once like unit tests if they were present.
 `test:bundlesize` | [bundlesize](https://github.com/siddharthkp/bundlesize) test to ensure built files don't exceed a file size
-`lint` |  Root lint script to run others
+`lint` |  Root lint script to run others (previously ran eslint as well)
 `lint:styles` | Runs Stylelint to lint SCSS files
 `format` | Runs Prettier on supported file types like `ts`, `scss`, and `twig`
-
-## Build tools and config
-
-TODO:
-
-- gulp
-- Browserlist / browser compat
 
 ## Code style
 
 - Twig, TypeScript, and SCSS is formatted using [Prettier](https://prettier.io/)
-  - Prettier does not support formatting Twig by default so [this plugin is used to handle that](https://github.com/trivago/prettier-plugin-twig-melody)
-- Refer to `.prettierrc` for settings though it is configured with mainly defaults.
+  - Prettier does not support formatting Twig by default so [this plugin is used to handle that](https://github.com/trivago/prettier-plugin-twig-melody). It's already configured and should work once you install npm packages.
+- See `.prettierrc` for settings
 
 - [Stylelint](https://stylelint.io/) is used for some basic linting on SCSS files.
 
-  - Linting warnings and errors will display in your console when running `npm run dev` or `npm run build`
+  - Linting warnings and errors will display in your terminal when running `npm run dev` or `npm run build`
   - Check your code editor for stylelint extensions or plugins if you want warnings to show in the files directly
 
 - All files should be [kebab case](https://en.wiktionary.org/wiki/kebab_case) (lowercase, hyphenated).
 
 ## CSS/Sass
 
-TODO: explain dir structure
-
-TODO: Postcss
-BEM naming
+CSS is written using [Sass](https://sass-lang.com/)
 
 ## JavaScript/TypeScript
 
 JavaScript in this project is written using TypeScript for a few core reasons.
 
-- Strong type safety and self documenting nature of types
+- Strong type safety and self documenting nature of types for arguments
 - Allows for using new JavaScript features and compiling to a backwards compatible version of JS
 - Developer experience improvements like autocompletions and helps you catch errors before running the JS
 
@@ -312,4 +302,10 @@ You can now use your new icon in templates.
 } %}
 ```
 
-> Use the Twig partial so some mandatory classes and attributes are set already.
+> Use the Twig partial so mandatory classes and attributes are set already.
+
+## Supported Browsers
+
+- Supported browsers are defined in `.browserlistrc` in the root of the repo. This config is checked by other tools using [browserslist](https://github.com/browserslist/browserslist)
+- PostCSS will check this browser list to ensure it adds needed vendor prefixes when running autoprefixer.
+- Previously, [@babel/preset-env](https://babeljs.io/docs/en/babel-preset-env) used this but JS was converted to TypeScript
