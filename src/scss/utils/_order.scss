@@ -1,8 +1,6 @@
-// @for $i from 1 through 8 {
-//   .order-#{$i} {
-//     order: $i;
-//   }
-// }
+////
+/// Flexbox order utilities to change element orders at breakpoints
+////
 
 @each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {

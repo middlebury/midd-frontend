@@ -1,3 +1,7 @@
+////
+/// Float utilities. Use with .clearfix.
+////
+
 @each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
     .float#{$variant}-right {

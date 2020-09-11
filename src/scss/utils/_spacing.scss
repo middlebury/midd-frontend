@@ -1,4 +1,7 @@
-// https://github.com/twbs/bootstrap/blob/v4.0.0-beta/scss/utilities/_spacing.scss
+////
+/// Margin and padding spacing utilities.
+/// Based on https://github.com/twbs/bootstrap/blob/v4.0.0-beta/scss/utilities/_spacing.scss
+////
 
 @each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
@@ -33,20 +36,5 @@
     .ml-auto {
       margin-left: auto;
     }
-
-    // Some special margin utils
-    // .m#{$variant}-auto  { margin:        auto; }
-    // .mt#{$variant}-auto { margin-top:    auto; }
-    // .mr#{$variant}-auto { margin-right:  auto; }
-    // .mb#{$variant}-auto { margin-bottom: auto; }
-    // .ml#{$variant}-auto { margin-left:   auto; }
-    // .mx#{$variant}-auto {
-    //   margin-right: auto;
-    //   margin-left:  auto;
-    // }
-    // .my#{$variant}-auto {
-    //   margin-top:    auto;
-    //   margin-bottom: auto;
-    // }
   }
 }

@@ -1,5 +1,6 @@
-// from bootstrap v4
-// https://github.com/twbs/bootstrap/blob/v4.0.0-alpha.6/scss/utilities/_display.scss
+////
+/// Display property utilities
+////
 
 @each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
@@ -19,8 +20,6 @@
       display: block;
     }
 
-    // .d#{$variant}-table        { display: table ; }
-    // .d#{$variant}-table-cell   { display: table-cell ; }
     .d#{$variant}-flex {
       display: flex;
     }

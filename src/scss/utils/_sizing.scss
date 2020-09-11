@@ -1,3 +1,7 @@
+////
+/// Sizing utilities like width and height
+////
+
 .w-md-40 {
   @include breakpoint(md) {
     width: 40%;
