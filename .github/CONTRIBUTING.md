@@ -186,16 +186,16 @@ TODO: build tools used
 
 ## Icons
 
-Our icon system uses SVG symbols to create reusable and flexible icon.
+Our icon system uses SVG symbols to create a reusable and flexible icon set.
 
 > Read more about svg sprite vs icon font
 > https://css-tricks.com/icon-fonts-vs-svg/
 
-### How to add a new icon to the icon set
+### How to add a new icon
 
 1. Designer prepares the icon in the [Figma icons file](https://www.figma.com/file/KxnijUyvePfq1wMPYLQLqW/Icons?node-id=4%3A113)
 
-   - Icons should be on a 24x24 artboard
+   - Each icon should be on its own 24x24 artboard
 
 2. Export the icon as svg and save into `src/icons/`
 
@@ -205,7 +205,7 @@ Our icon system uses SVG symbols to create reusable and flexible icon.
    1. It cleans up some of the SVG which is not needed for an icon sprite
    2. It creates a single svg file containing all the icons
    3. It copies the generated sprite and replaces the `src/templates/partials/icons.twig` with the new contents
-4. Commit the new `icons.twig`
+4. Commit the updated `icons.twig`
 
 You can now use your new icon in templates.
 
