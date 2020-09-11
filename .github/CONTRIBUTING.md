@@ -44,6 +44,33 @@ npm install
 npm start
 ```
 
+## Directory structure
+
+- The two main folders of this repo consist of "source" (`src`) and "distribution" (`dist`) directories.
+- `src` contains the main assets which have yet to be processed and the output is the `dist` folder. 
+- `dist` is automatically created by the build tools and ignored in git.
+
+> Folders below can be found in the `src` directory.
+
+Folder|Description
+---|---
+data | .yml files for test data or responsive image sizes. This data is converted into JSON objects and passed as global variables to the twig templates. [See gulp-data configuration](https://github.com/middlebury/midd-frontend/blob/dee75534f0aaef6a9eb2f619730a2a77d411e442/gulpfile.js#L166-L184)
+icons | .svg files which are turned into an svg icon sprite
+images | Images (`.jpg`, `.png`, `.svg` mainly) like logos or assets needed for designs.
+images/demo | images meant to be used for testing designs in this repo. These images aren't deployed to the Drupal theme.
+js | JavaScript/TypeScript files. Root contains mostly custom JavaScript widgets and the main `index.ts` file which imports each widget so they can be bundled together.
+js/components | [Preact](https://preactjs.com/) components like the custom audio player
+js/utils | Small reusable utilities used throughout the JS widgets
+scss| Sass/CSS files. Root contains some configuration files and `main.scss` to be the root file which imports all partial files. Also contains `pardot-forms.scss` which is compiled as a separate stylesheet to be uploaded to Pardot.
+scss/components | Reusable [BEM] components, small components like buttons, or component styles tied to a full Drupal Paragraph.  
+scss/mixins | [SCSS mixins](https://sass-lang.com/documentation/at-rules/mixin)
+scss/scope | Scope styles are typically when you can only apply 1 wrapper class to an element and intend to select elements within that wrapper. Example: `.typography` class wraps WYSIWYG content because the elements rendered as output do not have unique classes.
+scss/utils | Utility classes like `clearfix` or `float-right`. Most of these classes have 1 CSS declaration. Inspired by [Bootstrap utilities](https://getbootstrap.com/docs/4.5/utilities) and [Tailwindcss](https://tailwindcss.com/) approaches for utilities.
+templates | Twig/HTML files. Root folder contains mainly full page layout examples for various content types and views. 
+templates/paragraphs | Components for [Drupal Paragraphs](https://www.drupal.org/project/paragraphs). There is little that tightly couples the markup to actual Paragraphs, so the markup can could be considered generic HTML/BEM components.
+templates/partials | Abstracted components like `accordion.twig` which is used in multiple paragraphs or simply files to contain other imports for re-use in the root `templates/` files. An example of this is `basic-content.twig` which includes all possible Paragraphs. Since we have a school layout and 
+
+
 ## Deploying / Git workflow
 
 `develop` branch is the default branch. This is intended to be somewhat of a staging environment before shipping code to production.
@@ -118,11 +145,16 @@ TODO:
 - gulp
 - Browserlist / browser compat
 
-## Code style and practices
+## Code style 
 
-- TODO: prettier formatting + twig plugin
-- stylelint
-- eslint/xo: TODO: fix for TS conversion
+- Twig, TypeScript, and SCSS is formatted using [Prettier](https://prettier.io/)
+  - Prettier does not support formatting Twig by default so [this plugin is used to handle that](https://github.com/trivago/prettier-plugin-twig-melody)
+- Refer to `.prettierrc` for settings though it is configured with mainly defaults.
+
+- [Stylelint](https://stylelint.io/) is used for some basic linting on SCSS files. 
+  - Linting warnings and errors will display in your console when running `npm run dev` or `npm run build`
+  - Check your code editor for stylelint extensions or plugins if you want warnings to show in the files directly
+
 
 ## HTML/Twig
 
@@ -150,11 +182,22 @@ TODO: widget approach (using classes). Make note that conversionn to a function 
 
 TODO: build tools used
 
-## Testing
-
-TODO: percy
-
 ## Icons
+
+Our icon system uses SVG symbols to create reusable and flexible icon.
+
+> Read more about the pros and cons for svg sprite vs icon font 
+https://css-tricks.com/icon-fonts-vs-svg/
+
+### How to add a new icon to the icon set
+
+1. Designer prepares the icon in the [Figma icons file](https://www.figma.com/file/KxnijUyvePfq1wMPYLQLqW/Icons?node-id=4%3A113)
+  - Icons should be on a 24x24 artboard
+2. Export the icon as svg and save into `src/icons/`
+  - Do not save the icon filename as `icon-<name>.svg`. The build tool will prefix the name with `icon-` for you.
+3. Run `npm run build:icons`
+  - This cleans up most of the SVG 
+
 
 ## Dev experience
 
