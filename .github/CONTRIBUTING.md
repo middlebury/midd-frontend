@@ -155,15 +155,11 @@ TODO:
 - Refer to `.prettierrc` for settings though it is configured with mainly defaults.
 
 - [Stylelint](https://stylelint.io/) is used for some basic linting on SCSS files.
+
   - Linting warnings and errors will display in your console when running `npm run dev` or `npm run build`
   - Check your code editor for stylelint extensions or plugins if you want warnings to show in the files directly
 
-## HTML/Twig
-
-TODO: Explain dir structure
-
-- TODO: BEM
-- data attribute usage vs js- hooks
+- All files should be [kebab case](https://en.wiktionary.org/wiki/kebab_case) (lowercase, hyphenated).
 
 ## CSS/Sass
 
@@ -172,17 +168,107 @@ TODO: explain dir structure
 TODO: Postcss
 BEM naming
 
-## JavaScript
+## JavaScript/TypeScript
 
-TODO: show js/ dir structure and explain
+JavaScript in this project is written using TypeScript for a few core reasons.
 
-- All JavaScript in this repo is using [TypeScript] so types can be defined to improve self documentation
+- Strong type safety and self documenting nature of types
+- Allows for using new JavaScript features and compiling to a backwards compatible version of JS
+- Developer experience improvements like autocompletions and helps you catch errors before running the JS
 
-TODO: preact usage
+Read more at [typescriptlang.org](https://www.typescriptlang.org/)
 
-TODO: widget approach (using classes). Make note that conversion to a function would be better
+### Applying JS to Twig/HTML
 
-TODO: build tools used
+If you have JavaScript that needs to hook onto an element in the DOM, use a CSS class prefixed with `js-`.
+
+- This makes it clear that the HTML element has related JavaScript and the class should not be removed unless that JS is modified/removed as well.
+- Don't use CSS styling to target this class e.g. `.js-my-widget { color: red; }`
+
+If you have settings that need to be passed to the JS widget, you can use data attributes which would then be read by the JS.
+
+Try to prefix each data attribute with your widget name to prevent conflicts with other possible widgets used in or around the same HTML.
+
+```html
+<div class="js-drawer" data-drawer-speed="500">...</div>
+```
+
+> In some widgets, there is no `js-` class applied and only data attributes are used. This could to be standardized to just data attributes.
+
+### Preact components
+
+[Preact](https://preactjs.com/) is used to render a few widgets which create many elements on the page at once without relying on existing markup it would need to mix with.
+
+- Custom Audio player `/src/js/components/audio.tsx`
+- Custom horizontal percent bar chart `src/js/components/percent-bar-chart.tsx`
+- Table of contents menu `src/js/digest.tsx` - not stored in components as the bulk of the widget does more than render the navigation
+
+### Widget structure
+
+Most widgets follow the below structure.
+
+```js
+class MyWidget {
+  /**
+   * Widgets follow this arguments structure for initializing.
+   *
+   * @param {Element} element - The root element to bind the widget to.
+   * @param {Object} config - Configuration options for the widget.
+   */
+  constructor(element, config) {
+    this.elem = element;
+
+    // use config if needed here
+
+    // init the widget
+    this.init();
+  }
+
+  init() {
+    // initialize the component however you need
+    // e.g. add an enabled class to the root element
+
+    // then add lsiteners
+    this.addListeners();
+  }
+
+  addListeners() {
+    // add whatever event listeners you need here
+  }
+
+  // add other methods
+
+  // if the widget should be destroyable, add a method
+  destroy() {
+    // clean up
+    // remove listeners
+    // etc
+  }
+}
+
+// add the widget to all classes on the page
+const widgets = document.querySelectorAll('.js-my-widget');
+// NodeList.forEach is polyfilled for IE
+widgets.forEach((element) => new MyWidget(element));
+
+export default MyWidget;
+```
+
+This lets you initalize all widgets already on the page or create new widgets in other widgets
+
+```js
+import MyWidget from './my-widget';
+
+function setupThing(elem) {
+  const config = {
+    speed: 500
+  };
+
+  const widget = new MyWidget(elem, config);
+
+  widget.runMethod();
+}
+```
 
 ## Icons
 
@@ -199,13 +285,24 @@ Our icon system uses SVG symbols to create a reusable and flexible icon set.
 
 2. Export the icon as svg and save into `src/icons/`
 
-   - Do not save the icon filename as `icon-*.svg`. The build tool will prefix the name with `icon-` for you. This is since icons on the page get `id`s, a generic name could conflict with other elements on the page.
+   - Do not save the icon filename as `icon-*.svg`. The build tool will prefix the name with `icon-` for you. This is because icons on the page get `id`s, a generic name could conflict with other element `id`s on the page.
 
 3. Run `npm run build:icons`
    1. It cleans up some of the SVG which is not needed for an icon sprite
    2. It creates a single svg file containing all the icons
    3. It copies the generated sprite and replaces the `src/templates/partials/icons.twig` with the new contents
 4. Commit the updated `icons.twig`
+
+The `icons.twig` must be included after the opening `body` tag and hidden with CSS.
+
+```twig
+<body>
+  <!-- style attribute so there is no wait an external stylesheet to load -->
+  <div style="display:none">
+    {% include 'partials/icons.twig' %}
+  </div>...
+</body>
+```
 
 You can now use your new icon in templates.
 
@@ -216,24 +313,3 @@ You can now use your new icon in templates.
 ```
 
 > Use the Twig partial so some mandatory classes and attributes are set already.
-
-## Dev experience
-
-- vscode extensions
-- global npm packages
-- node version management
-
-## Deployment
-
-- TODO: previews on vercel
-
-## Future plans
-
-- living styleguide
-- integration testing
-
-## Other tools
-
-- caniuse
-- devdocs.io
-- bundlephobia
