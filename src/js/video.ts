@@ -1,5 +1,5 @@
 import { on, $, $$ } from './utils/dom';
-import decodeHtml from './utils/decodeHtml';
+import decodeHtml from './utils/decode-html';
 
 /**
  * Swaps the cotents of an element with an iframe (retrieved from data attribute) on link click.
