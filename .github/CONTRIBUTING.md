@@ -26,7 +26,7 @@ There are various tools and libraries to be somewhat familiar with prior to work
 
 ## Required software
 
-[NodejS](https://nodejs.org/en/download/) (at least version 12 or higher) must be installed on your computer or development server to run the various build tools and install packages.
+[NodeJS](https://nodejs.org/en/download/) (at least version 12 or higher) must be installed on your computer or development server to run the various build tools and to install dependencies.
 
 You can use [n](https://www.npmjs.com/package/n) (mac only) or [nvm](https://github.com/nvm-sh/nvm) package to manage Node versions on your machine.
 
@@ -58,7 +58,7 @@ npm start
 Folder|Description
 ---|---
 data | .yml files for test data or responsive image sizes. This data is converted into JSON objects and passed as global variables to the twig templates. [See gulp-data configuration](https://github.com/middlebury/midd-frontend/blob/dee75534f0aaef6a9eb2f619730a2a77d411e442/gulpfile.js#L166-L184)
-icons | .svg files which are turned into an svg icon sprite
+icons | .svg files which are turned into an svg icon sprite. [See icons](#icons)
 images | Images (`.jpg`, `.png`, `.svg` mainly) like logos or assets needed for designs.
 images/demo | images meant to be used for testing designs in this repo. These images aren't deployed to the Drupal theme.
 js | JavaScript/TypeScript files. Root contains mostly custom JavaScript widgets and the main `index.ts` file which imports each widget so they can be bundled together.
@@ -126,20 +126,20 @@ Scripts runnable with `npm run <script name>`.
 command|description
 ---|---
 `start` | alias for dev script
-`dev` | cleans the `dist` folder, runs initial build, starts local dev server, then watches assets
-`dev:saw` | Same as above but does not run local server
+`dev` | cleans the `dist` folder, runs initial build, starts local dev server, then watches source files for changes to then rebuild if updated
+`dev:saw` | Same as `dev` but does not run local server
 `build` | Compile all assets for production build
-`build:scripts` | Build JS. Useful for debugging JS build.
-`build:styles` | Build CSS. Useful for debugging CSS build.
+`build:scripts` | Build JS. Useful for debugging JS build process
+`build:styles` | Build CSS. Useful for debugging CSS build process
 `build:icons` | Build svg icon sprite
-`deploy` | deploy copies built assets from the build output file to a desired theme directory. 
-`deploy:gh` | if CI workflow deploy isn't functioning, you can run this to ship to master-dist branch
-`now-build` | this runs on vercel platform to simply move the output directory
-`test` | root test script. Later would test more at once like unit tests if they were present.
+`deploy` | Copies built assets from the build output file to a desired theme directory. 
+`deploy:gh` | If GitHub Actions workflow deploy isn't functioning, you can run this to build files and commit/push to `master-dist` branch
+`now-build` | Runs on [Vercel](http://vercel.com/) platform to build _and_ move the output directory
+`test` | Root test script. Later would test more at once like unit tests if they were present.
 `test:bundlesize` | [bundlesize](https://github.com/siddharthkp/bundlesize) test to ensure built files don't exceed a file size
-`lint` |  root lint script to run others
-`lint:styles` | /scss/*", // lint SCSS
-`format` | /.prettierrc --write \"src/**/*.{js,scss,twig}\"" // code style format files with Prettier
+`lint` |  Root lint script to run others
+`lint:styles` | Runs Stylelint to lint SCSS files
+`format` | Runs Prettier on supported file types like `ts`, `scss`, and `twig`
 
 ## Build tools and config
 
