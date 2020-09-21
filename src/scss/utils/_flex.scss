@@ -1,20 +1,9 @@
-/// @link https://github.com/twbs/bootstrap/blob/v4-dev/scss/utilities/_flex.scss
+////
+/// Flexbox utilities
+////
 
 @each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
-    // .flex#{$variant}-row {
-    //   flex-direction: row !important;
-    // }
-    // .flex#{$variant}-column {
-    //   flex-direction: column !important;
-    // }
-    // .flex#{$variant}-row-reverse {
-    //   flex-direction: row-reverse !important;
-    // }
-    // .flex#{$variant}-column-reverse {
-    //   flex-direction: column-reverse !important;
-    // }
-
     .flex#{$variant}-wrap {
       flex-wrap: wrap !important;
     }
@@ -26,28 +15,6 @@
     .flex#{$variant}-auto {
       flex: 1 1 auto;
     }
-
-    // .flex#{$variant}-nowrap {
-    //   flex-wrap: nowrap !important;
-    // }
-    // .flex#{$variant}-wrap-reverse {
-    //   flex-wrap: wrap-reverse !important;
-    // }
-    // .flex#{$variant}-fill {
-    //   flex: 1 1 auto !important;
-    // }
-    // .flex#{$variant}-grow-0 {
-    //   flex-grow: 0 !important;
-    // }
-    // .flex#{$variant}-grow-1 {
-    //   flex-grow: 1 !important;
-    // }
-    // .flex#{$variant}-shrink-0 {
-    //   flex-shrink: 0 !important;
-    // }
-    // .flex#{$variant}-shrink-1 {
-    //   flex-shrink: 1 !important;
-    // }
 
     .justify-content#{$variant}-start {
       justify-content: flex-start !important;
@@ -61,9 +28,6 @@
     .justify-content#{$variant}-between {
       justify-content: space-between !important;
     }
-    // .justify-content#{$variant}-around {
-    //   justify-content: space-around !important;
-    // }
 
     .align-items#{$variant}-start {
       align-items: flex-start !important;
@@ -74,49 +38,5 @@
     .align-items#{$variant}-center {
       align-items: center !important;
     }
-    // .align-items#{$variant}-baseline {
-    //   align-items: baseline !important;
-    // }
-    // .align-items#{$variant}-stretch {
-    //   align-items: stretch !important;
-    // }
-
-    // .align-content#{$variant}-start {
-    //   align-content: flex-start !important;
-    // }
-    // .align-content#{$variant}-end {
-    //   align-content: flex-end !important;
-    // }
-    // .align-content#{$variant}-center {
-    //   align-content: center !important;
-    // }
-    // .align-content#{$variant}-between {
-    //   align-content: space-between !important;
-    // }
-    // .align-content#{$variant}-around {
-    //   align-content: space-around !important;
-    // }
-    // .align-content#{$variant}-stretch {
-    //   align-content: stretch !important;
-    // }
-
-    // .align-self#{$variant}-auto {
-    //   align-self: auto !important;
-    // }
-    // .align-self#{$variant}-start {
-    //   align-self: flex-start !important;
-    // }
-    // .align-self#{$variant}-end {
-    //   align-self: flex-end !important;
-    // }
-    // .align-self#{$variant}-center {
-    //   align-self: center !important;
-    // }
-    // .align-self#{$variant}-baseline {
-    //   align-self: baseline !important;
-    // }
-    // .align-self#{$variant}-stretch {
-    //   align-self: stretch !important;
-    // }
   }
 }

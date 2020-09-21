@@ -42,7 +42,7 @@ function createUrlSelector(elem: HTMLElement) {
       return;
     }
 
-    window.history.pushState(null, '', select.value);
+    window.location.assign(select.value);
   }
 
   on(elem, 'click', handleElemClick);

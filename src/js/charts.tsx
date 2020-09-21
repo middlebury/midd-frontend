@@ -32,7 +32,7 @@ const ALLOW_CHART_TYPES = [
   'percentBar' // custom Preact component
 ];
 
-// PercentbarChart is written with Preact and not part of the chart.js libary, so
+// PercentbarChart is written with Preact and not part of the chart.js library, so
 // this is a helper function to render it to the chart div.
 // Also adds a wrapper class so we can change the position of the legend.
 function renderPercentBarChart(el: HTMLElement, config: ChartConfig) {
@@ -88,7 +88,7 @@ interface ChartConfig {
    */
   max?: number;
 
-  /** label to display underr the x axis on non pie/doughnut/percent charts */
+  /** label to display under the x axis on non pie/doughnut/percent charts */
   xLabel?: string;
 
   /** label to display to the left of the y axis on non pie/doughnut/percent charts */
@@ -105,10 +105,10 @@ interface ChartConfig {
 }
 
 /**
- * Custom chart initalizer for specific chart types, colors, styles, and additional custom percent bar chart.
+ * Custom chart initializer for specific chart types, colors, styles, and additional custom percent bar chart.
  *
  * Charts can be added to a page via just a div with some data attributes
- * instead of having to initalize each one with JS manually.
+ * instead of having to initialize each one with JS manually.
  *
  * Only data-chart, data-datasets, data-labels are required attributes.
  *

@@ -1,3 +1,7 @@
+////
+/// Column count utilities. Useful for basic masonry layouts.
+////
+
 .col-count-md-2 {
   @include breakpoint(md) {
     column-count: 2;

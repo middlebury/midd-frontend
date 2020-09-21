@@ -1,3 +1,7 @@
+////
+/// Border utilities
+////
+
 @each $breakpoint, $variant in $responsive-variants {
   @include breakpoint($breakpoint) {
     @each $prop, $abbrev in (bottom: b, right: r, left: l, top: t) {
