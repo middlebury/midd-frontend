@@ -19,6 +19,7 @@
     </h3>
     <time datetime="" class="d-block font-medium">11:45 AM</time>
     <p class="f3 my-3">
+      {% set max_length = (i * 30) + 20 %}
       {% set text =
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
       asperiores illum quas, voluptatum atque voluptas, animi ipsam magni sit
@@ -26,8 +27,8 @@
       nisi.'
       %}
       {# naive example of truncate event text to 100 #}
-      {{ (text|striptags|length) > 100
-        ? (text|striptags|slice(0, 100)) ~ '...'
+      {{ (text|striptags|length) > max_length
+        ? (text|striptags|slice(0, max_length)) ~ '...'
         : text|striptags }}
     </p>
     <p class="f3 font-medium">
