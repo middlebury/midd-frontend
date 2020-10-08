@@ -3,7 +3,7 @@
     <span class="f3 d-block">Jun</span>
     <span class="f7 d-block">24</span>
   </time>
-  <div class="pl-3 clearfix">
+  <div class="w-100 pl-3 clearfix">
     <figure class="mb-2 float-md-right ml-md-3">
       <a href="">
         {% include 'partials/img.twig' with {
@@ -19,6 +19,7 @@
     </h3>
     <time datetime="" class="d-block font-medium">11:45 AM</time>
     <p class="f3 my-3">
+      {% set max_length = (i * 30) + 20 %}
       {% set text =
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
       asperiores illum quas, voluptatum atque voluptas, animi ipsam magni sit
@@ -26,8 +27,8 @@
       nisi.'
       %}
       {# naive example of truncate event text to 100 #}
-      {{ (text|striptags|length) > 100
-        ? (text|striptags|slice(0, 100)) ~ '...'
+      {{ (text|striptags|length) > max_length
+        ? (text|striptags|slice(0, max_length)) ~ '...'
         : text|striptags }}
     </p>
     <p class="f3 font-medium">
