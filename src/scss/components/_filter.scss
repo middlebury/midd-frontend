@@ -48,6 +48,10 @@
   }
 }
 
+.filter__children {
+  margin-left: $spacing-3;
+}
+
 .filter__button {
   display: flex;
   justify-content: space-between;

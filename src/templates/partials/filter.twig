@@ -34,6 +34,21 @@
             {{ item.text }}
           </label>
         </div>
+        {% if item.children %}
+          <div class="filter__children">
+          {% for child in item.children %}
+            <div class="checkbox checkbox--filter">
+              <input type="checkbox"
+                class="checkbox__input"
+                id="checkbox-item-{{ id }}-child-{{ loop.index }}" />
+              <label for="checkbox-item-{{ id }}-child-{{ loop.index }}"
+                class="checkbox__label">
+                {{ child.text }}
+              </label>
+            </div>
+          {% endfor %}
+          </div>
+        {% endif %}
       {% endfor %}
     {% endif %}
   </div>
