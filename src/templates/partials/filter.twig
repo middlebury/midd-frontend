@@ -30,18 +30,22 @@
             class="checkbox__input"
             id="checkbox-item-{{ id }}-{{ loop.index }}" />
           <label for="checkbox-item-{{ id }}-{{ loop.index }}"
+            id="checkbox-label-{{ id }}-{{ loop.index }}"
             class="checkbox__label">
             {{ item.text }}
           </label>
         </div>
         {% if item.children %}
+          {% set parent_index = loop.index %}
           <div class="filter__children">
           {% for child in item.children %}
             <div class="checkbox checkbox--filter">
               <input type="checkbox"
                 class="checkbox__input"
-                id="checkbox-item-{{ id }}-child-{{ loop.index }}" />
-              <label for="checkbox-item-{{ id }}-child-{{ loop.index }}"
+                id="checkbox-item-{{ id }}-{{parent_index}}-child-{{ loop.index }}"
+                aria-labelledby="checkbox-label-{{ id }}-{{parent_index}}-child-{{ loop.index }} checkbox-label-{{ id }}-{{parent_index}}" />
+              <label for="checkbox-item-{{ id }}-{{parent_index}}--child-{{ loop.index }}"
+                id="checkbox-label-{{ id }}-{{parent_index}}-child-{{ loop.index }}"
                 class="checkbox__label">
                 {{ child.text }}
               </label>
