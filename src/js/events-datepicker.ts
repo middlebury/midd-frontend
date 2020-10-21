@@ -55,7 +55,7 @@ if (typeof drupalSettings !== 'undefined') {
 }
 
 const urlParts = eventsPath.split('/');
-const dateStr = urlParts[2];
+const dateStr = urlParts[1];
 
 let defaultDate = null;
 
@@ -81,7 +81,7 @@ if (datePicker) {
     onSelect(date: Date) {
       const dateStr = dateToStr(date);
 
-      window.location.href = eventsBase + 'events/all/' + dateStr;
+      window.location.href = eventsBase + '/' + dateStr;
     }
   });
 
