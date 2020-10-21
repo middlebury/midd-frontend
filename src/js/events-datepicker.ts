@@ -39,7 +39,7 @@ const dateToStr = (date: Date) => {
 
   const year = date.getFullYear();
 
-  const dateStr = `${year}-${padDay}-${paddedMonth}`;
+  const dateStr = `${year}-${paddedMonth}-${padDay}`;
 
   return dateStr;
 };
