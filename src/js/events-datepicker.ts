@@ -81,7 +81,7 @@ if (datePicker) {
     onSelect(date: Date) {
       const dateStr = dateToStr(date);
 
-      window.location.href = eventsBase + '/' + dateStr;
+      window.location.href = eventsBase + 'events/' + dateStr;
     }
   });
 
