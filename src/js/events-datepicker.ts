@@ -44,18 +44,8 @@ const dateToStr = (date: Date) => {
   return dateStr;
 };
 
-let eventsBase = '/';
-let eventsPath = '/';
-
-const { drupalSettings } = window;
-
-if (typeof drupalSettings !== 'undefined') {
-  eventsBase = drupalSettings.path.baseUrl;
-  eventsPath = drupalSettings.path.currentPath;
-}
-
-const urlParts = eventsPath.split('/');
-const dateStr = urlParts[1];
+let searchParams = new URLSearchParams(window.location.search);
+const dateStr = searchParams.get('start-date');
 
 let defaultDate = null;
 
@@ -79,9 +69,8 @@ if (datePicker) {
     defaultDate,
     setDefaultDate: Boolean(defaultDate),
     onSelect(date: Date) {
-      const dateStr = dateToStr(date);
-
-      window.location.href = eventsBase + 'events/' + dateStr;
+      searchParams.set('start-date', dateToStr(date));
+      window.location.search = searchParams.toString();
     }
   });
 
