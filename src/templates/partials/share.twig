@@ -17,4 +17,11 @@
       Email
     </a>
   </li>
+  {% if additional %}
+    {% for item in additional %}
+      <li class="mr-2">
+        {{ item }}
+      </li>
+    {% endfor %}
+  {% endif %}
 </ul>

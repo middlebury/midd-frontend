@@ -82,7 +82,12 @@
   </dl>
 
     <div class="mb-7 mb-lg-9">
-      {% include 'partials/share.twig' %}
+      {% set addtocal %}
+        {% include 'partials/event-add-to-cal.twig' %}
+      {% endset %}
+      {% include 'partials/share.twig' with {
+        'additional': [addtocal],
+      } %}
     </div>
 
     <section class="section" aria-labelledby="midd-profile-section-interests-label">
