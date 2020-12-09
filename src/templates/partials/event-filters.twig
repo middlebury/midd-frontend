@@ -35,19 +35,85 @@
       title: 'Categories',
       items: [
         {
-          text: 'Photograph'
+          text: 'Arts Calendar'
         },
         {
-          text: 'Short Story'
+          text: 'Athletics Calendar'
         },
         {
-          text: 'Poem'
+          text: 'Campus Calendar'
         },
         {
-          text: 'Audio'
+          text: 'Featured Events Calendar'
         },
         {
-          text: 'Video'
+          text: 'MIIS Main Calendar'
+        },
+        {
+          text: 'Student Calendar'
+        }
+      ]
+    } %}
+
+    {% include 'partials/filter.twig' with {
+      title: 'Organizations',
+      items: [
+        {
+          text: 'Academic Departments',
+          children: [
+            {
+              text: 'American Studies',
+            },
+            {
+              text: 'Anthropology',
+            },
+            {
+              text: 'Axinn Center for the Humanities',
+            },
+            {
+              text: 'Biology',
+            },
+            {
+              text: 'Internatioanl Programs & Off Campus Study',
+            },
+            {
+              text: 'Music',
+            },
+          ]
+        },
+        {
+          text: 'Administrative Offices',
+          children: [
+            {
+              text: 'Academic Affairs',
+            },
+            {
+              text: 'Admissions',
+            },
+            {
+              text: 'Charles P. Scott Center for Spiritual and Religious Life',
+            },
+            {
+              text: 'Museum of Art',
+            },
+          ]
+        },
+        {
+          text: 'Student Organizations',
+          children: [
+            {
+              text: 'Amnesty International',
+            },
+            {
+              text: 'Black Student Union',
+            },
+            {
+              text: 'Middlebury College Tea Enthusiast Association',
+            },
+            {
+              text: 'Quidditch',
+            },
+          ]
         }
       ]
     } %}
