@@ -48,6 +48,16 @@
   }
 }
 
+.filter__children {
+  margin-left: $spacing-5;
+  border-left: 1px solid $color-primary;
+
+  /* Decrease the left padding to account for our extra indent and border. */
+  .checkbox--filter .checkbox__label {
+    padding-left: $spacing-2;
+  }
+}
+
 .filter__button {
   display: flex;
   justify-content: space-between;

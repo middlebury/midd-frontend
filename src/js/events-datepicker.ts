@@ -39,23 +39,13 @@ const dateToStr = (date: Date) => {
 
   const year = date.getFullYear();
 
-  const dateStr = `${year}-${padDay}-${paddedMonth}`;
+  const dateStr = `${year}-${paddedMonth}-${padDay}`;
 
   return dateStr;
 };
 
-let eventsBase = '/';
-let eventsPath = '/';
-
-const { drupalSettings } = window;
-
-if (typeof drupalSettings !== 'undefined') {
-  eventsBase = drupalSettings.path.baseUrl;
-  eventsPath = drupalSettings.path.currentPath;
-}
-
-const urlParts = eventsPath.split('/');
-const dateStr = urlParts[2];
+let searchParams = new URLSearchParams(window.location.search);
+const dateStr = searchParams.get('start-date');
 
 let defaultDate = null;
 
@@ -78,10 +68,26 @@ if (datePicker) {
     minDate: new Date(),
     defaultDate,
     setDefaultDate: Boolean(defaultDate),
+    format: 'YYYY-MM-DD',
+    toString(date, format) {
+        // you should do formatting based on the passed format,
+        // but we will just return 'D/M/YYYY' for simplicity
+        const day = date.getDate();
+        const month = date.getMonth() + 1;
+        const year = date.getFullYear();
+        return `${year}-${month}-${day}`;
+    },
+    parse(dateString, format) {
+        // dateString is the result of `toString` method
+        const parts = dateString.split('-');
+        const year = parseInt(parts[0], 10);
+        const month = parseInt(parts[1], 10) - 1;
+        const day = parseInt(parts[2], 10);
+        return new Date(year, month, day);
+    },
     onSelect(date: Date) {
-      const dateStr = dateToStr(date);
-
-      window.location.href = eventsBase + 'events/all/' + dateStr;
+      searchParams.set('start-date', dateToStr(date));
+      window.location.search = searchParams.toString();
     }
   });
 
