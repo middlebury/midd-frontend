@@ -1,5 +1,6 @@
 .dropdown__button.addtocal {
   @include button-size(sm);
+  display: inline-block;
 }
 
 .dropdown__list.addtocal-menu, .dropdown__list.addtocal-menu:hover {
