@@ -10,6 +10,12 @@
 
 - Node ^12.14.1
 
+To check if you already have node installed, open terminal and use the following command:
+
+```bash
+node -v
+```
+
 ## Getting started
 
 Install node modules:
