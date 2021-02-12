@@ -39,3 +39,9 @@
     }
   }
 }
+
+.office-footer__col h3 {
+  &:not(:first-child) {
+    margin-top: $spacing-4;
+  }
+}
