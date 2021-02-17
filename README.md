@@ -16,7 +16,7 @@ To check if you already have node installed, open terminal and use the following
 node -v
 ```
 
-## Getting started
+# Getting started
 
 Clone the repo to a local machine, using your preferred method. 
 
