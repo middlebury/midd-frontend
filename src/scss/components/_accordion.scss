@@ -42,11 +42,6 @@
     text-decoration: none;
     background-color: $gray-lighter;
   }
-
-  &--bold {
-    font-weight: $font-weight-bold;
-    text-transform: uppercase;
-  }
 }
 
 .accordion-item__label {
@@ -88,14 +83,20 @@
   }
 }
 
+.accordion-item__course-label {
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
 .accordion-item__sub-title {
   font-size: $typescale-1;
   font-family: $font-family-sans-serif;
   font-weight: $font-weight-medium;
   text-transform: uppercase;
-  letter-spacing: calc(#{$letter-spacing} + 0.066em);
+  letter-spacing: $letter-spacing;
   margin-bottom: $spacing-2;
-  // padding-bottom: $spacing-2;
   color: $gray;
 
   &:not(:first-child) {

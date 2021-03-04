@@ -20,8 +20,8 @@
             <span class="accordion-item__char" aria-hidden>Q</span>
             <span class="accordion-item__label" id="midd-accordion-item-label-{{id}}">{{item.title}}</span>
           {% else %}
-            <span class="accordion-item__label" id="midd-accordion-item-label-{{id}}">
-              <p class="accordion-item__link--bold">{{item.course_number}}</p>
+            <span id="midd-accordion-item-label-{{id}}">
+              <p class="accordion-item__course-label">{{item.course_number}}</p>
               {{item.title}}
             </span>
           {% endif %}
