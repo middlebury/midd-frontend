@@ -15,4 +15,9 @@
   background: $navy;
   color: $white;
   border-color: $navy;
+
+  &.badge--outline {
+    background: transparent;
+    color: $navy;
+  }
 }

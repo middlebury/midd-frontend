@@ -3,7 +3,7 @@
   {% for item in items %}
 
     {# ID must be unique on the page #}
-    {% set id = loop.index %}
+    {% set id = random(1234) %}
 
     <div class="accordion-item js-accordion-item-{{id}}">
       <h3 class="accordion-item__title" role="tab">
@@ -17,22 +17,43 @@
           role="button"
         >
           {% if faq %}
-          <span class="accordion-item__char" aria-hidden>Q</span>
+            <span class="accordion-item__char" aria-hidden>Q</span>
+            <span class="accordion-item__label" id="midd-accordion-item-label-{{id}}">{{item.title}}</span>
+          {% else %}
+            <span class="accordion-item__label" id="midd-accordion-item-label-{{id}}">
+              <p class="accordion-item__link--bold">{{item.course_number}}</p>
+              {{item.title}}
+            </span>
           {% endif %}
-
-          <span class="accordion-item__label" id="midd-accordion-item-label-{{id}}">{{item.title}}</span>
 
           {% include 'partials/icon.twig' with { name: 'chevron-down', class: 'accordion-item__icon' } %}
         </a>
       </h3>
 
-      <div class="accordion-item__content" id="midd-accordion-content-{{id}}" role="tabpanel" aria-labelledby="midd-accordion-item-label-{{id}}">
+      <div class="accordion-item__content{{course_list ? "--column" : ""}}" id="midd-accordion-content-{{id}}" role="tabpanel" aria-labelledby="midd-accordion-item-label-{{id}}">
         {% if faq %}
           <span class="accordion-item__char" aria-hidden>A</span>
+        {% endif %}
+        {% if course_list %}
+          <p class="accordion-item__sub-title">Course Description</p>
         {% endif %}
         <div class="typography">
           {{item.content}}
         </div>
+        {% if course_list %}
+          {% if item.terms %}
+            <p class="accordion-item__sub-title">Terms Taught</p>
+            <div class="typography">
+              {{item.terms}}
+            </div>
+          {% endif %}
+          {% if item.requirements %}
+            <p class="accordion-item__sub-title">Requirements</p>
+            <div class="typography">
+              {{item.requirements}}
+            </div>
+          {% endif %}
+        {% endif %}
       </div>
     </div>
   {% endfor %}
