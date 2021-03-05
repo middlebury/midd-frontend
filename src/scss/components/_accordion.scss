@@ -47,6 +47,13 @@
 .accordion-item__label {
   flex: 1 1 auto;
   width: 100%;
+
+  &--bold {
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+  }
 }
 
 .accordion-item__icon {
@@ -81,13 +88,6 @@
   @media print {
     display: flex !important;
   }
-}
-
-.accordion-item__course-label {
-  font-weight: $font-weight-bold;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
 }
 
 .accordion-item__sub-title {
