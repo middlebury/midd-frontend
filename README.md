@@ -56,3 +56,6 @@ THEME_DIR="../your/path/to/d8/web/themes/custom/middlebury_theme/"
 ```
 
 Now when you run `npm run build` or `npm run dev`, assets will be output to that directory.
+
+### Workflow and Previewing with Vercel
+Add information here about desired workflow and how to preview work using Vercel.
