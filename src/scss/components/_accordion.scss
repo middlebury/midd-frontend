@@ -47,6 +47,13 @@
 .accordion-item__label {
   flex: 1 1 auto;
   width: 100%;
+
+  &--bold {
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+  }
 }
 
 .accordion-item__icon {
@@ -59,7 +66,8 @@
   }
 }
 
-.accordion-item__content {
+.accordion-item__content,
+.accordion-item__content--column {
   padding-top: $spacing-3;
   padding-bottom: $spacing-7;
   padding-left: $spacing-3;
@@ -71,9 +79,30 @@
 
   .accordion-item.is-toggled & {
     display: flex; // must be flex for faq accordions
+
+    &--column {
+      flex-direction: column;
+    }
   }
 
   @media print {
     display: flex !important;
+  }
+}
+
+.accordion-item__sub-title {
+  font-size: $typescale-1;
+  font-family: $font-family-sans-serif;
+  font-weight: $font-weight-medium;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing;
+  margin-bottom: $spacing-2;
+  color: $gray;
+
+  &:not(:first-child) {
+    margin-top: $spacing-4;
+    margin-bottom: $spacing-1;
+    padding-top: $spacing-4;
+    border-top: 1px solid #dedede;
   }
 }
