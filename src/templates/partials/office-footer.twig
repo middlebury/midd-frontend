@@ -14,25 +14,43 @@
         <h3 class="f3 mb-2">
           Contact Us
         </h3>
-        <p class="f2">
-          <a href="mailto:{{ email }}" class="link-underline">{{ email }}</a><br />
-          <a href="tel:{{ tel }}">{{ tel.text }}</a>
-        </p>
-        {% include 'partials/social-links.twig' %}
+        {# divs put in to match drupal site #}
+        <div>
+          <h4 class="f2">
+            General Info
+          </h4>
+          <p class="f2">
+            <a href="tel:{{ tel }}" class="link-underline">{{ tel.text }}</a><br />
+            <a href="mailto:{{ email }}" class="link-underline">{{ email }}</a>
+          </p>
+        </div>
+        {% include 'partials/social-links.twig' with {
+          office_footer: true
+        } %}
         <h3 class="f3 mb-2">
           Contact Us
         </h3>
-        <p class="f2">
-          <a href="mailto:{{ email }}" class="link-underline">{{ email }}</a><br />
-          <a href="tel:{{ tel }}">{{ tel.text }}</a>
-        </p>
+        <div>
+          <h4 class="f2">
+            General Info
+          </h4>
+          <p class="f2">
+            <a href="tel:{{ tel }}" class="link-underline">{{ tel.text }}</a><br />
+            <a href="mailto:{{ email }}" class="link-underline">{{ email }}</a>
+          </p>
+        </div>
         <h3 class="f3 mb-2">
           Contact Us
         </h3>
-        <p class="f2">
-          <a href="mailto:{{ email }}" class="link-underline">{{ email }}</a><br />
-          <a href="tel:{{ tel }}">{{ tel.text }}</a>
-        </p>
+        <div>
+          <h4 class="f2">
+            General Info
+          </h4>
+          <p class="f2">
+            <a href="tel:{{ tel }}" class="link-underline">{{ tel.text }}</a><br />
+            <a href="mailto:{{ email }}" class="link-underline">{{ email }}</a>
+          </p>
+        </div>
       </div>
 
       <div class="office-footer__col">
