@@ -211,6 +211,13 @@
     font-weight: $font-weight-semibold;
   }
 
+  h6 > a,
+  h5 > a,
+  h4 > a,
+  h3 > a {
+    font-weight: 600;
+  }
+
   table {
     @extend %table;
   }
