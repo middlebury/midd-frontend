@@ -1,37 +1,39 @@
 {% set filter_active = true %}
 
 {% embed 'partials/sidebar-layout.twig' %}
-  {% block nav %}
-    {% include 'partials/event-search.twig' %}
-    {% include 'partials/event-filters.twig' %}
-  {% endblock %}
-  {% block content %}
-    {% if filter_active %}
-      {% include 'partials/active-filters.twig' %}
-    {% endif %}
+	{% block nav %}
+		{% include 'partials/event-search.twig' %}
+		{% include 'partials/event-filters.twig' %}
+	{% endblock %}
+	{% block content %}
+		{% if filter_active %}
+			{% include 'partials/active-filters.twig' %}
+		{% endif %}
 
-    {% if no_results %}
-      <p class="lead">
-        There are no events on this date.
-      </p>
-    {% endif %}
+		{% if no_results %}
+			<p class="lead">
+				There are no events on this date.
+			</p>
+		{% endif %}
 
-    {% for y in 0..2 %}
-      <section class="section">
-        <h2 class="section__title">
-          Sunday, May 23
-        </h2>
+		{% for y in 0..2 %}
+			<section class="section">
+				<h2 class="section__title">
+					Sunday, May 23
+				</h2>
 
-        <ul class="list list--dividers list--md">
-          {% for i in 0..3 %}
-            <li class="list__item">
-              {% include 'partials/event-teaser.twig' %}
-            </li>
-          {% endfor %}
-        </ul>
-      </section>
-    {% endfor %}
+				<ul class="list list--dividers list--md">
+					{% for i in 0..3 %}
+						<li class="list__item">
+							{% include 'partials/event-teaser.twig' with {
+                event_list: true
+              } %}
+						</li>
+					{% endfor %}
+				</ul>
+			</section>
+		{% endfor %}
 
-    {% include 'partials/pagination.twig' %}
-  {% endblock %}
+		{% include 'partials/pagination.twig' %}
+	{% endblock %}
 {% endembed %}
