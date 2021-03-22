@@ -1,0 +1,20 @@
+<section class="section mt-9" data-digest-content>
+	<div class="section__header">
+		<h2 class="section__title">
+			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, sunt sit impedit aliquid eum vero officiis saepe natus veritatis, ullam quaerat similique quasi molestias numquam voluptate quam incidunt, provident fugiat?
+		</h2>
+		{# <p class="f3"> #}
+		<a href="#" class="section__link">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, sunt sit impedit aliquid eum vero officiis saepe natus veritatis.</a>
+		{# </p> #}
+	</div>
+
+	<ul class="list list--dividers list--md">
+		{% for i in 0..3 %}
+			<li class="list__item">
+				{% include 'partials/event-teaser.twig' with {
+          event_list: false
+        } %}
+			</li>
+		{% endfor %}
+	</ul>
+</section>

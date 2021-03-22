@@ -48,8 +48,14 @@
 }
 
 .section__link {
-  @include link-border;
-  flex: 0 0 auto;
+  // @include link-border;
+  text-decoration: underline;
+  flex: 0 0 25%;
+  text-align: right;
+
+  &:hover {
+    text-decoration: none;
+  }
 
   @include breakpoint(md) {
     .section__title + & {
