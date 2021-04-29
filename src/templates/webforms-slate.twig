@@ -1,0 +1,67 @@
+{% extends "anchor-basic-content.twig" %}
+
+{% block page %}
+  {% embed 'partials/sidebar-layout.twig' %}
+    {% block nav %}
+      {% include 'partials/page-nav.twig' with {
+        items: [
+          {
+            text: 'Curriculum',
+            href: '#'
+          },
+          {
+            text: 'Faculty',
+            href: '#',
+            items: [
+              {
+                text: 'Faculty sub page 1',
+                href: '#'
+              },
+              {
+                text: 'Faculty sub page 2',
+                href: '#'
+              },
+              {
+                text: 'Faculty sub page 3',
+                href: '#'
+              },
+              {
+                text: 'Faculty sub page 4',
+                href: '#'
+              }
+            ]
+          },
+          {
+            text: 'Financing Your Education',
+            href: '#'
+          }
+        ]
+      } %}
+    {% endblock %}
+    {% block toc %}
+      <div data-digest-nav data-sticky data-sticky-offset=".js-headroom"></div>
+    {% endblock %}
+    {% block sidebar %}
+      <div class="bg-gray-lighter mb-md-6 p-3">
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-12 order-md-2 order-lg-1">
+            {% include 'partials/page-cta.twig' %}
+            <div class="border-b my-6 d-md-none d-lg-block"></div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-12 order-md-1 order-lg-2">
+            {% include 'partials/office-meta.twig' %}
+          </div>
+        </div>
+      </div>
+    {% endblock %}
+    {% block content %}
+<div id="form_08c8914d-d97e-43e2-bfac-4857a0080098" class="slateform">Loading...</div><script>/*<![CDATA[*/var script = document.createElement('script'); script.async = 1; script.src = 'https://admissions.middlebury.edu/register/?id=08c8914d-d97e-43e2-bfac-4857a0080098&amp;output=embed&amp;div=form_08c8914d-d97e-43e2-bfac-4857a0080098' + ((location.search.length > 1) ? '&' + location.search.substring(1) : ''); var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s); script.addEventListener('load', function() { var checkExist = setInterval(function() {
+  var links = document.querySelectorAll('link[href*="technolutions.net"]');
+  [].forEach.call(links, function(link) {
+    link.disabled = "true";
+  });
+  clearInterval(checkExist);
+}, 100); }); /*]]>*/</script>
+    {% endblock %}
+  {% endembed %}
+{% endblock %}
