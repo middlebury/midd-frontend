@@ -85,7 +85,7 @@
     "headroom.js": "^0.11.0",
     "iframe-resizer": "^4.2.11",
     "intersection-observer": "^0.11.0",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "lozad": "^1.16.0",
     "mdn-polyfills": "^5.20.0",
     "micromodal": "git+https://git@github.com/zebapy/micromodal.git",
