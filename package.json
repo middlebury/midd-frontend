@@ -80,7 +80,7 @@
   "dependencies": {
     "anchor-js": "^4.2.2",
     "animejs": "^3.2.0",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "focus-within-polyfill": "^5.0.9",
     "headroom.js": "^0.11.0",
     "iframe-resizer": "^4.2.11",
