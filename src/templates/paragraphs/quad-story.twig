@@ -1,39 +1,72 @@
 <section class="paragraph--quad-story" aria-labelledby="midd-profile-spotlight-label-1" data-digest-content>
-  <div class="container">
+	<div class="container">
 
-    <div class="row">
-      <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-        <h2 class="h2 mb-4" id="midd-profile-spotlight-label-1">Profiles Spotlight</h2>
-        <p class="mb-5 mb-md-7">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus quam optio ratione labore possimus iusto corrupti vero fugiat explicabo officiis ex, a sunt obcaecati molestias voluptate eum earum ipsam accusantium.</p>
-      </div>
-    </div>
+		<div class="row">
+			<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+				<h2 class="h2 mb-4" id="midd-profile-spotlight-label-1" style="color: #e60000">Emergency Contacts</h2>
+				{# <p class="mb-5 mb-md-7">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus quam optio ratione labore possimus iusto corrupti vero fugiat explicabo officiis ex, a sunt obcaecati molestias voluptate eum earum ipsam accusantium.</p> #}
+			</div>
+		</div>
 
-    <ul class="row justify-content-center">
-      {% for item in 0..1 %}
-        <li class="col-md-3">
-          <article
-            class="profile-spotlight-item"
-            aria-labelledby="midd-profile-spotlight-item-label-{{loop.index}}"
-          >
-            <div class="profile-spotlight-item__media">
-              <a href="">
-                {% include 'partials/img.twig' with { name: 'profile_spotlight_item' } %}
-              </a>
-            </div>
-            <div class="profile-spotlight-item__content">
-              <p class="profile-spotlight-item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui voluptate earum laboriosam eaque, eum possimus deserunt magnam animi doloremque beatae facilis ab molestiae placeat ratione veniam adipisci quae, quos porro.</p>
-              <h3
-                class="profile-spotlight-item__name"
-                id="midd-profile-spotlight-item-label-{{loop.index}}"
-              >
-                Trey Palmer
-              </h3>
-              <p class="profile-spotlight-item__title">Middlebury College, Buenos Aries, Argentina</p>
-              <a href="" class="link-underline f2">Read my story</a>
-            </div>
-          </article>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
+		<ul
+			class="row justify-content-center">
+			{# {% for item in 0..1 %} #}
+			<li class="col-md-3">
+				<article class="profile-spotlight-item" aria-labelledby="midd-profile-spotlight-item-label-{{1}}">
+					<div class="profile-spotlight-item__media">
+						<a href="">
+							{% include 'partials/img.twig' with { name: 'profile_spotlight_item' } %}
+						</a>
+					</div>
+					<div class="profile-spotlight-item__content">
+						<p class="profile-spotlight-item__text">Call
+							<a href="tel:911" class="link-border">911</a>
+							for all life threatening emergencies</p>
+						{# <h3 class="profile-spotlight-item__name" id="midd-profile-spotlight-item-label-{{1}}">
+																		                Trey Palmer
+																		              </h3>
+																		              <p class="profile-spotlight-item__title">Middlebury College, Buenos Aries, Argentina</p>
+																		              <a href="" class="link-underline f2">Read my story</a> #}
+					</div>
+				</article>
+			</li>
+			<li class="col-md-3">
+				<article class="profile-spotlight-item" aria-labelledby="midd-profile-spotlight-item-label-{{2}}">
+					<div class="profile-spotlight-item__media">
+						<a href="">
+							{% include 'partials/img.twig' with { name: 'profile_spotlight_item' } %}
+						</a>
+					</div>
+					<div class="profile-spotlight-item__content">
+						<p class="profile-spotlight-item__text">Call 9-911 from a campus phone</p>
+						{# <h3 class="profile-spotlight-item__name" id="midd-profile-spotlight-item-label-{{2}}">
+												          Trey Palmer
+												        </h3>
+												        <p class="profile-spotlight-item__title">Middlebury College, Buenos Aries, Argentina</p>
+												        <a href="" class="link-underline f2">Read my story</a> #}
+					</div>
+				</article>
+			</li>
+			<li class="col-md-3">
+				<article class="profile-spotlight-item" aria-labelledby="midd-profile-spotlight-item-label-{{3}}">
+					<div class="profile-spotlight-item__media">
+						<a href="">
+							{% include 'partials/img.twig' with { name: 'profile_spotlight_item' } %}
+						</a>
+					</div>
+					<div class="profile-spotlight-item__content">
+						<p class="profile-spotlight-item__text">Call Security at
+							<a href="tel:8316474153" class="link-border">831-647-4153</a>
+							or pick up a blue campus phone</p>
+						{# <h3 class="profile-spotlight-item__name" id="midd-profile-spotlight-item-label-{{3}}">
+						          Trey Palmer
+						        </h3>
+						        <p class="profile-spotlight-item__title">Middlebury College, Buenos Aries, Argentina</p>
+						        <a href="" class="link-underline f2">Read my story</a> #}
+					</div>
+				</article>
+			</li>
+			{# {% endfor %} #}
+		</ul>
+	</div>
 </section>
