@@ -1,30 +1,22 @@
-{% set title = title|default('Link List') %}
+{% set title = title|default('Emergency Contacts') %}
 {% set items =
   items|default(
     [
       {
-        title: 'Some resource',
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit'
+        title: 'Lorem Ipsum',
+        text: 'Call
+					<a href="tel:911" class="link-border">911</a>
+					for all life threatening emergencies'
       },
       {
-        title: 'Some resource long title',
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit'
+        title: 'Lorem Ipsum',
+        text: 'Call 9-911 from a campus phone'
       },
       {
-        title: 'Some resource',
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit'
-      },
-      {
-        title: 'Some resource',
-        text: 'Lorem ipsum elit'
-      },
-      {
-        title: 'Some title',
-        text: 'Lorem ipsum elit'
-      },
-      {
-        title: 'Some resource',
-        text: 'Lorem ipsum elit'
+        title: 'Lorem Ipsum',
+        text: 'Call Security at
+					<a href="tel:8316474153" class="link-border">831-647-4153</a>
+					or pick up a blue campus phone'
       }
     ]
   )
@@ -37,30 +29,31 @@
 %}
 
 <div class="paragraph--link-list" data-digest-content>
-  {% embed 'partials/section.twig'
+	{% embed 'partials/section.twig'
     with {
       title: title,
       moreLinkText: moreLinkText,
       moreLinkHref: moreLinkHref,
-      text: text,
+      text: '',
+      color: '#e60000',
       labelledby: 'midd-related-link-list'
     }
   %}
-    {% block content %}
-      <ul class="link-list__list">
-        {% for item in items %}
-          <li class="link-list__item">
-            <div class="link-list__box">
-              <a href="" class="link-list__link">{{ item.title }}</a>
-              {% if item.text %}
-                <p class="link-list__info">
-                  {{ item.text }}
-                </p>
-              {% endif %}
-            </div>
-          </li>
-        {% endfor %}
-      </ul>
-    {% endblock %}
-  {% endembed %}
+		{% block content %}
+			<ul class="link-list__list">
+				{% for item in items %}
+					<li class="link-list__item">
+						<div class="link-list__box">
+							<a href="" class="link-list__link">{{ item.title }}</a>
+							{% if item.text %}
+								<p class="link-list__info">
+									{{ item.text }}
+								</p>
+							{% endif %}
+						</div>
+					</li>
+				{% endfor %}
+			</ul>
+		{% endblock %}
+	{% endembed %}
 </div>

@@ -1,34 +1,45 @@
 <div class="paragraph--cta-group">
 
-  <div class="container">
+	<div class="container">
+		<div class="section__header">
+			<h2 class="section__title" id="quick-links" style="color: #e60000;">Emergency Contacts</h2>
+		</div>
+		<div class="cta-group">
 
-    <div class="cta-group">
+			{# {% for item in 1..4 %} #}
+			{# <div class="cta-group__item">
 
-      {% for item in 1..4 %}
-        <div class="cta-group__item">
+			      <h3 class="cta-group__title">
+			        Emergency Contacts
+			      </h3>
 
-          <h3 class="cta-group__title">
-            {% if env.test or random(1) %}
-              Lorem ipsum dolor sit amet
-            {% else %}
-              Lorem ipsum dolor sit amet ipsum dolor sit amet
-            {% endif %}
-          </h3>
+			    </div> #}
+				<div class="cta-group__item"> <p class="cta-group__text">
+					Call
+					<a href="tel:911" class="link-border">911</a>
+					for all life threatening emergencies
+				</p>
 
-          <p class="cta-group__text">
-            {% if env.test or random(1) %}
-              March 28-29, 2017
-            {% else %}
-              Lorem ipsum dolor sit amet ipsum dolor sit amet
-            {% endif %}
-          </p>
+			</div>
+			<div class="cta-group__item">
 
-          <a href="" class="cta-group__button button button--primary">Request Info</a>
+				<p class="cta-group__text">
+					Call 9-911 from a campus phone
+				</p>
 
-        </div>
-      {% endfor %}
+			</div>
+			<div class="cta-group__item">
 
-    </div>
-  </div>
+				<p class="cta-group__text">
+					Call Security at
+					<a href="tel:8316474153" class="link-border">831-647-4153</a>
+					or pick up a blue campus phone
+				</p>
+
+			</div>
+			{# {% endfor %} #}
+
+		</div>
+	</div>
 
 </div>
