@@ -3,6 +3,21 @@
   items|default(
     [
       {
+        title: 'A resource',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit dolor sit amet',
+        image: true
+      },
+      {
+        title: 'A resource long title',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+        image: true
+      },
+      {
+        title: 'A resource',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit ipsum dolor sit amet consectetur',
+        image: true
+      },
+      {
         title: 'Some resource',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit'
       },
@@ -51,6 +66,15 @@
         {% for item in items %}
           <li class="link-list__item">
             <div class="link-list__box">
+              {% if item.image %}
+                <div class="media-object__image">
+                  <a href="">
+                    {% include 'partials/img.twig' with {
+                      name: 'profile_spotlight_item'
+                    } %}
+                  </a>
+                </div>
+              {% endif %}
               <a href="" class="link-list__link">{{ item.title }}</a>
               {% if item.text %}
                 <p class="link-list__info">
