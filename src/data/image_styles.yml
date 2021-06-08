@@ -84,6 +84,14 @@ image_styles:
       - 144x192
       - 288x384
     sizes: '(max-width: 512px) 90px, (max-width: 768px) 144px, 288px'
+  profile_spotlight_item_horizontal: # 3:4
+    title: Quad runner / profile spotlight horizontal
+    ratio: '3:4'
+    srcset:
+      - 120x90
+      - 192x144
+      - 384x288
+    sizes: '(max-width: 512px) 90px, (max-width: 768px) 144px, 288px'
   card_carousel: # 3:4
     title: Card Carousel
     ratio: '3:4'
