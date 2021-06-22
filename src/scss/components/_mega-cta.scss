@@ -118,6 +118,13 @@ $mega-cta-alignments: (
   }
 }
 
+.mega-cta__link {
+  :hover {
+    text-decoration: underline;
+    color: $white;
+  }
+}
+
 .mega-cta__caption {
   position: absolute;
   right: $spacing-5;

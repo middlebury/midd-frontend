@@ -4,34 +4,39 @@
 {% set is_front = true %}
 
 {% block layout_header %}
-  {% embed 'partials/school-header.twig' %}
-    {% block school_logo %}
-      <img src="images/miis-logo.svg"
-        srcset="images/miis-logo.svg 361w"
-        sizes="(min-width: 1280px) 361px, 248px"
-        alt="Logo for Middlebury Institute of International Studies at Monterey" />
-      <span class="sr-only">
-        Middlebury Institute of International Studies at Monterey
-      </span>
-    {% endblock %}
-  {% endembed %}
+	{% embed 'partials/school-header.twig' %}
+		{% block school_logo %}
+			<img src="images/miis-logo.svg" srcset="images/miis-logo.svg 361w" sizes="(min-width: 1280px) 361px, 248px" alt="Logo for Middlebury Institute of International Studies at Monterey"/>
+			<span class="sr-only">
+				Middlebury Institute of International Studies at Monterey
+			</span>
+		{% endblock %}
+	{% endembed %}
 {% endblock %}
 
 {% block content %}
-  {% include 'partials/homepage-hero.twig' with {
-    img_style: 'spotlight',
-    align: 'top',
+	{# {% include 'partials/homepage-hero.twig' with {
+	    img_style: 'spotlight',
+	    align: 'top',
+	  } %} #}
+	{% include 'paragraphs/mega-cta.twig' with {
+    pin: 'left-bottom',
+    hero: true,
+    caption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    title_link: 'Water Sanitation Research and Development, India',
+    text: 'Access to safe water and adequate sanitation services has proven to be one of the most efficient ways of improving human health.',
+    link: 'Read more'
   } %}
 
-  {% include 'paragraphs/degree-finder.twig' %}
+	{% include 'paragraphs/degree-finder.twig' %}
 
-  {% include 'paragraphs/text-short.twig' %}
+	{% include 'paragraphs/text-short.twig' %}
 
-  {% include 'paragraphs/card-carousel.twig' %}
+	{% include 'paragraphs/card-carousel.twig' %}
 
-  {% include 'paragraphs/spotlight.twig' %}
+	{% include 'paragraphs/spotlight.twig' %}
 
-  {% include 'paragraphs/chart-group.twig' with {
+	{% include 'paragraphs/chart-group.twig' with {
     title: 'Internships',
     text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, sunt sit impedit aliquid eum vero officiis saepe natus veritatis, ullam quaerat similique quasi molestias numquam voluptate quam incidunt, provident fugiat?',
     items: [
@@ -44,18 +49,18 @@
     ]
   } %}
 
-  {% include 'paragraphs/logo-bar.twig' %}
+	{% include 'paragraphs/logo-bar.twig' %}
 
-  {% include 'paragraphs/card-carousel.twig' %}
+	{% include 'paragraphs/card-carousel.twig' %}
 
-  {% include 'paragraphs/quad-story.twig' %}
+	{% include 'paragraphs/quad-story.twig' %}
 
-  {% include 'paragraphs/themed-panel.twig' %}
+	{% include 'paragraphs/themed-panel.twig' %}
 {% endblock %}
 
 {% block layout_footer %}
-  {% include 'partials/footer-cta-group.twig' %}
-  {% include 'partials/school-footer.twig' with {
+	{% include 'partials/footer-cta-group.twig' %}
+	{% include 'partials/school-footer.twig' with {
     name: 'Support the Institute',
     cta: {
       text: 'Make a Gift',
@@ -64,5 +69,5 @@
     has_menus: true,
     menus: footer_nav
   } %}
-  {% include 'partials/midd-footer.twig' %}
+	{% include 'partials/midd-footer.twig' %}
 {% endblock %}

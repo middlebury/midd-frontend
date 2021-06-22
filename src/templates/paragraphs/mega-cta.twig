@@ -26,13 +26,18 @@
           {% if title %}
             <h2 class="mega-cta__title" id="midd-mega-cta-label-{{id}}">{{title|default('What makes Middlebury different?')}}</h2>
           {% endif %}
+		  {% if title_link %}
+            <a href="#" class="mega-cta__link">
+              <h2 class="mega-cta__title" id="midd-mega-cta-label-{{id}}">{{title_link}}</h2>
+            </a>
+          {% endif %}
           {% if text %}
           <p class="mega-cta__text">
             {{text}}
             {# With our support, you’ll experience total immersion in the language and culture of your country. You’ll have an authentic learning experience at a local academic institution. And you’ll have the guided independence to engage with your community, take on an internship, and make personal discoveries you’ll always remember. #}
           </p>
           {% endif %}
-          <a class="button button--outline button--light" href="">Apply now</a>
+          <a class="button button--outline button--light" href="">{{link|default('Apply now')}}</a>
         </div>
       </div>
     </section>
