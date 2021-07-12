@@ -98,7 +98,8 @@
 .paragraph--themed-panel,
 .paragraph--quad-story,
 .paragraph--stat-panel,
-.paragraph--card-carousel {
+.paragraph--card-carousel,
+.paragraph--logo-bar {
   @extend %paragraph-full-width;
 }
 
@@ -241,6 +242,10 @@
 }
 
 .paragraph--related-events {
+  @extend %paragraph-space;
+}
+
+.paragraph--logo-bar {
   @extend %paragraph-space;
 }
 
