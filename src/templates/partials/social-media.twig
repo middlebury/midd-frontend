@@ -1,0 +1,7 @@
+{% embed 'partials/social-sidebar-layout.twig' %}
+  {% block nav %}
+    {% include 'partials/social-card.twig' with {
+      name: random(['youtube', 'facebook', 'instagram', 'twitter', 'vimeo', 'rss-feed'])
+    } %}
+  {% endblock %}
+{% endembed %}

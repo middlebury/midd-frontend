@@ -1,0 +1,15 @@
+{% extends "school-layout.twig" %}
+
+{% set page_header = {
+  title: 'Social Feed',
+  breadcrumb: [
+    { text: 'Home' },
+  ],
+  school: true
+} %}
+
+{% block page %}
+
+  {% include 'partials/social-media.twig' %}
+
+{% endblock %}
