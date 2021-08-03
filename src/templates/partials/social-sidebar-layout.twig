@@ -1,15 +1,18 @@
 {% set _toc = block('toc') %}
 {% set _sidebar = block('sidebar') %}
+{% set names = ['youtube', 'facebook', 'instagram', 'twitter', 'vimeo', 'rss-feed', 'rss-video'] %}
 <div class="container mb-9">
   <div class="row">
-    <div class="col-lg-12 offset-lg-0 mb-5">
+    <div class="col-lg-12 offset-lg-0 mb-lg-5 mb-xl-0">
       <ul class="col-count-md-2 col-count-lg-3 col-count-xl-3">
-        {% for item in 0..11 %}
-          <li class="w-100 d-inline-block offset-lg-0  mb-xl-8 mb-5">
-            {% block nav %}
+        {% for item in 0..1 %}
+          {% for name in names %}
+            <li class="w-100 d-inline-block offset-lg-0 mb-md-5 mb-xl-8 mb-3">
+              {% block nav %}
 
-            {% endblock %}
-          </li>
+              {% endblock %}
+            </li>
+          {% endfor %}
         {% endfor %}
       </ul>
     </div>

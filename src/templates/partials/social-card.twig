@@ -1,4 +1,5 @@
-<div class="row">
+{% set label_id = random(1234) %}
+    <div class="row">
       <div class="col-sm-12 col-lg-12">
         <div style="border-top: 4px solid #0d395f;">
           <div class="mb-5 mb-sm-3 mb-md-5 p-3" style="border: 1px solid #DEDEDE;">
@@ -6,31 +7,32 @@
               <div class="pb-3">
                 {% include 'partials/video.twig' with {
                   transcript: false,
-                  no_margin: true
+                  no_margin: true,
+                  label_id: label_id
                 } %}
               </div>
             {% endif %}
             {% if name == "instagram" %}
               <figure class="pb-3" style="margin: -1rem -1rem 0 -1rem;">
-                <img src="http://placehold.it/416x416" srcset="http://placehold.it/416x416 416w" sizes="(max-width: 416px) 100vw, 416px" alt="alt">
+                <img src="https://via.placeholder.com/416x416" srcset="https://via.placeholder.com/416x416 416w" sizes="(max-width: 416px) 100vw, 416px" alt="alt">
               </figure>
             {% endif %}
             {% if name == "twitter" %}
-              <p class="f4 mb-3 fw5">
-                <u><a>@middlebury</a>: Lorem ipsum dolor sit amet, consectetur. <a>#ut labore</a>, <a>#eiusmod</a>, <a>#dolore</a></u>
+              <p class="f4 mb-3 fw5" style="text-decoration:underline">
+                <a>@middlebury</a>: Lorem ipsum dolor sit amet, consectetur. <a>#ut labore</a>, <a>#eiusmod</a>, <a>#dolore</a>
               </p>
               {% if random(1) %}
-                <img src="http://placehold.it/384x264" srcset="http://placehold.it/384x264 384w" sizes="(max-width: 384px) 100vw, 384px" alt="alt">
+                <img src="https://via.placeholder.com/384x264" srcset="https://via.placeholder.com/384x264 384w" sizes="(max-width: 384px) 100vw, 384px" alt="alt">
               {% endif %}
             {% elseif name == "rss-feed"%}
                 {% if random(1) %}
-                  <img class="pb-3" src="http://placehold.it/176x211" srcset="http://placehold.it/176x211 176w" sizes="(max-width: 176px) 100vw, 176px" alt="alt">
+                  <img class="pb-3" src="https://via.placeholder.com/176x211" srcset="https://via.placeholder.com/176x211 176w" sizes="(max-width: 176px) 100vw, 176px" alt="alt">
                   <h3 style="color:#0D395F">Lorem ipsum dolor sit amet, consectetur adipiscing sed do eiusmod tempor.</h3>
                   <p class="f4 mb-3 fw5">
                     Lorem ipsum <a>#dolor sit amet</a>, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                   </p>
                 {% else %}
-                  <h3 style="color:#0D395F">Lorem ipsum dolor sit amet, consectetur adipiscing sed do eiusmod tempor.</h3>
+                  <h3 style="color:#0D395F" id="midd-video-label-{{label_id}}">Lorem ipsum dolor sit amet, consectetur adipiscing sed do eiusmod tempor.</h3>
                   <div class="pt-3">
                     {% include 'partials/video.twig' with {
                       transcript: false,
@@ -43,11 +45,12 @@
               <div class="pt-3">
                 {% include 'partials/video.twig' with {
                   transcript: false,
-                  no_margin: false
+                  no_margin: false,
+                  label_id: label_id
                 } %}
               </div>
             {% else %}
-              <p class="f4 mb-3 fw5">
+              <p class="f4 mb-3 fw5"  id="midd-video-label-{{label_id}}">
                 Lorem ipsum <a>#dolor sit amet</a>, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
               </p>
             {% endif %}
