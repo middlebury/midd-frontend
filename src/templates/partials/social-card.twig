@@ -64,7 +64,7 @@
                 <li>
                   <a href="#" class="d-inline-block" style="color:#DEDEDE">
                     {% include 'partials/icon.twig' with {
-                      name: name,
+                      name: name == 'rss-video' ? 'rss-feed' : name,
                       class: 'f5'
                     } %}
                   </a>
