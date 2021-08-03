@@ -21,27 +21,17 @@
               <p class="f4 mb-3 fw5" style="text-decoration:underline">
                 <a>@middlebury</a>: Lorem ipsum dolor sit amet, consectetur. <a>#ut labore</a>, <a>#eiusmod</a>, <a>#dolore</a>
               </p>
-              {% if random(1) %}
+              {% if env.test or random(1) %}
                 <img src="https://via.placeholder.com/384x264" srcset="https://via.placeholder.com/384x264 384w" sizes="(max-width: 384px) 100vw, 384px" alt="alt">
               {% endif %}
             {% elseif name == "rss-feed"%}
-                {% if random(1) %}
-                  <img class="pb-3" src="https://via.placeholder.com/176x211" srcset="https://via.placeholder.com/176x211 176w" sizes="(max-width: 176px) 100vw, 176px" alt="alt">
-                  <h3 style="color:#0D395F">Lorem ipsum dolor sit amet, consectetur adipiscing sed do eiusmod tempor.</h3>
-                  <p class="f4 mb-3 fw5">
-                    Lorem ipsum <a>#dolor sit amet</a>, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                {% else %}
-                  <h3 style="color:#0D395F" id="midd-video-label-{{label_id}}">Lorem ipsum dolor sit amet, consectetur adipiscing sed do eiusmod tempor.</h3>
-                  <div class="pt-3">
-                    {% include 'partials/video.twig' with {
-                      transcript: false,
-                      no_margin: false
-                    } %}
-                  </div>
-                {% endif %}
-            {% elseif name == "rss-video" %}
+              <img class="pb-3" src="https://via.placeholder.com/176x211" srcset="https://via.placeholder.com/176x211 176w" sizes="(max-width: 176px) 100vw, 176px" alt="alt">
               <h3 style="color:#0D395F">Lorem ipsum dolor sit amet, consectetur adipiscing sed do eiusmod tempor.</h3>
+              <p class="f4 mb-3 fw5">
+                Lorem ipsum <a>#dolor sit amet</a>, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              </p>
+            {% elseif name == "rss-video" %}
+              <h3 style="color:#0D395F" id="midd-video-label-{{label_id}}">Lorem ipsum dolor sit amet, consectetur adipiscing sed do eiusmod tempor.</h3>
               <div class="pt-3">
                 {% include 'partials/video.twig' with {
                   transcript: false,
@@ -53,6 +43,11 @@
               <p class="f4 mb-3 fw5"  id="midd-video-label-{{label_id}}">
                 Lorem ipsum <a>#dolor sit amet</a>, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
               </p>
+              {% if name == "facebook" %}
+                {% if env.test or random(1) %}
+                  <img src="https://via.placeholder.com/384x264" srcset="https://via.placeholder.com/384x264 384w" sizes="(max-width: 384px) 100vw, 384px" alt="alt">
+                {% endif %}
+              {% endif %}
             {% endif %}
             
             <div class="d-flex justify-content-between">
