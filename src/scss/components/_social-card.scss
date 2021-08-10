@@ -1,0 +1,7 @@
+.icon-fadein {
+  transition: color 0.2s;
+  color: #dedede;
+  &:hover {
+    color: #0d395f;
+  }
+}
