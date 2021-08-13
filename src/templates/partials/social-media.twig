@@ -1,0 +1,7 @@
+{% embed 'partials/social-layout.twig' %}
+  {% block nav %}
+    {% include 'partials/social-card.twig' with {
+      name: name
+    } %}
+  {% endblock %}
+{% endembed %}

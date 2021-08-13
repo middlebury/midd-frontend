@@ -8,6 +8,12 @@
   }
 }
 
+.col-count-lg-3 {
+  @include breakpoint(lg) {
+    column-count: 3;
+  }
+}
+
 .col-count-xl-3 {
   @include breakpoint(xl) {
     column-count: 3;
