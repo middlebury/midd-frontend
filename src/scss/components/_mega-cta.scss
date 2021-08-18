@@ -33,6 +33,14 @@
   }
 }
 
+.mega-cta__back-gradient {
+  img {
+    @include breakpoint(lg) {
+      opacity: 1;
+    }
+  }
+}
+
 $mega-cta-alignments: (
   left-bottom: left bottom,
   right-bottom: right bottom,
@@ -43,7 +51,7 @@ $mega-cta-alignments: (
 @each $key, $pos in $mega-cta-alignments {
   .mega-cta--gradient-#{$key} {
     @include breakpoint(lg) {
-      background: linear-gradient(to $pos, $white 45%, $black 100%);
+      background: linear-gradient(to $pos, transparent 45%, $black 100%);
     }
   }
 }
