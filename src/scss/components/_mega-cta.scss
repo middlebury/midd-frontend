@@ -41,6 +41,14 @@ $mega-cta-alignments: (
 );
 
 @each $key, $pos in $mega-cta-alignments {
+  .mega-cta--gradient-#{$key} {
+    @include breakpoint(lg) {
+      background: linear-gradient(to $pos, $white 45%, $black 100%);
+    }
+  }
+}
+
+@each $key, $pos in $mega-cta-alignments {
   .mega-cta--image-#{$key} {
     img {
       object-position: $pos;
@@ -73,6 +81,11 @@ $mega-cta-alignments: (
 
 .mega-cta__content {
   text-align: center;
+
+  // &-left {
+  //   text-align: left;
+  // }
+
   @include make-col-ready;
 
   @include breakpoint(sm) {
@@ -81,6 +94,77 @@ $mega-cta-alignments: (
 
   @include breakpoint(lg) {
     @include make-col(6);
+  }
+}
+
+.mega-cta__content-position {
+  position: absolute;
+  text-align: left;
+  &-left-top {
+    top: 48px;
+    @include breakpoint(md) {
+      top: 64px;
+      left: 80px;
+    }
+    @include breakpoint(lg) {
+      top: 64px;
+      left: 132px;
+    }
+    @include breakpoint(xl) {
+      top: 64px;
+      left: 152px;
+    }
+  }
+  &-left-bottom {
+    top: 48px;
+    @include breakpoint(md) {
+      top: initial;
+      bottom: 64px;
+      left: 80px;
+    }
+    @include breakpoint(lg) {
+      top: initial;
+      bottom: 64px;
+      left: 132px;
+    }
+    @include breakpoint(xl) {
+      top: initial;
+      bottom: 64px;
+      left: 152px;
+    }
+  }
+  &-right-top {
+    top: 48px;
+    @include breakpoint(md) {
+      top: 64px;
+      right: 80px;
+    }
+    @include breakpoint(lg) {
+      top: 64px;
+      right: 132px;
+    }
+    @include breakpoint(xl) {
+      top: 64px;
+      right: 152px;
+    }
+  }
+  &-right-bottom {
+    top: 48px;
+    @include breakpoint(md) {
+      top: initial;
+      bottom: 64px;
+      right: 80px;
+    }
+    @include breakpoint(lg) {
+      top: initial;
+      bottom: 64px;
+      right: 132px;
+    }
+    @include breakpoint(xl) {
+      top: initial;
+      bottom: 64px;
+      right: 152px;
+    }
   }
 }
 
@@ -96,6 +180,12 @@ $mega-cta-alignments: (
   .mega-cta--hero & {
     text-align: left;
   }
+}
+
+.mega-cta__title-miis {
+  color: $white;
+  font-size: rem(28);
+  margin-bottom: $spacing-2;
 }
 
 .mega-cta__text {
@@ -116,6 +206,12 @@ $mega-cta-alignments: (
   .mega-cta--hero & {
     text-align: left;
   }
+}
+
+.mega-cta__text-miis {
+  color: $white;
+  font-size: rem(18);
+  margin-bottom: $spacing-5;
 }
 
 .mega-cta__link {
