@@ -1,3 +1,16 @@
+%make-columns {
+  text-align: center;
+  @include make-col-ready;
+
+  @include breakpoint(sm) {
+    @include make-col(8);
+  }
+
+  @include breakpoint(lg) {
+    @include make-col(6);
+  }
+}
+
 .mega-cta {
   position: relative;
   min-height: 640px;
@@ -59,8 +72,10 @@ $mega-cta-alignments: (
 @each $key, $pos in $mega-cta-alignments {
   .mega-cta--image-#{$key} {
     img {
-      object-position: $pos;
-      font-family: 'object-position: #{$pos};';
+      @include breakpoint(lg) {
+        object-position: $pos;
+        font-family: 'object-position: #{$pos};';
+      }
     }
   }
 }
@@ -88,29 +103,29 @@ $mega-cta-alignments: (
 }
 
 .mega-cta__content {
-  text-align: center;
+  @extend %make-columns;
+}
 
-  // &-left {
-  //   text-align: left;
-  // }
+.mega-cta__content-miis {
+  @extend %make-columns;
 
-  @include make-col-ready;
-
-  @include breakpoint(sm) {
-    @include make-col(8);
+  @include breakpoint(md) {
+    @include make-col(6);
   }
 
   @include breakpoint(lg) {
-    @include make-col(6);
+    @include make-col(4);
   }
 }
 
 .mega-cta__content-position {
   position: absolute;
   text-align: left;
+  padding: 0 1rem;
   &-left-top {
     top: $spacing-7;
     @include breakpoint(md) {
+      padding: 0;
       top: $spacing-8;
       left: rem(80);
     }
@@ -126,8 +141,8 @@ $mega-cta-alignments: (
   &-left-bottom {
     top: $spacing-7;
     @include breakpoint(md) {
-      top: initial;
-      bottom: $spacing-8;
+      padding: 0;
+      top: $spacing-8;
       left: rem(80);
     }
     @include breakpoint(lg) {
@@ -144,12 +159,14 @@ $mega-cta-alignments: (
   &-right-top {
     top: $spacing-7;
     @include breakpoint(md) {
+      padding: 0;
       top: $spacing-8;
-      right: rem(80);
+      left: rem(80);
     }
     @include breakpoint(lg) {
       top: $spacing-8;
       right: rem(132);
+      left: initial;
     }
     @include breakpoint(xl) {
       top: $spacing-8;
@@ -159,20 +176,27 @@ $mega-cta-alignments: (
   &-right-bottom {
     top: $spacing-7;
     @include breakpoint(md) {
-      top: initial;
-      bottom: $spacing-8;
-      right: rem(80);
+      padding: 0;
+      top: $spacing-8;
+      left: rem(80);
     }
     @include breakpoint(lg) {
       top: initial;
       bottom: $spacing-8;
       right: rem(132);
+      left: initial;
     }
     @include breakpoint(xl) {
       top: initial;
       bottom: $spacing-8;
       right: rem(152);
     }
+  }
+  @include breakpoint(md) {
+    margin-top: $spacing-8;
+  }
+  @include breakpoint(lg) {
+    margin-top: 0;
   }
 }
 
@@ -193,7 +217,7 @@ $mega-cta-alignments: (
 .mega-cta__title-miis {
   color: $white;
   font-size: rem(28);
-  margin-bottom: $spacing-2;
+  margin-bottom: $spacing-1;
 }
 
 .mega-cta__text {
