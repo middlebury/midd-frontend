@@ -101,69 +101,69 @@ $mega-cta-alignments: (
   position: absolute;
   text-align: left;
   &-left-top {
-    top: 48px;
+    top: $spacing-7;
     @include breakpoint(md) {
-      top: 64px;
-      left: 80px;
+      top: $spacing-8;
+      left: rem(80);
     }
     @include breakpoint(lg) {
-      top: 64px;
-      left: 132px;
+      top: $spacing-8;
+      left: rem(132);
     }
     @include breakpoint(xl) {
-      top: 64px;
-      left: 152px;
+      top: $spacing-8;
+      left: rem(152);
     }
   }
   &-left-bottom {
-    top: 48px;
+    top: $spacing-7;
     @include breakpoint(md) {
       top: initial;
-      bottom: 64px;
-      left: 80px;
+      bottom: $spacing-8;
+      left: rem(80);
     }
     @include breakpoint(lg) {
       top: initial;
-      bottom: 64px;
-      left: 132px;
+      bottom: $spacing-8;
+      left: rem(132);
     }
     @include breakpoint(xl) {
       top: initial;
-      bottom: 64px;
-      left: 152px;
+      bottom: $spacing-8;
+      left: rem(152);
     }
   }
   &-right-top {
-    top: 48px;
+    top: $spacing-7;
     @include breakpoint(md) {
-      top: 64px;
-      right: 80px;
+      top: $spacing-8;
+      right: rem(80);
     }
     @include breakpoint(lg) {
-      top: 64px;
-      right: 132px;
+      top: $spacing-8;
+      right: rem(132);
     }
     @include breakpoint(xl) {
-      top: 64px;
-      right: 152px;
+      top: $spacing-8;
+      right: rem(152);
     }
   }
   &-right-bottom {
-    top: 48px;
+    top: $spacing-7;
     @include breakpoint(md) {
       top: initial;
-      bottom: 64px;
-      right: 80px;
+      bottom: $spacing-8;
+      right: rem(80);
     }
     @include breakpoint(lg) {
       top: initial;
-      bottom: 64px;
-      right: 132px;
+      bottom: $spacing-8;
+      right: rem(132);
     }
     @include breakpoint(xl) {
       top: initial;
-      bottom: 64px;
-      right: 152px;
+      bottom: $spacing-8;
+      right: rem(152);
     }
   }
 }
