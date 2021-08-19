@@ -1,0 +1,9 @@
+.section.paragraph--pardot-form {
+  margin-bottom: $spacing-7;
+  margin-top: $spacing-7;
+
+  @include breakpoint(md) {
+    margin-bottom: $spacing-8;
+    margin-top: $spacing-8;
+  }
+}
