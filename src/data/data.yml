@@ -28,36 +28,55 @@ site_nav:
 
 footer_nav:
   - title: Information for
-    width: 8
+    width: 6
     cols: true
     items:
-      - text: Students
-        url: /institute/students
       - text: Alumni
         url: /institute/alumni
-      - text: Faculty and Staff
-        url: /institute/faculty-staff
+      - text: Donors
+        url: /institute/giving
       - text: Employers
         url: /institute/advancing-your-career/employers
+      - text: Faculty and Staff
+        url: /institute/faculty-staff
       - text: Media
         url: /institute/offices-services/communications
       - text: Partners
         url: /institute/leadership-impact/global-partnerships
-      - text: Donors
-        url: /institute/giving
+      - text: Students
+        url: /institute/students
       - text: Visitors
         url: /institute/admissions/visit
   - title: Quick Links
-    width: 4
+    width: 6
+    cols: true
     items:
-      - text: Offices and Services
-        url: /institute/offices-services
       - text: BannerWeb
         url: https://ssb-prod.ec.middlebury.edu/PNTR/twbkwbis.P_WWWLogin?
+      - text: Campus Map
+        url: http://www.myatlascms.com/map/index.php?id=972
+      - text: Contact Us
+        url: https://www.middlebury.edu/institute/institute-approach/about/contact-us
+      - text: Course Hub
+        url: http://courses.miis.edu/
+      - text: Directory
+        url: https://directory.miis.edu/
+      - text: Emergency
+        url: https://www.middlebury.edu/institute/offices-services/security
+      - text: Employment
+        url: https://middlebury.peopleadmin.com/
       - text: EthicsPoint
         url: https://secure.ethicspoint.com/domain/media/en/gui/28296/index.html
+      - text: Offices and Services
+        url: /institute/offices-services
+      - text: Oracle Cloud
+        url: https://myapps.microsoft.com/gmhec.org
+      - text: State Authorization
+        url: https://www.middlebury.edu/institute/institute-approach/about/strf
       - text: WebMail
         url: https://mail.middlebury.edu/owa/auth/logon.aspx
+      - text: Website Support
+        url: http://go.middlebury.edu/sitehelp
       - text: Zoom Web Conferencing
         url: https://middlebury.zoom.us
       - text: Site Editor Login
