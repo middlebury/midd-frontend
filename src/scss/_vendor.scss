@@ -17,8 +17,20 @@
 // to make space for back to top button.
 
 // stylelint-disable selector-max-id
-#olark-wrapper .olark-launch-button {
+#olark-wrapper {
+  position: fixed !important;
+  bottom: 15px !important;
   right: 100px !important;
+  left: auto !important;
+  z-index: 9000000 !important;
+}
+
+#olark-wrapper .olark-launch-button-wrapper {
+  position: relative !important;
+  bottom: auto !important;
+  right: auto !important;
+  left: auto !important;
+  z-index: 9000000 !important;
 }
 
 .typography .anchorjs-link,
