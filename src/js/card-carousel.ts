@@ -7,7 +7,7 @@ import config from './config';
 // https://github.com/nolimits4web/swiper/issues/3698
 Number.isNaN =
   Number.isNaN ||
-  function(value) {
+  function (value) {
     return typeof value === 'number' && isNaN(value);
   };
 
@@ -42,14 +42,7 @@ function createCardCarousel(elem: HTMLElement) {
       prevEl: $('.js-card-carousel-prev-button', elem) as HTMLElement,
       disabledClass: 'button--disabled'
     },
-    breakpoints: {
-      [config.breakpoints.lg]: {
-        slidesPerView: 2
-      },
-      [config.breakpoints.xl]: {
-        slidesPerView: 3
-      }
-    }
+    breakpoints: {}
   };
 
   return new Swiper(swiperContainer, swiperConfig);

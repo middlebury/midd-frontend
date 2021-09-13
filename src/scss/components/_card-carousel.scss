@@ -30,7 +30,10 @@ $card-carousel-height: 600px;
   }
 }
 
-.card-carousel__button {
+.card-carousel__button a {
+  @include breakpoint(md) {
+    white-space: pre-wrap;
+  }
 }
 
 .card-carousel__controls {
