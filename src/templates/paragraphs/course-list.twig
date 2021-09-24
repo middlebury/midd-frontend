@@ -36,14 +36,14 @@
 ] %}
 
 <section class="section paragraph--course-list" data-digest-content>
-  <div class="section__header">
-    <h2 class="section__title">
-      Courses Title
-    </h2>
-    <p class="section__text">
-        These are the courses I teach.
-    </p>
-  </div>
+	<div class="section__header">
+		<h2 class="section__title">
+			{{ course_title }}
+		</h2>
+		<p class="section__text">
+			These are the courses I teach.
+		</p>
+	</div>
 	{% include 'partials/accordion.twig' with {
     items: course_items,
     course_list: true,
