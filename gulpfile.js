@@ -163,10 +163,10 @@ const html = () =>
     )
     .pipe(
       data(function () {
-        const ymlData = yaml.safeLoad(
+        const ymlData = yaml.load(
           fs.readFileSync('./src/data/data.yml', 'utf8')
         );
-        const imageStyles = yaml.safeLoad(
+        const imageStyles = yaml.load(
           fs.readFileSync('./src/data/image_styles.yml', 'utf8')
         );
 
