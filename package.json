@@ -97,7 +97,7 @@
     "pikaday": "^1.8.0",
     "preact": "^10.4.8",
     "stickybits": "^3.7.7",
-    "swiper": "^6.8.4"
+    "swiper": "^7.0.7"
   },
   "bundlesize": [
     {

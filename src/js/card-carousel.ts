@@ -7,11 +7,11 @@ import config from './config';
 // https://github.com/nolimits4web/swiper/issues/3698
 Number.isNaN =
   Number.isNaN ||
-  function(value) {
+  function (value) {
     return typeof value === 'number' && isNaN(value);
   };
 
-Swiper.use([Navigation, A11y]);
+// Swiper.use([Navigation, A11y]);
 
 function randomizeChildren(elem: HTMLElement) {
   for (let i = elem.children.length; i >= 0; i--) {
@@ -34,6 +34,7 @@ function createCardCarousel(elem: HTMLElement) {
   }
 
   const swiperConfig: SwiperOptions = {
+    modules: [Navigation, A11y],
     a11y: {},
     slidesPerView: 1,
     grabCursor: true,
