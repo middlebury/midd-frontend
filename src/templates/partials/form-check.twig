@@ -1,6 +1,6 @@
 <div class="form-check{% if inline %} form-check--inline{% endif %}">
   <input
-    type="radio"
+    type="{{ type ? type : 'radio' }}"
     name="{{name}}"
     class="form-check__input"
     id="{{id}}"
