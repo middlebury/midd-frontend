@@ -1,0 +1,10 @@
+<ul class="d-inline-flex pb-7">
+	{% for name in [{icon:'orcid', label:'ORCID'}, {icon:'scopus', label:'Scopus'}, {icon:'google-scholar', label:'Google Scholar'}, {icon:'middlebury-shield', label:'Middlebury'}] %}
+		{% if env.test or random(1) %}
+			<li class="pr-5">
+				{% include 'partials/icon.twig' with { name: name.icon, class: 'profile-detail__icon' } %}
+				<a href="#" class="ml-2 link-underline">{{ name.label }}</a>
+			</li>
+		{% endif %}
+	{% endfor %}
+</ul>

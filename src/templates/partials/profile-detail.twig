@@ -41,10 +41,32 @@
 	{% endblock %}
 	{% block content %}
 
-		<div class="typography mb-7 mb-lg-9">
+		<div class="typography mb-5">
 			<p>Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas elementum augue nec nisl. Proinauctor lorem at nibh. Curabitur nulla purus, feugiat id, elementum in, lobortis quis, pede. Vivamus sodales adipiscing sapien. Vestibulum posuere nulla eget wisi.</p>
 			<p>Integer volutpat ligula eget enim. Suspendisse vitae arcu. Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas elementum augue nec nisl. Proin auctor lorem at nibh. Curabitur nulla purus, feugiat id, elementum in, lobortis quis, pede. Vivamus sodales adipiscing sapien. Vestibulum posuere nulla eget wisi.</p>
 		</div>
+
+		<table class="profile-detail__link-table w-100 mb-7 mb-lg-9">
+			<tr class="d-none">
+				<th>Links</th>
+				<th>Social Links</th>
+			</tr>
+			<tr class="p-2">
+				<td>
+					<b class="d-block">Links</b>
+					<ul>
+						<li><a href="#" class="link-underline">Curriculum Vitae</a></li>
+						<li><a href="#" class="link-underline">aaronsmithisthebest.com</a></li>
+					</ul>
+				</td>
+				<td>
+					<b class="d-block">Social Links</b>
+					{% include 'partials/social-links.twig' with {
+						items: social_links
+					} %}
+				</td>
+			</tr>
+		</table>
 
 		<section
 			class="section" aria-labelledby="midd-profile-section-courses-label">
@@ -85,8 +107,28 @@
 		</section>
 
 		<section class="section" aria-labelledby="midd-profile-section-pubs-label">
-			<h2 class="section__title" id="midd-profile-section-pubs-label">Latest Publications</h2>
+			<h2 class="section__title section__title-publications" id="midd-profile-section-pubs-label">Latest Publications</h2>
 
+			{# <ul class="d-inline-flex pb-7">
+										<li class="pr-5">
+											{% include 'partials/icon.twig' with { name: 'orcid', class: 'profile-detail__icon' } %}
+											<a href="#" class="ml-2 link-underline">ORCID</a>
+										</li>
+										<li class="pr-5">
+											{% include 'partials/icon.twig' with { name: 'google-scholar', class: 'profile-detail__icon' } %}
+											<a href="#" class="ml-2 link-underline">Google Scholar</a>
+										</li>
+										<li class="pr-5">
+											{% include 'partials/icon.twig' with { name: 'scopus', class: 'profile-detail__icon' } %}
+											<a href="#" class="ml-2 link-underline">Scopus</a>
+										</li>
+										<li class="pr-5">
+											{% include 'partials/icon.twig' with { name: 'middlebury-shield', class: 'profile-detail__icon' } %}
+											<a href="#" class="ml-2 link-underline">Middlebury</a>
+										</li>
+									</ul> #}
+
+			{% include 'partials/scholarly-identity-links.twig' %}
 			<div class="typography">
 				<h3>
 					<a href="#">Islam, Islamism, and Politics in Eurasia Report</a>
