@@ -1,0 +1,18 @@
+.profile-detail__link-table {
+  border-spacing: 8px;
+  border: 1px solid #dedede;
+
+  & tr {
+    vertical-align: top;
+    padding: 8px;
+    width: 50%;
+
+    & td {
+      &:nth-child(1) {
+        border-right: 1px solid #dedede;
+      }
+      padding: 8px;
+      width: 50%;
+    }
+  }
+}
