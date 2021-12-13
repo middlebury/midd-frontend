@@ -40,14 +40,14 @@
     margin-bottom: $spacing-7;
   }
 
-  &-publications {
-    margin-bottom: $spacing-3;
-  }
-
   .section__header & {
     border-top: 0;
     padding-top: 0;
     margin-bottom: 0;
+  }
+
+  &.section__title-publications {
+    margin-bottom: $spacing-3;
   }
 }
 
