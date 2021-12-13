@@ -1,4 +1,5 @@
 .profile-detail__link-table {
+  margin-bottom: 4rem;
   border-spacing: 1rem;
   border: 1px solid #dedede;
 
@@ -19,6 +20,7 @@
   }
 
   @include breakpoint(md) {
+    margin-bottom: 4.5rem;
     border-spacing: 0.5rem;
 
     & tr {
@@ -41,5 +43,9 @@
         width: 50%;
       }
     }
+  }
+
+  @include breakpoint(xl) {
+    margin-bottom: 6rem;
   }
 }
