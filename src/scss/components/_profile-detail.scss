@@ -1,43 +1,38 @@
 .profile-detail__link-table {
-  margin-bottom: 4rem;
-  border-spacing: 1rem;
+  margin-bottom: $spacing-8;
+  border-spacing: $spacing-3;
   border: 1px solid #dedede;
 
   & tr {
     vertical-align: top;
-    width: 100%;
     flex-direction: column;
 
     & td {
       &:not(:first-child) {
-        margin-top: 1rem;
+        margin-top: $spacing-3;
         border-top: 1px solid #dedede;
-        padding-top: 1rem;
+        padding-top: $spacing-3;
       }
-
-      width: 100%;
     }
   }
 
   @include breakpoint(md) {
     margin-bottom: 4.5rem;
-    border-spacing: 0.5rem;
+    border-spacing: $spacing-2;
 
     & tr {
       vertical-align: top;
-      width: 100%;
       flex-direction: row;
 
       & td {
-        &:nth-child(1) {
-          padding: 0.5rem;
-        }
+        padding: $spacing-2;
+
         &:not(:first-child) {
           border-top: none;
           margin-top: 0;
           border-left: 1px solid #dedede;
-          padding: 0.5rem;
-          padding-left: 1rem;
+          padding: $spacing-2;
+          padding-left: $spacing-3;
         }
 
         width: 50%;
@@ -46,6 +41,6 @@
   }
 
   @include breakpoint(xl) {
-    margin-bottom: 6rem;
+    margin-bottom: $spacing-9;
   }
 }

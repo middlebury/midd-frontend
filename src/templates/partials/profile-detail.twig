@@ -21,18 +21,12 @@
 					<dd class="mb-3">
 						<a href="mailto:blevinger@middlebury.edu" class="link-underline">blevinger<wbr>@middlebury.edu</a>
 					</dd>
+					<dt class="text-bold">Zoom</dt>
+					<dd class="mb-3">
+						<a href="#" class="link-underline">middlebury.zoom.us/my/ariterkel</a>
+					</dd>
 					<dt class="text-bold">Office Hours</dt>
 					<dd class="mb-3">Tuesdays 3-4pm<br>Thursdays 11am-12pm</dd>
-					<dt class="text-bold sr-only">CV</dt>
-					<dd class="mb-3">
-						<a href="#" class="link-underline">Download CV</a>
-					</dd>
-					<dt class="text-bold sr-only">Elsewhere</dt>
-					<dd class="mb-3">
-						{% include 'partials/social-links.twig' with {
-              items: social_links
-            } %}
-					</dd>
 				</dl>
 			</div>
 
@@ -48,7 +42,7 @@
 		</div>
 
 		<table class="w-100 profile-detail__link-table">
-			<tr class="d-none">
+			<tr class="sr-only">
 				{% for name in links %}
 					<th>{{ name }}</th>
 				{% endfor %}
