@@ -21,18 +21,12 @@
 					<dd class="mb-3">
 						<a href="mailto:blevinger@middlebury.edu" class="link-underline">blevinger<wbr>@middlebury.edu</a>
 					</dd>
+					<dt class="text-bold">Zoom</dt>
+					<dd class="mb-3">
+						<a href="#" class="link-underline">middlebury.zoom.us/my/ariterkel</a>
+					</dd>
 					<dt class="text-bold">Office Hours</dt>
 					<dd class="mb-3">Tuesdays 3-4pm<br>Thursdays 11am-12pm</dd>
-					<dt class="text-bold sr-only">CV</dt>
-					<dd class="mb-3">
-						<a href="#" class="link-underline">Download CV</a>
-					</dd>
-					<dt class="text-bold sr-only">Elsewhere</dt>
-					<dd class="mb-3">
-						{% include 'partials/social-links.twig' with {
-              items: social_links
-            } %}
-					</dd>
 				</dl>
 			</div>
 
@@ -40,11 +34,37 @@
 
 	{% endblock %}
 	{% block content %}
+		{% set links = random([['Links'], ['Social Links'], ['Links', 'Social Links']]) %}
 
-		<div class="typography mb-7 mb-lg-9">
+		<div class="typography mb-5">
 			<p>Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas elementum augue nec nisl. Proinauctor lorem at nibh. Curabitur nulla purus, feugiat id, elementum in, lobortis quis, pede. Vivamus sodales adipiscing sapien. Vestibulum posuere nulla eget wisi.</p>
 			<p>Integer volutpat ligula eget enim. Suspendisse vitae arcu. Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas elementum augue nec nisl. Proin auctor lorem at nibh. Curabitur nulla purus, feugiat id, elementum in, lobortis quis, pede. Vivamus sodales adipiscing sapien. Vestibulum posuere nulla eget wisi.</p>
 		</div>
+
+		<table class="w-100 profile-detail__link-table">
+			<tr class="sr-only">
+				{% for name in links %}
+					<th>{{ name }}</th>
+				{% endfor %}
+			</tr>
+			<tr class="d-flex">
+				{% for name in links %}
+					<td>
+							<strong class="d-block">{{ name }}</strong>
+						{% if name == 'Links' %}
+							<ul>
+								<li><a href="#" class="link-underline">Curriculum Vitae</a></li>
+								<li><a href="#" class="link-underline">aaronsmithisthebest.com</a></li>
+							</ul>
+						{% else %}
+							{% include 'partials/social-links.twig' with {
+								items: social_links
+							} %}
+						{% endif %}
+					</td>
+				{% endfor %}
+			</tr>
+		</table>
 
 		<section
 			class="section" aria-labelledby="midd-profile-section-courses-label">
@@ -85,8 +105,8 @@
 		</section>
 
 		<section class="section" aria-labelledby="midd-profile-section-pubs-label">
-			<h2 class="section__title" id="midd-profile-section-pubs-label">Latest Publications</h2>
-
+			<h2 class="section__title section__title-publications" id="midd-profile-section-pubs-label">Latest Publications</h2>
+			{% include 'partials/scholarly-identity-links.twig' %}
 			<div class="typography">
 				<h3>
 					<a href="#">Islam, Islamism, and Politics in Eurasia Report</a>

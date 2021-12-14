@@ -320,7 +320,7 @@ const minifySvgs = (src) =>
         plugins: [
           { removeTitle: true },
           { removeXMLNS: true },
-          { removeAttrs: { attrs: '(fill|stroke)' } }
+          { removeAttrs: { attrs: '(stroke)' } }
         ]
       })
     );
