@@ -41,15 +41,19 @@
 
     &:first-child {
       padding-left: $spacing-3;
-      width: 33%;
+      width: 50%;
     }
 
     &:not(:first-child) {
-      text-align: left;
+      text-align: right;
 
-      @include breakpoint(md) {
-        text-align: center;
-      }
+      // @include breakpoint(md) {
+      //   text-align: center;
+      // }
+    }
+
+    &:last-child {
+      text-align: left;
     }
   }
 
@@ -70,6 +74,7 @@
   .row-label {
     font-size: $typescale-2;
     background-color: $blue-lighter;
+    color: $black;
   }
 
   .row-label--cell {

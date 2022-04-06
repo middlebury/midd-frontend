@@ -1,6 +1,6 @@
 {% set filter_active = false %}
 {% set minor_badge = '<span class="badge badge--primary ml-2">Major</span>' %}
-{% set major_badge = '<span class="badge badge--primary ml-2">Minor</span>' %}
+{% set major_badge = '<span class="badge badge--primary ml-2 ml-md-7">Minor</span>' %}
 
 {% embed 'partials/sidebar-layout.twig' %}
 	{% block nav %}
@@ -33,16 +33,23 @@
 			<br><br>An array of interdisciplinary programs provide opportunities to synthesize and connect what you learn in many different departments. Intensive study in the major may culminate in a senior thesis, independent project, or artistic production, working closely with professors in laboratories, studios and classrooms to collaborate on research and creative projects. You'll have a broad range of choices, and a great deal of freedom to set your own academic path.</p>
 
 		<table class="table--course-list">
+			<thead class="sr-only">
+				<th>
+					Area of Study
+				</th>
+				<th>
+					Major
+				</th>
+				<th>
+					Minor
+				</th>
+			</thead>
 			<thead>
 				<th>
 					Area of Study
 				</th>
-				<th class="sr-only">
-					Major
-				</th>
-				<th class="sr-only">
-					Minor
-				</th>
+				<th></th>
+				<th></th>
 			</thead>
 			<tbody>
 				{% for item in area_of_study %}
