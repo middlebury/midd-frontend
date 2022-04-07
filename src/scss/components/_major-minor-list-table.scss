@@ -44,12 +44,14 @@
       width: 50%;
     }
 
+    @include breakpoint(lg) {
+      &:first-child {
+        width: 35%;
+      }
+    }
+
     &:not(:first-child) {
       text-align: right;
-
-      // @include breakpoint(md) {
-      //   text-align: center;
-      // }
     }
 
     &:last-child {

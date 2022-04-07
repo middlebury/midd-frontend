@@ -1,6 +1,6 @@
 {% set filter_active = false %}
 {% set minor_badge = '<span class="badge badge--primary ml-2">Major</span>' %}
-{% set major_badge = '<span class="badge badge--primary ml-2 ml-md-7">Minor</span>' %}
+{% set major_badge = '<span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>' %}
 
 {% embed 'partials/sidebar-layout.twig' %}
 	{% block nav %}
@@ -57,7 +57,7 @@
 						<td colspan="100%" class="row-label--cell">{{ item.category }}</td>
 					</tr>
 					{% for course_name in item.course_names %}
-						<tr>
+						<tr valign="top">
 							<td>
 								<a href="#">{{ course_name.name }}</a>
 							</td>
@@ -77,7 +77,7 @@
 								<td colspan="100%" class="track-label--cell">Specialized Tracks</td>
 							</tr>
 							{% for track_name in course_name.tracks %}
-								<tr class="sublist">
+								<tr valign="top" class="sublist">
 									<td>
 										<div>
 											<a href="#">{{track_name.name }}</a>
