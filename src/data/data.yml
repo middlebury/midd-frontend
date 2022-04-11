@@ -96,7 +96,7 @@ secondary_footer_nav:
   - text: Privacy
     href: http://www.middlebury.edu/about/privacy
   - text: Site-Editor login
-    href: '#'
+    href: "#"
 
 social_links:
   - text: Instagram
@@ -297,104 +297,104 @@ gallery_data:
     thumb: http://placekitten.com/64/36
     width: 1280
     height: 720
-    alt: ''
-    srcset: ''
-    sizes: ''
+    alt: ""
+    srcset: ""
+    sizes: ""
     caption: Lorem ipsum <a href="#">dolor</a> sit amet consectetur adipisicing elit.
 
   - src: http://placekitten.com/1440/810
     thumb: http://placekitten.com/64/36
     width: 1440
     height: 810
-    alt: ''
-    srcset: ''
-    sizes: ''
+    alt: ""
+    srcset: ""
+    sizes: ""
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
 
   - src: http://placekitten.com/640/360
     thumb: http://placekitten.com/64/36
     width: 640
     height: 360
-    alt: ''
-    srcset: ''
-    sizes: ''
+    alt: ""
+    srcset: ""
+    sizes: ""
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
   - src: http://placekitten.com/320/130
     thumb: http://placekitten.com/64/36
     width: 320
     height: 130
-    alt: ''
-    srcset: ''
-    sizes: ''
+    alt: ""
+    srcset: ""
+    sizes: ""
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
   - src: http://placekitten.com/960/540
     thumb: http://placekitten.com/64/36
     width: 960
     height: 540
-    alt: ''
-    srcset: ''
-    sizes: ''
+    alt: ""
+    srcset: ""
+    sizes: ""
     caption: Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
 
   - src: http://placekitten.com/400/800
     width: 400
     height: 800
     thumb: http://placekitten.com/40/80
-    alt: ''
-    srcset: ''
-    sizes: ''
+    alt: ""
+    srcset: ""
+    sizes: ""
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
 
   - src: http://placekitten.com/400/800
     width: 400
     height: 800
     thumb: http://placekitten.com/40/80
-    alt: ''
-    srcset: ''
-    sizes: ''
+    alt: ""
+    srcset: ""
+    sizes: ""
 
   - src: http://placekitten.com/450/800
     width: 450
     height: 800
     thumb: http://placekitten.com/40/80
-    alt: ''
-    srcset: ''
-    sizes: ''
+    alt: ""
+    srcset: ""
+    sizes: ""
 
   - src: http://placekitten.com/700/600
     width: 700
     height: 600
     thumb: http://placekitten.com/40/80
-    alt: ''
-    srcset: ''
-    sizes: ''
+    alt: ""
+    srcset: ""
+    sizes: ""
 
   - src: http://placekitten.com/700/600
     width: 700
     height: 600
     thumb: http://placekitten.com/40/80
-    alt: ''
-    srcset: ''
-    sizes: ''
+    alt: ""
+    srcset: ""
+    sizes: ""
 
   - src: http://placekitten.com/960/540
     thumb: http://placekitten.com/64/36
     width: 960
     height: 540
-    alt: ''
-    srcset: ''
-    sizes: ''
+    alt: ""
+    srcset: ""
+    sizes: ""
     caption: Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
 
   - src: http://placekitten.com/400/800
     thumb: http://placekitten.com/40/80
-    alt: ''
+    alt: ""
     width: 400
     height: 800
-    srcset: ''
-    sizes: ''
+    srcset: ""
+    sizes: ""
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
 
 top_level_nav_example:
@@ -411,7 +411,7 @@ top_level_nav_example:
 
 midd_nav:
   - text: Our Schools
-    href: '#'
+    href: "#"
     items:
       - href: http://www.middlebury.edu
         text: Middlebury College
@@ -439,18 +439,18 @@ system_status:
     type: warning
   - name: Email
     type: danger
-    link: '#'
+    link: "#"
   - name: Self-Service Banner (SSB)
     type: paused
   - name: Internet Native Banner (INB)
   - name: Oracle Finance
   - name: Google Apps
-    link: '#'
+    link: "#"
   - name: Office365
-    link: '#'
+    link: "#"
   - name: VPN
   - name: Zoom
-    link: '#'
+    link: "#"
   - name: Directory
   - name: GO
   - name: WordPress
@@ -532,3 +532,116 @@ flowchart_data:
   - id: 10
     text: We suggest Zoom. <a href="#">Set up your Zoom account</a>.
     answer: true
+
+area_of_study:
+  - category: A
+    course_names:
+      - name: African Studies
+      - name: African American Studies
+      - name: American Studies
+      - name: Anthropology
+      - name: Arabic
+  - category: B
+    course_names:
+      - name: Biology
+      - name: Black Studies
+  - category: C
+    course_names:
+      - name: Chemistry & Biochemistry
+      - name: Chinese
+      - name: Classics and Classical Studies
+      - name: Comparative Literature
+      - name: Computer Science
+      - name: Creative Writing
+  - category: D
+    course_names:
+      - name: Dance
+  - category: E
+    course_names:
+      - name: Economics
+      - name: Education Studies
+      - name: English & American Literatures
+      - name: Environmental Studies
+  - category: F
+    course_names:
+      - name: Film & Media Culture
+      - name: First-Year Seminars
+      - name: Food Studies Minor
+      - name: French and Francophone Studies
+  - category: G
+    course_names:
+      - name: Gender, Sexuality & Feminist Studies
+      - name: Geography
+      - name: Geology
+      - name: German
+      - name: Global Health Minor
+      - name: Greek
+  - category: H
+    course_names:
+      - name: Hebrew
+      - name: History of Art & Architecture
+        tracks:
+          - name: Architectural Studies
+          - name: Art History
+      - name: History
+  - category: I
+    course_names:
+      - name: Independent Scholar
+      - name: International Politics & Economics
+      - name: International & Global Studies
+        tracks:
+          - name: African Studies
+          - name: East Asian Studies
+          - name: European Studies
+          - name: Global Environmental Change
+          - name: Global Gender and Sexuality Studies
+          - name: Global Migration and Diaspora Studies
+          - name: Global Security Studies
+          - name: Latin American Studies
+          - name: Middle East and North Africa Studies
+          - name: Russian & East European Studies
+          - name: South Asian Studies
+      - name: Italian
+  - category: J
+    course_names:
+      - name: Japanese Studies
+      - name: Jewish Studies
+  - category: L
+    course_names:
+      - name: Latin
+      - name: Linguistics Minor
+      - name: Literary Studies
+      - name: Luso-Hispanic Studies
+        tracks:
+          - name: Spanish
+          - name: Portuguese
+  - category: M
+    course_names:
+      - name: Mathematics
+      - name: Molecular Biology & Biochemistry
+      - name: Music
+  - category: N
+    course_names:
+      - name: Neuroscience
+  - category: P
+    course_names:
+      - name: Philosophy
+      - name: Physical Education
+      - name: Physics
+      - name: Political Science
+      - name: Psychology
+  - category: R
+    course_names:
+      - name: Religion
+      - name: Russian
+  - category: S
+    course_names:
+      - name: Sociology
+      - name: South Asian Studies Minor
+      - name: Studio Art
+  - category: T
+    course_names:
+      - name: Theatre
+  - category: W
+    course_names:
+      - name: Writing and Rhetoric Program

@@ -2,7 +2,9 @@
 
 {% embed 'partials/sidebar-layout.twig' %}
   {% block nav %}
-    {% include 'partials/event-search.twig' %}
+    {% include 'partials/event-search.twig' with {
+      title: "Search Events"
+    }%}
     {% include 'partials/event-filters.twig' %}
   {% endblock %}
   {% block content %}
