@@ -99,7 +99,8 @@
 .paragraph--quad-story,
 .paragraph--stat-panel,
 .paragraph--card-carousel,
-.paragraph--logo-bar {
+.paragraph--logo-bar,
+.paragraph--waveform {
   @extend %paragraph-full-width;
 }
 
@@ -171,6 +172,10 @@
 
 .paragraph--spotlight {
   @extend %paragraph-full-width;
+  @extend %paragraph-space;
+}
+
+.paragraph--waveform {
   @extend %paragraph-space;
 }
 

@@ -1,0 +1,43 @@
+{% set colors = ['#C0E3FD', '#83C9FC', '#0E68B1', '#07487B', '#043666'] %}
+{% set heights = [429.28, 431.41, 435.67, 436.74, 446.33, 454.85, 514.5] %}
+{% set margins = [0, 10, 20, 30, 35]  %}
+<div class="paragraph--waveform">
+	<div class="container px-0">
+		<section class="waveform">
+			<h2 class="section__title">
+				Section Title Events
+			</h2>
+			<ul class="waveform__list">
+				<li class="waveform__list-item" style="height:{{random(heights)}}px; background-color:{{random(colors)}}; margin-top:{{random(margins)}}px">
+					<div class="bar_contents" id="554577_bar_contents" style="padding-top: 5px">
+						<div class="bar_title" style="opacity: 0">
+							<div style="width: 340px">Labyrinth at The Knoll (video)</div>
+						</div>
+						<div class="bar_target">
+							<div class="bar_color" style="background-color: rgb(191, 227, 254); height: 119px">
+								<div class="bar_image_bw" style="margin-top: -110px; opacity: 0"></div>
+								<div class="bar_image" style="margin-top: -110px; opacity: 0">
+									<a href="http://www.middlebury.edu/newsroom/archive/2017-news/node/554529"></a>
+								</div>
+							</div>
+						</div>
+						<div class="bar_text" style="opacity: 0">
+							<div style="width: 340px">
+								<p>
+									Watch and listen as students build a
+									<a href="http://www.middlebury.edu/newsroom/archive/2017-news/node/554529" target="_blank">seven-circle medieval labyrinth</a>
+									at the College.&nbsp;
+								</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				{% for i in 0..40 %}
+					<li class="waveform__list-item" style="height:{{random(heights)}}px; background-color:{{random(colors)}}; margin-top:{{random(margins)}}px">
+						<div></div>
+					</li>
+				{% endfor %}
+			</ul>
+		</section>
+	</div>
+</div>
