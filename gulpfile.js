@@ -1,7 +1,7 @@
 const fs = require('fs');
 const gulp = require('gulp');
 const twig = require('gulp-twig');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('node-sass'));
 const browserSync = require('browser-sync');
 const sourcemaps = require('gulp-sourcemaps');
 const plumber = require('gulp-plumber');
@@ -163,10 +163,10 @@ const html = () =>
     )
     .pipe(
       data(function () {
-        const ymlData = yaml.safeLoad(
+        const ymlData = yaml.load(
           fs.readFileSync('./src/data/data.yml', 'utf8')
         );
-        const imageStyles = yaml.safeLoad(
+        const imageStyles = yaml.load(
           fs.readFileSync('./src/data/image_styles.yml', 'utf8')
         );
 
@@ -320,7 +320,7 @@ const minifySvgs = (src) =>
         plugins: [
           { removeTitle: true },
           { removeXMLNS: true },
-          { removeAttrs: { attrs: '(fill|stroke)' } }
+          { removeAttrs: { attrs: '(stroke)' } }
         ]
       })
     );

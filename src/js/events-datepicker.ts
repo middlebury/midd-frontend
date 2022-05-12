@@ -87,6 +87,7 @@ if (datePicker) {
     },
     onSelect(date: Date) {
       searchParams.set('start-date', dateToStr(date));
+      searchParams.delete('page');
       window.location.search = searchParams.toString();
     }
   });
