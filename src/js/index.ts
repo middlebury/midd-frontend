@@ -33,6 +33,7 @@ import 'focus-within-polyfill';
 
 import './headroom'; // sticky site headers
 import './toggler'; // toggler util used in transcript toggle, accordions, and more
+import './shifting-slider'; // slider utility used to slide components on hover
 import './video'; // for lazy loading iframes until a video thumbnail is clicked
 import './digest'; // table of contents creator
 import './responsive-table'; // adds data-th attributes for responsive tables

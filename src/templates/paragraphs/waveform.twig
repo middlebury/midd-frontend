@@ -7,34 +7,34 @@
 			<h2 class="section__title">
 				Section Title Events
 			</h2>
-			<ul class="waveform__list">
-				<li class="waveform__list-item" style="height:{{random(heights)}}px; background-color:{{random(colors)}}; margin-top:{{random(margins)}}px">
-					<div class="bar_contents" id="554577_bar_contents" style="padding-top: 5px">
-						<div class="bar_title" style="opacity: 0">
-							<div style="width: 340px">Labyrinth at The Knoll (video)</div>
-						</div>
-						<div class="bar_target">
-							<div class="bar_color" style="background-color: rgb(191, 227, 254); height: 119px">
-								<div class="bar_image_bw" style="margin-top: -110px; opacity: 0"></div>
-								<div class="bar_image" style="margin-top: -110px; opacity: 0">
-									<a href="http://www.middlebury.edu/newsroom/archive/2017-news/node/554529"></a>
+			<ul class="waveform__list shifting-slider">
+				{% for i in 0..40 %}
+					<li class="waveform__list-item js-waveform-item-{{i}}" data-toggle-target=".js-waveform-item-{{i}}" style="height:{{random(heights)}}px; background-color:{{random(colors)}}; margin-top:{{random(margins)}}px">
+						<div class="waveform__event-card">
+							<div class="waveform__event-content">
+								<div class="waveform__event-card--title">
+									<time datetime="" class="text-center lh-solid">
+										<span class="f2 d-block font-semibold">JUN</span>
+										<span class="f6 d-block">24</span>
+									</time>
+									<div class="lh-solid pl-2">
+										<p class="f3 font-semibold lh-solid">
+											McCullough Grille
+										</p>
+										<time datetime="" class="d-block font-normal">7:00 PM</time>
+									</div>
 								</div>
-							</div>
-						</div>
-						<div class="bar_text" style="opacity: 0">
-							<div style="width: 340px">
-								<p>
-									Watch and listen as students build a
-									<a href="http://www.middlebury.edu/newsroom/archive/2017-news/node/554529" target="_blank">seven-circle medieval labyrinth</a>
-									at the College.&nbsp;
+								<h3 class="f7" id="midd-event-{{i}}-header">
+									<a href="{{ url|default('#') }}" title="{{ title }} on June 24, 2017 &middot; 11:45 AM">
+										Museum of Art Lecture Series
+									</a>
+								</h3>
+								<p class="f3 my-3">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores illum quas, voluptatum atque voluptas, animi ipsam magni sit quo quae ut fugit. Accusantium explicabo sunt laborum? Soluta, placeat nisi.
 								</p>
 							</div>
+							<a href="" class="paragraph--button button button--primary">Do something awesome</a>
 						</div>
-					</div>
-				</li>
-				{% for i in 0..40 %}
-					<li class="waveform__list-item" style="height:{{random(heights)}}px; background-color:{{random(colors)}}; margin-top:{{random(margins)}}px">
-						<div></div>
 					</li>
 				{% endfor %}
 			</ul>
