@@ -35,6 +35,7 @@ They might well be outsourced to an external stylesheet of course.
 	.svg-icon-envelope-dims { width: 24px; height: 24px; }
 	.svg-icon-external-link-dims { width: 24px; height: 24px; }
 	.svg-icon-facebook-dims { width: 24px; height: 24px; }
+	.svg-icon-github-dims { width: 24px; height: 24px; }
 	.svg-icon-google-scholar-dims { width: 24px; height: 24px; }
 	.svg-icon-images-dims { width: 24px; height: 24px; }
 	.svg-icon-info-dims { width: 24px; height: 24px; }
@@ -95,6 +96,7 @@ for further details on how to create this embeddable sprite variant.
 		<symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-envelope"><path d="M24 4.302V18a2 2 0 01-2 2H2a2 2 0 01-2-2V4.302l12 10 12-10zM2.762 4h18.476L12 11.698 2.762 4z"/></symbol>
 		<symbol fill="none" fill-rule="evenodd" viewBox="0 0 24 24" id="icon-external-link"><path d="M22.154 22.154H1.846V1.846h9.23V0H0v24h24V12.923h-1.846v9.23z" fill="#000"/><path d="M16.615 0v1.846h4.237L9.498 13.191l1.311 1.31L22.154 3.149v4.237H24V0h-7.385z" fill="#000"/></symbol>
 		<symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-facebook"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.35C0 23.407.593 24 1.325 24h11.494v-9.294H9.691v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.324 0 2.463.098 2.795.143v3.24h-1.918c-1.504 0-1.795.715-1.795 1.763v2.313h3.586l-.467 3.622h-3.12V24h6.116c.732 0 1.325-.593 1.325-1.325V1.325C24 .593 23.407 0 22.675 0"/></symbol>
+		<symbol fill="none" fill-rule="evenodd" viewBox="0 0 24 24" id="icon-github"><path clip-rule="evenodd" d="M12 .294c-6.63 0-12 5.37-12 12 0 5.304 3.44 9.798 8.206 11.39.597.11.818-.259.818-.583 0-.287-.007-1.039-.015-2.04-3.337.721-4.044-1.606-4.044-1.606-.545-1.385-1.333-1.76-1.333-1.76-1.09-.745.08-.73.08-.73 1.201.088 1.842 1.237 1.842 1.237 1.068 1.835 2.807 1.304 3.492.995.11-.774.42-1.304.759-1.606-2.66-.295-5.459-1.326-5.459-5.923 0-1.31.464-2.379 1.238-3.219-.125-.31-.538-1.525.11-3.175 0 0 1.01-.324 3.3 1.23A11.645 11.645 0 0112 6.1c1.017.008 2.048.14 3.005.405 2.292-1.554 3.3-1.23 3.3-1.23.656 1.65.244 2.873.119 3.175.766.84 1.23 1.908 1.23 3.22 0 4.61-2.807 5.62-5.48 5.922.426.368.817 1.105.817 2.225 0 1.606-.015 2.895-.015 3.293 0 .324.214.692.825.574C20.567 22.092 24 17.598 24 12.302 24 5.665 18.63.294 12 .294z" fill="#191717"/></symbol>
 		<symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-google-scholar"><g fill-rule="nonzero" fill="none"><path fill="#4285F4" d="M12 19.271L0 9.501 12 0z"/><path fill="#356AC3" d="M12 19.271l12-9.77L12 0z"/><path d="M12 24a7 7 0 100-14 7 7 0 000 14z" fill="#A0C3FF"/><path d="M5.673 14a7 7 0 0112.653 0H5.673z" fill="#76A7FA"/></g></symbol>
 		<symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-images"><path d="M20 13v4h-4v4H0v-2h14v-7H2v7H0v-9h4V6h4V2h16v11h-4zm0-2h2V4H10v2h10v5zM6 10h10v5h2V8H6v2z" fill-rule="nonzero"/></symbol>
 		<symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-info"><path d="M12 24C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12zm2.514-17.448c0-.846-.576-1.35-1.368-1.35-1.116 0-1.746.918-1.746 1.728 0 .828.594 1.332 1.368 1.332a1.725 1.725 0 001.746-1.71zm-1.062 4.536c0-1.026-.72-1.71-1.728-1.71-1.404 0-2.412 1.116-3.24 3.06l.936.36c.486-1.08.9-1.782 1.296-1.782.144 0 .252.072.252.342 0 .918-1.494 3.564-1.494 5.04 0 1.116.774 1.782 1.854 1.782 1.278 0 2.358-.954 3.06-2.862l-.936-.324c-.522 1.206-.864 1.512-1.152 1.512-.18 0-.324-.09-.324-.36 0-.936 1.476-3.6 1.476-5.058z"/></symbol>
@@ -321,6 +323,17 @@ embedded above. They may be styled via CSS.
 
 					</div>
 					<h2>icon-facebook</h2>
+				</li>
+				<li title="icon-github">
+					<div class="icon-box">
+
+						<!-- icon-github -->
+						<svg class="svg-icon-github-dims">
+							<use xlink:href="#icon-github"></use>
+						</svg>
+
+					</div>
+					<h2>icon-github</h2>
 				</li>
 				<li title="icon-google-scholar">
 					<div class="icon-box">
@@ -761,6 +774,17 @@ SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
 					</div>
 					<h2>icon-facebook</h2>
 				</li>
+				<li title="icon-github">
+					<div class="icon-box">
+
+						<!-- icon-github -->
+						<svg class="svg-icon-github-dims">
+							<use xlink:href="svg/sprite.symbol.svg#icon-github"></use>
+						</svg>
+
+					</div>
+					<h2>icon-github</h2>
+				</li>
 				<li title="icon-google-scholar">
 					<div class="icon-box">
 
@@ -1011,7 +1035,7 @@ SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
 
 		</section>
 		<footer>
-			<p>Generated at Tue, 12 Apr 2022 20:56:13 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+			<p>Generated at Wed, 01 Jun 2022 15:23:13 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
 		</footer>
 	</body>
 </html>
