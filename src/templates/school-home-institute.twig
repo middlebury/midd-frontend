@@ -16,9 +16,9 @@
 
 {% block content %}
 	{# {% include 'partials/homepage-hero.twig' with {
-											    img_style: 'spotlight',
-											    align: 'top',
-											  } %} #}
+												    img_style: 'spotlight',
+												    align: 'top',
+												  } %} #}
 	{% include 'paragraphs/mega-cta.twig' with {
     pin: 'left-bottom',
     miis: 'true',
@@ -33,7 +33,7 @@
 
 	{% include 'paragraphs/text-short.twig' %}
 
-  {% include 'paragraphs/pardot-form.twig' with {
+	{% include 'paragraphs/pardot-form.twig' with {
     title: 'Find out if IEM is right for you',
     post_url: 'https://learn.middlebury.edu/l/74172/2021-08-04/21x2y5y',
     program: 'International Education Management',
@@ -64,13 +64,17 @@
 
 	{% include 'paragraphs/card-carousel.twig' %}
 
+	{% include 'paragraphs/waveform.twig' with {
+    lines: true
+  } %}
+
 	{% include 'paragraphs/quad-story.twig' %}
 
 	{% include 'paragraphs/themed-panel.twig' %}
 {% endblock %}
 
 {% block layout_footer %}
-  {% include 'partials/olark.twig' %}
+	{% include 'partials/olark.twig' %}
 	{% include 'partials/footer-cta-group.twig' %}
 	{% include 'partials/school-footer.twig' with {
     name: 'Support the Institute',
