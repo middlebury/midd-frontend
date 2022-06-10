@@ -1,28 +1,36 @@
-import { $, $$ } from './utils/dom';
+import { $$ } from './utils/dom';
 
 class ShiftingSlider {
   /* Element which will be hovered over and will trigger the slide */
   elem: HTMLElement;
 
   /* Visible element width on the screen */
-  elemWidth: number;
+  visibleElemWidth: number;
 
+  /* Total element width including the hidden width outside the viewport */
   totalElemWidth: number;
 
+  /* Amount the element can scroll to the left or right */
   scrollWidth: number;
 
+  /* Variable to incrementally shift element left or right */
   shift: number;
 
-  id: any;
+  /* Interval id of the current interval running for scroll on hover animation */
+  intervalId: any;
+
+  tooltipElem: any;
 
   constructor(elem: HTMLElement) {
     this.elem = elem;
-    this.elemWidth = elem.offsetWidth;
+    this.visibleElemWidth = elem.offsetWidth;
     this.totalElemWidth = elem.scrollWidth;
-    this.scrollWidth = this.totalElemWidth - this.elemWidth;
+    this.scrollWidth = this.totalElemWidth - this.visibleElemWidth;
     this.shift = 0;
     this.handleHover = this.handleHover.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleMouseOut = this.handleMouseOut.bind(this);
+    this.handleMouseMove = this.handleMouseMove.bind(this);
     this.init();
   }
 
@@ -33,80 +41,106 @@ class ShiftingSlider {
   addListeners() {
     this.elem.addEventListener('mouseover', this.handleHover);
     this.elem.addEventListener('click', this.handleClick);
+    this.elem.addEventListener('mouseout', this.handleMouseOut);
 
-    // const eventCards = $$('.waveform__event-card');
-
-    // eventCards.forEach((elem) =>
-    //   this.elem.addEventListener('mouseover', this.handleClick)
-    // );
+    const waveformListItems = $$('.waveform__list-item');
+    waveformListItems.forEach((listItem) => {
+      listItem.addEventListener('mousemove', this.handleMouseMove);
+    });
   }
 
-  // destroy method is not currently called in our apps but could be if you want to disable a slider
+  // destroy method is not currently called in our apps but could be if you want to disable a shifting slider
   destroy() {
     this.elem.removeEventListener('mouseover', this.handleHover);
+    this.elem.removeEventListener('click', this.handleClick);
   }
 
-  /*
-    Write animate function, like jquery's animate that specifies a speed, direction and maybe callback
-    Write the animate function like so https://stackoverflow.com/questions/15521081/pure-js-equivalent-of-jquery-animate#answer-15521141
-  */
-  animate(speed: number, direction: string) {
+  scroll(direction: string) {
     var shift =
       this.elem.style.left === '' ? 0 : parseInt(this.elem.style.left, 10);
 
-    function frame(
-      elem: HTMLElement,
-      direction: string,
-      id: any,
-      scrollWidth: number
-    ) {
-      if (shift === 0 || shift <= -scrollWidth) {
-        clearInterval(id);
-      }
-      if (direction === 'right' && shift > -scrollWidth) {
-        shift--;
-      } else if (direction === 'left' && shift < 0) {
-        shift++;
-      }
-      // console.log(shift);
-      elem.style.left = shift + 'px';
+    this.totalElemWidth = this.elem.scrollWidth;
+    this.scrollWidth = this.totalElemWidth - this.visibleElemWidth;
+
+    if (shift === 0 || shift <= -this.scrollWidth) {
+      clearInterval(this.intervalId);
+    }
+    if (direction === 'right' && shift > -this.scrollWidth) {
+      shift--;
+    } else if (direction === 'left' && shift < 0) {
+      shift++;
     }
 
-    // if (!this.id) {
-    this.id = setInterval(
-      () => frame(this.elem, direction, this.id, this.scrollWidth),
-      speed
-    ); // draw every 10ms
-    // }
+    this.elem.style.left = shift + 'px';
+  }
+
+  animate(speed: number, direction: string) {
+    this.intervalId = setInterval(() => this.scroll(direction), speed);
+  }
+
+  handleTooltip(e: MouseEvent) {
+    let target = e.target;
+
+    // if we have tooltip HTML...
+    let tooltipHtml = target.dataset.tooltip;
+    if (!tooltipHtml) return;
+
+    // ...create the tooltip element
+    this.tooltipElem = document.createElement('div');
+    this.tooltipElem.className = 'waveform__list-item--tooltip';
+    this.tooltipElem.innerHTML = tooltipHtml;
+    target.appendChild(this.tooltipElem);
+  }
+
+  handleMouseOut(e: MouseEvent) {
+    if (this.tooltipElem) {
+      this.tooltipElem.remove();
+      this.tooltipElem = null;
+    }
   }
 
   handleHover(e: MouseEvent) {
     e.preventDefault();
+    this.handleTooltip(e);
     var x = e.clientX;
 
-    if (this.id) {
-      clearInterval(this.id);
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
     }
 
-    // var totalElemWidth = this.elem.scrollWidth; // gets the total width with overflow width
-    // var scrollWidth = totalElemWidth - this.elemWidth; // amount the element needs move left
-
-    if (x < this.elemWidth * 0.25) {
-      this.animate(5, 'left');
-    } else if (x > this.elemWidth * 0.25 && x < this.elemWidth * 0.5) {
+    if (x < this.visibleElemWidth * 0.25) {
       this.animate(10, 'left');
-    } else if (x > this.elemWidth * 0.5 && x < this.elemWidth * 0.75) {
+    } else if (x > this.visibleElemWidth * 0.75) {
       this.animate(10, 'right');
-    } else if (x > this.elemWidth * 0.75) {
-      this.animate(5, 'right');
+    } else {
+      if (this.intervalId) {
+        clearInterval(this.intervalId);
+      }
     }
   }
 
   handleClick(e: MouseEvent) {
     e.preventDefault();
 
-    if (this.id) {
-      clearInterval(this.id);
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
+
+  handleMouseMove(e: MouseEvent) {
+    var rect = e.target.getBoundingClientRect();
+    var x = e.clientX - rect.left; //x position within the element.
+    var y = e.clientY - rect.top; //y position within the element.
+    if (this.tooltipElem) {
+      var rightSpace = document.body.clientWidth - e.pageX;
+
+      if (rightSpace <= this.tooltipElem.offsetWidth) {
+        this.tooltipElem.style.left =
+          -(this.tooltipElem.offsetWidth - rightSpace) + e.clientX + 'px';
+      } else {
+        this.tooltipElem.style.left = -20 + e.clientX + 'px';
+      }
+      this.tooltipElem.style.top = -50 + e.clientY + 'px';
     }
   }
 }
