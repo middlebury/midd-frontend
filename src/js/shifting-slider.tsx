@@ -79,7 +79,7 @@ class ShiftingSlider {
   }
 
   handleTooltip(e: MouseEvent) {
-    let target = e.target;
+    let target = e.target as HTMLElement;
 
     // if we have tooltip HTML...
     let tooltipHtml = target.dataset.tooltip;
@@ -127,7 +127,7 @@ class ShiftingSlider {
     }
   }
 
-  handleMouseMove(e: MouseEvent) {
+  handleMouseMove(e: MouseEvent & { target: Element }) {
     var rect = e.target.getBoundingClientRect();
     var x = e.clientX - rect.left; //x position within the element.
     var y = e.clientY - rect.top; //y position within the element.
