@@ -1,5 +1,5 @@
 <ul class="d-block d-md-inline-flex pb-3 pb-md-7">
-	{% for name in [{icon:'orcid', label:'ORCID'}, {icon:'scopus', label:'Scopus'}, {icon:'google-scholar', label:'Google Scholar'}, {icon:'middlebury-shield', label:'Middlebury'}] %}
+	{% for name in [{icon:'orcid', label:'ORCID'}, {icon:'scopus', label:'Scopus'}, {icon:'google-scholar', label:'Google Scholar'}, {icon:'middlebury-shield', label:'Middlebury'}, {icon:'github', label:'Github'}] %}
 		{% if env.test or random(1) %}
 			<li class="pb-3 pb-md-0 pr-md-5">
 				{% include 'partials/icon.twig' with { name: name.icon, class: 'profile-detail__icon' } %}
