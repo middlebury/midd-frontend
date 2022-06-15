@@ -1,6 +1,6 @@
 {% set filter_active = false %}
 {% set minor_badge = '<span class="badge badge--primary ml-2">Major</span>' %}
-{% set major_badge = '<span class="badge badge--primary ml-2 ml-md-7">Minor</span>' %}
+{% set major_badge = '<span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>' %}
 
 {% embed 'partials/sidebar-layout.twig' %}
 	{% block nav %}
@@ -33,23 +33,16 @@
 			<br><br>An array of interdisciplinary programs provide opportunities to synthesize and connect what you learn in many different departments. Intensive study in the major may culminate in a senior thesis, independent project, or artistic production, working closely with professors in laboratories, studios and classrooms to collaborate on research and creative projects. You'll have a broad range of choices, and a great deal of freedom to set your own academic path.</p>
 
 		<table class="table--course-list">
-			<thead class="sr-only">
-				<th>
-					Area of Study
-				</th>
-				<th>
-					Major
-				</th>
-				<th>
-					Minor
-				</th>
-			</thead>
 			<thead>
 				<th>
 					Area of Study
 				</th>
-				<th></th>
-				<th></th>
+				<th>
+					<span class="sr-only">Major</span>
+				</th>
+				<th>
+					<span class="sr-only">Minor</span>
+				</th>
 			</thead>
 			<tbody>
 				{% for item in area_of_study %}
@@ -57,7 +50,7 @@
 						<td colspan="100%" class="row-label--cell">{{ item.category }}</td>
 					</tr>
 					{% for course_name in item.course_names %}
-						<tr>
+						<tr valign="top">
 							<td>
 								<a href="#">{{ course_name.name }}</a>
 							</td>
@@ -77,7 +70,7 @@
 								<td colspan="100%" class="track-label--cell">Specialized Tracks</td>
 							</tr>
 							{% for track_name in course_name.tracks %}
-								<tr class="sublist">
+								<tr valign="top" class="sublist">
 									<td>
 										<div>
 											<a href="#">{{track_name.name }}</a>
