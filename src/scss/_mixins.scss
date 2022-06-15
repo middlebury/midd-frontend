@@ -10,6 +10,7 @@
 @import 'mixins/screen-reader';
 @import 'mixins/forms';
 @import 'mixins/buttons';
+@import 'mixins/waveform-bars';
 
 @mixin absolute-fill {
   position: absolute;
