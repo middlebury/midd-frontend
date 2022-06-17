@@ -1,4 +1,4 @@
-import { $$ } from './utils/dom';
+import { $, $$ } from './utils/dom';
 
 class ShiftingSlider {
   /* Element which will be hovered over and will trigger the slide */
@@ -28,19 +28,32 @@ class ShiftingSlider {
     this.scrollWidth = this.totalElemWidth - this.visibleElemWidth;
     this.shift = 0;
     this.handleHover = this.handleHover.bind(this);
-    this.handleClick = this.handleClick.bind(this);
     this.handleMouseOut = this.handleMouseOut.bind(this);
     this.handleMouseMove = this.handleMouseMove.bind(this);
+    this.onWindowResize = this.onWindowResize.bind(this);
     this.init();
   }
 
   init() {
-    this.addListeners();
+    this.onWindowResize();
+    window.onresize = this.onWindowResize;
+  }
+
+  onWindowResize() {
+    this.visibleElemWidth = this.elem.offsetWidth;
+    this.totalElemWidth = this.elem.scrollWidth;
+    this.scrollWidth = this.totalElemWidth - this.visibleElemWidth;
+    if (window.innerWidth >= 1024) {
+      this.addListeners();
+    } else {
+      this.elem.style.left = 0 + 'px';
+      this.destroy();
+    }
   }
 
   addListeners() {
     this.elem.addEventListener('mouseover', this.handleHover);
-    this.elem.addEventListener('click', this.handleClick);
+    this.elem.addEventListener('mousemove', this.handleHover);
     this.elem.addEventListener('mouseout', this.handleMouseOut);
 
     const waveformListItems = $$('.waveform__list-item');
@@ -52,7 +65,8 @@ class ShiftingSlider {
   // destroy method is not currently called in our apps but could be if you want to disable a shifting slider
   destroy() {
     this.elem.removeEventListener('mouseover', this.handleHover);
-    this.elem.removeEventListener('click', this.handleClick);
+    this.elem.removeEventListener('mousemove', this.handleHover);
+    this.elem.removeEventListener('mouseout', this.handleMouseOut);
   }
 
   scroll(direction: string) {
@@ -92,7 +106,7 @@ class ShiftingSlider {
     target.appendChild(this.tooltipElem);
   }
 
-  handleMouseOut(e: MouseEvent) {
+  handleMouseOut() {
     if (this.tooltipElem) {
       this.tooltipElem.remove();
       this.tooltipElem = null;
@@ -101,16 +115,24 @@ class ShiftingSlider {
 
   handleHover(e: MouseEvent) {
     e.preventDefault();
-    this.handleTooltip(e);
+
+    if (e.type == 'mouseover') {
+      this.handleTooltip(e);
+    }
+
     var x = e.clientX;
 
     if (this.intervalId) {
       clearInterval(this.intervalId);
     }
 
-    if (x < this.visibleElemWidth * 0.25) {
+    var el = $('.paragraph--waveform .container');
+    var viewportOffset = el.getBoundingClientRect();
+    var left = viewportOffset.left;
+
+    if (x - left < this.visibleElemWidth * 0.125) {
       this.animate(10, 'left');
-    } else if (x > this.visibleElemWidth * 0.75) {
+    } else if (x - left > this.visibleElemWidth * 0.875) {
       this.animate(10, 'right');
     } else {
       if (this.intervalId) {
@@ -127,10 +149,7 @@ class ShiftingSlider {
     }
   }
 
-  handleMouseMove(e: MouseEvent & { target: Element }) {
-    var rect = e.target.getBoundingClientRect();
-    var x = e.clientX - rect.left; //x position within the element.
-    var y = e.clientY - rect.top; //y position within the element.
+  handleMouseMove(e: MouseEvent) {
     if (this.tooltipElem) {
       var rightSpace = document.body.clientWidth - e.pageX;
 

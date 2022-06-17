@@ -183,6 +183,15 @@ $theme-margins-sm: (
   @include breakpoint(xl) {
     padding-bottom: rem(54);
   }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .waveform__list-item {
@@ -279,7 +288,7 @@ $theme-margins-sm: (
 
     &.is-toggled,
     .waveform__event-card {
-      @include breakpoint(md) {
+      @include breakpoint(sm) {
         min-width: 278px;
         height: 360px !important;
       }
