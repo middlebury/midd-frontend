@@ -13,38 +13,32 @@
 					<p class="section__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidi ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
 				</div>
 			</header>
-			<ul class="waveform__list shifting-slider">
-				{% for i in 0..49 %}
-					{% set bar_color = random(4) %}
-					<li class="waveform__list-item js-waveform-item-{{i}} {{i == card_open ? " is-toggled" : " "}} bar-color-style-{{bar_color}} bar-height-style-xl-{{random(5)}} bar-height-style-lg-{{random(5)}} bar-height-style-sm-{{random(5)}} bar-margin-style-xl-{{random(4)}} bar-margin-style-lg-{{random(5)}} bar-margin-style-sm-{{random(4)}}" data-toggle-single-target=".js-waveform-item-{{i}}" data-tooltip="Museum of Art Lecture Series">
-						<div class="waveform__event-card" style="display:none;border-left:8px solid {{colors[bar_color]}}">
-							<div class="waveform__event-content">
-								<div class="waveform__event-card--title">
-									<time datetime="" class="text-center lh-solid">
-										<span class="f2 d-block font-semibold">JUN</span>
-										<span class="f6 d-block">24</span>
-									</time>
-									<div class="lh-solid pl-2">
-										<p class="f3 font-semibold lh-solid">
-											McCullough Grille
+			<div class="waveform__wrapper">
+				<ul class="waveform__list shifting-slider">
+					{% for i in 0..48 %}
+						{% set bar_color = random(4) %}
+						<li class="waveform__list-item js-waveform-item-{{i}} {{i == card_open ? " is-toggled" : " "}} bar-color-style-{{bar_color}} bar-height-style-xl-{{random(5)}} bar-height-style-lg-{{random(5)}} bar-height-style-sm-{{random(5)}} bar-margin-style-xl-{{random(4)}} bar-margin-style-lg-{{random(5)}} bar-margin-style-sm-{{random(4)}}" data-toggle-single-target=".js-waveform-item-{{i}}" data-tooltip="Museum of Art Lecture Series">
+							<div class="waveform__event-card" style="display:none;border-left:8px solid {{colors[bar_color]}}">
+								<div class="waveform__event-card__content">
+									<div class="waveform__event-card__content--text">
+										<time datetime="" class="text-center lh-solid">
+											March 24, 2019
+										</time>
+										<h3 id="midd-event-{{i}}-header">
+											<a href="{{ url|default('#') }}" title="{{ title }} on June 24, 2017 &middot; 11:45 AM">
+												Museum of Art Lecture Series
+											</a>
+										</h3>
+										<p class="f3 mt-2 mt-lg-3">
+											Lorem ipsum dolor sit amet; dolor sit amet; nostrud exercitation ullamco.
 										</p>
-										<time datetime="" class="d-block font-normal">7:00 PM</time>
 									</div>
+									<a href="#" target="_blank" class="paragraph--button button button--primary">Do something awesome</a>
 								</div>
-								<h3 id="midd-event-{{i}}-header">
-									<a href="{{ url|default('#') }}" title="{{ title }} on June 24, 2017 &middot; 11:45 AM">
-										Museum of Art Lecture Series
-									</a>
-								</h3>
-								<p class="f3 mt-2 mt-lg-3">
-									Lorem ipsum dolor sit amet; dolor sit amet; nostrud exercitation ullamco.
-								</p>
-							</div>
-							<a href="#" target="_blank" class="paragraph--button button button--primary">Do something awesome</a>
-						</div>
-					</li>
-				{% endfor %}
-			</ul>
-		</section>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</section>
+		</div>
 	</div>
-</div>
