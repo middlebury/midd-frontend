@@ -92,6 +92,7 @@
     "lozad": "^1.16.0",
     "mdn-polyfills": "^5.20.0",
     "micromodal": "^0.4.10",
+    "multi-clamp": "^2.0.2",
     "normalize.css": "^8.0.1",
     "object-fit-images": "^3.2.4",
     "pikaday": "^1.8.2",
