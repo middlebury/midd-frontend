@@ -60,7 +60,7 @@ $theme-margins-sm: (
 
 @keyframes fade-in {
   from {
-    left: 50%;
+    left: -50%;
   }
 
   to {
@@ -78,7 +78,7 @@ $theme-margins-sm: (
     left: 0px;
 
     @include breakpoint(lg) {
-      left: 50%;
+      left: -50%;
     }
 
     &.fade-in-element {
@@ -93,7 +93,7 @@ $theme-margins-sm: (
 .waveform__header {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   padding-left: $spacing-3;
   padding-right: $spacing-3;
   padding-top: $spacing-3;
@@ -247,7 +247,7 @@ $theme-margins-sm: (
     min-width: $spacing-4;
 
     &:hover {
-      background-color: $white  !important;
+      background-color: $white !important;
       margin-left: rem(6);
       margin-right: rem(6);
       min-width: rem(36);
@@ -262,7 +262,7 @@ $theme-margins-sm: (
       &.is-toggled {
         margin-top: 0;
         z-index: 10;
-        background-color: $white  !important;
+        background-color: $white !important;
 
         &:hover {
           margin-left: rem(12);
@@ -299,7 +299,7 @@ $theme-margins-sm: (
 
       @include breakpoint(xl) {
         padding: $spacing-3;
-        padding-top: $spacing-5;
+        padding-top: $spacing-4;
       }
     }
 
@@ -328,21 +328,27 @@ $theme-margins-sm: (
       height: 100%;
 
       .waveform__event-card__content--text {
-        height: 400px;
-        padding-bottom: $spacing-3;
+        // padding-bottom: $spacing-3;
+        height: 254px;
+        margin-bottom: $spacing-3;
+        // overflow: hidden;
+        // text-overflow: ellipsis;
 
         @include breakpoint(md) {
-          padding-bottom: $spacing-4;
-          padding-left: $spacing-2;
-          padding-right: $spacing-2;
+          height: 266px;
+          margin-bottom: $spacing-4;
+          margin-left: $spacing-2;
+          margin-right: $spacing-2;
         }
 
         @include breakpoint(lg) {
-          padding-bottom: $spacing-5;
+          height: 358px;
+          // padding-bottom: $spacing-5;
         }
 
         @include breakpoint(xl) {
-          padding-bottom: $spacing-7;
+          height: 390px;
+          // padding-bottom: $spacing-7;
         }
 
         time {
@@ -356,8 +362,13 @@ $theme-margins-sm: (
         }
 
         p {
-          padding-bottom: rem(6);
+          // padding-bottom: rem(6);
         }
+
+        // span[class='inline'],
+        // span[class='clamp-ellipsis'] {
+        //   display: inline !important;
+        // }
       }
     }
 
@@ -371,6 +382,10 @@ $theme-margins-sm: (
         font-size: $typescale-7;
         font-weight: $font-weight-normal;
         padding-top: $spacing-5;
+      }
+
+      @include breakpoint(xl) {
+        padding-top: $spacing-7;
       }
     }
   }

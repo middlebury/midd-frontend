@@ -1,5 +1,8 @@
 import Superclamp from 'superclamp';
 
-Superclamp.register(document.querySelectorAll('.waveform__event-card__content--text'));
+Superclamp.register(
+  document.querySelectorAll('.waveform__event-card__content--text')
+);
 
-window.addEventListener('click', Superclamp.reclampAll);
+const cards = document.querySelectorAll('.waveform__list-item');
+cards.forEach((elem) => elem.addEventListener('click', Superclamp.reclampAll));

@@ -1,1 +1,1 @@
-declare module "superclamp";
+declare module 'superclamp';
