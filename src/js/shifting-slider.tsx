@@ -86,8 +86,7 @@ class ShiftingSlider {
       listItem.addEventListener('mousemove', this.handleMouseMove);
     });
 
-    const cards = document.querySelectorAll('.waveform__list-item');
-    cards.forEach((elem) => {
+    waveformListItems.forEach((elem) => {
       elem.addEventListener('click', Superclamp.reclampAll);
     });
   }
