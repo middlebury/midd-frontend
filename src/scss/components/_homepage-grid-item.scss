@@ -1,0 +1,258 @@
+// Grid Hover
+
+.quad-item-1,
+.quad-item-2,
+.quad-item-3,
+.quad-item-4 {
+  position: relative;
+
+  @include breakpoint(lg) {
+    &:hover {
+      > .grid-hover__overlay {
+        opacity: 1;
+      }
+
+      > .grid-expandable-tile {
+        opacity: 0.1;
+      }
+    }
+  }
+}
+
+.grid-hover__overlay {
+  transition: 0.2s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: $white;
+  width: 100%;
+  padding: 0 $spacing-4;
+
+  &.expand {
+    p {
+      text-align: left;
+    }
+  }
+
+  .grid-hover__text {
+    p {
+      font-size: $typescale-6;
+    }
+
+    .text-small {
+      font-size: $typescale-4;
+    }
+  }
+}
+
+// Grid Modal Overlay
+
+.grid-modal {
+  display: none;
+  background: rgba($navy-dark, 0.95);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 300;
+  color: $white;
+
+  &.is-open {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.grid-modal__overlay {
+  figure {
+    margin: auto;
+    padding-right: 0;
+    padding-left: 0;
+    max-width: calc(100% * 10 / 12);
+  }
+  .grid-video__body {
+    text-align: left;
+    margin-top: $spacing-3;
+  }
+}
+
+.grid-modal__button {
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing;
+  font-weight: $font-weight-semibold;
+  font-size: $typescale-2;
+  color: $white;
+  background: none;
+  border: 0;
+  position: fixed;
+  top: $spacing-5;
+  right: $spacing-5;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+}
+
+.grid-modal__button--close {
+  margin-left: auto;
+}
+
+// Grid Quote
+
+.grid-quote {
+  height: 100%;
+  width: 100%;
+  background: url(/images/homepage-grid-quote.png) no-repeat $spacing-3 0;
+  background-color: #c0e3fd;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: $spacing-2;
+
+  @include breakpoint(md) {
+    padding: $spacing-3;
+  }
+
+  .grid-quote__text {
+    font-weight: $font-weight-semibold;
+    font-size: $typescale-4;
+    line-height: 2;
+    text-align: left;
+
+    @include breakpoint(md) {
+      font-weight: $font-weight-normal;
+      font-size: $typescale-5;
+    }
+
+    @include breakpoint(lg) {
+      font-weight: $font-weight-light;
+      font-size: $typescale-8;
+    }
+  }
+
+  .grid-quote__caption,
+  .grid-quote__caption p {
+    text-align: right;
+    font-size: $typescale-1 !important;
+    line-height: $line-height-heading !important;
+
+    @include breakpoint(lg) {
+      font-size: $typescale-2 !important;
+    }
+  }
+
+  &.quote-text--small {
+    @include breakpoint(lg) {
+      padding: $spacing-4 $spacing-3;
+    }
+
+    .grid-quote__text {
+      font-size: $typescale-1;
+      font-weight: $font-weight-semibold;
+      line-height: $line-height-base;
+
+      @include breakpoint(md) {
+        font-size: $typescale-2;
+      }
+
+      @include breakpoint(lg) {
+        font-size: $typescale-4;
+        line-height: 2.5;
+      }
+    }
+
+    .grid-quote__caption,
+    .grid-quote__caption p {
+      font-size: rem(10) !important;
+    }
+  }
+}
+
+// Grid Stats
+
+.grid-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  height: 100%;
+
+  &.dark {
+    background: $navy-dark;
+    color: #fff;
+
+    .chart-group__list .chart-group__item .stats__label {
+      border-bottom: 1px solid $white;
+    }
+  }
+
+  .chart-group__list {
+    display: block;
+    width: 100%;
+    margin: 0;
+
+    .chart-group__item {
+      @include make-col(9);
+      padding: 0;
+      margin: auto;
+
+      .stats__label {
+        display: block;
+        border-bottom: 1px solid $navy;
+        font-size: $typescale-5;
+        font-weight: $font-weight-bold;
+        padding-bottom: $spacing-1;
+        margin-bottom: $spacing-1;
+
+        @include breakpoint(md) {
+          font-size: $typescale-7;
+        }
+
+        @include breakpoint(lg) {
+          font-size: $typescale-10;
+          font-weight: $font-weight-normal;
+          padding-bottom: $spacing-2;
+          margin-bottom: $spacing-2;
+        }
+      }
+
+      .stats__text {
+        font-weight: $font-weight-semibold;
+        font-size: $typescale-1;
+        line-height: $line-height-heading;
+
+        @include breakpoint(md) {
+          font-size: $typescale-2;
+        }
+
+        @include breakpoint(lg) {
+          font-size: $typescale-4;
+          line-height: 1.5;
+        }
+      }
+    }
+
+    &.chart-group__list--2 {
+      .chart-group__item:first-child {
+        margin-bottom: $spacing-3;
+
+        @include breakpoint(md) {
+          margin-bottom: $spacing-4;
+        }
+
+        @include breakpoint(lg) {
+          margin-bottom: $spacing-5;
+        }
+
+        @include breakpoint(xl) {
+          margin-bottom: $spacing-7;
+        }
+      }
+    }
+  }
+}

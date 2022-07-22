@@ -1,0 +1,200 @@
+@for $i from 1 through 4 {
+  .quad-#{$i} {
+    grid-area: quad-#{$i};
+  }
+}
+
+@for $i from 1 through 4 {
+  .quad-item-#{$i} {
+    position: relative;
+    grid-area: quad-item-#{$i};
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'quad-1'
+    'quad-2'
+    'quad-3'
+    'quad-4';
+  column-gap: $spacing-2;
+
+  @include breakpoint(md) {
+    grid-template-areas:
+      'quad-1 quad-2'
+      'quad-3 quad-4';
+  }
+
+  .grid-quad-block {
+    display: grid;
+    gap: $spacing-2;
+    text-align: center;
+    padding: 0;
+    padding-bottom: $spacing-2;
+
+    &.quad-2,
+    &.quad-3,
+    &.quad-4 {
+      display: none;
+    }
+
+    @include breakpoint(md) {
+      // gap: $spacing-2;
+      &.quad-2 {
+        display: grid;
+      }
+    }
+
+    > div {
+      background-color: #022543;
+    }
+
+    .quad-item-1 {
+      width: 320px;
+      height: 180px;
+
+      @include breakpoint(md) {
+        width: 380px;
+        height: 214px;
+      }
+      @include breakpoint(lg) {
+        width: 596px;
+        height: 335px;
+      }
+      @include breakpoint(xl) {
+        width: 716px;
+        height: 403px;
+      }
+    }
+
+    .quad-item-2 {
+      width: 132px;
+      height: 180px;
+
+      @include breakpoint(md) {
+        width: 158px;
+        height: 214px;
+      }
+      @include breakpoint(lg) {
+        width: 252px;
+        height: 335px;
+      }
+      @include breakpoint(xl) {
+        width: 305px;
+        height: 402px;
+      }
+    }
+
+    .quad-item-3 {
+      width: 180px;
+      height: 320px;
+
+      @include breakpoint(md) {
+        width: 214px;
+        height: 380px;
+      }
+      @include breakpoint(lg) {
+        width: 335px;
+        height: 596px;
+      }
+      @include breakpoint(xl) {
+        width: 403px;
+        height: 716px;
+      }
+    }
+
+    .quad-item-4 {
+      width: 132px;
+      height: 132px;
+
+      @include breakpoint(md) {
+        width: 158px;
+        height: 158px;
+      }
+      @include breakpoint(lg) {
+        width: 252px;
+        height: 252px;
+      }
+      @include breakpoint(xl) {
+        width: 305px;
+        height: 305px;
+      }
+    }
+
+    &.quad-1 {
+      grid-template-areas:
+        'quad-item-1 quad-item-1'
+        'quad-item-2 quad-item-3'
+        'quad-item-4 quad-item-3';
+    }
+
+    &.quad-2 {
+      grid-template-areas:
+        'quad-item-3 quad-item-4'
+        'quad-item-3 quad-item-2'
+        'quad-item-1 quad-item-1';
+    }
+
+    &.quad-3 {
+      grid-template-areas:
+        'quad-item-1 quad-item-1'
+        'quad-item-4 quad-item-3'
+        'quad-item-2 quad-item-3';
+    }
+
+    &.quad-4 {
+      grid-template-areas:
+        'quad-item-3 quad-item-4'
+        'quad-item-3 quad-item-2'
+        'quad-item-1 quad-item-1';
+    }
+  }
+}
+
+.grid__label-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px;
+  background-color: #fff;
+  color: #0d395f;
+  border-color: #fff;
+
+  &.expand {
+    padding: 5px;
+
+    .icon {
+      height: 21px;
+      width: 21px;
+    }
+  }
+}
+
+.grid__button {
+  display: flex;
+  position: relative;
+  text-transform: uppercase;
+  margin: auto;
+  margin-top: -$spacing-5;
+
+  .icon {
+    margin-left: $spacing-3;
+  }
+
+  .button--show-less {
+    display: none;
+  }
+
+  &.toggle-button {
+    margin-top: -$spacing-2;
+
+    .button--load-more {
+      display: none;
+    }
+
+    .button--show-less {
+      display: flex;
+    }
+  }
+}

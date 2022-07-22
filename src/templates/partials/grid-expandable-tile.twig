@@ -1,0 +1,47 @@
+{% set id = random(1234) %}
+
+<div class="grid-expandable-tile">
+	<span class="button grid__label-icon{{ content_type == 'expand' ? ' expand' : ''}}">
+		<span>
+			{% include 'partials/icon.twig' with {
+				name: content_type
+			} %}
+		</span>
+	</span>
+
+	{% include 'partials/img.twig' with {
+		name: image_name
+	} %}
+</div>
+
+<div class="grid-hover__overlay{{ content_type == 'expand' ? ' expand' : ''}}">
+	<div class="grid-hover__text {{ small ? 'text-small' : '' }}">
+		<p>{{description}}</p>
+		<span class="button button--light mt-4" data-grid-overlay-open="midd-grid-overlay-{{id}}" aria-label="Open overlay" role="button">
+			{{content_type == 'expand' ? 'Expand' : 'Play'}}
+			<span class="ml-3">
+				{% include 'partials/icon.twig' with {
+				name: content_type
+			} %}
+			</span>
+		</span>
+	</div>
+</div>
+
+<div class="grid-modal" id="midd-grid-overlay-{{id}}" aria-hidden="true" role="dialog" aria-modal="true" tabindex="-1">
+	<button class="grid-modal__button grid-modal__button--close" aria-label="Close modal" data-grid-overlay-close>
+		Close
+		{% include 'partials/icon.twig' with { name: 'times', class: 'ml-1' } %}
+	</button>
+	<div class="grid-modal__overlay container px-0">
+		{% if content_type == 'play' %}
+			{% include 'partials/video.twig' with {
+				grid_video: true
+			} %}
+		{% elseif content_type == 'expand' %}
+			{% include 'partials/img.twig' with {
+				name: image_name
+			} %}
+		{% endif %}
+	</div>
+</div>
