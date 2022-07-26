@@ -1,3 +1,43 @@
+.paragraph--course-list {
+  .section__header {
+    margin-bottom: 0;
+    border-bottom: 1px solid $border-color;
+  }
+
+  .course-list--filters {
+    display: flex;
+    flex-direction: column;
+    margin-top: $spacing-5;
+
+    @include breakpoint(md) {
+      flex-direction: row;
+      margin-top: $spacing-7;
+      margin-bottom: $spacing-5;
+
+      .checkbox--filter:not(:last-child) {
+        margin-right: $spacing-7;
+      }
+    }
+
+    .radio__label {
+      font-weight: $font-weight-normal;
+      font-size: $typescale-3;
+      line-height: $line-height-solid;
+      align-items: flex-end;
+      padding: 0;
+      margin-bottom: $spacing-4;
+
+      &:before {
+        margin-right: $spacing-2;
+      }
+
+      @include breakpoint(md) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
 .course-hidden {
   display: none;
 }
