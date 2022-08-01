@@ -30,6 +30,11 @@
   color: $white;
   width: 100%;
   padding: 0 $spacing-4;
+  display: none;
+
+  @include breakpoint(lg) {
+    display: block;
+  }
 
   &.expand {
     p {
@@ -41,8 +46,16 @@
     p {
       font-size: $typescale-6;
     }
+  }
 
-    .text-small {
+  &.text-small {
+    padding: 0 $spacing-3;
+
+    @include breakpoint(xl) {
+      padding: 0 $spacing-4;
+    }
+
+    p {
       font-size: $typescale-4;
     }
   }
@@ -68,11 +81,21 @@
 }
 
 .grid-modal__overlay {
+  @include make-col(12);
+
+  @include breakpoint(lg) {
+    @include make-col(10);
+  }
+
+  // @include breakpoint(xl) {
+  //   flex: initial;
+  //   max-width: 1440px;
+  // }
+
   figure {
     margin: auto;
     padding-right: 0;
     padding-left: 0;
-    max-width: calc(100% * 10 / 12);
   }
   .grid-video__body {
     text-align: left;
@@ -100,6 +123,11 @@
 
 .grid-modal__button--close {
   margin-left: auto;
+
+  .icon {
+    width: 1.5em;
+    height: 1.5em;
+  }
 }
 
 // Grid Quote

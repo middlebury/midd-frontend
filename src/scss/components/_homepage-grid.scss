@@ -40,7 +40,6 @@
     }
 
     @include breakpoint(md) {
-      // gap: $spacing-2;
       &.quad-2 {
         display: grid;
       }
@@ -156,17 +155,40 @@
   position: absolute;
   top: 0;
   right: 0;
-  padding: 8px;
+  padding: 3px 5px;
   background-color: #fff;
   color: #0d395f;
   border-color: #fff;
 
-  &.expand {
-    padding: 5px;
+  @include breakpoint(lg) {
+    padding: 7px;
+  }
 
-    .icon {
-      height: 21px;
-      width: 21px;
+  &.expand {
+    padding: 4px;
+
+    @include breakpoint(lg) {
+      padding: 5px;
+    }
+  }
+
+  .icon.expand {
+    height: $typescale-3;
+    width: $typescale-3;
+
+    @include breakpoint(lg) {
+      height: $typescale-5;
+      width: $typescale-5;
+    }
+  }
+
+  .icon.play {
+    height: rem(10);
+    width: rem(12);
+
+    @include breakpoint(lg) {
+      height: $typescale-3;
+      width: $typescale-3;
     }
   }
 }

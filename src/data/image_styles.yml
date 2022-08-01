@@ -166,3 +166,15 @@ image_styles:
       - 158x158
       - 252x252
       - 305x305
+
+  homepage_grid_overlay_large:
+    title: College Homepage Grid Overlay Large Image
+    ratio: "any"
+    srcset:
+      - 403x716
+
+  homepage_grid_overlay_small:
+    title: College Homepage Grid Overlay Small Image
+    ratio: "any"
+    srcset:
+      - 335x596
