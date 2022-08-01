@@ -4,6 +4,7 @@
 {% set grid_item_4 = random(['image', 'stats']) %}
 
 <div class="paragraph paragraph--full">
+	{% include 'paragraphs/homepage-grid-header.twig' %}
 	<div class="container px-0">
 		<section>
 			<div class="grid-container js-grid-container">
@@ -27,7 +28,8 @@
 								{% include 'partials/grid-expandable-tile.twig' with {
 									content_type: 'expand',
 									description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-									image_name: 'homepage_grid_2'
+									image_name: 'homepage_grid_2',
+									overlay_image: 'homepage_grid_overlay_large'
 								}%}
 							{% elseif grid_item_2 == 'stats' %}
 								{% include 'partials/grid-stats.twig' with {
@@ -57,7 +59,8 @@
 								{% include 'partials/grid-expandable-tile.twig' with {
 									content_type: 'expand',
 									description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-									image_name: 'homepage_grid_3'
+									image_name: 'homepage_grid_3',
+									overlay_image: 'homepage_grid_overlay_small'
 								}%}
 							{% else %}
 								{% include 'partials/grid-quote.twig' with {
@@ -73,7 +76,8 @@
 									content_type: 'expand',
 									description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
 									image_name: 'homepage_grid_4',
-									small: true
+									small: true,
+									overlay_image: 'homepage_grid_overlay_large'
 								}%}
 							{% else %}
 								{% include 'partials/grid-stats.twig' with {

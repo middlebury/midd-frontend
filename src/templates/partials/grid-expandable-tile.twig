@@ -1,12 +1,11 @@
 {% set id = random(1234) %}
 
-<div class="grid-expandable-tile">
+<div class="grid-expandable-tile" data-grid-overlay-open="midd-grid-overlay-{{id}}">
 	<span class="button grid__label-icon{{ content_type == 'expand' ? ' expand' : ''}}">
-		<span>
-			{% include 'partials/icon.twig' with {
-				name: content_type
-			} %}
-		</span>
+		{% include 'partials/icon.twig' with {
+			name: content_type,
+			class: content_type
+		} %}
 	</span>
 
 	{% include 'partials/img.twig' with {
@@ -14,8 +13,8 @@
 	} %}
 </div>
 
-<div class="grid-hover__overlay{{ content_type == 'expand' ? ' expand' : ''}}">
-	<div class="grid-hover__text {{ small ? 'text-small' : '' }}">
+<div class="grid-hover__overlay{{ content_type == 'expand' ? ' expand' : ''}} {{ small ? 'text-small' : '' }}">
+	<div class="grid-hover__text">
 		<p>{{description}}</p>
 		<span class="button button--light mt-4" data-grid-overlay-open="midd-grid-overlay-{{id}}" aria-label="Open overlay" role="button">
 			{{content_type == 'expand' ? 'Expand' : 'Play'}}
@@ -33,15 +32,21 @@
 		Close
 		{% include 'partials/icon.twig' with { name: 'times', class: 'ml-1' } %}
 	</button>
-	<div class="grid-modal__overlay container px-0">
+	<div class="grid-modal__overlay container px-lg-0">
 		{% if content_type == 'play' %}
 			{% include 'partials/video.twig' with {
 				grid_video: true
 			} %}
 		{% elseif content_type == 'expand' %}
-			{% include 'partials/img.twig' with {
-				name: image_name
-			} %}
+			<figure>
+				{% include 'partials/img.twig' with {
+					name: overlay_image
+				} %}
+				<figcaption class="grid-video__body">
+					<h3 class="sr-only" id="midd-video-label-729">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+					<p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. Suspendisse commodo pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
+				</figcaption>
+			</figure>
 		{% endif %}
 	</div>
 </div>
