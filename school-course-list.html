@@ -298,11 +298,14 @@
                   <h2 class="sr-only" id="midd-breadcrumb-label">Breadcrumb</h2>
                   <ol class="breadcrumb__list">
                     <li class="breadcrumb__item">
-                      <a href="" class="breadcrumb__link">Middlebury</a>
+                      <a href="" class="breadcrumb__link">Offices and Services</a>
+                    </li>
+                    <li class="breadcrumb__item">
+                      <a href="" class="breadcrumb__link">Student Financial Services</a>
                     </li>
                   </ol>
                 </nav>
-                <h1 class="page-header__title" id="midd-page-header-label">Majors and Minors</h1>
+                <h1 class="page-header__title" id="midd-page-header-label">School course list</h1>
               </div>
             </div>
           </header>
@@ -310,958 +313,194 @@
         <div class="container">
           <div class="row">
             <div class="col-md-10 offset-md-1 col-lg-3 offset-lg-0 mb-4">
-              <form>
-                <div class="mb-5">
-                  <label for="midd-sidebar-search" class="label">Search Courses</label>
-                  <div class="input-group">
-                    <input type="search" placeholder="Type keywords..." id="midd-sidebar-search" class="form-control form-control--sm" required />
-                    <button type="submit" class="button button--primary button--outline px-4 button--sm">
-                      <span class="sr-only">Search</span>
-                      <svg class="icon  " focusable="false" aria-hidden="true">
-                        <use xlink:href="#icon-search">
-                      </svg>
-                    </button>
-                  </div>
+              <nav class="page-nav" aria-labelledby="midd-page-nav-label">
+                <button class="page-nav__button" data-toggle-target=".js-page-nav" aria-haspopup="true" aria-expanded="false"> Additional Navigation <svg class="icon page-nav__icon " focusable="false" aria-hidden="true">
+                    <use xlink:href="#icon-chevron-down">
+                  </svg>
+                </button>
+                <div class="page-nav__content js-page-nav">
+                  <h2 class="page-nav__title" id="midd-page-nav-label">
+                    <a href="" class="page-nav__link">Student Financial Services</a>
+                  </h2>
+                  <ul class="page-nav__list">
+                    <li class="page-nav__item">
+                      <a href="#" class="page-nav__link">Curriculum</a>
+                    </li>
+                    <li class="page-nav__item page-nav__item--active">
+                      <a href="#" class="page-nav__link">Faculty</a>
+                      <ul class="page-nav__list">
+                        <li class="page-nav__item">
+                          <a href="#" class="page-nav__link">Faculty sub page 1</a>
+                        </li>
+                        <li class="page-nav__item">
+                          <a href="#" class="page-nav__link">Faculty sub page 2</a>
+                        </li>
+                        <li class="page-nav__item">
+                          <a href="#" class="page-nav__link page-nav__link--active">Faculty sub page 3</a>
+                        </li>
+                        <li class="page-nav__item">
+                          <a href="#" class="page-nav__link">Faculty sub page 4</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="page-nav__item">
+                      <a href="#" class="page-nav__link">Financing Your Education</a>
+                    </li>
+                  </ul>
                 </div>
-              </form>
-              <form class="mb-7">
-                <div class="filters">
-                  <div class="filters__header">
-                    <h2 class="filters__title"> Filters </h2>
-                    <a href="" class="button button--sm px-0">
-                      <svg class="icon mr-1 " focusable="false" aria-hidden="true">
-                        <use xlink:href="#icon-redo">
-                      </svg> Clear </a>
-                  </div>
-                  <fieldset class="filter">
-                    <legend class="filter__legend">
-                      <button class="filter__button" data-toggle-target=".js-filter-484" aria-expanded="true"> Categories <svg class="icon filter__icon-close " focusable="false" aria-hidden="true">
-                          <use xlink:href="#icon-minus">
-                        </svg>
-                        <svg class="icon filter__icon-open " focusable="false" aria-hidden="true">
-                          <use xlink:href="#icon-plus">
-                        </svg>
-                      </button>
-                    </legend>
-                    <div class="filter__body js-filter-484">
-                      <div class="checkbox checkbox--filter">
-                        <input type="checkbox" class="checkbox__input" id="checkbox-item-484-1" />
-                        <label for="checkbox-item-484-1" id="checkbox-label-484-1" class="checkbox__label"> Minors </label>
-                      </div>
-                      <div class="checkbox checkbox--filter">
-                        <input type="checkbox" class="checkbox__input" id="checkbox-item-484-2" />
-                        <label for="checkbox-item-484-2" id="checkbox-label-484-2" class="checkbox__label"> Majors </label>
-                      </div>
-                      <div class="checkbox checkbox--filter">
-                        <input type="checkbox" class="checkbox__input" id="checkbox-item-484-3" />
-                        <label for="checkbox-item-484-3" id="checkbox-label-484-3" class="checkbox__label"> Programs </label>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <input type="submit" class="sr-only sr-focusable" value="Apply Filters" />
-                </div>
-              </form>
+              </nav>
+            </div>
+            <div class="col-md-10 offset-md-1 col-lg-2 offset-lg-0 order-lg-last mb-4 pl-lg-0">
+              <div data-digest-nav data-sticky data-sticky-offset=".js-headroom"></div>
             </div>
             <div class="col-md-10 offset-md-1 col-lg-7 offset-lg-0">
-              <p style="padding-bottom:48px">Middlebury College's liberal arts curriculum will challenge you for the rest of your life. Our <a href="#">undergraduate</a> and <a href="#">graduate programs</a> prepare students to meet the challenges of responsible citizenship in a complex, changing world.<br><br>Our curriculum is designed to ensure that each student's education includes breadth of experience across many fields and disciplines, as well as in-depth study in one area defined by the <a href="http://www.middlebury.edu/academics/options">major</a>. Breadth is achieved through a set of <a href="http://www.middlebury.edu/about/handbook/ug-college-policies/ug-policies/academics/degree-requires">distribution requirements</a> that encompass seven academic categories and four courses in different cultures and civilizations. An <a href="#">emphasis on writing</a> in all disciplines sharpens students' capacity for critical thinking and expression. <br><br>An array of interdisciplinary programs provide opportunities to synthesize and connect what you learn in many different departments. Intensive study in the major may culminate in a senior thesis, independent project, or artistic production, working closely with professors in laboratories, studios and classrooms to collaborate on research and creative projects. You'll have a broad range of choices, and a great deal of freedom to set your own academic path.</p>
-              <table class="table--course-list">
-                <thead>
-                  <th> Area of Study </th>
-                  <th>
-                    <span class="sr-only">Major</span>
-                  </th>
-                  <th>
-                    <span class="sr-only">Minor</span>
-                  </th>
-                </thead>
-                <tbody>
-                  <tr class="row-label">
-                    <td colspan="100%" class="row-label--cell">A</td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">African Studies</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">African American Studies</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">American Studies</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Anthropology</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Arabic</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr class="row-label">
-                    <td colspan="100%" class="row-label--cell">B</td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Biology</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Black Studies</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr class="row-label">
-                    <td colspan="100%" class="row-label--cell">C</td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Chemistry & Biochemistry</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Chinese</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Classics and Classical Studies</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Comparative Literature</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Computer Science</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Creative Writing</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr class="row-label">
-                    <td colspan="100%" class="row-label--cell">D</td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Dance</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr class="row-label">
-                    <td colspan="100%" class="row-label--cell">E</td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Economics</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Education Studies</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">English & American Literatures</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Environmental Studies</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr class="row-label">
-                    <td colspan="100%" class="row-label--cell">F</td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Film & Media Culture</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">First-Year Seminars</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Food Studies Minor</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">French and Francophone Studies</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr class="row-label">
-                    <td colspan="100%" class="row-label--cell">G</td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Gender, Sexuality & Feminist Studies</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Geography</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Geology</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">German</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Global Health Minor</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Greek</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr class="row-label">
-                    <td colspan="100%" class="row-label--cell">H</td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Hebrew</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">History of Art & Architecture</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr class="track-label">
-                    <td colspan="100%" class="track-label--cell">Specialized Tracks</td>
-                  </tr>
-                  <tr valign="top" class="sublist">
-                    <td>
-                      <div>
-                        <a href="#">Architectural Studies</a>
+              <div class="page-image">
+                <figure class="media media--image media--contain-caption">
+                  <!-- featured -->
+                  <img src="https://via.placeholder.com/832x468" srcset="https://via.placeholder.com/400x225 400w,https://via.placeholder.com/640x360 640w,https://via.placeholder.com/832x468 832w" sizes="(max-width: 832px) 100vw, 832px" alt="" />
+                  <figcaption class="media__caption"> Lorem ipsum dolor sit amet, consectetur adipiscing elit (Photo: John Doe) </figcaption>
+                </figure>
+              </div>
+              <div class="paragraphs">
+                <section class="section paragraph--course-list js-filter-848" data-digest-content>
+                  <div class="section__header">
+                    <h2 class="section__title"> Department Courses </h2>
+                    <p class="section__text"> These are the courses taught in this department. </p>
+                  </div>
+                  <p class="course-list--text">Courses offered in the past four years. Courses offered currently are as noted.</p>
+                  <div class="course-list--filters">
+                    <div class="checkbox checkbox--filter">
+                      <input id="course-list-filter-all-848" name="course-list-filter-848" class="radio__input course-list-filter course-list-filter-all" type="radio" checked data-course-filter="848">
+                      <label class="radio__label" for="course-list-filter-all-848">Show all courses.</label>
+                    </div>
+                    <div class="checkbox checkbox--filter">
+                      <input id="course-list-filter-current-848" name="course-list-filter-848" class="radio__input course-list-filter course-list-filter-current" type="radio" data-course-filter="848">
+                      <label class="radio__label" for="course-list-filter-current-848">Show current courses.</label>
+                    </div>
+                    <div class="checkbox checkbox--filter">
+                      <input id="course-list-filter-upcoming-848" name="course-list-filter-848" class="radio__input course-list-filter course-list-filter-upcoming" type="radio" data-course-filter="848">
+                      <label class="radio__label" for="course-list-filter-upcoming-848">Show upcoming courses.</label>
+                    </div>
+                  </div>
+                  <div class="accordion">
+                    <div class="accordion-item js-accordion-item-854 accordion-item-current accordion-item-upcoming">
+                      <h3 class="accordion-item__title" role="tab">
+                        <a href="#accordion-content-854" class="accordion-item__link" data-toggle-target=".js-accordion-item-854" aria-expanded="false" aria-controls="midd-accordion-content-854" aria-labelledby="midd-accordion-item-label-854" role="button">
+                          <span id="midd-accordion-item-label-854">
+                            <p class="accordion-item__label--bold">biol 0140<span class="badge badge--primary badge--outline ml-2">Current</span><span class="badge badge--primary badge--outline ml-2">Upcoming</span></p> Ecology and Evolution
+                          </span>
+                          <svg class="icon accordion-item__icon " focusable="false" aria-hidden="true">
+                            <use xlink:href="#icon-chevron-down">
+                          </svg>
+                        </a>
+                      </h3>
+                      <div class="accordion-item__content--column" id="midd-accordion-content-854" role="tabpanel" aria-labelledby="midd-accordion-item-label-854">
+                        <p class="accordion-item__sub-title">Course Description</p>
+                        <div class="typography">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <p class="accordion-item__sub-title">Terms Taught</p>
+                        <div class="typography">
+                          <p>Spring 2017, Spring 2019, Spring 2020, Spring 2021</p>
+                        </div>
+                        <p class="accordion-item__sub-title">Requirements</p>
+                        <div class="typography">
+                          <p>DED, SCI</p>
+                        </div>
                       </div>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top" class="sublist">
-                    <td>
-                      <div>
-                        <a href="#">Art History</a>
+                    </div>
+                    <div class="accordion-item js-accordion-item-1127">
+                      <h3 class="accordion-item__title" role="tab">
+                        <a href="#accordion-content-1127" class="accordion-item__link" data-toggle-target=".js-accordion-item-1127" aria-expanded="false" aria-controls="midd-accordion-content-1127" aria-labelledby="midd-accordion-item-label-1127" role="button">
+                          <span id="midd-accordion-item-label-1127">
+                            <p class="accordion-item__label--bold">biol 0140</p> Film and Television, from Apocolipse Now to the Simpsons
+                          </span>
+                          <svg class="icon accordion-item__icon " focusable="false" aria-hidden="true">
+                            <use xlink:href="#icon-chevron-down">
+                          </svg>
+                        </a>
+                      </h3>
+                      <div class="accordion-item__content--column" id="midd-accordion-content-1127" role="tabpanel" aria-labelledby="midd-accordion-item-label-1127">
+                        <p class="accordion-item__sub-title">Course Description</p>
+                        <div class="typography">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <p class="accordion-item__sub-title">Terms Taught</p>
+                        <div class="typography">
+                          <p>Spring 2017, Spring 2019, Spring 2020, Spring 2021</p>
+                        </div>
                       </div>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">History</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr class="row-label">
-                    <td colspan="100%" class="row-label--cell">I</td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Independent Scholar</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">International Politics & Economics</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">International & Global Studies</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr class="track-label">
-                    <td colspan="100%" class="track-label--cell">Specialized Tracks</td>
-                  </tr>
-                  <tr valign="top" class="sublist">
-                    <td>
-                      <div>
-                        <a href="#">African Studies</a>
+                    </div>
+                    <div class="accordion-item js-accordion-item-978 accordion-item-current">
+                      <h3 class="accordion-item__title" role="tab">
+                        <a href="#accordion-content-978" class="accordion-item__link" data-toggle-target=".js-accordion-item-978" aria-expanded="false" aria-controls="midd-accordion-content-978" aria-labelledby="midd-accordion-item-label-978" role="button">
+                          <span id="midd-accordion-item-label-978">
+                            <p class="accordion-item__label--bold">biol 0140<span class="badge badge--primary badge--outline ml-2">Current</span></p> Biology of Plants Growing in the Forest
+                          </span>
+                          <svg class="icon accordion-item__icon " focusable="false" aria-hidden="true">
+                            <use xlink:href="#icon-chevron-down">
+                          </svg>
+                        </a>
+                      </h3>
+                      <div class="accordion-item__content--column" id="midd-accordion-content-978" role="tabpanel" aria-labelledby="midd-accordion-item-label-978">
+                        <p class="accordion-item__sub-title">Course Description</p>
+                        <div class="typography">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <p class="accordion-item__sub-title">Terms Taught</p>
+                        <div class="typography">
+                          <p>Spring 2017, Spring 2019, Spring 2020, Spring 2021</p>
+                        </div>
+                        <p class="accordion-item__sub-title">Requirements</p>
+                        <div class="typography">
+                          <p>DED, SCI</p>
+                        </div>
                       </div>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top" class="sublist">
-                    <td>
-                      <div>
-                        <a href="#">East Asian Studies</a>
+                    </div>
+                    <div class="accordion-item js-accordion-item-759 accordion-item-upcoming">
+                      <h3 class="accordion-item__title" role="tab">
+                        <a href="#accordion-content-759" class="accordion-item__link" data-toggle-target=".js-accordion-item-759" aria-expanded="false" aria-controls="midd-accordion-content-759" aria-labelledby="midd-accordion-item-label-759" role="button">
+                          <span id="midd-accordion-item-label-759">
+                            <p class="accordion-item__label--bold">biol 0140<span class="badge badge--primary badge--outline ml-2">Upcoming</span></p> Tropical Ecology and how reefs grow
+                          </span>
+                          <svg class="icon accordion-item__icon " focusable="false" aria-hidden="true">
+                            <use xlink:href="#icon-chevron-down">
+                          </svg>
+                        </a>
+                      </h3>
+                      <div class="accordion-item__content--column" id="midd-accordion-content-759" role="tabpanel" aria-labelledby="midd-accordion-item-label-759">
+                        <p class="accordion-item__sub-title">Course Description</p>
+                        <div class="typography">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <p class="accordion-item__sub-title">Requirements</p>
+                        <div class="typography">
+                          <p>DED, SCI</p>
+                        </div>
                       </div>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top" class="sublist">
-                    <td>
-                      <div>
-                        <a href="#">European Studies</a>
+                    </div>
+                    <div class="accordion-item js-accordion-item-95">
+                      <h3 class="accordion-item__title" role="tab">
+                        <a href="#accordion-content-95" class="accordion-item__link" data-toggle-target=".js-accordion-item-95" aria-expanded="false" aria-controls="midd-accordion-content-95" aria-labelledby="midd-accordion-item-label-95" role="button">
+                          <span id="midd-accordion-item-label-95">
+                            <p class="accordion-item__label--bold">biol 0140</p> Teaching Literature from Around the World
+                          </span>
+                          <svg class="icon accordion-item__icon " focusable="false" aria-hidden="true">
+                            <use xlink:href="#icon-chevron-down">
+                          </svg>
+                        </a>
+                      </h3>
+                      <div class="accordion-item__content--column" id="midd-accordion-content-95" role="tabpanel" aria-labelledby="midd-accordion-item-label-95">
+                        <p class="accordion-item__sub-title">Course Description</p>
+                        <div class="typography">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
                       </div>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top" class="sublist">
-                    <td>
-                      <div>
-                        <a href="#">Global Environmental Change</a>
-                      </div>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top" class="sublist">
-                    <td>
-                      <div>
-                        <a href="#">Global Gender and Sexuality Studies</a>
-                      </div>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top" class="sublist">
-                    <td>
-                      <div>
-                        <a href="#">Global Migration and Diaspora Studies</a>
-                      </div>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top" class="sublist">
-                    <td>
-                      <div>
-                        <a href="#">Global Security Studies</a>
-                      </div>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top" class="sublist">
-                    <td>
-                      <div>
-                        <a href="#">Latin American Studies</a>
-                      </div>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top" class="sublist">
-                    <td>
-                      <div>
-                        <a href="#">Middle East and North Africa Studies</a>
-                      </div>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top" class="sublist">
-                    <td>
-                      <div>
-                        <a href="#">Russian & East European Studies</a>
-                      </div>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top" class="sublist">
-                    <td>
-                      <div>
-                        <a href="#">South Asian Studies</a>
-                      </div>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Italian</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr class="row-label">
-                    <td colspan="100%" class="row-label--cell">J</td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Japanese Studies</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Jewish Studies</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr class="row-label">
-                    <td colspan="100%" class="row-label--cell">L</td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Latin</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Linguistics Minor</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Literary Studies</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Luso-Hispanic Studies</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr class="track-label">
-                    <td colspan="100%" class="track-label--cell">Specialized Tracks</td>
-                  </tr>
-                  <tr valign="top" class="sublist">
-                    <td>
-                      <div>
-                        <a href="#">Spanish</a>
-                      </div>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top" class="sublist">
-                    <td>
-                      <div>
-                        <a href="#">Portuguese</a>
-                      </div>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr class="row-label">
-                    <td colspan="100%" class="row-label--cell">M</td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Mathematics</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Molecular Biology & Biochemistry</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Music</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr class="row-label">
-                    <td colspan="100%" class="row-label--cell">N</td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Neuroscience</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr class="row-label">
-                    <td colspan="100%" class="row-label--cell">P</td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Philosophy</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Physical Education</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Physics</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Political Science</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Psychology</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr class="row-label">
-                    <td colspan="100%" class="row-label--cell">R</td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Religion</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Russian</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr class="row-label">
-                    <td colspan="100%" class="row-label--cell">S</td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Sociology</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">South Asian Studies Minor</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Studio Art</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr class="row-label">
-                    <td colspan="100%" class="row-label--cell">T</td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Theatre</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                  <tr class="row-label">
-                    <td colspan="100%" class="row-label--cell">W</td>
-                  </tr>
-                  <tr valign="top">
-                    <td>
-                      <a href="#">Writing and Rhetoric Program</a>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2">Major</span>
-                    </td>
-                    <td>
-                      <span class="badge badge--primary ml-2 ml-md-7 ml-lg-8">Minor</span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                    </div>
+                  </div>
+                </section>
+              </div>
             </div>
           </div>
         </div>
