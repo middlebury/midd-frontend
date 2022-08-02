@@ -51,23 +51,30 @@
 		<h2 class="section__title">
 			{{ course_title }}
 		</h2>
-		<p class="section__text">
-			These are the courses I teach.
-		</p>
-		<div class="course-list--filters">
-			<div class="checkbox checkbox--filter">
-				<input id="course-list-filter-all-{{id}}" name="course-list-filter-{{id}}" class="radio__input course-list-filter course-list-filter-all" type="radio" checked data-course-filter="{{id}}">
-				<label class="radio__label" for="course-list-filter-all-{{id}}">Show all courses.</label>
-			</div>
-			<div class="checkbox checkbox--filter">
-				<input id="course-list-filter-current-{{id}}" name="course-list-filter-{{id}}" class="radio__input course-list-filter course-list-filter-current" type="radio" data-course-filter="{{id}}">
-				<label class="radio__label" for="course-list-filter-current-{{id}}">Show current courses.</label>
-			</div>
-			<div class="checkbox checkbox--filter">
-				<input id="course-list-filter-upcoming-{{id}}" name="course-list-filter-{{id}}" class="radio__input course-list-filter course-list-filter-upcoming" type="radio" data-course-filter="{{id}}">
-				<label class="radio__label" for="course-list-filter-upcoming-{{id}}">Show upcoming courses.</label>
-			</div>
-		</div>
+    {% if show_controls %}
+      <p class="section__text">
+        These are the courses taught in this department.
+      </p>
+      <div class="course-list--filters">
+        <div class="checkbox checkbox--filter">
+          <input id="course-list-filter-all-{{id}}" name="course-list-filter-{{id}}" class="radio__input course-list-filter course-list-filter-all" type="radio" checked data-course-filter="{{id}}">
+          <label class="radio__label" for="course-list-filter-all-{{id}}">Show all courses.</label>
+        </div>
+        <div class="checkbox checkbox--filter">
+          <input id="course-list-filter-current-{{id}}" name="course-list-filter-{{id}}" class="radio__input course-list-filter course-list-filter-current" type="radio" data-course-filter="{{id}}">
+          <label class="radio__label" for="course-list-filter-current-{{id}}">Show current courses.</label>
+        </div>
+        <div class="checkbox checkbox--filter">
+          <input id="course-list-filter-upcoming-{{id}}" name="course-list-filter-{{id}}" class="radio__input course-list-filter course-list-filter-upcoming" type="radio" data-course-filter="{{id}}">
+          <label class="radio__label" for="course-list-filter-upcoming-{{id}}">Show upcoming courses.</label>
+        </div>
+      </div>
+      <p class="mb-4">Courses offered in the past four years. Courses offered currently are as noted.</p>
+    {% else %}
+      <p class="section__text">
+        These are the courses I teach.
+      </p>
+    {% endif %}
 	</div>
 	{% include 'partials/accordion.twig' with {
     items: course_items,
