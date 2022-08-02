@@ -45,7 +45,7 @@ function addHeadingAnchors(): HTMLElement[] | null {
   // as well as apply AnochrJS to them.
   // first-child gets section__titles and > h2 gets children of text components
   const headingSelector =
-    '[data-digest-content] h2:first-child, [data-digest-content] > h2';
+    '[data-digest-content] h2:not(:empty):first-child, [data-digest-content] > h2:not(:empty)';
 
   // Get all headings in the data-digest-content
   const headings = $$(headingSelector);

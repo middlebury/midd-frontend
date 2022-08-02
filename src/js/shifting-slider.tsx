@@ -1,4 +1,5 @@
 import { $, $$ } from './utils/dom';
+import Superclamp from 'superclamp';
 
 class ShiftingSlider {
   /* Element which will be hovered over and will trigger the slide */
@@ -40,6 +41,9 @@ class ShiftingSlider {
   }
 
   init() {
+    Superclamp.register(
+      document.querySelectorAll('.waveform__event-card__content--text')
+    );
     this.onWindowResize();
     this.checkElemPosition();
     window.onresize = this.onWindowResize;
@@ -80,6 +84,10 @@ class ShiftingSlider {
     const waveformListItems = $$('.waveform__list-item');
     waveformListItems.forEach((listItem) => {
       listItem.addEventListener('mousemove', this.handleMouseMove);
+    });
+
+    waveformListItems.forEach((elem) => {
+      elem.addEventListener('click', Superclamp.reclampAll);
     });
   }
 

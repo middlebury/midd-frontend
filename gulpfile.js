@@ -300,7 +300,7 @@ const reportFilesizes = () =>
     .pipe(
       size({
         showFiles: true,
-        gzip: true,
+        brotli: true,
         showTotal: false
       })
     );

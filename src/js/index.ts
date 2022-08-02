@@ -55,3 +55,4 @@ import './flowchart';
 import './to-top-btn';
 import './helpfulness';
 import './homepage-grid';
+import './course-list';
