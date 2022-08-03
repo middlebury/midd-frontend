@@ -1,5 +1,6 @@
 import { $, $$ } from './utils/dom';
 import Superclamp from 'superclamp';
+import { onElementInView } from './utils/on-element-in-view';
 
 class ShiftingSlider {
   /* Element which will be hovered over and will trigger the slide */
@@ -35,28 +36,71 @@ class ShiftingSlider {
     this.handleMouseOut = this.handleMouseOut.bind(this);
     this.handleMouseMove = this.handleMouseMove.bind(this);
     this.onWindowResize = this.onWindowResize.bind(this);
-    this.checkElemPosition = this.checkElemPosition.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
     this.init();
   }
 
   init() {
-    Superclamp.register(
-      document.querySelectorAll('.waveform__event-card__content--text')
-    );
     this.onWindowResize();
-    this.checkElemPosition();
     window.onresize = this.onWindowResize;
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio > 0) {
+          this.checkElemPosition(entry);
+
+          io.unobserve(this.elem);
+        }
+      });
+    });
+
+    io.observe(this.elem);
+  }
+
+  addListeners() {
+    this.elem.addEventListener('mouseover', this.handleHover);
+    this.elem.addEventListener('mousemove', this.handleHover);
+    this.elem.addEventListener('mouseout', this.handleMouseOut);
+    this.wrapperElem.addEventListener('mouseleave', this.handleMouseLeave);
+
+    const waveformListItems = $$('.waveform__list-item');
+
+    waveformListItems.forEach((listItem) => {
+      listItem.addEventListener('mousemove', this.handleMouseMove);
+      listItem.addEventListener('click', (e) => {
+        Superclamp.reclampAll;
+      });
+    });
+  }
+
+  destroy() {
+    this.elem.removeEventListener('mouseover', this.handleHover);
+    this.elem.removeEventListener('mousemove', this.handleHover);
+    this.elem.removeEventListener('mouseout', this.handleMouseOut);
+    this.wrapperElem.addEventListener('mouseleave', this.handleMouseLeave);
+
+    const waveformListItems = $$('.waveform__list-item');
+    waveformListItems.forEach((listItem) => {
+      listItem.removeEventListener('mousemove', this.handleMouseMove);
+      // listItem.removeEventListener('click', Superclamp.reclampAll);
+    });
   }
 
   onWindowResize() {
+    // Enable superclamp to clamp overflow text on cards
+    Superclamp.register(
+      document.querySelectorAll('.waveform__event-card__content--text')
+    );
+
     this.visibleElemWidth = this.elem.offsetWidth;
     this.totalElemWidth = this.elem.scrollWidth;
     this.scrollWidth = this.totalElemWidth - this.visibleElemWidth + 12;
 
+    // Reset the position of waveform from the left based on how much the waveform has been scrolled
     if (parseInt(this.elem.style.left, 10) < -this.scrollWidth) {
       this.elem.style.left = -this.scrollWidth + 'px';
     }
+
     if (window.innerWidth >= 1024) {
       this.addListeners();
     } else {
@@ -65,43 +109,8 @@ class ShiftingSlider {
     }
   }
 
-  checkElemPosition() {
-    var windowHeight = window.innerHeight;
-    var positionFromTop = this.elem.getBoundingClientRect().top;
-
-    if (positionFromTop - windowHeight / 2 <= 200) {
-      this.elem.classList.add('fade-in-element');
-    }
-  }
-
-  addListeners() {
-    this.elem.addEventListener('mouseover', this.handleHover);
-    this.elem.addEventListener('mousemove', this.handleHover);
-    this.elem.addEventListener('mouseout', this.handleMouseOut);
-    window.addEventListener('scroll', this.checkElemPosition);
-    this.wrapperElem.addEventListener('mouseleave', this.handleMouseLeave);
-
-    const waveformListItems = $$('.waveform__list-item');
-    waveformListItems.forEach((listItem) => {
-      listItem.addEventListener('mousemove', this.handleMouseMove);
-    });
-
-    waveformListItems.forEach((elem) => {
-      elem.addEventListener('click', Superclamp.reclampAll);
-    });
-  }
-
-  destroy() {
-    this.elem.removeEventListener('mouseover', this.handleHover);
-    this.elem.removeEventListener('mousemove', this.handleHover);
-    this.elem.removeEventListener('mouseout', this.handleMouseOut);
-    window.removeEventListener('scroll', this.checkElemPosition);
-    this.wrapperElem.addEventListener('mouseleave', this.handleMouseLeave);
-
-    const waveformListItems = $$('.waveform__list-item');
-    waveformListItems.forEach((listItem) => {
-      listItem.removeEventListener('mousemove', this.handleMouseMove);
-    });
+  checkElemPosition(entry: any) {
+    entry.target.classList.add('fade-in-element');
   }
 
   scroll(direction: string) {
