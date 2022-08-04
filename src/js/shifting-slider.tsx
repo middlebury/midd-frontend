@@ -1,6 +1,5 @@
 import { $, $$ } from './utils/dom';
 import Superclamp from 'superclamp';
-import { onElementInView } from './utils/on-element-in-view';
 
 class ShiftingSlider {
   /* Element which will be hovered over and will trigger the slide */
@@ -27,21 +26,26 @@ class ShiftingSlider {
 
   prevDirection: string;
 
+  waveformListItems: HTMLElement[];
+
   constructor(elem: HTMLElement) {
     this.elem = elem;
     this.wrapperElem = $('.waveform__wrapper');
     this.shift = 0;
     this.prevDirection = '';
+    this.waveformListItems = $$('.waveform__list-item');
     this.handleHover = this.handleHover.bind(this);
     this.handleMouseOut = this.handleMouseOut.bind(this);
     this.handleMouseMove = this.handleMouseMove.bind(this);
     this.onWindowResize = this.onWindowResize.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
+    this.addSuperclampListener = this.addSuperclampListener.bind(this);
     this.init();
   }
 
   init() {
     this.onWindowResize();
+    this.addSuperclampListener();
     window.onresize = this.onWindowResize;
 
     const io = new IntersectionObserver((entries) => {
@@ -63,13 +67,8 @@ class ShiftingSlider {
     this.elem.addEventListener('mouseout', this.handleMouseOut);
     this.wrapperElem.addEventListener('mouseleave', this.handleMouseLeave);
 
-    const waveformListItems = $$('.waveform__list-item');
-
-    waveformListItems.forEach((listItem) => {
+    this.waveformListItems.forEach((listItem) => {
       listItem.addEventListener('mousemove', this.handleMouseMove);
-      listItem.addEventListener('click', (e) => {
-        Superclamp.reclampAll;
-      });
     });
   }
 
@@ -79,10 +78,8 @@ class ShiftingSlider {
     this.elem.removeEventListener('mouseout', this.handleMouseOut);
     this.wrapperElem.addEventListener('mouseleave', this.handleMouseLeave);
 
-    const waveformListItems = $$('.waveform__list-item');
-    waveformListItems.forEach((listItem) => {
+    this.waveformListItems.forEach((listItem) => {
       listItem.removeEventListener('mousemove', this.handleMouseMove);
-      // listItem.removeEventListener('click', Superclamp.reclampAll);
     });
   }
 
@@ -107,6 +104,12 @@ class ShiftingSlider {
       this.elem.style.left = 0 + 'px';
       this.destroy();
     }
+  }
+
+  addSuperclampListener() {
+    this.waveformListItems.forEach((elem) => {
+      elem.addEventListener('click', Superclamp.reclampAll);
+    });
   }
 
   checkElemPosition(entry: any) {
