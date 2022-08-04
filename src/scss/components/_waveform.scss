@@ -328,11 +328,8 @@ $theme-margins-sm: (
       height: 100%;
 
       .waveform__event-card__content--text {
-        // padding-bottom: $spacing-3;
         height: 254px;
         margin-bottom: $spacing-3;
-        // overflow: hidden;
-        // text-overflow: ellipsis;
 
         @include breakpoint(md) {
           height: 266px;
@@ -343,12 +340,10 @@ $theme-margins-sm: (
 
         @include breakpoint(lg) {
           height: 358px;
-          // padding-bottom: $spacing-5;
         }
 
         @include breakpoint(xl) {
           height: 390px;
-          // padding-bottom: $spacing-7;
         }
 
         time {
@@ -362,13 +357,8 @@ $theme-margins-sm: (
         }
 
         p {
-          // padding-bottom: rem(6);
+          display: inline;
         }
-
-        // span[class='inline'],
-        // span[class='clamp-ellipsis'] {
-        //   display: inline !important;
-        // }
       }
     }
 
@@ -398,39 +388,12 @@ $theme-margins-sm: (
     margin: 0;
     border: 0;
 
-    @include breakpoint(md) {
-      // width: initial;
-      // margin-left: -$spacing-2;
-      // margin-right: -$spacing-2;
-    }
-
     @include breakpoint(xl) {
       width: 100%;
       margin: 0;
     }
   }
 }
-
-// @include make-bar-styles(
-//   $theme-colors,
-//   $theme-heights-sm,
-//   $theme-margins-sm,
-//   'sm'
-// );
-
-// @include make-bar-styles(
-//   $theme-colors,
-//   $theme-heights-lg,
-//   $theme-margins-lg,
-//   'lg'
-// );
-
-// @include make-bar-styles(
-//   $theme-colors,
-//   $theme-heights-xl,
-//   $theme-margins-xl,
-//   'xl'
-// );
 
 @include make-bar-color-styles($theme-colors);
 @include make-bar-height-styles($theme-heights-sm, 'sm');
