@@ -10,14 +10,14 @@
 			<div class="grid-container js-grid-container">
 				{% for i in 1..4 %}
 					<div class="grid-quad-block quad-{{i}}">
-						<div class="quad-item-1">
+						<div class="quad-item-1" tabindex="0">
 							{% include 'partials/grid-expandable-tile.twig' with {
 								content_type: 'play',
 								description: 'Take a tour of Middlebury Campus',
 								image_name: 'homepage_grid_1'
 							}%}
 						</div>
-						<div class="quad-item-2">
+						<div class="quad-item-2" tabindex="0">
 							{% if grid_item_2 == 'video' %}
 								{% include 'partials/grid-expandable-tile.twig' with {
 									content_type: 'play',
@@ -48,7 +48,7 @@
 								}%}
 							{% endif %}
 						</div>
-						<div class="quad-item-3">
+						<div class="quad-item-3" tabindex="0">
 							{% if grid_item_3 == 'video' %}
 								{% include 'partials/grid-expandable-tile.twig' with {
 									content_type: 'play',
@@ -70,7 +70,7 @@
 								}%}
 							{% endif %}
 						</div>
-						<div class="quad-item-4">
+						<div class="quad-item-4" tabindex="0">
 							{% if grid_item_4 == 'image' %}
 								{% include 'partials/grid-expandable-tile.twig' with {
 									content_type: 'expand',

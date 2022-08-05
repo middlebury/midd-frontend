@@ -7,7 +7,8 @@
   position: relative;
 
   @include breakpoint(lg) {
-    &:hover {
+    &:hover,
+    &:focus {
       > .grid-hover__overlay {
         opacity: 1;
       }
