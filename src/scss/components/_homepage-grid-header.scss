@@ -1,4 +1,4 @@
-$homepage-animation-duration: 20;
+$homepage-animation-duration: 5;
 
 @keyframes fadeInOut {
   0%,
@@ -71,7 +71,8 @@ $homepage-animation-duration: 20;
     font-size: $typescale-4;
     text-transform: uppercase;
     letter-spacing: rem(2);
-    animation: fadeOut 1s ease-out #{$homepage-animation-duration}s forwards; // animation-name animation-duration animation-timing-function animation-delay animation-fill-mode
+    animation: fadeOut #{$homepage-animation-duration / 3}s ease-out #{$homepage-animation-duration}s
+      forwards; // animation-name animation-duration animation-timing-function animation-delay animation-fill-mode
 
     @include breakpoint(md) {
       font-weight: $font-weight-normal;
@@ -90,7 +91,7 @@ $homepage-animation-duration: 20;
     .homepage-title--transition-state {
       display: block;
       opacity: 0;
-      animation: fadeInOut 1s ease-in-out; // animation-name animation-duration animation-timing-function
+      animation: fadeInOut #{$homepage-animation-duration / 3}s ease-in-out; // animation-name animation-duration animation-timing-function
       font-size: $typescale-8;
 
       strong {
@@ -125,7 +126,8 @@ $homepage-animation-duration: 20;
 
     &.homepage-page-title--final-state {
       opacity: 0;
-      animation: fadeIn 1s ease-in #{$homepage-animation-duration}s forwards; // animation-name animation-duration animation-timing-function animation-delay animation-fill-mode
+      animation: fadeIn #{$homepage-animation-duration / 3}s ease-in #{$homepage-animation-duration}s
+        forwards; // animation-name animation-duration animation-timing-function animation-delay animation-fill-mode
       font-weight: $font-weight-semibold;
       font-size: $typescale-8;
 
@@ -170,7 +172,8 @@ $homepage-animation-duration: 20;
 
     li {
       font-size: $typescale-4;
-      animation: borderFadeInOut 1s ease-in-out; // animation-name animation-duration animation-timing-function
+      animation: borderFadeInOut #{$homepage-animation-duration / 3}s
+        ease-in-out; // animation-name animation-duration animation-timing-function
       padding: 0;
       border-left: 0.5rem solid;
       border-color: $white;
@@ -178,7 +181,8 @@ $homepage-animation-duration: 20;
       @include breakpoint(md) {
         border-left: 0;
         padding: $spacing-3 0;
-        animation: backgroundFadeInOut 1s ease-in-out; // animation-name animation-duration animation-timing-function
+        animation: backgroundFadeInOut #{$homepage-animation-duration / 3}s
+          ease-in-out; // animation-name animation-duration animation-timing-function
       }
 
       @include breakpoint(md) {
