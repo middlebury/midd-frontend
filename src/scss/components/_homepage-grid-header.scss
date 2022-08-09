@@ -14,7 +14,7 @@ $homepage-animation-duration: 5;
 @keyframes slideInOut {
   0% {
     opacity: 0;
-    margin-left: -$spacing-5;
+    margin-left: $spacing-8;
   }
 
   50% {
@@ -30,7 +30,7 @@ $homepage-animation-duration: 5;
 @keyframes slideIn {
   0% {
     opacity: 0;
-    margin-left: -$spacing-5;
+    margin-left: $spacing-8;
   }
 
   100% {
@@ -142,6 +142,7 @@ $homepage-animation-duration: 5;
       font-size: $typescale-8;
 
       strong {
+        text-transform: none;
         color: $color-language-schools;
         font-weight: $font-weight-semibold;
         font-family: $font-family-serif;
