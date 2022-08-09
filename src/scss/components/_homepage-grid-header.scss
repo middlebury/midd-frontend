@@ -11,6 +11,34 @@ $homepage-animation-duration: 5;
   }
 }
 
+@keyframes slideInOut {
+  0% {
+    opacity: 0;
+    margin-left: -$spacing-5;
+  }
+
+  50% {
+    opacity: 1;
+    margin-left: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    margin-left: -$spacing-5;
+  }
+
+  100% {
+    opacity: 1;
+    margin-left: 0;
+  }
+}
+
 @keyframes fadeOut {
   0% {
     opacity: 1;
@@ -110,11 +138,13 @@ $homepage-animation-duration: 5;
     .homepage-title--transition-state {
       display: block;
       opacity: 0;
-      animation: fadeInOut #{$homepage-animation-duration / 3}s ease-in-out; // animation-name animation-duration animation-timing-function
+      animation: slideInOut #{$homepage-animation-duration / 3}s ease-in-out; // animation-name animation-duration animation-timing-function
       font-size: $typescale-8;
 
       strong {
+        color: $color-language-schools;
         font-weight: $font-weight-semibold;
+        font-family: $font-family-serif;
       }
 
       &:not(:last-child) {
@@ -163,6 +193,8 @@ $homepage-animation-duration: 5;
     .homepage-page-subtext--final {
       font-weight: $font-weight-semibold;
       font-size: $typescale-8;
+      animation: slideIn #{$homepage-animation-duration / 3}s ease-in #{$homepage-animation-duration}s
+        forwards;
 
       @include breakpoint(lg) {
         font-weight: $font-weight-normal;
