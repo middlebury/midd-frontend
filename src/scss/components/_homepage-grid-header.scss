@@ -1,4 +1,4 @@
-$homepage-animation-duration: 10;
+$homepage-animation-duration: 5;
 
 @keyframes fadeInOut {
   0%,
@@ -44,6 +44,17 @@ $homepage-animation-duration: 10;
   }
 }
 
+@keyframes colorFadeInOut {
+  0%,
+  100% {
+    color: $navy;
+  }
+
+  50% {
+    color: $white;
+  }
+}
+
 @keyframes borderFadeInOut {
   0%,
   100% {
@@ -61,8 +72,16 @@ $homepage-animation-duration: 10;
   color: $navy;
 
   @include breakpoint(md) {
+    margin-top: $spacing-5;
+    margin-bottom: $spacing-2;
+  }
+
+  @include breakpoint(lg) {
     margin-top: $spacing-7;
-    margin-bottom: $spacing-5;
+  }
+
+  @include breakpoint(xl) {
+    margin-top: $spacing-8;
   }
 
   .homepage-page-title {
@@ -160,32 +179,34 @@ $homepage-animation-duration: 10;
 
     @include breakpoint(md) {
       flex-direction: row;
-      margin-top: $spacing-5;
+      margin-top: $spacing-3;
       margin-left: -$spacing-3;
       margin-right: -$spacing-3;
     }
 
     @include breakpoint(lg) {
+      margin-top: $spacing-2;
       margin-left: -$spacing-5;
       margin-right: -$spacing-5;
     }
 
     li {
       font-size: $typescale-4;
-      animation: borderFadeInOut #{$homepage-animation-duration / 3}s
-        ease-in-out; // animation-name animation-duration animation-timing-function
+      // animation: borderFadeInOut #{$homepage-animation-duration / 3}s
+      //   ease-in-out; // animation-name animation-duration animation-timing-function
       padding: 0;
-      border-left: 0.5rem solid;
-      border-color: $white;
+      border-left: 0.5rem solid $white;
+      // border-color: $white;
+      color: $black;
 
       @include breakpoint(md) {
         border-left: 0;
         padding: $spacing-3 0;
-        animation: backgroundFadeInOut #{$homepage-animation-duration / 3}s
-          ease-in-out; // animation-name animation-duration animation-timing-function
+        // animation: backgroundFadeInOut #{$homepage-animation-duration / 3}s
+        //   ease-in-out; // animation-name animation-duration animation-timing-function
       }
 
-      @include breakpoint(md) {
+      @include breakpoint(lg) {
         padding: $spacing-4 0;
       }
 
@@ -207,7 +228,10 @@ $homepage-animation-duration: 10;
       }
 
       strong {
+        color: $navy;
         font-weight: $font-weight-bold;
+        // animation: colorFadeInOut #{$homepage-animation-duration / 3}s
+        //   ease-in-out;
       }
 
       &:not(:last-child) {
@@ -227,12 +251,15 @@ $homepage-animation-duration: 10;
         }
       }
 
-      @for $i from 1 through 3 {
-        &:nth-child(#{$i}) {
-          animation-delay: #{($homepage-animation-duration / 3) *
-            ($i - 1)}s; // animation-delay
-        }
-      }
+      // @for $i from 1 through 3 {
+      //   &:nth-child(#{$i}) {
+      //     animation-delay: #{($homepage-animation-duration / 3) * ($i - 1)}s;
+
+      //     strong {
+      //       animation-delay: #{($homepage-animation-duration / 3) * ($i - 1)}s;
+      //     }
+      //   }
+      // }
     }
   }
 }

@@ -12,6 +12,8 @@
 }
 
 .grid-container {
+  width: fit-content;
+  margin: auto;
   display: grid;
   grid-template-areas:
     'quad-1'

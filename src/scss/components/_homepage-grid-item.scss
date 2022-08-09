@@ -6,9 +6,14 @@
 .quad-item-4 {
   position: relative;
 
+  .grid-expandable-tile {
+    height: 100%;
+    width: 100%;
+  }
+
   @include breakpoint(lg) {
     &:hover,
-    &:focus {
+    &:focus-within {
       > .grid-hover__overlay {
         opacity: 1;
       }
@@ -136,12 +141,19 @@
 .grid-quote {
   height: 100%;
   width: 100%;
-  background: url(/images/homepage-grid-quote.png) no-repeat $spacing-3 0;
-  background-color: #c0e3fd;
+  // background: url(/images/homepage-grid-quote.png) no-repeat $spacing-3 0;
+  background-color: $white;
+  color: $navy;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: $spacing-2;
+
+  &.quote--dark {
+    background: url(/images/homepage-grid-quote.png) no-repeat $spacing-3 0;
+    background-color: #c0e3fd;
+    color: $navy;
+  }
 
   @include breakpoint(md) {
     padding: $spacing-3;
@@ -212,7 +224,7 @@
   height: 100%;
 
   &.dark {
-    background: $navy-dark;
+    background: $navy;
     color: #fff;
 
     .chart-group__list .chart-group__item .stats__label {
