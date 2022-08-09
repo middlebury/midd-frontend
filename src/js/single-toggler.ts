@@ -58,7 +58,6 @@ class SingleToggler {
   }
 
   handleElemClick(e: Event) {
-    e.preventDefault();
     this.toggle();
   }
 
