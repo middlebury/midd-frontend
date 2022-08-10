@@ -7,7 +7,7 @@ $text-colors: (
   3: #b1850b
 );
 
-@keyframes fadeInOut {
+@keyframes homepageFadeInOut {
   0%,
   100% {
     opacity: 0;
@@ -18,7 +18,7 @@ $text-colors: (
   }
 }
 
-@keyframes slideInOut {
+@keyframes homepageSlideInOut {
   0% {
     opacity: 0;
     margin-left: $spacing-8;
@@ -34,7 +34,7 @@ $text-colors: (
   }
 }
 
-@keyframes slideIn {
+@keyframes homepageSlideIn {
   0% {
     opacity: 0;
     margin-left: $spacing-8;
@@ -46,7 +46,7 @@ $text-colors: (
   }
 }
 
-@keyframes fadeOut {
+@keyframes homepageFadeOut {
   0% {
     opacity: 1;
   }
@@ -56,7 +56,7 @@ $text-colors: (
   }
 }
 
-@keyframes fadeIn {
+@keyframes homepageFadeIn {
   0% {
     opacity: 0;
   }
@@ -72,6 +72,7 @@ $text-colors: (
   margin-top: $spacing-4;
   margin-bottom: $spacing-4;
   color: $navy;
+  overflow: hidden;
 
   @include breakpoint(md) {
     margin-top: $spacing-5;
@@ -92,8 +93,9 @@ $text-colors: (
     font-size: $typescale-4;
     text-transform: uppercase;
     letter-spacing: rem(2);
-    animation: fadeOut #{$homepage-animation-sub-duration}s ease-out #{$homepage-animation-sub-duration *
-      3}s forwards; // animation-name animation-duration animation-timing-function animation-delay animation-fill-mode
+    overflow: hidden;
+    animation: homepageFadeOut #{$homepage-animation-sub-duration / 4}s ease-out
+      #{$homepage-animation-sub-duration * 3}s forwards;
 
     @include breakpoint(md) {
       font-weight: $font-weight-normal;
@@ -113,8 +115,8 @@ $text-colors: (
       display: block;
       opacity: 0;
       width: 100%;
-      animation: slideInOut #{$homepage-animation-sub-duration +
-        ($homepage-animation-sub-duration / 2)}s ease-in-out; // animation-name animation-duration animation-timing-function
+      animation: homepageSlideInOut #{$homepage-animation-sub-duration +
+        ($homepage-animation-sub-duration / 2)}s ease-in-out;
       font-size: $typescale-8;
 
       strong {
@@ -142,8 +144,7 @@ $text-colors: (
 
       @for $i from 1 through 3 {
         &:nth-child(#{$i}) {
-          animation-delay: #{($homepage-animation-sub-duration) *
-            ($i - 1)}s; // animation-delay
+          animation-delay: #{($homepage-animation-sub-duration) * ($i - 1)}s;
 
           strong {
             color: map-get($text-colors, $i);
@@ -154,10 +155,13 @@ $text-colors: (
 
     &.homepage-page-title--final-state {
       opacity: 0;
-      animation: slideIn #{$homepage-animation-sub-duration}s ease-in #{$homepage-animation-sub-duration *
-        3}s forwards; // animation-name animation-duration animation-timing-function animation-delay animation-fill-mode
+      animation: homepageSlideIn #{$homepage-animation-sub-duration -
+        ($homepage-animation-sub-duration / 4)}s ease-in #{(
+          $homepage-animation-sub-duration * 3
+        ) + ($homepage-animation-sub-duration / 4)}s forwards;
       font-weight: $font-weight-semibold;
       font-size: $typescale-8;
+      width: 100%;
 
       @include breakpoint(md) {
         font-size: rem(32);
@@ -183,7 +187,6 @@ $text-colors: (
   .homepage-page-header__list {
     display: flex;
     margin-top: $spacing-3;
-    margin-left: -$spacing-3;
     flex-direction: column;
 
     @include breakpoint(md) {
@@ -202,7 +205,6 @@ $text-colors: (
     li {
       font-size: $typescale-4;
       padding: 0;
-      border-left: 0.5rem solid $white;
       color: $black;
 
       @include breakpoint(md) {
@@ -217,6 +219,8 @@ $text-colors: (
       p {
         margin-left: $spacing-2;
         padding-bottom: $spacing-3;
+        animation: #{$homepage-animation-sub-duration +
+          ($homepage-animation-sub-duration / 2)}s ease-in-out;
 
         @include breakpoint(md) {
           border-bottom: 0;
@@ -257,9 +261,10 @@ $text-colors: (
 
       @for $i from 1 through 3 {
         &:nth-child(#{$i}) {
+          p,
           strong {
             animation-delay: #{($homepage-animation-sub-duration) * ($i - 1)}s;
-            animation-name: colorFadeInOut#{$i};
+            animation-name: homepageColorFadeInOut#{$i};
           }
         }
       }

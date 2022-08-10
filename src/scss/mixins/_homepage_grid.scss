@@ -1,9 +1,9 @@
 @mixin make-color-animation($text-colors) {
   @each $color-index, $color in $text-colors {
-    @keyframes colorFadeInOut#{$color-index} {
+    @keyframes homepageColorFadeInOut#{$color-index} {
       0%,
       100% {
-        color: $navy;
+        color: currentcolor;
       }
 
       50% {
