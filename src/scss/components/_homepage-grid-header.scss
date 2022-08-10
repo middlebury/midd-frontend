@@ -1,4 +1,11 @@
 $homepage-animation-duration: 5;
+$homepage-animation-sub-duration: $homepage-animation-duration / 4;
+
+$text-colors: (
+  1: #c26533,
+  2: #8f9a17,
+  3: #b1850b
+);
 
 @keyframes fadeInOut {
   0%,
@@ -59,40 +66,7 @@ $homepage-animation-duration: 5;
   }
 }
 
-@keyframes backgroundFadeInOut {
-  0%,
-  100% {
-    background-color: $white;
-    color: $navy;
-  }
-
-  50% {
-    background-color: $navy;
-    color: $white;
-  }
-}
-
-@keyframes colorFadeInOut {
-  0%,
-  100% {
-    color: $navy;
-  }
-
-  50% {
-    color: $white;
-  }
-}
-
-@keyframes borderFadeInOut {
-  0%,
-  100% {
-    border-color: $white;
-  }
-
-  50% {
-    border-color: $navy;
-  }
-}
+@include make-color-animation($text-colors);
 
 .homepage-page-header {
   margin-top: $spacing-4;
@@ -118,8 +92,8 @@ $homepage-animation-duration: 5;
     font-size: $typescale-4;
     text-transform: uppercase;
     letter-spacing: rem(2);
-    animation: fadeOut #{$homepage-animation-duration / 3}s ease-out #{$homepage-animation-duration}s
-      forwards; // animation-name animation-duration animation-timing-function animation-delay animation-fill-mode
+    animation: fadeOut #{$homepage-animation-sub-duration}s ease-out #{$homepage-animation-sub-duration *
+      3}s forwards; // animation-name animation-duration animation-timing-function animation-delay animation-fill-mode
 
     @include breakpoint(md) {
       font-weight: $font-weight-normal;
@@ -138,14 +112,14 @@ $homepage-animation-duration: 5;
     .homepage-title--transition-state {
       display: block;
       opacity: 0;
-      animation: slideInOut #{$homepage-animation-duration / 3}s ease-in-out; // animation-name animation-duration animation-timing-function
+      width: 100%;
+      animation: slideInOut #{$homepage-animation-sub-duration +
+        ($homepage-animation-sub-duration / 2)}s ease-in-out; // animation-name animation-duration animation-timing-function
       font-size: $typescale-8;
 
       strong {
-        text-transform: none;
         color: $color-language-schools;
         font-weight: $font-weight-semibold;
-        font-family: $font-family-serif;
       }
 
       &:not(:last-child) {
@@ -168,16 +142,20 @@ $homepage-animation-duration: 5;
 
       @for $i from 1 through 3 {
         &:nth-child(#{$i}) {
-          animation-delay: #{($homepage-animation-duration / 3) *
+          animation-delay: #{($homepage-animation-sub-duration) *
             ($i - 1)}s; // animation-delay
+
+          strong {
+            color: map-get($text-colors, $i);
+          }
         }
       }
     }
 
     &.homepage-page-title--final-state {
       opacity: 0;
-      animation: fadeIn #{$homepage-animation-duration / 3}s ease-in #{$homepage-animation-duration}s
-        forwards; // animation-name animation-duration animation-timing-function animation-delay animation-fill-mode
+      animation: slideIn #{$homepage-animation-sub-duration}s ease-in #{$homepage-animation-sub-duration *
+        3}s forwards; // animation-name animation-duration animation-timing-function animation-delay animation-fill-mode
       font-weight: $font-weight-semibold;
       font-size: $typescale-8;
 
@@ -194,8 +172,6 @@ $homepage-animation-duration: 5;
     .homepage-page-subtext--final {
       font-weight: $font-weight-semibold;
       font-size: $typescale-8;
-      animation: slideIn #{$homepage-animation-duration / 3}s ease-in #{$homepage-animation-duration}s
-        forwards;
 
       @include breakpoint(lg) {
         font-weight: $font-weight-normal;
@@ -225,18 +201,13 @@ $homepage-animation-duration: 5;
 
     li {
       font-size: $typescale-4;
-      // animation: borderFadeInOut #{$homepage-animation-duration / 3}s
-      //   ease-in-out; // animation-name animation-duration animation-timing-function
       padding: 0;
       border-left: 0.5rem solid $white;
-      // border-color: $white;
       color: $black;
 
       @include breakpoint(md) {
         border-left: 0;
         padding: $spacing-3 0;
-        // animation: backgroundFadeInOut #{$homepage-animation-duration / 3}s
-        //   ease-in-out; // animation-name animation-duration animation-timing-function
       }
 
       @include breakpoint(lg) {
@@ -263,8 +234,8 @@ $homepage-animation-duration: 5;
       strong {
         color: $navy;
         font-weight: $font-weight-bold;
-        // animation: colorFadeInOut #{$homepage-animation-duration / 3}s
-        //   ease-in-out;
+        animation: #{$homepage-animation-sub-duration +
+          ($homepage-animation-sub-duration / 2)}s ease-in-out;
       }
 
       &:not(:last-child) {
@@ -284,15 +255,14 @@ $homepage-animation-duration: 5;
         }
       }
 
-      // @for $i from 1 through 3 {
-      //   &:nth-child(#{$i}) {
-      //     animation-delay: #{($homepage-animation-duration / 3) * ($i - 1)}s;
-
-      //     strong {
-      //       animation-delay: #{($homepage-animation-duration / 3) * ($i - 1)}s;
-      //     }
-      //   }
-      // }
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+          strong {
+            animation-delay: #{($homepage-animation-sub-duration) * ($i - 1)}s;
+            animation-name: colorFadeInOut#{$i};
+          }
+        }
+      }
     }
   }
 }
