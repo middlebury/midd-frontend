@@ -7,6 +7,7 @@ $text-colors: (
   3: #c26533
 );
 
+// Animation names have the homepage prefix for names to not match other animation names in the project
 @keyframes homepageFadeInOut {
   0%,
   100% {

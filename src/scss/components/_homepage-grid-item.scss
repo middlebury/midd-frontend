@@ -93,15 +93,22 @@
     @include make-col(10);
   }
 
-  // @include breakpoint(xl) {
-  //   flex: initial;
-  //   max-width: 1440px;
-  // }
-
   figure {
     margin: auto;
     padding-right: 0;
     padding-left: 0;
+
+    &.portrait-video--grid {
+      @include make-col(8);
+
+      @include breakpoint(md) {
+        @include make-col(5);
+      }
+
+      @include breakpoint(lg) {
+        @include make-col(4);
+      }
+    }
   }
   .grid-video__body {
     text-align: left;
@@ -117,7 +124,7 @@
   color: $white;
   background: none;
   border: 0;
-  position: fixed;
+  position: absolute;
   top: $spacing-5;
   right: $spacing-5;
 
@@ -141,7 +148,8 @@
 .grid-quote {
   height: 100%;
   width: 100%;
-  // background: url(/images/homepage-grid-quote.png) no-repeat $spacing-3 0;
+  background: url(/images/homepage-quote-blue.svg) no-repeat $spacing-2 -0.75rem;
+  background-size: 76px 60px;
   background-color: $white;
   color: $navy;
   display: flex;
@@ -149,29 +157,35 @@
   justify-content: space-between;
   padding: $spacing-2;
 
-  &.quote--dark {
-    background: url(/images/homepage-grid-quote.png) no-repeat $spacing-3 0;
-    background-color: #c0e3fd;
-    color: $navy;
-  }
-
   @include breakpoint(md) {
     padding: $spacing-3;
+    background-position-x: $spacing-3;
+    background-position-y: -0.625rem;
+  }
+
+  @include breakpoint(lg) {
+    background-position-y: -0.75rem;
+    background-size: 120px 95px;
   }
 
   .grid-quote__text {
-    font-weight: $font-weight-semibold;
+    font-weight: $font-weight-normal;
     font-size: $typescale-4;
     line-height: 2;
     text-align: left;
 
     @include breakpoint(md) {
-      font-weight: $font-weight-normal;
       font-size: $typescale-5;
     }
 
     @include breakpoint(lg) {
       font-weight: $font-weight-light;
+      line-height: 2.2;
+      font-size: rem(32);
+    }
+
+    @include breakpoint(xl) {
+      line-height: 2.6;
       font-size: $typescale-8;
     }
   }
@@ -179,17 +193,32 @@
   .grid-quote__caption,
   .grid-quote__caption p {
     text-align: right;
-    font-size: $typescale-1 !important;
     line-height: $line-height-heading !important;
+    font-size: $typescale-1 !important;
 
     @include breakpoint(lg) {
-      font-size: $typescale-2 !important;
+      font-size: $typescale-3 !important;
+    }
+
+    @include breakpoint(xl) {
+      font-size: $typescale-4 !important;
     }
   }
 
+  &.quote--dark {
+    background-image: url(/images/homepage-quote-white.svg);
+    background-color: #c0e3fd;
+    color: $navy;
+  }
+
   &.quote-text--small {
+    background-size: 56px 44px;
+    padding: $spacing-2;
+
     @include breakpoint(lg) {
-      padding: $spacing-4 $spacing-3;
+      padding: $spacing-3;
+      padding-top: $spacing-4;
+      background-size: 104px 82px;
     }
 
     .grid-quote__text {
@@ -202,14 +231,27 @@
       }
 
       @include breakpoint(lg) {
-        font-size: $typescale-4;
-        line-height: 2.5;
+        line-height: 2;
+        font-weight: $font-weight-normal;
+        font-size: $typescale-5;
+      }
+
+      @include breakpoint(xl) {
+        font-weight: $font-weight-light;
+        font-size: $typescale-7;
       }
     }
 
     .grid-quote__caption,
     .grid-quote__caption p {
-      font-size: rem(10) !important;
+      font-size: rem(10);
+      font-weight: $font-weight-semibold;
+      line-height: $line-height-heading;
+
+      @include breakpoint(lg) {
+        font-weight: $font-weight-normal;
+        font-size: $typescale-2 !important;
+      }
     }
   }
 }
@@ -243,7 +285,8 @@
       margin: auto;
 
       .stats__label {
-        display: block;
+        display: flex;
+        justify-content: center;
         border-bottom: 1px solid $navy;
         font-size: $typescale-5;
         font-weight: $font-weight-bold;

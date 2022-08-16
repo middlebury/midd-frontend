@@ -22,7 +22,7 @@
     'quad-4';
   column-gap: $spacing-2;
 
-  @include breakpoint(md) {
+  @include breakpoint(sm) {
     grid-template-areas:
       'quad-1 quad-2'
       'quad-3 quad-4';
@@ -52,73 +52,73 @@
     }
 
     .quad-item-1 {
-      width: 320px;
+      max-width: 320px;
       height: 180px;
 
       @include breakpoint(md) {
-        width: 380px;
+        max-width: 380px;
         height: 214px;
       }
       @include breakpoint(lg) {
-        width: 596px;
+        max-width: 596px;
         height: 335px;
       }
       @include breakpoint(xl) {
-        width: 716px;
+        max-width: 716px;
         height: 403px;
       }
     }
 
     .quad-item-2 {
-      width: 132px;
+      max-width: 132px;
       height: 180px;
 
       @include breakpoint(md) {
-        width: 158px;
+        max-width: 158px;
         height: 214px;
       }
       @include breakpoint(lg) {
-        width: 252px;
+        max-width: 252px;
         height: 335px;
       }
       @include breakpoint(xl) {
-        width: 305px;
+        max-width: 305px;
         height: 402px;
       }
     }
 
     .quad-item-3 {
-      width: 180px;
+      max-width: 180px;
       height: 320px;
 
       @include breakpoint(md) {
-        width: 214px;
+        max-width: 214px;
         height: 380px;
       }
       @include breakpoint(lg) {
-        width: 335px;
+        max-width: 335px;
         height: 596px;
       }
       @include breakpoint(xl) {
-        width: 403px;
+        max-width: 403px;
         height: 716px;
       }
     }
 
     .quad-item-4 {
-      width: 132px;
+      max-width: 132px;
       height: 132px;
 
       @include breakpoint(md) {
-        width: 158px;
+        max-width: 158px;
         height: 158px;
       }
       @include breakpoint(lg) {
-        width: 252px;
+        max-width: 252px;
         height: 252px;
       }
       @include breakpoint(xl) {
-        width: 305px;
+        max-width: 305px;
         height: 305px;
       }
     }
@@ -220,5 +220,17 @@
     .button--show-less {
       display: flex;
     }
+  }
+
+  &.button--light:focus {
+    background-color: $white;
+    color: $navy;
+    border-color: $white;
+  }
+
+  &.button--light:hover {
+    background-color: $navy-dark;
+    color: $white;
+    border-color: $navy-dark;
   }
 }

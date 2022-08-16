@@ -1,7 +1,11 @@
 {% set id = random(1234) %}
-{% set grid_item_2 = random(['video', 'image', 'stats', 'quote']) %}
+{# {% set grid_item_2 = random(['video', 'image', 'stats', 'quote']) %}
 {% set grid_item_3 = random(['video', 'image', 'quote']) %}
-{% set grid_item_4 = random(['image', 'stats']) %}
+{% set grid_item_4 = random(['image', 'stats']) %} #}
+
+{% set grid_item_2 = random(['quote']) %}
+{% set grid_item_3 = random(['quote']) %}
+{% set grid_item_4 = random(['stats']) %}
 
 <div class="paragraph paragraph--full">
 	{% include 'paragraphs/homepage-grid-header.twig' %}
@@ -41,10 +45,11 @@
 								} %}
 							{% else %}
 								{% include 'partials/grid-quote.twig' with {
-									quote_text: 'Students here are very open-minded and curious about other cultures, so it was easy to make friends”',
-									quote_author: 'Ai Hattori ’24',
+									quote_text: 'I went to the Knoll and the sky was so clear. I saw Jupiter and my first shooting star!”',
+									quote_author: 'Ella Roelofs ’23.5',
 									quote_author_title: 'Student',
-									small: true
+									small: true,
+									dark: true
 								}%}
 							{% endif %}
 						</div>
@@ -82,7 +87,7 @@
 							{% else %}
 								{% include 'partials/grid-stats.twig' with {
 									items: [
-										{ type: 'stats', number: 16, label: 'average class size' }
+										{ type: 'stats', number: 8, suffix: ':1', label: 'average class size' }
 									],
 									dark: true
 								} %}
