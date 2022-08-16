@@ -34,12 +34,14 @@ class VideoSwap {
   activeClass: string;
   content: HTMLElement | null;
   link: HTMLElement | null;
+  originalContent: HTMLElement | null;
 
   /** iframe string encoded from server */
   iframe: string | null;
 
   constructor(elem: HTMLElement) {
     this.elem = elem;
+    this.originalContent = elem;
     this.content = $('.js-video-content', elem);
     this.link = $('.js-video-link', elem);
     this.iframe = elem.getAttribute('data-video');
@@ -57,6 +59,14 @@ class VideoSwap {
     if (this.link) {
       on(this.link, 'click', this.handleVideoEmbedClick);
       on(this.link, 'keydown', this.handleKeyUp);
+    }
+  }
+
+  hideVideo() {
+    this.elem.classList.remove(this.activeClass);
+
+    if (this.content) {
+      this.content.innerHTML = this.link.outerHTML;
     }
   }
 

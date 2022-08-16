@@ -1,11 +1,6 @@
 import MicroModal from 'micromodal';
 import { $, $$ } from './utils/dom';
-
-MicroModal.init({
-  openTrigger: 'data-grid-overlay-open',
-  closeTrigger: 'data-grid-overlay-close',
-  disableScroll: true
-});
+import VideoSwap from './video';
 
 class GridToggler {
   elem: HTMLElement;
@@ -104,5 +99,24 @@ class GridToggler {
 const togglers = $$('[data-grid-toggle-target]');
 
 togglers.forEach((elem) => new GridToggler(elem));
+
+MicroModal.init({
+  openTrigger: 'data-grid-overlay-open',
+  closeTrigger: 'data-grid-overlay-close',
+  onShow: (modal: any) => {
+    $('[data-grid-overlay-close]', modal).focus();
+
+    modal.videoElem = $('.js-expand-video', modal);
+    if (modal.videoElem) {
+      modal.video = new VideoSwap(modal.videoElem);
+    }
+  },
+  onClose: (modal: any) => {
+    if (modal.videoElem) {
+      modal.video.hideVideo();
+    }
+  },
+  disableScroll: true
+});
 
 export default GridToggler;
