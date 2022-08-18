@@ -1,6 +1,14 @@
 import { $, $$ } from './utils/dom';
 import Superclamp from 'superclamp';
 
+/**
+ * Adds functionality to the waveform component to make the shift left or right
+ * on hovering on the leftmost or rightmost sections of the component.
+ * Adds functionality for showing labels on hover on the waveform bars that follow
+ * the cursor as it moves on the bar.
+ * Also adds functionality for clamping text that's too long in the cards using the
+ * Superclamp library.
+ */
 class ShiftingSlider {
   /* Element which will be hovered over and will trigger the slide */
   elem: HTMLElement;
@@ -22,10 +30,13 @@ class ShiftingSlider {
   /* Interval id of the current interval running for scroll on hover animation */
   intervalId: any;
 
+  /* Element for the tooltip that appears on hovering over the bars */
   tooltipElem: any;
 
+  /* Caching the previous direction to move waveform to the left if it was moving to the right and vice versa */
   prevDirection: string;
 
+  /* Stores the bar elements of the waveform to make the tooltips work */
   waveformListItems: HTMLElement[];
 
   constructor(elem: HTMLElement) {
@@ -48,6 +59,8 @@ class ShiftingSlider {
     this.addSuperclampListener();
     window.onresize = this.onWindowResize;
 
+    // Adds intersection observer to make the waveform slide in when
+    // it comes into view
     const io = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.intersectionRatio > 0) {
@@ -61,6 +74,9 @@ class ShiftingSlider {
     io.observe(this.elem);
   }
 
+  /**
+   * Adds event listeners to the waveform component's elements
+   */
   addListeners() {
     this.elem.addEventListener('mouseover', this.handleHover);
     this.elem.addEventListener('mousemove', this.handleHover);
@@ -72,6 +88,9 @@ class ShiftingSlider {
     });
   }
 
+  /**
+   * Removes event listeners added to the waveform component's elements
+   */
   destroy() {
     this.elem.removeEventListener('mouseover', this.handleHover);
     this.elem.removeEventListener('mousemove', this.handleHover);
@@ -83,6 +102,12 @@ class ShiftingSlider {
     });
   }
 
+  /**
+   * Updates the visibleElemWidth, totalElemWidth and scrollWidth on window resize
+   * because the width of the waveform changes with the window size.
+   * Also removes event listeners on mobile screen size, adds them on desktop screen sizes
+   * i.e. > 1024.
+   */
   onWindowResize() {
     // Enable superclamp to clamp overflow text on cards
     Superclamp.register(
@@ -106,16 +131,34 @@ class ShiftingSlider {
     }
   }
 
+  /**
+   * Enables superclamp on clicking on the waveformListItems
+   */
   addSuperclampListener() {
     this.waveformListItems.forEach((elem) => {
       elem.addEventListener('click', Superclamp.reclampAll);
     });
   }
 
-  checkElemPosition(entry: any) {
+  /**
+   * Used by the intersection observer, adds the fade-in-element class
+   * to the element in the entry variable which makes the element slide in
+   *
+   * @param entry Intersection Observer Entry that you want to add the
+   * fade-in-element class to
+   */
+  checkElemPosition(entry: IntersectionObserverEntry) {
     entry.target.classList.add('fade-in-element');
   }
 
+  /**
+   * Updates the left attribute of the waveform based on which section the cursor
+   * is hovering on, indicated by the direction variable, which makes the waveform
+   * animate.
+   *
+   * @param direction Direction in which the waveform should move which is either
+   * left or right
+   */
   scroll(direction: string) {
     var shift =
       this.elem.style.left === '' ? 0 : parseInt(this.elem.style.left, 10);
@@ -136,10 +179,25 @@ class ShiftingSlider {
     this.elem.style.left = shift + 'px';
   }
 
+  /**
+   * Starts the interval to start the animation
+   *
+   * @param speed Sets the interval duration which determines how fast or slow
+   * the waveform animates
+   * @param direction Direction in which the waveform should move which is either
+   * left or right
+   */
   animate(speed: number, direction: string) {
     this.intervalId = setInterval(() => this.scroll(direction), speed);
   }
 
+  /**
+   * Builds the tooltip element and appends it to the bar element the cursor
+   * is hovering on
+   *
+   * @param e the Mouse Event
+   * @returns Exits the functipn if there's no data-tooltip attribute set
+   */
   handleTooltip(e: MouseEvent) {
     let target = e.target as HTMLElement;
 
@@ -155,6 +213,9 @@ class ShiftingSlider {
     target.appendChild(this.tooltipElem);
   }
 
+  /**
+   * Removes the tooltip element when the cursor leaves the bar
+   */
   handleMouseOut() {
     if (this.tooltipElem) {
       this.tooltipElem.remove();
@@ -162,6 +223,9 @@ class ShiftingSlider {
     }
   }
 
+  /**
+   * Clears the current interval to stop the waveform animation
+   */
   handleMouseLeave() {
     if (this.intervalId) {
       this.intervalId = clearInterval(this.intervalId);
@@ -169,10 +233,21 @@ class ShiftingSlider {
     }
   }
 
+  /**
+   * Caches the current direction in the prevDirection variable for using
+   *
+   * @param direction Current direction of movement
+   */
   setDirection(direction: string) {
     this.prevDirection = direction;
   }
 
+  /**
+   * Function to handle shifting the waveform left or right based
+   * on where you hover on the waveform.
+   *
+   * @param e The Mouse Event
+   */
   handleHover(e: MouseEvent) {
     if (e.type == 'mouseover') {
       this.handleTooltip(e);
@@ -204,6 +279,12 @@ class ShiftingSlider {
     this.setDirection(direction);
   }
 
+  /**
+   * Function to handle making the tooltip appear on hover and follow the cursor
+   * while it is on the bar of the waveform.
+   *
+   * @param e The Mouse Event
+   */
   handleMouseMove(e: MouseEvent) {
     if (this.tooltipElem) {
       var rightSpace = document.body.clientWidth - e.pageX;
