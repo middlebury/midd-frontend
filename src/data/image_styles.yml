@@ -178,3 +178,11 @@ image_styles:
     ratio: "any"
     srcset:
       - 335x596
+  portrait_expand_video:
+    title: Portrait video (homepage grid)
+    ratio: "16:9"
+    srcset:
+      - 225x400
+      - 288x512
+      - 405x720
+      - 459x816
