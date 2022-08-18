@@ -1,37 +1,60 @@
 <div class="container">
-	<section class="homepage-page-header">
-		<h1 class="homepage-page-title" aria-hidden="true">At middlebury you will
-			<span class="homepage-title--transition-state">
-				<strong>Focus your learning</strong>
-			</span>
-			<span class="homepage-title--transition-state">
-				<strong>Discover Vermont</strong>
-			</span>
-			<span class="homepage-title--transition-state">
-				<strong>Find meaning in doing</strong>
-			</span>
-		</h1>
-		<h1 class="homepage-page-title homepage-page-title--final-state" id="midd-page-header-label">Let What Inspires You
-			<br>
-			<span class="homepage-page-subtext--final">Lead the Way</span>
-		</h1>
-		<ul class="homepage-page-header__list">
-			<li>
-				<p>
-					<strong>Focus your learning</strong>
-					with faculty who get as excited about things as you do.
-				</p>
-			</li>
-			<li>
-				<p>
-					<strong>Discover Vermont</strong>, a place that grounds us in its history and inspires.
-				</p>
-			</li>
-			<li>
-				<p>
-					<strong>Find meaning in doing</strong>, and feel energized and ready for what's next.
-				</p>
-			</li>
-		</ul>
-	</section>
+  <section class="homepage-header run-animation" data-animation-container>
+    <div class="homepage-header__container">
+      <h1 class="homepage-title" aria-hidden="true" data-animation-target>At middlebury you will
+        <span class="homepage-title--transition-state">
+          <strong>Focus your learning</strong>
+        </span>
+        <span class="homepage-title--transition-state">
+          <strong>Discover Vermont</strong>
+        </span>
+        <span class="homepage-title--transition-state">
+          <strong>Find meaning in doing</strong>
+        </span>
+      </h1>
+      <h1 class="homepage-title homepage-title--final-state" id="midd-page-header-label" data-animation-target>Let What Inspires You
+        <br>
+        <span class="homepage-subtext--final">Lead the Way</span>
+      </h1>
+      <button aria-label="Pause Animation" class="homepage-title--pause-button" data-animation-trigger>
+        <span class="sr-only">Pause Animation</span>
+        {% include 'partials/icon.twig' with {
+          name: 'pause-button',
+          class: 'homepage-button'
+        } %}
+      </button>
+      <button aria-label="Play Animation" class="homepage-title--play-button" data-animation-trigger>
+        <span class="sr-only">Play Animation</span>
+        {% include 'partials/icon.twig' with {
+          name: 'play',
+          class: 'homepage-button'
+        } %}
+      </button>
+      <button aria-label="Replay Animation" class="homepage-title--replay-button" data-animation-trigger>
+        <span class="sr-only">Replay Animation</span>
+        {% include 'partials/icon.twig' with {
+          name: 'redo',
+          class: 'homepage-button'
+        } %}
+      </button>
+    </div>
+    <ul class="homepage-header__list">
+      <li>
+        <p data-animation-target>
+          <strong>Focus your learning</strong>
+          with faculty who get as excited about things as you do.
+        </p>
+      </li>
+      <li>
+        <p data-animation-target>
+          <strong>Discover Vermont</strong>, a place that grounds us in its history and inspires.
+        </p>
+      </li>
+      <li>
+        <p data-animation-target>
+          <strong>Find meaning in doing</strong>, and feel energized and ready for what's next.
+        </p>
+      </li>
+    </ul>
+  </section>
 </div>
