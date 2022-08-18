@@ -81,16 +81,30 @@
   color: $white;
 
   &.is-open {
-    display: flex;
+    display: block;
     align-items: center;
+    overflow-y: scroll;
   }
 }
 
 .grid-modal__overlay {
   @include make-col(12);
 
-  @include breakpoint(lg) {
-    @include make-col(10);
+  & .landscape-video--grid {
+    max-width: 1440px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: $spacing-9;
+
+    @include breakpoint(lg) {
+      padding-left: $spacing-5;
+      padding-right: $spacing-5;
+    }
+  }
+
+  & .portrait-video__content,
+  & .video__content {
+    background: black;
   }
 
   figure {
@@ -99,14 +113,22 @@
     padding-left: 0;
 
     &.portrait-video--grid {
-      @include make-col(8);
+      max-width: 225px;
+
+      .grid-portrait-video__button {
+        z-index: 2;
+      }
 
       @include breakpoint(md) {
-        @include make-col(5);
+        max-width: 288px;
       }
 
       @include breakpoint(lg) {
-        @include make-col(4);
+        max-width: 405px;
+      }
+
+      @include breakpoint(xl) {
+        max-width: 459px;
       }
     }
   }
@@ -114,6 +136,15 @@
     text-align: left;
     margin-top: $spacing-3;
   }
+
+  .grid-video__transcript a {
+    color: $white;
+  }
+}
+
+.grid-modal__button-container {
+  width: 100%;
+  position: fixed;
 }
 
 .grid-modal__button {
@@ -124,9 +155,14 @@
   color: $white;
   background: none;
   border: 0;
-  position: absolute;
-  top: $spacing-5;
-  right: $spacing-5;
+  display: block;
+  margin-top: $spacing-4;
+  margin-right: $spacing-3;
+
+  @include breakpoint(lg) {
+    margin-top: $spacing-5;
+    margin-right: $spacing-5;
+  }
 
   &:hover,
   &:focus {
