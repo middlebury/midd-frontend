@@ -36,12 +36,12 @@
   </div>
   <div class="grid-modal__overlay container px-lg-0">
     {% if content_type == 'play' %}
-      {% include 'partials/video.twig' with {
+      {# {% include 'partials/video.twig' with {
                           grid_video: true
-                        } %}
-      {# {% include 'partials/portrait-video.twig' with {
-                                    grid_video: true
-                                  } %} #}
+                        } %} #}
+      {% include 'partials/portrait-video.twig' with {
+        grid_video: true
+      } %}
     {% elseif content_type == 'expand' %}
       <figure>
         {% include 'partials/img.twig' with {
