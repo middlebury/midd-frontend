@@ -245,6 +245,14 @@
     background-image: url(/images/homepage-quote-white.svg);
     background-color: #c0e3fd;
     color: $navy;
+
+    @include breakpoint(md) {
+      background-position-x: $spacing-2;
+    }
+
+    @include breakpoint(lg) {
+      background-position-x: $spacing-3;
+    }
   }
 
   &.quote-text--small {
