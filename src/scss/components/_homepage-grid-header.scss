@@ -307,6 +307,10 @@ $text-colors: (
     display: none;
   }
 
+  .homepage-title--replay-button {
+    transform: scaleX(-1);
+  }
+
   .homepage-button {
     width: $spacing-4;
     height: $spacing-4;

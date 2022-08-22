@@ -94,12 +94,16 @@
     max-width: 1440px;
     padding-left: 0;
     padding-right: 0;
-    padding-top: $spacing-9;
 
     @include breakpoint(lg) {
       padding-left: $spacing-5;
       padding-right: $spacing-5;
     }
+  }
+
+  & .portrait-video--grid, 
+  & .landscape-video--grid  {
+    padding-top: $spacing-9;
   }
 
   & .portrait-video__content,
@@ -129,6 +133,12 @@
 
       @include breakpoint(xl) {
         max-width: 459px;
+      }
+    }
+
+    .video__text {
+      a {
+        color: $white;
       }
     }
   }
