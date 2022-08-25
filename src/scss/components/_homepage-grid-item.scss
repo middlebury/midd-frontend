@@ -123,15 +123,22 @@
     }
   }
 
-  .video__text {
+  .video__text, .image__text {
+    font-size: $typescale-3;
+
     a {
       color: $white;
+      @include link-border;
     }
   }
 
-  .grid-video__body {
+  .grid-video__body, .grid-image__body {
     text-align: left;
     margin-top: $spacing-3;
+
+    @include breakpoint(lg) {
+      margin-right: 8.33333%;
+    }
   }
 
   .grid-video__transcript .transcript__button {
