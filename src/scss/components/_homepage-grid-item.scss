@@ -88,67 +88,59 @@
 }
 
 .grid-modal__overlay {
-  @include make-col(12);
-
-  & .landscape-video--grid {
-    max-width: 1440px;
-    padding-left: 0;
-    padding-right: 0;
+  figure {
+    padding-top: $spacing-9;
+    padding-bottom: $spacing-5;
 
     @include breakpoint(lg) {
-      padding-left: $spacing-5;
-      padding-right: $spacing-5;
+      padding-bottom: $spacing-7;
     }
   }
 
-  & .portrait-video--grid, 
-  & .landscape-video--grid  {
-    padding-top: $spacing-9;
+  .portrait-video__content,
+  .video__content {
+    background: $black;
   }
 
-  & .portrait-video__content,
-  & .video__content {
-    background: black;
-  }
+  .portrait-video--grid {
+    margin: inherit;
+    max-width: 225px;
 
-  figure {
-    margin: auto;
-    padding-right: 0;
-    padding-left: 0;
-
-    &.portrait-video--grid {
-      max-width: 225px;
-
-      .grid-portrait-video__button {
-        z-index: 2;
-      }
-
-      @include breakpoint(md) {
-        max-width: 288px;
-      }
-
-      @include breakpoint(lg) {
-        max-width: 405px;
-      }
-
-      @include breakpoint(xl) {
-        max-width: 459px;
-      }
+    .grid-portrait-video__button {
+      z-index: 2;
     }
 
-    .video__text {
-      a {
-        color: $white;
-      }
+    @include breakpoint(md) {
+      max-width: 288px;
+    }
+
+    @include breakpoint(lg) {
+      max-width: 405px;
+    }
+
+    @include breakpoint(xl) {
+      max-width: 459px;
     }
   }
+
+  .video__text {
+    a {
+      color: $white;
+    }
+  }
+
   .grid-video__body {
     text-align: left;
     margin-top: $spacing-3;
   }
 
-  .grid-video__transcript a {
+  .grid-video__transcript .transcript__button {
     color: $white;
+
+    &:hover {
+      border-color: $white;
+      text-decoration: none;
+    }
   }
 }
 

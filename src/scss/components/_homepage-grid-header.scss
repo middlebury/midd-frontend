@@ -70,22 +70,13 @@ $text-colors: (
 @include make-color-animation($text-colors);
 
 .homepage-header {
-  margin-top: $spacing-4;
+  margin-top: $spacing-5;
   margin-bottom: $spacing-4;
   color: $navy;
-  overflow: hidden;
-
-  @include breakpoint(md) {
-    margin-top: $spacing-5;
-    margin-bottom: $spacing-2;
-  }
 
   @include breakpoint(lg) {
     margin-top: $spacing-7;
-  }
-
-  @include breakpoint(xl) {
-    margin-top: $spacing-8;
+    margin-bottom: $spacing-2;
   }
 }
 
@@ -96,12 +87,6 @@ $text-colors: (
   text-transform: uppercase;
   letter-spacing: rem(2);
   overflow: hidden;
-  animation: #{$homepage-animation-sub-duration / 4}s ease-out #{$homepage-animation-sub-duration *
-    3}s forwards;
-
-  .run-animation & {
-    animation-name: homepageFadeOut;
-  }
 
   @include breakpoint(md) {
     font-weight: $font-weight-normal;
@@ -113,14 +98,9 @@ $text-colors: (
     font-size: $typescale-10;
   }
 
-  &:first-child {
-    position: absolute;
-  }
-
   .homepage-title--transition-state {
     display: block;
     opacity: 0;
-    width: 100%;
     animation: #{$homepage-animation-sub-duration +
       ($homepage-animation-sub-duration / 2)}s ease-in-out;
     animation-play-state: inherit;
@@ -130,9 +110,17 @@ $text-colors: (
       animation-name: homepageSlideInOut;
     }
 
-    strong {
-      color: $color-language-schools;
-      font-weight: $font-weight-semibold;
+    &:last-child {
+      animation: #{$homepage-animation-sub-duration / 2}s ease-in #{($homepage-animation-sub-duration * 3) + ($homepage-animation-sub-duration / 2)}s forwards;
+      animation-play-state: inherit;
+
+      strong {
+        color: $navy;
+      }
+    }
+
+    .run-animation &:last-child {
+      animation-name: homepageSlideIn;
     }
 
     &:not(:last-child) {
@@ -161,40 +149,6 @@ $text-colors: (
           color: map-get($text-colors, $i);
         }
       }
-    }
-  }
-
-  &.homepage-title--final-state {
-    opacity: 0;
-    animation: #{$homepage-animation-sub-duration -
-      ($homepage-animation-sub-duration / 4)}s ease-in #{(
-        $homepage-animation-sub-duration * 3
-      ) + ($homepage-animation-sub-duration / 4)}s forwards;
-    font-weight: $font-weight-semibold;
-    font-size: $typescale-8;
-    width: 100%;
-
-    .run-animation & {
-      animation-name: homepageSlideIn;
-    }
-
-    @include breakpoint(md) {
-      font-size: rem(32);
-    }
-
-    @include breakpoint(lg) {
-      font-weight: $font-weight-normal;
-      font-size: $typescale-10;
-    }
-  }
-
-  .homepage-subtext--final {
-    font-weight: $font-weight-semibold;
-    font-size: $typescale-8;
-
-    @include breakpoint(lg) {
-      font-weight: $font-weight-normal;
-      font-size: $typescale-10;
     }
   }
 }
@@ -291,6 +245,24 @@ $text-colors: (
 .homepage-header__container {
   display: flex;
   align-items: flex-end;
+  justify-content: space-between;
+
+  button {
+    .homepage-button {
+      width: $spacing-5;
+      height: $spacing-5;
+      border-radius: $spacing-3;
+      background-color: $white;
+      color: $navy;
+    }
+        
+    &:hover, &:focus {
+      .homepage-button {
+        background-color: $navy;
+        color: $white;
+      }
+    }
+  }
 
   .homepage-title--pause-button,
   .homepage-title--play-button,
@@ -305,21 +277,6 @@ $text-colors: (
   .homepage-title--play-button,
   .homepage-title--replay-button {
     display: none;
-  }
-
-  .homepage-title--replay-button {
-    transform: scaleX(-1);
-  }
-
-  .homepage-button {
-    width: $spacing-4;
-    height: $spacing-4;
-    color: $navy;
-
-    @include breakpoint(lg) {
-      width: $spacing-5;
-      height: $spacing-5;
-    }
   }
 }
 

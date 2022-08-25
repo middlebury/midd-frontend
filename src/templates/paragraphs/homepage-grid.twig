@@ -3,7 +3,7 @@
 {% set grid_item_3 = random(['video', 'image', 'quote']) %}
 {% set grid_item_4 = random(['image', 'stats']) %} #}
 
-{% set grid_item_2 = random(['quote']) %}
+{% set grid_item_2 = random(['image']) %}
 {% set grid_item_3 = random(['quote']) %}
 {% set grid_item_4 = random(['stats']) %}
 
@@ -97,7 +97,7 @@
         {% endfor %}
       </div>
     </section>
-    <button class="button button--light grid__button" data-grid-toggle-target=".js-grid-container">
+    <button class="button button--light grid__button" aria-label="Load more grid content" data-grid-toggle-target=".js-grid-container">
       <span class="button--load-more">Load More{% include 'partials/icon.twig' with {
           name: 'chevron-down'
         } %}
