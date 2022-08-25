@@ -1,10 +1,11 @@
-$homepage-animation-duration: 5;
+$homepage-animation-duration: 7;
 $homepage-animation-sub-duration: $homepage-animation-duration / 4;
 
 $text-colors: (
   1: #75a3cd,
   2: #8f9a17,
-  3: #c26533
+  3: #c26533,
+  4: #0d395f
 );
 
 // Animation names have the homepage prefix for names to not match other animation names in the project
@@ -111,16 +112,12 @@ $text-colors: (
     }
 
     &:last-child {
-      animation: #{$homepage-animation-sub-duration / 2}s ease-in #{($homepage-animation-sub-duration * 3) + ($homepage-animation-sub-duration / 2)}s forwards;
+      animation: #{$homepage-animation-sub-duration}s ease-in forwards;
       animation-play-state: inherit;
 
-      strong {
-        color: $navy;
+      .run-animation & {
+        animation-name: homepageSlideIn;
       }
-    }
-
-    .run-animation &:last-child {
-      animation-name: homepageSlideIn;
     }
 
     &:not(:last-child) {
@@ -141,7 +138,7 @@ $text-colors: (
       }
     }
 
-    @for $i from 1 through 3 {
+    @for $i from 1 through 4 {
       &:nth-child(#{$i}) {
         animation-delay: #{($homepage-animation-sub-duration) * ($i - 1)}s;
 
@@ -248,10 +245,14 @@ $text-colors: (
   justify-content: space-between;
 
   button {
+    @include breakpoint(lg) {
+      margin-bottom: $spacing-3;
+    }
+
     .homepage-button {
-      width: $spacing-5;
-      height: $spacing-5;
-      border-radius: $spacing-3;
+      width: $spacing-7;
+      height: $spacing-7;
+      border-radius: $spacing-4;
       background-color: $white;
       color: $navy;
     }
