@@ -106,7 +106,7 @@ $text-colors: (
     animation: #{$homepage-animation-sub-duration +
       ($homepage-animation-sub-duration / 2)}s ease-in-out;
     animation-play-state: inherit;
-    font-size: $typescale-8;
+    font-size: $typescale-7;
 
     .run-animation & {
       animation-name: homepageSlideInOut;
