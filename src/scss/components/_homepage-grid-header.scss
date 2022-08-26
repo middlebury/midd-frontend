@@ -1,4 +1,4 @@
-$homepage-animation-duration: 9;
+$homepage-animation-duration: 8;
 $homepage-animation-sub-duration: $homepage-animation-duration / 4;
 
 $text-colors: (
@@ -42,7 +42,7 @@ $text-colors: (
     margin-left: $spacing-8;
   }
 
-  100% {
+  75%, 100% {
     opacity: 1;
     margin-left: 0;
   }
@@ -100,6 +100,7 @@ $text-colors: (
   }
 
   .homepage-title--transition-state {
+    width: calc(11/12 * 100%);
     display: block;
     opacity: 0;
     animation: #{$homepage-animation-sub-duration +
@@ -114,6 +115,7 @@ $text-colors: (
     &:last-child {
       animation: #{$homepage-animation-sub-duration}s ease-in forwards;
       animation-play-state: inherit;
+      width: 100%;
 
       .run-animation & {
         animation-name: homepageSlideIn;
@@ -255,6 +257,7 @@ $text-colors: (
       border-radius: $spacing-4;
       background-color: $white;
       color: $navy;
+      transition: color 0.2s, background-color 0.2s;
     }
         
     &:hover, &:focus {
