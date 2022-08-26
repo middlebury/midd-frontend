@@ -201,6 +201,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: $spacing-2;
+  position: relative;
 
   @include breakpoint(md) {
     padding: $spacing-3;
@@ -232,6 +233,17 @@
     @include breakpoint(xl) {
       line-height: 2.6;
       font-size: $typescale-8;
+    }
+  }
+
+  .grid-quote__caption {
+    position: absolute;
+    bottom: $spacing-2;
+    right: $spacing-2;
+    
+    @include breakpoint(md) {
+      bottom: $spacing-3;
+      right: $spacing-3;
     }
   }
 
@@ -295,9 +307,19 @@
       }
     }
 
+    .grid-quote__caption {
+      bottom: $spacing-2;
+      right: $spacing-2;
+
+      @include breakpoint(lg) {
+        bottom: $spacing-3;
+        right: $spacing-3;
+      }
+    }
+
     .grid-quote__caption,
     .grid-quote__caption p {
-      font-size: rem(10);
+      font-size: rem(10) !important;
       font-weight: $font-weight-semibold;
       line-height: $line-height-heading;
 
