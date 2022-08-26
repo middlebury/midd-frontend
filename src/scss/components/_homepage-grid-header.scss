@@ -112,6 +112,14 @@ $text-colors: (
       animation-name: homepageSlideInOut;
     }
 
+    &:nth-child(2) {
+      width: min-content;
+
+      @include breakpoint(sm) {
+        width: initial;
+      }
+    }
+
     &:last-child {
       animation: #{$homepage-animation-sub-duration}s ease-in forwards;
       animation-play-state: inherit;
