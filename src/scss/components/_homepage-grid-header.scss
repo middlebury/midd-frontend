@@ -263,18 +263,24 @@ $text-colors: (
   button {
     position: absolute;
     right: 0;
+    margin-bottom: rem(14);
     
     @include breakpoint(lg) {
       margin-bottom: $spacing-3;
     }
 
     .homepage-button {
-      width: $spacing-7;
-      height: $spacing-7;
+      width: $spacing-4;
+      height: $spacing-4;
       border-radius: $spacing-4;
       background-color: $white;
       color: $navy;
       transition: color 0.2s, background-color 0.2s;
+
+      @include breakpoint(lg) {
+        width: $spacing-7;
+        height: $spacing-7;
+      }
     }
         
     &:hover, &:focus {
