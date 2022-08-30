@@ -188,10 +188,12 @@ $text-colors: (
     font-size: $typescale-4;
     padding: 0;
     color: $black;
+    padding-bottom: 0;
 
     @include breakpoint(md) {
       border-left: 0;
       padding: $spacing-3 0;
+      padding-bottom: 0;
     }
 
     @include breakpoint(lg) {
@@ -223,6 +225,12 @@ $text-colors: (
       animation: #{$homepage-animation-sub-duration +
         ($homepage-animation-sub-duration / 2)}s ease-in-out;
       animation-play-state: inherit;
+    }
+
+    &:last-child {
+      p {
+        padding-bottom: 0;
+      }
     }
 
     &:not(:last-child) {

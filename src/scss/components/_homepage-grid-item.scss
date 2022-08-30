@@ -42,12 +42,6 @@
     display: block;
   }
 
-  &.expand {
-    p {
-      text-align: left;
-    }
-  }
-
   .grid-hover__text {
     p {
       font-size: $typescale-6;
@@ -124,17 +118,21 @@
   }
 
   .video__text, .image__text {
-    font-size: $typescale-4;
+    font-size: $typescale-2;
 
     a {
       color: $white;
       @include link-border;
     }
+
+    @include breakpoint(md) {
+      font-size: $typescale-4;
+    }
   }
 
   .grid-video__body, .grid-image__body {
     text-align: left;
-    margin-top: $spacing-3;
+    margin-top: $spacing-2;
 
     @include breakpoint(lg) {
       margin-right: 8.33333%;
