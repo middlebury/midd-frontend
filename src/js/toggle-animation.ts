@@ -7,6 +7,8 @@ class ToggleAnimation {
 
   targets: HTMLElement[];
 
+  finalState: Element;
+
   playButtonClass: string;
 
   pauseButtonClass: string;
@@ -15,28 +17,36 @@ class ToggleAnimation {
 
   activeClass: string;
 
+  transitionStateClass: string;
+
   playButton: HTMLElement;
 
   pauseButton: HTMLElement;
 
   replayButton: HTMLElement;
 
+  transitionState: HTMLElement[];
+
   constructor(elem: HTMLElement) {
     this.elem = elem;
     this.triggers = $$('[data-animation-trigger]', this.elem);
     this.targets = $$('[data-animation-target]', this.elem);
+    this.finalState = this.targets[0].children[this.targets[0].children.length - 1];
+
     this.activeClass = 'run-animation';
 
     this.playButtonClass = 'homepage-title--play-button';
     this.pauseButtonClass = 'homepage-title--pause-button';
     this.replayButtonClass = 'homepage-title--replay-button';
+    this.transitionStateClass = 'homepage-title--transition-state';
 
     this.playButton = $(`.${this.playButtonClass}`);
     this.pauseButton = $(`.${this.pauseButtonClass}`);
     this.replayButton = $(`.${this.replayButtonClass}`);
+    this.transitionState = $$(`.${this.transitionStateClass}`);
 
     this.handleClick = this.handleClick.bind(this);
-    this.handleAnimation = this.handleAnimation.bind(this);
+    this.handleFinalAnimationEnd = this.handleFinalAnimationEnd.bind(this);
     this.init();
   }
 
@@ -48,12 +58,15 @@ class ToggleAnimation {
     this.triggers.forEach((trigger) => {
       trigger.addEventListener('click', this.handleClick);
     });
-    this.targets.forEach((target) => {
-      if (target.classList.contains('homepage-title--final-state')) {
-        target.addEventListener('animationstart', this.handleAnimation);
-        target.addEventListener('animationend', this.handleAnimation);
-      }
-    });
+
+    this.transitionState.splice(-1, 1);
+    this.transitionState.forEach((target) => {
+      target.addEventListener('animationstart', this.handleIntermittentAnimationEnd);
+      target.addEventListener('animationend', this.handleIntermittentAnimationEnd);
+    })
+
+    this.finalState.addEventListener('animationstart', this.handleFinalAnimationEnd);
+    this.finalState.addEventListener('animationend', this.handleFinalAnimationEnd);
   }
 
   hideElement(elem: HTMLElement) {
@@ -67,37 +80,51 @@ class ToggleAnimation {
   }
 
   handleClick(e: Event) {
-    const target = e.target as HTMLElement;
+    const eventTarget = e.target as HTMLElement;
 
-    if (target.classList.contains(this.pauseButtonClass)) {
+    if (eventTarget.classList.contains(this.pauseButtonClass)) {
       this.targets.forEach((elem) => {
         elem.classList.add('pause-animation');
       });
 
-      this.hideElement(target);
+      this.hideElement(eventTarget);
       this.displayElement(this.playButton);
-    } else if (target.classList.contains(this.playButtonClass)) {
+    } else if (eventTarget.classList.contains(this.playButtonClass)) {
       this.targets.forEach((elem) => {
         elem.classList.remove('pause-animation');
       });
 
-      this.hideElement(target);
+      this.hideElement(eventTarget);
       this.displayElement(this.pauseButton);
-    } else if (target.classList.contains(this.replayButtonClass)) {
+    } else if (eventTarget.classList.contains(this.replayButtonClass)) {
       this.elem.classList.remove('run-animation');
       void this.elem.offsetWidth;
       this.elem.classList.add('run-animation');
 
-      this.hideElement(target);
+      this.hideElement(eventTarget);
       this.displayElement(this.pauseButton);
     }
   }
 
-  handleAnimation(e: AnimationEvent) {
+  handleFinalAnimationEnd(e: AnimationEvent) {
+    const eventTarget = e.target as HTMLElement;
+
     if (e.type == 'animationend') {
       this.hideElement(this.playButton);
       this.hideElement(this.pauseButton);
       this.displayElement(this.replayButton);
+    } else if (e.type == 'animationstart') {
+      eventTarget.setAttribute('aria-hidden', 'false');
+    }
+  }
+
+  handleIntermittentAnimationEnd(e: AnimationEvent) {
+    const eventTarget = e.target as HTMLElement;
+    
+    if (e.type == 'animationend') {
+      eventTarget.setAttribute('aria-hidden', 'true');
+    } else if (e.type == 'animationstart') {
+      eventTarget.setAttribute('aria-hidden', 'false');
     }
   }
 }

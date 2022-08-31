@@ -87,10 +87,16 @@ class GridToggler {
         this.gridAreasList.length - 1
       ) {
         this.elem.classList.add('toggle-button');
+        this.elem.setAttribute('aria-label', 'Show less grid content');
+        $('.button--load-more', this.elem).setAttribute('aria-hidden', true);
+        $('.button--show-less', this.elem).setAttribute('aria-hidden', false);
       }
       this.open(hiddenElem);
     } else {
       this.elem.classList.remove('toggle-button');
+      this.elem.setAttribute('aria-label', 'Load more grid content');
+      $('.button--load-more', this.elem).setAttribute('aria-hidden', false);
+      $('.button--show-less', this.elem).setAttribute('aria-hidden', true);
       this.close();
     }
   }

@@ -34,22 +34,22 @@
       {% include 'partials/icon.twig' with { name: 'times', class: 'ml-1' } %}
     </button>
   </div>
-  <div class="grid-modal__overlay container px-lg-0">
+  <div class="grid-modal__overlay container">
     {% if content_type == 'play' %}
-      {# {% include 'partials/video.twig' with {
-                          grid_video: true
-                        } %} #}
-      {% include 'partials/portrait-video.twig' with {
+      {% include 'partials/video.twig' with {
         grid_video: true
       } %}
+      {# {% include 'partials/portrait-video.twig' with {
+        grid_video: true
+      } %} #}
     {% elseif content_type == 'expand' %}
-      <figure>
+      <figure class="grid-modal__image">
         {% include 'partials/img.twig' with {
           name: overlay_image
         } %}
-        <figcaption class="grid-video__body">
+        <figcaption class="offset-lg-1 grid-image__body">
           <h3 class="sr-only" id="midd-video-label-729">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-          <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. Suspendisse commodo pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
+          <p class="image__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. Suspendisse commodo pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
         </figcaption>
       </figure>
     {% endif %}
