@@ -206,7 +206,7 @@ $text-colors: (
       padding-bottom: $spacing-3;
       animation: #{$homepage-animation-sub-duration +
         ($homepage-animation-sub-duration / 2)}s ease-in-out;
-      font-size: $typescale-3;
+      font-size: $typescale-2;
 
       @include breakpoint(md) {
         border-bottom: 0;
@@ -216,6 +216,7 @@ $text-colors: (
       }
 
       @include breakpoint(lg) {
+        font-size: $typescale-3;
         margin-left: $spacing-5;
         padding-right: $spacing-5;
       }
