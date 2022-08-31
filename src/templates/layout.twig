@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{title}}</title>
-  <link rel="stylesheet" href="css/main.css">
-  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  {# dont index these files if vercel deployment #}
-  {% if env.vercel %} <meta name="robots" content="noindex" /> {% endif %}
-</head>
-<body class="{% if body_class %}{{body_class}}{% endif %} {% if theme %}theme-{{theme}}{% endif %}" id="midd-pagetop">
-  <nav aria-labelledby="midd-skip-link">
-    <a href="#midd-main" class="sr-only sr-only-focusable" id="midd-skip-link">Skip to content</a>
-  </nav>
-  <div style="display:none">
-    {% include 'partials/icons.twig' %}
-  </div>
-  <div class="site-container">
-    {% if alert %}
-      <div class="alert alert--warning">
-        <div class="container">
-          <strong>Warning:</strong> look out below!
-        </div>
-      </div>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    {# dont index these files if vercel deployment #}
+    {% if env.vercel %}
+      <meta name="robots" content="noindex"/>
     {% endif %}
-
-    {% block layout_header %}{% endblock %}
-
-    <main class="main" id="midd-main" aria-labelledby="midd-page-header-label">
-      {% block before_page_header %}{% endblock %}
-      {% if page_header %}
-        {% include 'partials/page-header.twig' with page_header %}
+  </head>
+  <body class="{% if body_class %}{{body_class}}{% endif %} {% if theme %}theme-{{theme}}{% endif %}" id="midd-pagetop">
+    <nav aria-labelledby="midd-skip-link">
+      <a href="#midd-main" class="sr-only sr-only-focusable" id="midd-skip-link">Skip to content</a>
+    </nav>
+    <div style="display:none">
+      {% include 'partials/icons.twig' %}
+    </div>
+    <div class="site-container">
+      {% if alert %}
+        <div class="alert alert--warning">
+          <div class="container">
+            <strong>Warning:</strong>
+            look out below!
+          </div>
+        </div>
       {% endif %}
 
-      {% block page %}{% endblock %}
-    </main>
+      {% block layout_header %}{% endblock %}
 
-    {% block layout_footer %}{% endblock %}
+      <main class="main" id="midd-main" aria-labelledby="midd-page-header-label"> {% block before_page_header %}{% endblock %}
+        {% if page_header %}
+          {% include 'partials/page-header.twig' with page_header %}
+        {% endif %}
 
-  </div>
+        {% block page %}{% endblock %}
+      </main>
 
-  {% if not env.production %}
-    {% include 'partials/grid-overlay.twig' %}
-  {% endif %}
+      {% block layout_footer %}{% endblock %}
 
-  {% block layout_before_body_close %}{% endblock %}
-  {% block scripts %}{% endblock %}
-  <script src="js/bundle.js" async></script>
-</body>
+    </div>
+
+    {% if not env.production %}
+      {% include 'partials/grid-overlay.twig' %}
+    {% endif %}
+
+    {% block layout_before_body_close %}{% endblock %}
+    {% block scripts %}{% endblock %}
+    <script src="js/bundle.js" async></script>
+  </body>
 </html>
