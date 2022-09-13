@@ -81,9 +81,11 @@
     "yargs": "^17.2.1"
   },
   "dependencies": {
+    "@types/clamp-js-main": "^0.11.2",
     "anchor-js": "^4.3.1",
     "animejs": "^3.2.1",
     "chart.js": "^2.9.4",
+    "clamp-js-main": "^0.11.6",
     "focus-within-polyfill": "^5.2.1",
     "headroom.js": "^0.12.0",
     "iframe-resizer": "^4.3.2",

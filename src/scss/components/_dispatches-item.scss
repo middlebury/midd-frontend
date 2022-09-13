@@ -1,0 +1,236 @@
+$dispatches-border: $spacing-1 solid $blue;
+$dispatches-card-height: 470px;
+
+.dispatches-item {
+  height: $dispatches-card-height;
+  // width: calc(100% - 8px) !important;
+
+  & p + article {
+    padding-top: 0px;
+  }
+  
+  border-right: $dispatches-border;
+}
+
+.dispatches-item__card {
+  padding-top: rem(30);
+  height: 100%;
+}
+
+.dispatches-item__label {
+  font-size: $typescale-2;
+  line-height: $line-height-solid;
+  padding: $spacing-2 $spacing-4;
+}
+
+.dispatches-item__image {
+  width: 100%;
+
+  img {
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.dispatches-item__content {
+  z-index: $z-index-card-carousel-item-content;
+}
+
+.dispatches-item__side {
+  animation: fadeInDown 0.8s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dispatches-item__side--front {
+  .dispatches-item.has-toggler.is-toggled & {
+    display: none;
+  }
+}
+
+.dispatches-item__side--back {
+  background-color: $blue-lighter;
+
+  .dispatches-item.has-toggler & {
+    display: none;
+  }
+
+  .dispatches-item.is-toggled & {
+    display: flex;
+  }
+}
+
+.dispatches-item__toggle {
+  // position: absolute;
+  right: 0;
+  top: 0;
+  padding: $spacing-2;
+}
+
+.dispatches-item__header {
+  padding: $spacing-3;
+  padding-right: $spacing-6;
+  padding-bottom: $spacing-4;
+  background-image: linear-gradient(
+    to bottom,
+    rgba($black, 0.75) 20%,
+    rgba($white, 0)
+  );
+
+  .dispatches-item__side--back & {
+    // remove gradient from card back header
+    background: 0;
+  }
+}
+
+.dispatches-item__body {
+  padding: 0 $spacing-4;
+  flex: 1;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  height: calc(0.5 * 470px);
+
+  @media only screen and (min-width: 375px) {
+    -webkit-line-clamp: 7;
+    height: calc(0.45 * 470px);
+  }
+
+  @include breakpoint(sm) {
+    -webkit-line-clamp: 10;
+    height: calc(0.64 * 470px);
+  }
+
+  @include breakpoint(md) {
+    -webkit-line-clamp: 9;
+    height: calc(0.55 * 470px);
+  }
+
+  @include breakpoint(lg) {
+    -webkit-line-clamp: 9;
+    height: calc(0.55 * 470px);
+  }
+
+  @include breakpoint(xl) {
+    -webkit-line-clamp: 7;
+    height: calc(0.45 * 470px);
+  }
+
+  h4 {
+    line-height: $line-height-body;
+    font-weight: $font-weight-bold;
+    margin-top: $spacing-2;
+    margin-bottom: $spacing-1;
+  }
+
+  p {
+    font-size: $typescale-3;
+    display: inline;
+  }
+
+  .dispatches-item__title-icon {
+    // position: absolute;
+    // top: 0;
+    // right: 0;
+    display: inline;
+    padding: 0 $spacing-1;
+    background-color: $white;
+    color: $navy;
+    border-color: $white;
+    border: 1px solid $navy;
+    border-radius: $spacing-3;
+    
+    .dispatches-item__icon {
+      width: 0.625em;
+      height: 0.875em;
+      margin-left: rem(2);
+      margin-bottom: rem(2);
+    }
+    // @include breakpoint(lg) {
+    //   padding: 7px;
+    // }
+  
+    // .icon.play {
+    //   height: rem(10);
+    //   width: rem(12);
+  
+    //   @include breakpoint(lg) {
+    //     height: $typescale-3;
+    //     width: $typescale-3;
+    //   }
+    // }
+  }
+}
+
+.dispatches-item__body-text {
+  h4 {
+    line-height: $line-height-body;
+    font-weight: $font-weight-bold;
+    margin-top: $spacing-2;
+    margin-bottom: $spacing-1;
+  }
+
+  p {
+    font-size: $typescale-3;
+  }
+}
+ 
+.dispatches-item__footer {
+  flex: 0 1 auto;
+  padding: $spacing-3;
+  text-align: center;
+  // position: relative;
+  margin-top: auto;
+
+  .dispatches-item__side--back & {
+    &:after {
+      content: '';
+      display: block;
+      background-image: linear-gradient(
+        to bottom,
+        rgba($white, 0),
+        $blue-lighter
+      );
+      // position: absolute;
+      bottom: 100%;
+      left: 0;
+      width: 100%;
+      height: $spacing-5;
+    }
+  }
+}
+
+// .dispatches-item__label {
+//   white-space: pre-wrap;
+//   font-size: $typescale-2;
+//   line-height: $line-height-body;
+//   height: 4rem;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   padding: $spacing-2;
+// }
+
+.dispatches-item__title {
+  @include h4;
+
+  .dispatches-item__side--front & {
+    color: $white;
+  }
+}
+
+.dispatches-item__text {
+  font-size: $typescale-3;
+  .dispatches-item__side--front & {
+    color: $white;
+  }
+}
+
+.dispatches-item__header--band {
+  padding: $spacing-2 $spacing-3;
+  margin-top: $spacing-9;
+}
