@@ -1,0 +1,20 @@
+<article class="dispatches-item__card js-dispatches-item-{{id}}" aria-labelledby="midd-dispatches-{{id}}-header">
+
+	<figure class="dispatches-item__image">
+		{% include 'partials/img.twig' with { name: 'dispatches' } %}
+	</figure>
+	<div class="dispatches-item__body">
+		<a href="#">
+			<h4>
+				What made the Institute special? 
+				<span class="dispatches-item__title-icon">
+					{% include 'partials/icon.twig' with {
+						name: 'play',
+						class: 'dispatches-item__icon' 
+					} %}
+				</span>
+			</h4>
+		</a>
+		<p>I traveled to Tokyo as part of a seminar on foreign policy, trade, and security. Most of the others were policy and management students, and I was there to provide simultaneous interpretation for the speakers who addressed the class. It was an amazing real-world opportunity to practice my profession.</p>
+	</div>
+</article>
