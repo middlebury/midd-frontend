@@ -1,15 +1,21 @@
+$dispatches-sm-border: $spacing-2 solid $blue;
 $dispatches-border: $spacing-1 solid $blue;
 $dispatches-card-height: 470px;
 
 .dispatches-item {
   height: $dispatches-card-height;
-  // width: calc(100% - 8px) !important;
 
   & p + article {
     padding-top: 0px;
   }
   
-  border-right: $dispatches-border;
+  border-right: $dispatches-sm-border;
+  border-left: $dispatches-sm-border;
+
+  @include breakpoint(sm) {
+    border-right: $dispatches-border;
+    border-left: 0;
+  } 
 }
 
 .dispatches-item__card {
@@ -93,7 +99,7 @@ $dispatches-card-height: 470px;
   -webkit-box-orient: vertical;
   display: -webkit-box;
   -webkit-line-clamp: 8;
-  height: calc(0.5 * 470px);
+  height: calc(0.52 * 470px);
 
   @media only screen and (min-width: 375px) {
     -webkit-line-clamp: 7;
@@ -102,17 +108,17 @@ $dispatches-card-height: 470px;
 
   @include breakpoint(sm) {
     -webkit-line-clamp: 10;
-    height: calc(0.64 * 470px);
+    height: calc(0.65 * 470px);
   }
 
   @include breakpoint(md) {
-    -webkit-line-clamp: 9;
-    height: calc(0.55 * 470px);
+    -webkit-line-clamp: 8;
+    height: calc(0.52 * 470px);
   }
 
   @include breakpoint(lg) {
     -webkit-line-clamp: 9;
-    height: calc(0.55 * 470px);
+    height: calc(0.58 * 470px);
   }
 
   @include breakpoint(xl) {
@@ -132,12 +138,10 @@ $dispatches-card-height: 470px;
     display: inline;
   }
 
-  .dispatches-item__title-icon {
-    // position: absolute;
-    // top: 0;
-    // right: 0;
+  .dispatches-item__title-label {
     display: inline;
     padding: 0 $spacing-1;
+    margin-left: $spacing-1;
     background-color: $white;
     color: $navy;
     border-color: $white;
@@ -150,19 +154,6 @@ $dispatches-card-height: 470px;
       margin-left: rem(2);
       margin-bottom: rem(2);
     }
-    // @include breakpoint(lg) {
-    //   padding: 7px;
-    // }
-  
-    // .icon.play {
-    //   height: rem(10);
-    //   width: rem(12);
-  
-    //   @include breakpoint(lg) {
-    //     height: $typescale-3;
-    //     width: $typescale-3;
-    //   }
-    // }
   }
 }
 
