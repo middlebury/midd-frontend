@@ -212,6 +212,7 @@
 
   &.toggle-button {
     margin-top: -$spacing-2;
+    padding: 0;
 
     .button--load-more {
       display: none;
@@ -219,6 +220,12 @@
 
     .button--show-less {
       display: flex;
+      padding: $spacing-3 $spacing-5;
+      
+      &:hover {
+        text-decoration: none;
+        color: $white;
+      }
     }
   }
 
@@ -232,5 +239,9 @@
     background-color: $navy-dark;
     color: $white;
     border-color: $navy-dark;
+
+    a {
+      color: $white;
+    }
   }
 }
