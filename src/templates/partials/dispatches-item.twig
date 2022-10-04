@@ -4,6 +4,7 @@
 		{% include 'partials/img.twig' with { name: 'dispatches' } %}
 	</figure>
 	<div class="dispatches-item__body">
+		{% if env.test or random(1) %}
 		<a href="#">
 			<h4>
 				The Most Decisive Decade: Ambassadors Go In-Depth on the U.S.-Russia Relationship
@@ -16,5 +17,13 @@
 			</h4>
 		</a>
 		<p>I traveled to Tokyo as part of a seminar on foreign policy, trade, and security. Most of the others were policy and management students, and I was there to provide simultaneous interpretation for the speakers who addressed the class. It was an amazing real-world opportunity to practice my profession.</p>
+		{% else %}
+			<a href="#">
+			<h4>
+				Incoming Student Identifies Nuclear Siloes in China
+			</h4>
+		</a>
+		<p>In an interview on NPR’s <em>Morning Edition</em>, Newhouse said the shooter’s motives appeared not to be political, but rather the result of a warped reality fueled by fringe online communities.</p>
+		{% endif %}
 	</div>
 </article>
