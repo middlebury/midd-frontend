@@ -1,21 +1,44 @@
 import { Navigation, A11y, SwiperOptions } from 'swiper';
-import Superclamp from 'superclamp';
 
 import createCardCarousel from './card-carousel';
 import { $, $$ } from './utils/dom';
 import config from './config';
-import $clamp from 'clamp-js-main';
+import Superclamp from 'superclamp';
 
-// const cards = document.querySelectorAll('.dispatches-item__body');
+class Dispatches {
+  elem: HTMLElement;
 
-// cards.forEach((elem: HTMLElement) => {
-//   $clamp(elem, { clamp: 'auto' });
-// });
+  constructor(elem: HTMLElement) {
+    this.elem = elem;
 
-// Enable superclamp to clamp overflow text on cards
-// Superclamp.register(
-//   document.querySelectorAll('.dispatches-item__body')
-// );
+    this.init();
+  }
+
+  init() {
+    this.addListeners();
+  }
+
+  registerSuperclamp() {
+    Superclamp.register(
+      document.querySelectorAll(`.${this.elem.className}`)
+    );
+    Superclamp.reclampAll();
+  }
+
+  addListeners() {
+    // Enable superclamp to clamp overflow text on cards
+    document.addEventListener('readystatechange', event => {
+      if (document.readyState !== 'loading') {
+        this.registerSuperclamp();
+      }
+    });
+    window.addEventListener('resize', () => this.registerSuperclamp());
+  }
+}
+
+const dispatchesCards = $$('.dispatches-item__body');
+
+dispatchesCards.forEach((elem) => new Dispatches(elem));
 
 let dispatchesSwiperConfig: SwiperOptions = {
   modules: [Navigation, A11y],
@@ -35,7 +58,6 @@ let dispatchesSwiperConfig: SwiperOptions = {
 const dispatches = $$('.js-dispatches');
 
 dispatches.forEach((el: HTMLElement) => {
-  // window.addEventListener('load', Superclamp.reclampAll);
   dispatchesSwiperConfig = {...dispatchesSwiperConfig, navigation: {
     nextEl: $('.js-dispatches-next-button', el) as HTMLElement,
     prevEl: $('.js-dispatches-prev-button', el) as HTMLElement,

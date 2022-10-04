@@ -94,36 +94,33 @@ $dispatches-card-height: 470px;
 
 .dispatches-item__body {
   padding: 0 $spacing-4;
-  flex: 1;
   overflow: hidden;
-  -webkit-box-orient: vertical;
-  display: -webkit-box;
-  -webkit-line-clamp: 8;
   height: calc(0.52 * 470px);
 
   @media only screen and (min-width: 375px) {
-    -webkit-line-clamp: 7;
+  //   // -webkit-line-clamp: 7;
     height: calc(0.45 * 470px);
   }
 
   @include breakpoint(sm) {
-    -webkit-line-clamp: 10;
+  //   -webkit-line-clamp: 10;
     height: calc(0.65 * 470px);
   }
 
   @include breakpoint(md) {
-    -webkit-line-clamp: 8;
-    height: calc(0.52 * 470px);
+  //   -webkit-line-clamp: 8;
+    height: calc(0.55 * 470px);
   }
 
   @include breakpoint(lg) {
-    -webkit-line-clamp: 9;
-    height: calc(0.58 * 470px);
+    //   -webkit-line-clamp: 8;
+    height: calc(0.6 * 470px);
   }
 
   @include breakpoint(xl) {
-    -webkit-line-clamp: 7;
-    height: calc(0.45 * 470px);
+    // -webkit-line-clamp: 7;
+    // height: calc(0.45 * 470px);
+    height: 220px;
   }
 
   h4 {
