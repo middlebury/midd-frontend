@@ -39,10 +39,17 @@ class ShiftingSlider {
   /* Stores the bar elements of the waveform to make the tooltips work */
   waveformListItems: HTMLElement[];
 
+  /* Stores the delay time in ms for the setTimeout function used by the resize event listener */
+  delay: number;
+
+  /* Stores the timeoutID returned by the setTimeout function, which is used clear the timeout */
+  timeout: NodeJS.Timeout;
+
   constructor(elem: HTMLElement) {
     this.elem = elem;
     this.wrapperElem = $('.waveform__wrapper');
     this.shift = 0;
+    this.delay = 250;
     this.prevDirection = '';
     this.waveformListItems = $$('.waveform__list-item');
     this.handleHover = this.handleHover.bind(this);
@@ -57,8 +64,11 @@ class ShiftingSlider {
   init() {
     this.onWindowResize();
     this.addSuperclampListener();
-    window.onresize = this.onWindowResize;
-
+    window.addEventListener('resize', () => {
+      clearTimeout(this.timeout);
+      this.timeout = setTimeout(this.onWindowResize, this.delay);
+    });
+    
     // Adds intersection observer to make the waveform slide in when
     // it comes into view
     const io = new IntersectionObserver((entries) => {
