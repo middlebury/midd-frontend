@@ -7,9 +7,12 @@ import Superclamp from 'superclamp';
 
 class Dispatches {
   elem: HTMLElement;
+  delay: number;
+  timeout: NodeJS.Timeout;
 
   constructor(elem: HTMLElement) {
     this.elem = elem;
+    this.delay = 250;
 
     this.init();
   }
@@ -20,23 +23,26 @@ class Dispatches {
 
   registerSuperclamp() {
     Superclamp.register(
-      document.querySelectorAll(`.${this.elem.className}`)
+      document.querySelectorAll(`.dispatches-item__body`)
     );
     Superclamp.reclampAll();
   }
 
   addListeners() {
     // Enable superclamp to clamp overflow text on cards
-    document.addEventListener('readystatechange', event => {
+    document.addEventListener('readystatechange', e => {
       if (document.readyState !== 'loading') {
         this.registerSuperclamp();
       }
     });
-    window.addEventListener('resize', () => this.registerSuperclamp());
+    window.addEventListener('resize', () => {
+      clearTimeout(this.timeout);
+      this.timeout = setTimeout(this.registerSuperclamp, this.delay);
+    });
   }
 }
 
-const dispatchesCards = $$('.dispatches-item__body');
+const dispatchesCards = $$('.dispatches__container');
 
 dispatchesCards.forEach((elem) => new Dispatches(elem));
 
