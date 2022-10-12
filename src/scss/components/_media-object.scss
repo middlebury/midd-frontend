@@ -1,7 +1,21 @@
+%media-object-border-bottom {
+  border-bottom: 1px solid $gray-light;
+}
+
 .media-object {
   @include breakpoint(sm) {
     display: flex;
   }
+}
+
+.media-object__scholarly-icon-list {
+  width: 100%;
+  @extend %media-object-border-bottom;
+}
+
+.media-object__scholarly-icon {
+  width: 1.5em;
+  height: 1.5em;
 }
 
 .media-object__image {
@@ -15,6 +29,13 @@
 }
 
 .media-object__body {
+  .media-object__pronouns {
+    font-family: $font-family-serif;
+    font-size: $typescale-4;
+    line-height: $line-height-heading;
+    margin-bottom: rem(2);
+  }
+
   @include breakpoint(sm) {
     flex: 1;
   }
@@ -28,4 +49,8 @@
       margin-left: $spacing-4;
     }
   }
+}
+
+.border-bottom {
+  @extend %media-object-border-bottom;
 }

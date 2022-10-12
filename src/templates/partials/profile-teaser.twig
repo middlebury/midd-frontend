@@ -8,13 +8,22 @@
   </div>
   <div class="media-object__body">
     <h3><a href="#">{{name}}</a></h3>
-    <p class="f2 mb-3">{{role}}</p>
-    <p class="f3 mb-3">{{text}}</p>
+    <p class="media-object__pronouns">{{pronouns}}</p>
+    <p class="f2 mb-2">{{role}}</p>
+    {% if scholar_icons %}
+      {% include 'partials/scholarly-identity-links.twig' with {
+        no_label: true,
+        class: 'media-object__scholarly-icon-list'
+      }%}
+    {% endif %}
+    {% if text %}
+      <p class="f3 pb-2 pt-2 border-bottom">{{text}}</p>
+    {% endif %}
 
     <dl class="f2">
       {% for item in meta %}
-        <div class="mb-2">
-          <dt class="d-block d-sm-inline text-bold">{{item.name}}:</dt>
+        <div class="pt-2 pb-2 border-bottom">
+          <dt class="d-block text-bold">{{item.name}}:</dt>
 
           <dd class="d-inline">
             {% if item.href %}
