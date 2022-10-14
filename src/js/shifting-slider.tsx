@@ -1,5 +1,6 @@
 import { $, $$ } from './utils/dom';
 import Superclamp from 'superclamp';
+import animation from './utils/animation';
 
 /**
  * Adds functionality to the waveform component to make the shift left or right
@@ -62,6 +63,7 @@ class ShiftingSlider {
   }
 
   init() {
+    animation();
     this.onWindowResize();
     this.addSuperclampListener();
     window.addEventListener('resize', () => {
@@ -183,10 +185,11 @@ class ShiftingSlider {
     }
 
     if (shift === 0 || shift <= -this.scrollWidth) {
-      this.intervalId = clearInterval(this.intervalId);
+      this.intervalId = window.cancelAnimationFrame(this.intervalId);
     }
 
     this.elem.style.left = shift + 'px';
+    this.intervalId = window.requestAnimationFrame(() => this.scroll(direction));
   }
 
   /**
@@ -198,7 +201,8 @@ class ShiftingSlider {
    * left or right
    */
   animate(speed: number, direction: string) {
-    this.intervalId = setInterval(() => this.scroll(direction), speed);
+    // this.intervalId = setInterval(() => this.scroll(direction), speed);
+    this.intervalId = window.requestAnimationFrame(() => this.scroll(direction));
   }
 
   /**
@@ -238,7 +242,7 @@ class ShiftingSlider {
    */
   handleMouseLeave() {
     if (this.intervalId) {
-      this.intervalId = clearInterval(this.intervalId);
+      this.intervalId = window.cancelAnimationFrame(this.intervalId);
       this.setDirection('');
     }
   }
@@ -280,7 +284,7 @@ class ShiftingSlider {
 
     if (direction !== this.prevDirection) {
       if (this.intervalId) {
-        this.intervalId = clearInterval(this.intervalId);
+        this.intervalId = window.cancelAnimationFrame(this.intervalId);
       }
       if (direction !== '') {
         this.animate(10, direction);
