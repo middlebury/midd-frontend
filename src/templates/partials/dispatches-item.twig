@@ -26,4 +26,7 @@
 		<p>In an interview on NPR’s <em>Morning Edition</em>, Newhouse said the shooter’s motives appeared not to be political, but rather the result of a warped reality fueled by fringe online communities.</p>
 		{% endif %}
 	</div>
+	{% if env.test or random(1) %}
+		<p class="dispatches-item__label">New York Times</p>
+	{% endif %}
 </article>

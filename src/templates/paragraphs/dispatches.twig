@@ -45,9 +45,6 @@
               
                 {% for item in 0..5 %}
                   <div class="dispatches-item swiper-slide">
-                    {% if env.test or random(1) %}
-                      <p class="dispatches-item__label">New York Times</p>
-                    {% endif %}
                     {% include 'partials/dispatches-item.twig' with {
                       id: loop.index
                     } %}
