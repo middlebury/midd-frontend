@@ -8,7 +8,7 @@ $dispatches-card-height: 470px;
   & p + article {
     padding-top: 0px;
   }
-  
+
   border: $dispatches-sm-border;
   border-top: 0;
 
@@ -16,7 +16,7 @@ $dispatches-card-height: 470px;
     border-left: $dispatches-border;
     border-bottom: $dispatches-border;
     border-right: 0;
-  } 
+  }
 }
 
 .dispatches-item__card {
@@ -24,12 +24,24 @@ $dispatches-card-height: 470px;
 }
 
 .dispatches-item__label {
+  position: absolute;
+  bottom: 0;
   font-size: $typescale-1;
   line-height: $line-height-solid;
   text-transform: uppercase;
   letter-spacing: $letter-spacing;
-  padding: $spacing-2 $spacing-3;
+  padding: $spacing-2;
   margin-top: $spacing-3;
+
+  @include breakpoint(md) {
+    padding-left: $spacing-3;
+    padding-right: $spacing-3;
+  }
+
+  @include breakpoint(xl) {
+    padding-left: $spacing-4;
+    padding-right: $spacing-4;
+  }
 }
 
 .dispatches-item__image {
@@ -96,7 +108,7 @@ $dispatches-card-height: 470px;
 }
 
 .dispatches-item__body {
-  padding: 0 $spacing-3;
+  padding: 0 $spacing-2;
   overflow: hidden;
   height: calc(0.52 * 470px);
 
@@ -109,6 +121,7 @@ $dispatches-card-height: 470px;
   }
 
   @include breakpoint(md) {
+    padding: 0 $spacing-3;
     height: calc(0.55 * 470px);
   }
 
@@ -117,6 +130,7 @@ $dispatches-card-height: 470px;
   }
 
   @include breakpoint(xl) {
+    padding: 0 $spacing-4;
     height: calc(0.47 * 470px);
   }
 
@@ -141,7 +155,7 @@ $dispatches-card-height: 470px;
     border-color: $white;
     border: 1px solid $navy;
     border-radius: $spacing-3;
-    
+
     .dispatches-item__icon {
       width: 0.625em;
       height: 0.875em;
@@ -163,7 +177,7 @@ $dispatches-card-height: 470px;
     font-size: $typescale-3;
   }
 }
- 
+
 .dispatches-item__footer {
   flex: 0 1 auto;
   padding: $spacing-3;
