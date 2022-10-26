@@ -16,6 +16,16 @@ $dispatches-card-height: 470px;
     border-left: $dispatches-border;
     border-bottom: $dispatches-border;
     border-right: 0;
+
+    &:last-child {
+      border-right: $dispatches-border;
+
+      .dispatches-item__image {
+        position: relative;
+        z-index: -1;
+        width: calc(100% + 4px);
+      }
+    }
   }
 }
 

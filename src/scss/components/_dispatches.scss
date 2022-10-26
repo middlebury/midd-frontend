@@ -70,9 +70,9 @@
 }
 
 .dispatches__container {
-  @include breakpoint(sm) {
-    border-right: $dispatches-border;
-  }
+  // @include breakpoint(sm) {
+  //   border-right: $dispatches-border;
+  // }
 }
 
 .dispatches__content {
