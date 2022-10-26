@@ -16,7 +16,6 @@
 }
 
 .dispatches-button {
-  // position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,9 +69,7 @@
 }
 
 .dispatches__container {
-  // @include breakpoint(sm) {
-  //   border-right: $dispatches-border;
-  // }
+  background: $blue;
 }
 
 .dispatches__content {

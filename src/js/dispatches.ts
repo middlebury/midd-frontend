@@ -22,15 +22,13 @@ class Dispatches {
   }
 
   registerSuperclamp() {
-    Superclamp.register(
-      document.querySelectorAll(`.dispatches-item__body`)
-    );
+    Superclamp.register(document.querySelectorAll(`.dispatches-item__body`));
     Superclamp.reclampAll();
   }
 
   addListeners() {
     // Enable superclamp to clamp overflow text on cards
-    document.addEventListener('readystatechange', e => {
+    document.addEventListener('readystatechange', (e) => {
       if (document.readyState !== 'loading') {
         this.registerSuperclamp();
       }
@@ -53,10 +51,12 @@ let dispatchesSwiperConfig: SwiperOptions = {
   grabCursor: true,
   breakpoints: {
     [config.breakpoints.sm]: {
-      slidesPerView: 3
+      slidesPerView: 3,
+      spaceBetween: 4
     },
     [config.breakpoints.lg]: {
-      slidesPerView: 4
+      slidesPerView: 4,
+      spaceBetween: 4
     }
   }
 };
@@ -64,11 +64,14 @@ let dispatchesSwiperConfig: SwiperOptions = {
 const dispatches = $$('.js-dispatches');
 
 dispatches.forEach((el: HTMLElement) => {
-  dispatchesSwiperConfig = {...dispatchesSwiperConfig, navigation: {
-    nextEl: $('.js-dispatches-next-button', el) as HTMLElement,
-    prevEl: $('.js-dispatches-prev-button', el) as HTMLElement,
-    disabledClass: 'button--disabled'
-  }};
-  
+  dispatchesSwiperConfig = {
+    ...dispatchesSwiperConfig,
+    navigation: {
+      nextEl: $('.js-dispatches-next-button', el) as HTMLElement,
+      prevEl: $('.js-dispatches-prev-button', el) as HTMLElement,
+      disabledClass: 'button--disabled'
+    }
+  };
+
   createCardCarousel(el, dispatchesSwiperConfig);
 });
