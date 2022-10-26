@@ -1,5 +1,3 @@
-$dispatches-height: 470px;
-
 .dispatches {
   // margin-bottom: $component-margin-bottom;
 }
@@ -56,7 +54,6 @@ $dispatches-height: 470px;
     }
   }
 
-
   svg.dispatches-button--icon {
     width: $spacing-4;
     height: $spacing-4;
@@ -73,9 +70,12 @@ $dispatches-height: 470px;
 }
 
 .dispatches__container {
-} 
+  @include breakpoint(sm) {
+    border-right: $dispatches-border;
+  }
+}
 
 .dispatches__content {
   display: flex;
-  height: $dispatches-height;
+  height: $dispatches-card-height;
 }
