@@ -1,6 +1,7 @@
 // https://www.visualcinnamon.com/2016/01/animating-dashed-line-d3
 
 // Code not used in production yet. Remove eslint-disable when we ship it.
+import anime from 'animejs';
 
 const pathEl = document.querySelector('.journey-line--desktop path');
 // @ts-expect-error ts-migrate(2531) FIXME: Object is possibly 'null'.
