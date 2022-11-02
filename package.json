@@ -36,7 +36,6 @@
     "@types/lozad": "^1.16.1",
     "@types/micromodal": "^0.3.3",
     "@types/pikaday": "^1.7.5",
-    "@types/swiper": "^5.4.3",
     "autoprefixer": "^10.3.7",
     "browser-sync": "^2.27.5",
     "bundlesize": "^0.18.1",
