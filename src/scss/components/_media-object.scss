@@ -1,5 +1,5 @@
-%media-object-border-bottom {
-  border-bottom: 1px solid $gray-light;
+%media-object-border-top {
+  border-top: 1px solid $gray-light;
 }
 
 .media-object {
@@ -10,7 +10,6 @@
 
 .media-object__scholarly-icon-list {
   width: 100%;
-  @extend %media-object-border-bottom;
 }
 
 .media-object__scholarly-icon {
@@ -18,13 +17,29 @@
   height: 1.5em;
 }
 
-.media-object__image {
+.media-object__image,
+.media-object__image-profile-teaser {
   margin-bottom: $spacing-2;
 
   @include breakpoint(sm) {
     margin-right: $spacing-4;
     min-width: 100px;
     margin-bottom: 0;
+  }
+}
+
+.media-object__image-profile-teaser {
+  flex: 0 0 calc(3 / 7 * 100%);
+  max-width: calc(3 / 7 * 100%);
+  min-width: 126px;
+
+  @include breakpoint(sm) {
+    margin-right: 0;
+    padding-right: $spacing-5;
+  }
+
+  @include breakpoint(lg) {
+    margin-right: $spacing-5;
   }
 }
 
@@ -51,6 +66,7 @@
   }
 }
 
-.border-bottom {
-  @extend %media-object-border-bottom;
+.border-top {
+  padding-top: $spacing-2;
+  @extend %media-object-border-top;
 }

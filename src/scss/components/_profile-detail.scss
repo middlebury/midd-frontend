@@ -1,3 +1,29 @@
+.profile-detail__programs {
+  padding: $spacing-2 0;
+  border-top: 4px solid $gray-light;
+  border-bottom: 1px solid $gray-light;
+  margin-bottom: $spacing-4;
+  margin-left: -$spacing-3;
+  margin-right: -$spacing-3;
+  padding-left: $spacing-3;
+
+  a {
+    @include link-border;
+  }
+
+  @include breakpoint(sm) {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+  }
+
+  a:not(:last-child) {
+    &::after {
+      content: ';';
+    }
+  }
+}
+
 .profile-detail__link-table {
   margin-bottom: $spacing-8;
   border-spacing: $spacing-3;
