@@ -13,36 +13,14 @@ $dispatches-card-height: 470px;
   border-top: 0;
 
   @include breakpoint(sm) {
-    border: 0;
+    border-left: $dispatches-border;
     border-bottom: $dispatches-border;
-
-    &:first-child {
-      border-left: $dispatches-border;
-    }
-
-    &:last-child {
-      border-right: $dispatches-border;
-    }
-
-    &:first-child,
-    &:last-child {
-      overflow: hidden;
-
-      .dispatches-item__card {
-        position: relative;
-        z-index: -1;
-      }
-
-      .dispatches-item__image {
-        width: calc(100% + 4px);
-      }
-    }
+    border-right: 0;
   }
 }
 
 .dispatches-item__card {
   height: 100%;
-  background: $white;
 }
 
 .dispatches-item__label {
@@ -75,6 +53,10 @@ $dispatches-card-height: 470px;
     height: 100%;
     width: 100%;
   }
+}
+
+.dispatches-item__content {
+  z-index: $z-index-card-carousel-item-content;
 }
 
 .dispatches-item__side {

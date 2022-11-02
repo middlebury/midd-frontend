@@ -51,12 +51,10 @@ let dispatchesSwiperConfig: SwiperOptions = {
   grabCursor: true,
   breakpoints: {
     [config.breakpoints.sm]: {
-      slidesPerView: 3,
-      spaceBetween: 4
+      slidesPerView: 3
     },
     [config.breakpoints.lg]: {
-      slidesPerView: 4,
-      spaceBetween: 4
+      slidesPerView: 4
     }
   }
 };
