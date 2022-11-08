@@ -1,7 +1,9 @@
+$profile-detail-programs-border: 1px solid $gray-light;
+
 .profile-detail__programs {
   padding: $spacing-2 0;
-  border-top: 4px solid $gray-light;
-  border-bottom: 1px solid $gray-light;
+  border-top: $profile-detail-programs-border;
+  border-bottom: $profile-detail-programs-border;
   margin-bottom: $spacing-4;
   margin-left: -$spacing-3;
   margin-right: -$spacing-3;
@@ -17,9 +19,13 @@
     padding-left: 0;
   }
 
-  a:not(:last-child) {
-    &::after {
+  span {
+    display: inline-flex;
+
+    &:not(:last-child):after {
       content: ';';
+      color: $black;
+      border-bottom: none;
     }
   }
 }

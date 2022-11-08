@@ -11,21 +11,21 @@
 
       <div class="col-sm-7 col-lg-12">
         <dl>
-          <dt class="text-bold">Office</dt>
+          <dt class="font-semibold">Office</dt>
           <dd class="mb-2">E6-364</dd>
-          <dt class="text-bold border-top">Tel</dt>
+          <dt class="font-semibold border-top">Tel</dt>
           <dd class="mb-2">
             <a href="tel:6173247535" class="link-underline">617-324-7535</a>
           </dd>
-          <dt class="text-bold border-top">Email</dt>
+          <dt class="font-semibold border-top">Email</dt>
           <dd class="mb-2">
             <a href="mailto:blevinger@middlebury.edu" class="link-underline">blevinger<wbr>@middlebury.edu</a>
           </dd>
-          <dt class="text-bold border-top">Zoom</dt>
+          <dt class="font-semibold border-top">Zoom</dt>
           <dd class="mb-2">
             <a href="#" class="link-underline">middlebury.zoom.us/my/ariterkel</a>
           </dd>
-          <dt class="text-bold border-top">Office Hours</dt>
+          <dt class="font-semibold border-top">Office Hours</dt>
           <dd class="mb-3">Tuesdays 3-4pm<br>Thursdays 11am-12pm</dd>
         </dl>
       </div>
@@ -37,10 +37,12 @@
     {% set links = random([['Links'], ['Social Links'], ['Links', 'Social Links']]) %}
     {% set departments = ['Biology', 'Dean of Students', 'Head of Sciences'] %}
     <dl class="mt-4 mt-lg-0 profile-detail__programs">
-      <dt class="text-bold">Additional Programs</dt>
+      <dt class="font-semibold">Additional Programs</dt>
       <dd>
         {% for department in departments %}
-          <a href="#">{{department}}</a>
+          <span>
+            <a href="#">{{department}}</a>
+          </span>
         {% endfor %}
       </dd>
     </dl>

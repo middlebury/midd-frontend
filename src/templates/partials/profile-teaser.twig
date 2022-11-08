@@ -19,13 +19,13 @@
       }%}
     {% endif %}
     {% if text %}
-      <p class="f3 pb-2 pt-2 border-top">{{text}}</p>
+      <p class="f2 pb-2 pt-2 border-top">{{text}}</p>
     {% endif %}
 
     <dl class="f2">
       {% for item in meta %}
         <div class="pt-2 pb-2 border-top">
-          <dt class="d-block text-bold">{{item.name}}:</dt>
+          <dt class="d-block font-semibold">{{item.name}}:</dt>
 
           <dd class="d-inline">
             {% if item.href %}
