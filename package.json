@@ -64,7 +64,7 @@
     "gulp-twig": "^1.2.0",
     "js-yaml": "^4.1.0",
     "node-sass": "^7.0.1",
-    "percy": "^0.28.6",
+    "percy": "^5.0.0",
     "postcss": "^8.3.9",
     "prettier": "^2.4.1",
     "prettier-plugin-twig-melody": "^0.4.6",
