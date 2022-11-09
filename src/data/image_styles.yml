@@ -178,6 +178,7 @@ image_styles:
     ratio: "9:16"
     srcset:
       - 335x596
+
   portrait_expand_video:
     title: Portrait video (homepage grid)
     ratio: "16:9"
@@ -186,3 +187,12 @@ image_styles:
       - 288x512
       - 405x720
       - 459x816
+
+  dispatches:
+    title: Dispatches
+    ratio: "16:9"
+    srcset:
+      - 357x200
+      - 297x167
+      - 253x142
+      - 304x171
