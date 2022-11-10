@@ -3,7 +3,7 @@ import Superclamp from 'superclamp';
 
 /**
  * Adds functionality to the waveform component to make the shift left or right
- * on hovering on the leftmost or rightmost sections of the component.
+ * on hovering on the leftmost or rightmost sections of the component work.
  * Adds functionality for showing labels on hover on the waveform bars that follow
  * the cursor as it moves on the bar.
  * Also adds functionality for clamping text that's too long in the cards using the
