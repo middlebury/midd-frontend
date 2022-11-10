@@ -1,7 +1,9 @@
 <article class="dispatches-item__card js-dispatches-item-{{id}}" aria-labelledby="midd-dispatches-{{id}}-header">
 
-  <figure class="dispatches-item__image">
-    {% include 'partials/img.twig' with { name: 'dispatches' } %}
+  <figure class="dispatches-item__image-wrapper">
+    <div class="dispatches-item__image">
+      {% include 'partials/img.twig' with { name: 'dispatches' } %}
+    </div>
   </figure>
   <div class="dispatches-item__body">
     {% if env.test or random(1) %}
