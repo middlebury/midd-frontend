@@ -1,4 +1,4 @@
-<div class="paragraph--logo-bar" aria-labelledby="midd-logo-bar-title">
+<div class="paragraph--logo-bar px-3 px-lg-0" aria-labelledby="midd-logo-bar-title">
   <div class="logo-bar container px-0">
     <h2 class="logo-bar__title" id="midd-logo-bar-title">Our Graduates Work At</h2>
     <ul class="logo-bar__list">
@@ -41,12 +41,7 @@
         },
       ] %}
         <li class="logo-bar__item">
-          <img
-            src="images/logo-{{item.name}}.png"
-            srcset="images/logo-{{item.name}}.png 1x, images/logo-{{item.name}}@2x.png"
-            alt="{{item.alt}}"
-            width="{{item.width}}"
-          />
+          <img src="images/logo-{{item.name}}.png" srcset="images/logo-{{item.name}}.png 1x, images/logo-{{item.name}}@2x.png" alt="{{item.alt}}" width="{{item.width}}"/>
         </li>
 
       {% endfor %}
