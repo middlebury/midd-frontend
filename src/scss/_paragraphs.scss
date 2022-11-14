@@ -99,6 +99,7 @@
 .paragraph--quad-story,
 .paragraph--stat-panel,
 .paragraph--card-carousel,
+.paragraph--dispatches,
 .paragraph--logo-bar,
 .paragraph--waveform {
   @extend %paragraph-full-width;
@@ -182,6 +183,10 @@
 .paragraph--card-carousel {
   @extend %paragraph-space;
   // @extend %paragraph-full-width;
+}
+
+.paragraph--dispatches {
+  // @extend %paragraph-space;
 }
 
 .paragraph--quad-story {
