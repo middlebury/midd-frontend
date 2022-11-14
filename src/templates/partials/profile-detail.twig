@@ -10,7 +10,7 @@
       </div>
 
       <div class="col-sm-7 col-lg-12">
-        <dl>
+        <dl class="f2">
           <dt class="font-semibold">Office</dt>
           <dd class="mb-2">E6-364</dd>
           <dt class="font-semibold border-top">Tel</dt>
@@ -36,7 +36,7 @@
   {% block content %}
     {% set links = random([['Links'], ['Social Links'], ['Links', 'Social Links']]) %}
     {% set departments = ['Biology', 'Dean of Students', 'Head of Sciences'] %}
-    <dl class="mt-4 mt-lg-0 profile-detail__programs">
+    <dl class="f2 mt-4 mt-lg-0 profile-detail__programs">
       <dt class="font-semibold">Additional Programs</dt>
       <dd>
         {% for department in departments %}
@@ -61,9 +61,9 @@
       <tr class="d-flex">
         {% for name in links %}
           <td>
-            <strong class="d-block">{{ name }}</strong>
+            <strong class="f2 d-block">{{ name }}</strong>
             {% if name == 'Links' %}
-              <ul>
+              <ul class="f2">
                 <li>
                   <a href="#" class="link-underline">Curriculum Vitae</a>
                 </li>
