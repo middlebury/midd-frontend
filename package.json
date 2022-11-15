@@ -36,7 +36,6 @@
     "@types/lozad": "^1.16.1",
     "@types/micromodal": "^0.3.3",
     "@types/pikaday": "^1.7.5",
-    "@types/swiper": "^5.4.3",
     "autoprefixer": "^10.3.7",
     "browser-sync": "^2.27.5",
     "bundlesize": "^0.18.1",
@@ -81,9 +80,11 @@
     "yargs": "^17.2.1"
   },
   "dependencies": {
+    "@types/clamp-js-main": "^0.11.2",
     "anchor-js": "^4.3.1",
     "animejs": "^3.2.1",
     "chart.js": "^2.9.4",
+    "clamp-js-main": "^0.11.6",
     "focus-within-polyfill": "^5.2.1",
     "headroom.js": "^0.12.0",
     "iframe-resizer": "^4.3.2",

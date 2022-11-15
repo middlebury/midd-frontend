@@ -19,7 +19,22 @@ function randomizeChildren(elem: HTMLElement) {
   }
 }
 
-function createCardCarousel(elem: HTMLElement) {
+let carouselSwiperConfig: SwiperOptions = {
+  modules: [Navigation, A11y],
+  a11y: {},
+  slidesPerView: 1,
+  grabCursor: true,
+  breakpoints: {
+    [config.breakpoints.lg]: {
+      slidesPerView: 2
+    },
+    [config.breakpoints.xl]: {
+      slidesPerView: 3
+    }
+  }
+};
+
+function createCardCarousel(elem: HTMLElement, swiperConfig: SwiperOptions) {
   const swiperWrapper = $('.js-swiper-wrapper', elem);
   const swiperContainer = $('.js-swiper-container', elem);
   const randomize = elem.hasAttribute('data-randomize');
@@ -33,29 +48,18 @@ function createCardCarousel(elem: HTMLElement) {
     randomizeChildren(swiperWrapper);
   }
 
-  const swiperConfig: SwiperOptions = {
-    modules: [Navigation, A11y],
-    a11y: {},
-    slidesPerView: 1,
-    grabCursor: true,
-    navigation: {
-      nextEl: $('.js-card-carousel-next-button', elem) as HTMLElement,
-      prevEl: $('.js-card-carousel-prev-button', elem) as HTMLElement,
-      disabledClass: 'button--disabled'
-    },
-    breakpoints: {
-      [config.breakpoints.lg]: {
-        slidesPerView: 2
-      },
-      [config.breakpoints.xl]: {
-        slidesPerView: 3
-      }
-    }
-  };
-
   return new Swiper(swiperContainer, swiperConfig);
 }
 
 const carousels = $$('.js-card-carousel');
 
-carousels.forEach((el: HTMLElement) => createCardCarousel(el));
+carousels.forEach((el: HTMLElement) => {
+  carouselSwiperConfig = {...carouselSwiperConfig, navigation: {
+    nextEl: $('.js-card-carousel-next-button', el) as HTMLElement,
+    prevEl: $('.js-card-carousel-prev-button', el) as HTMLElement,
+    disabledClass: 'button--disabled'
+  }};
+  createCardCarousel(el, carouselSwiperConfig);
+});
+
+export default createCardCarousel;
