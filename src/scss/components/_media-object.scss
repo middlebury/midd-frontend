@@ -15,6 +15,16 @@
 .media-object__scholarly-icon {
   width: 1.25em;
   height: 1.25em;
+
+  path {
+    fill: $navy;
+  }
+}
+
+.media-object__social-icons {
+  li {
+    margin-right: $spacing-2 !important;
+  }
 }
 
 .media-object__image,

@@ -1,8 +1,18 @@
 $profile-detail-programs-border: 1px solid $gray-light;
+$profile-detail-programs-border-thick: 4px solid $gray-light;
+
+.profile-detail {
+  @each $icon-name, $color in $scholarly-icons {
+    .profile-detail-#{$icon-name} {
+      fill: $color;
+    }
+  }
+}
 
 .profile-detail__programs {
   padding: $spacing-2 0;
   border-bottom: $profile-detail-programs-border;
+  border-top: $profile-detail-programs-border-thick;
   margin-bottom: $spacing-4;
   margin-left: -$spacing-3;
   margin-right: -$spacing-3;
@@ -18,13 +28,18 @@ $profile-detail-programs-border: 1px solid $gray-light;
     padding-left: 0;
   }
 
+  @include breakpoint(lg) {
+    border-top: 0;
+    padding-top: 0;
+  }
+
   span {
-    display: inline-flex;
+    // display: inline-flex;
 
     &:not(:last-child):after {
       content: ';';
       color: $black;
-      border-bottom: none;
+      margin-left: -3px;
     }
   }
 }
