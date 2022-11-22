@@ -1,6 +1,6 @@
 <ul class="{{ no_label ? 'd-inline-flex pb-2' : 'd-block d-md-inline-flex pb-3 pb-md-7' }} {{class}}">
   {% for name in [{icon:'orcid', label:'ORCID'}, {icon:'scopus', label:'Scopus'}, {icon:'google-scholar', label:'Google Scholar'}, {icon:'middlebury-shield', label:'Middlebury'}, {icon:'github', label:'Github'}] %}
-    {% if env.test or random(1) %}
+    {# {% if env.test or random(1) %} #}
       <li class="{{ no_label ? 'mr-4 hover-fadein' : 'pb-3 pb-md-0 pr-md-5'}}">
         {% if not no_label %}
           {% include 'partials/icon.twig' with { name: name.icon} %}
@@ -11,6 +11,6 @@
           </a>
         {% endif %}
       </li>
-    {% endif %}
+    {# {% endif %} #}
   {% endfor %}
 </ul>
