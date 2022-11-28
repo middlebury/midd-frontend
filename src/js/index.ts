@@ -59,3 +59,4 @@ import './homepage-grid';
 import './course-list';
 import './toggle-animation';
 import './dispatches';
+import './cookie-banner';

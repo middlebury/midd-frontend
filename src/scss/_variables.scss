@@ -414,6 +414,8 @@ $chevron-transition: transform 0.2s ease-in-out;
 // Manage z-indexes across all components to prevent elements from accidentally overlapping incorrectly
 ///
 
+$z-index-cookie-banner: 500;
+
 $z-index-dropdown-list: 200;
 
 $z-index-drawer: 300;
