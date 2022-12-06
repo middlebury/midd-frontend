@@ -80,3 +80,14 @@
   padding-top: $spacing-2;
   @extend %media-object-border-top;
 }
+
+.paragraph--profile-list {
+  .media-object:not(:nth-child(2)) {
+    border-top: solid 4px $gray-light;
+    padding-top: $spacing-5;
+
+    @include breakpoint(lg) {
+      padding-top: $spacing-7;
+    }
+  }
+}
