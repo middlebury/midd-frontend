@@ -83,6 +83,18 @@
 }
 
 .paragraph--profile-list {
+  .media-object {
+    margin-left: -$spacing-3;
+    margin-right: -$spacing-3;
+    padding-left: $spacing-3;
+    padding-right: $spacing-3;
+
+    @include breakpoint(sm) {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
   .media-object:not(:nth-child(2)) {
     border-top: solid 4px $gray-light;
     padding-top: $spacing-5;
