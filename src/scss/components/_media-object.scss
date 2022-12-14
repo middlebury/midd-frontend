@@ -95,7 +95,7 @@
     }
   }
 
-  .media-object:not(:nth-child(2)) {
+  .profile-list .media-object:not(:nth-child(1)) {
     border-top: solid 4px $gray-light;
     padding-top: $spacing-5;
 
