@@ -168,7 +168,15 @@
 }
 
 .paragraph--profile-list {
-  @extend %paragraph-space;
+  &.section {
+    margin-top: $spacing-8;
+    margin-bottom: $spacing-8;
+
+    @include breakpoint(lg) {
+      margin-top: $spacing-9;
+      margin-bottom: $spacing-9;
+    }
+  }
 }
 
 .paragraph--spotlight {

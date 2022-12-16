@@ -121,6 +121,14 @@ $color-school-english: #c26533;
 $color-writers-conference: $yellow;
 $color-institute: #97bbd5;
 
+// Scholaraly Icon colors
+$scholarly-icons: (
+  orcid: #a6ce39,
+  scopus: #fe8300,
+  github: #191717,
+  middlebury-shield: #0d395f
+);
+
 ////
 /// Themes
 ////
@@ -405,6 +413,8 @@ $chevron-transition: transform 0.2s ease-in-out;
 // z-indexes
 // Manage z-indexes across all components to prevent elements from accidentally overlapping incorrectly
 ///
+
+$z-index-cookie-banner: 500;
 
 $z-index-dropdown-list: 200;
 
