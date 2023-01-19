@@ -60,3 +60,4 @@ import './course-list';
 import './toggle-animation';
 import './dispatches';
 import './cookie-banner';
+import './quicksearch';

@@ -1,0 +1,249 @@
+{% extends "school-layout.twig" %}
+
+{% set page_header = {
+  title: 'School Nav Search',
+  breadcrumb: [
+    { text: 'Offices and Services' },
+    { text: 'Student Financial Services' },
+  ]
+} %}
+
+{% block page %}
+  {% embed 'partials/sidebar-layout.twig' %}
+    {% block nav %}
+
+      {% include 'partials/quicksearch.twig' with {
+        searchElem: 'h2'
+      } %}
+
+      {% include 'partials/page-nav.twig' with {
+        label: 'Student Financial Services',
+        items: [
+          { text: 'Curriculum', href: '#' },
+          {
+            text: 'Faculty',
+            href: '#',
+            items: [
+              { text: 'Faculty sub page 1', href: '#' },
+              { text: 'Faculty sub page 2', href: '#' },
+              {
+                text: 'Faculty sub page 3',
+                href: '#',
+                active: true
+              },
+              { text: 'Faculty sub page 4', href: '#' },
+            ]
+          },
+          { text: 'Financing Your Education', href: '#' },
+        ]
+      } %}
+
+    {% endblock %}
+    {% block toc %}
+
+      <div data-digest-nav data-sticky data-sticky-offset=".js-headroom"></div>
+
+    {% endblock %}
+    {% block content %}
+
+<h2>Afghanistan</h2>
+<h2>Albania</h2>
+<h2>Algeria</h2>
+<h2>Andorra</h2>
+<h2>Angola</h2>
+<h2>Antigua and Barbuda</h2>
+<h2>Argentina</h2>
+<h2>Armenia</h2>
+<h2>Australia</h2>
+<h2>Austria</h2>
+<h2>Azerbaijan</h2>
+<h2>The Bahamas</h2>
+<h2>Bahrain</h2>
+<h2>Bangladesh</h2>
+<h2>Barbados</h2>
+<h2>Belarus</h2>
+<h2>Belgium</h2>
+<h2>Belize</h2>
+<h2>Benin</h2>
+<h2>Bhutan</h2>
+<h2>Bolivia</h2>
+<h2>Bosnia and Herzegovina</h2>
+<h2>Botswana</h2>
+<h2>Brazil</h2>
+<h2>Brunei</h2>
+<h2>Bulgaria</h2>
+<h2>Burkina Faso</h2>
+<h2>Burundi</h2>
+<h2>Cambodia</h2>
+<h2>Cameroon</h2>
+<h2>Canada</h2>
+<h2>Cape Verde</h2>
+<h2>Central African Republic</h2>
+<h2>Chad</h2>
+<h2>Chile</h2>
+<h2>China</h2>
+<h2>Colombia</h2>
+<h2>Comoros</h2>
+<h2>Congo, Republic of the</h2>
+<h2>Congo, Democratic Republic of the</h2>
+<h2>Costa Rica</h2>
+<h2>Cote d'Ivoire</h2>
+<h2>Croatia</h2>
+<h2>Cuba</h2>
+<h2>Cyprus</h2>
+<h2>Czech Republic</h2>
+<h2>Denmark</h2>
+<h2>Djibouti</h2>
+<h2>Dominica</h2>
+<h2>Dominican Republic</h2>
+<h2>East Timor (Timor-Leste)</h2>
+<h2>Ecuador</h2>
+<h2>Egypt</h2>
+<h2>El Salvador</h2>
+<h2>Equatorial Guinea</h2>
+<h2>Eritrea</h2>
+<h2>Estonia</h2>
+<h2>Ethiopia</h2>
+<h2>Fiji</h2>
+<h2>Finland</h2>
+<h2>France</h2>
+<h2>Gabon</h2>
+<h2>The Gambia</h2>
+<h2>Georgia</h2>
+<h2>Germany</h2>
+<h2>Ghana</h2>
+<h2>Greece</h2>
+<h2>Grenada</h2>
+<h2>Guatemala</h2>
+<h2>Guinea</h2>
+<h2>Guinea-Bissau</h2>
+<h2>Guyana</h2>
+<h2>Haiti</h2>
+<h2>Honduras</h2>
+<h2>Hungary</h2>
+<h2>Iceland</h2>
+<h2>India</h2>
+<h2>Indonesia</h2>
+<h2>Iran</h2>
+<h2>Iraq</h2>
+<h2>Ireland</h2>
+<h2>Israel</h2>
+<h2>Italy</h2>
+<h2>Jamaica</h2>
+<h2>Japan</h2>
+<h2>Jordan</h2>
+<h2>Kazakhstan</h2>
+<h2>Kenya</h2>
+<h2>Kiribati</h2>
+<h2>Korea, North</h2>
+<h2>Korea, South</h2>
+<h2>Kosovo</h2>
+<h2>Kuwait</h2>
+<h2>Kyrgyzstan</h2>
+<h2>Laos</h2>
+<h2>Latvia</h2>
+<h2>Lebanon</h2>
+<h2>Lesotho</h2>
+<h2>Liberia</h2>
+<h2>Libya</h2>
+<h2>Liechtenstein</h2>
+<h2>Lithuania</h2>
+<h2>Luxembourg</h2>
+<h2>Macedonia</h2>
+<h2>Madagascar</h2>
+<h2>Malawi</h2>
+<h2>Malaysia</h2>
+<h2>Maldives</h2>
+<h2>Mali</h2>
+<h2>Malta</h2>
+<h2>Marshall Islands</h2>
+<h2>Mauritania</h2>
+<h2>Mauritius</h2>
+<h2>Mexico</h2>
+<h2>Micronesia, Federated States of</h2>
+<h2>Moldova</h2>
+<h2>Monaco</h2>
+<h2>Mongolia</h2>
+<h2>Montenegro</h2>
+<h2>Morocco</h2>
+<h2>Mozambique</h2>
+<h2>Myanmar (Burma)</h2>
+<h2>Namibia</h2>
+<h2>Nauru</h2>
+<h2>Nepal</h2>
+<h2>Netherlands</h2>
+<h2>New Zealand</h2>
+<h2>Nicaragua</h2>
+<h2>Niger</h2>
+<h2>Nigeria</h2>
+<h2>Norway</h2>
+<h2>Oman</h2>
+<h2>Pakistan</h2>
+<h2>Palau</h2>
+<h2>Panama</h2>
+<h2>Papua New Guinea</h2>
+<h2>Paraguay</h2>
+<h2>Peru</h2>
+<h2>Philippines</h2>
+<h2>Poland</h2>
+<h2>Portugal</h2>
+<h2>Qatar</h2>
+<h2>Romania</h2>
+<h2>Russia</h2>
+<h2>Rwanda</h2>
+<h2>Saint Kitts and Nevis</h2>
+<h2>Saint Lucia</h2>
+<h2>Saint Vincent and the Grenadines</h2>
+<h2>Samoa</h2>
+<h2>San Marino</h2>
+<h2>Sao Tome and Principe</h2>
+<h2>Saudi Arabia</h2>
+<h2>Senegal</h2>
+<h2>Serbia</h2>
+<h2>Seychelles</h2>
+<h2>Sierra Leone</h2>
+<h2>Singapore</h2>
+<h2>Slovakia</h2>
+<h2>Slovenia</h2>
+<h2>Solomon Islands</h2>
+<h2>Somalia</h2>
+<h2>South Africa</h2>
+<h2>South Sudan</h2>
+<h2>Spain</h2>
+<h2>Sri Lanka</h2>
+<h2>Sudan</h2>
+<h2>Suriname</h2>
+<h2>Swaziland</h2>
+<h2>Sweden</h2>
+<h2>Switzerland</h2>
+<h2>Syria</h2>
+<h2>Taiwan</h2>
+<h2>Tajikistan</h2>
+<h2>Tanzania</h2>
+<h2>Thailand</h2>
+<h2>Togo</h2>
+<h2>Tonga</h2>
+<h2>Trinidad and Tobago</h2>
+<h2>Tunisia</h2>
+<h2>Turkey</h2>
+<h2>Turkmenistan</h2>
+<h2>Tuvalu</h2>
+<h2>Uganda</h2>
+<h2>Ukraine</h2>
+<h2>United Arab Emirates</h2>
+<h2>United Kingdom</h2>
+<h2>United States of America</h2>
+<h2>Uruguay</h2>
+<h2>Uzbekistan</h2>
+<h2>Vanuatu</h2>
+<h2>Vatican City (Holy See)</h2>
+<h2>Venezuela</h2>
+<h2>Vietnam</h2>
+<h2>Yemen</h2>
+<h2>Zambia</h2>
+<h2>Zimbabwe</h2>
+
+    {% endblock %}
+  {% endembed %}
+{% endblock %}
+
