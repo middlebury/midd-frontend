@@ -34,18 +34,27 @@ import { $, $$, on, hide, show } from './utils/dom';
   }
 
   function showAll(items: HTMLElement[]) {
-    items.forEach((item: HTMLElement) => {
+    items.forEach((item: any) => {
       // unsets hide so inline-block class shows it
       item.style.display = '';
 
-      const parent = item.closest('.js-quicksearch-group') as HTMLElement;
-      if (parent) show(parent);
+      let current = item.nextElementSibling;
+      while (current != null && current.nodeName != item.nodeName) {
+        hide(current);
+        current = current.nextElementSibling;
+      }
     });
   }
 
   function hideAll(items: any) {
     items.forEach((item: any) => {
       hide(item);
+
+      let current = item.nextElementSibling;
+      while (current != null && current.nodeName != item.nodeName) {
+        hide(current);
+        current = current.nextElementSibling;
+      }
     });
   }
 
