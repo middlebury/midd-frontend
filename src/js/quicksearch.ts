@@ -16,14 +16,14 @@ import { $, $$, on, hide, show } from './utils/dom';
   const input = $('.js-quicksearch-input', elem);
   const items = $$(searchElem, elem);
 
-  function showAll(items: HTMLElement[]) {
+  function showAll(items: any) {
     items.forEach((item: any) => {
       // unsets hide so inline-block class shows it
       item.style.display = '';
 
       let current = item.nextElementSibling;
       while (current != null && current.nodeName != item.nodeName) {
-        show(current);
+        current.style.display = '';
         current = current.nextElementSibling;
       }
     });
