@@ -16,23 +16,6 @@ import { $, $$, on, hide, show } from './utils/dom';
   const input = $('.js-quicksearch-input', elem);
   const items = $$(searchElem, elem);
 
-  const alertTemplate = 'No results found for &ldquo;{term}&rdquo;';
-  const alert = document.createElement('div');
-  alert.classList.add('alert', 'alert--status', 'js-quicksearch-alert');
-
-  function setNoResultsValue(value: string) {
-    const msg = alertTemplate.replace('{term}', value);
-    alert.innerHTML = msg;
-  }
-
-  function hideAlert() {
-    hide(alert);
-  }
-
-  function showAlert() {
-    show(alert);
-  }
-
   function showAll(items: HTMLElement[]) {
     items.forEach((item: any) => {
       // unsets hide so inline-block class shows it
@@ -78,8 +61,6 @@ import { $, $$, on, hide, show } from './utils/dom';
   function handleInputChange(event: Event) {
     const { value } = event.target as HTMLInputElement;
 
-    hideAlert();
-
     if (!value || !value.trim()) {
       if (items.length) {
         showAll(items);
@@ -91,12 +72,6 @@ import { $, $$, on, hide, show } from './utils/dom';
 
     const matchedItems = findResults(value);
 
-    if (matchedItems.length === 0) {
-      setNoResultsValue(value);
-      showAlert();
-      return;
-    }
-
     showAll(matchedItems);
   }
 
@@ -104,8 +79,6 @@ import { $, $$, on, hide, show } from './utils/dom';
     if (input) {
       on(input, 'input', debounce(handleInputChange, 200));
     }
-
-    hideAlert();
   }
 
   init();
