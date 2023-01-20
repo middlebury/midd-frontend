@@ -40,7 +40,7 @@ import { $, $$, on, hide, show } from './utils/dom';
 
       let current = item.nextElementSibling;
       while (current != null && current.nodeName != item.nodeName) {
-        hide(current);
+        show(current);
         current = current.nextElementSibling;
       }
     });
