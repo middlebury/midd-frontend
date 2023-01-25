@@ -6,7 +6,7 @@ import { $, $$, on, hide, show } from './utils/dom';
  * handles on-page search of middlebury.edu/office listing
  */
 (function () {
-  const elem = $('#midd-main');
+  const elem = $('.paragraphs');
 
   if (!elem) {
     return;
