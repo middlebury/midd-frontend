@@ -6,7 +6,7 @@ import { $, $$, on, hide, show } from './utils/dom';
  * handles on-page search of middlebury.edu/office listing
  */
 (function () {
-  const elem = $('.paragraphs');
+  const elem = $('#midd-main');
 
   if (!elem) {
     return;
@@ -14,7 +14,8 @@ import { $, $$, on, hide, show } from './utils/dom';
 
   const searchElem = $('.js-quicksearch-form', elem).dataset.searchElem;
   const input = $('.js-quicksearch-input', elem);
-  const items = $$(searchElem, elem);
+  const itemsWrapper = $('.paragraphs', elem);
+  const items = $$(searchElem, itemsWrapper);
 
   function showAll(items: any) {
     items.forEach((item: any) => {
