@@ -432,6 +432,14 @@ midd_nav:
   - href: http://www.middlebury.edu/office/
     text: Offices and Services
 
+institutional_nav:
+  - text: A Sense of Purpose
+    href: "#"
+  - text: The Experience of Place
+    href: "#"
+  - text: Our Approach to Learning
+    href: "#"
+
 system_status:
   - name: Internet<br>(Northbound Link)
     type: success

@@ -1,0 +1,95 @@
+.midd-header.midd-header--institutional {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  z-index: $z-index-midd-header-transparent;
+  background-image: linear-gradient(to bottom, #000, transparent 80%);
+  border-top: $spacing-2 solid $navy-dark;
+
+  .midd-header__container {
+    align-items: flex-start;
+  }
+
+  .midd-header__brand {
+    height: fit-content;
+    padding-top: $spacing-4;
+
+    a {
+      text-decoration: none;
+
+      .midd-header__shield {
+        width: 102px;
+        top: 0;
+      }
+
+      .midd-header__wordmark {
+        width: 184px;
+        margin-left: rem(18);
+      }
+    }
+  }
+
+  .midd-nav {
+    .midd-nav__list--top {
+      background-color: transparent;
+    }
+
+    .midd-nav__item--top {
+      &:last-child {
+        .midd-nav__link--top::after {
+          padding-left: $spacing-4;
+          content: '|';
+        }
+      }
+
+      .midd-nav__link--top {
+        border: 0;
+        padding: $spacing-3 0;
+      }
+    }
+
+    .midd-nav__link {
+      opacity: 1;
+    }
+  }
+
+  .midd-search {
+    // margin-right: $spacing-5;
+
+    .midd-search__handle {
+      display: flex;
+      padding: $spacing-3 0;
+      border: 0;
+      opacity: 1;
+    }
+
+    .midd-search__mag,
+    .midd-search__times {
+      margin-right: rem(12);
+    }
+  }
+
+  .midd-schools__button {
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-solid;
+    color: $white;
+    padding: $spacing-3 0;
+    margin-top: $spacing-2;
+    border: 2px solid $white;
+    height: fit-content;
+    width: 164px;
+    order: 3;
+  }
+}
+
+.midd-header--transparent {
+  .midd-nav {
+    margin: auto;
+  }
+
+  .midd-nav__link {
+    font-size: $typescale-3;
+  }
+}

@@ -44,6 +44,8 @@ import './offices'; // middlebury.edu/office homepage script for filtering items
 import './mover'; // mover util for moving an element from one element to another at a breakpoint. Doesn't work if event listeners are on any of the elements that are moved.TODO: remove me and use css-grid to move layout around
 import './accordion';
 import './journey';
+import './video-controls';
+import './panel-snap';
 import './lightbox';
 import './card-carousel';
 import './dropdown';

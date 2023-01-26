@@ -1,42 +1,52 @@
-<section class="journey-section journey-section--{{name}} js-journey-section" data-line-duration="{{duration}}">
-  <figure class="journey-bg">
-    <img src="{{image}}" alt="">
-  </figure>
-  <div class="journey-main">
+<section id={{name}} class="journey-section journey-section--{{name}} js-journey-section" data-section={{name}}>
+  {% if image is defined %}
+    <figure class="journey-section__background">
+      <img src="{{ image }}" alt=""/>
+    </figure>
+  {% else %}
+    <figure class="journey-section__background">
+      <video playsinline autoplay muted loop class="journey-section__video">
+        <source src="{{ video }}" type="video/mp4">
+        <track kind="descriptions" srclang="en" src="descriptions.vtt" default/>
+      </video>
+    </figure>
+    <button aria-label="Play/Pause Animation" class="journey-video--button" data-journey-video-trigger>
+      <span class="journey-video--button-pause">
+        <span class="sr-only">Pause Animation</span>
+        {% include 'partials/icon.twig' with {
+          name: 'pause-homepage',
+          class: 'homepage-button'
+        } %}
+      </span>
+      <span class="journey-video--button-play">
+        <span class="sr-only">Play Animation</span>
+        {% include 'partials/icon.twig' with {
+        name: 'play-homepage',
+        class: 'homepage-button'
+      } %}
+      </span>
+    </button>
+  {% endif %}
+
+  <div class="journey-section__body">
     <div class="container">
-      <div class="journey-content">
+      <div class="journey-section__body-content align-{{ align }}">
         <div class="row">
-          <div class="col-9 col-md-7">
-
-            <h2 class="journey-title h1">{{title}}</h2>
-            <p class="journey-text">{{text}}</p>
-            {# <a href="#" class="journey-button">Learn more</a> #}
-
+          <div class="{{ align == 'center' ? 'col-10' : 'col-6' }} journey-section__text">
+            <h1 class="h1">
+              {{ title }}
+            </h1>
+            {% if blurb %}
+              <p>
+                {{ blurb }}
+              </p>
+            {% endif %}
+            {% if button_text %}
+              <button class="journey-section__button">{{ button_text }}</button>
+            {% endif %}
           </div>
-
         </div>
       </div>
-      {% if dots %}
-        <ul class="journey-dots">
-          {% for item in dots %}
-            <li class="journey-dots-item">
-              <a href="#" class="journey-dots-link">
-                <span class="journey-dots-text">{{item}}</span>
-                <span class="journey-dots-icon">
-                  <span class="journey-dot"></span>
-                </span>
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-      {% if article %}
-        <article class="journey-article">
-          <h3><a href="">{{article.title}}</a></h3>
-          <a href="">Read Story</a>
-        </article>
-      {% endif %}
     </div>
-
   </div>
 </section>
