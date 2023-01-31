@@ -7,8 +7,9 @@ import { $, $$, on, hide, show } from './utils/dom';
  */
 (function () {
   const elem = $('#midd-main');
+  const quicksearch = $('#midd-quicksearch');
 
-  if (!elem) {
+  if (!elem || !quicksearch) {
     return;
   }
 
