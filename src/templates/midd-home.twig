@@ -1,33 +1,56 @@
 {% extends "midd-layout.twig" %}
 
 {% set midd_institutional_header = true %}
+{% set count_learning = -1 %}
+{% set count_place = -1 %}
+{% set count_purpose = -1 %}
 
 {% set section_learning = [
-  {label: 'The Liberal Arts', x: '595', y: '367.75'},
-  {label: 'History of Middlebury', x: '607', y: '420'},
-  {label: 'Principles and Values', x: '607', y: '472.25'},
-  {label: 'Looking to the Future', x: '595', y: '524.5'}
+  {id: 0, label: 'The Liberal Arts', x: '595', y: '367.75'},
+  {id: 1, label: 'History of Middlebury', x: '607', y: '420'},
+  {id: 2, label: 'Principles and Values', x: '607', y: '472.25'},
+  {id: 3, label: 'Looking to the Future', x: '595', y: '524.5'}
 ] %}
 
 {% set section_place = [
-  {label: 'Vermont', x: '69', y: '996'},
-  {label: 'California', x: '49', y: '1104.5'},
-  {label: 'World', x: '53', y: '1219'}
+  {id: 4, label: 'Vermont', x: '69', y: '996'},
+  {id: 5, label: 'California', x: '49', y: '1104.5'},
+  {id: 6, label: 'World', x: '53', y: '1219'}
 ]
 %}
 
 {% set section_purpose_desktop = [
-  {label: 'Engagement', x: '246.01', y: '2029.25', text_x: '205.19'},
-  {label: 'Justice', x: '394.34', y: '2029.25', text_x: '373.34'},
-  {label: 'Sustainability', x: '538.67', y: '2029.25', text_x: '495.67'},
-  {label: 'Culture', x: '683', y: '2029.25', text_x: '658'},
+  {id: 7, label: 'Engagement', x: '246.01', y: '2029.25', text_x: '205.19'},
+  {id: 8, label: 'Justice', x: '394.34', y: '2029.25', text_x: '373.34'},
+  {id: 9, label: 'Sustainability', x: '538.67', y: '2029.25', text_x: '495.67'},
+  {id: 10, label: 'Culture', x: '683', y: '2029.25', text_x: '658'},
+] %}
+
+{% set section_purpose_tablet = [
+  {id: 7, label: 'Engagement', x: '182.01', y: '2029.25', text_x: '141.19'},
+  {id: 8, label: 'Justice', x: '330.34', y: '2029.25', text_x: '309.34'},
+  {id: 9, label: 'Sustainability', x: '474.67', y: '2029.25', text_x: '431.67'},
+  {id: 10, label: 'Culture', x: '619', y: '2029.25', text_x: '594'},
+] %}
+
+{% set section_learning_mobile = [
+  {id: 0, label: 'The Liberal Arts', x: '153', y: '108', text_x: '37'},
+  {id: 1, label: 'History of Middlebury', x: '153', y: '148', text_x: '3'},
+  {id: 2, label: 'Principles and Values', x: '153', y: '188', text_x: '5'},
+  {id: 3, label: 'Looking to the Future', x: '153', y: '228', text_x: '5'}
+] %}
+
+{% set section_place_mobile = [
+  {id: 4, label: 'Vermont', x: '153', y: '680', text_x: '77'},
+  {id: 5, label: 'California', x: '153', y: '728', text_x: '72'},
+  {id: 6, label: 'World', x: '153', y: '776', text_x: '94'}
 ] %}
 
 {% set section_purpose_mobile = [
-  {label: 'Engagement', x: '182.01', y: '2029.25', text_x: '141.19'},
-  {label: 'Justice', x: '330.34', y: '2029.25', text_x: '309.34'},
-  {label: 'Sustainability', x: '474.67', y: '2029.25', text_x: '431.67'},
-  {label: 'Culture', x: '619', y: '2029.25', text_x: '594'},
+  {id: 7, label: 'Engagement', x: '153', y: '1324', text_x: '56'},
+  {id: 8, label: 'Justice', x: '153', y: '1364', text_x: '90'},
+  {id: 9, label: 'Sustainability', x: '153', y: '1404', text_x: '52'},
+  {id: 10, label: 'Culture', x: '153', y: '1444', text_x: '85'}
 ] %}
 
 {% block page %}
@@ -38,7 +61,7 @@
         <g class="journey-line--section journey-line--section-learning">
           {% for label in section_learning %}
             {% set text_x = label.x + 16 %}{% set text_y = label.y + 5 %}
-            <a class="journey--link" href="#" role="button">
+            <a class="journey--link" href="#slide{{label.id + 1}}" role="button" data-journey-overlay-open="midd-journey-overlay">
               <circle cx="{{label.x}}" cy="{{label.y}}" r="4" stroke="#F4B824" fill="#F4B824"/>
               <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
               <text class="journey--link-text" x="{{text_x}}" y="{{text_y}}">{{label.label}}</text>
@@ -48,107 +71,66 @@
         <g class="journey-line--section journey-line--section-place">
           {% for label in section_place %}
             {% set text_x = label.x + 16 %}{% set text_y = label.y + 5 %}
-            <a class="journey--link" href="#" role="button">
+            <a class="journey--link" href="#slide{{label.id + 1}}" role="button" data-journey-overlay-open="midd-journey-overlay">
               <circle cx="{{label.x}}" cy="{{label.y}}" r="4" stroke="#F4B824" fill="#F4B824"/>
               <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
               <text class="journey--link-text" x="{{text_x}}" y="{{text_y}}">{{label.label}}</text>
             </a>
           {% endfor %}
         </g>
-        {# <a class="journey--link" href="#" role="button">
-                                                                                          <circle cx="595" cy="367.75" r="4" data-dot-label="Culture" stroke="#F4B824" fill="#F4B824"/>
-                                                                                          <text class="journey--link-text" x="595" y="367.75">Culture</text>
-                                                                                        </a>
-                                                                                        <a class="journey--link" href="#" role="button">
-                                                                                          <circle cx="607" cy="420" r="4" data-dot-label="Culture" stroke="#F4B824" fill="#F4B824"/>
-                                                                                          <text class="journey--link-text" x="607" y="420">Sustainability</text>
-                                                                                        </a>
-                                                                                        <a class="journey--link" href="#" role="button">
-                                                                                          <circle cx="607" cy="472.25" r="4" data-dot-label="Culture" stroke="#F4B824" fill="#F4B824"/>
-                                                                                          <text class="journey--link-text" x="607" y="472.25">Justice</text>
-                                                                                        </a>
-                                                                                        <circle cx="595" cy="524.5" r="4" data-dot-label="Engagement" fill="#F4B824"/>
-                                                                                        <foreignobject class="journey--dot-label-wrapper" x="595" y="524.5" width="100" height="100">
-                                                                                          <a style="color:white"  role="button">Engagement</a>
-                                                                                        </foreignobject>
-                                                                                        <circle cx="69" cy="996" r="4" data-dot-label="World" fill="#F4B824"/>
-                                                                                        <foreignobject class="journey--dot-label-wrapper" x="69" y="996" width="100" height="100">
-                                                                                          <a style="color:white"  role="button">World</a>
-                                                                                        </foreignobject>
-                                                                                        <circle cx="49" cy="1104.5" r="4" data-dot-label="California" fill="#F4B824"/>
-                                                                                        <foreignobject class="journey--dot-label-wrapper" x="49" y="1104.5" width="100" height="100">
-                                                                                          <a style="color:white"  role="button">California</a>
-                                                                                        </foreignobject>
-                                                                                        <circle cx="53" cy="1219" r="4" data-dot-label="Vermont" fill="#F4B824"/>
-                                                                                        <foreignobject class="journey--dot-label-wrapper" x="53" y="1219" width="100" height="100">
-                                                                                          <a style="color:white"  role="button">Vermont</a>
-                                                                                        </foreignobject> #}
-        <g class="journey-line--section journey-line--section-purpose__mobile">
-          {% for label in section_purpose_mobile %}
+        <g class="journey-line--section journey-line--section-purpose__tablet">
+          {% for label in section_purpose_tablet %}
             {% set text_y = label.y - 32 %}
-            <a class="journey--link" href="#" role="button">
+            <a class="journey--link" href="#slide{{label.id + 1}}" role="button" data-journey-overlay-open="midd-journey-overlay">
               <circle cx="{{label.x}}" cy="{{label.y}}" r="4" stroke="#F4B824" fill="#F4B824"/>
               <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
               <text class="journey--link-text" x="{{label.text_x}}" y="{{text_y}}">{{label.label}}</text>
             </a>
-            {# <circle cx="{{label.x}}" cy="{{label.y}}" r="4" stroke="#F4B824" fill="#F4B824"/>
-                                                                                                                                    <foreignobject class="journey--dot-label-wrapper" x="{{text_x}}" y="{{text_y}}">
-                                                                                                                                      <a href="#" class="journey--link journey--link-text" role="button">{{label.label}}</a>
-                                                                                                                                    </foreignobject>  #}
           {% endfor %}
-          {# <circle cx="246.01" cy="2029.25" r="4" data-dot-label="The Liberal Arts" fill="#F4B824"/>
-                                                                                                              <foreignobject class="journey--dot-label-wrapper" x="246.01" y="2029.25" width="100" height="100">
-                                                                                                                <a style="color:white"  role="button">The Liberal Arts</a>
-                                                                                                              </foreignobject>
-                                                                                                              <circle cx="394.34" cy="2029.25" r="4" data-dot-label="History of Middlebury" fill="#F4B824"/>
-                                                                                                              <foreignobject class="journey--dot-label-wrapper" x="394.34" y="2029.25" width="100" height="100">
-                                                                                                                <a style="color:white"  role="button">History of Middlebury</a>
-                                                                                                              </foreignobject>
-                                                                                                              <circle cx="538.67" cy="2029.25" r="4" data-dot-label="Principles and Values" fill="#F4B824"/>
-                                                                                                              <foreignobject class="journey--dot-label-wrapper" x="538.67" y="2029.25" width="100" height="100">
-                                                                                                                <a style="color:white"  role="button">Principles and Values</a>
-                                                                                                              </foreignobject>
-                                                                                                              <circle cx="683" cy="2029.25" r="4" data-dot-label="Looking to the Future" fill="#F4B824"/>
-                                                                                                              <foreignobject class="journey--dot-label-wrapper" x="683" y="2029.25" width="100" height="100">
-                                                                                                                <a style="color:white"  role="button">Looking to the Future</a>
-                                                                                                              </foreignobject> #}
         </g>
         <g class="journey-line--section journey-line--section-purpose__desktop">
           {% for label in section_purpose_desktop %}
             {% set text_y = label.y - 32 %}
-            <a class="journey--link" href="#" role="button">
+            <a class="journey--link" href="#slide{{label.id + 1}}" role="button" data-journey-overlay-open="midd-journey-overlay">
               <circle cx="{{label.x}}" cy="{{label.y}}" r="4" stroke="#F4B824" fill="#F4B824"/>
               <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
               <text class="journey--link-text" x="{{label.text_x}}" y="{{text_y}}">{{label.label}}</text>
             </a>
-            {# <circle cx="{{label.x}}" cy="{{label.y}}" r="4" stroke="#F4B824" fill="#F4B824"/>
-                                                                                                                                    <foreignobject class="journey--dot-label-wrapper" x="{{text_x}}" y="{{text_y}}">
-                                                                                                                                      <a href="#" class="journey--link journey--link-text" role="button">{{label.label}}</a>
-                                                                                                                                    </foreignobject>  #}
           {% endfor %}
-          {# <circle cx="167" cy="2029.25" r="4" data-dot-label="The Liberal Arts" fill="#F4B824"/>
-                                                                                                              <foreignobject class="journey--dot-label-wrapper" x="167" y="2029.25" width="100" height="100">
-                                                                                                                <a style="color:white"  role="button">The Liberal Arts</a>
-                                                                                                              </foreignobject>
-                                                                                                              <circle cx="355.667" cy="2029.25" r="4" data-dot-label="History of Middlebury" fill="#F4B824"/>
-                                                                                                              <foreignobject class="journey--dot-label-wrapper" x="355.667" y="2029.25" width="100" height="100">
-                                                                                                                <a style="color:white"  role="button">History of Middlebury</a>
-                                                                                                              </foreignobject>
-                                                                                                              <circle cx="544.333" cy="2029.25" r="4" data-dot-label="Principles and Values" fill="#F4B824"/>
-                                                                                                              <foreignobject class="journey--dot-label-wrapper" x="544.333" y="2029.25" width="100" height="100">
-                                                                                                                <a style="color:white"  role="button">Principles and Values</a>
-                                                                                                              </foreignobject>
-                                                                                                              <circle cx="733" cy="2029.25" r="4" data-dot-label="Looking to the Future" fill="#F4B824"/>
-                                                                                                              <foreignobject class="journey--dot-label-wrapper" x="733" y="2029.25" width="100" height="100">
-                                                                                                                <a style="color:white"  role="button">Looking to the Future</a>
-                                                                                                              </foreignobject> #}
         </g>
-        {# <foreignobject class="journey--dot-label-wrapper" style="pointer-events:auto;" x="595" y="367.75" width="100" height="100">
-                                                                                            <a style="pointer-events:auto;border:1px green solid;" href="#" role="button">Culture</a>       
-                                                                                          </foreignobject> #}
-      {# Culture</a> #}
-        {# Path variable for a non scaling circle #}
-        {# <path d="M 592.5 367.75 l 0.0001 0" stroke="#F4B824" stroke-linecap="round" stroke-width="8" vector-effect="non-scaling-stroke"/> #}
+      </svg>
+      <svg viewbox="0 0 169 1460" fill="none" xmlns="http://www.w3.org/2000/svg" class="journey-line journey-line--mobile" style="pointer-events:auto;">
+        <path fill="none" fill-rule="evenodd" stroke="white" stroke-dasharray="2" d="M152.709 0V277C152.563 314.198 153.89 385.083 145.078 417.382C137.905 443.678 151.889 472.606 151.889 499.779C151.888 533.905 124.451 531.593 124.45 566.004C124.449 583.928 133.281 597.734 139.603 609.012C147.905 623.825 152.892 640.882 152.892 663.239C152.844 704.53 153.602 767.675 153.547 808.979C153.515 833.515 153.782 858.3 152.82 882.784C152.074 901.745 147.234 917.035 145.282 935.319C143.297 953.931 150.958 968.981 153.711 985.57C156.657 1003.32 154.277 1024.17 149.359 1040.33C143.039 1061.1 108.118 1084.09 116.21 1114.65C120.421 1130.56 132.46 1130.61 136.236 1147.56C137.684 1154.07 137.178 1161.76 138.738 1168.17C140.853 1176.87 145.428 1181.52 148.235 1189.15C154.361 1205.78 152.983 1227.52 152.865 1246.73C152.71 1272.15 152.865 1297.56 152.865 1322.98V1451.82"/>
+        <g class="journey-line--section journey-line--section-learning">
+          {% for label in section_learning_mobile %}
+            {% set text_y = label.y + 4 %}
+            <a class="journey--link" href="#" role="button" data-journey-overlay-open="midd-journey-overlay-{{label.id}}">
+              <circle cx="{{label.x}}" cy="{{label.y}}" r="3" stroke="#F4B824" fill="#F4B824"/>
+              <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
+              <text class="journey--link-text" x="{{label.text_x}}" y="{{text_y}}">{{label.label}}</text>
+            </a>
+          {% endfor %}
+        </g>
+        <g class="journey-line--section journey-line--section-place">
+          {% for label in section_place_mobile %}
+            {% set text_y = label.y + 4 %}
+            <a class="journey--link" href="#" role="button" data-journey-overlay-open="midd-journey-overlay-{{label.id}}">
+              <circle cx="{{label.x}}" cy="{{label.y}}" r="3" stroke="#F4B824" fill="#F4B824"/>
+              <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
+              <text class="journey--link-text" x="{{label.text_x}}" y="{{text_y}}">{{label.label}}</text>
+            </a>
+          {% endfor %}
+        </g>
+        <g class="journey-line--section journey-line--section-purpose">
+          {% for label in section_purpose_mobile %}
+            {% set text_y = label.y + 4 %}
+            <a class="journey--link" href="#" role="button" data-journey-overlay-open="midd-journey-overlay-{{label.id}}">
+              <circle cx="{{label.x}}" cy="{{label.y}}" r="3" stroke="#F4B824" fill="#F4B824"/>
+              <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
+              <text class="journey--link-text" x="{{label.text_x}}" y="{{text_y}}">{{label.label}}</text>
+            </a>
+          {% endfor %}
+        </g>
       </svg>
     </div>
     {% include 'partials/journey-section.twig' with {
@@ -202,5 +184,41 @@
         'Culture',
       ]
     } %}
+    {# <div class="swiper">
+                          <div class="swiper-wrapper"> #}
+    {# {% for label in section_learning %}
+                      {% include 'partials/journey-modal.twig' with {
+                            id: label.id,
+                            content_type: 'play',
+                            description: 'Take a tour of Middlebury Campus',
+                            image_name: 'homepage_grid_2'
+                          }%}
+                    {% endfor %}
+                    {% for label in section_place %}
+                      {% include 'partials/journey-modal.twig' with {
+                            id: label.id,
+                            content_type: 'play',
+                            description: 'Take a tour of Middlebury Campus',
+                            image_name: 'homepage_grid_2'
+                          }%}
+                    {% endfor %}
+                    {% for label in section_purpose_desktop %}
+                      {% include 'partials/journey-modal.twig' with {
+                            id: label.id,
+                            content_type: 'play',
+                            description: 'Take a tour of Middlebury Campus',
+                            image_name: 'homepage_grid_2'
+                          }%}
+                    {% endfor %} #}
+    {# </div>
+                        </div> #}
+      <div class="modal-test" id="midd-journey-overlay" style="overflow-x:hidden"> {% include 'partials/journey-modal.twig' with {
+            id: label.id,
+            content_type: 'play',
+            description: 'Take a tour of Middlebury Campus',
+            image_name: 'homepage_grid_2',
+            class: 'swiper-slide'
+          }%}
+    </div>
   </div>
 {% endblock %}

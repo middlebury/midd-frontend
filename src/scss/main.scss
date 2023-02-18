@@ -9,7 +9,7 @@
 
 // vendor
 @import '../../node_modules/normalize.css/normalize';
-@import '../../node_modules/swiper/swiper';
+@import '../../node_modules/swiper/swiper.scss';
 @import '../../node_modules/swiper/modules/a11y/a11y';
 
 // base
@@ -65,6 +65,7 @@
 @import 'components/input-group';
 @import 'components/institutional-header';
 @import 'components/journey';
+@import 'components/journey-modal';
 @import 'components/lib-search';
 @import 'components/lightbox';
 @import 'components/link-list';

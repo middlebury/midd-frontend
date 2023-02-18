@@ -1,0 +1,46 @@
+{% set labels = ['college', 'miis', 'bread-loaf', 'lang-schools', 'writers', 'schools-abroad', 'env-school'] %}
+
+<div class="journey-modal__overlay {{class}}" data-hash={{hash_class}}>
+  <div class="container journey-modal__overlay-container">
+    <h2 class="journey-modal--title">{{label}}</h2>
+    {% if content_type == 'play' %}
+      {% include 'partials/video.twig' with {
+        grid_video: true
+      } %}
+    {% elseif content_type == 'expand' %}
+      <figure class="journey-modal__image">
+        {% include 'partials/img.twig' with {
+          name: overlay_image
+        } %}
+        <figcaption class="offset-lg-1 journey-image__body">
+          <h3 class="sr-only" id="midd-video-label-729">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+          <p class="image__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. Suspendisse commodo pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
+        </figcaption>
+      </figure>
+    {% endif %}
+    <section class="journey-modal__articles-block">
+      <h2 class="articles-block__title">Related Somethings</h2>
+      <ul class="row articles-block">
+        {% for i in 0..2 %}
+          <li class="col-12 col-md-4">
+            <article class="articles-block__article-card">
+              <div class="articles-block__content">
+                <span class="article-card--label label-{{random(labels)}}"></span>
+                <div class="article-card--text-content">
+                  <h3 class="article-card--title">Learn About Our Sustainability</h3>
+                  <p class="article-card--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                </div>
+                <button class="article-card--button">Learn more
+                  {% include 'partials/icon.twig' with {
+                name: 'chevron-right',
+                class: 'journey-modal-button--icon'
+              } %}
+                </button>
+              </div>
+            </article>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
+</div>

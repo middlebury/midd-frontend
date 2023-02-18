@@ -1,0 +1,115 @@
+{% set cb_info = [
+  {label: 'The Liberal Arts', x: '48.25', y: '16', text_x: '0', text_y: '52'},
+  {label: 'History of Middlebury', x: '112.75', y: '16', text_x: '40', text_y: '52'},
+  {label: 'Principles and Values', x: '304.75', y: '16', text_x: '230', text_y: '52'},
+  {label: 'Looking to the Future', x: '176.75', y: '16', text_x: '98', text_y: '52'},
+  {label: 'Vermont', x: '624.75', y: '16', text_x: '592', text_y: '52'},
+  {label: 'California', x: '560.75', y: '16', text_x: '524', text_y: '52'},
+  {label: 'World', x: '240.75', y: '16', text_x: '218', text_y: '52'},
+  {label: 'Engagement', x: '432.75', y: '16', text_x: '386', text_y: '52'},
+  {label: 'Justice', x: '368.74', y: '16', text_x: '348', text_y: '52'},
+  {label: 'Sustainability', x: '688.75', y: '16', text_x: '634', text_y: '52'},
+  {label: 'Culture', x: '496.75', y: '16', text_x: '470', text_y: '52'}
+] %}
+
+{% set section_learning = [
+  {id: 0, label: 'The Liberal Arts', hash_class: 'slide1', x: '595', y: '367.75'},
+  {id: 1, label: 'History of Middlebury', hash_class: 'slide2', x: '607', y: '420'},
+  {id: 2, label: 'Principles and Values', hash_class: 'slide3', x: '607', y: '472.25'},
+  {id: 3, label: 'Looking to the Future', hash_class: 'slide4', x: '595', y: '524.5'}
+] %}
+{% set section_place = [
+  {id: 4, label: 'Vermont', hash_class: 'slide5', x: '69', y: '996'},
+  {id: 5, label: 'California', hash_class: 'slide6', x: '49', y: '1104.5'},
+  {id: 6, label: 'World', hash_class: 'slide7', x: '53', y: '1219'}
+]
+%}
+{% set section_purpose_desktop = [
+  {id: 7, label: 'Engagement', hash_class: 'slide8', x: '246.01', y: '2029.25', text_x: '205.19'},
+  {id: 8, label: 'Justice', hash_class: 'slide9', x: '394.34', y: '2029.25', text_x: '373.34'},
+  {id: 9, label: 'Sustainability', hash_class: 'slide10', x: '538.67', y: '2029.25', text_x: '495.67'},
+  {id: 10, label: 'Culture', hash_class: 'slide11', x: '683', y: '2029.25', text_x: '658'},
+] %}
+
+{# <div class="journey-modal" id="midd-journey-overlay-{{id}}" aria-hidden="true" role="dialog" aria-modal="true" tabindex="-1"> #}
+<div class="journey-modal" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="journey-modal__header-container">
+    <div class="journey-modal__header--wrapper">
+      <div class="midd-header__brand">
+        <a href="https://www.middlebury.edu">
+          <img src="images/middlebury-logo-white.svg" alt="Middlebury" width="153" height="56"/>
+        </a>
+      </div>
+      <button class="journey-modal__button mobile journey-modal__button--close" aria-label="Close modal" data-journey-overlay-close>
+        Close
+        {% include 'partials/icon.twig' with { name: 'times', class: 'ml-1' } %}
+      </button>
+    </div>
+    <div class="journey-modal__controls">
+      <div class="journey-modal__cobblestones">
+        <button class="journey-modal__cobblestones-button js-journey-prev-button" aria-label="Previous" id="journey-modal-button-prev">
+          {% include 'partials/icon.twig' with {
+            name: 'chevron-left',
+            class: 'journey-modal-button--icon'
+          } %}
+        </button>
+        <div class="journey-modal__pagination-wrapper">
+          <div class="journey-modal__pagination">
+            <div class="journey-modal__svg-wrapper">
+              <svg class="journey-modal__svg" width="716" height="2" viewbox="0 0 716 2" xmlns="http://www.w3.org/2000/svg">
+                <path
+                fill="none" fill-rule="evenodd" stroke="white" stroke-dasharray="2" d="M715.201 1.25091L0.200684 1.25098" clip-path="url(#user-space)"/>
+              {# {% for label in cb_info %}
+              <a class="journey-modal__svg-link" href="#" role="button">
+                <circle cx="{{label.x}}" cy="{{label.y}}" r="4" fill="#F4B824"/>
+                <circle class="journey-modal__outer-circle" cx="{{label.x}}" cy="{{label.y}}" r="15.5" fill="none"/>
+                <text class="journey-modal__svg-link-text" x="{{label.text_x}}" y="{{label.text_y}}">{{label.label}}</text>
+              </a>
+              {% endfor %} #}
+              </svg>
+            </div>
+            <div class="cb__wrapper swiper-pagination"></div>
+          </div>
+        </div>
+        <button class="journey-modal__cobblestones-button js-journey-next-button" aria-label="Next" id="journey-modal-button-next">
+          {% include 'partials/icon.twig' with {
+            name: 'chevron-right',
+            class: 'journey-modal-button--icon'
+          } %}
+        </button>
+      </div>
+      <button class="journey-modal__button desktop journey-modal__button--close" aria-label="Close modal" data-journey-overlay-close>
+        Close
+        {% include 'partials/icon.twig' with { name: 'times', class: 'ml-1' } %}
+      </button>
+    </div>
+  </div>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      {% for label in section_learning %}
+        {% include 'partials/journey-modal-content.twig' with {
+          label: label.label,
+          content_type: 'play',
+          class: 'swiper-slide',
+          hash_class: label.hash_class
+        }%}
+      {% endfor %}
+      {% for label in section_place %}
+        {% include 'partials/journey-modal-content.twig' with {
+          label: label.label,
+          content_type: 'play',
+          class: 'swiper-slide',
+          hash_class: label.hash_class
+        }%}
+      {% endfor %}
+      {% for label in section_purpose_desktop %}
+        {% include 'partials/journey-modal-content.twig' with {
+          label: label.label,
+          content_type: 'play',
+          class: 'swiper-slide',
+          hash_class: label.hash_class
+        }%}
+      {% endfor %}
+    </div>
+  </div>
+</div>

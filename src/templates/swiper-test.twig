@@ -1,0 +1,16 @@
+{% extends "midd-layout.twig" %}
+
+{% block page %}
+  <div style="display:flex; flex-direction:column;">
+    <a href="#slide-3" id="swiper-test" role="button" data-journey-overlay-open="midd-journey-overlay">Link 1</a>
+  </div>
+  <div class="modal-test" id="midd-journey-overlay" style="overflow-x:hidden">
+    {% include 'partials/journey-modal.twig' with {
+      id: label.id,
+      content_type: 'play',
+      description: 'Take a tour of Middlebury Campus',
+      image_name: 'homepage_grid_2',
+      class: 'swiper-slide'
+    }%}
+  </div>
+{% endblock %}

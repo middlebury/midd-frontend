@@ -99,7 +99,7 @@
     "preact": "^10.5.15",
     "stickybits": "^3.7.9",
     "superclamp": "^0.2.3",
-    "swiper": "^7.0.7"
+    "swiper": "^9.0.5"
   },
   "bundlesize": [
     {
