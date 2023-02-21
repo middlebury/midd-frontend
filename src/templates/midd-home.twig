@@ -99,12 +99,12 @@
           {% endfor %}
         </g>
       </svg>
-      <svg viewbox="0 0 169 1460" fill="none" xmlns="http://www.w3.org/2000/svg" class="journey-line journey-line--mobile" style="pointer-events:auto;">
+      <svg viewbox="0 0 169 1460" xmlns="http://www.w3.org/2000/svg" class="journey-line journey-line--mobile" style="pointer-events:auto;">
         <path fill="none" fill-rule="evenodd" stroke="white" stroke-dasharray="2" d="M152.709 0V277C152.563 314.198 153.89 385.083 145.078 417.382C137.905 443.678 151.889 472.606 151.889 499.779C151.888 533.905 124.451 531.593 124.45 566.004C124.449 583.928 133.281 597.734 139.603 609.012C147.905 623.825 152.892 640.882 152.892 663.239C152.844 704.53 153.602 767.675 153.547 808.979C153.515 833.515 153.782 858.3 152.82 882.784C152.074 901.745 147.234 917.035 145.282 935.319C143.297 953.931 150.958 968.981 153.711 985.57C156.657 1003.32 154.277 1024.17 149.359 1040.33C143.039 1061.1 108.118 1084.09 116.21 1114.65C120.421 1130.56 132.46 1130.61 136.236 1147.56C137.684 1154.07 137.178 1161.76 138.738 1168.17C140.853 1176.87 145.428 1181.52 148.235 1189.15C154.361 1205.78 152.983 1227.52 152.865 1246.73C152.71 1272.15 152.865 1297.56 152.865 1322.98V1451.82"/>
         <g class="journey-line--section journey-line--section-learning">
           {% for label in section_learning_mobile %}
             {% set text_y = label.y + 4 %}
-            <a class="journey--link" href="#" role="button" data-journey-overlay-open="midd-journey-overlay-{{label.id}}">
+            <a class="journey--link" href="#slide{{label.id + 1}}" role="button" data-journey-overlay-open="midd-journey-overlay">
               <circle cx="{{label.x}}" cy="{{label.y}}" r="3" stroke="#F4B824" fill="#F4B824"/>
               <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
               <text class="journey--link-text" x="{{label.text_x}}" y="{{text_y}}">{{label.label}}</text>
@@ -114,7 +114,7 @@
         <g class="journey-line--section journey-line--section-place">
           {% for label in section_place_mobile %}
             {% set text_y = label.y + 4 %}
-            <a class="journey--link" href="#" role="button" data-journey-overlay-open="midd-journey-overlay-{{label.id}}">
+            <a class="journey--link" href="#slide{{label.id + 1}}" role="button" data-journey-overlay-open="midd-journey-overlay">
               <circle cx="{{label.x}}" cy="{{label.y}}" r="3" stroke="#F4B824" fill="#F4B824"/>
               <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
               <text class="journey--link-text" x="{{label.text_x}}" y="{{text_y}}">{{label.label}}</text>
@@ -124,7 +124,7 @@
         <g class="journey-line--section journey-line--section-purpose">
           {% for label in section_purpose_mobile %}
             {% set text_y = label.y + 4 %}
-            <a class="journey--link" href="#" role="button" data-journey-overlay-open="midd-journey-overlay-{{label.id}}">
+            <a class="journey--link" href="#slide{{label.id + 1}}" role="button" data-journey-overlay-open="midd-journey-overlay">
               <circle cx="{{label.x}}" cy="{{label.y}}" r="3" stroke="#F4B824" fill="#F4B824"/>
               <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
               <text class="journey--link-text" x="{{label.text_x}}" y="{{text_y}}">{{label.label}}</text>
@@ -184,41 +184,14 @@
         'Culture',
       ]
     } %}
-    {# <div class="swiper">
-                          <div class="swiper-wrapper"> #}
-    {# {% for label in section_learning %}
-                      {% include 'partials/journey-modal.twig' with {
-                            id: label.id,
-                            content_type: 'play',
-                            description: 'Take a tour of Middlebury Campus',
-                            image_name: 'homepage_grid_2'
-                          }%}
-                    {% endfor %}
-                    {% for label in section_place %}
-                      {% include 'partials/journey-modal.twig' with {
-                            id: label.id,
-                            content_type: 'play',
-                            description: 'Take a tour of Middlebury Campus',
-                            image_name: 'homepage_grid_2'
-                          }%}
-                    {% endfor %}
-                    {% for label in section_purpose_desktop %}
-                      {% include 'partials/journey-modal.twig' with {
-                            id: label.id,
-                            content_type: 'play',
-                            description: 'Take a tour of Middlebury Campus',
-                            image_name: 'homepage_grid_2'
-                          }%}
-                    {% endfor %} #}
-    {# </div>
-                        </div> #}
-      <div class="modal-test" id="midd-journey-overlay" style="overflow-x:hidden"> {% include 'partials/journey-modal.twig' with {
-            id: label.id,
-            content_type: 'play',
-            description: 'Take a tour of Middlebury Campus',
-            image_name: 'homepage_grid_2',
-            class: 'swiper-slide'
-          }%}
+    <div class="journey-modal--block" id="midd-journey-overlay" style="overflow-x:hidden">
+      {% include 'partials/journey-modal.twig' with {
+        id: label.id,
+        content_type: 'play',
+        description: 'Take a tour of Middlebury Campus',
+        image_name: 'homepage_grid_2',
+        class: 'swiper-slide'
+      }%}
     </div>
   </div>
 {% endblock %}
