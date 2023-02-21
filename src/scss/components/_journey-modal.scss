@@ -16,6 +16,24 @@ $school-theme-colors: (
   }
 }
 
+.journey-modal--block {
+  display: none;
+  background: rgba($navy-dark, 0.95);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 300;
+  color: $white;
+
+  &.is-open {
+    display: block;
+    align-items: center;
+    overflow-y: scroll;
+  }
+}
+
 .journey-modal {
   background: rgba($navy-dark, 0.95);
   color: $white;
@@ -188,6 +206,17 @@ $school-theme-colors: (
         }
 
         &.show-label {
+          .journey-modal__cb-link.swiper-pagination-bullet-active {
+            .cb-link__text {
+              display: none;
+            }
+
+            &:hover {
+              .cb-link__text {
+                display: block;
+              }
+            }
+          }
           .journey-modal__cb-link:hover {
             .cb-link__text {
               display: block;
@@ -195,12 +224,6 @@ $school-theme-colors: (
 
             .cb-link__circle.outer {
               opacity: 1;
-            }
-          }
-
-          .journey-modal__cb-link.swiper-pagination-bullet-active {
-            .cb-link__text {
-              display: none;
             }
           }
         }
@@ -221,7 +244,7 @@ $school-theme-colors: (
         position: absolute;
         top: -$spacing-4;
         width: max-content;
-        background-color: $navy-dark;
+        // background-color: $navy-dark;
 
         @include breakpoint(lg) {
           top: $spacing-6;
