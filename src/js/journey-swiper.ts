@@ -6,6 +6,7 @@ import {
   HashNavigation
 } from 'swiper';
 import { $, $$, checkElement } from './utils/dom';
+import VideoSwap from './video';
 
 class JourneySwiper {
   swiperEl: Swiper;
@@ -18,10 +19,13 @@ class JourneySwiper {
   swiperParentEl: HTMLElement;
   swiperParentWrapperEl: HTMLElement;
   swiperConfig: SwiperOptions;
+  videoElemMarkup: HTMLElement[];
+  videoElems: VideoSwap[];
   translate: number;
   halfWindowWidth: number;
   hiddenWidth: number;
   timeout: NodeJS.Timeout;
+  activeVideoClass: string;
 
   constructor(el: HTMLElement) {
     this.elem = el;
@@ -30,6 +34,7 @@ class JourneySwiper {
     this.paginationEl = $(this.paginationClass);
     this.swiperParentEl = $('.journey-modal__pagination');
     this.swiperParentWrapperEl = $('.journey-modal__pagination-wrapper');
+    this.activeVideoClass = 'has-video';
     this.translate = 0;
     this.halfWindowWidth = window.innerWidth / 2;
 
@@ -43,6 +48,7 @@ class JourneySwiper {
     this.swiperConfig = {
       modules: [Navigation, Pagination, HashNavigation],
       hashNavigation: {
+        replaceState: true,
         watchState: true
       },
       navigation: {
@@ -80,7 +86,8 @@ class JourneySwiper {
         }
       },
       on: {
-        paginationUpdate: () => {
+        paginationUpdate: (sw, pe) => {
+          this.resetVideoElem(sw);
           this.swiperUpdate();
         },
         slideNextTransitionStart: (swiper) => {
@@ -94,14 +101,17 @@ class JourneySwiper {
         },
         slidePrevTransitionEnd: (swiper) => {
           swiper.allowSlidePrev = true;
-        },
-        hashSet: (swiper) => {
-          console.log(window.location.hash);
         }
       }
     };
 
-    this.swiperEl = new Swiper(this.swiperClass, this.swiperConfig);
+    checkElement('.journey-modal--block.is-open').then(() => {
+      this.swiperEl = new Swiper(this.swiperClass, this.swiperConfig);
+
+      // Initialize video elements with VideoSwap class to enable showing/hiding videos
+      this.videoElemMarkup = $$('.js-expand-video', this.swiperEl.wrapperEl);
+      this.initVideoElems();
+    });
   }
 
   addListeners() {
@@ -137,17 +147,25 @@ class JourneySwiper {
     }
   }
 
-  /**
-   * Case 1: Dot is on the right side of the center. Logic for this is:
-   * 1. While pressing next, check if element is past the middle:
-   *     i. if it is then move it to the center
-   *     ii. if it is not, then don't do anything
-   *     iii. if the element is past the middle, but it is the last or second last element, don't do anything
-   * 2. While pressing prev, check if the element is past the middle to the left"
-   *     i. if it is then move it to the center
-   *     ii. if it is not, then don't do anything
-   *     iii. if the element is past the middle, but it is the first or second last element, don't do anything
-   */
+  initVideoElems() {
+    this.videoElems = [];
+    if (this.videoElemMarkup) {
+      this.videoElemMarkup.forEach((elem: HTMLElement) => {
+        this.videoElems.push(new VideoSwap(elem));
+      });
+    }
+  }
+
+  resetVideoElem(sw: Swiper) {
+    let previousIndex = this.swiperEl?.previousIndex;
+
+    if (previousIndex !== undefined) {
+      this.videoElems[previousIndex].hideVideo();
+      this.videoElems[previousIndex] = new VideoSwap(
+        this.videoElemMarkup[previousIndex]
+      );
+    }
+  }
 
   swiperUpdate() {
     this.currentEl = $('.swiper-pagination-bullet-active', this.paginationEl);

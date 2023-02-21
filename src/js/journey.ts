@@ -128,17 +128,21 @@ class Journey {
     entries.forEach((entry: any) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
-
-        const currentSection = entry.target.getAttribute('data-section');
+        let entryId = 0;
+        const currentSection = entry.target.id;
 
         if (currentSection === 'intro') {
-          this.animUpdateValue = this.lineAnimBreaks[0];
+          entryId = 0;
         } else if (currentSection === 'learning') {
-          this.animUpdateValue = this.lineAnimBreaks[1];
+          entryId = 1;
         } else if (currentSection === 'place') {
-          this.animUpdateValue = this.lineAnimBreaks[2];
+          entryId = 2;
         } else if (currentSection === 'purpose') {
-          this.animUpdateValue = this.lineAnimBreaks[3];
+          entryId = 3;
+        }
+
+        if (this.lineAnimBreaks[entryId] > this.animUpdateValue) {
+          this.animUpdateValue = this.lineAnimBreaks[entryId];
         }
 
         this.io.unobserve(entry.target);
