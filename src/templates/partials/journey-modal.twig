@@ -31,7 +31,6 @@
   {id: 10, label: 'Culture', hash_class: 'slide11', x: '683', y: '2029.25', text_x: '658'},
 ] %}
 
-{# <div class="journey-modal" id="midd-journey-overlay-{{id}}" aria-hidden="true" role="dialog" aria-modal="true" tabindex="-1"> #}
 <div class="journey-modal" aria-hidden="true" role="dialog" aria-modal="true">
   <div class="journey-modal__header-container">
     <div class="journey-modal__header--wrapper">
@@ -60,12 +59,12 @@
                 <path
                 fill="none" fill-rule="evenodd" stroke="white" stroke-dasharray="2" d="M715.201 1.25091L0.200684 1.25098" clip-path="url(#user-space)"/>
               {# {% for label in cb_info %}
-              <a class="journey-modal__svg-link" href="#" role="button">
-                <circle cx="{{label.x}}" cy="{{label.y}}" r="4" fill="#F4B824"/>
-                <circle class="journey-modal__outer-circle" cx="{{label.x}}" cy="{{label.y}}" r="15.5" fill="none"/>
-                <text class="journey-modal__svg-link-text" x="{{label.text_x}}" y="{{label.text_y}}">{{label.label}}</text>
-              </a>
-              {% endfor %} #}
+                                                        <a class="journey-modal__svg-link" href="#" role="button">
+                                                          <circle cx="{{label.x}}" cy="{{label.y}}" r="4" fill="#F4B824"/>
+                                                          <circle class="journey-modal__outer-circle" cx="{{label.x}}" cy="{{label.y}}" r="15.5" fill="none"/>
+                                                          <text class="journey-modal__svg-link-text" x="{{label.text_x}}" y="{{label.text_y}}">{{label.label}}</text>
+                                                        </a>
+                                                        {% endfor %} #}
               </svg>
             </div>
             <div class="cb__wrapper swiper-pagination"></div>
@@ -89,7 +88,7 @@
       {% for label in section_learning %}
         {% include 'partials/journey-modal-content.twig' with {
           label: label.label,
-          content_type: 'play',
+          content_type: 'video',
           class: 'swiper-slide',
           hash_class: label.hash_class
         }%}
@@ -97,7 +96,7 @@
       {% for label in section_place %}
         {% include 'partials/journey-modal-content.twig' with {
           label: label.label,
-          content_type: 'play',
+          content_type: 'story',
           class: 'swiper-slide',
           hash_class: label.hash_class
         }%}
@@ -105,7 +104,7 @@
       {% for label in section_purpose_desktop %}
         {% include 'partials/journey-modal-content.twig' with {
           label: label.label,
-          content_type: 'play',
+          content_type: 'video',
           class: 'swiper-slide',
           hash_class: label.hash_class
         }%}

@@ -2,6 +2,7 @@ import {
   Swiper,
   SwiperOptions,
   Navigation,
+  A11y,
   Pagination,
   HashNavigation
 } from 'swiper';
@@ -19,7 +20,6 @@ class JourneySwiper {
   swiperParentEl: HTMLElement;
   swiperParentWrapperEl: HTMLElement;
   swiperConfig: SwiperOptions;
-  videoElemMarkup: HTMLElement[];
   videoElems: VideoSwap[];
   translate: number;
   halfWindowWidth: number;
@@ -46,7 +46,7 @@ class JourneySwiper {
   init() {
     this.addListeners();
     this.swiperConfig = {
-      modules: [Navigation, Pagination, HashNavigation],
+      modules: [Navigation, Pagination, HashNavigation, A11y],
       hashNavigation: {
         replaceState: true,
         watchState: true
@@ -86,8 +86,8 @@ class JourneySwiper {
         }
       },
       on: {
-        paginationUpdate: (sw, pe) => {
-          this.resetVideoElem(sw);
+        paginationUpdate: () => {
+          this.resetVideoElem();
           this.swiperUpdate();
         },
         slideNextTransitionStart: (swiper) => {
@@ -109,7 +109,6 @@ class JourneySwiper {
       this.swiperEl = new Swiper(this.swiperClass, this.swiperConfig);
 
       // Initialize video elements with VideoSwap class to enable showing/hiding videos
-      this.videoElemMarkup = $$('.js-expand-video', this.swiperEl.wrapperEl);
       this.initVideoElems();
     });
   }
@@ -149,20 +148,28 @@ class JourneySwiper {
 
   initVideoElems() {
     this.videoElems = [];
-    if (this.videoElemMarkup) {
-      this.videoElemMarkup.forEach((elem: HTMLElement) => {
-        this.videoElems.push(new VideoSwap(elem));
+
+    if (this.swiperEl.slides) {
+      this.swiperEl.slides.forEach((elem: HTMLElement, id: number) => {
+        if (elem.classList.contains('video-slide')) {
+          this.videoElems.push(new VideoSwap($('.js-expand-video', elem)));
+        } else {
+          this.videoElems.push(null);
+        }
       });
     }
   }
 
-  resetVideoElem(sw: Swiper) {
+  resetVideoElem() {
     let previousIndex = this.swiperEl?.previousIndex;
 
-    if (previousIndex !== undefined) {
+    if (
+      previousIndex !== undefined &&
+      this.videoElems[previousIndex] !== null
+    ) {
       this.videoElems[previousIndex].hideVideo();
       this.videoElems[previousIndex] = new VideoSwap(
-        this.videoElemMarkup[previousIndex]
+        $('.js-expand-video', this.swiperEl.slides[previousIndex])
       );
     }
   }

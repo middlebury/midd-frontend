@@ -442,18 +442,6 @@ $school-theme-colors: (
       border-top: 1px solid rgba($color-journey-border, 0.5);
       padding-top: $spacing-2;
       margin-bottom: $spacing-7;
-      margin-left: -$spacing-3;
-      margin-right: -$spacing-3;
-
-      @include breakpoint(lg) {
-        margin-left: -$spacing-5;
-        margin-right: -$spacing-5;
-      }
-
-      @include breakpoint(xl) {
-        margin-left: 0;
-        margin-right: 0;
-      }
     }
 
     .articles-block {
