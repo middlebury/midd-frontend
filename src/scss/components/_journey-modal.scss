@@ -355,6 +355,56 @@ $school-theme-colors: (
     }
   }
 
+  .journey-modal__story {
+    background: $white;
+    color: $black;
+
+    .story__image {
+      margin-left: -$spacing-3;
+      margin-right: -$spacing-3;
+
+      .story__image-caption {
+        margin-left: $spacing-3;
+        margin-right: $spacing-3;
+      }
+      @include breakpoint(sm) {
+        &,
+        .story__image-caption {
+          margin: 0;
+        }
+      }
+    }
+
+    .story__image-caption {
+      border-bottom: solid 1px $gray-light;
+
+      p {
+        font-size: $typescale-2;
+        line-height: $line-height-heading;
+        padding: $spacing-2 $spacing-3;
+      }
+    }
+
+    .story__content {
+      padding: $spacing-5 $spacing-3;
+
+      @include breakpoint(lg) {
+        padding: 0;
+        padding-top: $spacing-6;
+        padding-bottom: $spacing-7;
+        max-width: 78%;
+      }
+
+      a {
+        color: initial;
+
+        &:hover {
+          border-color: initial;
+        }
+      }
+    }
+  }
+
   .grid-video__transcript .transcript__button {
     color: $white;
 
@@ -544,24 +594,5 @@ $school-theme-colors: (
         }
       }
     }
-  }
-}
-
-// ------------TEST--------------
-.modal-test {
-  display: none;
-  background: rgba($navy-dark, 0.95);
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: 300;
-  color: $white;
-
-  &.is-open {
-    display: block;
-    align-items: center;
-    overflow-y: scroll;
   }
 }

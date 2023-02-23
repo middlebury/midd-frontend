@@ -56,15 +56,7 @@
           <div class="journey-modal__pagination">
             <div class="journey-modal__svg-wrapper">
               <svg class="journey-modal__svg" width="716" height="2" viewbox="0 0 716 2" xmlns="http://www.w3.org/2000/svg">
-                <path
-                fill="none" fill-rule="evenodd" stroke="white" stroke-dasharray="2" d="M715.201 1.25091L0.200684 1.25098" clip-path="url(#user-space)"/>
-              {# {% for label in cb_info %}
-                                                        <a class="journey-modal__svg-link" href="#" role="button">
-                                                          <circle cx="{{label.x}}" cy="{{label.y}}" r="4" fill="#F4B824"/>
-                                                          <circle class="journey-modal__outer-circle" cx="{{label.x}}" cy="{{label.y}}" r="15.5" fill="none"/>
-                                                          <text class="journey-modal__svg-link-text" x="{{label.text_x}}" y="{{label.text_y}}">{{label.label}}</text>
-                                                        </a>
-                                                        {% endfor %} #}
+                <path fill="none" fill-rule="evenodd" stroke="white" stroke-dasharray="2" d="M715.201 1.25091L0.200684 1.25098" clip-path="url(#user-space)"/>
               </svg>
             </div>
             <div class="cb__wrapper swiper-pagination"></div>
@@ -89,7 +81,6 @@
         {% include 'partials/journey-modal-content.twig' with {
           label: label.label,
           content_type: 'video',
-          class: 'swiper-slide',
           hash_class: label.hash_class
         }%}
       {% endfor %}
@@ -97,7 +88,6 @@
         {% include 'partials/journey-modal-content.twig' with {
           label: label.label,
           content_type: 'story',
-          class: 'swiper-slide',
           hash_class: label.hash_class
         }%}
       {% endfor %}
@@ -105,7 +95,6 @@
         {% include 'partials/journey-modal-content.twig' with {
           label: label.label,
           content_type: 'video',
-          class: 'swiper-slide',
           hash_class: label.hash_class
         }%}
       {% endfor %}
