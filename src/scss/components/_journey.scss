@@ -114,6 +114,21 @@
     }
   }
 
+  .journey-line--section-learning {
+    .journey--link-text {
+      display: none;
+    }
+    @include breakpoint(lg) {
+      .journey--link-text {
+        display: inline-block;
+      }
+
+      .journey--link-text--tablet {
+        display: none;
+      }
+    }
+  }
+
   .journey-line--section-learning.animate {
     .journey--link:nth-child(2) .journey--dot-ripple {
       animation-delay: 0.25s;

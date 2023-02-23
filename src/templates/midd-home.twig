@@ -6,6 +6,13 @@
 {% set count_purpose = -1 %}
 
 {% set section_learning = [
+  {id: 0, label: 'The Liberal Arts', x: '595', y: '367.75', text_x_tablet: '474'},
+  {id: 1, label: 'History of Middlebury', x: '607', y: '420', text_x_tablet: '446'},
+  {id: 2, label: 'Principles and Values', x: '607', y: '472.25', text_x_tablet: '450'},
+  {id: 3, label: 'Looking to the Future', x: '595', y: '524.5', text_x_tablet: '433'}
+] %}
+
+{% set section_learning_table = [
   {id: 0, label: 'The Liberal Arts', x: '595', y: '367.75'},
   {id: 1, label: 'History of Middlebury', x: '607', y: '420'},
   {id: 2, label: 'Principles and Values', x: '607', y: '472.25'},
@@ -27,10 +34,10 @@
 ] %}
 
 {% set section_purpose_tablet = [
-  {id: 7, label: 'Engagement', x: '182.01', y: '2029.25', text_x: '141.19'},
-  {id: 8, label: 'Justice', x: '330.34', y: '2029.25', text_x: '309.34'},
-  {id: 9, label: 'Sustainability', x: '474.67', y: '2029.25', text_x: '431.67'},
-  {id: 10, label: 'Culture', x: '619', y: '2029.25', text_x: '594'},
+  {id: 7, label: 'Engagement', x: '142.01', y: '2029.25', text_x: '101.19'},
+  {id: 8, label: 'Justice', x: '290.34', y: '2029.25', text_x: '269.34'},
+  {id: 9, label: 'Sustainability', x: '434.67', y: '2029.25', text_x: '391.67'},
+  {id: 10, label: 'Culture', x: '579', y: '2029.25', text_x: '554'},
 ] %}
 
 {% set section_learning_mobile = [
@@ -58,6 +65,17 @@
     <div class="journey-line-box js-journey-line">
       <svg viewbox="0 0 840 2050" xmlns="http://www.w3.org/2000/svg" class="journey-line journey-line--desktop" style="pointer-events:auto;">
         <path fill="none" fill-rule="evenodd" stroke="white" stroke-dasharray="2" d="M241.462 0C241.462 13.974 236.795 48 150.44 68.861C115.943 77.194 80.7801 82.516 45.8351 88.7C37.7221 90.351 29.5971 91.972 21.5891 94.093C16.6621 95.398 10.5991 96.466 6.08807 99.183C0.54007 102.525 -0.96893 110.151 4.06907 114.957C7.24507 117.988 13.1571 120.145 19.2311 121.532C51.1641 128.829 83.3221 135.045 115.336 141.971C137.663 146.163 159.834 151.366 181.893 156.769C320.669 190.76 508.109 223.273 578.526 334.754C598.67 366.646 607.511 405.595 607.511 446C607.576 486.405 598.735 525.354 578.592 557.246C534.769 631.038 454.844 682.631 371.701 722.143C360.554 727.44 329.795 742 335.34 759.348C337.205 765.183 344.836 768.859 350.674 770.714C364.952 775.251 386.795 779 389.581 794.104C389.581 794.104 404.795 821.999 319.803 873.996C278.521 899.251 233.541 917.504 188.799 935.578C165.558 944.967 142.443 954.667 119.418 964.572C101.319 972.357 74.5871 981.925 68.8581 998.156C60.7951 1021 84.4891 1034.31 78.7951 1061C73.4621 1086 50.9001 1101.26 33.4801 1120.65C22.4711 1132.91 15.7951 1149.49 16.7951 1165.99C18.1281 1188 35.2831 1206.97 54.6561 1218.95C178.128 1295.33 630.287 1412.74 461.796 1527C432.795 1546.67 420.964 1564.38 451.797 1582C486.795 1602 523.504 1609.06 561.795 1629C580.652 1638.82 593.109 1656.1 591.091 1678.77C582.795 1772 176.521 1919.27 110.795 1951C81.7951 1965 55.8271 1981.74 54.9261 1999.16C53.7951 2021 84.7951 2029.05 111.277 2029.05C138.898 2029.05 166.512 2029.3 194.117 2029.3C194.117 2029.3 624.74 2029.3 840.052 2029.3"/>
+        <g class="journey-line--section journey-line--section-learning">
+          {% for label in section_learning %}
+            {% set text_x = label.x + 16 %}{% set text_y = label.y + 5 %}
+            <a class="journey--link" href="#slide{{label.id + 1}}" role="button" data-journey-overlay-open="midd-journey-overlay">
+              <circle cx="{{label.x}}" cy="{{label.y}}" r="4" stroke="#F4B824" fill="#F4B824"/>
+              <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
+              <text class="journey--link-text" x="{{text_x}}" y="{{text_y}}">{{label.label}}</text>
+              <text class="journey--link-text--tablet" x="{{label.text_x_tablet}}" y="{{text_y}}">{{label.label}}</text>
+            </a>
+          {% endfor %}
+        </g>
         <g class="journey-line--section journey-line--section-learning">
           {% for label in section_learning %}
             {% set text_x = label.x + 16 %}{% set text_y = label.y + 5 %}
@@ -193,4 +211,8 @@
       }%}
     </div>
   </div>
+{% endblock %}
+
+{% block scripts %}
+  <script src="/js/panelsnap.esm.js"></script>
 {% endblock %}
