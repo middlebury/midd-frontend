@@ -55,7 +55,6 @@ class VideoSwap {
   }
 
   init() {
-    console.log(this.elem);
     this.addListeners();
   }
 

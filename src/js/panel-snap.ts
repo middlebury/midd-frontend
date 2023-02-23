@@ -1,10 +1,10 @@
 import PanelSnap from 'panelsnap';
 import { $$ } from './utils/dom';
 
-var defaultOptions = {
+let defaultOptions = {
   container: document.body,
-  panelSelector: '.journey > section',
-  directionThreshold: 50,
+  panelSelector: '.journey section',
+  directionThreshold: 10,
   delay: 0,
   duration: 300,
   easing: function (t: any) {
