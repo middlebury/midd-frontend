@@ -20,7 +20,7 @@ class JourneySwiper {
   swiperParentEl: HTMLElement;
   swiperParentWrapperEl: HTMLElement;
   swiperConfig: SwiperOptions;
-  videoElems: VideoSwap[];
+  // videoElems: VideoSwap[];
   translate: number;
   halfWindowWidth: number;
   hiddenWidth: number;
@@ -47,6 +47,7 @@ class JourneySwiper {
     this.addListeners();
     this.swiperConfig = {
       modules: [Navigation, Pagination, HashNavigation, A11y],
+      autoHeight: true,
       hashNavigation: {
         replaceState: true,
         watchState: true
@@ -87,7 +88,7 @@ class JourneySwiper {
       },
       on: {
         paginationUpdate: () => {
-          this.resetVideoElem();
+          // this.resetVideoElem();
           this.swiperUpdate();
         },
         slideNextTransitionStart: (swiper) => {
@@ -147,32 +148,33 @@ class JourneySwiper {
   }
 
   initVideoElems() {
-    this.videoElems = [];
+    // this.videoElems = [];
 
-    if (this.swiperEl.slides) {
-      this.swiperEl.slides.forEach((elem: HTMLElement, id: number) => {
-        if (elem.classList.contains('video-slide')) {
-          this.videoElems.push(new VideoSwap($('.js-expand-video', elem)));
-        } else {
-          this.videoElems.push(null);
-        }
-      });
-    }
+    // if (this.swiperEl.slides) {
+    //   this.swiperEl.slides.forEach((elem: HTMLElement, id: number) => {
+    //     if (elem.classList.contains('video-slide')) {
+    //       this.videoElems.push(new VideoSwap($('.js-expand-video', elem)));
+    //     } else {
+    //       this.videoElems.push(null);
+    //     }
+    //   });
+    // }
+    $$('.js-expand-video', this.elem).forEach((elem) => new VideoSwap(elem));
   }
 
-  resetVideoElem() {
-    let previousIndex = this.swiperEl?.previousIndex;
+  // resetVideoElem() {
+  //   let previousIndex = this.swiperEl?.previousIndex;
 
-    if (
-      previousIndex !== undefined &&
-      this.videoElems[previousIndex] !== null
-    ) {
-      this.videoElems[previousIndex].hideVideo();
-      this.videoElems[previousIndex] = new VideoSwap(
-        $('.js-expand-video', this.swiperEl.slides[previousIndex])
-      );
-    }
-  }
+  //   if (
+  //     previousIndex !== undefined &&
+  //     this.videoElems[previousIndex] !== null
+  //   ) {
+  //     this.videoElems[previousIndex].hideVideo();
+  //     this.videoElems[previousIndex] = new VideoSwap(
+  //       $('.js-expand-video', this.swiperEl.slides[previousIndex])
+  //     );
+  //   }
+  // }
 
   swiperUpdate() {
     this.currentEl = $('.swiper-pagination-bullet-active', this.paginationEl);
