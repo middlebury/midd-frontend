@@ -6,9 +6,10 @@
   {% else %}
     <figure class="journey-section__background">
       <video playsinline autoplay muted loop class="journey-section__video">
-        <source src="{{ video }}" type="video/mp4">
+        <source src="{{video}}" type="video/mp4">
         <track kind="descriptions" srclang="en" src="descriptions.vtt" default/>
       </video>
+      {# <iframe src="https://www.youtube.com/embed/lPZGoYshMKQ?controls=0&autoplay=1&mute=1&playsinline=1" class="journey-section__video"></iframe> #}
     </figure>
     <button aria-label="Play/Pause Animation" class="journey-video--button" data-journey-video-trigger>
       <span class="journey-video--button-pause">
@@ -32,7 +33,7 @@
     <div class="container">
       <div class="journey-section__body-content align-{{ align }}">
         <div class="row">
-          <div class="{{ align == 'center' ? 'col-10' : 'col-6' }} journey-section__text">
+          <div class="{{ align == 'center' ? 'col-10' : 'col-9 col-sm-6' }} journey-section__text">
             <h1 class="h1">
               {{ title }}
             </h1>

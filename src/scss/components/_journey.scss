@@ -116,7 +116,17 @@
 
   .journey-line--section-learning {
     .journey--link-text {
-      display: none;
+      display: inline-block;
+    }
+
+    @include breakpoint(sm) {
+      .journey--link-text {
+        display: none;
+      }
+
+      .journey--link-text--tablet {
+        display: inline-block;
+      }
     }
     @include breakpoint(lg) {
       .journey--link-text {
@@ -198,6 +208,15 @@
     width: 100%;
     height: 100%;
     z-index: -1;
+
+    // iframe {
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 100%;
+    //   // transform: translate(-50%, -50%);
+    // }
 
     &:after {
       content: '';
@@ -288,6 +307,18 @@
         .row {
           justify-content: right;
           text-align: right;
+        }
+
+        &.left--mobile {
+          .row {
+            justify-content: left;
+            text-align: left;
+
+            @include breakpoint(sm) {
+              justify-content: right;
+              text-align: right;
+            }
+          }
         }
       }
 
