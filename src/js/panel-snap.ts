@@ -1,10 +1,9 @@
-import PanelSnap from 'panelsnap';
 import { $$ } from './utils/dom';
 
 let defaultOptions = {
   container: document.body,
   panelSelector: '.journey section',
-  directionThreshold: 10,
+  directionThreshold: 50,
   delay: 0,
   duration: 300,
   easing: function (t: any) {
@@ -12,6 +11,14 @@ let defaultOptions = {
   }
 };
 
+async function lazyLoadPanelSnap() {
+  const { default: PanelSnap } = await import('panelsnap');
+
+  journey.forEach(() => new PanelSnap(defaultOptions));
+}
+
 const journey = $$('.journey');
 
-journey.forEach(() => new PanelSnap(defaultOptions));
+if (journey.length !== 0) {
+  lazyLoadPanelSnap();
+}
