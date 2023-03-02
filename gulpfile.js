@@ -84,7 +84,8 @@ const clean = () =>
     './dist/**/*.html',
     './dist/**/*.js',
     './dist/**/*.css',
-    './dist/images/*'
+    './dist/images/*',
+    './dist/*.json'
   ]);
 
 const serve = () =>
@@ -261,6 +262,14 @@ const copyDeps = () => {
     .pipe(gulp.dest('./dist/js'));
 };
 
+const copyMeta = () => {
+  return gulp
+    .src([
+      './composer.json'
+    ])
+    .pipe(gulp.dest('./dist/'));
+};
+
 const deployDist = () => {
   if (!THEME_DIR) {
     return console.error('No `--themeDir` argument passed');
@@ -356,6 +365,7 @@ const buildIconSprite = () =>
 const build = gulp.series(
   clean,
   copyDeps,
+  copyMeta,
   gulp.parallel(html, images, lintStyles, styles, scripts),
   reportFilesizes
 );
