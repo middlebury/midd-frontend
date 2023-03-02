@@ -65,7 +65,7 @@
         <g class="journey-line--section journey-line--section-learning">
           {% for label in section_learning %}
             {% set text_x = label.x + 16 %}{% set text_y = label.y + 5 %}
-            <a class="journey--link" href="#slide{{label.id + 1}}" role="button" data-journey-overlay-open="midd-journey-overlay">
+            <a class="journey--link" href="#slide{{label.id}}" role="button" data-journey-overlay-open="midd-journey-overlay">
               <circle cx="{{label.x}}" cy="{{label.y}}" r="4" stroke="#F4B824" fill="#F4B824"/>
               <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
               <text class="journey--link-text" x="{{text_x}}" y="{{text_y}}">{{label.label}}</text>
@@ -74,19 +74,19 @@
           {% endfor %}
         </g>
         {# <g class="journey-line--section journey-line--section-learning">
-                  {% for label in section_learning %}
-                    {% set text_x = label.x + 16 %}{% set text_y = label.y + 5 %}
-                    <a class="journey--link" href="#slide{{label.id + 1}}" role="button" data-journey-overlay-open="midd-journey-overlay">
-                      <circle cx="{{label.x}}" cy="{{label.y}}" r="4" stroke="#F4B824" fill="#F4B824"/>
-                      <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
-                      <text class="journey--link-text" x="{{text_x}}" y="{{text_y}}">{{label.label}}</text>
-                    </a>
-                  {% endfor %}
-                </g> #}
+                                                          {% for label in section_learning %}
+                                                            {% set text_x = label.x + 16 %}{% set text_y = label.y + 5 %}
+                                                            <a class="journey--link" href="#slide{{label.id}}" role="button" data-journey-overlay-open="midd-journey-overlay">
+                                                              <circle cx="{{label.x}}" cy="{{label.y}}" r="4" stroke="#F4B824" fill="#F4B824"/>
+                                                              <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
+                                                              <text class="journey--link-text" x="{{text_x}}" y="{{text_y}}">{{label.label}}</text>
+                                                            </a>
+                                                          {% endfor %}
+                                                        </g> #}
         <g class="journey-line--section journey-line--section-place">
           {% for label in section_place %}
             {% set text_x = label.x + 16 %}{% set text_y = label.y + 5 %}
-            <a class="journey--link" href="#slide{{label.id + 1}}" role="button" data-journey-overlay-open="midd-journey-overlay">
+            <a class="journey--link" href="#slide{{label.id}}" role="button" data-journey-overlay-open="midd-journey-overlay">
               <circle cx="{{label.x}}" cy="{{label.y}}" r="4" stroke="#F4B824" fill="#F4B824"/>
               <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
               <text class="journey--link-text" x="{{text_x}}" y="{{text_y}}">{{label.label}}</text>
@@ -96,7 +96,7 @@
         <g class="journey-line--section journey-line--section-purpose__tablet">
           {% for label in section_purpose_tablet %}
             {% set text_y = label.y - 32 %}
-            <a class="journey--link" href="#slide{{label.id + 1}}" role="button" data-journey-overlay-open="midd-journey-overlay">
+            <a class="journey--link" href="#slide{{label.id}}" role="button" data-journey-overlay-open="midd-journey-overlay">
               <circle cx="{{label.x}}" cy="{{label.y}}" r="4" stroke="#F4B824" fill="#F4B824"/>
               <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
               <text class="journey--link-text" x="{{label.text_x}}" y="{{text_y}}">{{label.label}}</text>
@@ -106,7 +106,7 @@
         <g class="journey-line--section journey-line--section-purpose__desktop">
           {% for label in section_purpose_desktop %}
             {% set text_y = label.y - 32 %}
-            <a class="journey--link" href="#slide{{label.id + 1}}" role="button" data-journey-overlay-open="midd-journey-overlay">
+            <a class="journey--link" href="#slide{{label.id}}" role="button" data-journey-overlay-open="midd-journey-overlay">
               <circle cx="{{label.x}}" cy="{{label.y}}" r="4" stroke="#F4B824" fill="#F4B824"/>
               <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
               <text class="journey--link-text" x="{{label.text_x}}" y="{{text_y}}">{{label.label}}</text>
@@ -119,7 +119,7 @@
         <g class="journey-line--section journey-line--section-learning">
           {% for label in section_learning_mobile %}
             {% set text_y = label.y + 4 %}
-            <a class="journey--link" href="#slide{{label.id + 1}}" role="button" data-journey-overlay-open="midd-journey-overlay">
+            <a class="journey--link" href="#slide{{label.id}}" role="button" data-journey-overlay-open="midd-journey-overlay">
               <circle cx="{{label.x}}" cy="{{label.y}}" r="3" stroke="#F4B824" fill="#F4B824"/>
               <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
               <text class="journey--link-text" x="{{label.text_x}}" y="{{text_y}}">{{label.label}}</text>
@@ -129,7 +129,7 @@
         <g class="journey-line--section journey-line--section-place">
           {% for label in section_place_mobile %}
             {% set text_y = label.y + 4 %}
-            <a class="journey--link" href="#slide{{label.id + 1}}" role="button" data-journey-overlay-open="midd-journey-overlay">
+            <a class="journey--link" href="#slide{{label.id}}" role="button" data-journey-overlay-open="midd-journey-overlay">
               <circle cx="{{label.x}}" cy="{{label.y}}" r="3" stroke="#F4B824" fill="#F4B824"/>
               <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
               <text class="journey--link-text" x="{{label.text_x}}" y="{{text_y}}">{{label.label}}</text>
@@ -139,7 +139,7 @@
         <g class="journey-line--section journey-line--section-purpose">
           {% for label in section_purpose_mobile %}
             {% set text_y = label.y + 4 %}
-            <a class="journey--link" href="#slide{{label.id + 1}}" role="button" data-journey-overlay-open="midd-journey-overlay">
+            <a class="journey--link" href="#slide{{label.id}}" role="button" data-journey-overlay-open="midd-journey-overlay">
               <circle cx="{{label.x}}" cy="{{label.y}}" r="3" stroke="#F4B824" fill="#F4B824"/>
               <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
               <text class="journey--link-text" x="{{label.text_x}}" y="{{text_y}}">{{label.label}}</text>

@@ -20,7 +20,6 @@ class JourneySwiper {
   swiperParentEl: HTMLElement;
   swiperParentWrapperEl: HTMLElement;
   swiperConfig: SwiperOptions;
-  // videoElems: VideoSwap[];
   translate: number;
   halfWindowWidth: number;
   hiddenWidth: number;
@@ -38,7 +37,9 @@ class JourneySwiper {
     this.translate = 0;
     this.halfWindowWidth = window.innerWidth / 2;
 
+    this.swiperInit = this.swiperInit.bind(this);
     this.swiperUpdate = this.swiperUpdate.bind(this);
+    this.handleHashChange = this.handleHashChange.bind(this);
     this.resetNavigation = this.resetNavigation.bind(this);
     this.init();
   }
@@ -46,11 +47,11 @@ class JourneySwiper {
   init() {
     this.addListeners();
     this.swiperConfig = {
-      modules: [Navigation, Pagination, HashNavigation, A11y],
+      // modules: [Navigation, Pagination, HashNavigation, A11y],
       autoHeight: true,
       hashNavigation: {
-        replaceState: true,
-        watchState: true
+        // replaceState: true
+        // watchState: true
       },
       navigation: {
         nextEl: '.js-journey-next-button',
@@ -87,9 +88,9 @@ class JourneySwiper {
         }
       },
       on: {
-        paginationUpdate: () => {
-          // this.resetVideoElem();
+        paginationUpdate: (swiper) => {
           this.swiperUpdate();
+          // console.log(swiper);
         },
         slideNextTransitionStart: (swiper) => {
           swiper.allowSlideNext = false;
@@ -106,11 +107,21 @@ class JourneySwiper {
       }
     };
 
-    checkElement('.journey-modal--block.is-open').then(() => {
-      this.swiperEl = new Swiper(this.swiperClass, this.swiperConfig);
+    this.elementOnLoad('.journey-modal--block.is-open', this.swiperInit);
+  }
 
-      // Initialize video elements with VideoSwap class to enable showing/hiding videos
-      this.initVideoElems();
+  swiperInit() {
+    const modules = [Navigation, Pagination, A11y, HashNavigation];
+    Swiper.use(modules);
+    this.swiperEl = new Swiper(this.swiperClass, this.swiperConfig);
+
+    // Initialize video elements with VideoSwap class to enable showing/hiding videos
+    this.initVideoElems();
+  }
+
+  elementOnLoad(cn: string, cb: (...args: any[]) => void) {
+    checkElement(cn).then(() => {
+      cb();
     });
   }
 
@@ -131,6 +142,25 @@ class JourneySwiper {
       clearTimeout(this.timeout);
       this.timeout = setTimeout(this.resetNavigation, 250);
     });
+
+    window.addEventListener('hashchange', (e) => {
+      this.elementOnLoad(
+        '.journey-modal--block.is-open',
+        this.handleHashChange
+      );
+    });
+  }
+
+  handleHashChange() {
+    const hash = parseInt(window.location.hash.replace('#slide', ''));
+    const { MicroModal } = window;
+
+    if (isNaN(hash)) {
+      MicroModal?.close();
+    }
+    if (hash !== this.swiperEl.activeIndex) {
+      this.swiperEl.slideTo(hash, 350, false);
+    }
   }
 
   resetNavigation() {
@@ -148,33 +178,8 @@ class JourneySwiper {
   }
 
   initVideoElems() {
-    // this.videoElems = [];
-
-    // if (this.swiperEl.slides) {
-    //   this.swiperEl.slides.forEach((elem: HTMLElement, id: number) => {
-    //     if (elem.classList.contains('video-slide')) {
-    //       this.videoElems.push(new VideoSwap($('.js-expand-video', elem)));
-    //     } else {
-    //       this.videoElems.push(null);
-    //     }
-    //   });
-    // }
     $$('.js-expand-video', this.elem).forEach((elem) => new VideoSwap(elem));
   }
-
-  // resetVideoElem() {
-  //   let previousIndex = this.swiperEl?.previousIndex;
-
-  //   if (
-  //     previousIndex !== undefined &&
-  //     this.videoElems[previousIndex] !== null
-  //   ) {
-  //     this.videoElems[previousIndex].hideVideo();
-  //     this.videoElems[previousIndex] = new VideoSwap(
-  //       $('.js-expand-video', this.swiperEl.slides[previousIndex])
-  //     );
-  //   }
-  // }
 
   swiperUpdate() {
     this.currentEl = $('.swiper-pagination-bullet-active', this.paginationEl);

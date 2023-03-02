@@ -111,7 +111,7 @@ class Journey {
       }
     }
 
-    if (animProgress == this.animUpdateValue) {
+    if (animProgress === this.animUpdateValue) {
       this.journeyLineAnimInstance.pause();
     }
   }
@@ -143,10 +143,10 @@ class Journey {
 
         if (this.lineAnimBreaks[entryId] > this.animUpdateValue) {
           this.animUpdateValue = this.lineAnimBreaks[entryId];
+          this.journeyLineAnimInstance.play();
         }
 
         this.io.unobserve(entry.target);
-        this.journeyLineAnimInstance.play();
       }
     });
   }
