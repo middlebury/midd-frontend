@@ -74,15 +74,15 @@
           {% endfor %}
         </g>
         {# <g class="journey-line--section journey-line--section-learning">
-                                                          {% for label in section_learning %}
-                                                            {% set text_x = label.x + 16 %}{% set text_y = label.y + 5 %}
-                                                            <a class="journey--link" href="#slide{{label.id}}" role="button" data-journey-overlay-open="midd-journey-overlay">
-                                                              <circle cx="{{label.x}}" cy="{{label.y}}" r="4" stroke="#F4B824" fill="#F4B824"/>
-                                                              <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
-                                                              <text class="journey--link-text" x="{{text_x}}" y="{{text_y}}">{{label.label}}</text>
-                                                            </a>
-                                                          {% endfor %}
-                                                        </g> #}
+                                                                  {% for label in section_learning %}
+                                                                    {% set text_x = label.x + 16 %}{% set text_y = label.y + 5 %}
+                                                                    <a class="journey--link" href="#slide{{label.id}}" role="button" data-journey-overlay-open="midd-journey-overlay">
+                                                                      <circle cx="{{label.x}}" cy="{{label.y}}" r="4" stroke="#F4B824" fill="#F4B824"/>
+                                                                      <circle class="journey--dot-ripple" cx="{{label.x}}" cy="{{label.y}}" fill="none"/>
+                                                                      <text class="journey--link-text" x="{{text_x}}" y="{{text_y}}">{{label.label}}</text>
+                                                                    </a>
+                                                                  {% endfor %}
+                                                                </g> #}
         <g class="journey-line--section journey-line--section-place">
           {% for label in section_place %}
             {% set text_x = label.x + 16 %}{% set text_y = label.y + 5 %}
@@ -156,7 +156,7 @@
       align: 'center',
     } %}
     {% include 'partials/journey-section.twig' with {
-      video: '/images/demo/videos/learning.mp4',
+      video: 'https://www.middlebury.edu/office/sites/www.middlebury.edu.office/files/learning_30.mp4',
       duration: 2.6,
       name: 'learning',
       title: 'Our Approach to Learning',
@@ -171,7 +171,7 @@
       ]
     } %}
     {% include 'partials/journey-section.twig' with {
-      video: '/images/demo/videos/place.mp4',
+      video: 'https://www.middlebury.edu/office/sites/www.middlebury.edu.office/files/place_30.mp4',
       duration: 3,
       name: 'place',
       title: 'The Experience of Place',
@@ -185,7 +185,7 @@
       ]
     } %}
     {% include 'partials/journey-section.twig' with {
-      video: '/images/demo/videos/purpose.mp4',
+      video: 'https://www.middlebury.edu/office/sites/www.middlebury.edu.office/files/purpose_30.mp4',
       duration: 3,
       name: 'purpose',
       title: 'A Sense of Purpose',
