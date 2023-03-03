@@ -143,6 +143,7 @@ class Journey {
 
         if (this.lineAnimBreaks[entryId] > this.animUpdateValue) {
           this.animUpdateValue = this.lineAnimBreaks[entryId];
+          console.log(this.animUpdateValue);
           this.journeyLineAnimInstance.play();
         }
 
