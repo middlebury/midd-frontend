@@ -5,11 +5,13 @@
     </figure>
   {% else %}
     <figure class="journey-section__background">
-      <video playsinline autoplay muted loop class="journey-section__video">
+      <video playsinline autoplay muted loop class="journey-section__video" data-journey-video data-poster="{{poster_image}}">
         <source src="{{video}}" type="video/mp4">
         <track kind="descriptions" srclang="en" src="descriptions.vtt" default/>
       </video>
       {# <iframe src="https://www.youtube.com/embed/lPZGoYshMKQ?controls=0&autoplay=1&mute=1&playsinline=1" class="journey-section__video"></iframe> #}
+      {# <div style="width: 100%; height: 100%"> <iframe frameborder="0" height="100%" width="100%" src="https://www.youtube.com/embed/W0LHTWG-UmQ?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=W0LHTWG-UmQ" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+                                    </div> #}
     </figure>
     <button aria-label="Play/Pause Animation" class="journey-video--button" data-journey-video-trigger>
       <span class="journey-video--button-pause">

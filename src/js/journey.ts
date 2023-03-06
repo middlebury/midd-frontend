@@ -1,6 +1,7 @@
 import MicroModal from 'micromodal';
 import anime, { AnimeInstance } from 'animejs';
 import { $, $$ } from './utils/dom';
+import lozad from 'lozad';
 
 class Journey {
   elem: HTMLElement;
@@ -40,6 +41,11 @@ class Journey {
 
   addListeners() {
     this.matchMedia.addListener(this.deviceInit);
+
+    // init lazy loaded videos
+
+    const lazyLoadVideos = lozad('[data-journey-video]');
+    lazyLoadVideos.observe();
   }
 
   deviceInit() {
