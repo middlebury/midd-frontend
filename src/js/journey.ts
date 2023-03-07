@@ -43,7 +43,6 @@ class Journey {
     this.matchMedia.addListener(this.deviceInit);
 
     // init lazy loaded videos
-
     const lazyLoadVideos = lozad('[data-journey-video]');
     lazyLoadVideos.observe();
   }
@@ -87,6 +86,7 @@ class Journey {
       easing: 'linear',
       autoplay: false,
       update: (anim) => {
+        console.log(this.animUpdateValue);
         this.animUpdate(anim);
       }
     });
@@ -149,7 +149,7 @@ class Journey {
 
         if (this.lineAnimBreaks[entryId] > this.animUpdateValue) {
           this.animUpdateValue = this.lineAnimBreaks[entryId];
-          console.log(this.animUpdateValue);
+          // console.log(this.animUpdateValue);
           this.journeyLineAnimInstance.play();
         }
 
