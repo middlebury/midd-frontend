@@ -1,4 +1,4 @@
-<section id={{name}} class="journey-section journey-section--{{name}} js-journey-section" data-section={{name}}>
+<section id={{name}} class="journey-section journey-section--{{name}} js-journey-section" data-section={{name}}{% if title_label is not empty %} aria-labelledby="{{ title_label }}"{% endif %}>
   {% if image is defined %}
     <figure class="journey-section__background">
       <img src="{{ image }}" alt=""/>
@@ -33,15 +33,10 @@
       <div class="journey-section__body-content align-{{ align }}">
         <div class="row">
           <div class="{{ align == 'center' ? 'col-10' : 'col-9 col-sm-6' }} journey-section__text">
-            {% if name is same as("intro") %}
-              <h1 class="h1" id="midd-page-header-label">
-                {{ title }}
-              </h1>
-            {% else %}
-              <h2 class="h1">
-                {{ title }}
-              </h2>
-            {% endif %}
+            {% set header_elem = name is same as("intro") ? 'h1' : 'h2' %}
+            <{{ header_elem }} class="h1" id="{{ title_label is not empty ? title_label : 'midd-page-header-label' }}">
+              {{ title }}
+            </{{ header_elem }}>
             {% if blurb %}
               <p>
                 {{ blurb }}
