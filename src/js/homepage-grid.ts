@@ -112,16 +112,16 @@ MicroModal.init({
   onShow: (modal: any) => {
     $('[data-grid-overlay-close]', modal).focus();
 
-    modal.videoElem = $('.js-expand-video', modal);
-    if (modal.videoElem) {
+    if (!modal.video) {
+      modal.videoElem = $('.js-expand-video', modal);
       modal.video = new VideoSwap(modal.videoElem);
     }
   },
-  onClose: (modal: any) => {
-    if (modal.videoElem) {
-      modal.video.hideVideo();
-    }
-  },
+  // onClose: (modal: any) => {
+  //   if (modal.videoElem) {
+  //     modal.video.hideVideo();
+  //   }
+  // },
   disableScroll: true
 });
 

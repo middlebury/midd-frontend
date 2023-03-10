@@ -94,11 +94,12 @@
     "micromodal": "^0.4.10",
     "normalize.css": "^8.0.1",
     "object-fit-images": "^3.2.4",
+    "panelsnap": "github:poojagunturu96/panelsnap",
     "pikaday": "^1.8.2",
     "preact": "^10.11.3",
     "stickybits": "^3.7.9",
     "superclamp": "^0.2.3",
-    "swiper": "^7.0.7"
+    "swiper": "^9.1.0"
   },
   "bundlesize": [
     {

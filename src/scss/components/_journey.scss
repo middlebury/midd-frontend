@@ -1,67 +1,29 @@
-/* stylelint-disable */
-// not using these in prod styles yet
+// Animation styles
 
-.hero {
-  position: relative;
-  height: 568px;
-  overflow: hidden;
-
-  @include breakpoint(md) {
-    height: 675px;
-  }
-
-  @include breakpoint(lg) {
-    padding-top: percentage(9/16);
-    min-height: 100%;
+@keyframes offset {
+  100% {
+    stroke-dashoffset: 0;
   }
 }
 
-.hero-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  &:after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.2;
-    background: $black;
+@keyframes dot-ripple {
+  0% {
+    stroke: #f4b824;
+    stroke-width: 1;
+    r: 4px;
   }
-
-  img {
-    max-width: inherit;
-    width: auto;
-    height: 100%;
-    transform: translateX(-50%);
-    position: relative;
-    left: 50%;
+  30% {
+    stroke: #f4b824;
+    stroke-width: 1;
+  }
+  100% {
+    stroke: transparent;
+    stroke-width: 0;
+    r: 16px;
   }
 }
 
-.hero-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 20;
-}
-
-.hero-title {
-  color: $white;
-  text-align: center;
-  text-shadow: 0 1px 4px rgba(black, 0.1);
-}
+// Element Styles
 
 .journey {
   position: relative;
@@ -71,339 +33,328 @@
 .journey-line-box {
   position: absolute;
   width: 100%;
-  right: 5%;
-  top: 0;
-  text-align: right;
-  z-index: 20;
-  opacity: 0.6;
-
-  @include breakpoint(md) {
-    opacity: 0.8;
-    top: -100px;
-    right: 0;
-  }
-
-  @include breakpoint(lg) {
-    opacity: 1;
-    top: -5%;
-    right: 0;
-    // right: -200px;
-  }
+  pointer-events: auto;
 }
 
 .journey-line {
-  max-width: none;
-  // margin-left: auto;
-}
+  position: relative;
+  z-index: 20;
 
-.journey-line--mobile {
-  width: 42px;
-  height: 1452px;
-  @include breakpoint(md) {
-    display: none;
+  .journey-line--section .journey--link {
+    &:hover .journey--dot-ripple {
+      stroke: #f4b824;
+      stroke-width: 0;
+      animation: dot-ripple 2s infinite ease-out;
+    }
   }
-}
-.journey-line--tablet {
-  display: none;
 
-  @include breakpoint(md) {
+  .journey--link-text {
+    color: white;
+    fill: white;
+  }
+
+  &.journey-line--mobile {
     display: inline-block;
-    width: 620px;
-    height: 2070px;
+    width: 53%;
+    right: -46%;
+    padding-top: percentage(16/9);
+
+    .journey--link-text {
+      font-size: $typescale-1;
+    }
+
+    @include breakpoint(sm) {
+      display: none;
+    }
   }
 
-  @include breakpoint(lg) {
+  &.journey-line--desktop {
     display: none;
+    right: -12%;
+
+    @include breakpoint(sm) {
+      display: inline-block;
+      right: -22%;
+      padding-top: calc(225 / 256 * 100vw - 6%);
+      transform: scale(1.1);
+    }
+
+    @include breakpoint(lg) {
+      width: 70%;
+      right: -30%;
+      padding-top: calc(9 / 16 * 100vw - 10%);
+      transform: none;
+    }
+
+    .journey-line--section-purpose__tablet {
+      display: contents;
+
+      @include breakpoint(lg) {
+        display: none;
+      }
+    }
+
+    .journey-line--section-purpose__desktop {
+      display: none;
+
+      @include breakpoint(lg) {
+        display: contents;
+      }
+    }
   }
-}
-.journey-line--desktop {
-  display: none;
-  @include breakpoint(lg) {
-    display: inline-block;
-    width: 80%;
-    margin-left: 0;
-    position: relative;
-    right: -10%;
+
+  .journey--link {
+    font-size: $typescale-1;
+    font-weight: $font-weight-medium;
+    line-height: 1.25;
+    fill: white;
+
+    @media only screen and (max-width: 1440px) {
+      font-size: $typescale-2;
+    }
+  }
+
+  .journey-line--section-learning {
+    .journey--link-text {
+      display: inline-block;
+    }
+
+    @include breakpoint(sm) {
+      .journey--link-text {
+        display: none;
+      }
+
+      .journey--link-text--tablet {
+        display: inline-block;
+      }
+    }
+    @include breakpoint(lg) {
+      .journey--link-text {
+        display: inline-block;
+      }
+
+      .journey--link-text--tablet {
+        display: none;
+      }
+    }
+  }
+
+  .journey-line--section-learning.animate {
+    .journey--link:nth-child(2) .journey--dot-ripple {
+      animation-delay: 0.25s;
+    }
+    .journey--link:nth-child(3) .journey--dot-ripple {
+      animation-delay: 0.5s;
+    }
+    .journey--link:nth-child(4) .journey--dot-ripple {
+      animation-delay: 0.75s;
+    }
+
+    .journey--dot-ripple {
+      animation: dot-ripple 2s ease-out;
+    }
+  }
+
+  .journey-line--section-place.animate {
+    .journey--link:nth-child(2) .journey--dot-ripple {
+      animation-delay: 0.25s;
+    }
+    .journey--link:nth-child(3) .journey--dot-ripple {
+      animation-delay: 0.5s;
+    }
+
+    .journey--dot-ripple {
+      animation: dot-ripple 2s ease-out;
+    }
+  }
+
+  .journey-line--section-purpose__desktop.animate,
+  .journey-line--section-purpose__tablet.animate,
+  .journey-line--section-purpose.animate {
+    .journey--link:nth-child(2) .journey--dot-ripple {
+      animation-delay: 0.25s;
+    }
+    .journey--link:nth-child(3) .journey--dot-ripple {
+      animation-delay: 0.5s;
+    }
+    .journey--link:nth-child(4) .journey--dot-ripple {
+      animation-delay: 0.75s;
+    }
+
+    .journey--dot-ripple {
+      animation: dot-ripple 2s ease-out;
+    }
   }
 }
 
 .journey-section {
   position: relative;
-  height: 568px;
   overflow: hidden;
+  align-items: center;
+  padding-top: percentage(16/9);
 
-  @include breakpoint(md) {
-    height: 675px;
+  @include breakpoint(sm) {
+    padding-top: percentage(225/256);
   }
 
   @include breakpoint(lg) {
     padding-top: percentage(9/16);
-    min-height: 100%;
-  }
-}
-
-.journey-section--purpose {
-  .journey-dots-item {
-    @include breakpoint(md) {
-      &:nth-child(1) {
-        margin-right: 16px;
-      }
-      &:nth-child(2) {
-        margin-right: 6px;
-      }
-      &:nth-child(3) {
-        margin-right: 6px;
-      }
-      &:nth-child(4) {
-        margin-right: 12px;
-      }
-    }
-  }
-}
-
-.journey-section--place {
-  .row {
-    @include breakpoint(lg) {
-      justify-content: flex-end;
-      text-align: right;
-    }
   }
 
-  .journey-dots-item {
-    @include breakpoint(md) {
-      &:nth-child(1) {
-        margin-right: 22px;
-      }
-      &:nth-child(2) {
-        margin-right: 12px;
-      }
-      &:nth-child(3) {
-        margin-right: 8px;
-      }
-    }
-  }
-}
-
-.journey-section--learning {
-}
-
-.journey-article {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 2rem;
-
-  a {
-    color: $white;
-  }
-}
-
-.journey-bg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-
-  &:after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
+  .journey-section__background {
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0.5;
-    background-color: #000;
-    @include breakpoint(md) {
-      opacity: 1;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    video[poster] {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+
+    // iframe {
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 100%;
+    //   // transform: translate(-50%, -50%);
+    // }
+
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0.9;
       background-color: transparent;
       background-image: linear-gradient(to top, #000, transparent 80%);
     }
   }
 
-  img {
-    max-width: inherit;
-    width: auto;
-    height: 100%;
-    transform: translateX(-50%);
-    position: relative;
-    left: 50%;
-  }
-}
+  .journey-video--button {
+    position: absolute;
+    bottom: $spacing-9;
+    right: $spacing-5;
+    color: white;
+    z-index: 30;
+    opacity: 0.7;
 
-.journey-main {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 30;
-  > .container {
-    height: 100%;
-    position: relative;
-  }
-}
+    .journey-video--button-play {
+      display: none;
+    }
+    .journey-video--button-pause {
+      display: block;
+    }
 
-.journey-content {
-  height: 100%;
-  display: flex;
-  align-items: flex-end;
-  @include breakpoint(md) {
-    align-items: center;
-  }
-}
+    &.not-playing {
+      .journey-video--button-play {
+        display: block;
+      }
+      .journey-video--button-pause {
+        display: none;
+      }
+    }
 
-.journey-title {
-  color: $white;
-  margin-bottom: 1.5rem;
-  @include breakpoint(md) {
-    margin-bottom: 2rem;
-  }
-  @include breakpoint(lg) {
-    margin-bottom: 3rem;
-  }
-}
-
-.journey-text {
-  font-size: 14px;
-  color: $white;
-  margin-bottom: 2rem;
-
-  @include breakpoint(md) {
-    font-size: 16px;
-  }
-  @include breakpoint(lg) {
-    font-size: 18px;
-  }
-}
-
-.journey-button {
-  color: $white;
-  padding: 0.5rem 2rem;
-  border: 2px solid $white;
-  display: inline-block;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.journey-dots {
-  list-style: none;
-  padding: 0;
-  position: absolute;
-
-  a {
-    color: $white;
-    text-decoration: none;
-  }
-
-  .journey-section--purpose & {
-    top: 80px + 24px;
-    right: 5%;
-
-    @include breakpoint(md) {
-      top: 50%;
-      right: 56px;
-      transform: translateY(-50%);
+    .icon {
+      width: $typescale-9;
+      height: $typescale-9;
     }
   }
 
-  .journey-section--place & {
-    top: 80px + 24px;
-    right: 5%;
+  img {
+    max-width: initial;
+    width: 320%;
+    transform: translate(-30%);
 
-    @include breakpoint(md) {
-      top: 50%;
-      right: 56px;
-      transform: translateY(-50%);
+    @include breakpoint(sm) {
+      width: 156%;
+      transform: translate(-15%);
     }
 
     @include breakpoint(lg) {
-      right: 60%;
-      // top: 50;
-      // transform: none;
+      transform: unset;
+      width: 100%;
     }
   }
 
-  .journey-section--learning & {
-    top: 80px + 24px;
-    right: 5%;
-
-    @include breakpoint(md) {
-      display: flex;
-      bottom: 30px;
-      top: auto;
-      // right: 0;
-
-      .journey-dots-item + .journey-dots-item {
-        margin-left: 0.5rem;
-      }
-
-      .journey-dots-link {
-        display: block;
-        text-align: center;
-      }
-
-      .journey-dots-text {
-        // font-size: 14px;
-        display: block;
-        margin-bottom: 0.5rem;
-      }
-
-      .journey-dots-icon {
-        padding-left: 0;
-        display: inline-block;
-      }
-    }
-  }
-}
-
-.journey-dots-item {
-  margin-bottom: 1rem;
-  position: relative;
-  text-align: right;
-}
-
-.journey-dots-link {
-  position: relative;
-  display: flex;
-}
-
-.journey-dots-text {
-  text-align: right;
-  flex: 1;
-
-  strong {
-    display: block;
-  }
-}
-
-.journey-dots-icon {
-  display: flex;
-  align-items: center;
-  padding-left: 1rem;
-  // padding-right: 1rem;
-}
-
-.journey-dot {
-  display: block;
-  width: 8px;
-  height: 8px;
-  border-radius: 4px;
-  background: #f4b824;
-  position: relative;
-
-  &:after {
-    content: '';
-    display: block;
-    width: 32px;
-    height: 32px;
-    border-radius: 100%;
-    border: 1px solid #f4b824;
+  .journey-section__body {
     position: absolute;
-    left: -12px;
-    top: -12px;
-    animation: pulse 2s ease-out;
-    animation-iteration-count: infinite;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: $white;
+
+    .container {
+      height: 100%;
+    }
+
+    .journey-section__body-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+
+      &.align-left {
+        .row {
+          justify-content: left;
+          text-align: left;
+        }
+      }
+
+      &.align-right {
+        .row {
+          justify-content: right;
+          text-align: right;
+        }
+
+        &.left--mobile {
+          .row {
+            justify-content: left;
+            text-align: left;
+
+            @include breakpoint(sm) {
+              justify-content: right;
+              text-align: right;
+            }
+          }
+        }
+      }
+
+      &.align-center {
+        .row {
+          justify-content: center;
+          text-align: center;
+        }
+      }
+    }
+
+    .journey-section__text {
+      position: relative;
+      z-index: 25;
+    }
+
+    p {
+      margin-top: $spacing-3;
+    }
+
+    .journey-section__button {
+      font-weight: $font-weight-bold;
+      font-size: $typescale-2;
+      line-height: $line-height-solid;
+      color: $white;
+      padding: $spacing-3 $spacing-6;
+      margin-top: $spacing-2;
+      border: 2px solid $white;
+      height: fit-content;
+      margin-top: $spacing-7;
+    }
   }
 }

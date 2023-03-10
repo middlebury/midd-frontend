@@ -91,6 +91,7 @@ $green-light: #23b39c !default;
 $teal: #017c9f !default;
 $yellow: #ffc107 !default;
 $yellow-light: #fedb85 !default;
+$journey-yellow: #f4b824;
 
 // shades
 $white: #fff !default;
@@ -101,6 +102,8 @@ $gray: #767676 !default;
 $gray-light: #dedede !default;
 $gray-lighter: #f8f8f8 !default;
 $gray-dark: #414142 !default;
+
+$color-journey-border: #d9d9d9;
 
 // util colors
 $color-active: $sky;
@@ -196,6 +199,7 @@ $font-weight-bold: 700;
 $line-height-solid: 1;
 $line-height-heading: 1.4;
 $line-height-body: 1.7;
+$line-height-journey: 1.1;
 
 $line-heights: (
   'body': $line-height-body,
@@ -478,3 +482,5 @@ $z-index-to-top-button: 9;
 $z-index-homepage-header-button: 10;
 
 $z-index-dispatches: 2;
+
+$z-index-journey-modal: 5;

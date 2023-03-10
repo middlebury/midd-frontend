@@ -1,5 +1,6 @@
-import { on, $, $$ } from './utils/dom';
+import { on, off, $, $$ } from './utils/dom';
 import decodeHtml from './utils/decode-html';
+import { onOutOfElementView } from './utils/on-element-out-of-view';
 
 /**
  * Swaps the cotents of an element with an iframe (retrieved from data attribute) on link click.
@@ -35,6 +36,7 @@ class VideoSwap {
   content: HTMLElement | null;
   link: HTMLElement | null;
   originalContent: HTMLElement | null;
+  flag: boolean;
 
   /** iframe string encoded from server */
   iframe: string | null;
@@ -48,6 +50,7 @@ class VideoSwap {
 
     this.activeClass = 'has-video';
 
+    this.hideVideo = this.hideVideo.bind(this);
     this.init();
   }
 
@@ -68,6 +71,10 @@ class VideoSwap {
     if (this.content) {
       this.content.innerHTML = this.link.outerHTML;
     }
+
+    this.link = $('.js-video-link', this.elem);
+
+    this.addListeners();
   }
 
   showVideo() {
@@ -83,6 +90,10 @@ class VideoSwap {
     if (this.content) {
       this.content.innerHTML = html || this.iframe;
     }
+
+    onOutOfElementView(this.elem, () => {
+      this.hideVideo();
+    });
   }
 
   handleKeyUp = (e: KeyboardEvent) => {

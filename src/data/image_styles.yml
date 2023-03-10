@@ -196,3 +196,9 @@ image_styles:
       - 297x167
       - 253x142
       - 304x171
+
+  journey_modal_image:
+    title: Institutional Homepage modal Image
+    ratio: "16:9"
+    srcset:
+      - 1136x639
