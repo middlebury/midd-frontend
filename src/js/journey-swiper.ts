@@ -1,16 +1,8 @@
-import {
-  Swiper,
-  SwiperOptions,
-  Navigation,
-  A11y,
-  Pagination,
-  HashNavigation
-} from 'swiper';
 import { $, $$, checkElement } from './utils/dom';
 import VideoSwap from './video';
 
 class JourneySwiper {
-  swiperEl: Swiper;
+  swiperEl: any;
   elem: HTMLElement;
   swiperClass: string;
   paginationEl: HTMLElement;
@@ -19,7 +11,7 @@ class JourneySwiper {
   currentEl: HTMLElement;
   swiperParentEl: HTMLElement;
   swiperParentWrapperEl: HTMLElement;
-  swiperConfig: SwiperOptions;
+  swiperConfig: Object;
   translate: number;
   halfWindowWidth: number;
   hiddenWidth: number;
@@ -46,77 +38,83 @@ class JourneySwiper {
 
   init() {
     this.addListeners();
-    this.swiperConfig = {
-      // modules: [Navigation, Pagination, HashNavigation, A11y],
-      autoHeight: true,
-      hashNavigation: {
-        // replaceState: true
-        // watchState: true
-      },
-      navigation: {
-        nextEl: '.js-journey-next-button',
-        prevEl: '.js-journey-prev-button'
-      },
-      pagination: {
-        el: this.paginationClass,
-        bulletClass: 'journey-modal__cb-link',
-        clickable: true,
-        renderBullet: function (index, className) {
-          const labels = [
-            'The Liberal Arts',
-            'History of Middlebury',
-            'Principles and Values',
-            'Looking to the Future',
-            'Vermont',
-            'California',
-            'World',
-            'Engagement',
-            'Justice',
-            'Sustainability',
-            'Culture'
-          ];
-          return `
-            <a class="journey-modal__cb-link ${className}" href="#" role="button">
-              <span class="cb-link__text">
-                ${labels[index]}
-              </span>
-              <span class="cb-link__circle-wrapper">
-                <span class="cb-link__circle inner"></span>
-                <span class="cb-link__circle outer"></span>
-              </span>
-            </a>`;
-        }
-      },
-      on: {
-        paginationUpdate: (swiper) => {
-          this.swiperUpdate();
-          // console.log(swiper);
-        },
-        slideNextTransitionStart: (swiper) => {
-          swiper.allowSlideNext = false;
-        },
-        slideNextTransitionEnd: (swiper) => {
-          swiper.allowSlideNext = true;
-        },
-        slidePrevTransitionStart: (swiper) => {
-          swiper.allowSlidePrev = false;
-        },
-        slidePrevTransitionEnd: (swiper) => {
-          swiper.allowSlidePrev = true;
-        }
-      }
-    };
-
     this.elementOnLoad('.journey-modal--block.is-open', this.swiperInit);
   }
 
-  swiperInit() {
-    const modules = [Navigation, Pagination, A11y, HashNavigation];
-    Swiper.use(modules);
-    this.swiperEl = new Swiper(this.swiperClass, this.swiperConfig);
+  async getSwiper() {
+    return import(/* webpackChunkName: "swiper" */ 'swiper')
+      .then(
+        ({ default: Swiper, Navigation, A11y, Pagination, HashNavigation }) => {
+          this.swiperEl = new Swiper(this.swiperClass, {
+            modules: [Navigation, Pagination, HashNavigation, A11y],
+            autoHeight: true,
+            hashNavigation: {
+              // replaceState: true
+              // watchState: true
+            },
+            navigation: {
+              nextEl: '.js-journey-next-button',
+              prevEl: '.js-journey-prev-button'
+            },
+            pagination: {
+              el: this.paginationClass,
+              bulletClass: 'journey-modal__cb-link',
+              clickable: true,
+              renderBullet: function (index, className) {
+                const labels = [
+                  'The Liberal Arts',
+                  'History of Middlebury',
+                  'Principles and Values',
+                  'Looking to the Future',
+                  'Vermont',
+                  'California',
+                  'World',
+                  'Engagement',
+                  'Justice',
+                  'Sustainability',
+                  'Culture'
+                ];
+                return `
+                <a class="journey-modal__cb-link ${className}" href="#" role="button">
+                  <span class="cb-link__text">
+                    ${labels[index]}
+                  </span>
+                  <span class="cb-link__circle-wrapper">
+                    <span class="cb-link__circle inner"></span>
+                    <span class="cb-link__circle outer"></span>
+                  </span>
+                </a>`;
+              }
+            },
+            on: {
+              paginationUpdate: () => {
+                this.swiperUpdate();
+                // console.log(swiper);
+              },
+              slideNextTransitionStart: (swiper) => {
+                swiper.allowSlideNext = false;
+              },
+              slideNextTransitionEnd: (swiper) => {
+                swiper.allowSlideNext = true;
+              },
+              slidePrevTransitionStart: (swiper) => {
+                swiper.allowSlidePrev = false;
+              },
+              slidePrevTransitionEnd: (swiper) => {
+                swiper.allowSlidePrev = true;
+              }
+            }
+          });
+        }
+      )
+      .catch((error) => 'An error occurred while loading Swiper');
+  }
 
-    // Initialize video elements with VideoSwap class to enable showing/hiding videos
-    this.initVideoElems();
+  swiperInit() {
+    this.getSwiper().then(() => {
+      // Initialize video elements with VideoSwap class to enable showing/hiding videos
+      this.initVideoElems();
+    });
   }
 
   elementOnLoad(cn: string, cb: (...args: any[]) => void) {
@@ -158,7 +156,8 @@ class JourneySwiper {
     if (isNaN(hash)) {
       MicroModal?.close();
     }
-    if (hash !== this.swiperEl.activeIndex) {
+
+    if (this.swiperEl && hash !== this.swiperEl.activeIndex) {
       this.swiperEl.slideTo(hash, 350, false);
     }
   }
