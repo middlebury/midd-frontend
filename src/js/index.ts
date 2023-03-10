@@ -1,7 +1,16 @@
 /**
- * Polyfills to support cross-browser compatibility
+ *  Polyfills to support cross-browser compatibility
  */
+
+// Common polyfills
 import './polyfills.ts';
+
+// used in flowchart, offices, lightbox
+import 'mdn-polyfills/Element.prototype.closest';
+
+// Polyfill object fit images for easier responsive images.
+// Used in card-carousel and more.
+import 'object-fit-images';
 
 /**
  * Custom JS imports

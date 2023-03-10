@@ -1,6 +1,8 @@
 /**
  * Polyfills to support cross-browser compatibility
  */
+
+// Common polyfills
 import './polyfills.ts';
 
 import './headroom'; // sticky site headers
