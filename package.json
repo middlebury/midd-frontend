@@ -75,6 +75,7 @@
     "ts-loader": "^9.4.2",
     "typescript": "^4.9.4",
     "webpack": "^5.75.0",
+    "webpack-bundle-analyzer": "^4.8.0",
     "webpack-stream": "^7.0.0",
     "yargs": "^17.6.2"
   },
@@ -94,7 +95,7 @@
     "micromodal": "^0.4.10",
     "normalize.css": "^8.0.1",
     "object-fit-images": "^3.2.4",
-    "panelsnap": "github:poojagunturu96/panelsnap",
+    "panelsnap": "git+https://github.com/poojagunturu96/panelsnap",
     "pikaday": "^1.8.2",
     "preact": "^10.11.3",
     "stickybits": "^3.7.9",
