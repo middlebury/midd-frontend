@@ -49,7 +49,9 @@
     {% endif %}
 
     {% block layout_before_body_close %}{% endblock %}
-    {% block scripts %}{% endblock %}
-    <script src="js/bundle.js" async></script>
+    {% block additional_scripts %}{% endblock %}
+    {% block scripts %}
+      <script src="js/main.bundle.js" async></script>
+    {% endblock %}
   </body>
 </html>
