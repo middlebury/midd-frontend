@@ -47,12 +47,8 @@ class JourneySwiper {
   init() {
     this.addListeners();
     this.swiperConfig = {
-      // modules: [Navigation, Pagination, HashNavigation, A11y],
       autoHeight: true,
-      hashNavigation: {
-        // replaceState: true
-        // watchState: true
-      },
+      hashNavigation: {},
       navigation: {
         nextEl: '.js-journey-next-button',
         prevEl: '.js-journey-prev-button'
@@ -90,7 +86,6 @@ class JourneySwiper {
       on: {
         paginationUpdate: (swiper) => {
           this.swiperUpdate();
-          // console.log(swiper);
         },
         slideNextTransitionStart: (swiper) => {
           swiper.allowSlideNext = false;
@@ -139,6 +134,7 @@ class JourneySwiper {
     });
 
     window.addEventListener('resize', (e) => {
+      console.log('journey-swiper resize event');
       clearTimeout(this.timeout);
       this.timeout = setTimeout(this.resetNavigation, 250);
     });

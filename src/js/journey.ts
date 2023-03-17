@@ -11,10 +11,11 @@ class Journey {
   journeyLineAnimInstance: AnimeInstance;
   journeySections: HTMLElement[];
   io: IntersectionObserver;
-  matchMedia: MediaQueryList;
+  // matchMedia: MediaQueryList;
   deviceType: String;
   dotsAnimBreaks: number[];
   lineAnimBreaks: number[];
+  timeout: NodeJS.Timeout;
 
   constructor(el: HTMLElement) {
     this.elem = el;
@@ -27,7 +28,7 @@ class Journey {
   }
 
   init() {
-    this.matchMedia = window.matchMedia('(min-width: 512px)');
+    // this.matchMedia = window.matchMedia('(min-width: 512px)');
     this.deviceInit();
     this.addListeners();
     this.svgInit();
@@ -40,22 +41,27 @@ class Journey {
   }
 
   addListeners() {
-    this.matchMedia.addListener(this.deviceInit);
+    // this.matchMedia.addListener(this.deviceInit);
 
     // init lazy loaded videos
     const lazyLoadVideos = lozad('[data-journey-video]');
     lazyLoadVideos.observe();
+
+    window.addEventListener('resize', (e) => {
+      clearTimeout(this.timeout);
+      this.timeout = setTimeout(this.deviceInit, 250);
+    });
   }
 
   deviceInit() {
-    if (this.matchMedia.matches) {
+    if (window.innerWidth > 512) {
       this.deviceType = 'desktop';
       this.dotsAnimBreaks = [20, 42, 85];
-      this.lineAnimBreaks = [6.5, 34.2, 60.2, 100];
+      this.lineAnimBreaks = [6.5, 34.2, 60.2, 101];
     } else {
       this.deviceType = 'mobile';
       this.dotsAnimBreaks = [4, 44, 91];
-      this.lineAnimBreaks = [1, 39.2, 78.2, 100];
+      this.lineAnimBreaks = [1, 39.2, 78.2, 101];
     }
     this.pathEl = $(`.journey-line--${this.deviceType} path`, this.elem);
   }
@@ -86,7 +92,6 @@ class Journey {
       easing: 'linear',
       autoplay: false,
       update: (anim) => {
-        console.log(this.animUpdateValue);
         this.animUpdate(anim);
       }
     });
@@ -97,27 +102,26 @@ class Journey {
 
     // Logic for the dots to animate
     if (animProgress >= this.dotsAnimBreaks[0]) {
-      $(
-        `.journey-line--${this.deviceType} .journey-line--section-learning`
-      ).classList.add('animate');
+      $(`.journey-line--${this.deviceType} .learning`).classList.add('animate');
     }
     if (animProgress >= this.dotsAnimBreaks[1]) {
-      $(
-        `.journey-line--${this.deviceType} .journey-line--section-place`
-      ).classList.add('animate');
+      $(`.journey-line--${this.deviceType} .place`).classList.add('animate');
     }
     if (animProgress >= this.dotsAnimBreaks[2]) {
       if (this.deviceType == 'desktop') {
-        $('.journey-line--section-purpose__desktop').classList.add('animate');
-        $('.journey-line--section-purpose__tablet').classList.add('animate');
+        $('.purpose__desktop').classList.add('animate');
+        $('.purpose__tablet').classList.add('animate');
       } else {
-        $(
-          `.journey-line--${this.deviceType} .journey-line--section-purpose`
-        ).classList.add('animate');
+        $(`.journey-line--${this.deviceType} .purpose`).classList.add(
+          'animate'
+        );
       }
     }
 
-    if (animProgress === this.animUpdateValue) {
+    if (
+      animProgress >= this.animUpdateValue - 0.5 &&
+      animProgress <= this.animUpdateValue + 0.5
+    ) {
       this.journeyLineAnimInstance.pause();
     }
   }
@@ -149,7 +153,6 @@ class Journey {
 
         if (this.lineAnimBreaks[entryId] > this.animUpdateValue) {
           this.animUpdateValue = this.lineAnimBreaks[entryId];
-          // console.log(this.animUpdateValue);
           this.journeyLineAnimInstance.play();
         }
 
