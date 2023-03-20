@@ -48,11 +48,17 @@
   position: relative;
   z-index: 20;
 
-  .journey-link--section .journey--link {
-    &:hover .journey--dot-ripple {
-      stroke: #f4b824;
-      stroke-width: 0;
-      animation: dot-ripple 2s infinite ease-out;
+  .journey-link--section.learning,
+  .journey-link--section.place,
+  .journey-link--section.purpose,
+  .journey-link--section.purpose__desktop,
+  .journey-link--section.purpose__tablet {
+    .journey--link {
+      &:hover .journey--dot-ripple {
+        stroke: #f4b824;
+        stroke-width: 0;
+        animation: dot-ripple 2s infinite ease-out;
+      }
     }
   }
 
@@ -100,19 +106,19 @@
       transform: none;
     }
 
-    .journey-link--section.purpose__tablet {
-      display: contents;
+    .journey-link--section.purpose__tablet .journey--link {
+      display: initial;
 
       @include breakpoint(lg) {
         display: none;
       }
     }
 
-    .journey-link--section.purpose__desktop {
+    .journey-link--section.purpose__desktop .journey--link {
       display: none;
 
       @include breakpoint(lg) {
-        display: contents;
+        display: initial;
       }
     }
   }
