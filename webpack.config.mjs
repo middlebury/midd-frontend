@@ -1,8 +1,8 @@
-const webpack = require('webpack');
+import webpack from 'webpack';
 
 const PROD = process.env.NODE_ENV === 'production';
 
-module.exports = {
+const config = {
   watch: !PROD,
   mode: PROD ? 'production' : 'development',
   entry: './src/js/index.ts',
@@ -30,3 +30,5 @@ module.exports = {
     })
   ]
 };
+
+export default config;

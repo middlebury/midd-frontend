@@ -1,33 +1,38 @@
-const fs = require('fs');
-const gulp = require('gulp');
-const twig = require('gulp-twig');
-const sass = require('gulp-sass')(require('node-sass'));
-const browserSync = require('browser-sync');
-const sourcemaps = require('gulp-sourcemaps');
-const plumber = require('gulp-plumber');
-const data = require('gulp-data');
-const notify = require('gulp-notify');
-const prettify = require('gulp-prettify');
-const imagemin = require('gulp-imagemin');
-const replace = require('gulp-replace');
-const yaml = require('js-yaml');
-const del = require('del');
-const args = require('yargs').argv;
-const gulpIf = require('gulp-if');
-const size = require('gulp-size');
-const rename = require('gulp-rename');
-const postcss = require('gulp-postcss');
-const autoprefixer = require('autoprefixer');
-const mqPacker = require('css-mqpacker');
-const sortCSSMq = require('sort-css-media-queries');
-const cssnano = require('cssnano');
-const _ = require('lodash');
-const dotenv = require('dotenv');
-const svgSprite = require('gulp-svg-sprite');
-const svgo = require('gulp-svgo');
-const dom = require('gulp-dom');
-const stylelint = require('gulp-stylelint');
-const webpack = require('webpack-stream');
+import fs from 'node:fs';
+import gulp from 'gulp';
+const { series, parallel, task } = gulp;
+import gulpTwig from 'gulp-twig';
+import gulpSass from 'gulp-sass';
+import nodeSass from 'node-sass';
+import browserSync from 'browser-sync';
+import sourcemaps from 'gulp-sourcemaps';
+import plumber from 'gulp-plumber';
+import data from 'gulp-data';
+import notify from 'gulp-notify';
+import prettify from 'gulp-prettify';
+import imagemin, { mozjpeg, optipng, svgo } from 'gulp-imagemin';
+import replace from 'gulp-replace';
+import yaml from 'js-yaml';
+import { deleteAsync } from 'del';
+import args from 'yargs';
+import gulpIf from 'gulp-if';
+import size from 'gulp-size';
+import rename from 'gulp-rename';
+import postcss from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
+import mqPacker from 'css-mqpacker';
+import sortCSSMq from 'sort-css-media-queries';
+import cssnano from 'cssnano';
+import _ from 'lodash';
+import dotenv from 'dotenv';
+import svgSprite from 'gulp-svg-sprite';
+import gulpSvgo from 'gulp-svgo';
+import dom from 'gulp-dom';
+import stylelint from 'gulp-stylelint';
+import webpack from 'webpack-stream';
+import config from './webpack.config.mjs';
+
+const sass = gulpSass(nodeSass);
 
 dotenv.config();
 
@@ -80,7 +85,7 @@ const onError = function (err) {
 };
 
 const clean = () =>
-  del([
+  deleteAsync([
     './dist/**/*.html',
     './dist/**/*.js',
     './dist/**/*.css',
@@ -143,7 +148,7 @@ const styles = () => {
 const scripts = () =>
   gulp
     .src(paths.scripts.src)
-    .pipe(webpack(require('./webpack.config')))
+    .pipe(webpack(config))
     .on('error', function handleError() {
       // we want the build to fail in production builds due to TS errors...
       if (PROD) return;
@@ -183,7 +188,7 @@ const html = () =>
       })
     )
     .pipe(
-      twig({
+      gulpTwig({
         base: './src/templates',
         filters: [
           {
@@ -232,11 +237,9 @@ const images = () =>
     .src(paths.images.src)
     .pipe(
       imagemin([
-        imagemin.mozjpeg({ progressive: true }),
-        imagemin.optipng({ optimizationLevel: 5 }),
-        imagemin.svgo({
-          plugins: [{ cleanupIDs: false }]
-        })
+        mozjpeg({ progressive: true }),
+        optipng({ optimizationLevel: 5 }),
+        svgo({ cleanupIDs: false })
       ])
     )
     .pipe(gulp.dest(paths.images.dest));
@@ -254,7 +257,7 @@ const copyDeps = () => {
   // http://www.chartjs.org/docs/latest/getting-started/installation.html#bundled-build
   return gulp
     .src([
-      './node_modules/chart.js/dist/Chart.min.js',
+      './node_modules/chart.js/dist/chart.umd.js',
       './node_modules/iframe-resizer/js/iframeResizer.min.js',
       './node_modules/iframe-resizer/js/iframeResizer.contentWindow.min.js'
     ])
@@ -271,7 +274,7 @@ const deployDist = () => {
       [
         './dist/css/main.css',
         './dist/js/bundle.js',
-        './dist/js/Chart.min.js',
+        './dist/js/chart.umd.js',
         './dist/images/*'
       ],
       {
@@ -316,7 +319,7 @@ const minifySvgs = (src) =>
       }, false)
     )
     .pipe(
-      svgo({
+      gulpSvgo({
         plugins: [
           { removeTitle: true },
           { removeXMLNS: true },
@@ -353,32 +356,23 @@ const buildIconSprite = () =>
     )
     .pipe(gulp.dest('./dist/icons/sprites'));
 
-const build = gulp.series(
-  clean,
-  copyDeps,
-  gulp.parallel(html, images, lintStyles, styles, scripts),
-  reportFilesizes
+task('scripts', scripts);
+task('styles', styles);
+task('cleanAndCopyIcons', cleanAndCopyIcons);
+task('replaceImagePaths', replaceImagePaths);
+task('lintStyles', lintStyles);
+task('copyDeps', copyDeps);
+
+task(
+  'build',
+  series(
+    clean,
+    copyDeps,
+    parallel(html, images, lintStyles, styles, scripts),
+    reportFilesizes
+  )
 );
-
-const buildIcons = gulp.series(buildIconSprite, copyIcons);
-
-const dev = gulp.parallel(build, watch, serve);
-
-const devSaw = gulp.parallel(build, watch);
-
-const deploy = gulp.series(replaceImagePaths, deployDist);
-
-module.exports = {
-  deploy,
-  scripts,
-  styles,
-  build,
-  dev,
-  devSaw,
-  cleanAndCopyIcons,
-  icons: buildIcons,
-  replaceImagePaths,
-  lintStyles,
-  copyDeps,
-  default: dev
-};
+task('icons', series(buildIconSprite, copyIcons));
+task('dev', parallel('build', watch, serve));
+task('devSaw', series(buildIconSprite, copyIcons));
+task('deploy', series(replaceImagePaths, deployDist));

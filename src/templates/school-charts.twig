@@ -65,13 +65,12 @@
         } %}
 
 
-
         {% include 'paragraphs/chart-group.twig' with {
           title: 'Horizontal Bar chart',
           text: true,
           items: [
             {
-              type: 'horizontalBar',
+              type: 'bar',
               title: 'chart 1',
               suffix: '%',
               labels: ["Administration","Advising/Counseling","Analyst/Research","Communications/Marketing/PR","Management/Strategic Planning","Operations/Project Management","Sales/Account Management","Teaching/Training","Translation/Interpretation","Other"],
@@ -215,6 +214,5 @@
 
 
 {% block scripts %}
-  <script src="/js/Chart.min.js"></script>
+  <script src="/js/chart.umd.js"></script>
 {% endblock %}
-

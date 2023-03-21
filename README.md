@@ -8,7 +8,7 @@
 
 ## Requirements
 
-- Node ^12.14.1
+- Node ^18.13.0
 
 To check if you already have node installed, open terminal and use the following command:
 
