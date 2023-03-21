@@ -257,7 +257,7 @@ const copyDeps = () => {
   // http://www.chartjs.org/docs/latest/getting-started/installation.html#bundled-build
   return gulp
     .src([
-      './node_modules/chart.js/dist/chart.umd.js',
+      './node_modules/chart.js/dist/Chart.min.js',
       './node_modules/iframe-resizer/js/iframeResizer.min.js',
       './node_modules/iframe-resizer/js/iframeResizer.contentWindow.min.js'
     ])
@@ -274,7 +274,7 @@ const deployDist = () => {
       [
         './dist/css/main.css',
         './dist/js/bundle.js',
-        './dist/js/chart.umd.js',
+        './dist/js/Chart.min.js',
         './dist/images/*'
       ],
       {
