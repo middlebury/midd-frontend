@@ -1,4 +1,4 @@
-<header class="midd-header midd-header--institutional">
+<header class="midd-header--institutional js-midd-header">
   <div class="midd-header__container">
 
     <div class="midd-header__brand">
@@ -11,7 +11,7 @@
 
     <nav class="midd-nav" aria-labelledby="midd-header-nav-label">
       <h2 class="sr-only" id="midd-header-nav-label">Primary navigation</h2>
-      <button class="midd-nav__handle" data-toggle-target=".js-midd-nav" data-toggle-group="midd-header" aria-expanded="false">
+      <button class="midd-nav__handle" data-toggle-target=".js-midd-header" data-toggle-group="midd-header" aria-expanded="false">
         {% include 'partials/icon.twig' with { name: 'bars', class: 'mr-1 midd-nav__bars' } %}
         {% include 'partials/icon.twig' with { name: 'times', class: 'mr-1 midd-nav__times' } %}
         <span class="d-none d-sm-inline">Menu</span>

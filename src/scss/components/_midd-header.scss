@@ -33,15 +33,6 @@
   @include make-container;
   position: relative;
   display: flex;
-
-  @include breakpoint(lg) {
-    // align-items: flex-start;
-    // justify-content: space-between;
-  }
-
-  .midd-header--transparent & {
-    // max-width: 100%;
-  }
 }
 
 .midd-header__brand {

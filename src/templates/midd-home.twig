@@ -2,71 +2,77 @@
 
 {% set midd_institutional_header = true %}
 
-{% set section_learning = [
-  {id: 0, label: 'The Liberal Arts', x: '957', y: '259.75', text_x_tablet: '834'},
-  {id: 1, label: 'History of Middlebury', x: '967', y: '312', text_x_tablet: '806'},
-  {id: 2, label: 'Principles and Values', x: '966', y: '364.25', text_x_tablet: '810'},
-  {id: 3, label: 'Looking to the Future', x: '952', y: '416.5', text_x_tablet: '793'}
+{% set section_desktop_learning = [
+  {id: 0, label: 'Why Middlebury', x: '1000', y: '195'},
+  {id: 1, label: 'Mentor-Student Partnerships', x: '1051', y: '407'},
+  {id: 2, label: 'Immersive Environments', x: '954', y: '609'},
 ] %}
 
-{% set section_place = [
-  {id: 4, label: 'Vermont', x: '429', y: '206'},
-  {id: 5, label: 'California', x: '409', y: '314.5'},
-  {id: 6, label: 'World', x: '413', y: '427'}
+{% set section_tablet_learning = [
+  {id: 0, label: 'Why Middlebury', x: '420', y: '108'},
+  {id: 1, label: '<tspan x="581" y="344">Mentor-Student</tspan><tspan x="581" y="365">Partnerships</tspan>', x: '557', y: '339'},
+  {id: 2, label: 'Immersive Environments', x: '244', y: '543'},
+] %}
+
+{% set section_mobile_learning = [
+  {id: 0, label: 'Why Middlebury', x: '174', y: '121'},
+  {id: 1, label: '<tspan x="204" y="427">Mentor-Student</tspan><tspan x="204" y="443">Partnerships</tspan>', x: '188', y: '422'},
+  {id: 2, label: 'Immersive Environments', x: '76', y: '510'},
+] %}
+
+{% set section_desktop_thinking = [
+  {id: 4, label: 'Alumni in the World', x: '398', y: '265', text_x: '244'},
+  {id: 5, label: 'Faculty in the News', x: '334', y: '431', text_x: '178'},
+  {id: 6, label: 'Students in Motion', x: '403', y: '607', text_x: '254'}
 ]
 %}
 
-{% set section_purpose_desktop = [
-  {id: 7, label: 'Engagement', x: '527', y: '564.25', text_x: '485.35'},
-  {id: 8, label: 'Justice', x: '715.667', y: '564.25', text_x: '694.97'},
-  {id: 9, label: 'Sustainability', x: '904.333', y: '564.25', text_x: '859.587'},
-  {id: 10, label: 'Culture', x: '1093', y: '564.25', text_x: '1068.38'},
+{% set section_tablet_thinking = [
+  {id: 4, label: 'Alumni in the World', x: '478', y: '148'},
+  {id: 5, label: '<tspan x="619" y="355">Faculty in &#10;</tspan><tspan x="619" y="376">the News</tspan>', x: '595', y: '350'},
+  {id: 6, label: 'Students in Motion', x: '440', y: '572'}
+]
+%}
+
+{% set section_mobile_thinking = [
+  {id: 4, label: 'Vermont', x: '133', y: '93'},
+  {id: 5, label: 'California', x: '170', y: '426'},
+  {id: 6, label: 'World', x: '55', y: '499'}
 ] %}
 
-{% set section_purpose_tablet = [
-  {id: 7, label: 'Engagement', x: '483', y: '618', text_x: '443.133'},
-  {id: 8, label: 'Justice', x: '610', y: '618', text_x: '590.305'},
-  {id: 9, label: 'Sustainability', x: '738', y: '618', text_x: '699.07'},
-  {id: 10, label: 'Culture', x: '866', y: '618', text_x: '840.68'},
+{% set section_desktop_opportunity = [
+  {id: 7, label: '"Connected" Middlebury', x: '1000', y: '140'},
+  {id: 8, label: 'Middlebury College', x: '1107', y: '340'},
+  {id: 9, label: 'Graduate and Professional Schools', x: '1004', y: '572'},
 ] %}
 
-{% set section_learning_mobile = [
-  {id: 0, label: 'The Liberal Arts', x: '153', y: '108', text_x: '37'},
-  {id: 1, label: 'History of Middlebury', x: '153', y: '148', text_x: '3'},
-  {id: 2, label: 'Principles and Values', x: '153', y: '188', text_x: '5'},
-  {id: 3, label: 'Looking to the Future', x: '153', y: '228', text_x: '5'}
+{% set section_tablet_opportunity = [
+  {id: 7, label: '"Connected" Middlebury', x: '469', y: '246'},
+  {id: 8, label: '<tspan x="624" y="396">Middlebury</tspan><tspan x="624" y="417">College</tspan>', x: '600', y: '391'},
+  {id: 9, label: '<tspan x="560" y="591">Graduate and</tspan><tspan x="560" y="612">Professional Schools</tspan>', x: '536', y: '586'},
 ] %}
 
-{% set section_place_mobile = [
-  {id: 4, label: 'Vermont', x: '301', y: '112', text_x: '224'},
-  {id: 5, label: 'California', x: '301', y: '160', text_x: '219'},
-  {id: 6, label: 'World', x: '301', y: '208', text_x: '241'}
-] %}
-
-{% set section_purpose_mobile = [
-  {id: 7, label: 'Engagement', x: '301', y: '188', text_x: '203'},
-  {id: 8, label: 'Justice', x: '301', y: '228', text_x: '237'},
-  {id: 9, label: 'Sustainability', x: '301', y: '268', text_x: '197'},
-  {id: 10, label: 'Culture', x: '301', y: '308', text_x: '232'}
+{% set section_mobile_opportunity = [
+  {id: 7, label: '"Connected" Middlebury', x: '117', y: '103'},
+  {id: 8, label: 'Middlebury College', x: '159', y: '429'},
+  {id: 9, label: '<tspan x="111" y="511">Graduate and</tspan><tspan x="111" y="527">Professional Schools</tspan>', x: '95', y: '506'},
 ] %}
 
 {% block page %}
   <div class="journey">
     {% include 'partials/journey-section.twig' with {
       image: '/images/hero.jpg',
-      duration: 0.65,
       name: 'intro',
-      title: 'The most globally engaged college in the country.',
+      title: 'Chart your own course of study in one of the most <strong>immersive</strong> and <strong>globally engaged</strong> experiences in higher education',
+      sub_title: 'Vermont | Monterey, CA | The World',
       align: 'center',
+      school_picker: true
     } %}
     {% include 'partials/journey-section.twig' with {
       poster_image: '/images/demo/learning.jpg',
       video: 'https://www.middlebury.edu/office/sites/www.middlebury.edu.office/files/learning_30.mp4',
-      duration: 2.6,
       name: 'learning',
-      title: 'Our Approach to Learning',
-      blurb: 'Middlebury teaches students how to decode, understand, connect, and self-express in culturally relevant ways and prepares students to independently define, pursue, and achieve their goals.',
-      button_text: 'Learn More',
+      blurb: 'A breadth and depth of <strong>learning</strong> and <strong>experience</strong> … and capacity for <strong>exploration</strong> that will last a lifetime',
       align: 'left',
       dots: [
         'The Liberal Arts',
@@ -78,11 +84,8 @@
     {% include 'partials/journey-section.twig' with {
       poster_image: '/images/demo/place.jpg',
       video: 'https://www.middlebury.edu/office/sites/www.middlebury.edu.office/files/place_30.mp4',
-      duration: 3,
-      name: 'place',
-      title: 'The Experience of Place',
-      blurb: 'Physical and cultural landscapes provide the context for experiential learning.  Place orients, inspires, informs and catalyzes personal inquiry.',
-      button_text: 'Learn More',
+      name: 'thinking',
+      blurb: 'An expansive education built on <strong>critical thinking</strong> and <strong>compassionate doing</strong>',
       align: 'right left--mobile',
       dots: [
         'Vermont',
@@ -93,11 +96,8 @@
     {% include 'partials/journey-section.twig' with {
       poster_image: '/images/demo/purpose.jpg',
       video: 'https://www.middlebury.edu/office/sites/www.middlebury.edu.office/files/purpose_30.mp4',
-      duration: 3,
-      name: 'purpose',
-      title: 'A Sense of Purpose',
-      blurb: 'VISION: A world with a robust and inclusive public sphere where ethical citizens work across intellectual, geographical, and cultural borders.',
-      button_text: 'Learn More',
+      name: 'opportunity',
+      blurb: '<strong>A constellation</strong> of schools and programs, a world of educational <strong>opportunity</strong>',
       align: 'left',
       dots: [
         'Engagement',

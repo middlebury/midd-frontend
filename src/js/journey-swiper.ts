@@ -28,7 +28,7 @@ class JourneySwiper {
 
   constructor(el: HTMLElement) {
     this.elem = el;
-    this.swiperClass = '.mySwiper';
+    this.swiperClass = '.journey-swiper';
     this.paginationClass = '.swiper-pagination';
     this.paginationEl = $(this.paginationClass);
     this.swiperParentEl = $('.journey-modal__pagination');
@@ -42,6 +42,12 @@ class JourneySwiper {
     this.handleHashChange = this.handleHashChange.bind(this);
     this.resetNavigation = this.resetNavigation.bind(this);
     this.init();
+  }
+
+  elementOnLoad(cn: string, cb: (...args: any[]) => void) {
+    checkElement(cn).then((selector) => {
+      cb(selector);
+    });
   }
 
   init() {
@@ -59,17 +65,15 @@ class JourneySwiper {
         clickable: true,
         renderBullet: function (index, className) {
           const labels = [
-            'The Liberal Arts',
-            'History of Middlebury',
-            'Principles and Values',
-            'Looking to the Future',
-            'Vermont',
-            'California',
-            'World',
-            'Engagement',
-            'Justice',
-            'Sustainability',
-            'Culture'
+            'Why Middlebury',
+            'Mentor-Student Partnerships',
+            'Immersive Environments',
+            'Alumni in the World',
+            'Faculty in the News',
+            'Students in Motion',
+            '"Connected" Middlebury',
+            'Middlebury College',
+            'Graduate and Professional Schools'
           ];
           return `
             <a class="journey-modal__cb-link ${className}" href="#" role="button">
@@ -84,7 +88,7 @@ class JourneySwiper {
         }
       },
       on: {
-        paginationUpdate: (swiper) => {
+        paginationUpdate: () => {
           this.swiperUpdate();
         },
         slideNextTransitionStart: (swiper) => {
@@ -114,14 +118,8 @@ class JourneySwiper {
     this.initVideoElems();
   }
 
-  elementOnLoad(cn: string, cb: (...args: any[]) => void) {
-    checkElement(cn).then(() => {
-      cb();
-    });
-  }
-
   addListeners() {
-    checkElement('.journey-modal__cb-link').then((selector) => {
+    this.elementOnLoad('.journey-modal__cb-link', (selector) => {
       this.paginationDotEls = $$(selector);
       this.paginationDotEls.forEach((el) => {
         el.addEventListener('mouseenter', (e) => {
@@ -134,7 +132,6 @@ class JourneySwiper {
     });
 
     window.addEventListener('resize', (e) => {
-      console.log('journey-swiper resize event');
       clearTimeout(this.timeout);
       this.timeout = setTimeout(this.resetNavigation, 250);
     });
@@ -180,8 +177,16 @@ class JourneySwiper {
   swiperUpdate() {
     this.currentEl = $('.swiper-pagination-bullet-active', this.paginationEl);
 
-    this.hiddenWidth =
-      this.swiperParentEl.scrollWidth - this.swiperParentWrapperEl.clientWidth;
+    let scrollWidth = this.swiperParentEl.scrollWidth;
+
+    // Check if the scrolling distance exceeds the element width,
+    // if it does set it to the element width so that it doesn't
+    // scroll past the width
+    if (scrollWidth > this.swiperParentEl.clientWidth) {
+      scrollWidth = this.swiperParentEl.clientWidth;
+    }
+
+    this.hiddenWidth = scrollWidth - this.swiperParentWrapperEl.clientWidth;
 
     const currentElLeft = this.currentEl?.getBoundingClientRect().left;
 
@@ -203,9 +208,5 @@ class JourneySwiper {
     }
   }
 }
-
-const swiper = $$('.mySwiper');
-
-swiper.forEach((elem) => new JourneySwiper(elem));
 
 export default JourneySwiper;

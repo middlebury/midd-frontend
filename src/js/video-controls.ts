@@ -1,14 +1,15 @@
 import { $, $$ } from './utils/dom';
+import lozad from 'lozad';
 
 class VideoControls {
   elem: HTMLElement;
-  buttons: HTMLElement;
+  controls: HTMLElement;
   videoElement: HTMLMediaElement;
 
   constructor(elem: HTMLElement) {
     this.elem = elem;
     this.videoElement = $('.journey-section__video', this.elem);
-    this.buttons = $('[data-journey-video-trigger]', this.elem);
+    this.controls = $('[data-journey-video-trigger]', this.elem);
 
     this.handleClick = this.handleClick.bind(this);
     this.init();
@@ -16,15 +17,24 @@ class VideoControls {
 
   init() {
     this.addListeners();
+
+    if (window.matchMedia('(max-width: 512px)').matches) {
+      this.videoElement.autoplay = false;
+      this.controls.classList.add('not-playing');
+    }
   }
 
   addListeners() {
-    this.buttons.addEventListener('click', this.handleClick);
+    // init lazy loaded videos
+    const lazyLoadVideos = lozad(this.videoElement);
+    lazyLoadVideos.observe();
+
+    this.controls.addEventListener('click', this.handleClick);
   }
 
   handleClick(e: Event) {
-    this.buttons.classList.toggle('not-playing');
-    if (this.buttons.classList.contains('not-playing')) {
+    this.controls.classList.toggle('not-playing');
+    if (this.controls.classList.contains('not-playing')) {
       this.videoElement.pause();
     } else {
       this.videoElement.play();
@@ -33,7 +43,8 @@ class VideoControls {
 }
 
 const sections = $$('.journey-section');
-const firstSection = sections.shift();
+sections.shift();
+
 sections.forEach((section) => {
   new VideoControls(section);
 });

@@ -10,7 +10,7 @@
   0% {
     stroke: #f4b824;
     stroke-width: 1;
-    r: 4px;
+    r: 8px;
   }
   30% {
     stroke: #f4b824;
@@ -19,7 +19,7 @@
   100% {
     stroke: transparent;
     stroke-width: 0;
-    r: 16px;
+    r: 20px;
   }
 }
 
@@ -30,17 +30,29 @@
   overflow: hidden;
 }
 
-.journey-line-box {
+.journey-line-box,
+.journey-link-box {
   position: absolute;
   width: 100%;
   pointer-events: auto;
   top: 0;
+}
+
+.journey-line-box {
+  top: 22%;
 
   @include breakpoint(sm) {
-    top: -3%;
+    top: 16%;
   }
+
   @include breakpoint(lg) {
-    top: -17%;
+    top: 24%;
+  }
+}
+
+.journey-link-box {
+  @include breakpoint(lg) {
+    top: 0;
   }
 }
 
@@ -48,157 +60,124 @@
   position: relative;
   z-index: 20;
 
-  .journey-link--section.learning,
-  .journey-link--section.place,
-  .journey-link--section.purpose,
-  .journey-link--section.purpose__desktop,
-  .journey-link--section.purpose__tablet {
-    .journey--link {
-      &:hover .journey--dot-ripple {
-        stroke: #f4b824;
-        stroke-width: 0;
-        animation: dot-ripple 2s infinite ease-out;
-      }
-    }
-  }
-
-  .journey--link-text {
-    color: white;
-    fill: white;
-  }
-
-  &.journey-line--mobile {
-    display: inline-block;
-    width: 53%;
-    right: -46%;
-
-    .journey--link-text {
-      font-size: $typescale-1;
-    }
-
-    @include breakpoint(sm) {
-      display: none;
-    }
-
-    &.links {
-      width: 100%;
-    }
-
-    .section-place &,
-    .section-purpose & {
-      right: 0;
-    }
-  }
-
   &.journey-line--desktop {
     display: none;
-    right: -12%;
 
     @include breakpoint(sm) {
-      display: inline-block;
-      right: -22%;
       transform: scale(1.1);
     }
 
     @include breakpoint(lg) {
-      width: 70%;
-      right: -30%;
+      display: inline-block;
+      width: 54%;
+      right: -23%;
       transform: none;
-    }
-
-    .journey-link--section.purpose__tablet .journey--link {
-      display: initial;
-
-      @include breakpoint(lg) {
-        display: none;
-      }
-    }
-
-    .journey-link--section.purpose__desktop .journey--link {
-      display: none;
-
-      @include breakpoint(lg) {
-        display: initial;
-      }
     }
   }
 
-  .journey--link {
+  &.journey-line--tablet {
+    display: none;
+
+    @include breakpoint(sm) {
+      display: inline-block;
+      width: 60%;
+      right: -19%;
+    }
+
+    @include breakpoint(lg) {
+      display: none;
+    }
+  }
+
+  &.journey-line--mobile {
+    display: inline-block;
+    width: 86%;
+    right: -10%;
+
+    @include breakpoint(sm) {
+      display: none;
+    }
+  }
+}
+
+.journey-links-svg {
+  position: relative;
+  z-index: 20;
+
+  &.journey-links--desktop {
+    display: none;
+
+    @include breakpoint(lg) {
+      display: initial;
+    }
+  }
+
+  &.journey-links--tablet {
+    display: none;
+
+    @include breakpoint(sm) {
+      display: initial;
+    }
+
+    @include breakpoint(lg) {
+      display: none;
+    }
+  }
+
+  &.journey-links--mobile {
+    display: initial;
+
+    @include breakpoint(sm) {
+      display: none;
+    }
+  }
+
+  .journey-link--section .journey--link {
     font-size: $typescale-1;
     font-weight: $font-weight-medium;
     line-height: 1.25;
     fill: white;
 
-    @media only screen and (max-width: 1440px) {
-      font-size: $typescale-2;
-    }
-  }
-
-  .journey-link--section.learning {
-    .journey--link-text {
-      display: inline-block;
-    }
-
     @include breakpoint(sm) {
-      .journey--link-text {
-        display: none;
-      }
-
-      .journey--link-text--tablet {
-        display: inline-block;
-      }
+      font-size: $typescale-3;
     }
+
     @include breakpoint(lg) {
-      .journey--link-text {
-        display: inline-block;
+      font-size: $typescale-4;
+    }
+
+    &:hover .journey--dot-ripple {
+      stroke: #f4b824;
+      stroke-width: 0;
+      animation: dot-ripple 2s infinite ease-out;
+    }
+
+    .journey--link-text {
+      color: white;
+      fill: white;
+    }
+  }
+
+  .journey-link--section.animate {
+    .journey--link:nth-child(2) .journey--dot-ripple {
+      animation-delay: 1.85s;
+
+      @include breakpoint(sm) {
+        animation-delay: 1s;
       }
-
-      .journey--link-text--tablet {
-        display: none;
+      @include breakpoint(lg) {
+        animation-delay: 0.75s;
       }
     }
-  }
-
-  .journey-link--section.learning.animate {
-    .journey--link:nth-child(2) .journey--dot-ripple {
-      animation-delay: 0.25s;
-    }
     .journey--link:nth-child(3) .journey--dot-ripple {
-      animation-delay: 0.5s;
-    }
-    .journey--link:nth-child(4) .journey--dot-ripple {
-      animation-delay: 0.75s;
-    }
+      animation-delay: 2.5s;
 
-    .journey--dot-ripple {
-      animation: dot-ripple 2s ease-out;
-    }
-  }
-
-  .journey-link--section.place.animate {
-    .journey--link:nth-child(2) .journey--dot-ripple {
-      animation-delay: 0.25s;
-    }
-    .journey--link:nth-child(3) .journey--dot-ripple {
-      animation-delay: 0.5s;
-    }
-
-    .journey--dot-ripple {
-      animation: dot-ripple 2s ease-out;
-    }
-  }
-
-  .journey-link--section.purpose__desktop.animate,
-  .journey-link--section.purpose__tablet.animate,
-  .journey-link--section.purpose.animate {
-    .journey--link:nth-child(2) .journey--dot-ripple {
-      animation-delay: 0.25s;
-    }
-    .journey--link:nth-child(3) .journey--dot-ripple {
-      animation-delay: 0.5s;
-    }
-    .journey--link:nth-child(4) .journey--dot-ripple {
-      animation-delay: 0.75s;
+      @include breakpoint(sm) {
+        animation-delay: 2s;
+      }
+      @include breakpoint(lg) {
+        animation-delay: 1.5s;
+      }
     }
 
     .journey--dot-ripple {
@@ -209,7 +188,7 @@
 
 .journey-section {
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
   align-items: center;
   padding-top: percentage(16/9);
 
@@ -228,11 +207,23 @@
     width: 100%;
     height: 100%;
     z-index: -1;
+    background: transparent url('https://via.placeholder.com/1200x675')
+      no-repeat 50% 0% / cover;
+
+    @include breakpoint(lg) {
+      min-width: initial;
+      min-height: initial;
+      left: 0;
+    }
+
+    @include breakpoint(xl) {
+      background-image: url('https://via.placeholder.com/1440x810');
+    }
 
     video[poster] {
       width: 100%;
       height: 100%;
-      object-fit: fill;
+      object-fit: cover;
     }
 
     &:after {
@@ -249,78 +240,18 @@
     }
   }
 
-  // Styles for links on Journey line animation
-  &.journey-section--learning {
-    overflow: initial;
-
-    .section-learning {
-      @include breakpoint(sm) {
-        top: 19%;
-      }
-
-      @include breakpoint(lg) {
-        top: 0;
-      }
-
-      .journey-line-svg.journey-line--desktop {
-        transform: scale(1.52);
-        width: 100%;
-        right: 0;
-
-        @include breakpoint(lg) {
-          transform: none;
-        }
-      }
-    }
-  }
-
-  .section-place {
-    @include breakpoint(sm) {
-      top: 19%;
-    }
-    @include breakpoint(lg) {
-      top: 0;
-    }
-
-    .journey-line-svg {
-      &.journey-line--desktop {
-        transform: scale(1.64);
-        width: 100%;
-        right: 0;
-
-        @include breakpoint(lg) {
-          transform: none;
-        }
-      }
-    }
-  }
-
-  .section-purpose {
-    @include breakpoint(sm) {
-      top: 10%;
-    }
-
-    @include breakpoint(lg) {
-      top: 0;
-    }
-    .journey-line-svg.journey-line--desktop {
-      transform: scale(1.64);
-      width: 100%;
-      right: 0;
-
-      @include breakpoint(lg) {
-        transform: none;
-      }
-    }
-  }
-
   .journey-video--button {
     position: absolute;
-    bottom: $spacing-9;
-    right: $spacing-5;
+    bottom: $spacing-3;
+    right: $spacing-3;
     color: white;
     z-index: 30;
     opacity: 0.7;
+
+    @include breakpoint(lg) {
+      bottom: $spacing-5;
+      right: $spacing-5;
+    }
 
     .journey-video--button-play {
       display: none;
@@ -346,7 +277,7 @@
 
   img {
     max-width: initial;
-    width: 320%;
+    width: 316%;
     transform: translate(-30%);
 
     @include breakpoint(sm) {
@@ -390,16 +321,16 @@
           justify-content: right;
           text-align: right;
         }
+      }
 
-        &.left--mobile {
-          .row {
-            justify-content: left;
-            text-align: left;
+      &.left--mobile {
+        .row {
+          justify-content: left;
+          text-align: left;
 
-            @include breakpoint(sm) {
-              justify-content: right;
-              text-align: right;
-            }
+          @include breakpoint(lg) {
+            justify-content: right;
+            text-align: right;
           }
         }
       }
@@ -415,22 +346,162 @@
     .journey-section__text {
       position: relative;
       z-index: 25;
+      text-align: left;
+
+      > * {
+        font-family: $font-family-sans-serif;
+      }
+
+      h2 {
+        font-size: $typescale-7;
+
+        @include breakpoint(lg) {
+          font-size: rem(40);
+        }
+        font-weight: $font-weight-light;
+      }
+
+      p.sub-title {
+        font-size: $typescale-1;
+        font-weight: $font-weight-semibold;
+        color: $journey-yellow;
+        text-transform: uppercase;
+        margin-top: $spacing-5;
+        letter-spacing: $letter-spacing;
+
+        @include breakpoint(sm) {
+          font-weight: $font-weight-normal;
+          font-size: $typescale-2;
+        }
+
+        @include breakpoint(lg) {
+          margin-top: $spacing-3;
+        }
+      }
+
+      p.blurb {
+        font-size: $typescale-6;
+        font-weight: $font-weight-light;
+        line-height: 1.35;
+
+        @include breakpoint(lg) {
+          font-size: rem(32);
+        }
+      }
+    }
+  }
+
+  .school-picker {
+    font-size: $typescale-2;
+    font-weight: $font-weight-semibold;
+    bottom: 0;
+    width: 100%;
+    z-index: 25;
+    overflow-x: scroll;
+    position: fixed;
+
+    @include breakpoint(xl) {
+      overflow-x: hidden;
     }
 
-    p {
-      margin-top: $spacing-3;
+    @include breakpoint(md) {
+      // firefox
+      scrollbar-color: $gray-light $white;
+      scrollbar-width: 4px;
+
+      // for safari and chrome
+      &::-webkit-scrollbar {
+        -webkit-appearance: none;
+        height: 4px;
+      }
+
+      // for safari and chrome
+      &::-webkit-scrollbar-thumb {
+        border-radius: 2px;
+        background-color: rgba(255, 255, 255, 0.75s);
+      }
     }
 
-    .journey-section__button {
-      font-weight: $font-weight-bold;
-      font-size: $typescale-2;
-      line-height: $line-height-solid;
-      color: $white;
-      padding: $spacing-3 $spacing-6;
-      margin-top: $spacing-2;
-      border: 2px solid $white;
-      height: fit-content;
-      margin-top: $spacing-7;
+    &.not-fixed {
+      position: absolute;
+    }
+
+    ul {
+      display: flex;
+      min-width: 1200px;
+      border-collapse: collapse;
+
+      li {
+        color: $navy;
+        border-top: $spacing-2 solid currentColor;
+        padding: $spacing-3 0;
+        text-align: center;
+        transition: $btn-transition;
+        flex: 1 1 0;
+
+        &:first-child {
+          color: $blue-light;
+        }
+
+        &:hover {
+          background-color: currentColor;
+        }
+
+        a {
+          display: flex;
+          justify-content: center;
+          color: $white;
+
+          span {
+            display: block;
+            text-align: left;
+          }
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+
+        &:not(:last-child) {
+          a {
+            border-right: 1px solid $white;
+          }
+        }
+
+        &:nth-child(1) {
+          flex-grow: 1.2;
+
+          a span {
+            width: 87px;
+            font-weight: 800;
+          }
+        }
+        &:nth-child(2) {
+          a span {
+            width: 160px;
+          }
+        }
+        &:nth-child(3) {
+          a span {
+            width: 121px;
+          }
+        }
+        &:nth-child(4) {
+          a span {
+            width: 148px;
+          }
+        }
+        &:nth-child(5) {
+          a span {
+            width: 158px;
+          }
+        }
+        &:nth-child(6) {
+          a span {
+            width: 158px;
+          }
+        }
+      }
     }
   }
 }
