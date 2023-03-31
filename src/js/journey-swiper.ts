@@ -89,7 +89,7 @@ class JourneySwiper {
       },
       on: {
         paginationUpdate: () => {
-          this.swiperUpdate();
+          // this.swiperUpdate();
         },
         slideNextTransitionStart: (swiper) => {
           swiper.allowSlideNext = false;
@@ -154,6 +154,7 @@ class JourneySwiper {
     if (hash !== this.swiperEl.activeIndex) {
       this.swiperEl.slideTo(hash, 350, false);
     }
+    this.swiperUpdate();
   }
 
   resetNavigation() {

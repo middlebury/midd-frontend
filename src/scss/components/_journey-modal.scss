@@ -129,9 +129,15 @@ $school-theme-colors: (
 
     .journey-modal__pagination-wrapper {
       overflow: hidden;
-      padding-top: rem(28);
+      padding-top: $spacing-6;
+      width: 82vw;
+
+      @include breakpoint(md) {
+        width: 100%;
+      }
 
       @include breakpoint(lg) {
+        overflow: initial;
         padding: 0;
         height: $spacing-8;
       }
@@ -142,11 +148,10 @@ $school-theme-colors: (
       align-items: center;
       height: fit-content;
       transition: transform 0.5s;
-
-      width: 82vw;
+      width: 716px;
 
       @include breakpoint(md) {
-        width: 716px;
+        // width: 716px;
         justify-content: center;
       }
 
@@ -154,45 +159,19 @@ $school-theme-colors: (
         overflow: initial;
       }
 
-      .journey-modal__svg-wrapper {
-        position: relative;
-        margin-bottom: rem(2);
-
-        .journey-modal__svg {
-          position: absolute;
-        }
-
-        .journey-modal__svg-link {
-          color: $white;
-          fill: $white;
-
-          .journey-modal__svg-link-text {
-            color: $white;
-            fill: $white;
-            display: none;
-          }
-
-          &:hover,
-          &:focus {
-            text-decoration: none;
-            .journey-modal__outer-circle {
-              stroke: #f4b824;
-              stroke-width: 1;
-            }
-
-            .journey-modal__svg-link-text {
-              display: block;
-            }
-          }
-        }
+      .journey-modal__svg {
+        position: absolute;
       }
 
       .cb__wrapper {
         display: flex;
-        margin: 0 42px;
+        width: 100%;
+        justify-content: space-evenly;
+        // margin: 0 42px;
 
         @include breakpoint(md) {
-          margin: auto;
+          margin: 0;
+          justify-content: space-evenly;
         }
 
         .swiper-pagination-bullet-active {
@@ -241,14 +220,17 @@ $school-theme-colors: (
         display: none;
         font-size: $typescale-1;
         line-height: $line-height-journey;
-        position: absolute;
-        top: -$spacing-4;
-        width: max-content;
-        // background-color: $navy-dark;
+        text-align: center;
+        position: fixed;
+        bottom: $spacing-3;
+        margin-bottom: $spacing-5;
 
         @include breakpoint(lg) {
-          top: $spacing-6;
           font-size: $typescale-2;
+          top: $spacing-6;
+          bottom: 0;
+          margin-bottom: 0;
+          width: max-content;
         }
       }
 
@@ -261,7 +243,11 @@ $school-theme-colors: (
       }
 
       &:not(:last-child) {
-        margin-right: rem(28);
+        // margin-right: rem(28);
+
+        // @include breakpoint(md) {
+        margin: 0;
+        // }
       }
 
       .cb-link__circle {
