@@ -202,3 +202,16 @@ image_styles:
     ratio: "16:9"
     srcset:
       - 1136x639
+  journey_poster:
+    title: Background poster image
+    ratio: "16:9"
+    srcset:
+      - 1440x810
+      - 1200x675
+  journey_fluencies:
+    title: Four fluencies display image
+    ratio: "1:1"
+    srcset:
+      - 332x332
+      - 278x278
+      - 224x224
