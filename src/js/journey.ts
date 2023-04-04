@@ -21,6 +21,7 @@ class Journey {
       [key: string]: number[];
     };
   };
+  microModal: any;
 
   constructor(el: HTMLElement) {
     this.elem = el;
@@ -41,7 +42,7 @@ class Journey {
         lineAnimBreaks: [28, 65, 101]
       }
     };
-
+    this.microModal = window.MicroModal;
     this.handleIntersection = this.handleIntersection.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
     this.deviceInit = this.deviceInit.bind(this);
@@ -63,6 +64,12 @@ class Journey {
     });
 
     this.scrollRef = onscroll(this.handleScroll);
+
+    $$('.journey--link').forEach((el) => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+      });
+    });
   }
 
   handleScroll() {
@@ -187,10 +194,6 @@ class Journey {
   }
 }
 
-const journey = $$('.journey');
-
-journey.forEach((item: HTMLElement) => new Journey(item));
-
 MicroModal.init({
   openTrigger: 'data-journey-overlay-open',
   closeTrigger: 'data-journey-overlay-close',
@@ -204,3 +207,7 @@ MicroModal.init({
   },
   disableScroll: true
 });
+
+const journey = $$('.journey');
+
+journey.forEach((item: HTMLElement) => new Journey(item));
