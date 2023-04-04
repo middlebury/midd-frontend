@@ -3,9 +3,9 @@ import { $$ } from './utils/dom';
 let defaultOptions = {
   container: document.body,
   panelSelector: '.journey section',
-  directionThreshold: 50,
+  directionThreshold: 200,
   delay: 0,
-  duration: 300,
+  duration: 150,
   easing: function (t: any) {
     return t;
   }
