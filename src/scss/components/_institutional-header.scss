@@ -53,7 +53,7 @@
     background-color: transparent;
 
     &.is-toggled {
-      // background-color: $navy-dark;
+      background-color: $navy-dark;
 
       .midd-nav {
         .midd-nav__list--top {
@@ -62,7 +62,7 @@
         }
       }
 
-      @include breakpoint(md) {
+      @include breakpoint(lg) {
         background-color: transparent;
       }
     }

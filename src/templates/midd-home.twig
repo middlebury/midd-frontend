@@ -70,7 +70,7 @@
     } %}
     {% include 'partials/journey-section.twig' with {
       poster_image: '/images/demo/learning.jpg',
-      video: 'https://www.middlebury.edu/office/sites/www.middlebury.edu.office/files/learning_30.mp4',
+      video: 'https://www.middlebury.edu/office/sites/www.middlebury.edu.office/files/learning_60.mp4',
       name: 'learning',
       blurb: 'A breadth and depth of <strong>learning</strong> and <strong>experience</strong> … and capacity for <strong>exploration</strong> that will last a lifetime',
       align: 'left',
@@ -115,4 +115,12 @@
       }%}
     </div>
   </div>
+  {% include 'paragraphs/fluencies.twig' %}
+{% endblock %}
+{% block layout_footer %}
+  {% include 'partials/footer-cta-group.twig' with {
+    background_light: true
+  }%}
+  {% include 'paragraphs/non-discrimination-policy.twig' %}
+  {% include 'partials/midd-footer.twig' %}
 {% endblock %}

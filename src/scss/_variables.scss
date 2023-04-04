@@ -77,6 +77,7 @@ $navy-light: #174872 !default;
 $navy: #0d395f !default;
 $navy-dark: #022543 !default;
 
+$blue-darker: #002444 !default;
 $blue-dark: #407ab1 !default;
 $blue: #75a3cd !default;
 $blue-light: #97bbd5 !default;
@@ -356,6 +357,13 @@ $btn-themes: (
     border-color: $btn-light-bg,
     hover-color: $btn-light-color,
     hover-bg: $btn-light-bg
+  ),
+  'dark-outline': (
+    color: $btn-light-color,
+    bg: transparent,
+    border-color: $btn-light-color,
+    hover-color: $btn-light-bg,
+    hover-bg: $btn-light-color
   )
 );
 

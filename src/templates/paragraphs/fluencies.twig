@@ -1,0 +1,30 @@
+<section class="paragraph--fluencies" aria-labelledby="midd-fluencies-title-1">
+  <div class="container fluencies-container px-0 pl-md-3 pr-md-2 pl-lg-5 pr-lg-4 pr-xl-3">
+
+    <div class="text-center">
+      <h2 class="mb-1 mb-lg-2" id="midd-fluencies-title-1">Four Fluencies</h2>
+      <p class="mb-5 mb-md-7">Focus Areas Across the Curriculum</p>
+    </div>
+    <ul class="d-flex">
+      {% for item in 0..3 %}
+        <li class="col-md-3">
+          <article class="focus-area-item" aria-labelledby="midd-focus-area-item-label-{{loop.index}}">
+            <div class="focus-area-item__media">
+              <a href="">
+                {% include 'partials/img.twig' with { name: 'journey_fluencies' } %}
+              </a>
+            </div>
+            <div class="focus-area-item__content">
+              <div class="focus-area-item__content-text">
+                <h3 class="focus-area-item__name" id="midd-focus-area-item-label-{{loop.index}}">
+                  Understanding Cultural Difference
+                </h3>
+                <p class="focus-area-item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui voluptate earum laboriosam eaque.</p>
+              </div>
+            </div>
+          </article>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
