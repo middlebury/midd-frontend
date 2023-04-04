@@ -43,7 +43,7 @@
     }
   }
 
-  .fluencies-container {
+  .focus-area--wrapper {
     overflow-x: scroll;
 
     @include breakpoint(lg) {
@@ -75,10 +75,15 @@
 
     li {
       padding: 0;
-      padding-right: $spacing-2;
+      margin-right: $spacing-2;
 
       @include breakpoint(xl) {
+        margin: 0;
         padding-right: $spacing-3;
+      }
+
+      &:last-child {
+        margin: 0;
       }
     }
   }
