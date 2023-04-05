@@ -65,11 +65,11 @@ class Journey {
 
     this.scrollRef = onscroll(this.handleScroll);
 
-    $$('.journey--link').forEach((el) => {
-      el.addEventListener('click', (e) => {
-        e.preventDefault();
-      });
-    });
+    // $$('.journey--link').forEach((el) => {
+    //   el.addEventListener('click', (e) => {
+    //     e.preventDefault();
+    //   });
+    // });
   }
 
   handleScroll() {

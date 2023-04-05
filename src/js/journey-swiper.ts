@@ -137,7 +137,7 @@ class JourneySwiper {
     });
 
     window.addEventListener('hashchange', (e) => {
-      e.preventDefault();
+      // e.preventDefault();
 
       this.elementOnLoad(
         '.journey-modal--block.is-open',
