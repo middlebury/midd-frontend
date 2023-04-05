@@ -103,7 +103,10 @@ class JourneySwiper {
       }
     };
 
-    this.elementOnLoad('.journey-modal--block.is-open', this.swiperInit);
+    this.elementOnLoad('.journey-modal--block.is-open', () => {
+      this.swiperInit();
+      this.handleHashChange();
+    });
   }
 
   swiperInit() {
@@ -136,8 +139,6 @@ class JourneySwiper {
     });
 
     window.addEventListener('hashchange', (e) => {
-      // e.preventDefault();
-
       this.elementOnLoad(
         '.journey-modal--block.is-open',
         this.handleHashChange
@@ -178,17 +179,16 @@ class JourneySwiper {
 
   swiperUpdate() {
     this.currentEl = $('.swiper-pagination-bullet-active', this.paginationEl);
-
     let scrollWidth = this.swiperParentEl.scrollWidth;
 
     // Check if the scrolling distance exceeds the element width,
     // if it does set it to the element width so that it doesn't
     // scroll past the width
-    if (scrollWidth > this.swiperParentEl.clientWidth) {
-      scrollWidth = this.swiperParentEl.clientWidth;
+    if (scrollWidth > this.swiperParentEl.offsetWidth) {
+      scrollWidth = this.swiperParentEl.offsetWidth;
     }
 
-    this.hiddenWidth = scrollWidth - this.swiperParentWrapperEl.clientWidth;
+    this.hiddenWidth = scrollWidth - this.swiperParentWrapperEl.offsetWidth;
 
     const currentElLeft = this.currentEl?.getBoundingClientRect().left;
 
