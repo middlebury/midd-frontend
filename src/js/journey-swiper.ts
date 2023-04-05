@@ -88,9 +88,6 @@ class JourneySwiper {
         }
       },
       on: {
-        paginationUpdate: () => {
-          // this.swiperUpdate();
-        },
         slideNextTransitionStart: (swiper) => {
           swiper.allowSlideNext = false;
         },
@@ -208,6 +205,9 @@ class JourneySwiper {
       }
 
       if (this.translate <= 0 && Math.abs(this.translate) <= this.hiddenWidth) {
+        $(
+          '.js-test-widths'
+        ).innerHTML = `scrollWidth: ${scrollWidth}, hiddenWidth: ${this.hiddenWidth}, currentElLeft: ${currentElLeft}, translate: ${this.translate}`;
         this.swiperParentEl.style.transform = `translateX(${this.translate}px)`;
       }
     }
