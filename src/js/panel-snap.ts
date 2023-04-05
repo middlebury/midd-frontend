@@ -12,9 +12,11 @@ let defaultOptions = {
 };
 
 async function lazyLoadPanelSnap() {
-  const { default: PanelSnap } = await import('panelsnap');
+  if (window.matchMedia('(min-width: 512px)').matches) {
+    const { default: PanelSnap } = await import('panelsnap');
 
-  journey.forEach(() => new PanelSnap(defaultOptions));
+    journey.forEach(() => new PanelSnap(defaultOptions));
+  }
 }
 
 const journey = $$('.journey');
