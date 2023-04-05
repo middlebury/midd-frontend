@@ -122,12 +122,14 @@ class JourneySwiper {
     this.elementOnLoad('.journey-modal__cb-link', (selector) => {
       this.paginationDotEls = $$(selector);
       this.paginationDotEls.forEach((el) => {
-        el.addEventListener('mouseenter', (e) => {
-          this.handleMouseEvent(e);
-        });
-        el.addEventListener('mouseleave', (e) => {
-          this.handleMouseEvent(e);
-        });
+        if (window.matchMedia('(min-width: 1024px)').matches) {
+          el.addEventListener('mouseenter', (e) => {
+            this.handleMouseEvent(e);
+          });
+          el.addEventListener('mouseleave', (e) => {
+            this.handleMouseEvent(e);
+          });
+        }
       });
     });
 
