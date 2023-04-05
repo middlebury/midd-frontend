@@ -224,6 +224,7 @@ $school-theme-colors: (
         position: absolute;
         bottom: $spacing-3;
         margin-bottom: $spacing-5;
+        width: rem(144);
 
         @include breakpoint(lg) {
           font-size: $typescale-2;
