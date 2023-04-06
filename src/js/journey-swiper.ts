@@ -213,6 +213,7 @@ class JourneySwiper {
         }, halfWindowWidth: ${this.halfWindowWidth}, new El left: ${
           this.currentEl.offsetLeft + this.currentEl.offsetWidth
         }`;
+        this.swiperParentEl.style.transform = `translateX(${this.translate}px)`;
       }
     }
   }
