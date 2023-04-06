@@ -50,6 +50,7 @@ class Journey {
   }
 
   init() {
+    window.location.hash = '';
     this.deviceInit();
     this.addListeners();
     this.svgInit();

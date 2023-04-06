@@ -51,7 +51,6 @@ class JourneySwiper {
   }
 
   init() {
-    this.addListeners();
     this.swiperConfig = {
       autoHeight: true,
       hashNavigation: {},
@@ -105,8 +104,8 @@ class JourneySwiper {
 
     this.elementOnLoad('.journey-modal--block.is-open', () => {
       this.swiperInit();
-      this.handleHashChange();
     });
+    this.addListeners();
   }
 
   swiperInit() {
