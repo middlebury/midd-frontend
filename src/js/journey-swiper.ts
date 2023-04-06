@@ -207,7 +207,11 @@ class JourneySwiper {
         $(
           '.js-test-widths'
         ).innerHTML = `scrollWidth: ${scrollWidth}, hiddenWidth: ${this.hiddenWidth}, currentElLeft: ${currentElLeft}, translate: ${this.translate}`;
-        this.swiperParentEl.style.transform = `translateX(${this.translate}px)`;
+        this.swiperParentEl.style.transform = `translateX(${
+          this.translate
+        }px), halfWindowWidth: ${this.halfWindowWidth}, new El left: ${
+          this.currentEl.offsetLeft + this.currentEl.offsetWidth
+        }`;
       }
     }
   }
