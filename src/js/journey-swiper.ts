@@ -53,7 +53,9 @@ class JourneySwiper {
   init() {
     this.swiperConfig = {
       autoHeight: true,
-      hashNavigation: {},
+      hashNavigation: {
+        watchState: true
+      },
       navigation: {
         nextEl: '.js-journey-next-button',
         prevEl: '.js-journey-prev-button'
