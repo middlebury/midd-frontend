@@ -100,6 +100,9 @@ class JourneySwiper {
         },
         slidePrevTransitionEnd: (swiper) => {
           swiper.allowSlidePrev = true;
+        },
+        transitionStart: () => {
+          this.swiperUpdate();
         }
       }
     };
@@ -155,9 +158,9 @@ class JourneySwiper {
       MicroModal?.close();
     }
     if (hash !== this.swiperEl.activeIndex) {
-      this.swiperEl.slideTo(hash, 350, false);
+      this.swiperEl.slideTo(hash, 300, false);
     }
-    this.swiperUpdate();
+    // this.swiperUpdate();
   }
 
   resetNavigation() {
@@ -192,8 +195,6 @@ class JourneySwiper {
     this.hiddenWidth = scrollWidth - this.swiperParentWrapperEl.offsetWidth;
 
     const currentElLeft = this.currentEl?.getBoundingClientRect().left;
-    const currentElX = this.currentEl?.getBoundingClientRect().x;
-    const currentElRight = this.currentEl?.getBoundingClientRect().right;
 
     if (this.currentEl) {
       this.translate =
