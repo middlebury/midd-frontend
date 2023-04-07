@@ -208,15 +208,6 @@ class JourneySwiper {
       }
 
       if (this.translate <= 0 && Math.abs(this.translate) <= this.hiddenWidth) {
-        $(
-          '.js-test-widths'
-        ).innerHTML = `scrollWidth: ${scrollWidth}, hiddenWidth: ${
-          this.hiddenWidth
-        }, currentElLeft: ${currentElLeft}, currentElX: ${currentElX}, currentElRight: ${currentElRight} translate: ${
-          this.translate
-        }, halfWindowWidth: ${this.halfWindowWidth}, new El left: ${
-          this.currentEl.offsetLeft + this.currentEl.offsetWidth
-        }`;
         this.swiperParentEl.style.transform = `translateX(${this.translate}px)`;
       }
     }
