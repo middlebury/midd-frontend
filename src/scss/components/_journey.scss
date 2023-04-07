@@ -438,13 +438,21 @@
         text-align: center;
         transition: $btn-transition;
         flex: 1 1 0;
+        background-image: linear-gradient(
+          to top,
+          transparent 50%,
+          currentColor 50%
+        );
+        background-size: 100% 200%;
+        background-position: bottom;
+        transition: background-position 0.2s ease-in-out;
 
         &:first-child {
           color: $blue-light;
         }
 
         &:hover {
-          background-color: currentColor;
+          background-position: top;
         }
 
         a {
