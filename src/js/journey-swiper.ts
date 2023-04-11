@@ -8,6 +8,7 @@ import {
 } from 'swiper';
 import { $, $$, checkElement } from './utils/dom';
 import VideoSwap from './video';
+import lozad from 'lozad';
 
 class JourneySwiper {
   swiperEl: Swiper;
@@ -107,8 +108,14 @@ class JourneySwiper {
       }
     };
 
+    // init lazy loaded gallery images
+
+    const lazyGalleryImages = lozad('[data-journey-gallery-item] img');
+    lazyGalleryImages.observe();
+
     this.elementOnLoad('.journey-modal--block.is-open', () => {
       this.swiperInit();
+      this.swiperParentEl.style.transform = `translateX(${this.translate}px)`;
     });
     this.addListeners();
   }
