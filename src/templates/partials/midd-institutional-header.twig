@@ -23,6 +23,19 @@
             <a href="{{ item.href }}" class="midd-nav__link midd-nav__link--top">
               {{ item.text }}
             </a>
+
+            {% if item.items %}
+              <button class="midd-nav__handle midd-nav__handle--sub" data-toggle-target=".js-middnav-list-{{ loop.index }}">
+                {% include 'partials/icon.twig' with { name: 'chevron-down', class: 'midd-nav__chevron' } %}
+              </button>
+              <ul class="midd-nav__list midd-nav__list--sub js-middnav-list-{{ loop.index }}">
+                {% for subitem in item.items %}
+                  <li class="midd-nav__item">
+                    <a href="{{ subitem.href }}" class="midd-nav__link midd-nav__link--sub">{{ subitem.text }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
           </li>
         {% endfor %}
       </ul>
@@ -37,7 +50,7 @@
       </a>
 
       <div class="midd-search__content js-midd-search">
-        <form action="http://www.middlebury.edu/search" method="GET">
+        <form action="https://www.middlebury.edu/search" method="GET">
           <label for="midd-search-input" class="sr-only">Search</label>
           <div class="input-group">
             <input type="search" class="form-control form-control--sm midd-search__input js-midd-search-input" id="midd-search-input" placeholder="Search" name="q2" required/>

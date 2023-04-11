@@ -53,9 +53,8 @@ $school-theme-colors: (
   flex-direction: column;
   justify-content: space-between;
   border-bottom: 1px solid $white;
-  padding-left: $spacing-3;
-  padding-right: $spacing-3;
-  padding-bottom: $spacing-3;
+  padding: $spacing-3;
+  padding-top: 0;
 
   @include breakpoint(md) {
     padding-bottom: $spacing-4;
@@ -63,8 +62,7 @@ $school-theme-colors: (
 
   @include breakpoint(xl) {
     flex-direction: row;
-    padding-left: $spacing-5;
-    padding-right: $spacing-5;
+    padding: 0 $spacing-5;
     padding-bottom: $spacing-3;
   }
 
@@ -328,16 +326,44 @@ $school-theme-colors: (
     margin-top: $spacing-8;
 
     .journey-modal--title {
-      font-size: $spacing-5;
+      font-family: $font-family-sans-serif;
+      font-weight: $font-weight-light;
+      font-size: rem(32);
       line-height: $line-height-journey;
-      margin-bottom: $spacing-4;
+      margin-bottom: $spacing-5;
 
       @include breakpoint(md) {
-        font-size: $typescale-9;
+        font-size: rem(40);
+        margin-bottom: $spacing-6;
       }
 
       @include breakpoint(lg) {
-        margin-bottom: $spacing-5;
+        font-size: rem(56);
+        margin-bottom: $spacing-8;
+      }
+    }
+
+    .portrait-video {
+      max-width: initial;
+
+      .transcript__button {
+        color: $white;
+        &:hover {
+          border-color: $white;
+        }
+      }
+    }
+  }
+
+  .lightbox__images {
+    padding: 0;
+    width: 100%;
+
+    .media__caption {
+      font-size: $typescale-2;
+
+      @include breakpoint(lg) {
+        font-size: $typescale-3;
       }
     }
   }
@@ -480,7 +506,6 @@ $school-theme-colors: (
       padding-top: $spacing-2;
       margin-bottom: $spacing-7;
     }
-
     .articles-block {
       color: $black;
 
