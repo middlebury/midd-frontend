@@ -53,9 +53,8 @@ $school-theme-colors: (
   flex-direction: column;
   justify-content: space-between;
   border-bottom: 1px solid $white;
-  padding-left: $spacing-3;
-  padding-right: $spacing-3;
-  padding-bottom: $spacing-3;
+  padding: $spacing-3;
+  padding-top: 0;
 
   @include breakpoint(md) {
     padding-bottom: $spacing-4;
@@ -63,8 +62,7 @@ $school-theme-colors: (
 
   @include breakpoint(xl) {
     flex-direction: row;
-    padding-left: $spacing-5;
-    padding-right: $spacing-5;
+    padding: 0 $spacing-5;
     padding-bottom: $spacing-3;
   }
 
@@ -129,9 +127,15 @@ $school-theme-colors: (
 
     .journey-modal__pagination-wrapper {
       overflow: hidden;
-      padding-top: rem(28);
+      padding-top: $spacing-7;
+      width: 82vw;
+
+      @include breakpoint(md) {
+        width: 100%;
+      }
 
       @include breakpoint(lg) {
+        overflow: initial;
         padding: 0;
         height: $spacing-8;
       }
@@ -141,12 +145,11 @@ $school-theme-colors: (
       display: flex;
       align-items: center;
       height: fit-content;
-      transition: transform 0.5s;
-
-      width: 82vw;
+      transition: transform 0.3s;
+      width: 716px;
 
       @include breakpoint(md) {
-        width: 716px;
+        // width: 716px;
         justify-content: center;
       }
 
@@ -154,45 +157,19 @@ $school-theme-colors: (
         overflow: initial;
       }
 
-      .journey-modal__svg-wrapper {
-        position: relative;
-        margin-bottom: rem(2);
-
-        .journey-modal__svg {
-          position: absolute;
-        }
-
-        .journey-modal__svg-link {
-          color: $white;
-          fill: $white;
-
-          .journey-modal__svg-link-text {
-            color: $white;
-            fill: $white;
-            display: none;
-          }
-
-          &:hover,
-          &:focus {
-            text-decoration: none;
-            .journey-modal__outer-circle {
-              stroke: #f4b824;
-              stroke-width: 1;
-            }
-
-            .journey-modal__svg-link-text {
-              display: block;
-            }
-          }
-        }
+      .journey-modal__svg {
+        position: absolute;
       }
 
       .cb__wrapper {
         display: flex;
-        margin: 0 42px;
+        width: 100%;
+        justify-content: space-evenly;
+        // margin: 0 42px;
 
         @include breakpoint(md) {
-          margin: auto;
+          margin: 0;
+          justify-content: space-evenly;
         }
 
         .swiper-pagination-bullet-active {
@@ -241,14 +218,18 @@ $school-theme-colors: (
         display: none;
         font-size: $typescale-1;
         line-height: $line-height-journey;
+        text-align: center;
         position: absolute;
-        top: -$spacing-4;
-        width: max-content;
-        // background-color: $navy-dark;
+        bottom: $spacing-3;
+        margin-bottom: $spacing-5;
+        width: rem(144);
 
         @include breakpoint(lg) {
-          top: $spacing-6;
           font-size: $typescale-2;
+          top: $spacing-6;
+          bottom: 0;
+          margin-bottom: 0;
+          width: max-content;
         }
       }
 
@@ -261,7 +242,11 @@ $school-theme-colors: (
       }
 
       &:not(:last-child) {
-        margin-right: rem(28);
+        // margin-right: rem(28);
+
+        // @include breakpoint(md) {
+        margin: 0;
+        // }
       }
 
       .cb-link__circle {
@@ -339,23 +324,65 @@ $school-theme-colors: (
 .journey-modal__overlay {
   .journey-modal__overlay-container {
     margin-top: $spacing-8;
+    margin-bottom: $spacing-5;
+
+    @include breakpoint(md) {
+      margin-bottom: $spacing-7;
+    }
+
+    @include breakpoint(lg) {
+      margin-bottom: $spacing-9;
+    }
 
     .journey-modal--title {
-      font-size: $spacing-5;
+      font-family: $font-family-sans-serif;
+      font-weight: $font-weight-light;
+      font-size: rem(32);
       line-height: $line-height-journey;
-      margin-bottom: $spacing-4;
+      margin-bottom: $spacing-5;
 
       @include breakpoint(md) {
-        font-size: $typescale-9;
+        font-size: rem(40);
+        margin-bottom: $spacing-6;
       }
 
       @include breakpoint(lg) {
-        margin-bottom: $spacing-5;
+        font-size: rem(56);
+        margin-bottom: $spacing-8;
+      }
+    }
+
+    .portrait-video {
+      max-width: initial;
+
+      .transcript__button {
+        color: $white;
+        &:hover {
+          border-color: $white;
+        }
+      }
+    }
+  }
+
+  .lightbox__images {
+    padding: 0;
+    width: 100%;
+
+    .media__caption {
+      font-size: $typescale-2;
+
+      @include breakpoint(lg) {
+        font-size: $typescale-3;
       }
     }
   }
 
   .journey-modal__story {
+    > *,
+    h2,
+    h3 {
+      font-family: $font-family-sans-serif;
+    }
     background: $white;
     color: $black;
 
@@ -400,6 +427,34 @@ $school-theme-colors: (
 
         &:hover {
           border-color: initial;
+        }
+      }
+
+      p {
+        margin-bottom: $spacing-4;
+      }
+
+      h2 {
+        font-size: $typescale-6;
+        font-weight: $font-weight-semibold;
+        margin-bottom: $spacing-4;
+
+        @include breakpoint(lg) {
+          font-size: rem(32);
+          font-weight: $font-weight-normal;
+        }
+      }
+
+      h3 {
+        font-size: $typescale-3;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+        $margin-bottom: $spacing-2;
+        letter-spacing: 2px;
+
+        @include breakpoint(lg) {
+          font-size: $typescale-4;
+          font-weight: $font-weight-normal;
         }
       }
     }
@@ -493,7 +548,6 @@ $school-theme-colors: (
       padding-top: $spacing-2;
       margin-bottom: $spacing-7;
     }
-
     .articles-block {
       color: $black;
 

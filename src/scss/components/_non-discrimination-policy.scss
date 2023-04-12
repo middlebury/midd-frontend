@@ -1,0 +1,9 @@
+.paragraph--policy {
+  background: rgba($gray-light, 0.3);
+  font-size: $typescale-2;
+  font-weight: $font-weight-light;
+
+  @include breakpoint(lg) {
+    font-size: $typescale-3;
+  }
+}

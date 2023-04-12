@@ -1,5 +1,6 @@
 import { $, $$, checkElement } from './utils/dom';
 import VideoSwap from './video';
+import lozad from 'lozad';
 
 class JourneySwiper {
   swiperEl: any;
@@ -20,7 +21,7 @@ class JourneySwiper {
 
   constructor(el: HTMLElement) {
     this.elem = el;
-    this.swiperClass = '.mySwiper';
+    this.swiperClass = '.journey-swiper';
     this.paginationClass = '.swiper-pagination';
     this.paginationEl = $(this.paginationClass);
     this.swiperParentEl = $('.journey-modal__pagination');
@@ -36,9 +37,26 @@ class JourneySwiper {
     this.init();
   }
 
+  elementOnLoad(cn: string, cb: (...args: any[]) => void) {
+    checkElement(cn).then((selector) => {
+      cb(selector);
+    });
+  }
+
   init() {
     this.addListeners();
     this.elementOnLoad('.journey-modal--block.is-open', this.swiperInit);
+
+    // init lazy loaded gallery images
+
+    const lazyGalleryImages = lozad('[data-journey-gallery-item] img');
+    lazyGalleryImages.observe();
+
+    this.elementOnLoad('.journey-modal--block.is-open', () => {
+      this.swiperInit();
+      this.swiperParentEl.style.transform = `translateX(${this.translate}px)`;
+    });
+    this.addListeners();
   }
 
   async getSwiper() {
@@ -117,22 +135,18 @@ class JourneySwiper {
     });
   }
 
-  elementOnLoad(cn: string, cb: (...args: any[]) => void) {
-    checkElement(cn).then(() => {
-      cb();
-    });
-  }
-
   addListeners() {
-    checkElement('.journey-modal__cb-link').then((selector) => {
+    this.elementOnLoad('.journey-modal__cb-link', (selector) => {
       this.paginationDotEls = $$(selector);
       this.paginationDotEls.forEach((el) => {
-        el.addEventListener('mouseenter', (e) => {
-          this.handleMouseEvent(e);
-        });
-        el.addEventListener('mouseleave', (e) => {
-          this.handleMouseEvent(e);
-        });
+        if (window.matchMedia('(min-width: 1024px)').matches) {
+          el.addEventListener('mouseenter', (e) => {
+            this.handleMouseEvent(e);
+          });
+          el.addEventListener('mouseleave', (e) => {
+            this.handleMouseEvent(e);
+          });
+        }
       });
     });
 
@@ -157,9 +171,10 @@ class JourneySwiper {
       MicroModal?.close();
     }
 
-    if (this.swiperEl && hash !== this.swiperEl.activeIndex) {
-      this.swiperEl.slideTo(hash, 350, false);
+    if (hash !== this.swiperEl.activeIndex) {
+      this.swiperEl.slideTo(hash, 300, false);
     }
+    // this.swiperUpdate();
   }
 
   resetNavigation() {
@@ -182,9 +197,16 @@ class JourneySwiper {
 
   swiperUpdate() {
     this.currentEl = $('.swiper-pagination-bullet-active', this.paginationEl);
+    let scrollWidth = this.swiperParentEl.scrollWidth;
 
-    this.hiddenWidth =
-      this.swiperParentEl.scrollWidth - this.swiperParentWrapperEl.clientWidth;
+    // Check if the scrolling distance exceeds the element width,
+    // if it does set it to the element width so that it doesn't
+    // scroll past the width
+    if (scrollWidth > this.swiperParentEl.offsetWidth) {
+      scrollWidth = this.swiperParentEl.offsetWidth;
+    }
+
+    this.hiddenWidth = scrollWidth - this.swiperParentWrapperEl.offsetWidth;
 
     const currentElLeft = this.currentEl?.getBoundingClientRect().left;
 
@@ -206,9 +228,5 @@ class JourneySwiper {
     }
   }
 }
-
-const swiper = $$('.mySwiper');
-
-swiper.forEach((elem) => new JourneySwiper(elem));
 
 export default JourneySwiper;

@@ -47,6 +47,8 @@ class Toggler {
   /** target element to toggle */
   target: HTMLElement;
 
+  groupParent: HTMLElement;
+
   constructor(elem: HTMLElement) {
     // this.isToggled = false;
     this.elem = elem;
@@ -60,6 +62,9 @@ class Toggler {
 
     const group = elem.getAttribute('data-toggle-group');
     this.group = group ? `[data-toggle-group="${group}"]` : null;
+
+    const parent = elem.getAttribute('data-toggle-group-parent');
+    this.groupParent = group ? $(`.${group}`) : null;
 
     this.handleElemClick = this.handleElemClick.bind(this);
 
@@ -80,6 +85,7 @@ class Toggler {
     this.addListeners();
     this.elem.classList.add(this.enabledClass);
     this.target.classList.add(this.enabledClass);
+    this.groupParent?.classList.add(this.enabledClass);
   }
 
   // destroy method is not currently called in our apps but could be if you want to disable a toggler
@@ -88,6 +94,8 @@ class Toggler {
     this.elem.classList.remove(this.activeClass);
     this.target.classList.remove(this.enabledClass);
     this.target.classList.remove(this.activeClass);
+    this.groupParent?.classList.remove(this.enabledClass);
+    this.groupParent?.classList.remove(this.activeClass);
     this.elem.removeEventListener('click', this.handleElemClick);
     this.elem.removeEventListener('keydown', this.handleElemKeyDown);
   }
@@ -150,6 +158,10 @@ class Toggler {
   }
 
   open(elem: HTMLElement, target: HTMLElement) {
+    if (this.groupParent) {
+      this.groupParent.classList.add(this.activeClass);
+    }
+
     if (target) {
       target.classList.add(this.activeClass);
     }
@@ -174,6 +186,10 @@ class Toggler {
   }
 
   close(elem: HTMLElement, target: HTMLElement) {
+    if (this.groupParent) {
+      this.groupParent.classList.remove(this.activeClass);
+    }
+
     if (target) {
       target.classList.remove(this.activeClass);
     }

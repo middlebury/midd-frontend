@@ -281,6 +281,16 @@
   }
 }
 
+.paragraph--policy {
+  padding-top: $spacing-4;
+  padding-bottom: $spacing-4;
+
+  @include breakpoint(md) {
+    padding-top: $spacing-5;
+    padding-bottom: $spacing-5;
+  }
+}
+
 .paragraph {
   @extend %paragraph-space;
 }

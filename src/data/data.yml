@@ -433,11 +433,26 @@ midd_nav:
     text: Offices and Services
 
 institutional_nav:
-  - text: A Sense of Purpose
+  - text: Our Schools
     href: "#"
-  - text: The Experience of Place
+    items:
+      - href: http://www.middlebury.edu
+        text: Middlebury College
+      - href: http://www.middlebury.edu/ls
+        text: Language Schools
+      - href: http://www.middlebury.edu/blse
+        text: Bread Loaf School of English
+      - href: http://www.middlebury.edu/bread-loaf-conferences
+        text: Bread Loaf Writers' Conference
+      - href: https://www.middlebury.edu/institute/
+        text: Institute of International Studies at Monterey
+      - href: http://www.middlebury.edu/study-abroad
+        text: C.V. Starr Schools Abroad
+      - href: http://www.middlebury.edu/environment
+        text: School of the Environment
+  - text: About Middlebury
     href: "#"
-  - text: Our Approach to Learning
+  - text: Office and Services
     href: "#"
 
 system_status:
@@ -653,3 +668,64 @@ area_of_study:
   - category: W
     course_names:
       - name: Writing and Rhetoric Program
+
+journey_gallery_data:
+  - src: http://placekitten.com/1376/774
+    width: 1376
+    height: 774
+    srcset:
+      - 1376/774
+      - 1136/639
+      - 736/414
+      - 320/180
+    alt: ""
+    sizes: ""
+    caption: Lorem ipsum <a href="#">dolor</a> sit amet consectetur adipisicing elit.
+
+  - src: http://placekitten.com/1376/774
+    width: 1376
+    height: 774
+    srcset:
+      - 1376/774
+      - 1136/639
+      - 736/414
+      - 320/180
+    alt: ""
+    sizes: ""
+    caption: Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
+
+  - src: http://placekitten.com/1376/774
+    width: 1376
+    height: 774
+    srcset:
+      - 1376/774
+      - 1136/639
+      - 736/414
+      - 320/180
+    alt: ""
+    sizes: ""
+    caption: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+
+  - src: http://placekitten.com/1376/774
+    width: 1376
+    height: 774
+    srcset:
+      - 1376/774
+      - 1136/639
+      - 736/414
+      - 320/180
+    alt: ""
+    sizes: ""
+    caption: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+
+  - src: http://placekitten.com/1376/774
+    width: 1376
+    height: 774
+    srcset:
+      - 1376/774
+      - 1136/639
+      - 736/414
+      - 320/180
+    alt: ""
+    sizes: ""
+    caption: Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!

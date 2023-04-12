@@ -1,34 +1,18 @@
-{% set cb_info = [
-  {label: 'The Liberal Arts', x: '48.25', y: '16', text_x: '0', text_y: '52'},
-  {label: 'History of Middlebury', x: '112.75', y: '16', text_x: '40', text_y: '52'},
-  {label: 'Principles and Values', x: '304.75', y: '16', text_x: '230', text_y: '52'},
-  {label: 'Looking to the Future', x: '176.75', y: '16', text_x: '98', text_y: '52'},
-  {label: 'Vermont', x: '624.75', y: '16', text_x: '592', text_y: '52'},
-  {label: 'California', x: '560.75', y: '16', text_x: '524', text_y: '52'},
-  {label: 'World', x: '240.75', y: '16', text_x: '218', text_y: '52'},
-  {label: 'Engagement', x: '432.75', y: '16', text_x: '386', text_y: '52'},
-  {label: 'Justice', x: '368.74', y: '16', text_x: '348', text_y: '52'},
-  {label: 'Sustainability', x: '688.75', y: '16', text_x: '634', text_y: '52'},
-  {label: 'Culture', x: '496.75', y: '16', text_x: '470', text_y: '52'}
-] %}
-
 {% set section_learning = [
-  {id: 0, label: 'The Liberal Arts', hash_class: 'slide0', x: '595', y: '367.75'},
-  {id: 1, label: 'History of Middlebury', hash_class: 'slide1', x: '607', y: '420'},
-  {id: 2, label: 'Principles and Values', hash_class: 'slide2', x: '607', y: '472.25'},
-  {id: 3, label: 'Looking to the Future', hash_class: 'slide3', x: '595', y: '524.5'}
+  {id: 0, label: 'Why Middlebury', hash_class: 'slide0', content_type: 'video'},
+  {id: 1, label: 'Mentor-Student Partnerships', hash_class: 'slide1', content_type: 'story'},
+  {id: 2, label: 'Immersive Environments', hash_class: 'slide2', content_type: 'portrait-video'},
 ] %}
 {% set section_place = [
-  {id: 4, label: 'Vermont', hash_class: 'slide4', x: '69', y: '996'},
-  {id: 5, label: 'California', hash_class: 'slide5', x: '49', y: '1104.5'},
-  {id: 6, label: 'World', hash_class: 'slide6', x: '53', y: '1219'}
+  {id: 3, label: 'Alumni in the World', hash_class: 'slide3', content_type: 'gallery'},
+  {id: 4, label: 'Faculty in the News', hash_class: 'slide4', content_type: 'video'},
+  {id: 5, label: 'Students in Motion', hash_class: 'slide5', content_type: 'story'}
 ]
 %}
 {% set section_purpose_desktop = [
-  {id: 7, label: 'Engagement', hash_class: 'slide7', x: '246.01', y: '2029.25', text_x: '205.19'},
-  {id: 8, label: 'Justice', hash_class: 'slide8', x: '394.34', y: '2029.25', text_x: '373.34'},
-  {id: 9, label: 'Sustainability', hash_class: 'slide9', x: '538.67', y: '2029.25', text_x: '495.67'},
-  {id: 10, label: 'Culture', hash_class: 'slide10', x: '683', y: '2029.25', text_x: '658'},
+  {id: 6, label: '"Connected" Middlebury', hash_class: 'slide6', content_type: 'portrait-video'},
+  {id: 7, label: 'Middlebury College', hash_class: 'slide7', content_type: 'gallery'},
+  {id: 8, label: 'Graduate and Professional Schools', hash_class: 'slide8', content_type: 'video'},
 ] %}
 
 <div class="journey-modal" aria-hidden="true" role="dialog" aria-modal="true">
@@ -53,12 +37,13 @@
           } %}
         </button>
         <div class="journey-modal__pagination-wrapper">
-          <div class="journey-modal__pagination">
-            <div class="journey-modal__svg-wrapper">
-              <svg class="journey-modal__svg" width="716" height="2" viewbox="0 0 716 2" xmlns="http://www.w3.org/2000/svg">
-                <path fill="none" fill-rule="evenodd" stroke="white" stroke-dasharray="2" d="M715.201 1.25091L0.200684 1.25098" clip-path="url(#user-space)"/>
-              </svg>
-            </div>
+          <div
+            class="journey-modal__pagination">
+            {# <div class="journey-modal__svg-wrapper">
+                                                                                                            </div> #}
+            <svg class="journey-modal__svg" width="716" height="2" viewbox="0 0 716 2" xmlns="http://www.w3.org/2000/svg">
+              <path fill="none" fill-rule="evenodd" stroke="white" stroke-dasharray="2" d="M715.201 1.25091L0.200684 1.25098" clip-path="url(#user-space)"/>
+            </svg>
             <div class="cb__wrapper swiper-pagination"></div>
           </div>
         </div>
@@ -75,26 +60,26 @@
       </button>
     </div>
   </div>
-  <div class="swiper mySwiper">
+  <div class="swiper journey-swiper">
     <div class="swiper-wrapper">
       {% for label in section_learning %}
         {% include 'partials/journey-modal-content.twig' with {
           label: label.label,
-          content_type: 'video',
+          content_type: label.content_type,
           hash_class: label.hash_class
         }%}
       {% endfor %}
       {% for label in section_place %}
         {% include 'partials/journey-modal-content.twig' with {
           label: label.label,
-          content_type: 'story',
+          content_type: label.content_type,
           hash_class: label.hash_class
         }%}
       {% endfor %}
       {% for label in section_purpose_desktop %}
         {% include 'partials/journey-modal-content.twig' with {
           label: label.label,
-          content_type: 'video',
+          content_type: label.content_type,
           hash_class: label.hash_class
         }%}
       {% endfor %}
