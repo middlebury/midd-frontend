@@ -21,7 +21,6 @@ class Journey {
       [key: string]: number[];
     };
   };
-  microModal: any;
 
   constructor(el: HTMLElement) {
     this.elem = el;
@@ -42,7 +41,7 @@ class Journey {
         lineAnimBreaks: [28, 65, 101]
       }
     };
-    this.microModal = window.MicroModal;
+
     this.handleIntersection = this.handleIntersection.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
     this.deviceInit = this.deviceInit.bind(this);

@@ -26,7 +26,9 @@ class VideoControls {
 
   addListeners() {
     // init lazy loaded videos
-    const lazyLoadVideos = lozad(this.videoElement);
+    const lazyLoadVideos = lozad(this.videoElement, {
+      threshold: 0.5 // ratio of element convergence
+    });
     lazyLoadVideos.observe();
 
     this.controls.addEventListener('click', this.handleClick);
