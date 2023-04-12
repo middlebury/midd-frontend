@@ -20,15 +20,6 @@
   }
 }
 
-.midd-header--transparent {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: transparent;
-  z-index: $z-index-midd-header-transparent;
-}
-
 .midd-header__container {
   @include make-container;
   position: relative;

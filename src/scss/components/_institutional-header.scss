@@ -1,4 +1,8 @@
-.midd-header--institutional {
+.midd-header.midd-header--transparent {
+  background-color: unset;
+}
+
+.midd-header--transparent {
   position: fixed;
   top: 0;
   left: 0;
@@ -15,6 +19,10 @@
       padding-left: $spacing-4;
       padding-right: $spacing-4;
     }
+  }
+
+  @include breakpoint(lg) {
+    transition: none;
   }
 
   .midd-header__brand {
@@ -50,20 +58,11 @@
   }
 
   &.has-toggler {
-    background-color: transparent;
-
     &.is-toggled {
       background-color: $navy-dark;
 
-      .midd-nav {
-        .midd-nav__list--top {
-          opacity: 1;
-          visibility: visible;
-        }
-      }
-
       @include breakpoint(lg) {
-        background-color: transparent;
+        background-color: unset;
       }
     }
   }
@@ -149,15 +148,5 @@
     height: fit-content;
     width: 164px;
     order: 3;
-  }
-}
-
-.midd-header--transparent {
-  .midd-nav {
-    margin: auto;
-  }
-
-  .midd-nav__link {
-    font-size: $typescale-3;
   }
 }
