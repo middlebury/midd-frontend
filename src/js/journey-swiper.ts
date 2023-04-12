@@ -67,8 +67,7 @@ class JourneySwiper {
             modules: [Navigation, Pagination, HashNavigation, A11y],
             autoHeight: true,
             hashNavigation: {
-              // replaceState: true
-              // watchState: true
+              watchState: true
             },
             navigation: {
               nextEl: '.js-journey-next-button',
@@ -80,35 +79,29 @@ class JourneySwiper {
               clickable: true,
               renderBullet: function (index, className) {
                 const labels = [
-                  'The Liberal Arts',
-                  'History of Middlebury',
-                  'Principles and Values',
-                  'Looking to the Future',
-                  'Vermont',
-                  'California',
-                  'World',
-                  'Engagement',
-                  'Justice',
-                  'Sustainability',
-                  'Culture'
+                  'Why Middlebury',
+                  'Mentor-Student Partnerships',
+                  'Immersive Environments',
+                  'Alumni in the World',
+                  'Faculty in the News',
+                  'Students in Motion',
+                  '"Connected" Middlebury',
+                  'Middlebury College',
+                  'Graduate and Professional Schools'
                 ];
                 return `
-                <a class="journey-modal__cb-link ${className}" href="#" role="button">
-                  <span class="cb-link__text">
-                    ${labels[index]}
-                  </span>
-                  <span class="cb-link__circle-wrapper">
-                    <span class="cb-link__circle inner"></span>
-                    <span class="cb-link__circle outer"></span>
-                  </span>
-                </a>`;
+                  <a class="journey-modal__cb-link ${className}" href="#" role="button">
+                    <span class="cb-link__text">
+                      ${labels[index]}
+                    </span>
+                    <span class="cb-link__circle-wrapper">
+                      <span class="cb-link__circle inner"></span>
+                      <span class="cb-link__circle outer"></span>
+                    </span>
+                  </a>`;
               }
             },
             on: {
-              paginationUpdate: () => {
-                this.swiperUpdate();
-                // console.log(swiper);
-              },
               slideNextTransitionStart: (swiper) => {
                 swiper.allowSlideNext = false;
               },
@@ -120,6 +113,9 @@ class JourneySwiper {
               },
               slidePrevTransitionEnd: (swiper) => {
                 swiper.allowSlidePrev = true;
+              },
+              transitionStart: () => {
+                this.swiperUpdate();
               }
             }
           });
