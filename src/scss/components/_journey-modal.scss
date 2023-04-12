@@ -145,7 +145,7 @@ $school-theme-colors: (
       display: flex;
       align-items: center;
       height: fit-content;
-      transition: transform 0.3s;
+      transition: transform 0.2s;
       width: 716px;
 
       @include breakpoint(md) {
