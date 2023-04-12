@@ -368,6 +368,16 @@ $school-theme-colors: (
     padding: 0;
     width: 100%;
 
+    .lightbox__figure {
+      margin-left: -$spacing-3;
+      margin-right: -$spacing-3;
+
+      @include breakpoint(sm) {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
     .media__caption {
       font-size: $typescale-2;
 
