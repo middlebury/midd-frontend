@@ -133,17 +133,13 @@
   }
 
   .journey-link--section .journey--link {
-    font-size: $typescale-1;
+    font-size: $typescale-2;
     font-weight: $font-weight-medium;
     line-height: 1.25;
     fill: white;
 
     @include breakpoint(sm) {
       font-size: $typescale-3;
-    }
-
-    @include breakpoint(lg) {
-      font-size: $typescale-4;
     }
 
     &:hover .journey--dot-ripple {
@@ -362,6 +358,10 @@
         @include breakpoint(lg) {
           font-size: rem(40);
         }
+
+        @include breakpoint(xl) {
+          font-size: $typescale-9;
+        }
         font-weight: $font-weight-light;
       }
 
@@ -370,7 +370,7 @@
         font-weight: $font-weight-semibold;
         color: $journey-yellow;
         text-transform: uppercase;
-        margin-top: $spacing-5;
+        margin-top: $spacing-4;
         letter-spacing: $letter-spacing;
 
         @include breakpoint(sm) {
@@ -378,8 +378,13 @@
           font-size: $typescale-2;
         }
 
-        @include breakpoint(lg) {
-          margin-top: $spacing-3;
+        @include breakpoint(sm) {
+          margin-top: $spacing-5;
+        }
+
+        @include breakpoint(xl) {
+          margin-top: $spacing-7;
+          font-size: $typescale-3;
         }
       }
 
@@ -390,6 +395,10 @@
 
         @include breakpoint(lg) {
           font-size: rem(32);
+        }
+
+        @include breakpoint(xl) {
+          font-size: rem(40);
         }
       }
     }
