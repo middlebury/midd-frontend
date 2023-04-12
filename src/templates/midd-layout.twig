@@ -1,11 +1,7 @@
 {% extends "layout.twig" %}
 
 {% block layout_header %}
-  {% if midd_institutional_header %}
-    {% include 'partials/midd-institutional-header.twig' %}
-  {% else %}
-    {% include 'partials/midd-header.twig' %}
-  {% endif %}
+  {% include 'partials/midd-header.twig' %}
 {% endblock %}
 
 {% block page %}
