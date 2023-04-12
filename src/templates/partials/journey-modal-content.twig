@@ -24,29 +24,29 @@
         {% include 'partials/journey-modal-gallery.twig' %}
       {% endif %}
     </div>
-    <section class="journey-modal__articles-block">
-      <h2 class="articles-block__title">Related Somethings</h2>
-      <ul class="d-flex flex-wrap articles-block">
-        {% for i in 0..2 %}
-          <li class="col-12 col-md-4">
-            <article class="articles-block__article-card">
-              <div class="articles-block__content">
-                <span class="article-card--label label-{{random(labels)}}"></span>
-                <div class="article-card--text-content">
-                  <h3 class="article-card--title">Learn About Our Sustainability</h3>
-                  <p class="article-card--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                </div>
-                <button class="article-card--button">Learn more
-                  {% include 'partials/icon.twig' with {
-                name: 'chevron-right',
-                class: 'journey-modal-button--icon'
-              } %}
-                </button>
-              </div>
-            </article>
-          </li>
-        {% endfor %}
-      </ul>
-    </section>
+    {# <section class="journey-modal__articles-block">
+          <h2 class="articles-block__title">Related Somethings</h2>
+          <ul class="d-flex flex-wrap articles-block">
+            {% for i in 0..2 %}
+              <li class="col-12 col-md-4">
+                <article class="articles-block__article-card">
+                  <div class="articles-block__content">
+                    <span class="article-card--label label-{{random(labels)}}"></span>
+                    <div class="article-card--text-content">
+                      <h3 class="article-card--title">Learn About Our Sustainability</h3>
+                      <p class="article-card--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                    </div>
+                    <button class="article-card--button">Learn more
+                      {% include 'partials/icon.twig' with {
+                    name: 'chevron-right',
+                    class: 'journey-modal-button--icon'
+                  } %}
+                    </button>
+                  </div>
+                </article>
+              </li>
+            {% endfor %}
+          </ul>
+        </section> #}
   </div>
 </div>
