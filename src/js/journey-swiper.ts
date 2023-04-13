@@ -44,18 +44,7 @@ class JourneySwiper {
   }
 
   init() {
-    this.addListeners();
-    this.elementOnLoad('.journey-modal--block.is-open', this.swiperInit);
-
-    // init lazy loaded gallery images
-
-    const lazyGalleryImages = lozad('[data-journey-gallery-item] img');
-    lazyGalleryImages.observe();
-
-    this.elementOnLoad('.journey-modal--block.is-open', () => {
-      this.swiperInit();
-      this.swiperParentEl.style.transform = `translateX(${this.translate}px)`;
-    });
+    this.swiperInit();
     this.addListeners();
   }
 
@@ -126,6 +115,12 @@ class JourneySwiper {
 
   swiperInit() {
     this.getSwiper().then(() => {
+      // init lazy loaded gallery images
+      const lazyGalleryImages = lozad('[data-journey-gallery-item] img');
+      lazyGalleryImages.observe();
+
+      this.swiperParentEl.style.transform = `translateX(${this.translate}px)`;
+
       // Initialize video elements with VideoSwap class to enable showing/hiding videos
       this.initVideoElems();
     });
@@ -143,6 +138,13 @@ class JourneySwiper {
             this.handleMouseEvent(e);
           });
         }
+      });
+    });
+
+    // Adjust slide height when transcript button is opened or closed
+    $$('.transcript__button').forEach((el) => {
+      el.addEventListener('click', (e) => {
+        this.swiperEl?.updateAutoHeight(50);
       });
     });
 
