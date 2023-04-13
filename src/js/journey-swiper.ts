@@ -144,6 +144,13 @@ class JourneySwiper {
       });
     });
 
+    // Adjust slide height when transcript button is opened or closed
+    $$('.transcript__button').forEach((el) => {
+      el.addEventListener('click', (e) => {
+        this.swiperEl?.updateAutoHeight(50);
+      });
+    });
+
     window.addEventListener('resize', (e) => {
       clearTimeout(this.timeout);
       this.timeout = setTimeout(this.resetNavigation, 250);
