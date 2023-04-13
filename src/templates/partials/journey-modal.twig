@@ -66,21 +66,24 @@
         {% include 'partials/journey-modal-content.twig' with {
           label: label.label,
           content_type: label.content_type,
-          hash_class: label.hash_class
+          hash_class: label.hash_class,
+          articles: false
         }%}
       {% endfor %}
       {% for label in section_place %}
         {% include 'partials/journey-modal-content.twig' with {
           label: label.label,
           content_type: label.content_type,
-          hash_class: label.hash_class
+          hash_class: label.hash_class,
+          articles: true
         }%}
       {% endfor %}
       {% for label in section_purpose_desktop %}
         {% include 'partials/journey-modal-content.twig' with {
           label: label.label,
           content_type: label.content_type,
-          hash_class: label.hash_class
+          hash_class: label.hash_class,
+          articles: false
         }%}
       {% endfor %}
     </div>
