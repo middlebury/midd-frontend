@@ -50,7 +50,7 @@ export const hasClass = (elem: HTMLElement, className: any) =>
 // https://stackoverflow.com/questions/16149431/make-function-wait-until-element-exists/53269990#53269990
 export const checkElement = async (selector: string) => {
   while ($(selector) === null) {
-    await new Promise((resolve) => requestAnimationFrame(resolve));
+    await new Promise((resolve) => window.requestAnimationFrame(resolve));
   }
   return selector;
 };

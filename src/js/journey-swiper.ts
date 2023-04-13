@@ -1,17 +1,9 @@
-import {
-  Swiper,
-  SwiperOptions,
-  Navigation,
-  A11y,
-  Pagination,
-  HashNavigation
-} from 'swiper';
 import { $, $$, checkElement } from './utils/dom';
 import VideoSwap from './video';
 import lozad from 'lozad';
 
 class JourneySwiper {
-  swiperEl: Swiper;
+  swiperEl: any;
   elem: HTMLElement;
   swiperClass: string;
   paginationEl: HTMLElement;
@@ -20,7 +12,7 @@ class JourneySwiper {
   currentEl: HTMLElement;
   swiperParentEl: HTMLElement;
   swiperParentWrapperEl: HTMLElement;
-  swiperConfig: SwiperOptions;
+  swiperConfig: Object;
   translate: number;
   halfWindowWidth: number;
   hiddenWidth: number;
@@ -52,81 +44,87 @@ class JourneySwiper {
   }
 
   init() {
-    this.swiperConfig = {
-      autoHeight: true,
-      hashNavigation: {
-        watchState: true
-      },
-      navigation: {
-        nextEl: '.js-journey-next-button',
-        prevEl: '.js-journey-prev-button'
-      },
-      pagination: {
-        el: this.paginationClass,
-        bulletClass: 'journey-modal__cb-link',
-        clickable: true,
-        renderBullet: function (index, className) {
-          const labels = [
-            'Why Middlebury',
-            'Mentor-Student Partnerships',
-            'Immersive Environments',
-            'Alumni in the World',
-            'Faculty in the News',
-            'Students in Motion',
-            '"Connected" Middlebury',
-            'Middlebury College',
-            'Graduate and Professional Schools'
-          ];
-          return `
-            <a class="journey-modal__cb-link ${className}" href="#" role="button">
-              <span class="cb-link__text">
-                ${labels[index]}
-              </span>
-              <span class="cb-link__circle-wrapper">
-                <span class="cb-link__circle inner"></span>
-                <span class="cb-link__circle outer"></span>
-              </span>
-            </a>`;
-        }
-      },
-      on: {
-        slideNextTransitionStart: (swiper) => {
-          swiper.allowSlideNext = false;
-        },
-        slideNextTransitionEnd: (swiper) => {
-          swiper.allowSlideNext = true;
-        },
-        slidePrevTransitionStart: (swiper) => {
-          swiper.allowSlidePrev = false;
-        },
-        slidePrevTransitionEnd: (swiper) => {
-          swiper.allowSlidePrev = true;
-        },
-        transitionStart: () => {
-          this.swiperUpdate();
-        }
-      }
-    };
-
-    // init lazy loaded gallery images
-
-    const lazyGalleryImages = lozad('[data-journey-gallery-item] img');
-    lazyGalleryImages.observe();
-
-    this.elementOnLoad('.journey-modal--block.is-open', () => {
-      this.swiperInit();
-      this.swiperParentEl.style.transform = `translateX(${this.translate}px)`;
-    });
+    this.swiperInit();
     this.addListeners();
   }
 
-  swiperInit() {
-    const modules = [Navigation, Pagination, A11y, HashNavigation];
-    Swiper.use(modules);
-    this.swiperEl = new Swiper(this.swiperClass, this.swiperConfig);
+  async getSwiper() {
+    return import(/* webpackChunkName: "swiper" */ 'swiper')
+      .then(
+        ({ default: Swiper, Navigation, A11y, Pagination, HashNavigation }) => {
+          this.swiperEl = new Swiper(this.swiperClass, {
+            modules: [Navigation, Pagination, HashNavigation, A11y],
+            autoHeight: true,
+            touchReleaseOnEdges: true,
+            hashNavigation: {
+              watchState: true
+            },
+            navigation: {
+              nextEl: '.js-journey-next-button',
+              prevEl: '.js-journey-prev-button'
+            },
+            pagination: {
+              el: this.paginationClass,
+              bulletClass: 'journey-modal__cb-link',
+              clickable: true,
+              renderBullet: function (index, className) {
+                const labels = [
+                  'Why Middlebury',
+                  'Mentor-Student Partnerships',
+                  'Immersive Environments',
+                  'Alumni in the World',
+                  'Faculty in the News',
+                  'Students in Motion',
+                  '"Connected" Middlebury',
+                  'Middlebury College',
+                  'Graduate and Professional Schools'
+                ];
+                return `
+                  <a class="journey-modal__cb-link ${className}" href="#" role="button">
+                    <span class="cb-link__text">
+                      ${labels[index]}
+                    </span>
+                    <span class="cb-link__circle-wrapper">
+                      <span class="cb-link__circle inner"></span>
+                      <span class="cb-link__circle outer"></span>
+                    </span>
+                  </a>`;
+              }
+            },
+            on: {
+              slideNextTransitionStart: (swiper) => {
+                swiper.allowSlideNext = false;
+              },
+              slideNextTransitionEnd: (swiper) => {
+                swiper.allowSlideNext = true;
+              },
+              slidePrevTransitionStart: (swiper) => {
+                swiper.allowSlidePrev = false;
+              },
+              slidePrevTransitionEnd: (swiper) => {
+                swiper.allowSlidePrev = true;
+              },
+              transitionStart: () => {
+                this.swiperUpdate();
+              }
+            }
+          });
+        }
+      )
+      .catch((error) => 'An error occurred while loading Swiper');
+  }
 
-    // Initialize video elements with VideoSwap class to enable showing/hiding videos
-    this.initVideoElems();
+  swiperInit() {
+    this.getSwiper().then(() => {
+      // init lazy loaded gallery images
+      const lazyGalleryImages = lozad('[data-journey-gallery-item] img');
+      lazyGalleryImages.observe();
+
+      this.swiperParentEl.style.transform = `translateX(${this.translate}px)`;
+
+      // Initialize video elements with VideoSwap class to enable showing/hiding videos
+      this.initVideoElems();
+    });
   }
 
   addListeners() {
@@ -171,6 +169,7 @@ class JourneySwiper {
     if (isNaN(hash)) {
       MicroModal?.close();
     }
+
     if (hash !== this.swiperEl.activeIndex) {
       this.swiperEl.slideTo(hash, 300, false);
     }
