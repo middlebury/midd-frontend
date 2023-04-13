@@ -324,15 +324,6 @@ $school-theme-colors: (
 .journey-modal__overlay {
   .journey-modal__overlay-container {
     margin-top: $spacing-8;
-    margin-bottom: $spacing-5;
-
-    @include breakpoint(md) {
-      margin-bottom: $spacing-7;
-    }
-
-    @include breakpoint(lg) {
-      margin-bottom: $spacing-9;
-    }
 
     .journey-modal--title {
       font-family: $font-family-sans-serif;
