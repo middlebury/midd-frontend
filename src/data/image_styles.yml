@@ -222,3 +222,12 @@ image_styles:
       - 168x225
       - 300x400
     sizes: "(max-width: 512px) 168px, 300px"
+  journey_story_teaser:
+    title: Teaser image for story list
+    ratio: "16:9"
+    srcset:
+      - 296x166
+      - 235x132
+      - 224x126
+      - 256x144
+    sizes: "(max-width: 512px) 256px, (max-width: 768px) 224px, (max-width: 1200px) 235px, 296px"
