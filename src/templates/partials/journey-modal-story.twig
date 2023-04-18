@@ -10,24 +10,36 @@
       </figcaption>
     </figure>
   {% endif %}
-  <div class="story__content m-auto">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerci tation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Exce pteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum vitae dicta.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerci tation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Exce pteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum vitae dicta.</p>
-    <h2>Cobblestone h2</h2>
-    <h3>Cobblestone h3</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerci tation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Exce pteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum vitae dicta.</p>
-    {% include 'paragraphs/video.twig' %}
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerci tation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Exce pteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum vitae dicta.</p>
-    {% include 'paragraphs/image-with-text.twig' with {
-      right: true,
-      journey_modal: true
-    } %}
-    {% include 'paragraphs/image-with-text.twig' with {
-      journey_modal: true
-    }%}
-    {% include 'paragraphs/image-with-text.twig' with {
-      right: true,
-      journey_modal: true
-    } %}
-  </div>
+    <div class="story__content {{type == 'story' ? '' : 'story-list'}} m-auto">
+    {% if type == 'story' %}
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerci tation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Exce pteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum vitae dicta.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerci tation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Exce pteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum vitae dicta.</p>
+      <h2>Cobblestone h2</h2>
+      <h3>Cobblestone h3</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerci tation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Exce pteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum vitae dicta.</p>
+      {% include 'paragraphs/video.twig' %}
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerci tation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Exce pteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum vitae dicta.</p>
+      {% include 'paragraphs/image-with-text.twig' with {
+        right: true,
+        journey_modal: true
+      } %}
+      {% include 'paragraphs/image-with-text.twig' with {
+        journey_modal: true
+      }%}
+      {% include 'paragraphs/image-with-text.twig' with {
+        right: true,
+        journey_modal: true
+      } %}
+    {% else %}
+      <ul class="list list--dividers mt-lg-4 mb-6 mb-lg-7">
+          {% for i in 0..5 %}
+            <li class="list__item">
+              {% include 'partials/journey-story-list-item.twig' with {
+                id: i
+              } %}
+            </li>
+          {% endfor %}
+      </ul>
+    {% endif %}
+    </div>
 </article>

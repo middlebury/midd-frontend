@@ -12,7 +12,7 @@
 {% set section_purpose_desktop = [
   {id: 6, label: 'Connected Middlebury', hash_class: 'slide6', content_type: 'portrait-video'},
   {id: 7, label: 'Middlebury College', hash_class: 'slide7', content_type: 'gallery'},
-  {id: 8, label: 'Graduate and Professional Schools', hash_class: 'slide8', content_type: 'video'},
+  {id: 8, label: 'Graduate and Professional Schools', hash_class: 'slide8', content_type: 'story-list'},
 ] %}
 
 <div class="journey-modal" aria-hidden="true" role="dialog" aria-modal="true">
@@ -73,7 +73,8 @@
           label: label.label,
           content_type: label.content_type,
           hash_class: label.hash_class,
-          articles: true
+          articles: true,
+          blurb: true
         }%}
       {% endfor %}
       {% for label in section_purpose_desktop %}
