@@ -4,58 +4,58 @@
 
 {% set section_desktop_learning = [
   {id: 0, label: 'Why Middlebury', x: '1000', y: '195'},
-  {id: 1, label: 'Mentor-Student Partnerships', x: '1051', y: '407'},
-  {id: 2, label: 'Immersive Environments', x: '954', y: '609'},
+  {id: 1, label: 'Immersive Environments', x: '1051', y: '407'},
+  {id: 2, label: 'The Undergraduate Experience', x: '954', y: '609'},
 ] %}
 
 {% set section_tablet_learning = [
   {id: 0, label: 'Why Middlebury', x: '420', y: '108'},
-  {id: 1, label: '<tspan x="581" y="344">Mentor-Student</tspan><tspan x="581" y="365">Partnerships</tspan>', x: '557', y: '339'},
-  {id: 2, label: 'Immersive Environments', x: '244', y: '543'},
+  {id: 1, label: '<tspan x="581" y="344">Immersive</tspan><tspan x="581" y="365">Environments</tspan>', x: '557', y: '339'},
+  {id: 2, label: 'The Undergraduate Experience', x: '244', y: '543'},
 ] %}
 
 {% set section_mobile_learning = [
   {id: 0, label: 'Why Middlebury', x: '174', y: '121'},
-  {id: 1, label: '<tspan x="204" y="427">Mentor-Student</tspan><tspan x="204" y="443">Partnerships</tspan>', x: '188', y: '422'},
-  {id: 2, label: 'Immersive Environments', x: '76', y: '510'},
+  {id: 1, label: '<tspan x="208" y="422">Immersive</tspan><tspan x="208" y="443">Environments</tspan>', x: '188', y: '422'},
+  {id: 2, label: 'The Undergraduate Experience', x: '76', y: '510'},
 ] %}
 
 {% set section_desktop_thinking = [
   {id: 3, label: 'Alumni in the World', x: '398', y: '265', text_x: '244'},
-  {id: 4, label: 'Faculty in the News', x: '334', y: '431', text_x: '178'},
-  {id: 5, label: 'Students in Motion', x: '403', y: '607', text_x: '254'}
+  {id: 4, label: 'Middlebury in the News', x: '334', y: '431', text_x: '178'},
+  {id: 5, label: 'Students in Action', x: '403', y: '607', text_x: '254'}
 ]
 %}
 
 {% set section_tablet_thinking = [
   {id: 3, label: 'Alumni in the World', x: '478', y: '148'},
-  {id: 4, label: '<tspan x="619" y="355">Faculty in &#10;</tspan><tspan x="619" y="376">the News</tspan>', x: '595', y: '350'},
-  {id: 5, label: 'Students in Motion', x: '440', y: '572'}
+  {id: 4, label: '<tspan x="619" y="355">Middlebury in</tspan><tspan x="619" y="376">the News</tspan>', x: '595', y: '350'},
+  {id: 5, label: 'Students in Action', x: '440', y: '572'}
 ]
 %}
 
 {% set section_mobile_thinking = [
   {id: 3, label: 'Alumni in the World', x: '133', y: '93'},
-  {id: 4, label: 'Faculty in the News', x: '170', y: '426'},
-  {id: 5, label: 'Students in Motion', x: '55', y: '499'}
+  {id: 4, label: '<tspan x="202" y="426">Middlebury in</tspan><tspan x="202" y="447">the News</tspan>', x: '170', y: '426'},
+  {id: 5, label: 'Students in Action', x: '55', y: '499'}
 ] %}
 
 {% set section_desktop_opportunity = [
-  {id: 6, label: '"Connected" Middlebury', x: '1000', y: '140'},
+  {id: 6, label: 'Connected Middlebury', x: '1000', y: '140'},
   {id: 7, label: 'Middlebury College', x: '1107', y: '340'},
   {id: 8, label: 'Graduate and Professional Schools', x: '1004', y: '572'},
 ] %}
 
 {% set section_tablet_opportunity = [
-  {id: 6, label: '"Connected" Middlebury', x: '469', y: '246'},
+  {id: 6, label: 'Connected Middlebury', x: '469', y: '246'},
   {id: 7, label: '<tspan x="624" y="396">Middlebury</tspan><tspan x="624" y="417">College</tspan>', x: '600', y: '391'},
   {id: 8, label: '<tspan x="560" y="591">Graduate and</tspan><tspan x="560" y="612">Professional Schools</tspan>', x: '536', y: '586'},
 ] %}
 
 {% set section_mobile_opportunity = [
-  {id: 6, label: '"Connected" Middlebury', x: '117', y: '103'},
+  {id: 6, label: 'Connected Middlebury', x: '117', y: '103'},
   {id: 7, label: 'Middlebury College', x: '159', y: '429'},
-  {id: 8, label: '<tspan x="111" y="511">Graduate and</tspan><tspan x="111" y="527">Professional Schools</tspan>', x: '95', y: '506'},
+  {id: 8, label: '<tspan x="111" y="511">Graduate and</tspan><tspan x="111" y="532">Professional Schools</tspan>', x: '95', y: '506'},
 ] %}
 
 {% block page %}
@@ -73,13 +73,7 @@
       video: 'https://www.middlebury.edu/office/sites/www.middlebury.edu.office/files/learning_60.mp4',
       name: 'learning',
       blurb: 'A breadth and depth of <strong>learning</strong> and <strong>experience</strong> … and capacity for <strong>exploration</strong> that will last a lifetime',
-      align: 'left',
-      dots: [
-        'The Liberal Arts',
-        'History of Middlebury',
-        'Principles and Values',
-        'Looking to the Future'
-      ]
+      align: 'left'
     } %}
     {% include 'partials/journey-section.twig' with {
       poster_image: '/images/demo/place.jpg',
@@ -87,24 +81,13 @@
       name: 'thinking',
       blurb: 'An expansive education built on <strong>critical thinking</strong> and <strong>compassionate doing</strong>',
       align: 'right left--mobile',
-      dots: [
-        'Vermont',
-        'California',
-        'World',
-      ]
     } %}
     {% include 'partials/journey-section.twig' with {
       poster_image: '/images/demo/purpose.jpg',
       video: 'https://www.middlebury.edu/office/sites/www.middlebury.edu.office/files/purpose_30.mp4',
       name: 'opportunity',
       blurb: '<strong>A constellation</strong> of schools and programs, a world of educational <strong>opportunity</strong>',
-      align: 'left',
-      dots: [
-        'Engagement',
-        'Justice',
-        'Sustainability',
-        'Culture',
-      ]
+      align: 'left'
     } %}
     <div class="journey-modal--block" id="midd-journey-overlay" style="overflow-x:hidden">
       {% include 'partials/journey-modal.twig' with {
