@@ -439,7 +439,7 @@ $school-theme-colors: (
         padding: 0;
         padding-top: $spacing-6;
         padding-bottom: $spacing-7;
-        max-width: 78%;
+        max-width: 80%;
       }
 
       a {
@@ -476,6 +476,51 @@ $school-theme-colors: (
         @include breakpoint(lg) {
           font-size: $typescale-4;
           font-weight: $font-weight-normal;
+        }
+      }
+
+      &.story-list {
+        // padding-top: 0;
+        padding-bottom: 0;
+
+        @include breakpoint(sm) {
+          padding-left: 0;
+          padding-right: 0;
+          width: 82%;
+        }
+      }
+
+      .story-list-item {
+        .float-right {
+          float: unset;
+
+          @include breakpoint(sm) {
+            float: right;
+          }
+        }
+
+        h2 {
+          font-size: $typescale-6;
+          font-weight: $font-weight-semibold;
+        }
+
+        p {
+          margin-bottom: 0;
+        }
+
+        a {
+          color: $navy;
+
+          &.story-link {
+            @include link-border;
+          }
+        }
+      }
+
+      .list__item:not(:last-child) {
+        @include breakpoint(lg) {
+          padding-bottom: $spacing-7;
+          margin-bottom: $spacing-7;
         }
       }
     }
