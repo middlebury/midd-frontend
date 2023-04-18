@@ -247,6 +247,11 @@
     color: white;
     z-index: 30;
     opacity: 0.5;
+    display: none;
+
+    @include breakpoint(sm) {
+      display: block;
+    }
 
     @include breakpoint(lg) {
       bottom: $spacing-5;
@@ -311,25 +316,25 @@
 
       &.align-left {
         .row {
-          justify-content: left;
+          justify-content: flex-start;
           text-align: left;
         }
       }
 
       &.align-right {
         .row {
-          justify-content: right;
+          justify-content: flex-end;
           text-align: right;
         }
       }
 
       &.left--mobile {
         .row {
-          justify-content: left;
+          justify-content: flex-start;
           text-align: left;
 
           @include breakpoint(lg) {
-            justify-content: right;
+            justify-content: flex-end;
             text-align: right;
           }
         }

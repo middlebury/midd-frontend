@@ -330,16 +330,34 @@ $school-theme-colors: (
       font-weight: $font-weight-light;
       font-size: rem(32);
       line-height: $line-height-journey;
-      margin-bottom: $spacing-5;
+      margin-bottom: $spacing-4;
 
       @include breakpoint(md) {
         font-size: rem(40);
-        margin-bottom: $spacing-6;
       }
 
       @include breakpoint(lg) {
         font-size: rem(56);
-        margin-bottom: $spacing-8;
+        margin-bottom: $spacing-6;
+      }
+    }
+
+    .journey-modal--blurb {
+      line-height: $line-height-heading;
+      font-size: $typescale-4;
+      margin-top: $spacing-4;
+      margin-bottom: $spacing-5;
+
+      @include breakpoint(md) {
+        font-weight: $font-weight-light;
+        font-size: $typescale-6;
+        margin-bottom: $spacing-7;
+      }
+
+      @include breakpoint(lg) {
+        line-height: $line-height-body;
+        margin-top: $spacing-6;
+        margin-bottom: $spacing-9;
       }
     }
 
@@ -386,6 +404,7 @@ $school-theme-colors: (
     }
     background: $white;
     color: $black;
+    border-bottom: $spacing-2 solid $blue-light;
 
     .story__image {
       margin-left: -$spacing-3;
