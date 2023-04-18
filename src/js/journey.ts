@@ -3,6 +3,7 @@ import anime, { AnimeInstance } from 'animejs';
 import { $, $$ } from './utils/dom';
 import JourneySwiper from './journey-swiper';
 import onscroll from './utils/onscroll';
+import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
 
 class Journey {
   elem: HTMLElement;
@@ -52,9 +53,12 @@ class Journey {
     window.location.hash = '';
     this.deviceInit();
     this.addListeners();
-    this.svgInit();
-    this.animInit();
-    this.sectionInit();
+
+    if (!PREFERS_REDUCED_MOTION) {
+      this.svgInit();
+      this.animInit();
+      this.sectionInit();
+    }
   }
 
   addListeners() {

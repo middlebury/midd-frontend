@@ -1,4 +1,5 @@
 import { $$ } from './utils/dom';
+import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
 
 let defaultOptions = {
   container: document.body,
@@ -12,7 +13,10 @@ let defaultOptions = {
 };
 
 async function lazyLoadPanelSnap() {
-  if (window.matchMedia('(min-width: 512px)').matches) {
+  if (
+    window.matchMedia('(min-width: 512px)').matches &&
+    !PREFERS_REDUCED_MOTION
+  ) {
     const { default: PanelSnap } = await import('panelsnap');
 
     journey.forEach(() => new PanelSnap(defaultOptions));
