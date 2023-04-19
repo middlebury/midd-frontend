@@ -55,11 +55,9 @@
   {% endif %}
 
   {% if image is defined %}
-    <figure class="journey-section__background">
-      <img src="{{ image }}" alt=""/>
-    </figure>
+    <figure class="journey-section__background" aria-label="[place alt text here]"></figure>
   {% else %}
-    <figure class="journey-section__background">
+    <figure class="journey-section__background" aria-label="[place alt text here]">
       <video playsinline autoplay muted loop class="journey-section__video" data-journey-video poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
         <source data-src="{{video}}" type="video/mp4">
         <track kind="descriptions" srclang="en" src="descriptions.vtt" default/>
