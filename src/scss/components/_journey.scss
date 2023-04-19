@@ -203,8 +203,12 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: transparent url('https://via.placeholder.com/1200x675')
-      no-repeat 50% 0% / cover;
+    background: transparent url('https://via.placeholder.com/320x568') no-repeat
+      50% 0% / cover;
+
+    @include breakpoint(md) {
+      background-image: url('https://via.placeholder.com/1200x675');
+    }
 
     @include breakpoint(lg) {
       min-width: initial;
@@ -214,6 +218,10 @@
 
     @include breakpoint(xl) {
       background-image: url('https://via.placeholder.com/1440x810');
+    }
+
+    @media only screen and (min-width: 1600px) {
+      background-image: url('https://via.placeholder.com/1920x1080');
     }
 
     video[poster] {
