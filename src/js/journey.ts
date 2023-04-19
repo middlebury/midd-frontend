@@ -143,7 +143,6 @@ class Journey {
       $(`.journey-links--${this.deviceType} .opportunity`).classList.add(
         'animate'
       );
-      // }
     }
 
     if (
@@ -196,8 +195,6 @@ MicroModal.init({
   openTrigger: 'data-journey-overlay-open',
   closeTrigger: 'data-journey-overlay-close',
   onShow: (modal: any) => {
-    $('[data-journey-overlay-close]', modal).focus();
-
     if (!modal.swiper) {
       const swiper = $('.journey-swiper');
       modal.swiper = new JourneySwiper(swiper);
