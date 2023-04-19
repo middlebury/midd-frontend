@@ -65,16 +65,16 @@
         <track kind="descriptions" srclang="en" src="descriptions.vtt" default/>
       </video>
     </figure>
-    <button aria-label="Play/Pause Animation" class="journey-video--button" data-journey-video-trigger>
-      <span class="journey-video--button-pause">
-        <span class="sr-only">Pause Animation</span>
+    <button aria-label="Play/Pause Background Video" class="journey-video--button" data-journey-video-trigger>
+      <span aria-labelledby="journey-video--pause" class="journey-video--button-pause">
+        <span id="journey-video--pause" class="sr-only">Pause Animation</span>
         {% include 'partials/icon.twig' with {
           name: 'pause-homepage',
           class: 'homepage-button'
         } %}
       </span>
-      <span class="journey-video--button-play">
-        <span class="sr-only">Play Animation</span>
+      <span aria-labelledby="journey-video--play" class="journey-video--button-play">
+        <span id="journey-video--play" class="sr-only">Play Animation</span>
         {% include 'partials/icon.twig' with {
         name: 'play-homepage',
         class: 'homepage-button'

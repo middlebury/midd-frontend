@@ -74,15 +74,38 @@ $school-theme-colors: (
 
     @include breakpoint(xl) {
       display: block;
-      margin-bottom: 0;
+      margin-bottom: $spacing-3;
     }
   }
 
   .midd-header__brand {
     height: 56px;
 
+    // a {
+    //   width: 100%;
+    // }
+
     a {
-      width: 100%;
+      text-decoration: none;
+
+      .midd-header__shield {
+        width: 42px;
+        top: 0;
+
+        @include breakpoint(md) {
+          width: 64px;
+        }
+      }
+
+      .midd-header__wordmark {
+        width: 78px;
+        margin-left: rem(8);
+
+        @include breakpoint(md) {
+          width: 116px;
+          margin-left: rem(10);
+        }
+      }
     }
   }
 
@@ -324,31 +347,40 @@ $school-theme-colors: (
 .journey-modal__overlay {
   .journey-modal__overlay-container {
     margin-top: $spacing-8;
-    margin-bottom: $spacing-5;
-
-    @include breakpoint(md) {
-      margin-bottom: $spacing-7;
-    }
-
-    @include breakpoint(lg) {
-      margin-bottom: $spacing-9;
-    }
 
     .journey-modal--title {
       font-family: $font-family-sans-serif;
       font-weight: $font-weight-light;
       font-size: rem(32);
       line-height: $line-height-journey;
-      margin-bottom: $spacing-5;
+      margin-bottom: $spacing-4;
 
       @include breakpoint(md) {
         font-size: rem(40);
-        margin-bottom: $spacing-6;
       }
 
       @include breakpoint(lg) {
         font-size: rem(56);
-        margin-bottom: $spacing-8;
+        margin-bottom: $spacing-6;
+      }
+    }
+
+    .journey-modal--blurb {
+      line-height: $line-height-heading;
+      font-size: $typescale-4;
+      margin-top: $spacing-4;
+      margin-bottom: $spacing-5;
+
+      @include breakpoint(md) {
+        font-weight: $font-weight-light;
+        font-size: $typescale-6;
+        margin-bottom: $spacing-7;
+      }
+
+      @include breakpoint(lg) {
+        line-height: $line-height-body;
+        margin-top: $spacing-6;
+        margin-bottom: $spacing-9;
       }
     }
 
@@ -376,6 +408,16 @@ $school-theme-colors: (
         margin-left: 0;
         margin-right: 0;
       }
+
+      figcaption {
+        margin-left: $spacing-3;
+        margin-right: $spacing-3;
+
+        @include breakpoint(sm) {
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
     }
 
     .media__caption {
@@ -395,6 +437,7 @@ $school-theme-colors: (
     }
     background: $white;
     color: $black;
+    border-bottom: $spacing-2 solid $blue-light;
 
     .story__image {
       margin-left: -$spacing-3;
@@ -429,14 +472,18 @@ $school-theme-colors: (
         padding: 0;
         padding-top: $spacing-6;
         padding-bottom: $spacing-7;
-        max-width: 78%;
+        max-width: 80%;
       }
 
-      a {
-        color: initial;
+      img {
+        margin-bottom: $spacing-2;
 
-        &:hover {
-          border-color: initial;
+        @include breakpoint(sm) {
+          margin-bottom: rem(12);
+        }
+
+        @include breakpoint(lg) {
+          margin-bottom: $spacing-3;
         }
       }
 
@@ -444,18 +491,40 @@ $school-theme-colors: (
         margin-bottom: $spacing-4;
       }
 
-      h2 {
+      h3 {
         font-size: $typescale-6;
         font-weight: $font-weight-semibold;
-        margin-bottom: $spacing-4;
+        margin-bottom: $spacing-2;
+        margin-top: $spacing-5;
+
+        @include breakpoint(sm) {
+          margin-top: $spacing-6;
+        }
+
+        @include breakpoint(md) {
+          margin-bottom: $spacing-3;
+        }
 
         @include breakpoint(lg) {
           font-size: rem(32);
           font-weight: $font-weight-normal;
+          margin-top: $spacing-7;
+        }
+
+        &:first-child {
+          margin-top: 0;
+
+          @include breakpoint(sm) {
+            margin-top: $spacing-3;
+          }
+
+          // @include breakpoint(lg) {
+          //   margin-top: $spacing-7;
+          // }
         }
       }
 
-      h3 {
+      h4 {
         font-size: $typescale-3;
         font-weight: $font-weight-bold;
         text-transform: uppercase;
@@ -466,6 +535,58 @@ $school-theme-colors: (
         @include breakpoint(lg) {
           font-size: $typescale-4;
           font-weight: $font-weight-normal;
+        }
+      }
+
+      &.story-list {
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+
+        @include breakpoint(sm) {
+          width: 82%;
+        }
+      }
+
+      .story-list-item {
+        padding-left: $spacing-3;
+        padding-right: $spacing-3;
+
+        @include breakpoint(sm) {
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        .float-right {
+          float: unset;
+
+          @include breakpoint(sm) {
+            float: right;
+          }
+        }
+
+        h2 {
+          font-size: $typescale-6;
+          font-weight: $font-weight-semibold;
+        }
+
+        p {
+          margin-bottom: 0;
+        }
+
+        a {
+          color: $navy;
+
+          &.story-link {
+            @include link-border;
+          }
+        }
+      }
+
+      .list__item:not(:last-child) {
+        @include breakpoint(lg) {
+          padding-bottom: $spacing-7;
+          margin-bottom: $spacing-7;
         }
       }
     }
@@ -623,19 +744,26 @@ $school-theme-colors: (
         }
 
         .article-card--title {
+          font-family: $font-family-sans-serif;
           font-size: $typescale-4;
-          font-weight: $font-weight-bold;
+          font-weight: $font-weight-semibold;
           color: $navy;
           padding-bottom: $spacing-2;
+          padding-right: $spacing-3;
 
           @include breakpoint(lg) {
             font-size: $typescale-6;
+          }
+
+          @include breakpoint(xl) {
+            font-size: rem(32);
             font-weight: $font-weight-normal;
           }
         }
 
         .article-card--text {
           font-size: $typescale-2;
+          line-height: $line-height-heading;
         }
 
         .article-card--button {

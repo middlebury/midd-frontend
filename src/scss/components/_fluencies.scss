@@ -29,10 +29,6 @@
       font-weight: $font-weight-light;
       line-height: $line-height-heading;
 
-      // @include breakpoint(md) {
-      //   font-size: $typescale-6;
-      // }
-
       @include breakpoint(lg) {
         font-size: rem(32);
       }
@@ -122,7 +118,7 @@
     &::before {
       content: '';
       display: block;
-      padding-top: percentage(103/139);
+      padding-top: percentage(123/166);
       width: 100%;
     }
 
@@ -135,18 +131,45 @@
       padding: $spacing-3;
 
       h3 {
-        font-size: $typescale-6;
-        font-weight: $font-weight-light;
+        font-size: $typescale-5;
+        font-weight: $font-weight-normal;
+        color: $navy;
         padding-bottom: $spacing-2;
 
+        @include breakpoint(md) {
+          font-size: $typescale-6;
+        }
         @include breakpoint(xl) {
           font-size: rem(32);
+          font-weight: $font-weight-light;
         }
       }
 
       p {
         font-size: $typescale-3;
       }
+    }
+  }
+
+  .focus-area-item--button {
+    color: $navy;
+    font-size: $typescale-1;
+    font-weight: $font-weight-semibold;
+    letter-spacing: $letter-spacing;
+    text-transform: uppercase;
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: $spacing-1 $spacing-3;
+    border-top: 1px solid $gray-light;
+
+    @include breakpoint(md) {
+      font-size: $typescale-2;
+      font-weight: $font-weight-normal;
+      padding: $spacing-2 $spacing-3;
     }
   }
 }

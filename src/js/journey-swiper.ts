@@ -18,6 +18,7 @@ class JourneySwiper {
   hiddenWidth: number;
   timeout: NodeJS.Timeout;
   activeVideoClass: string;
+  closeBtn: HTMLElement;
 
   constructor(el: HTMLElement) {
     this.elem = el;
@@ -29,6 +30,7 @@ class JourneySwiper {
     this.activeVideoClass = 'has-video';
     this.translate = 0;
     this.halfWindowWidth = window.innerWidth / 2;
+    this.closeBtn = $('[data-journey-overlay-close]');
 
     this.swiperInit = this.swiperInit.bind(this);
     this.swiperUpdate = this.swiperUpdate.bind(this);
@@ -115,6 +117,7 @@ class JourneySwiper {
 
   swiperInit() {
     this.getSwiper().then(() => {
+      this.closeBtn.focus();
       // init lazy loaded gallery images
       const lazyGalleryImages = lozad('[data-journey-gallery-item] img');
       lazyGalleryImages.observe();
