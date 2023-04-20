@@ -152,7 +152,7 @@ class JourneySwiper {
     });
 
     // Adding resize event listener only on tablet and desktop because resize event fires on scroll on mobile
-    if (window.matchMedia('(min-width: 512px)')) {
+    if (window.matchMedia('(min-width: 512px)').matches) {
       window.addEventListener('resize', (e) => {
         clearTimeout(this.timeout);
         this.timeout = setTimeout(this.resetNavigation, 250);
