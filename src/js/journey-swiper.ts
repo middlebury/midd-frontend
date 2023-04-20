@@ -210,7 +210,10 @@ class JourneySwiper {
     this.hiddenWidth = scrollWidth - this.swiperParentWrapperEl.offsetWidth;
 
     const currentElLeft = this.currentEl?.getBoundingClientRect().left;
-
+    console.log(this.translate, this.swiperParentEl.style.transform);
+    $(
+      '.js-swiper-test'
+    ).innerText = `${this.translate}, ${this.swiperParentEl.style.transform}`;
     if (this.currentEl) {
       this.translate =
         this.translate + (this.halfWindowWidth - currentElLeft - 16);
