@@ -263,11 +263,7 @@ const copyDeps = () => {
 };
 
 const copyMeta = () => {
-  return gulp
-    .src([
-      './composer.json'
-    ])
-    .pipe(gulp.dest('./dist/'));
+  return gulp.src(['./composer.json']).pipe(gulp.dest('./dist/'));
 };
 
 const deployDist = () => {
@@ -279,7 +275,10 @@ const deployDist = () => {
     .src(
       [
         './dist/css/main.css',
-        './dist/js/bundle.js',
+        './dist/js/main.bundle.js',
+        './dist/js/journey.bundle.js',
+        './dist/js/swiper.bundle.js',
+        './dist/js/panelsnap.bundle.js',
         './dist/js/Chart.min.js',
         './dist/images/*'
       ],
