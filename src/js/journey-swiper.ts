@@ -224,7 +224,7 @@ class JourneySwiper {
       }
 
       if (this.translate <= 0 && Math.abs(this.translate) <= this.hiddenWidth) {
-        this.swiperParentEl.style.transform = `translateX(${this.translate}px)`;
+        this.swiperParentEl.style.transform = `translate3d(${this.translate}px, 0px, 0px)`;
       }
     }
 
