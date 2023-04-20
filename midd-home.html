@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>Middlebury Front-end Design System</title>
     <link rel="stylesheet" href="css/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   </head>
   <body class=" " id="midd-pagetop">
-    <div class="cookie-banner js-cookie-banner is-toggled">
+    <aside class="cookie-banner js-cookie-banner is-toggled">
       <p>We use cookies and other technologies to better understand a visitor's experience and to help improve our websites. By continuing to use the website, you consent to Middlebury's use of cookies and other technologies as outlined in our <a href="#">Privacy Policy</a>.</p>
       <button class="cookie-banner__button cookie-banner__button--close" aria-label="Close cookie consent banner" data-toggle-target=".js-cookie-banner"> Close <svg class="icon ml-1 cookie-banner__button-icon " focusable="false" aria-hidden="true">
           <use xlink:href="#icon-times">
         </svg>
       </button>
-    </div>
+    </aside>
     <nav aria-labelledby="midd-skip-link">
-      <a href="#midd-main" class="sr-only sr-only-focusable" id="midd-skip-link">Skip to content</a>
+      <a href="#midd-main" class="sr-only sr-focusable" id="midd-skip-link">Skip to content</a>
     </nav>
     <div style="display:none">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -190,7 +190,7 @@
         <div class="midd-header__container">
           <div class="midd-header__brand">
             <a href="">
-              <img src="images/midd-shield.svg" class="midd-header__shield" alt="Logo for Middlebury">
+              <img src="images/midd-shield-white.svg" class="midd-header__shield" alt="Logo for Middlebury">
               <img src="images/midd-wordmark.svg" class="midd-header__wordmark" alt="Middlebury">
               <span class="sr-only">Middlebury</span>
             </a>
@@ -258,7 +258,7 @@
               <span class="d-none d-sm-inline">Search</span>
             </a>
             <div class="midd-search__content js-midd-search">
-              <form action="http://www.middlebury.edu/search" method="GET">
+              <form action="https://www.middlebury.edu/search" method="GET">
                 <label for="midd-search-input" class="sr-only">Search</label>
                 <div class="input-group">
                   <input type="search" class="form-control form-control--sm midd-search__input js-midd-search-input" id="midd-search-input" placeholder="Search" name="q2" required />
@@ -275,201 +275,1459 @@
         </div>
       </header>
       <main class="main" id="midd-main" aria-labelledby="midd-page-header-label">
-        <section class="hero">
-          <figure class="hero-bg">
-            <img src="/images/hero.jpg" alt="">
-          </figure>
-          <div class="hero-content">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-10 offset-md-1">
-                  <h2 class="hero-title h1">Prepare to lead an engaged, consequential, and creative life</h2>
+        <div class="journey">
+          <section id=intro class="journey-section journey-section--intro js-journey-section" data-section=intro>
+            <div class="journey-section__body">
+              <div class="container">
+                <div class="journey-section__body-content align-center">
+                  <div class="row">
+                    <div class="col-12 col-sm-10 journey-section__text">
+                      <h2> Chart your own course of study in one of the most <strong>immersive</strong> and <strong>globally engaged</strong> experiences in higher education </h2>
+                      <p class="sub-title"> Vermont | Monterey, CA | The World </p>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </div>
+            <div class="school-picker">
+              <ul>
+                <li><a href="#"><span>Middlebury College</span></a></li>
+                <li><a href="#"><span>Middlebury Institute of International Studies</span></a></li>
+                <li><a href="#"><span>Middlebury Language Schools</span></a></li>
+                <li><a href="#"><span>Middlebury C.V. Starr Schools Abroad</span></a></li>
+                <li><a href="#"><span>Middlebury Bread Loaf School of English</span></a></li>
+                <li><a href="#"><span>Middlebury Bread Loaf Writers' Conferences</span></a></li>
+              </ul>
+            </div>
+            <figure class="journey-section__background" aria-label="[place alt text here]"></figure>
+          </section>
+          <section id=learning class="journey-section journey-section--learning js-journey-section" data-section=learning>
+            <div class="journey-line-box js-journey-line">
+              <svg viewbox="0 0 772 2238" xmlns="http://www.w3.org/2000/svg" class="journey-line-svg journey-line--desktop" style="pointer-events:auto;">
+                <path fill="none" fill-rule="evenodd" stroke="#F4B824" stroke-width="2" stroke-dasharray="4 4" d="M661.812 1C733.812 78.3575 729.263 252.8 673.812 343.583C592.812 476.196 472.316 481.722 404.814 566.446C330.966 659.138 316.318 714.408 169.812 797.905C108.168 833.037 43.7524 885.05 19.8118 945.253C-13.7602 1029.68 -15.5476 1198.2 143.814 1259.59C296.812 1318.53 280.113 1432.82 430.812 1463.43C696.812 1517.45 790.812 1642.7 766.806 1823.2C757.439 1893.63 709.812 2000.02 550.311 2035.01C432.31 2060.9 381.811 2149.82 363.811 2237" />
+              </svg>
+              <svg viewbox="0 0 454 1920" xmlns="http://www.w3.org/2000/svg" class="journey-line-svg journey-line--tablet" style="pointer-events:auto;">
+                <path fill="none" fill-rule="evenodd" stroke="#F4B824" stroke-width="2" stroke-dasharray="4 4" d="M269.001 1C307.501 21.5 379.118 48.0194 406.001 136C443.558 258.913 324.557 348.643 186.002 378C47.4466 407.357 132.224 440.754 32.0047 537C-56.7386 622.226 72.7195 643.253 136.007 652C259.001 669 360.501 702 406.001 779C466.818 881.922 457.407 1027.17 312 1110C233.004 1155 162 1169 115 1227C68 1285 85.929 1391.69 232.004 1434C522.004 1518 534.006 1764 216.003 1919" />
+              </svg>
+              <svg viewbox="0 0 277 1598" xmlns="http://www.w3.org/2000/svg" class="journey-line-svg journey-line--mobile" style="pointer-events:auto;">
+                <path fill="none" fill-rule="evenodd" stroke="#F4B824" stroke-width="2" stroke-dasharray="4 4" d="M150 1C293.001 79 308.001 236 130.001 313C27.0665 357.528 10.0011 445 56.9992 501C163.501 610.5 405.501 708 188.501 847.5C87.7999 912.237 1.0011 936 1.0011 997.5C1.0011 1059 29.9498 1076.67 163.001 1188C233.397 1246.9 287.001 1335 152.001 1434C92.7817 1477.43 0.00137329 1542 126.501 1596.5" />
+              </svg>
+            </div>
+            <div class="journey-link-box section-learning">
+              <svg viewbox="0 0 1440 810" class="journey-links-svg journey-links--desktop" height="100%" width="100%" preserveaspectratio="none">
+                <g class="journey-link--section learning">
+                  <a class="journey--link" href="#slide0" role="button" data-journey-overlay-open="midd-journey-overlay">
+                    <circle cx="1000" cy="195" r="8" stroke="#F4B824" fill="#F4B824" />
+                    <circle class="journey--dot-ripple" cx="1000" cy="195" fill="none" />
+                    <text class="journey--link-text" x="1024" y="200">Why Middlebury</text>
+                  </a>
+                  <a class="journey--link" href="#slide1" role="button" data-journey-overlay-open="midd-journey-overlay">
+                    <circle cx="1051" cy="407" r="8" stroke="#F4B824" fill="#F4B824" />
+                    <circle class="journey--dot-ripple" cx="1051" cy="407" fill="none" />
+                    <text class="journey--link-text" x="1075" y="412">Immersive Environments</text>
+                  </a>
+                  <a class="journey--link" href="#slide2" role="button" data-journey-overlay-open="midd-journey-overlay">
+                    <circle cx="954" cy="609" r="8" stroke="#F4B824" fill="#F4B824" />
+                    <circle class="journey--dot-ripple" cx="954" cy="609" fill="none" />
+                    <text class="journey--link-text" x="978" y="614">The Undergraduate Experience</text>
+                  </a>
+                </g>
+              </svg>
+              <svg viewbox="0 0 768 675" class="journey-links-svg journey-links--tablet" height="100%" width="100%" preserveaspectratio="none">
+                <g class="journey-link--section learning">
+                  <a class="journey--link" href="#slide0" role="button" data-journey-overlay-open="midd-journey-overlay">
+                    <circle cx="420" cy="108" r="8" stroke="#F4B824" fill="#F4B824" />
+                    <circle class="journey--dot-ripple" cx="420" cy="108" fill="none" />
+                    <text class="journey--link-text" x="444" y="113">Why Middlebury</text>
+                  </a>
+                  <a class="journey--link" href="#slide1" role="button" data-journey-overlay-open="midd-journey-overlay">
+                    <circle cx="557" cy="339" r="8" stroke="#F4B824" fill="#F4B824" />
+                    <circle class="journey--dot-ripple" cx="557" cy="339" fill="none" />
+                    <text class="journey--link-text" x="581" y="344">
+                      <tspan x="581" y="344">Immersive</tspan>
+                      <tspan x="581" y="365">Environments</tspan>
+                    </text>
+                  </a>
+                  <a class="journey--link" href="#slide2" role="button" data-journey-overlay-open="midd-journey-overlay">
+                    <circle cx="244" cy="543" r="8" stroke="#F4B824" fill="#F4B824" />
+                    <circle class="journey--dot-ripple" cx="244" cy="543" fill="none" />
+                    <text class="journey--link-text" x="268" y="548">The Undergraduate Experience</text>
+                  </a>
+                </g>
+              </svg>
+              <svg viewbox="0 0 320 568" class="journey-links-svg journey-links--mobile" style="pointer-events:auto;" preserveaspectratio="none">
+                <g class="journey-link--section learning">
+                  <a class="journey--link" href="#slide0" role="button" data-journey-overlay-open="midd-journey-overlay">
+                    <circle cx="174" cy="121" r="6" stroke="#F4B824" fill="#F4B824" />
+                    <circle class="journey--dot-ripple" cx="174" cy="121" fill="none" />
+                    <text class="journey--link-text" x="190" y="125">Why Middlebury</text>
+                  </a>
+                  <a class="journey--link" href="#slide1" role="button" data-journey-overlay-open="midd-journey-overlay">
+                    <circle cx="188" cy="422" r="6" stroke="#F4B824" fill="#F4B824" />
+                    <circle class="journey--dot-ripple" cx="188" cy="422" fill="none" />
+                    <text class="journey--link-text" x="204" y="426">
+                      <tspan x="208" y="422">Immersive</tspan>
+                      <tspan x="208" y="443">Environments</tspan>
+                    </text>
+                  </a>
+                  <a class="journey--link" href="#slide2" role="button" data-journey-overlay-open="midd-journey-overlay">
+                    <circle cx="76" cy="510" r="6" stroke="#F4B824" fill="#F4B824" />
+                    <circle class="journey--dot-ripple" cx="76" cy="510" fill="none" />
+                    <text class="journey--link-text" x="92" y="514">The Undergraduate Experience</text>
+                  </a>
+                </g>
+              </svg>
+            </div>
+            <div class="journey-section__body">
+              <div class="container">
+                <div class="journey-section__body-content align-left">
+                  <div class="row">
+                    <div class="col-12 col-sm-8 col-lg-7 pr-8 pr-sm-3 journey-section__text">
+                      <p class="blurb"> A breadth and depth of <strong>learning</strong> and <strong>experience</strong> … and capacity for <strong>exploration</strong> that will last a lifetime </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <figure class="journey-section__background" aria-label="[place alt text here]">
+              <video playsinline autoplay muted loop class=" journey-section__video" data-journey-video poster="data:image/gif;base64,r0lgodlhaqabaiaaaaaaap///yh5baeaaaaalaaaaaabaaeaaaibraa7">
+                <source data-src="https://www.middlebury.edu/office/sites/www.middlebury.edu.office/files/learning_60.mp4" type="video/mp4">
+                <track kind="descriptions" srclang="en" src="descriptions.vtt" default />
+              </video>
+            </figure>
+            <button aria-label="Play/Pause Background Video" class="journey-video--button" data-journey-video-trigger>
+              <span aria-labelledby="journey-video--pause" class="journey-video--button-pause">
+                <span id="journey-video--pause" class="sr-only">Pause Animation</span>
+                <svg class="icon homepage-button " focusable="false" aria-hidden="true">
+                  <use xlink:href="#icon-pause-homepage">
+                </svg>
+              </span>
+              <span aria-labelledby="journey-video--play" class="journey-video--button-play">
+                <span id="journey-video--play" class="sr-only">Play Animation</span>
+                <svg class="icon homepage-button " focusable="false" aria-hidden="true">
+                  <use xlink:href="#icon-play-homepage">
+                </svg>
+              </span>
+            </button>
+          </section>
+          <section id=thinking class="journey-section journey-section--thinking js-journey-section" data-section=thinking>
+            <div class="journey-link-box section-thinking">
+              <svg viewbox="0 0 1440 810" class="journey-links-svg journey-links--desktop" height="100%" width="100%" preserveaspectratio="none">
+                <g class="journey-link--section thinking">
+                  <a class="journey--link" href="#slide3" role="button" data-journey-overlay-open="midd-journey-overlay">
+                    <circle cx="398" cy="265" r="8" stroke="#F4B824" fill="#F4B824" />
+                    <circle class="journey--dot-ripple" cx="398" cy="265" fill="none" />
+                    <text class="journey--link-text" x="196" y="270">Alumni in the World</text>
+                  </a>
+                  <a class="journey--link" href="#slide4" role="button" data-journey-overlay-open="midd-journey-overlay">
+                    <circle cx="334" cy="431" r="8" stroke="#F4B824" fill="#F4B824" />
+                    <circle class="journey--dot-ripple" cx="334" cy="431" fill="none" />
+                    <text class="journey--link-text" x="130" y="436">Middlebury in the News</text>
+                  </a>
+                  <a class="journey--link" href="#slide5" role="button" data-journey-overlay-open="midd-journey-overlay">
+                    <circle cx="403" cy="607" r="8" stroke="#F4B824" fill="#F4B824" />
+                    <circle class="journey--dot-ripple" cx="403" cy="607" fill="none" />
+                    <text class="journey--link-text" x="206" y="612">Students in Action</text>
+                  </a>
+                </g>
+              </svg>
+              <svg viewbox="0 0 768 675" class="journey-links-svg journey-links--tablet" height="100%" width="100%" preserveaspectratio="none">
+                <g class="journey-link--section thinking">
+                  <a class="journey--link" href="#slide3" role="button" data-journey-overlay-open="midd-journey-overlay">
+                    <circle cx="478" cy="148" r="8" stroke="#F4B824" fill="#F4B824" />
+                    <circle class="journey--dot-ripple" cx="478" cy="148" fill="none" />
+                    <text class="journey--link-text" x="502" y="153">Alumni in the World</text>
+                  </a>
+                  <a class="journey--link" href="#slide4" role="button" data-journey-overlay-open="midd-journey-overlay">
+                    <circle cx="595" cy="350" r="8" stroke="#F4B824" fill="#F4B824" />
+                    <circle class="journey--dot-ripple" cx="595" cy="350" fill="none" />
+                    <text class="journey--link-text" x="619" y="355">
+                      <tspan x="619" y="355">Middlebury in</tspan>
+                      <tspan x="619" y="376">the News</tspan>
+                    </text>
+                  </a>
+                  <a class="journey--link" href="#slide5" role="button" data-journey-overlay-open="midd-journey-overlay">
+                    <circle cx="440" cy="572" r="8" stroke="#F4B824" fill="#F4B824" />
+                    <circle class="journey--dot-ripple" cx="440" cy="572" fill="none" />
+                    <text class="journey--link-text" x="464" y="577">Students in Action</text>
+                  </a>
+                </g>
+              </svg>
+              <svg viewbox="0 0 320 568" xmlns="http://www.w3.org/2000/svg" class="journey-links-svg journey-links--mobile" style="pointer-events:auto;">
+                <g class="journey-link--section thinking">
+                  <a class="journey--link" href="#slide3" role="button" data-journey-overlay-open="midd-journey-overlay">
+                    <circle cx="133" cy="93" r="6" stroke="#F4B824" fill="#F4B824" />
+                    <circle class="journey--dot-ripple" cx="133" cy="93" fill="none" />
+                    <text class="journey--link-text" x="149" y="97">Alumni in the World</text>
+                  </a>
+                  <a class="journey--link" href="#slide4" role="button" data-journey-overlay-open="midd-journey-overlay">
+                    <circle cx="170" cy="426" r="6" stroke="#F4B824" fill="#F4B824" />
+                    <circle class="journey--dot-ripple" cx="170" cy="426" fill="none" />
+                    <text class="journey--link-text" x="186" y="430">
+                      <tspan x="202" y="426">Middlebury in</tspan>
+                      <tspan x="202" y="447">the News</tspan>
+                    </text>
+                  </a>
+                  <a class="journey--link" href="#slide5" role="button" data-journey-overlay-open="midd-journey-overlay">
+                    <circle cx="55" cy="499" r="6" stroke="#F4B824" fill="#F4B824" />
+                    <circle class="journey--dot-ripple" cx="55" cy="499" fill="none" />
+                    <text class="journey--link-text" x="71" y="503">Students in Action</text>
+                  </a>
+                </g>
+              </svg>
+            </div>
+            <div class="journey-section__body">
+              <div class="container">
+                <div class="journey-section__body-content align-right left--mobile">
+                  <div class="row">
+                    <div class="col-12 col-sm-8 col-lg-7 pr-8 pr-sm-3 journey-section__text">
+                      <p class="blurb"> An expansive education built on <strong>critical thinking</strong> and <strong>compassionate doing</strong>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <figure class="journey-section__background" aria-label="[place alt text here]">
+              <video playsinline autoplay muted loop class=" journey-section__video" data-journey-video poster="data:image/gif;base64,r0lgodlhaqabaiaaaaaaap///yh5baeaaaaalaaaaaabaaeaaaibraa7">
+                <source data-src="https://www.middlebury.edu/office/sites/www.middlebury.edu.office/files/place_30.mp4" type="video/mp4">
+                <track kind="descriptions" srclang="en" src="descriptions.vtt" default />
+              </video>
+            </figure>
+            <button aria-label="Play/Pause Background Video" class="journey-video--button" data-journey-video-trigger>
+              <span aria-labelledby="journey-video--pause" class="journey-video--button-pause">
+                <span id="journey-video--pause" class="sr-only">Pause Animation</span>
+                <svg class="icon homepage-button " focusable="false" aria-hidden="true">
+                  <use xlink:href="#icon-pause-homepage">
+                </svg>
+              </span>
+              <span aria-labelledby="journey-video--play" class="journey-video--button-play">
+                <span id="journey-video--play" class="sr-only">Play Animation</span>
+                <svg class="icon homepage-button " focusable="false" aria-hidden="true">
+                  <use xlink:href="#icon-play-homepage">
+                </svg>
+              </span>
+            </button>
+          </section>
+          <section id=opportunity class="journey-section journey-section--opportunity js-journey-section" data-section=opportunity>
+            <div class="journey-link-box section-opportunity">
+              <svg viewbox="0 0 1440 810" class="journey-links-svg journey-links--desktop" height="100%" width="100%" preserveaspectratio="none">
+                <g class="journey-link--section opportunity">
+                  <a class="journey--link" href="#slide6" role="button" data-journey-overlay-open="midd-journey-overlay">
+                    <circle cx="1000" cy="140" r="8" stroke="#F4B824" fill="#F4B824" />
+                    <circle class="journey--dot-ripple" cx="1000" cy="140" fill="none" />
+                    <text class="journey--link-text" x="1024" y="145">Connected Middlebury</text>
+                  </a>
+                  <a class="journey--link" href="#slide7" role="button" data-journey-overlay-open="midd-journey-overlay">
+                    <circle cx="1107" cy="340" r="8" stroke="#F4B824" fill="#F4B824" />
+                    <circle class="journey--dot-ripple" cx="1107" cy="340" fill="none" />
+                    <text class="journey--link-text" x="1131" y="345">Middlebury College</text>
+                  </a>
+                  <a class="journey--link" href="#slide8" role="button" data-journey-overlay-open="midd-journey-overlay">
+                    <circle cx="1004" cy="572" r="8" stroke="#F4B824" fill="#F4B824" />
+                    <circle class="journey--dot-ripple" cx="1004" cy="572" fill="none" />
+                    <text class="journey--link-text" x="1028" y="577">Graduate and Professional Schools</text>
+                  </a>
+                </g>
+              </svg>
+              <svg viewbox="0 0 768 675" class="journey-links-svg journey-links--tablet" height="100%" width="100%" preserveaspectratio="none">
+                <g class="journey-link--section opportunity">
+                  <a class="journey--link" href="#slide6" role="button" data-journey-overlay-open="midd-journey-overlay">
+                    <circle cx="469" cy="246" r="8" stroke="#F4B824" fill="#F4B824" />
+                    <circle class="journey--dot-ripple" cx="469" cy="246" fill="none" />
+                    <text class="journey--link-text" x="493" y="251">Connected Middlebury</text>
+                  </a>
+                  <a class="journey--link" href="#slide7" role="button" data-journey-overlay-open="midd-journey-overlay">
+                    <circle cx="600" cy="391" r="8" stroke="#F4B824" fill="#F4B824" />
+                    <circle class="journey--dot-ripple" cx="600" cy="391" fill="none" />
+                    <text class="journey--link-text" x="624" y="396">
+                      <tspan x="624" y="396">Middlebury</tspan>
+                      <tspan x="624" y="417">College</tspan>
+                    </text>
+                  </a>
+                  <a class="journey--link" href="#slide8" role="button" data-journey-overlay-open="midd-journey-overlay">
+                    <circle cx="536" cy="586" r="8" stroke="#F4B824" fill="#F4B824" />
+                    <circle class="journey--dot-ripple" cx="536" cy="586" fill="none" />
+                    <text class="journey--link-text" x="560" y="591">
+                      <tspan x="560" y="591">Graduate and</tspan>
+                      <tspan x="560" y="612">Professional Schools</tspan>
+                    </text>
+                  </a>
+                </g>
+              </svg>
+              <svg viewbox="0 0 320 568" xmlns="http://www.w3.org/2000/svg" class="journey-links-svg journey-links--mobile" style="pointer-events:auto;">
+                <g class="journey-link--section opportunity">
+                  <a class="journey--link" href="#slide6" role="button" data-journey-overlay-open="midd-journey-overlay">
+                    <circle cx="117" cy="103" r="6" stroke="#F4B824" fill="#F4B824" />
+                    <circle class="journey--dot-ripple" cx="117" cy="103" fill="none" />
+                    <text class="journey--link-text" x="133" y="107">Connected Middlebury</text>
+                  </a>
+                  <a class="journey--link" href="#slide7" role="button" data-journey-overlay-open="midd-journey-overlay">
+                    <circle cx="159" cy="429" r="6" stroke="#F4B824" fill="#F4B824" />
+                    <circle class="journey--dot-ripple" cx="159" cy="429" fill="none" />
+                    <text class="journey--link-text" x="175" y="433">Middlebury College</text>
+                  </a>
+                  <a class="journey--link" href="#slide8" role="button" data-journey-overlay-open="midd-journey-overlay">
+                    <circle cx="95" cy="506" r="6" stroke="#F4B824" fill="#F4B824" />
+                    <circle class="journey--dot-ripple" cx="95" cy="506" fill="none" />
+                    <text class="journey--link-text" x="111" y="510">
+                      <tspan x="111" y="511">Graduate and</tspan>
+                      <tspan x="111" y="532">Professional Schools</tspan>
+                    </text>
+                  </a>
+                </g>
+              </svg>
+            </div>
+            <div class="journey-section__body">
+              <div class="container">
+                <div class="journey-section__body-content align-left">
+                  <div class="row">
+                    <div class="col-12 col-sm-8 col-lg-7 pr-8 pr-sm-3 journey-section__text">
+                      <p class="blurb">
+                        <strong>A constellation</strong> of schools and programs, a world of educational <strong>opportunity</strong>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <figure class="journey-section__background" aria-label="[place alt text here]">
+              <video playsinline autoplay muted loop class=" journey-section__video" data-journey-video poster="data:image/gif;base64,r0lgodlhaqabaiaaaaaaap///yh5baeaaaaalaaaaaabaaeaaaibraa7">
+                <source data-src="https://www.middlebury.edu/office/sites/www.middlebury.edu.office/files/purpose_30.mp4" type="video/mp4">
+                <track kind="descriptions" srclang="en" src="descriptions.vtt" default />
+              </video>
+            </figure>
+            <button aria-label="Play/Pause Background Video" class="journey-video--button" data-journey-video-trigger>
+              <span aria-labelledby="journey-video--pause" class="journey-video--button-pause">
+                <span id="journey-video--pause" class="sr-only">Pause Animation</span>
+                <svg class="icon homepage-button " focusable="false" aria-hidden="true">
+                  <use xlink:href="#icon-pause-homepage">
+                </svg>
+              </span>
+              <span aria-labelledby="journey-video--play" class="journey-video--button-play">
+                <span id="journey-video--play" class="sr-only">Play Animation</span>
+                <svg class="icon homepage-button " focusable="false" aria-hidden="true">
+                  <use xlink:href="#icon-play-homepage">
+                </svg>
+              </span>
+            </button>
+          </section>
+          <div class="journey-modal--block" id="midd-journey-overlay" style="overflow-x:hidden">
+            <div class="journey-modal" aria-hidden="true" role="dialog" aria-modal="true">
+              <div class="journey-modal__header-container">
+                <div class="journey-modal__header--wrapper">
+                  <div class="midd-header__brand">
+                    <a href="https://www.middlebury.edu">
+                      <img src="images/midd-shield-white.svg" class="midd-header__shield" alt="Logo for Middlebury" />
+                      <img src="images/midd-wordmark.svg" class="midd-header__wordmark" alt="Middlebury">
+                    </a>
+                  </div>
+                  <button class="journey-modal__button mobile journey-modal__button--close" aria-label="Close modal" data-journey-overlay-close> Close <svg class="icon ml-1 " focusable="false" aria-hidden="true">
+                      <use xlink:href="#icon-times">
+                    </svg>
+                  </button>
+                </div>
+                <div class="journey-modal__controls">
+                  <div class="journey-modal__cobblestones">
+                    <button class="journey-modal__cobblestones-button js-journey-prev-button" aria-label="Previous" id="journey-modal-button-prev">
+                      <svg class="icon journey-modal-button--icon " focusable="false" aria-hidden="true">
+                        <use xlink:href="#icon-chevron-left">
+                      </svg>
+                    </button>
+                    <div class="journey-modal__pagination-wrapper">
+                      <div class="journey-modal__pagination">
+                        <svg class="journey-modal__svg" width="716" height="2" viewbox="0 0 716 2" xmlns="http://www.w3.org/2000/svg">
+                          <path fill="none" fill-rule="evenodd" stroke="white" stroke-dasharray="2" d="M715.201 1.25091L0.200684 1.25098" clip-path="url(#user-space)" />
+                        </svg>
+                        <div class="cb__wrapper swiper-pagination"></div>
+                      </div>
+                    </div>
+                    <button class="journey-modal__cobblestones-button js-journey-next-button" aria-label="Next" id="journey-modal-button-next">
+                      <svg class="icon journey-modal-button--icon " focusable="false" aria-hidden="true">
+                        <use xlink:href="#icon-chevron-right">
+                      </svg>
+                    </button>
+                  </div>
+                  <button class="journey-modal__button desktop journey-modal__button--close" aria-label="Close modal" data-journey-overlay-close> Close <svg class="icon ml-1 " focusable="false" aria-hidden="true">
+                      <use xlink:href="#icon-times">
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="swiper journey-swiper">
+                <div class="swiper-wrapper">
+                  <div class="journey-modal__overlay swiper-slide video-slide" data-hash=slide0>
+                    <div class="container px-0 journey-modal__overlay-container">
+                      <div class="col-lg-10 m-auto mb-5 mb-md-7 mb-lg-9">
+                        <h2 class="journey-modal--title ">Why Middlebury</h2>
+                        <!-- video iframe html should be escaped -->
+                        <figure class="video landscape-video--grid js-expand-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
+                          <div class="video__content js-video-content">
+                            <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-780">
+                              <img src="https://via.placeholder.com/1136x639" srcset="https://via.placeholder.com/400x225 400w,https://via.placeholder.com/640x360 640w,https://via.placeholder.com/832x468 832w,https://via.placeholder.com/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
+                              <span class="button  button--light video__button"> Play <span class="ml-3">
+                                  <svg class="icon  " focusable="false" aria-hidden="true">
+                                    <use xlink:href="#icon-play">
+                                  </svg>
+                                </span>
+                              </span>
+                            </a>
+                          </div>
+                          <figcaption class=" grid-video__body">
+                            <h3 class=sr-only id="midd-video-label-780">Practical Skills for Positive Change</h3>
+                            <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
+                            <div class="transcript js-transcript-780 grid-video__transcript">
+                              <a href="#midd-transcript-780" class="transcript__button" data-toggle-target=".js-transcript-780" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                                  <use xlink:href="#icon-chevron-down">
+                                </svg>
+                              </a>
+                              <div class="transcript__body" id="midd-transcript-780">
+                                <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                              </div>
+                            </div>
+                          </figcaption>
+                        </figure>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="journey-modal__overlay swiper-slide story-slide" data-hash=slide1>
+                    <div class="container px-0 journey-modal__overlay-container">
+                      <div class="col-lg-10 m-auto mb-5 mb-md-7 mb-lg-9">
+                        <h2 class="journey-modal--title ">Immersive Environments</h2>
+                        <article class="journey-modal__story" aria-describedby="midd-video-label-56">
+                          <figure class="story__image">
+                            <img src="https://via.placeholder.com/1136x639" srcset="https://via.placeholder.com/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
+                            <figcaption class="story__image-caption">
+                              <h3 class="sr-only" id="midd-video-label-56">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                              <p class="story__image-caption--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. Suspendisse commodo pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
+                            </figcaption>
+                          </figure>
+                          <div class="story__content  m-auto">
+                            <h3>Middlebury Institute of International Studies at Monterey</h3>
+                            <a href="https://www.middlebury.edu/institute/"><img src="https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/miis-896x504.jpg" srcset="https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/miis-290x163.jpg 290w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/miis-608x342.jpg 608w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/miis-736x414.jpg 736w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/miis-896x504.jpg 896w" sizes="(max-width: 896px) 100vw, 896px" alt=""></a>
+                            <p>Founded in 1955 as the Monterey Institute for Foreign Studies, <a href="https://www.middlebury.edu/institute/">the Institute</a> became an official graduate school of Middlebury in 2010. With degree programs that are increasingly relevant in today’s world, students gain key skills in international fields such as environmental policy, public administration, language teaching, translation and interpretation, terrorism, and nonproliferation, and international policy and development. Faculty, students, and a global network of alumni actively address some of the most critical issues of our time. The Institute also oversees several prominent research and program centers, including the James Martin Center for Nonproliferation Studies; the Center on Terrorism, Extremism, and Counterterrorism; Center for the Blue Economy; and Center for Conflict Studies.</p>
+                            <h3>Middlebury Language Schools</h3>
+                            <a href="https://www.middlebury.edu/language-schools/"><img src="https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/language-schools-896x504.jpg" srcset="https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/language-schools-290x163.jpg 290w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/language-schools-608x342.jpg 608w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/language-schools-736x414.jpg 736w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/language-schools-896x504.jpg 896w" sizes="(max-width: 896px) 100vw, 896px" alt=""></a>
+                            <p>Since 1915, when the German School opened to 47 students seeking an immersive approach to language learning, the <a href="https://www.middlebury.edu/language-schools/">Middlebury Language Schools</a> have grown in number, scope, and prestige. Each summer, the 11 language programs enroll more than 1,500 students who work closely with leading faculty from around the globe. The Middlebury Language Pledge® remains the cornerstone of the experience, and the benefits of this immersive approach have global impact. Through diplomacy, politics, education, defense, commerce, finance, and humanitarian efforts, Language School graduates help connect people with a common language and a shared cultural footing.</p>
+                            <h3>Middlebury C.V. Starr Schools Abroad</h3>
+                            <a href="https://www.middlebury.edu/schools-abroad/"><img src="https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/schools-abroad-896x504.jpg" srcset="https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/schools-abroad-290x163.jpg 290w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/schools-abroad-608x342.jpg 608w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/schools-abroad-736x414.jpg 736w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/schools-abroad-896x504.jpg 896w" sizes="(max-width: 896px) 100vw, 896px" alt=""></a>
+                            <p>
+                              <a href="https://www.middlebury.edu/schools-abroad/">The Middlebury C.V. Starr Schools Abroad</a> offer an authentic cultural experience for students to immerse themselves fully in the host language and country. With 38 sites in 17 countries, students can find the place and program that best suits their interests. Guided independence is a foundational concept, encouraging students to engage with their communities, take on internships, and make personal and lifelong discoveries.
+                            </p>
+                            <h3>Middlebury Bread Loaf School of English</h3>
+                            <a href="https://www.middlebury.edu/school-english/"><img src="https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/school-of-english-896x504.jpg" srcset="https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/school-of-english-290x163.jpg 290w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/school-of-english-608x342.jpg 608w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/school-of-english-736x414.jpg 736w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/school-of-english-896x504.jpg 896w" sizes="(max-width: 896px) 100vw, 896px" alt=""></a>
+                            <p>Founded in 1920, the <a href="https://www.middlebury.edu/school-english/">Bread Loaf School of English</a> is a six-week summer graduate program with locations in Vermont, New Mexico, and Oxford, England. The master’s degree program is designed specifically for K–12 English and language arts teachers, and students work closely with some of the finest faculty in the fields of literature, creative writing, literacy and pedagogy, and theater arts.</p>
+                            <h3>Middlebury Bread Loaf Writers’ Conferences</h3>
+                            <a href="https://www.middlebury.edu/writers-conferences/"><img src="https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/writers-conf-896x504.jpg" srcset="https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/writers-conf-290x163.jpg 290w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/writers-conf-608x342.jpg 608w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/writers-conf-736x414.jpg 736w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/writers-conf-896x504.jpg 896w" sizes="(max-width: 896px) 100vw, 896px" alt=""></a>
+                            <p>
+                              <a href="https://www.middlebury.edu/writers-conferences/">The Bread Loaf Writers’ Conference</a>, founded in 1926, is known as one of the finest of its kind in the country. It is the cornerstone to the Bread Loaf conferences, which today include the Bread Loaf Writers’ Conference in Sicily, the Bread Loaf Environmental Writers’ Conference, and the Bread Loaf Translators’ Conference. The programs are designed with small-group workshops scheduled among readings and lectures. Some of the world’s most notable writers and translators come each summer as faculty and often return year after year.
+                            </p>
+                          </div>
+                        </article>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="journey-modal__overlay swiper-slide portrait-video-slide" data-hash=slide2>
+                    <div class="container px-0 journey-modal__overlay-container">
+                      <div class="col-12 m-auto mb-5 mb-md-7 mb-lg-9">
+                        <h2 class="journey-modal--title ">The Undergraduate Experience</h2>
+                        <div class="row">
+                          <div class="col-md-4 mb-7">
+                            <figure class=" portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
+                              <div class="portrait-video__content js-video-content">
+                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-212">
+                                  <img src="https://via.placeholder.com/306x554" srcset="https://via.placeholder.com/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
+                                  <div class="portrait-video__body">
+                                    <h3 class="portrait-video__title" id="midd-video-label-212"> What do students do after graduation? </h3>
+                                    <span class="button button--primary button--sm button--block mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
+                                        <use xlink:href="#icon-play">
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </a>
+                              </div>
+                              <div class="transcript js-transcript-212 mt-2">
+                                <a href="#midd-transcript-212" class="transcript__button" data-toggle-target=".js-transcript-212" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                                    <use xlink:href="#icon-chevron-down">
+                                  </svg>
+                                </a>
+                                <div class="transcript__body" id="midd-transcript-212">
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                </div>
+                              </div>
+                            </figure>
+                          </div>
+                          <div class="col-md-4 mb-7">
+                            <figure class=" portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
+                              <div class="portrait-video__content js-video-content">
+                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-743">
+                                  <img src="https://via.placeholder.com/306x554" srcset="https://via.placeholder.com/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
+                                  <div class="portrait-video__body">
+                                    <h3 class="portrait-video__title" id="midd-video-label-743"> What do students do after graduation? </h3>
+                                    <span class="button button--primary button--sm button--block mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
+                                        <use xlink:href="#icon-play">
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </a>
+                              </div>
+                              <div class="transcript js-transcript-743 mt-2">
+                                <a href="#midd-transcript-743" class="transcript__button" data-toggle-target=".js-transcript-743" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                                    <use xlink:href="#icon-chevron-down">
+                                  </svg>
+                                </a>
+                                <div class="transcript__body" id="midd-transcript-743">
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                </div>
+                              </div>
+                            </figure>
+                          </div>
+                          <div class="col-md-4 mb-7">
+                            <figure class=" portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
+                              <div class="portrait-video__content js-video-content">
+                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-729">
+                                  <img src="https://via.placeholder.com/306x554" srcset="https://via.placeholder.com/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
+                                  <div class="portrait-video__body">
+                                    <h3 class="portrait-video__title" id="midd-video-label-729"> What do students do after graduation? </h3>
+                                    <span class="button button--primary button--sm button--block mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
+                                        <use xlink:href="#icon-play">
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </a>
+                              </div>
+                              <div class="transcript js-transcript-729 mt-2">
+                                <a href="#midd-transcript-729" class="transcript__button" data-toggle-target=".js-transcript-729" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                                    <use xlink:href="#icon-chevron-down">
+                                  </svg>
+                                </a>
+                                <div class="transcript__body" id="midd-transcript-729">
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                </div>
+                              </div>
+                            </figure>
+                          </div>
+                          <div class="col-md-4 mb-7">
+                            <figure class=" portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
+                              <div class="portrait-video__content js-video-content">
+                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-588">
+                                  <img src="https://via.placeholder.com/306x554" srcset="https://via.placeholder.com/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
+                                  <div class="portrait-video__body">
+                                    <h3 class="portrait-video__title" id="midd-video-label-588"> What do students do after graduation? </h3>
+                                    <span class="button button--primary button--sm button--block mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
+                                        <use xlink:href="#icon-play">
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </a>
+                              </div>
+                              <div class="transcript js-transcript-588 mt-2">
+                                <a href="#midd-transcript-588" class="transcript__button" data-toggle-target=".js-transcript-588" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                                    <use xlink:href="#icon-chevron-down">
+                                  </svg>
+                                </a>
+                                <div class="transcript__body" id="midd-transcript-588">
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                </div>
+                              </div>
+                            </figure>
+                          </div>
+                          <div class="col-md-4 mb-7">
+                            <figure class=" portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
+                              <div class="portrait-video__content js-video-content">
+                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-494">
+                                  <img src="https://via.placeholder.com/306x554" srcset="https://via.placeholder.com/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
+                                  <div class="portrait-video__body">
+                                    <h3 class="portrait-video__title" id="midd-video-label-494"> What do students do after graduation? </h3>
+                                    <span class="button button--primary button--sm button--block mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
+                                        <use xlink:href="#icon-play">
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </a>
+                              </div>
+                              <div class="transcript js-transcript-494 mt-2">
+                                <a href="#midd-transcript-494" class="transcript__button" data-toggle-target=".js-transcript-494" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                                    <use xlink:href="#icon-chevron-down">
+                                  </svg>
+                                </a>
+                                <div class="transcript__body" id="midd-transcript-494">
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                </div>
+                              </div>
+                            </figure>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="journey-modal__overlay swiper-slide gallery-slide" data-hash=slide3>
+                    <div class="container px-0 journey-modal__overlay-container">
+                      <div class="col-lg-12 px-3 px-lg-5 m-auto mb-5 mb-md-7 mb-lg-9">
+                        <h2 class="journey-modal--title offset-lg-1">Alumni in the World</h2>
+                        <p class="journey-modal--blurb col-lg-10 px-0 offset-lg-1">Learning at Middlebury is not a passive experience. Sure, many—if not most—students will find plenty of time for quiet contemplation. Their academic journeys will also involve plenty of “doing”—whether that means participation in competitive fellowships or internships; entrepreneurial ventures at the local, state, national, and international levels; field research with faculty; or co- and extracurricular activities that perfectly complement and enhance those more quiet moments.</p>
+                        <div class="lightbox__images">
+                          <figure class="lightbox__figure media media--contain-caption" id="midd-lightbox--item-1" data-journey-gallery-item>
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1376 774'/%3E" data-src="http://placekitten.com/1376/774" data-srcset="https://placekitten.com/1376/774 1376w,https://placekitten.com/1136/639 1136w,https://placekitten.com/736/414 736w,https://placekitten.com/320/180 320w" width="1376" alt="" />
+                            <figcaption class="media__caption text-white"> Lorem ipsum <a href="#">dolor</a> sit amet consectetur adipisicing elit. </figcaption>
+                          </figure>
+                          <figure class="lightbox__figure media media--contain-caption" id="midd-lightbox--item-2" data-journey-gallery-item>
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1376 774'/%3E" data-src="http://placekitten.com/1376/774" data-srcset="https://placekitten.com/1376/774 1376w,https://placekitten.com/1136/639 1136w,https://placekitten.com/736/414 736w,https://placekitten.com/320/180 320w" width="1376" alt="" />
+                            <figcaption class="media__caption text-white"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam! </figcaption>
+                          </figure>
+                          <figure class="lightbox__figure media media--contain-caption" id="midd-lightbox--item-3" data-journey-gallery-item>
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1376 774'/%3E" data-src="http://placekitten.com/1376/774" data-srcset="https://placekitten.com/1376/774 1376w,https://placekitten.com/1136/639 1136w,https://placekitten.com/736/414 736w,https://placekitten.com/320/180 320w" width="1376" alt="" />
+                            <figcaption class="media__caption text-white"> Lorem ipsum dolor sit amet consectetur adipisicing elit. </figcaption>
+                          </figure>
+                          <figure class="lightbox__figure media media--contain-caption" id="midd-lightbox--item-4" data-journey-gallery-item>
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1376 774'/%3E" data-src="http://placekitten.com/1376/774" data-srcset="https://placekitten.com/1376/774 1376w,https://placekitten.com/1136/639 1136w,https://placekitten.com/736/414 736w,https://placekitten.com/320/180 320w" width="1376" alt="" />
+                            <figcaption class="media__caption text-white"> Lorem ipsum dolor sit amet consectetur adipisicing elit. </figcaption>
+                          </figure>
+                          <figure class="lightbox__figure media media--contain-caption" id="midd-lightbox--item-5" data-journey-gallery-item>
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1376 774'/%3E" data-src="http://placekitten.com/1376/774" data-srcset="https://placekitten.com/1376/774 1376w,https://placekitten.com/1136/639 1136w,https://placekitten.com/736/414 736w,https://placekitten.com/320/180 320w" width="1376" alt="" />
+                            <figcaption class="media__caption text-white"> Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam! </figcaption>
+                          </figure>
+                        </div>
+                      </div>
+                      <section class="journey-modal__articles-block">
+                        <h2 class="articles-block__title">Related Somethings</h2>
+                        <ul class="d-flex flex-wrap articles-block">
+                          <li class="col-12 col-md-4">
+                            <article class="articles-block__article-card">
+                              <div class="articles-block__content">
+                                <span class="article-card--label label-miis"></span>
+                                <div class="article-card--text-content">
+                                  <a href="#">
+                                    <h3 class="article-card--title">Learn About Our Sustainability</h3>
+                                  </a>
+                                  <p class="article-card--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                                </div>
+                                <a href="#" class="article-card--button">Learn more <svg class="icon journey-modal-button--icon " focusable="false" aria-hidden="true">
+                                    <use xlink:href="#icon-chevron-right">
+                                  </svg>
+                                </a>
+                              </div>
+                            </article>
+                          </li>
+                          <li class="col-12 col-md-4">
+                            <article class="articles-block__article-card">
+                              <div class="articles-block__content">
+                                <span class="article-card--label label-miis"></span>
+                                <div class="article-card--text-content">
+                                  <a href="#">
+                                    <h3 class="article-card--title">Learn About Our Sustainability</h3>
+                                  </a>
+                                  <p class="article-card--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                                </div>
+                                <a href="#" class="article-card--button">Learn more <svg class="icon journey-modal-button--icon " focusable="false" aria-hidden="true">
+                                    <use xlink:href="#icon-chevron-right">
+                                  </svg>
+                                </a>
+                              </div>
+                            </article>
+                          </li>
+                          <li class="col-12 col-md-4">
+                            <article class="articles-block__article-card">
+                              <div class="articles-block__content">
+                                <span class="article-card--label label-miis"></span>
+                                <div class="article-card--text-content">
+                                  <a href="#">
+                                    <h3 class="article-card--title">Learn About Our Sustainability</h3>
+                                  </a>
+                                  <p class="article-card--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                                </div>
+                                <a href="#" class="article-card--button">Learn more <svg class="icon journey-modal-button--icon " focusable="false" aria-hidden="true">
+                                    <use xlink:href="#icon-chevron-right">
+                                  </svg>
+                                </a>
+                              </div>
+                            </article>
+                          </li>
+                        </ul>
+                      </section>
+                    </div>
+                  </div>
+                  <div class="journey-modal__overlay swiper-slide video-group-slide" data-hash=slide4>
+                    <div class="container px-0 journey-modal__overlay-container">
+                      <div class="col-12 m-auto mb-5 mb-md-7 mb-lg-9">
+                        <h2 class="journey-modal--title offset-lg-1">Middlebury in the News</h2>
+                        <p class="journey-modal--blurb col-lg-10 px-0 offset-lg-1">Learning at Middlebury is not a passive experience. Sure, many—if not most—students will find plenty of time for quiet contemplation. Their academic journeys will also involve plenty of “doing”—whether that means participation in competitive fellowships or internships; entrepreneurial ventures at the local, state, national, and international levels; field research with faculty; or co- and extracurricular activities that perfectly complement and enhance those more quiet moments.</p>
+                        <div class="row">
+                          <div class="col-md-4 mb-4 mb-md-8">
+                            <!-- video iframe html should be escaped -->
+                            <figure class="video landscape-video--grid js-expand-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
+                              <div class="video__content js-video-content">
+                                <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-12">
+                                  <img src="https://via.placeholder.com/1136x639" srcset="https://via.placeholder.com/400x225 400w,https://via.placeholder.com/640x360 640w,https://via.placeholder.com/832x468 832w,https://via.placeholder.com/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
+                                  <span class="button  button--light video__button"> Play <span class="ml-3">
+                                      <svg class="icon  " focusable="false" aria-hidden="true">
+                                        <use xlink:href="#icon-play">
+                                      </svg>
+                                    </span>
+                                  </span>
+                                </a>
+                              </div>
+                              <figcaption class=" grid-video__body">
+                                <h3 class=sr-only id="midd-video-label-12">Practical Skills for Positive Change</h3>
+                                <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
+                                <div class="transcript js-transcript-12 grid-video__transcript">
+                                  <a href="#midd-transcript-12" class="transcript__button" data-toggle-target=".js-transcript-12" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                                      <use xlink:href="#icon-chevron-down">
+                                    </svg>
+                                  </a>
+                                  <div class="transcript__body" id="midd-transcript-12">
+                                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                  </div>
+                                </div>
+                              </figcaption>
+                            </figure>
+                          </div>
+                          <div class="col-md-4 mb-4 mb-md-8">
+                            <!-- video iframe html should be escaped -->
+                            <figure class="video landscape-video--grid js-expand-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
+                              <div class="video__content js-video-content">
+                                <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-346">
+                                  <img src="https://via.placeholder.com/1136x639" srcset="https://via.placeholder.com/400x225 400w,https://via.placeholder.com/640x360 640w,https://via.placeholder.com/832x468 832w,https://via.placeholder.com/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
+                                  <span class="button  button--light video__button"> Play <span class="ml-3">
+                                      <svg class="icon  " focusable="false" aria-hidden="true">
+                                        <use xlink:href="#icon-play">
+                                      </svg>
+                                    </span>
+                                  </span>
+                                </a>
+                              </div>
+                              <figcaption class=" grid-video__body">
+                                <h3 class=sr-only id="midd-video-label-346">Practical Skills for Positive Change</h3>
+                                <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
+                                <div class="transcript js-transcript-346 grid-video__transcript">
+                                  <a href="#midd-transcript-346" class="transcript__button" data-toggle-target=".js-transcript-346" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                                      <use xlink:href="#icon-chevron-down">
+                                    </svg>
+                                  </a>
+                                  <div class="transcript__body" id="midd-transcript-346">
+                                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                  </div>
+                                </div>
+                              </figcaption>
+                            </figure>
+                          </div>
+                          <div class="col-md-4 mb-4 mb-md-8">
+                            <!-- video iframe html should be escaped -->
+                            <figure class="video landscape-video--grid js-expand-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
+                              <div class="video__content js-video-content">
+                                <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-90">
+                                  <img src="https://via.placeholder.com/1136x639" srcset="https://via.placeholder.com/400x225 400w,https://via.placeholder.com/640x360 640w,https://via.placeholder.com/832x468 832w,https://via.placeholder.com/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
+                                  <span class="button  button--light video__button"> Play <span class="ml-3">
+                                      <svg class="icon  " focusable="false" aria-hidden="true">
+                                        <use xlink:href="#icon-play">
+                                      </svg>
+                                    </span>
+                                  </span>
+                                </a>
+                              </div>
+                              <figcaption class=" grid-video__body">
+                                <h3 class=sr-only id="midd-video-label-90">Practical Skills for Positive Change</h3>
+                                <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
+                                <div class="transcript js-transcript-90 grid-video__transcript">
+                                  <a href="#midd-transcript-90" class="transcript__button" data-toggle-target=".js-transcript-90" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                                      <use xlink:href="#icon-chevron-down">
+                                    </svg>
+                                  </a>
+                                  <div class="transcript__body" id="midd-transcript-90">
+                                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                  </div>
+                                </div>
+                              </figcaption>
+                            </figure>
+                          </div>
+                          <div class="col-md-4 mb-4 mb-md-8">
+                            <!-- video iframe html should be escaped -->
+                            <figure class="video landscape-video--grid js-expand-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
+                              <div class="video__content js-video-content">
+                                <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-107">
+                                  <img src="https://via.placeholder.com/1136x639" srcset="https://via.placeholder.com/400x225 400w,https://via.placeholder.com/640x360 640w,https://via.placeholder.com/832x468 832w,https://via.placeholder.com/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
+                                  <span class="button  button--light video__button"> Play <span class="ml-3">
+                                      <svg class="icon  " focusable="false" aria-hidden="true">
+                                        <use xlink:href="#icon-play">
+                                      </svg>
+                                    </span>
+                                  </span>
+                                </a>
+                              </div>
+                              <figcaption class=" grid-video__body">
+                                <h3 class=sr-only id="midd-video-label-107">Practical Skills for Positive Change</h3>
+                                <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
+                                <div class="transcript js-transcript-107 grid-video__transcript">
+                                  <a href="#midd-transcript-107" class="transcript__button" data-toggle-target=".js-transcript-107" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                                      <use xlink:href="#icon-chevron-down">
+                                    </svg>
+                                  </a>
+                                  <div class="transcript__body" id="midd-transcript-107">
+                                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                  </div>
+                                </div>
+                              </figcaption>
+                            </figure>
+                          </div>
+                          <div class="col-md-4 mb-4 mb-md-8">
+                            <!-- video iframe html should be escaped -->
+                            <figure class="video landscape-video--grid js-expand-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
+                              <div class="video__content js-video-content">
+                                <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-1222">
+                                  <img src="https://via.placeholder.com/1136x639" srcset="https://via.placeholder.com/400x225 400w,https://via.placeholder.com/640x360 640w,https://via.placeholder.com/832x468 832w,https://via.placeholder.com/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
+                                  <span class="button  button--light video__button"> Play <span class="ml-3">
+                                      <svg class="icon  " focusable="false" aria-hidden="true">
+                                        <use xlink:href="#icon-play">
+                                      </svg>
+                                    </span>
+                                  </span>
+                                </a>
+                              </div>
+                              <figcaption class=" grid-video__body">
+                                <h3 class=sr-only id="midd-video-label-1222">Practical Skills for Positive Change</h3>
+                                <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
+                                <div class="transcript js-transcript-1222 grid-video__transcript">
+                                  <a href="#midd-transcript-1222" class="transcript__button" data-toggle-target=".js-transcript-1222" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                                      <use xlink:href="#icon-chevron-down">
+                                    </svg>
+                                  </a>
+                                  <div class="transcript__body" id="midd-transcript-1222">
+                                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                  </div>
+                                </div>
+                              </figcaption>
+                            </figure>
+                          </div>
+                        </div>
+                      </div>
+                      <section class="journey-modal__articles-block">
+                        <h2 class="articles-block__title">Related Somethings</h2>
+                        <ul class="d-flex flex-wrap articles-block">
+                          <li class="col-12 col-md-4">
+                            <article class="articles-block__article-card">
+                              <div class="articles-block__content">
+                                <span class="article-card--label label-miis"></span>
+                                <div class="article-card--text-content">
+                                  <a href="#">
+                                    <h3 class="article-card--title">Learn About Our Sustainability</h3>
+                                  </a>
+                                  <p class="article-card--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                                </div>
+                                <a href="#" class="article-card--button">Learn more <svg class="icon journey-modal-button--icon " focusable="false" aria-hidden="true">
+                                    <use xlink:href="#icon-chevron-right">
+                                  </svg>
+                                </a>
+                              </div>
+                            </article>
+                          </li>
+                          <li class="col-12 col-md-4">
+                            <article class="articles-block__article-card">
+                              <div class="articles-block__content">
+                                <span class="article-card--label label-miis"></span>
+                                <div class="article-card--text-content">
+                                  <a href="#">
+                                    <h3 class="article-card--title">Learn About Our Sustainability</h3>
+                                  </a>
+                                  <p class="article-card--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                                </div>
+                                <a href="#" class="article-card--button">Learn more <svg class="icon journey-modal-button--icon " focusable="false" aria-hidden="true">
+                                    <use xlink:href="#icon-chevron-right">
+                                  </svg>
+                                </a>
+                              </div>
+                            </article>
+                          </li>
+                          <li class="col-12 col-md-4">
+                            <article class="articles-block__article-card">
+                              <div class="articles-block__content">
+                                <span class="article-card--label label-miis"></span>
+                                <div class="article-card--text-content">
+                                  <a href="#">
+                                    <h3 class="article-card--title">Learn About Our Sustainability</h3>
+                                  </a>
+                                  <p class="article-card--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                                </div>
+                                <a href="#" class="article-card--button">Learn more <svg class="icon journey-modal-button--icon " focusable="false" aria-hidden="true">
+                                    <use xlink:href="#icon-chevron-right">
+                                  </svg>
+                                </a>
+                              </div>
+                            </article>
+                          </li>
+                        </ul>
+                      </section>
+                    </div>
+                  </div>
+                  <div class="journey-modal__overlay swiper-slide story-slide" data-hash=slide5>
+                    <div class="container px-0 journey-modal__overlay-container">
+                      <div class="col-lg-10 m-auto mb-5 mb-md-7 mb-lg-9">
+                        <h2 class="journey-modal--title offset-lg-1">Students in Action</h2>
+                        <p class="journey-modal--blurb col-lg-10 px-0 offset-lg-1">Learning at Middlebury is not a passive experience. Sure, many—if not most—students will find plenty of time for quiet contemplation. Their academic journeys will also involve plenty of “doing”—whether that means participation in competitive fellowships or internships; entrepreneurial ventures at the local, state, national, and international levels; field research with faculty; or co- and extracurricular activities that perfectly complement and enhance those more quiet moments.</p>
+                        <article class="journey-modal__story" aria-describedby="midd-video-label-26">
+                          <figure class="story__image">
+                            <img src="https://via.placeholder.com/1136x639" srcset="https://via.placeholder.com/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
+                            <figcaption class="story__image-caption">
+                              <h3 class="sr-only" id="midd-video-label-26">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                              <p class="story__image-caption--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. Suspendisse commodo pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
+                            </figcaption>
+                          </figure>
+                          <div class="story__content  m-auto">
+                            <h3>Middlebury Institute of International Studies at Monterey</h3>
+                            <a href="https://www.middlebury.edu/institute/"><img src="https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/miis-896x504.jpg" srcset="https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/miis-290x163.jpg 290w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/miis-608x342.jpg 608w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/miis-736x414.jpg 736w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/miis-896x504.jpg 896w" sizes="(max-width: 896px) 100vw, 896px" alt=""></a>
+                            <p>Founded in 1955 as the Monterey Institute for Foreign Studies, <a href="https://www.middlebury.edu/institute/">the Institute</a> became an official graduate school of Middlebury in 2010. With degree programs that are increasingly relevant in today’s world, students gain key skills in international fields such as environmental policy, public administration, language teaching, translation and interpretation, terrorism, and nonproliferation, and international policy and development. Faculty, students, and a global network of alumni actively address some of the most critical issues of our time. The Institute also oversees several prominent research and program centers, including the James Martin Center for Nonproliferation Studies; the Center on Terrorism, Extremism, and Counterterrorism; Center for the Blue Economy; and Center for Conflict Studies.</p>
+                            <h3>Middlebury Language Schools</h3>
+                            <a href="https://www.middlebury.edu/language-schools/"><img src="https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/language-schools-896x504.jpg" srcset="https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/language-schools-290x163.jpg 290w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/language-schools-608x342.jpg 608w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/language-schools-736x414.jpg 736w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/language-schools-896x504.jpg 896w" sizes="(max-width: 896px) 100vw, 896px" alt=""></a>
+                            <p>Since 1915, when the German School opened to 47 students seeking an immersive approach to language learning, the <a href="https://www.middlebury.edu/language-schools/">Middlebury Language Schools</a> have grown in number, scope, and prestige. Each summer, the 11 language programs enroll more than 1,500 students who work closely with leading faculty from around the globe. The Middlebury Language Pledge® remains the cornerstone of the experience, and the benefits of this immersive approach have global impact. Through diplomacy, politics, education, defense, commerce, finance, and humanitarian efforts, Language School graduates help connect people with a common language and a shared cultural footing.</p>
+                            <h3>Middlebury C.V. Starr Schools Abroad</h3>
+                            <a href="https://www.middlebury.edu/schools-abroad/"><img src="https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/schools-abroad-896x504.jpg" srcset="https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/schools-abroad-290x163.jpg 290w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/schools-abroad-608x342.jpg 608w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/schools-abroad-736x414.jpg 736w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/schools-abroad-896x504.jpg 896w" sizes="(max-width: 896px) 100vw, 896px" alt=""></a>
+                            <p>
+                              <a href="https://www.middlebury.edu/schools-abroad/">The Middlebury C.V. Starr Schools Abroad</a> offer an authentic cultural experience for students to immerse themselves fully in the host language and country. With 38 sites in 17 countries, students can find the place and program that best suits their interests. Guided independence is a foundational concept, encouraging students to engage with their communities, take on internships, and make personal and lifelong discoveries.
+                            </p>
+                            <h3>Middlebury Bread Loaf School of English</h3>
+                            <a href="https://www.middlebury.edu/school-english/"><img src="https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/school-of-english-896x504.jpg" srcset="https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/school-of-english-290x163.jpg 290w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/school-of-english-608x342.jpg 608w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/school-of-english-736x414.jpg 736w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/school-of-english-896x504.jpg 896w" sizes="(max-width: 896px) 100vw, 896px" alt=""></a>
+                            <p>Founded in 1920, the <a href="https://www.middlebury.edu/school-english/">Bread Loaf School of English</a> is a six-week summer graduate program with locations in Vermont, New Mexico, and Oxford, England. The master’s degree program is designed specifically for K–12 English and language arts teachers, and students work closely with some of the finest faculty in the fields of literature, creative writing, literacy and pedagogy, and theater arts.</p>
+                            <h3>Middlebury Bread Loaf Writers’ Conferences</h3>
+                            <a href="https://www.middlebury.edu/writers-conferences/"><img src="https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/writers-conf-896x504.jpg" srcset="https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/writers-conf-290x163.jpg 290w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/writers-conf-608x342.jpg 608w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/writers-conf-736x414.jpg 736w,https://www.middlebury.edu/sites/www.middlebury.edu/files/homepage/modal09/writers-conf-896x504.jpg 896w" sizes="(max-width: 896px) 100vw, 896px" alt=""></a>
+                            <p>
+                              <a href="https://www.middlebury.edu/writers-conferences/">The Bread Loaf Writers’ Conference</a>, founded in 1926, is known as one of the finest of its kind in the country. It is the cornerstone to the Bread Loaf conferences, which today include the Bread Loaf Writers’ Conference in Sicily, the Bread Loaf Environmental Writers’ Conference, and the Bread Loaf Translators’ Conference. The programs are designed with small-group workshops scheduled among readings and lectures. Some of the world’s most notable writers and translators come each summer as faculty and often return year after year.
+                            </p>
+                          </div>
+                        </article>
+                      </div>
+                      <section class="journey-modal__articles-block">
+                        <h2 class="articles-block__title">Related Somethings</h2>
+                        <ul class="d-flex flex-wrap articles-block">
+                          <li class="col-12 col-md-4">
+                            <article class="articles-block__article-card">
+                              <div class="articles-block__content">
+                                <span class="article-card--label label-miis"></span>
+                                <div class="article-card--text-content">
+                                  <a href="#">
+                                    <h3 class="article-card--title">Learn About Our Sustainability</h3>
+                                  </a>
+                                  <p class="article-card--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                                </div>
+                                <a href="#" class="article-card--button">Learn more <svg class="icon journey-modal-button--icon " focusable="false" aria-hidden="true">
+                                    <use xlink:href="#icon-chevron-right">
+                                  </svg>
+                                </a>
+                              </div>
+                            </article>
+                          </li>
+                          <li class="col-12 col-md-4">
+                            <article class="articles-block__article-card">
+                              <div class="articles-block__content">
+                                <span class="article-card--label label-miis"></span>
+                                <div class="article-card--text-content">
+                                  <a href="#">
+                                    <h3 class="article-card--title">Learn About Our Sustainability</h3>
+                                  </a>
+                                  <p class="article-card--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                                </div>
+                                <a href="#" class="article-card--button">Learn more <svg class="icon journey-modal-button--icon " focusable="false" aria-hidden="true">
+                                    <use xlink:href="#icon-chevron-right">
+                                  </svg>
+                                </a>
+                              </div>
+                            </article>
+                          </li>
+                          <li class="col-12 col-md-4">
+                            <article class="articles-block__article-card">
+                              <div class="articles-block__content">
+                                <span class="article-card--label label-miis"></span>
+                                <div class="article-card--text-content">
+                                  <a href="#">
+                                    <h3 class="article-card--title">Learn About Our Sustainability</h3>
+                                  </a>
+                                  <p class="article-card--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                                </div>
+                                <a href="#" class="article-card--button">Learn more <svg class="icon journey-modal-button--icon " focusable="false" aria-hidden="true">
+                                    <use xlink:href="#icon-chevron-right">
+                                  </svg>
+                                </a>
+                              </div>
+                            </article>
+                          </li>
+                        </ul>
+                      </section>
+                    </div>
+                  </div>
+                  <div class="journey-modal__overlay swiper-slide portrait-video-slide" data-hash=slide6>
+                    <div class="container px-0 journey-modal__overlay-container">
+                      <div class="col-12 m-auto mb-5 mb-md-7 mb-lg-9">
+                        <h2 class="journey-modal--title ">Connected Middlebury</h2>
+                        <div class="row">
+                          <div class="col-md-4 mb-7">
+                            <figure class=" portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
+                              <div class="portrait-video__content js-video-content">
+                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-52">
+                                  <img src="https://via.placeholder.com/306x554" srcset="https://via.placeholder.com/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
+                                  <div class="portrait-video__body">
+                                    <h3 class="portrait-video__title" id="midd-video-label-52"> What do students do after graduation? </h3>
+                                    <span class="button button--primary button--sm button--block mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
+                                        <use xlink:href="#icon-play">
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </a>
+                              </div>
+                              <div class="transcript js-transcript-52 mt-2">
+                                <a href="#midd-transcript-52" class="transcript__button" data-toggle-target=".js-transcript-52" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                                    <use xlink:href="#icon-chevron-down">
+                                  </svg>
+                                </a>
+                                <div class="transcript__body" id="midd-transcript-52">
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                </div>
+                              </div>
+                            </figure>
+                          </div>
+                          <div class="col-md-4 mb-7">
+                            <figure class=" portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
+                              <div class="portrait-video__content js-video-content">
+                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-314">
+                                  <img src="https://via.placeholder.com/306x554" srcset="https://via.placeholder.com/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
+                                  <div class="portrait-video__body">
+                                    <h3 class="portrait-video__title" id="midd-video-label-314"> What do students do after graduation? </h3>
+                                    <span class="button button--primary button--sm button--block mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
+                                        <use xlink:href="#icon-play">
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </a>
+                              </div>
+                              <div class="transcript js-transcript-314 mt-2">
+                                <a href="#midd-transcript-314" class="transcript__button" data-toggle-target=".js-transcript-314" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                                    <use xlink:href="#icon-chevron-down">
+                                  </svg>
+                                </a>
+                                <div class="transcript__body" id="midd-transcript-314">
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                </div>
+                              </div>
+                            </figure>
+                          </div>
+                          <div class="col-md-4 mb-7">
+                            <figure class=" portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
+                              <div class="portrait-video__content js-video-content">
+                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-423">
+                                  <img src="https://via.placeholder.com/306x554" srcset="https://via.placeholder.com/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
+                                  <div class="portrait-video__body">
+                                    <h3 class="portrait-video__title" id="midd-video-label-423"> What do students do after graduation? </h3>
+                                    <span class="button button--primary button--sm button--block mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
+                                        <use xlink:href="#icon-play">
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </a>
+                              </div>
+                              <div class="transcript js-transcript-423 mt-2">
+                                <a href="#midd-transcript-423" class="transcript__button" data-toggle-target=".js-transcript-423" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                                    <use xlink:href="#icon-chevron-down">
+                                  </svg>
+                                </a>
+                                <div class="transcript__body" id="midd-transcript-423">
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                </div>
+                              </div>
+                            </figure>
+                          </div>
+                          <div class="col-md-4 mb-7">
+                            <figure class=" portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
+                              <div class="portrait-video__content js-video-content">
+                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-1100">
+                                  <img src="https://via.placeholder.com/306x554" srcset="https://via.placeholder.com/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
+                                  <div class="portrait-video__body">
+                                    <h3 class="portrait-video__title" id="midd-video-label-1100"> What do students do after graduation? </h3>
+                                    <span class="button button--primary button--sm button--block mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
+                                        <use xlink:href="#icon-play">
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </a>
+                              </div>
+                              <div class="transcript js-transcript-1100 mt-2">
+                                <a href="#midd-transcript-1100" class="transcript__button" data-toggle-target=".js-transcript-1100" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                                    <use xlink:href="#icon-chevron-down">
+                                  </svg>
+                                </a>
+                                <div class="transcript__body" id="midd-transcript-1100">
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                </div>
+                              </div>
+                            </figure>
+                          </div>
+                          <div class="col-md-4 mb-7">
+                            <figure class=" portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
+                              <div class="portrait-video__content js-video-content">
+                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-372">
+                                  <img src="https://via.placeholder.com/306x554" srcset="https://via.placeholder.com/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
+                                  <div class="portrait-video__body">
+                                    <h3 class="portrait-video__title" id="midd-video-label-372"> What do students do after graduation? </h3>
+                                    <span class="button button--primary button--sm button--block mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
+                                        <use xlink:href="#icon-play">
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </a>
+                              </div>
+                              <div class="transcript js-transcript-372 mt-2">
+                                <a href="#midd-transcript-372" class="transcript__button" data-toggle-target=".js-transcript-372" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                                    <use xlink:href="#icon-chevron-down">
+                                  </svg>
+                                </a>
+                                <div class="transcript__body" id="midd-transcript-372">
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                  <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
+                                </div>
+                              </div>
+                            </figure>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="journey-modal__overlay swiper-slide gallery-slide" data-hash=slide7>
+                    <div class="container px-0 journey-modal__overlay-container">
+                      <div class="col-lg-12 px-3 px-lg-5 m-auto mb-5 mb-md-7 mb-lg-9">
+                        <h2 class="journey-modal--title ">Middlebury College</h2>
+                        <div class="lightbox__images">
+                          <figure class="lightbox__figure media media--contain-caption" id="midd-lightbox--item-1" data-journey-gallery-item>
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1376 774'/%3E" data-src="http://placekitten.com/1376/774" data-srcset="https://placekitten.com/1376/774 1376w,https://placekitten.com/1136/639 1136w,https://placekitten.com/736/414 736w,https://placekitten.com/320/180 320w" width="1376" alt="" />
+                            <figcaption class="media__caption text-white"> Lorem ipsum <a href="#">dolor</a> sit amet consectetur adipisicing elit. </figcaption>
+                          </figure>
+                          <figure class="lightbox__figure media media--contain-caption" id="midd-lightbox--item-2" data-journey-gallery-item>
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1376 774'/%3E" data-src="http://placekitten.com/1376/774" data-srcset="https://placekitten.com/1376/774 1376w,https://placekitten.com/1136/639 1136w,https://placekitten.com/736/414 736w,https://placekitten.com/320/180 320w" width="1376" alt="" />
+                            <figcaption class="media__caption text-white"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam! </figcaption>
+                          </figure>
+                          <figure class="lightbox__figure media media--contain-caption" id="midd-lightbox--item-3" data-journey-gallery-item>
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1376 774'/%3E" data-src="http://placekitten.com/1376/774" data-srcset="https://placekitten.com/1376/774 1376w,https://placekitten.com/1136/639 1136w,https://placekitten.com/736/414 736w,https://placekitten.com/320/180 320w" width="1376" alt="" />
+                            <figcaption class="media__caption text-white"> Lorem ipsum dolor sit amet consectetur adipisicing elit. </figcaption>
+                          </figure>
+                          <figure class="lightbox__figure media media--contain-caption" id="midd-lightbox--item-4" data-journey-gallery-item>
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1376 774'/%3E" data-src="http://placekitten.com/1376/774" data-srcset="https://placekitten.com/1376/774 1376w,https://placekitten.com/1136/639 1136w,https://placekitten.com/736/414 736w,https://placekitten.com/320/180 320w" width="1376" alt="" />
+                            <figcaption class="media__caption text-white"> Lorem ipsum dolor sit amet consectetur adipisicing elit. </figcaption>
+                          </figure>
+                          <figure class="lightbox__figure media media--contain-caption" id="midd-lightbox--item-5" data-journey-gallery-item>
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1376 774'/%3E" data-src="http://placekitten.com/1376/774" data-srcset="https://placekitten.com/1376/774 1376w,https://placekitten.com/1136/639 1136w,https://placekitten.com/736/414 736w,https://placekitten.com/320/180 320w" width="1376" alt="" />
+                            <figcaption class="media__caption text-white"> Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam! </figcaption>
+                          </figure>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="journey-modal__overlay swiper-slide story-list-slide" data-hash=slide8>
+                    <div class="container px-0 journey-modal__overlay-container">
+                      <div class="col-lg-10 m-auto mb-5 mb-md-7 mb-lg-9">
+                        <h2 class="journey-modal--title ">Graduate and Professional Schools</h2>
+                        <article class="journey-modal__story" aria-describedby="midd-video-label-89">
+                          <figure class="story__image">
+                            <img src="https://via.placeholder.com/1136x639" srcset="https://via.placeholder.com/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
+                            <figcaption class="story__image-caption">
+                              <h3 class="sr-only" id="midd-video-label-89">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                              <p class="story__image-caption--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. Suspendisse commodo pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
+                            </figcaption>
+                          </figure>
+                          <div class="story__content story-list m-auto">
+                            <ul class="list list--dividers mt-lg-4 mb-6 mb-lg-7">
+                              <li class="list__item">
+                                <article class="story-list-item clearfix" aria-labelledby="midd-story-label-0">
+                                  <div class="float-right ml-sm-4 mb-2 mb-sm-4">
+                                    <a href="">
+                                      <figure class="media">
+                                        <img src="https://via.placeholder.com/256x144" srcset="https://via.placeholder.com/296x166 296w,https://via.placeholder.com/235x132 235w,https://via.placeholder.com/224x126 224w,https://via.placeholder.com/256x144 256w" sizes="(max-width: 512px) 256px, (max-width: 768px) 224px, (max-width: 1200px) 235px, 296px" alt="" />
+                                      </figure>
+                                    </a>
+                                  </div>
+                                  <div class="col-sm-7 px-0">
+                                    <h2 class="mb-2" id="midd-story-label-0">
+                                      <a href="#"> Longer headline starting here lorem ipsum dolor sit amet consectetur adipisicing elit </a>
+                                    </h2>
+                                    <p class="f4">
+                                      <em>Publisher Name</em>
+                                    </p>
+                                    <p class="f4 mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum rem dolor harum consequuntur laudantium commodi accusantium debitis quisquam eligendi deleniti itaque saepe voluptatibus soluta necessitatibus, voluptas minus possimus? Itaque, sed.</p>
+                                    <a class="f4 story-link">Link to Story</a>
+                                  </div>
+                                </article>
+                              </li>
+                              <li class="list__item">
+                                <article class="story-list-item clearfix" aria-labelledby="midd-story-label-1">
+                                  <div class="float-right ml-sm-4 mb-2 mb-sm-4">
+                                    <a href="">
+                                      <figure class="media">
+                                        <img src="https://via.placeholder.com/256x144" srcset="https://via.placeholder.com/296x166 296w,https://via.placeholder.com/235x132 235w,https://via.placeholder.com/224x126 224w,https://via.placeholder.com/256x144 256w" sizes="(max-width: 512px) 256px, (max-width: 768px) 224px, (max-width: 1200px) 235px, 296px" alt="" />
+                                      </figure>
+                                    </a>
+                                  </div>
+                                  <div class="col-sm-7 px-0">
+                                    <h2 class="mb-2" id="midd-story-label-1">
+                                      <a href="#"> Longer headline starting here lorem ipsum dolor sit amet consectetur adipisicing elit </a>
+                                    </h2>
+                                    <p class="f4">
+                                      <em>Publisher Name</em>
+                                    </p>
+                                    <p class="f4 mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum rem dolor harum consequuntur laudantium commodi accusantium debitis quisquam eligendi deleniti itaque saepe voluptatibus soluta necessitatibus, voluptas minus possimus? Itaque, sed.</p>
+                                    <a class="f4 story-link">Link to Story</a>
+                                  </div>
+                                </article>
+                              </li>
+                              <li class="list__item">
+                                <article class="story-list-item clearfix" aria-labelledby="midd-story-label-2">
+                                  <div class="float-right ml-sm-4 mb-2 mb-sm-4">
+                                    <a href="">
+                                      <figure class="media">
+                                        <img src="https://via.placeholder.com/256x144" srcset="https://via.placeholder.com/296x166 296w,https://via.placeholder.com/235x132 235w,https://via.placeholder.com/224x126 224w,https://via.placeholder.com/256x144 256w" sizes="(max-width: 512px) 256px, (max-width: 768px) 224px, (max-width: 1200px) 235px, 296px" alt="" />
+                                      </figure>
+                                    </a>
+                                  </div>
+                                  <div class="col-sm-7 px-0">
+                                    <h2 class="mb-2" id="midd-story-label-2">
+                                      <a href="#"> Longer headline starting here lorem ipsum dolor sit amet consectetur adipisicing elit </a>
+                                    </h2>
+                                    <p class="f4">
+                                      <em>Publisher Name</em>
+                                    </p>
+                                    <p class="f4 mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum rem dolor harum consequuntur laudantium commodi accusantium debitis quisquam eligendi deleniti itaque saepe voluptatibus soluta necessitatibus, voluptas minus possimus? Itaque, sed.</p>
+                                    <a class="f4 story-link">Link to Story</a>
+                                  </div>
+                                </article>
+                              </li>
+                              <li class="list__item">
+                                <article class="story-list-item clearfix" aria-labelledby="midd-story-label-3">
+                                  <div class="float-right ml-sm-4 mb-2 mb-sm-4">
+                                    <a href="">
+                                      <figure class="media">
+                                        <img src="https://via.placeholder.com/256x144" srcset="https://via.placeholder.com/296x166 296w,https://via.placeholder.com/235x132 235w,https://via.placeholder.com/224x126 224w,https://via.placeholder.com/256x144 256w" sizes="(max-width: 512px) 256px, (max-width: 768px) 224px, (max-width: 1200px) 235px, 296px" alt="" />
+                                      </figure>
+                                    </a>
+                                  </div>
+                                  <div class="col-sm-7 px-0">
+                                    <h2 class="mb-2" id="midd-story-label-3">
+                                      <a href="#"> Longer headline starting here lorem ipsum dolor sit amet consectetur adipisicing elit </a>
+                                    </h2>
+                                    <p class="f4">
+                                      <em>Publisher Name</em>
+                                    </p>
+                                    <p class="f4 mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum rem dolor harum consequuntur laudantium commodi accusantium debitis quisquam eligendi deleniti itaque saepe voluptatibus soluta necessitatibus, voluptas minus possimus? Itaque, sed.</p>
+                                    <a class="f4 story-link">Link to Story</a>
+                                  </div>
+                                </article>
+                              </li>
+                              <li class="list__item">
+                                <article class="story-list-item clearfix" aria-labelledby="midd-story-label-4">
+                                  <div class="float-right ml-sm-4 mb-2 mb-sm-4">
+                                    <a href="">
+                                      <figure class="media">
+                                        <img src="https://via.placeholder.com/256x144" srcset="https://via.placeholder.com/296x166 296w,https://via.placeholder.com/235x132 235w,https://via.placeholder.com/224x126 224w,https://via.placeholder.com/256x144 256w" sizes="(max-width: 512px) 256px, (max-width: 768px) 224px, (max-width: 1200px) 235px, 296px" alt="" />
+                                      </figure>
+                                    </a>
+                                  </div>
+                                  <div class="col-sm-7 px-0">
+                                    <h2 class="mb-2" id="midd-story-label-4">
+                                      <a href="#"> Longer headline starting here lorem ipsum dolor sit amet consectetur adipisicing elit </a>
+                                    </h2>
+                                    <p class="f4">
+                                      <em>Publisher Name</em>
+                                    </p>
+                                    <p class="f4 mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum rem dolor harum consequuntur laudantium commodi accusantium debitis quisquam eligendi deleniti itaque saepe voluptatibus soluta necessitatibus, voluptas minus possimus? Itaque, sed.</p>
+                                    <a class="f4 story-link">Link to Story</a>
+                                  </div>
+                                </article>
+                              </li>
+                              <li class="list__item">
+                                <article class="story-list-item clearfix" aria-labelledby="midd-story-label-5">
+                                  <div class="float-right ml-sm-4 mb-2 mb-sm-4">
+                                    <a href="">
+                                      <figure class="media">
+                                        <img src="https://via.placeholder.com/256x144" srcset="https://via.placeholder.com/296x166 296w,https://via.placeholder.com/235x132 235w,https://via.placeholder.com/224x126 224w,https://via.placeholder.com/256x144 256w" sizes="(max-width: 512px) 256px, (max-width: 768px) 224px, (max-width: 1200px) 235px, 296px" alt="" />
+                                      </figure>
+                                    </a>
+                                  </div>
+                                  <div class="col-sm-7 px-0">
+                                    <h2 class="mb-2" id="midd-story-label-5">
+                                      <a href="#"> Longer headline starting here lorem ipsum dolor sit amet consectetur adipisicing elit </a>
+                                    </h2>
+                                    <p class="f4">
+                                      <em>Publisher Name</em>
+                                    </p>
+                                    <p class="f4 mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum rem dolor harum consequuntur laudantium commodi accusantium debitis quisquam eligendi deleniti itaque saepe voluptatibus soluta necessitatibus, voluptas minus possimus? Itaque, sed.</p>
+                                    <a class="f4 story-link">Link to Story</a>
+                                  </div>
+                                </article>
+                              </li>
+                            </ul>
+                          </div>
+                        </article>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section class="paragraph--fluencies" aria-labelledby="midd-fluencies-title-1">
+          <div class="container px-0 px-md-3 px-lg-5 pr-xl-3">
+            <div class="text-center">
+              <h2 class="mb-1 mb-lg-2" id="midd-fluencies-title-1">Four Fluencies</h2>
+              <p class="mb-5 mb-md-7">Focus Areas Across the Curriculum</p>
+            </div>
+            <div class="focus-area--wrapper">
+              <ul class="d-flex">
+                <li class="col-md-3">
+                  <article class="focus-area-item" aria-labelledby="midd-focus-area-item-label-1">
+                    <div class="focus-area-item__media">
+                      <a href="">
+                        <img src="https://via.placeholder.com/224x224" srcset="https://via.placeholder.com/332x332 332w,https://via.placeholder.com/278x278 278w,https://via.placeholder.com/224x224 224w" sizes="(max-width: 224px) 100vw, 224px" alt="" />
+                      </a>
+                    </div>
+                    <div class="focus-area-item__content">
+                      <div class="focus-area-item__content-text">
+                        <a href="#">
+                          <h3 class="focus-area-item__name" id="midd-focus-area-item-label-1"> Understanding Cultural Difference </h3>
+                        </a>
+                        <p class="focus-area-item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui voluptate earum laboriosam eaque.</p>
+                      </div>
+                      <a href="#" class="focus-area-item--button">Visit Site <svg class="icon  " focusable="false" aria-hidden="true">
+                          <use xlink:href="#icon-chevron-right">
+                        </svg>
+                      </a>
+                    </div>
+                  </article>
+                </li>
+                <li class="col-md-3">
+                  <article class="focus-area-item" aria-labelledby="midd-focus-area-item-label-2">
+                    <div class="focus-area-item__media">
+                      <a href="">
+                        <img src="https://via.placeholder.com/224x224" srcset="https://via.placeholder.com/332x332 332w,https://via.placeholder.com/278x278 278w,https://via.placeholder.com/224x224 224w" sizes="(max-width: 224px) 100vw, 224px" alt="" />
+                      </a>
+                    </div>
+                    <div class="focus-area-item__content">
+                      <div class="focus-area-item__content-text">
+                        <a href="#">
+                          <h3 class="focus-area-item__name" id="midd-focus-area-item-label-2"> Understanding Cultural Difference </h3>
+                        </a>
+                        <p class="focus-area-item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui voluptate earum laboriosam eaque.</p>
+                      </div>
+                      <a href="#" class="focus-area-item--button">Visit Site <svg class="icon  " focusable="false" aria-hidden="true">
+                          <use xlink:href="#icon-chevron-right">
+                        </svg>
+                      </a>
+                    </div>
+                  </article>
+                </li>
+                <li class="col-md-3">
+                  <article class="focus-area-item" aria-labelledby="midd-focus-area-item-label-3">
+                    <div class="focus-area-item__media">
+                      <a href="">
+                        <img src="https://via.placeholder.com/224x224" srcset="https://via.placeholder.com/332x332 332w,https://via.placeholder.com/278x278 278w,https://via.placeholder.com/224x224 224w" sizes="(max-width: 224px) 100vw, 224px" alt="" />
+                      </a>
+                    </div>
+                    <div class="focus-area-item__content">
+                      <div class="focus-area-item__content-text">
+                        <a href="#">
+                          <h3 class="focus-area-item__name" id="midd-focus-area-item-label-3"> Understanding Cultural Difference </h3>
+                        </a>
+                        <p class="focus-area-item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui voluptate earum laboriosam eaque.</p>
+                      </div>
+                      <a href="#" class="focus-area-item--button">Visit Site <svg class="icon  " focusable="false" aria-hidden="true">
+                          <use xlink:href="#icon-chevron-right">
+                        </svg>
+                      </a>
+                    </div>
+                  </article>
+                </li>
+                <li class="col-md-3">
+                  <article class="focus-area-item" aria-labelledby="midd-focus-area-item-label-4">
+                    <div class="focus-area-item__media">
+                      <a href="">
+                        <img src="https://via.placeholder.com/224x224" srcset="https://via.placeholder.com/332x332 332w,https://via.placeholder.com/278x278 278w,https://via.placeholder.com/224x224 224w" sizes="(max-width: 224px) 100vw, 224px" alt="" />
+                      </a>
+                    </div>
+                    <div class="focus-area-item__content">
+                      <div class="focus-area-item__content-text">
+                        <a href="#">
+                          <h3 class="focus-area-item__name" id="midd-focus-area-item-label-4"> Understanding Cultural Difference </h3>
+                        </a>
+                        <p class="focus-area-item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui voluptate earum laboriosam eaque.</p>
+                      </div>
+                      <a href="#" class="focus-area-item--button">Visit Site <svg class="icon  " focusable="false" aria-hidden="true">
+                          <use xlink:href="#icon-chevron-right">
+                        </svg>
+                      </a>
+                    </div>
+                  </article>
+                </li>
+              </ul>
             </div>
           </div>
         </section>
-        <div class="journey">
-          <div class="journey-line-box">
-            <div class="container p-0">
-              <svg xmlns="http://www.w3.org/2000/svg" width="42" height="1452" viewBox="0 0 42 1452" class="journey-line journey-line--mobile">
-                <path fill="none" fill-rule="evenodd" stroke="#fff" stroke-dasharray="2" d="M38.7 0v277c-.14 37.2 1.19 108.08-7.62 140.38-7.18 26.3 6.8 55.23 6.8 82.4 0 34.13-27.43 31.81-27.43 66.22 0 17.93 8.83 31.73 15.15 43.01 8.3 14.82 13.3 31.87 13.3 54.23-.06 41.29.7 104.43.65 145.74-.03 24.53.23 49.32-.73 73.8-.75 18.97-5.59 34.25-7.54 52.54-1.98 18.61 5.68 33.66 8.43 50.25 2.95 17.75.57 38.6-4.35 54.76-6.32 20.77-41.24 43.76-33.15 74.32 4.21 15.9 16.25 15.95 20.03 32.91 1.44 6.5.94 14.2 2.5 20.61 2.11 8.7 6.69 13.36 9.5 20.98 6.12 16.63 4.74 38.37 4.63 57.58-.16 25.42 0 50.83 0 76.25v128.84" />
-              </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="620" height="2070" viewBox="0 0 620 2070" class="journey-line journey-line--tablet">
-                <path fill="none" fill-rule="evenodd" stroke="#FFF" stroke-dasharray="2" d="M750.62 2068.17H62.84c-19.38-.03-61.84 4.5-61.84-13.5 0-13.86 30.52-23.2 40.2-27.09 81.16-32.58 162.7-64.4 242.15-101.04 63.02-29.06 130.18-59.07 184.06-103.65 26.52-21.94 49-49.18 59.56-82.38 11.56-36.34-1.61-78.43-26.57-106.23-28.72-31.98-72.9-43.81-110.86-61.88-10.45-4.98-27.13-10.29-30.46-22.92-3.02-11.46 10.76-21.43 10.15-33.27-.62-12.08-14.75-17.87-26.37-21.22a570.62 570.62 0 0 1-46.63-15.68c-11.54-4.44-29.35-16.4-29.35-29.64 0-21.26 21.29-34.1 36.95-44.37 24.12-15.8 47.36-32.93 70.7-49.86 43.14-31.28 84.22-64.46 120.76-103.41 31.44-33.5 75.99-85.83 58.61-135.7-6.02-17.31-21.13-24.26-21.71-44.22-.52-17.6 9.83-35.26 9.07-52.43-1.7-38.86-38.48-64.4-67.66-84.15-60.85-41.18-130.6-65.92-196.1-98.34-15.63-7.74-34.65-18.5-34.65-38.42 0-20.37 23.11-32.4 38.24-41.2 23.8-13.82 46.87-28.84 69.82-44 95.83-63.35 203.54-152.63 203.54-278.14 0-26.7-5.42-53.41-15.93-77.96C504.96 279.13 431.54 229.92 355.97 197c-49.58-21.6-99.9-41.4-150.27-61.06-37.76-14.74-75.64-29.9-110.62-50.6C77.43 74.89 60.53 63.02 45.4 49.13 32 36.83 14.9 20.48 8.23 3.19 7.83 2.15 7.66 1.03 7.22 0" />
-              </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1343 3248" class="journey-line journey-line--desktop">
-                <path fill="none" fill-rule="evenodd" stroke="#FFF" stroke-dasharray="2" d="M385.34.2c0 22.36-7.47 76.8-145.64 110.18-55.2 13.33-111.45 21.85-167.36 31.74-12.98 2.64-25.98 5.24-38.8 8.63-7.88 2.09-17.58 3.8-24.8 8.14-8.88 5.35-11.29 17.55-3.23 25.24 5.08 4.85 14.54 8.3 24.26 10.52 51.1 11.68 102.55 21.62 153.77 32.7 35.72 6.71 71.2 15.04 106.49 23.68 222.04 54.39 521.94 106.4 634.61 284.78 32.23 51.02 46.38 113.34 46.38 177.99.1 64.65-14.04 126.97-46.27 178-70.12 118.06-198 200.61-331.03 263.83-17.83 8.47-67.05 31.77-58.18 59.53 2.99 9.33 15.2 15.21 24.54 18.18 22.84 7.26 57.8 13.26 62.25 37.43 0 0 24.34 44.63-111.65 127.82-66.05 40.41-138.01 69.62-209.6 98.53a5391.2 5391.2 0 0 0-111.01 46.4c-28.96 12.45-71.73 27.76-80.9 53.73-12.9 36.55 25.01 57.84 15.9 100.55-8.53 40-44.63 64.41-72.5 95.44-17.62 19.6-28.3 46.14-26.7 72.55 2.13 35.21 29.58 65.56 60.58 84.74 197.55 122.2 921 310.06 651.42 492.87-46.4 31.47-65.33 59.8-16 88 56 32 114.74 43.3 176 75.2 30.17 15.71 50.1 43.36 46.88 79.64-13.28 149.16-663.32 384.8-768.48 435.56-46.4 22.4-87.95 49.18-89.39 77.05-1.8 34.95 47.8 47.84 90.16 47.84 44.2 0 88.38.38 132.55.38h1033.47" />
-              </svg>
-            </div>
-          </div>
-          <section class="journey-section journey-section--purpose js-journey-section" data-line-duration="1500">
-            <figure class="journey-bg">
-              <img src="images/purpose.jpg" alt="">
-            </figure>
-            <div class="journey-main">
-              <div class="container">
-                <div class="journey-content">
-                  <div class="row">
-                    <div class="col-9 col-md-7">
-                      <h2 class="journey-title h1">A Sense of Purpose</h2>
-                      <p class="journey-text">VISION: A world with a robust and inclusive public sphere where ethical citizens work across intellectual, geographical, and cultural borders.</p>
-                    </div>
-                  </div>
-                </div>
-                <ul class="journey-dots">
-                  <li class="journey-dots-item">
-                    <a href="#" class="journey-dots-link">
-                      <span class="journey-dots-text">Sustainability</span>
-                      <span class="journey-dots-icon">
-                        <span class="journey-dot"></span>
-                      </span>
-                    </a>
-                  </li>
-                  <li class="journey-dots-item">
-                    <a href="#" class="journey-dots-link">
-                      <span class="journey-dots-text">Culture</span>
-                      <span class="journey-dots-icon">
-                        <span class="journey-dot"></span>
-                      </span>
-                    </a>
-                  </li>
-                  <li class="journey-dots-item">
-                    <a href="#" class="journey-dots-link">
-                      <span class="journey-dots-text">Engagement</span>
-                      <span class="journey-dots-icon">
-                        <span class="journey-dot"></span>
-                      </span>
-                    </a>
-                  </li>
-                  <li class="journey-dots-item">
-                    <a href="#" class="journey-dots-link">
-                      <span class="journey-dots-text">Inclusivity</span>
-                      <span class="journey-dots-icon">
-                        <span class="journey-dot"></span>
-                      </span>
-                    </a>
-                  </li>
-                </ul>
-                <article class="journey-article">
-                  <h3><a href="">We Made Carbon Neutrality a reality</a></h3>
-                  <a href="">Read Story</a>
-                </article>
-              </div>
-            </div>
-          </section>
-          <section class="journey-section journey-section--place js-journey-section" data-line-duration="1500">
-            <figure class="journey-bg">
-              <img src="images/place.jpg" alt="">
-            </figure>
-            <div class="journey-main">
-              <div class="container">
-                <div class="journey-content">
-                  <div class="row">
-                    <div class="col-9 col-md-7">
-                      <h2 class="journey-title h1">The Experience of Place</h2>
-                      <p class="journey-text">Physical and cultural landscapes provide the context for experiential learning. Place orients, inspires, informs and catalyzes personal inquiry.</p>
-                    </div>
-                  </div>
-                </div>
-                <ul class="journey-dots">
-                  <li class="journey-dots-item">
-                    <a href="#" class="journey-dots-link">
-                      <span class="journey-dots-text">Open lands, open minds <strong>Vermont</strong></span>
-                      <span class="journey-dots-icon">
-                        <span class="journey-dot"></span>
-                      </span>
-                    </a>
-                  </li>
-                  <li class="journey-dots-item">
-                    <a href="#" class="journey-dots-link">
-                      <span class="journey-dots-text">The creative frontier <strong>California</strong></span>
-                      <span class="journey-dots-icon">
-                        <span class="journey-dot"></span>
-                      </span>
-                    </a>
-                  </li>
-                  <li class="journey-dots-item">
-                    <a href="#" class="journey-dots-link">
-                      <span class="journey-dots-text">Destination: anywhere <strong>Global</strong></span>
-                      <span class="journey-dots-icon">
-                        <span class="journey-dot"></span>
-                      </span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
-          <section class="journey-section journey-section--learning js-journey-section" data-line-duration="1500">
-            <figure class="journey-bg">
-              <img src="images/learning.jpg" alt="">
-            </figure>
-            <div class="journey-main">
-              <div class="container">
-                <div class="journey-content">
-                  <div class="row">
-                    <div class="col-9 col-md-7">
-                      <h2 class="journey-title h1">Our Approach to Learning</h2>
-                      <p class="journey-text">Middlebury teaches students how to decode, understand, connect, and self-express in culturally relevant ways and prepares students to independently define, pursue, and achieve their goals.</p>
-                    </div>
-                  </div>
-                </div>
-                <ul class="journey-dots">
-                  <li class="journey-dots-item">
-                    <a href="#" class="journey-dots-link">
-                      <span class="journey-dots-text">Experience</span>
-                      <span class="journey-dots-icon">
-                        <span class="journey-dot"></span>
-                      </span>
-                    </a>
-                  </li>
-                  <li class="journey-dots-item">
-                    <a href="#" class="journey-dots-link">
-                      <span class="journey-dots-text">Fluency</span>
-                      <span class="journey-dots-icon">
-                        <span class="journey-dot"></span>
-                      </span>
-                    </a>
-                  </li>
-                  <li class="journey-dots-item">
-                    <a href="#" class="journey-dots-link">
-                      <span class="journey-dots-text">Collaboration</span>
-                      <span class="journey-dots-icon">
-                        <span class="journey-dot"></span>
-                      </span>
-                    </a>
-                  </li>
-                  <li class="journey-dots-item">
-                    <a href="#" class="journey-dots-link">
-                      <span class="journey-dots-text">Participation</span>
-                      <span class="journey-dots-icon">
-                        <span class="journey-dot"></span>
-                      </span>
-                    </a>
-                  </li>
-                  <li class="journey-dots-item">
-                    <a href="#" class="journey-dots-link">
-                      <span class="journey-dots-text">Flexibility</span>
-                      <span class="journey-dots-icon">
-                        <span class="journey-dot"></span>
-                      </span>
-                    </a>
-                  </li>
-                  <li class="journey-dots-item">
-                    <a href="#" class="journey-dots-link">
-                      <span class="journey-dots-text">Commitment</span>
-                      <span class="journey-dots-icon">
-                        <span class="journey-dot"></span>
-                      </span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
-        </div>
       </main>
+      <div class="footer-cta-light py-lg-7 text-center border-t border-navy">
+        <div class="container">
+          <h2 class="h2 pt-4 pt-md-5 pt-lg-0 mb-lg-7"> What do you want? </h2>
+          <div class="cta-group">
+            <div class="cta-group__item blue-border">
+              <a href="" class="cta-group__button button button--heavy button--light button--dark-outline col-9 col-sm-8 col-lg-auto"> Call to action </a>
+            </div>
+            <span class="border-bottom"></span>
+            <div class="cta-group__item blue-border">
+              <a href="" class="cta-group__button button button--heavy button--light button--dark-outline col-9 col-sm-8 col-lg-auto"> Call to action </a>
+            </div>
+            <span class="border-bottom"></span>
+            <div class="cta-group__item blue-border">
+              <a href="" class="cta-group__button button button--heavy button--light button--dark-outline col-9 col-sm-8 col-lg-auto"> Call to action </a>
+            </div>
+            <span class="border-bottom"></span>
+            <div class="cta-group__item blue-border">
+              <a href="" class="cta-group__button button button--heavy button--light button--dark-outline col-9 col-sm-8 col-lg-auto"> Call to action </a>
+            </div>
+            <span class="border-bottom"></span>
+          </div>
+        </div>
+      </div>
+      <section class="paragraph--policy" aria-labelledby="midd-non-discrim-label">
+        <div class="container">
+          <div class="col-auto col-lg-10 col-xl-8 px-0 m-auto">
+            <h2 class="sr-only" id="midd-non-discrim-label">Non-Discrimination Statement</h2>
+            <p>
+              <strong>Non-Discrimination Statement</strong>: Middlebury complies with applicable provisions of state and federal law which prohibit discrimination in employment, or in admission or access to its educational or extracurricular programs, activities, or facilities, on the basis of race, creed, color, place of birth, ancestry, ethnicity, national origin, religion, sex, sexual orientation, gender identity or expression, age, marital status, service in the armed forces of the United States, positive HIV-related blood test results, genetic information, or against qualified individuals with disabilities on the basis of disability and/or any other status or characteristic as defined and to the extent protected by applicable law. See <a href="https://www.middlebury.edu/handbook/pages/i-policies-for-all/genl-principles/non-discrimination-statement/">Middlebury's full statement and related policies here</a>.
+            </p>
+          </div>
+        </div>
+      </section>
       <nav class="midd-footer">
         <h2 class="sr-only"> Additional Navigation </h2>
         <div class="container">
@@ -517,6 +1775,6 @@
         </a>
       </nav>
     </div>
-    <script src="js/bundle.js" async></script>
+    <script src="js/journey.bundle.js"></script>
   </body>
 </html>
