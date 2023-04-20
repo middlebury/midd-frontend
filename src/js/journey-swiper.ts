@@ -71,12 +71,12 @@ class JourneySwiper {
               renderBullet: function (index, className) {
                 const labels = [
                   'Why Middlebury',
-                  'Mentor-Student Partnerships',
                   'Immersive Environments',
+                  'The Undergraduate Experience',
                   'Alumni in the World',
-                  'Faculty in the News',
-                  'Students in Motion',
-                  '"Connected" Middlebury',
+                  'Middlebury in the News',
+                  'Students in Action',
+                  'Connected Middlebury',
                   'Middlebury College',
                   'Graduate and Professional Schools'
                 ];
