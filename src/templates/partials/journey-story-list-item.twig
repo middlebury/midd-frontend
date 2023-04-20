@@ -1,0 +1,26 @@
+<article class="story-list-item clearfix" aria-labelledby="midd-story-label-{{id}}">
+  <div class="float-right ml-sm-4 mb-2 mb-sm-4">
+    <a href="">
+      <figure class="media">
+        {% include 'partials/img.twig' with { name: 'journey_story_teaser' } %}
+      </figure>
+    </a>
+  </div>
+
+  <div class="col-sm-7 px-0">
+    <h2 class="mb-2" id="midd-story-label-{{id}}">
+      <a href="#">
+        {% if env.test or random(1) %}
+          Longer headline starting here lorem ipsum dolor sit amet consectetur adipisicing elit
+        {% else %}
+          Shorter headline a few words
+        {% endif %}
+      </a>
+    </h2>
+    <p class="f4">
+      <em>Publisher Name</em>
+    </p>
+    <p class="f4 mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum rem dolor harum consequuntur laudantium commodi accusantium debitis quisquam eligendi deleniti itaque saepe voluptatibus soluta necessitatibus, voluptas minus possimus? Itaque, sed.</p>
+    <a class="f4 story-link">Link to Story</a>
+  </div>
+</article>

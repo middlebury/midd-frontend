@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{title}}</title>
+    <title>Middlebury Front-end Design System</title>
     <link rel="stylesheet" href="css/main.css">
     <link
-    href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     {# dont index these files if vercel deployment #}
     {% if env.vercel %}
       <meta name="robots" content="noindex"/>
@@ -15,7 +15,7 @@
   <body class="{% if body_class %}{{body_class}}{% endif %} {% if theme %}theme-{{theme}}{% endif %}" id="midd-pagetop">
     {% include 'paragraphs/cookie-banner.twig' %}
     <nav aria-labelledby="midd-skip-link">
-      <a href="#midd-main" class="sr-only sr-only-focusable" id="midd-skip-link">Skip to content</a>
+      <a href="#midd-main" class="sr-only sr-focusable" id="midd-skip-link">Skip to content</a>
     </nav>
     <div style="display:none">
       {% include 'partials/icons.twig' %}
@@ -49,7 +49,9 @@
     {% endif %}
 
     {% block layout_before_body_close %}{% endblock %}
-    {% block scripts %}{% endblock %}
-    <script src="js/bundle.js" async></script>
+    {% block additional_scripts %}{% endblock %}
+    {% block scripts %}
+      <script src="js/main.bundle.js" async></script>
+    {% endblock %}
   </body>
 </html>

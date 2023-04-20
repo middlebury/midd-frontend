@@ -26,6 +26,11 @@
   border-radius: 10rem;
 }
 
+.button--heavy {
+  font-size: $typescale-2;
+  font-weight: $font-weight-semibold;
+}
+
 // Sizes
 
 .button--sm {
@@ -47,6 +52,10 @@
 
   &.button--outline {
     @include button-theme('light-outline');
+  }
+
+  &.button--dark-outline {
+    @include button-theme('dark-outline');
   }
 }
 

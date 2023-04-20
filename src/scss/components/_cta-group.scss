@@ -1,3 +1,10 @@
+.footer-cta-light {
+  h2 {
+    font-size: $typescale-4;
+    letter-spacing: 2px;
+  }
+}
+
 .cta-group {
   @include make-row;
 }
@@ -34,6 +41,25 @@
       border-bottom: 0;
       border-right: 1px solid $border-color;
     }
+
+    &.blue-border {
+      border-bottom: 0;
+
+      @include breakpoint(lg) {
+        border-color: $blue;
+      }
+
+      & + .border-bottom {
+        display: block;
+        width: $spacing-7;
+        margin: auto;
+        border-bottom: 1px solid $blue;
+
+        @include breakpoint(lg) {
+          display: none;
+        }
+      }
+    }
   }
 }
 
@@ -54,4 +80,11 @@
 .cta-group__button {
   margin-top: auto;
   align-self: center; // prevents button from becoming full width
+}
+
+.footer-cta-light {
+  h2 {
+    font-family: $font-family-sans-serif;
+    text-transform: uppercase;
+  }
 }

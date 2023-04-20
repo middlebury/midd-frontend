@@ -37,11 +37,13 @@
   <div class="grid-modal__overlay container">
     {% if content_type == 'play' %}
       {% include 'partials/video.twig' with {
-        grid_video: true
+        grid_video: true,
+        grid_caption_offset: true
       } %}
       {# {% include 'partials/portrait-video.twig' with {
-        grid_video: true
-      } %} #}
+              grid_video: true,
+              grid_caption_offset: true
+            } %} #}
     {% elseif content_type == 'expand' %}
       <figure class="grid-modal__image">
         {% include 'partials/img.twig' with {

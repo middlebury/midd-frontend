@@ -51,7 +51,7 @@ const paths = {
   },
   images: {
     // ignore sub folders in production build since demo images may be too big.
-    src: `./src/images/${PROD ? '*' : '**/*'}.{png,jpg,svg}`,
+    src: `./src/images/${PROD ? '*' : '**/**/*'}.{png,jpg,svg,mp4}`,
     dest: './dist/images/'
   }
 };
@@ -263,11 +263,7 @@ const copyDeps = () => {
 };
 
 const copyMeta = () => {
-  return gulp
-    .src([
-      './composer.json'
-    ])
-    .pipe(gulp.dest('./dist/'));
+  return gulp.src(['./composer.json']).pipe(gulp.dest('./dist/'));
 };
 
 const deployDist = () => {
@@ -279,7 +275,10 @@ const deployDist = () => {
     .src(
       [
         './dist/css/main.css',
-        './dist/js/bundle.js',
+        './dist/js/main.bundle.js',
+        './dist/js/journey.bundle.js',
+        './dist/js/swiper.bundle.js',
+        './dist/js/panelsnap.bundle.js',
         './dist/js/Chart.min.js',
         './dist/images/*'
       ],
