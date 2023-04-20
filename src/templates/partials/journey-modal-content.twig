@@ -1,40 +1,75 @@
-{% set labels = ['college', 'miis', 'bread-loaf', 'lang-schools', 'writers', 'schools-abroad', 'env-school'] %}
+{# {% set labels = ['college', 'miis', 'bread-loaf', 'lang-schools', 'writers', 'schools-abroad', 'env-school'] %} #}
+{% set labels = ['miis'] %}
 
 <div class="journey-modal__overlay swiper-slide {{content_type}}-slide" data-hash={{hash_class}}>
   <div class="container px-0 journey-modal__overlay-container">
-    <div class="col-lg-10 m-auto">
-      <h2 class="journey-modal--title">{{label}}</h2>
+    <div class="{% if content_type == 'portrait-video' or content_type == 'video-group' %}col-12{% elseif content_type == 'gallery' %}col-lg-12 px-3 px-lg-5{% else %}col-lg-10{% endif %} m-auto mb-5 mb-md-7 mb-lg-9">
+      <h2 class="journey-modal--title {{blurb ? 'offset-lg-1' : ''}}">{{label}}</h2>
+      {% if blurb %}
+        <p class="journey-modal--blurb col-lg-10 px-0 offset-lg-1">Learning at Middlebury is not a passive experience. Sure, many—if not most—students will find plenty of time for quiet contemplation. Their academic journeys will also involve plenty of “doing”—whether that means participation in competitive fellowships or internships; entrepreneurial ventures at the local, state, national, and international levels; field research with faculty; or co- and extracurricular activities that perfectly complement and enhance those more quiet moments.</p>
+      {% endif %}
       {% if content_type == 'video' %}
         {% include 'partials/video.twig' with {
           grid_video: true
         } %}
       {% elseif content_type == 'story' %}
+        {% include 'partials/journey-modal-story.twig' with {
+          type: 'story'
+        } %}
+      {% elseif content_type == 'portrait-video' %}
+        <div class="row">
+          {% for item in 1..5 %}
+            <div class="col-md-4 mb-7">
+              {% include 'partials/portrait-video.twig' with {
+                  id: loop.index
+                } %}
+            </div>
+          {% endfor %}
+        </div>
+      {% elseif content_type == 'video-group' %}
+        <div class="row">
+          {% for item in 1..5 %}
+            <div class="col-md-4 mb-4 mb-md-8">
+              {% include 'partials/video.twig' with {
+                  id: loop.index,
+                  grid_video: true
+                } %}
+            </div>
+          {% endfor %}
+        </div>
+      {% elseif content_type == 'gallery' %}
+        {% include 'partials/journey-modal-gallery.twig' %}
+      {% elseif content_type == 'story-list' %}
         {% include 'partials/journey-modal-story.twig' %}
       {% endif %}
     </div>
-    <section class="journey-modal__articles-block">
-      <h2 class="articles-block__title">Related Somethings</h2>
-      <ul class="d-flex flex-wrap articles-block">
-        {% for i in 0..2 %}
-          <li class="col-12 col-md-4">
-            <article class="articles-block__article-card">
-              <div class="articles-block__content">
-                <span class="article-card--label label-{{random(labels)}}"></span>
-                <div class="article-card--text-content">
-                  <h3 class="article-card--title">Learn About Our Sustainability</h3>
-                  <p class="article-card--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+    {% if articles %}
+      <section class="journey-modal__articles-block">
+        <h2 class="articles-block__title">Related Somethings</h2>
+        <ul class="d-flex flex-wrap articles-block">
+          {% for i in 0..2 %}
+            <li class="col-12 col-md-4">
+              <article class="articles-block__article-card">
+                <div class="articles-block__content">
+                  <span class="article-card--label label-{{random(labels)}}"></span>
+                  <div class="article-card--text-content">
+                    <a href="#">
+                      <h3 class="article-card--title">Learn About Our Sustainability</h3>
+                    </a>
+                    <p class="article-card--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                  </div>
+                  <a href="#" class="article-card--button">Learn more
+                    {% include 'partials/icon.twig' with {
+                      name: 'chevron-right',
+                      class: 'journey-modal-button--icon'
+                    } %}
+                  </a>
                 </div>
-                <button class="article-card--button">Learn more
-                  {% include 'partials/icon.twig' with {
-                name: 'chevron-right',
-                class: 'journey-modal-button--icon'
-              } %}
-                </button>
-              </div>
-            </article>
-          </li>
-        {% endfor %}
-      </ul>
-    </section>
+              </article>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endif %}
   </div>
 </div>

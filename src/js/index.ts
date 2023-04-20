@@ -1,31 +1,16 @@
 /**
- * Polyfills to support ie11
+ *  Polyfills to support cross-browser compatibility
  */
 
-// used in  lozad, micromodal
-import 'mdn-polyfills/Object.assign';
-
-// used in micromodal
-import 'mdn-polyfills/Array.from';
+// Common polyfills
+import './polyfills.ts';
 
 // used in flowchart, offices, lightbox
 import 'mdn-polyfills/Element.prototype.closest';
 
-// for document.querySelectorAll('.thing).forEach()
-import 'mdn-polyfills/NodeList.prototype.forEach';
-
 // Polyfill object fit images for easier responsive images.
 // Used in card-carousel and more.
 import 'object-fit-images';
-
-// Intersection observer for IE and Safari.
-// Used in menu-spy, chart animations plugin, lightbox gallery, and lozad package.
-// https://caniuse.com/intersectionobserver
-import 'intersection-observer';
-
-// polyfill :focus-within for tab accessible menus
-// https://caniuse.com/css-focus-within
-import 'focus-within-polyfill';
 
 /**
  * Custom JS imports
@@ -43,10 +28,6 @@ import './audio-player'; // custom Preact audio player
 import './offices'; // middlebury.edu/office homepage script for filtering items shown
 import './mover'; // mover util for moving an element from one element to another at a breakpoint. Doesn't work if event listeners are on any of the elements that are moved.TODO: remove me and use css-grid to move layout around
 import './accordion';
-import './journey';
-import './journey-swiper';
-import './video-controls';
-import './panel-snap';
 import './lightbox';
 import './card-carousel';
 import './dropdown';

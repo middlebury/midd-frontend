@@ -1,7 +1,9 @@
 import MicroModal from 'micromodal';
 import anime, { AnimeInstance } from 'animejs';
 import { $, $$ } from './utils/dom';
-import lozad from 'lozad';
+import JourneySwiper from './journey-swiper';
+import onscroll from './utils/onscroll';
+import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
 
 class Journey {
   elem: HTMLElement;
@@ -10,59 +12,91 @@ class Journey {
   totalPathLength: number;
   journeyLineAnimInstance: AnimeInstance;
   journeySections: HTMLElement[];
+  firstSection: HTMLElement;
   io: IntersectionObserver;
-  matchMedia: MediaQueryList;
-  deviceType: String;
-  dotsAnimBreaks: number[];
-  lineAnimBreaks: number[];
+  deviceType: string;
+  timeout: NodeJS.Timeout;
+  scrollRef: object;
+  deviceInfo: {
+    [key: string]: {
+      [key: string]: number[];
+    };
+  };
 
   constructor(el: HTMLElement) {
     this.elem = el;
     this.journeySections = $$('.js-journey-section');
+    this.firstSection = this.journeySections.shift();
     this.animUpdateValue = 0;
+    this.deviceInfo = {
+      desktop: {
+        dotsAnimBreaks: [0, 34, 70],
+        lineAnimBreaks: [25, 60, 101]
+      },
+      tablet: {
+        dotsAnimBreaks: [0, 39, 77],
+        lineAnimBreaks: [29, 67, 101]
+      },
+      mobile: {
+        dotsAnimBreaks: [0, 32, 70],
+        lineAnimBreaks: [28, 65, 101]
+      }
+    };
 
     this.handleIntersection = this.handleIntersection.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
     this.deviceInit = this.deviceInit.bind(this);
     this.init();
   }
 
   init() {
-    this.matchMedia = window.matchMedia('(min-width: 512px)');
+    window.location.hash = '';
     this.deviceInit();
     this.addListeners();
-    this.svgInit();
-    this.animInit();
-    this.sectionInit();
 
-    setTimeout(() => {
-      this.journeyLineAnimInstance.play();
-    }, 1600);
+    if (!PREFERS_REDUCED_MOTION) {
+      this.svgInit();
+      this.animInit();
+      this.sectionInit();
+    }
   }
 
   addListeners() {
-    this.matchMedia.addListener(this.deviceInit);
+    window.addEventListener('resize', (e) => {
+      clearTimeout(this.timeout);
+      this.timeout = setTimeout(this.handleScroll, 250);
+    });
 
-    // init lazy loaded videos
-    const lazyLoadVideos = lozad('[data-journey-video]');
-    lazyLoadVideos.observe();
+    this.scrollRef = onscroll(this.handleScroll);
+  }
+
+  handleScroll() {
+    if (
+      this.firstSection.clientHeight - window.innerHeight >
+      -this.firstSection.getBoundingClientRect().top
+    ) {
+      $('.school-picker').classList.remove('not-fixed');
+    } else {
+      $('.school-picker').classList.add('not-fixed');
+    }
   }
 
   deviceInit() {
-    if (this.matchMedia.matches) {
+    this.handleScroll();
+    if (window.matchMedia('(min-width: 1024px)').matches) {
       this.deviceType = 'desktop';
-      this.dotsAnimBreaks = [20, 42, 85];
-      this.lineAnimBreaks = [6.5, 34.2, 60.2, 100];
+    } else if (window.matchMedia('(min-width: 512px)').matches) {
+      this.deviceType = 'tablet';
     } else {
       this.deviceType = 'mobile';
-      this.dotsAnimBreaks = [4, 44, 91];
-      this.lineAnimBreaks = [1, 39.2, 78.2, 100];
     }
+
     this.pathEl = $(`.journey-line--${this.deviceType} path`, this.elem);
   }
 
   svgInit() {
     this.totalPathLength = this.pathEl.getTotalLength();
-    const dashing = '2, 2';
+    const dashing = '4, 4';
 
     const dashLength = dashing
       .split(/[\s,]/)
@@ -86,7 +120,6 @@ class Journey {
       easing: 'linear',
       autoplay: false,
       update: (anim) => {
-        console.log(this.animUpdateValue);
         this.animUpdate(anim);
       }
     });
@@ -96,28 +129,26 @@ class Journey {
     const animProgress = Math.round(anim.progress * 10) / 10;
 
     // Logic for the dots to animate
-    if (animProgress >= this.dotsAnimBreaks[0]) {
-      $(
-        `.journey-line--${this.deviceType} .journey-line--section-learning`
-      ).classList.add('animate');
+    if (animProgress >= this.deviceInfo[this.deviceType].dotsAnimBreaks[0]) {
+      $(`.journey-links--${this.deviceType} .learning`).classList.add(
+        'animate'
+      );
     }
-    if (animProgress >= this.dotsAnimBreaks[1]) {
-      $(
-        `.journey-line--${this.deviceType} .journey-line--section-place`
-      ).classList.add('animate');
+    if (animProgress >= this.deviceInfo[this.deviceType].dotsAnimBreaks[1]) {
+      $(`.journey-links--${this.deviceType} .thinking`).classList.add(
+        'animate'
+      );
     }
-    if (animProgress >= this.dotsAnimBreaks[2]) {
-      if (this.deviceType == 'desktop') {
-        $('.journey-line--section-purpose__desktop').classList.add('animate');
-        $('.journey-line--section-purpose__tablet').classList.add('animate');
-      } else {
-        $(
-          `.journey-line--${this.deviceType} .journey-line--section-purpose`
-        ).classList.add('animate');
-      }
+    if (animProgress >= this.deviceInfo[this.deviceType].dotsAnimBreaks[2]) {
+      $(`.journey-links--${this.deviceType} .opportunity`).classList.add(
+        'animate'
+      );
     }
 
-    if (animProgress === this.animUpdateValue) {
+    if (
+      animProgress >= this.animUpdateValue - 0.5 &&
+      animProgress <= this.animUpdateValue + 0.5
+    ) {
       this.journeyLineAnimInstance.pause();
     }
   }
@@ -137,19 +168,20 @@ class Journey {
         let entryId = 0;
         const currentSection = entry.target.id;
 
-        if (currentSection === 'intro') {
+        if (currentSection === 'learning') {
           entryId = 0;
-        } else if (currentSection === 'learning') {
+        } else if (currentSection === 'thinking') {
           entryId = 1;
-        } else if (currentSection === 'place') {
+        } else if (currentSection === 'opportunity') {
           entryId = 2;
-        } else if (currentSection === 'purpose') {
-          entryId = 3;
         }
 
-        if (this.lineAnimBreaks[entryId] > this.animUpdateValue) {
-          this.animUpdateValue = this.lineAnimBreaks[entryId];
-          // console.log(this.animUpdateValue);
+        if (
+          this.deviceInfo[this.deviceType].lineAnimBreaks[entryId] >
+          this.animUpdateValue
+        ) {
+          this.animUpdateValue =
+            this.deviceInfo[this.deviceType].lineAnimBreaks[entryId];
           this.journeyLineAnimInstance.play();
         }
 
@@ -159,15 +191,18 @@ class Journey {
   }
 }
 
-const journey = $$('.journey');
-
-journey.forEach((item: HTMLElement) => new Journey(item));
-
 MicroModal.init({
   openTrigger: 'data-journey-overlay-open',
   closeTrigger: 'data-journey-overlay-close',
   onShow: (modal: any) => {
-    $('[data-journey-overlay-close]', modal).focus();
+    if (!modal.swiper) {
+      const swiper = $('.journey-swiper');
+      modal.swiper = new JourneySwiper(swiper);
+    }
   },
   disableScroll: true
 });
+
+const journey = $$('.journey');
+
+journey.forEach((item: HTMLElement) => new Journey(item));

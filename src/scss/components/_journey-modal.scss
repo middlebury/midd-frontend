@@ -53,9 +53,8 @@ $school-theme-colors: (
   flex-direction: column;
   justify-content: space-between;
   border-bottom: 1px solid $white;
-  padding-left: $spacing-3;
-  padding-right: $spacing-3;
-  padding-bottom: $spacing-3;
+  padding: $spacing-3;
+  padding-top: 0;
 
   @include breakpoint(md) {
     padding-bottom: $spacing-4;
@@ -63,8 +62,7 @@ $school-theme-colors: (
 
   @include breakpoint(xl) {
     flex-direction: row;
-    padding-left: $spacing-5;
-    padding-right: $spacing-5;
+    padding: 0 $spacing-5;
     padding-bottom: $spacing-3;
   }
 
@@ -76,15 +74,38 @@ $school-theme-colors: (
 
     @include breakpoint(xl) {
       display: block;
-      margin-bottom: 0;
+      margin-bottom: $spacing-3;
     }
   }
 
   .midd-header__brand {
     height: 56px;
 
+    // a {
+    //   width: 100%;
+    // }
+
     a {
-      width: 100%;
+      text-decoration: none;
+
+      .midd-header__shield {
+        width: 42px;
+        top: 0;
+
+        @include breakpoint(md) {
+          width: 64px;
+        }
+      }
+
+      .midd-header__wordmark {
+        width: 78px;
+        margin-left: rem(8);
+
+        @include breakpoint(md) {
+          width: 116px;
+          margin-left: rem(10);
+        }
+      }
     }
   }
 
@@ -129,9 +150,15 @@ $school-theme-colors: (
 
     .journey-modal__pagination-wrapper {
       overflow: hidden;
-      padding-top: rem(28);
+      padding-top: $spacing-7;
+      width: 82vw;
+
+      @include breakpoint(md) {
+        width: 100%;
+      }
 
       @include breakpoint(lg) {
+        overflow: initial;
         padding: 0;
         height: $spacing-8;
       }
@@ -141,12 +168,11 @@ $school-theme-colors: (
       display: flex;
       align-items: center;
       height: fit-content;
-      transition: transform 0.5s;
-
-      width: 82vw;
+      transition: transform 0.3s;
+      width: 716px;
 
       @include breakpoint(md) {
-        width: 716px;
+        // width: 716px;
         justify-content: center;
       }
 
@@ -154,45 +180,19 @@ $school-theme-colors: (
         overflow: initial;
       }
 
-      .journey-modal__svg-wrapper {
-        position: relative;
-        margin-bottom: rem(2);
-
-        .journey-modal__svg {
-          position: absolute;
-        }
-
-        .journey-modal__svg-link {
-          color: $white;
-          fill: $white;
-
-          .journey-modal__svg-link-text {
-            color: $white;
-            fill: $white;
-            display: none;
-          }
-
-          &:hover,
-          &:focus {
-            text-decoration: none;
-            .journey-modal__outer-circle {
-              stroke: #f4b824;
-              stroke-width: 1;
-            }
-
-            .journey-modal__svg-link-text {
-              display: block;
-            }
-          }
-        }
+      .journey-modal__svg {
+        position: absolute;
       }
 
       .cb__wrapper {
         display: flex;
-        margin: 0 42px;
+        width: 100%;
+        justify-content: space-evenly;
+        // margin: 0 42px;
 
         @include breakpoint(md) {
-          margin: auto;
+          margin: 0;
+          justify-content: space-evenly;
         }
 
         .swiper-pagination-bullet-active {
@@ -241,14 +241,18 @@ $school-theme-colors: (
         display: none;
         font-size: $typescale-1;
         line-height: $line-height-journey;
+        text-align: center;
         position: absolute;
-        top: -$spacing-4;
-        width: max-content;
-        // background-color: $navy-dark;
+        bottom: $spacing-3;
+        margin-bottom: $spacing-5;
+        width: rem(144);
 
         @include breakpoint(lg) {
-          top: $spacing-6;
           font-size: $typescale-2;
+          top: $spacing-6;
+          bottom: 0;
+          margin-bottom: 0;
+          width: max-content;
         }
       }
 
@@ -261,7 +265,11 @@ $school-theme-colors: (
       }
 
       &:not(:last-child) {
-        margin-right: rem(28);
+        // margin-right: rem(28);
+
+        // @include breakpoint(md) {
+        margin: 0;
+        // }
       }
 
       .cb-link__circle {
@@ -341,23 +349,95 @@ $school-theme-colors: (
     margin-top: $spacing-8;
 
     .journey-modal--title {
-      font-size: $spacing-5;
+      font-family: $font-family-sans-serif;
+      font-weight: $font-weight-light;
+      font-size: rem(32);
       line-height: $line-height-journey;
       margin-bottom: $spacing-4;
 
       @include breakpoint(md) {
-        font-size: $typescale-9;
+        font-size: rem(40);
       }
 
       @include breakpoint(lg) {
-        margin-bottom: $spacing-5;
+        font-size: rem(56);
+        margin-bottom: $spacing-6;
+      }
+    }
+
+    .journey-modal--blurb {
+      line-height: $line-height-heading;
+      font-size: $typescale-4;
+      margin-top: $spacing-4;
+      margin-bottom: $spacing-5;
+
+      @include breakpoint(md) {
+        font-weight: $font-weight-light;
+        font-size: $typescale-6;
+        margin-bottom: $spacing-7;
+      }
+
+      @include breakpoint(lg) {
+        line-height: $line-height-body;
+        margin-top: $spacing-6;
+        margin-bottom: $spacing-9;
+      }
+    }
+
+    .portrait-video {
+      max-width: initial;
+
+      .transcript__button {
+        color: $white;
+        &:hover {
+          border-color: $white;
+        }
+      }
+    }
+  }
+
+  .lightbox__images {
+    padding: 0;
+    width: 100%;
+
+    .lightbox__figure {
+      margin-left: -$spacing-3;
+      margin-right: -$spacing-3;
+
+      @include breakpoint(sm) {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      figcaption {
+        margin-left: $spacing-3;
+        margin-right: $spacing-3;
+
+        @include breakpoint(sm) {
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
+    }
+
+    .media__caption {
+      font-size: $typescale-2;
+
+      @include breakpoint(lg) {
+        font-size: $typescale-3;
       }
     }
   }
 
   .journey-modal__story {
+    > *,
+    h2,
+    h3 {
+      font-family: $font-family-sans-serif;
+    }
     background: $white;
     color: $black;
+    border-bottom: $spacing-2 solid $blue-light;
 
     .story__image {
       margin-left: -$spacing-3;
@@ -392,14 +472,121 @@ $school-theme-colors: (
         padding: 0;
         padding-top: $spacing-6;
         padding-bottom: $spacing-7;
-        max-width: 78%;
+        max-width: 80%;
       }
 
-      a {
-        color: initial;
+      img {
+        margin-bottom: $spacing-2;
 
-        &:hover {
-          border-color: initial;
+        @include breakpoint(sm) {
+          margin-bottom: rem(12);
+        }
+
+        @include breakpoint(lg) {
+          margin-bottom: $spacing-3;
+        }
+      }
+
+      p {
+        margin-bottom: $spacing-4;
+      }
+
+      h3 {
+        font-size: $typescale-6;
+        font-weight: $font-weight-semibold;
+        margin-bottom: $spacing-2;
+        margin-top: $spacing-5;
+
+        @include breakpoint(sm) {
+          margin-top: $spacing-6;
+        }
+
+        @include breakpoint(md) {
+          margin-bottom: $spacing-3;
+        }
+
+        @include breakpoint(lg) {
+          font-size: rem(32);
+          font-weight: $font-weight-normal;
+          margin-top: $spacing-7;
+        }
+
+        &:first-child {
+          margin-top: 0;
+
+          @include breakpoint(sm) {
+            margin-top: $spacing-3;
+          }
+
+          // @include breakpoint(lg) {
+          //   margin-top: $spacing-7;
+          // }
+        }
+      }
+
+      h4 {
+        font-size: $typescale-3;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+        margin-top: $spacing-4;
+        margin-bottom: $spacing-2;
+        letter-spacing: 2px;
+
+        @include breakpoint(lg) {
+          font-size: $typescale-4;
+          font-weight: $font-weight-normal;
+        }
+      }
+
+      &.story-list {
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+
+        @include breakpoint(sm) {
+          width: 82%;
+        }
+      }
+
+      .story-list-item {
+        padding-left: $spacing-3;
+        padding-right: $spacing-3;
+
+        @include breakpoint(sm) {
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        .float-right {
+          float: unset;
+
+          @include breakpoint(sm) {
+            float: right;
+          }
+        }
+
+        h2 {
+          font-size: $typescale-6;
+          font-weight: $font-weight-semibold;
+        }
+
+        p {
+          margin-bottom: 0;
+        }
+
+        a {
+          color: $navy;
+
+          &.story-link {
+            @include link-border;
+          }
+        }
+      }
+
+      .list__item:not(:last-child) {
+        @include breakpoint(lg) {
+          padding-bottom: $spacing-7;
+          margin-bottom: $spacing-7;
         }
       }
     }
@@ -493,7 +680,6 @@ $school-theme-colors: (
       padding-top: $spacing-2;
       margin-bottom: $spacing-7;
     }
-
     .articles-block {
       color: $black;
 
@@ -558,19 +744,26 @@ $school-theme-colors: (
         }
 
         .article-card--title {
+          font-family: $font-family-sans-serif;
           font-size: $typescale-4;
-          font-weight: $font-weight-bold;
+          font-weight: $font-weight-semibold;
           color: $navy;
           padding-bottom: $spacing-2;
+          padding-right: $spacing-3;
 
           @include breakpoint(lg) {
             font-size: $typescale-6;
+          }
+
+          @include breakpoint(xl) {
+            font-size: rem(32);
             font-weight: $font-weight-normal;
           }
         }
 
         .article-card--text {
           font-size: $typescale-2;
+          line-height: $line-height-heading;
         }
 
         .article-card--button {
