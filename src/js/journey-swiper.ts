@@ -122,7 +122,7 @@ class JourneySwiper {
       const lazyGalleryImages = lozad('[data-journey-gallery-item] img');
       lazyGalleryImages.observe();
 
-      this.swiperParentEl.style.transform = `translateX(${this.translate}px)`;
+      // this.swiperParentEl.style.transform = `translateX(${this.translate}px)`;
 
       // Initialize video elements with VideoSwap class to enable showing/hiding videos
       this.initVideoElems();
@@ -210,10 +210,7 @@ class JourneySwiper {
     this.hiddenWidth = scrollWidth - this.swiperParentWrapperEl.offsetWidth;
 
     const currentElLeft = this.currentEl?.getBoundingClientRect().left;
-    console.log(this.translate, this.swiperParentEl.style.transform);
-    $(
-      '.js-swiper-test'
-    ).innerText = `${this.translate}, ${this.swiperParentEl.style.transform}`;
+
     if (this.currentEl) {
       this.translate =
         this.translate + (this.halfWindowWidth - currentElLeft - 16);
@@ -230,6 +227,10 @@ class JourneySwiper {
         this.swiperParentEl.style.transform = `translateX(${this.translate}px)`;
       }
     }
+
+    $(
+      '.js-swiper-test'
+    ).innerText = `${this.translate}, ${this.swiperParentEl.style.transform}`;
   }
 }
 
