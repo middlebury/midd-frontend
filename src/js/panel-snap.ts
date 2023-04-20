@@ -17,7 +17,9 @@ async function lazyLoadPanelSnap() {
     window.matchMedia('(min-width: 512px)').matches &&
     !PREFERS_REDUCED_MOTION
   ) {
-    const { default: PanelSnap } = await import('panelsnap');
+    const { default: PanelSnap } = await import(
+      /* webpackChunkName: "panelsnap" */ 'panelsnap'
+    );
 
     journey.forEach(() => new PanelSnap(defaultOptions));
   }
@@ -26,5 +28,7 @@ async function lazyLoadPanelSnap() {
 const journey = $$('.journey');
 
 if (journey.length !== 0) {
-  lazyLoadPanelSnap();
+  lazyLoadPanelSnap().catch(
+    (error) => 'An error occurred while loading panelsnap'
+  );
 }

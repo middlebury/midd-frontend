@@ -80,7 +80,7 @@
       video: 'https://www.middlebury.edu/office/sites/www.middlebury.edu.office/files/place_30.mp4',
       name: 'thinking',
       blurb: 'An expansive education built on <strong>critical thinking</strong> and <strong>compassionate doing</strong>',
-      align: 'right left--mobile',
+      align: 'right left--mobile'
     } %}
     {% include 'partials/journey-section.twig' with {
       poster_image: '/images/demo/purpose.jpg',
@@ -106,4 +106,8 @@
   }%}
   {% include 'paragraphs/non-discrimination-policy.twig' %}
   {% include 'partials/midd-footer.twig' %}
+{% endblock %}
+
+{% block scripts %}
+  <script src="js/journey.bundle.js"></script>
 {% endblock %}
