@@ -67,7 +67,7 @@ class Journey {
       this.timeout = setTimeout(this.handleScroll, 250);
     });
 
-    this.scrollRef = onscroll(this.handleScroll);
+    // this.scrollRef = onscroll(this.handleScroll);
   }
 
   handleScroll() {
