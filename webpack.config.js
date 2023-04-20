@@ -19,7 +19,7 @@ module.exports = {
     main: './src/js/index.ts',
     journey: './src/js/journey-module.ts'
   },
-  devtool: 'inline-source-map',
+  devtool: PROD ? false : 'inline-source-map',
   stats: 'normal',
   module: {
     rules: [

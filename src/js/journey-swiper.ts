@@ -151,10 +151,13 @@ class JourneySwiper {
       });
     });
 
-    window.addEventListener('resize', (e) => {
-      clearTimeout(this.timeout);
-      this.timeout = setTimeout(this.resetNavigation, 250);
-    });
+    // Adding resize event listener only on tablet and desktop because resize event fires on scroll on mobile
+    if (window.matchMedia('(min-width: 512px)')) {
+      window.addEventListener('resize', (e) => {
+        clearTimeout(this.timeout);
+        this.timeout = setTimeout(this.resetNavigation, 250);
+      });
+    }
 
     window.addEventListener('hashchange', (e) => {
       this.elementOnLoad(
@@ -224,7 +227,7 @@ class JourneySwiper {
       }
 
       if (this.translate <= 0 && Math.abs(this.translate) <= this.hiddenWidth) {
-        this.paginationEl.style.transform = `translate3d(${this.translate}px, 0px, 0px)`;
+        this.swiperParentEl.style.transform = `translate3d(${this.translate}px, 0px, 0px)`;
       }
     }
 
