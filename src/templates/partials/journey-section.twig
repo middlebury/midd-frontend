@@ -1,4 +1,5 @@
-<section id={{name}} class="journey-section journey-section--{{name}} js-journey-section" data-section={{name}}>
+
+<section id={{name}} class="journey-section journey-section--{{name}} js-journey-section" data-section={{name}}{% if title_label is not empty %} aria-labelledby="{{ title_label }}"{% endif %}>
   {% if name == 'learning'%}
     <div class="journey-line-box js-journey-line">
       <svg viewbox="0 0 772 2238" xmlns="http://www.w3.org/2000/svg" class="journey-line-svg journey-line--desktop" style="pointer-events:auto;">
