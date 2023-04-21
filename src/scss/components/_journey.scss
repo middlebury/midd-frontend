@@ -325,6 +325,10 @@
       right: $spacing-5;
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      display: none;
+    }
+
     .journey-video--button-play {
       display: none;
     }
