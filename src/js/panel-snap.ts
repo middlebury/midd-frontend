@@ -14,7 +14,7 @@ let defaultOptions = {
 
 async function lazyLoadPanelSnap() {
   if (
-    window.matchMedia('(min-width: 512px)').matches &&
+    window.matchMedia('(min-width: 1024px)').matches &&
     !PREFERS_REDUCED_MOTION
   ) {
     const { default: PanelSnap } = await import(
