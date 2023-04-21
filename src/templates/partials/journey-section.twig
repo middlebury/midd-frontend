@@ -1,5 +1,4 @@
-
-<section id={{name}} class="journey-section journey-section--{{name}} js-journey-section" data-section={{name}}{% if title_label is not empty %} aria-labelledby="{{ title_label }}"{% endif %}>
+<section id={{name}} class="journey-section journey-section--{{name}} js-journey-section" data-section={{name}} aria-labelledby="{{ title_label }}">
   {% if name == 'learning'%}
     <div class="journey-line-box js-journey-line">
       <svg viewbox="0 0 772 2238" xmlns="http://www.w3.org/2000/svg" class="journey-line-svg journey-line--desktop" style="pointer-events:auto;">
@@ -20,7 +19,7 @@
         <div class="row">
           <div class="{{ align == 'center' ? 'col-12 col-sm-10' : 'col-12 col-sm-8 col-lg-7 pr-8 pr-sm-3' }} journey-section__text">
             {% if title %}
-              <h2>
+              <h2 id="{{ title_label }}">
                 {{ title }}
               </h2>
             {% endif %}
@@ -30,7 +29,7 @@
               </p>
             {% endif %}
             {% if blurb %}
-              <p class="blurb">
+              <p id="{{ title_label }}" class="blurb">
                 {{ blurb }}
               </p>
             {% endif %}
@@ -55,7 +54,7 @@
     </div>
   {% endif %}
 
-  {% if image is defined %}
+  {% if name == 'intro' %}
     <figure class="journey-section__background" aria-label="[place alt text here]"></figure>
   {% else %}
     <figure class="journey-section__background" aria-label="[place alt text here]">
