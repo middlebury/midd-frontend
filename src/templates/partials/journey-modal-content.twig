@@ -4,16 +4,19 @@
 <div class="journey-modal__overlay swiper-slide {{content_type}}-slide" data-hash={{hash_class}}>
   <div class="container px-0 journey-modal__overlay-container">
     <div class="{% if content_type == 'portrait-video' or content_type == 'video-group' %}col-12{% elseif content_type == 'gallery' %}col-lg-12 px-3 px-lg-5{% else %}col-lg-10{% endif %} m-auto mb-5 mb-md-7 mb-lg-9">
-      <h2 class="journey-modal--title {{blurb ? 'offset-lg-1' : ''}}">{{label}}</h2>
+      <h2 class="journey-modal--title {{blurb ? 'offset-lg-1' : ''}}" id="midd-video-label-{{hash_class}}">{{label}}</h2>
       {% if blurb %}
         <p class="journey-modal--blurb col-lg-10 px-0 offset-lg-1">Learning at Middlebury is not a passive experience. Sure, many—if not most—students will find plenty of time for quiet contemplation. Their academic journeys will also involve plenty of “doing”—whether that means participation in competitive fellowships or internships; entrepreneurial ventures at the local, state, national, and international levels; field research with faculty; or co- and extracurricular activities that perfectly complement and enhance those more quiet moments.</p>
       {% endif %}
       {% if content_type == 'video' %}
         {% include 'partials/video.twig' with {
+          id: hash_class,
+          hide_title: true,
           grid_video: true
         } %}
       {% elseif content_type == 'story' %}
         {% include 'partials/journey-modal-story.twig' with {
+          id: hash_class,
           type: 'story'
         } %}
       {% elseif content_type == 'portrait-video' %}
@@ -21,7 +24,8 @@
           {% for item in 1..5 %}
             <div class="col-md-4 mb-7">
               {% include 'partials/portrait-video.twig' with {
-                  id: loop.index
+                  id: hash_class,
+                  hide_title: true
                 } %}
             </div>
           {% endfor %}
@@ -31,16 +35,21 @@
           {% for item in 1..5 %}
             <div class="col-md-4 mb-4 mb-md-8">
               {% include 'partials/video.twig' with {
-                  id: loop.index,
+                  id: hash_class,
+                  hide_title: true,
                   grid_video: true
                 } %}
             </div>
           {% endfor %}
         </div>
       {% elseif content_type == 'gallery' %}
-        {% include 'partials/journey-modal-gallery.twig' %}
+        {% include 'partials/journey-modal-gallery.twig' with {
+          id: hash_class
+        } %}
       {% elseif content_type == 'story-list' %}
-        {% include 'partials/journey-modal-story.twig' %}
+        {% include 'partials/journey-modal-story.twig' with {
+          id: hash_class
+        } %}
       {% endif %}
     </div>
     {% if articles %}

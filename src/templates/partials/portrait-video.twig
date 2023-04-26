@@ -31,7 +31,9 @@
   </div>
   {% if grid_video %}
     <figcaption class="{{grid_caption_offset ? "offset-lg-1" : ""}} {{grid_video ? "grid-" : ""}}video__body">
-      <h3 class={{grid_video ? "sr-only" : "video__title"}} id="midd-video-label-{{id}}">Practical Skills for Positive Change</h3>
+      {% if not hide_title %}
+        <h3 class={{grid_video ? "sr-only" : "video__title"}} id="midd-video-label-{{id}}">Practical Skills for Positive Change</h3>
+      {% endif %}
       <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique.
         <a href="">Suspendisse commodo</a>
         pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
