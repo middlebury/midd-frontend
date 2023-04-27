@@ -31,6 +31,7 @@
             {% if item.items %}
               <button class="midd-nav__handle midd-nav__handle--sub" data-toggle-target=".js-middnav-list-{{ loop.index }}">
                 {% include 'partials/icon.twig' with { name: 'chevron-down', class: 'midd-nav__chevron' } %}
+                <span class="sr-only">Expand</span>
               </button>
               <ul class="midd-nav__list midd-nav__list--sub js-middnav-list-{{ loop.index }}">
                 {% for subitem in item.items %}
