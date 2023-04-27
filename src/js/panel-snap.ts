@@ -4,9 +4,9 @@ import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
 let defaultOptions = {
   container: document.body,
   panelSelector: '.journey section',
-  directionThreshold: 200,
+  directionThreshold: 20,
   delay: 0,
-  duration: 150,
+  duration: 600,
   easing: function (t: any) {
     return t;
   }
