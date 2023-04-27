@@ -415,18 +415,16 @@ midd_nav:
     items:
       - href: http://www.middlebury.edu
         text: Middlebury College
-      - href: http://www.middlebury.edu/ls
-        text: Language Schools
-      - href: http://www.middlebury.edu/blse
-        text: Bread Loaf School of English
-      - href: http://www.middlebury.edu/bread-loaf-conferences
-        text: Bread Loaf Writers' Conference
       - href: https://www.middlebury.edu/institute/
-        text: Institute of International Studies at Monterey
+        text: Middlebury Institute of International Studies
+      - href: http://www.middlebury.edu/ls
+        text: Middlebury Language Schools
       - href: http://www.middlebury.edu/study-abroad
-        text: C.V. Starr Schools Abroad
-      - href: http://www.middlebury.edu/environment
-        text: School of the Environment
+        text: Middlebury C.V. Starr Schools Abroad
+      - href: http://www.middlebury.edu/blse
+        text: Middlebury Bread Loaf School of English
+      - href: http://www.middlebury.edu/bread-loaf-conferences
+        text: Middlebury Bread Loaf Writers' Conference
   - href: http://www.middlebury.edu/about
     text: About Middlebury
   - href: http://www.middlebury.edu/office/
