@@ -6,7 +6,7 @@
   }
 }
 
-@keyframes dot-ripple {
+@keyframes dot-ripple-ease-out {
   0% {
     stroke: #f4b824;
     stroke-width: 1;
@@ -19,6 +19,23 @@
   100% {
     stroke: transparent;
     stroke-width: 0;
+    r: 20px;
+  }
+}
+
+@keyframes dot-ripple-persist {
+  0% {
+    stroke: #f4b824;
+    stroke-width: 0.5;
+    r: 8px;
+  }
+  50% {
+    stroke: #f4b824;
+    stroke-width: 0.75;
+  }
+  100% {
+    stroke: #f4b824;
+    stroke-width: 1;
     r: 20px;
   }
 }
@@ -132,28 +149,6 @@
     }
   }
 
-  .journey-link--section .journey--link {
-    font-size: $typescale-2;
-    font-weight: $font-weight-medium;
-    line-height: 1.25;
-    fill: white;
-
-    @include breakpoint(sm) {
-      font-size: $typescale-3;
-    }
-
-    &:hover .journey--dot-ripple {
-      stroke: #f4b824;
-      stroke-width: 0;
-      animation: dot-ripple 2s infinite ease-out;
-    }
-
-    .journey--link-text {
-      color: white;
-      fill: white;
-    }
-  }
-
   .journey-link--section.animate {
     .journey--link:nth-child(2) .journey--dot-ripple {
       animation-delay: 1.85s;
@@ -166,18 +161,56 @@
       }
     }
     .journey--link:nth-child(3) .journey--dot-ripple {
-      animation-delay: 2.5s;
+      animation-delay: 2.25s;
 
       @include breakpoint(sm) {
         animation-delay: 2s;
       }
+
+      @include breakpoint(md) {
+        animation-delay: 1.2s;
+      }
+
       @include breakpoint(lg) {
         animation-delay: 1.5s;
       }
     }
 
     .journey--dot-ripple {
-      animation: dot-ripple 2s ease-out;
+      animation: dot-ripple-ease-out 1s ease-out;
+
+      @include breakpoint(lg) {
+        animation-duration: 2s;
+      }
+    }
+
+    &.disable-animate .journey--dot-ripple {
+      animation: unset;
+    }
+  }
+
+  .journey-link--section .journey--link {
+    font-size: $typescale-2;
+    font-weight: $font-weight-medium;
+    line-height: 1.25;
+    fill: white;
+
+    @include breakpoint(sm) {
+      font-size: $typescale-3;
+    }
+
+    &:hover {
+      .journey--dot-ripple {
+        animation-delay: 0s !important;
+        stroke: #f4b824;
+        stroke-width: 0;
+        animation: dot-ripple-persist forwards 1s ease-out;
+      }
+    }
+
+    .journey--link-text {
+      color: white;
+      fill: white;
     }
   }
 }
