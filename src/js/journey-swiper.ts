@@ -1,10 +1,12 @@
 import { $, $$, checkElement } from './utils/dom';
 import VideoSwap from './video';
 import lozad from 'lozad';
+import anime from 'animejs';
 
 class JourneySwiper {
   swiperEl: any;
   elem: HTMLElement;
+  modalElem: HTMLElement;
   swiperClass: string;
   paginationEl: HTMLElement;
   paginationClass: string;
@@ -22,6 +24,7 @@ class JourneySwiper {
 
   constructor(el: HTMLElement) {
     this.elem = el;
+    this.modalElem = $('.journey-modal--block');
     this.swiperClass = '.journey-swiper';
     this.paginationClass = '.swiper-pagination';
     this.paginationEl = $(this.paginationClass);
@@ -34,6 +37,7 @@ class JourneySwiper {
 
     this.swiperInit = this.swiperInit.bind(this);
     this.swiperUpdate = this.swiperUpdate.bind(this);
+    this.scrollToTop = this.scrollToTop.bind(this);
     this.handleHashChange = this.handleHashChange.bind(this);
     this.resetNavigation = this.resetNavigation.bind(this);
     this.init();
@@ -58,6 +62,7 @@ class JourneySwiper {
             modules: [Navigation, Pagination, HashNavigation, A11y],
             autoHeight: true,
             hashNavigation: {
+              replaceState: true,
               watchState: true
             },
             navigation: {
@@ -107,6 +112,7 @@ class JourneySwiper {
               },
               transitionStart: () => {
                 this.swiperUpdate();
+                this.scrollToTop();
               }
             }
           });
@@ -160,25 +166,34 @@ class JourneySwiper {
     }
 
     window.addEventListener('hashchange', (e) => {
-      this.elementOnLoad(
-        '.journey-modal--block.is-open',
-        this.handleHashChange
-      );
+      if ($('.journey-modal--block.is-open')) {
+        this.handleHashChange();
+      }
     });
+  }
+
+  scrollToTop() {
+    if (this.modalElem.scrollTop > 0) {
+      anime({
+        targets: this.modalElem,
+        scrollTop: 0,
+        easing: 'easeInSine',
+        autoplay: true,
+        duration: 300
+      });
+    }
   }
 
   handleHashChange() {
     const hash = parseInt(window.location.hash.replace('#slide', ''));
     const { MicroModal } = window;
-
     if (isNaN(hash)) {
       MicroModal?.close();
     }
-
     if (hash !== this.swiperEl.activeIndex) {
       this.swiperEl.slideTo(hash, 300, false);
     }
-    // this.swiperUpdate();
+    this.swiperUpdate();
   }
 
   resetNavigation() {
