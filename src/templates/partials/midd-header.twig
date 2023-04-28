@@ -29,9 +29,9 @@
             </a>
 
             {% if item.items %}
-              <button class="midd-nav__handle midd-nav__handle--sub" data-toggle-target=".js-middnav-list-{{ loop.index }}">
+              <button class="midd-nav__handle midd-nav__handle--sub" data-toggle-target=".js-middnav-list-{{ loop.index }}" aria-labelledby="midd-nav__handle-label">
                 {% include 'partials/icon.twig' with { name: 'chevron-down', class: 'midd-nav__chevron' } %}
-                <span class="sr-only">Expand</span>
+                <span class="sr-only" id="midd-nav__handle-label">Expand</span>
               </button>
               <ul class="midd-nav__list midd-nav__list--sub js-middnav-list-{{ loop.index }}">
                 {% for subitem in item.items %}
@@ -48,10 +48,10 @@
 
     <section class="midd-search" aria-labelledby="midd-search-label">
       <h2 class="sr-only" id="midd-search-label">Search</h2>
-      <a href="/search" class="midd-search__handle" role="button" data-toggle-target=".js-midd-search" data-toggle-group="midd-header" data-toggle-focus=".js-midd-search-input" aria-expanded="false" aria-haspopup="true">
+      <a href="/search" class="midd-search__handle" role="button" data-toggle-target=".js-midd-search" data-toggle-group="midd-header" data-toggle-focus=".js-midd-search-input" aria-expanded="false" aria-haspopup="true" aria-labelledby="midd-search__handle-label">
         {% include 'partials/icon.twig' with { name: 'search', class: 'midd-search__mag' } %}
         {% include 'partials/icon.twig' with { name: 'times', class: 'midd-search__times' } %}
-        <span class="d-none d-sm-inline">Search</span>
+        <span class="d-none d-sm-inline" id="midd-search__handle-label">Search</span>
       </a>
 
       <div class="midd-search__content js-midd-search">
