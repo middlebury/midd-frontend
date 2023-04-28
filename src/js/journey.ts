@@ -1,6 +1,6 @@
 import MicroModal from 'micromodal';
 import anime, { AnimeInstance } from 'animejs';
-import { $, $$, addClass, removeClass } from './utils/dom';
+import { $, $$, addClass } from './utils/dom';
 import JourneySwiper from './journey-swiper';
 import onscroll from './utils/onscroll';
 import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
@@ -69,26 +69,6 @@ class Journey {
     }
   }
 
-  addListeners() {
-    window.addEventListener('resize', (e) => {
-      clearTimeout(this.timeout);
-      this.timeout = setTimeout(this.handleScroll, 250);
-    });
-
-    this.scrollRef = onscroll(this.handleScroll);
-  }
-
-  handleScroll() {
-    if (
-      this.firstSection.clientHeight - window.innerHeight >
-      -this.firstSection.getBoundingClientRect().top
-    ) {
-      $('.school-picker').classList.remove('not-fixed');
-    } else {
-      $('.school-picker').classList.add('not-fixed');
-    }
-  }
-
   deviceInit() {
     this.handleScroll();
     if (window.matchMedia('(min-width: 1024px)').matches) {
@@ -100,15 +80,40 @@ class Journey {
     }
 
     this.pathEl = $(`.journey-line--${this.deviceType} path`, this.elem);
-    this.sectionLinksElems[0] = $(
-      `.journey-links--${this.deviceType} .${this.sectionNames[0]}`
+    for (let i = 0; i < 3; i++) {
+      this.sectionLinksElems[i] = $(
+        `.journey-links--${this.deviceType} .${this.sectionNames[i]}`
+      );
+    }
+  }
+
+  addListeners() {
+    window.addEventListener('resize', (e) => {
+      clearTimeout(this.timeout);
+      this.timeout = setTimeout(this.handleScroll, 250);
+    });
+
+    this.scrollRef = onscroll(this.handleScroll);
+
+    Object.values(this.sectionLinksElems).forEach((el) =>
+      $('.journey--link:last-child', el).addEventListener(
+        'animationend',
+        () => {
+          addClass(el, 'disable-animate');
+        }
+      )
     );
-    this.sectionLinksElems[1] = $(
-      `.journey-links--${this.deviceType} .${this.sectionNames[1]}`
-    );
-    this.sectionLinksElems[2] = $(
-      `.journey-links--${this.deviceType} .${this.sectionNames[2]}`
-    );
+  }
+
+  handleScroll() {
+    if (
+      this.firstSection.clientHeight - window.innerHeight >
+      -this.firstSection.getBoundingClientRect().top
+    ) {
+      $('.school-picker').classList.remove('not-fixed');
+    } else {
+      $('.school-picker').classList.add('not-fixed');
+    }
   }
 
   svgInit() {
@@ -138,14 +143,11 @@ class Journey {
       autoplay: false,
       update: (anim) => {
         this.animUpdate(anim);
-      },
-      complete: () => {
-        addClass(this.sectionLinksElems[this.sectionIndex], 'disable-animate');
       }
     });
   }
 
-  getAnimationThrehold(index: number, type: string) {
+  getAnimationThreshold(index: number, type: string) {
     if (type === 'line') {
       return this.deviceInfo[this.deviceType].lineAnimBreaks[index];
     } else {
@@ -158,7 +160,7 @@ class Journey {
 
     // Logic for the dots to animate
     for (let i = 0; i < this.sectionNames.length; i++) {
-      if (animProgress >= this.getAnimationThrehold(i, 'dots')) {
+      if (animProgress >= this.getAnimationThreshold(i, 'dots')) {
         this.sectionIndex = i;
       }
     }
@@ -170,7 +172,6 @@ class Journey {
       animProgress <= this.animPauseThreshold + 0.5
     ) {
       this.journeyLineAnimInstance.pause();
-      addClass(this.sectionLinksElems[this.sectionIndex], 'disable-animate');
     }
   }
 
@@ -198,9 +199,9 @@ class Journey {
         }
 
         if (
-          this.getAnimationThrehold(entryId, 'line') > this.animPauseThreshold
+          this.getAnimationThreshold(entryId, 'line') > this.animPauseThreshold
         ) {
-          this.animPauseThreshold = this.getAnimationThrehold(entryId, 'line');
+          this.animPauseThreshold = this.getAnimationThreshold(entryId, 'line');
           this.journeyLineAnimInstance.play();
         }
 

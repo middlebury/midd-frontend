@@ -166,9 +166,10 @@ class JourneySwiper {
     }
 
     window.addEventListener('hashchange', (e) => {
-      if ($('.journey-modal--block.is-open')) {
-        this.handleHashChange();
-      }
+      this.elementOnLoad(
+        '.journey-modal--block.is-open',
+        this.handleHashChange
+      );
     });
   }
 
@@ -193,7 +194,6 @@ class JourneySwiper {
     if (hash !== this.swiperEl.activeIndex) {
       this.swiperEl.slideTo(hash, 300, false);
     }
-    this.swiperUpdate();
   }
 
   resetNavigation() {
