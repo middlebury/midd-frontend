@@ -3,11 +3,11 @@
 
     <div class="text-center">
       <h2 class="mb-1 mb-lg-2" id="midd-fluencies-title-1">Four Fluencies</h2>
-      <p class="mb-5 mb-md-7">Focus Areas Across the Curriculum</p>
+      <p class="mb-4 mb-md-6 mb-lg-5 mb-lg-7">Focus Areas Across the Curriculum</p>
     </div>
     <div class="focus-area--wrapper">
       <ul class="d-flex">
-        {% for item in 0..3 %}
+        {% for item in four_fluencies %}
           <li class="col-md-3">
             <article class="focus-area-item" aria-labelledby="midd-focus-area-item-label-{{loop.index}}">
               <div class="focus-area-item__media">
@@ -19,12 +19,12 @@
                 <div class="focus-area-item__content-text">
                   <a href="#">
                     <h3 class="focus-area-item__name" id="midd-focus-area-item-label-{{loop.index}}">
-                      Understanding Cultural Difference
+                      {{item.title}}
                     </h3>
                   </a>
-                  <p class="focus-area-item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui voluptate earum laboriosam eaque.</p>
+                  <p class="focus-area-item__text">{{item.blurb}}</p>
                 </div>
-                <a href="#" class="focus-area-item--button">Visit Site
+                <a href="#" class="focus-area-item--button">Learn more
                   {% include 'partials/icon.twig' with {
                     name: 'chevron-right'
                   } %}
