@@ -3,11 +3,23 @@
   * {
     font-family: $font-family-sans-serif;
   }
-  padding-top: $spacing-7;
+  padding-top: $spacing-4;
   padding-bottom: $spacing-4;
   background-color: $blue-darker;
   color: $white;
   border-top: solid $spacing-2 $blue;
+
+  @include breakpoint(md) {
+    padding-top: $spacing-6;
+  }
+
+  @include breakpoint(lg) {
+    padding-top: $spacing-5;
+  }
+
+  @include breakpoint(xl) {
+    padding-top: $spacing-7;
+  }
 
   h2 {
     font-size: $typescale-7;
@@ -80,6 +92,10 @@
 
       &:last-child {
         margin: 0;
+
+        .focus-area-item__content .focus-area-item__content-text a {
+          width: 100%;
+        }
       }
     }
   }
@@ -118,8 +134,12 @@
     &::before {
       content: '';
       display: block;
-      padding-top: percentage(123/166);
+      padding-top: percentage(143/166);
       width: 100%;
+
+      @include breakpoint(xl) {
+        padding-top: percentage(133/166);
+      }
     }
 
     .focus-area-item__content-text {
@@ -129,6 +149,15 @@
       top: 0;
       position: absolute;
       padding: $spacing-3;
+
+      a {
+        display: block;
+        width: 65%;
+
+        &:hover {
+          text-decoration-thickness: 1px;
+        }
+      }
 
       h3 {
         font-size: $typescale-5;

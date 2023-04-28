@@ -161,14 +161,10 @@
       }
     }
     .journey--link:nth-child(3) .journey--dot-ripple {
-      animation-delay: 2.25s;
+      animation-delay: 2.5s;
 
       @include breakpoint(sm) {
         animation-delay: 2s;
-      }
-
-      @include breakpoint(md) {
-        animation-delay: 1.2s;
       }
 
       @include breakpoint(lg) {
@@ -177,11 +173,7 @@
     }
 
     .journey--dot-ripple {
-      animation: dot-ripple-ease-out 1s ease-out;
-
-      @include breakpoint(lg) {
-        animation-duration: 2s;
-      }
+      animation: dot-ripple-ease-out 2s ease-out;
     }
 
     &.disable-animate .journey--dot-ripple {
@@ -227,6 +219,20 @@
 
   @include breakpoint(lg) {
     padding-top: percentage(9/16);
+  }
+
+  &:first-child {
+    .journey-section__body {
+      .journey-section__body-content {
+        justify-content: initial;
+        padding-top: rem(116);
+
+        @include breakpoint(sm) {
+          padding-top: 0;
+          justify-content: center;
+        }
+      }
+    }
   }
 
   .journey-section__background {
@@ -418,6 +424,10 @@
       justify-content: center;
       height: 100%;
 
+      @include breakpoint(sm) {
+        padding-top: 0;
+      }
+
       &.align-left {
         .row {
           justify-content: flex-start;
@@ -461,7 +471,7 @@
         font-family: $font-family-sans-serif;
       }
 
-      h2 {
+      h1 {
         font-size: $typescale-7;
 
         @include breakpoint(lg) {
