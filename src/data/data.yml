@@ -727,3 +727,13 @@ journey_gallery_data:
     alt: ""
     sizes: ""
     caption: Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
+
+four_fluencies:
+  - title: Solving the Climate Crisis
+    blurb: Middlebury transforming our energy system and responding to issues of climate change, social injustice, and the well-being of all.
+  - title: Analyzing Data
+    blurb: Middlebury providing students access to powerful technological tools and supporting their ability to apply them across disciplines for critical exploration.
+  - title: Transforming Conflict
+    blurb: Middlebury’s incubator for research, teaching, and student experiences to shift the dynamics underlying conflict to address divisiveness in society.
+  - title: Understanding Cultural Difference
+    blurb: Middlebury fostering students’ ability to listen, communicate, and take action in communities with a range of linguistic and cultural backgrounds.
