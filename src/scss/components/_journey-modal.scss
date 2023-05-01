@@ -413,7 +413,7 @@ $school-theme-colors: (
     }
 
     .journey-modal--blurb {
-      line-height: $line-height-heading;
+      line-height: 1.5;
       font-size: $typescale-4;
       margin-top: $spacing-4;
       margin-bottom: $spacing-5;
@@ -426,6 +426,7 @@ $school-theme-colors: (
 
       @include breakpoint(lg) {
         line-height: $line-height-body;
+        font-size: rem(32);
         margin-top: $spacing-6;
         margin-bottom: $spacing-9;
       }
@@ -487,6 +488,10 @@ $school-theme-colors: (
     color: $black;
     border-bottom: $spacing-2 solid $blue-light;
 
+    // img {
+    //   margin-left: -$spacing-3;
+    //   margin-right: -$spacing-3;
+    // }
     .story__image {
       margin-left: -$spacing-3;
       margin-right: -$spacing-3;
@@ -586,6 +591,26 @@ $school-theme-colors: (
         }
       }
 
+      a {
+        color: $navy;
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      h3 ~ a {
+        display: block;
+        margin-right: -$spacing-3;
+        margin-left: -$spacing-3;
+
+        @include breakpoint(sm) {
+          margin-right: 0;
+          margin-left: 0;
+        }
+      }
+
       &.story-list {
         padding-bottom: 0;
         padding-left: 0;
@@ -625,7 +650,7 @@ $school-theme-colors: (
         a {
           color: $navy;
 
-          &.story-link {
+          .story-link {
             @include link-border;
           }
         }
