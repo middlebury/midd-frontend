@@ -593,15 +593,12 @@ $school-theme-colors: (
 
       a {
         color: $navy;
-        text-decoration: underline;
-
-        &:hover {
-          text-decoration: none;
-        }
+        @include link-border;
       }
 
       h3 ~ a {
         display: block;
+        border-bottom: none;
         margin-right: -$spacing-3;
         margin-left: -$spacing-3;
 
