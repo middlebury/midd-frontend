@@ -18,7 +18,7 @@
           <h3 class="portrait-video__title" id="midd-video-label-{{id}}">
             What do students do after graduation?
           </h3>
-          <span class="button button--primary button--sm button--block mt-2">
+          <span class="button button--primary button--sm button--block {{cobblestone_modal ? 'button--light' : ''}} mt-2">
             Play
             {% include 'partials/icon.twig' with {
               name: 'play',
