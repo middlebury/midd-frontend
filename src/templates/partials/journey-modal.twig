@@ -16,7 +16,7 @@
 ] %}
 
 <div class="journey-modal" aria-hidden="true" role="dialog" aria-modal="true">
-  <div class="journey-modal__header-container">
+  <header class="journey-modal__header-container js-headroom">
     <div class="journey-modal__header--wrapper">
       <div class="midd-header__brand">
         <a href="https://www.middlebury.edu">
@@ -58,7 +58,7 @@
         {% include 'partials/icon.twig' with { name: 'times', class: 'ml-1' } %}
       </button>
     </div>
-  </div>
+  </header>
   <div class="swiper journey-swiper">
     <div class="swiper-wrapper">
       {% for label in section_learning %}
