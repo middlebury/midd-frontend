@@ -349,7 +349,7 @@
   .journey-video--button {
     position: absolute;
     bottom: $spacing-3;
-    right: $spacing-3;
+    left: $spacing-3;
     color: white;
     z-index: 30;
     opacity: 0.5;
@@ -361,7 +361,7 @@
 
     @include breakpoint(lg) {
       bottom: $spacing-5;
-      right: $spacing-5;
+      left: $spacing-5;
     }
 
     @media (prefers-reduced-motion: reduce) {
