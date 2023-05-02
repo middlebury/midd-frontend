@@ -15,10 +15,10 @@
 
     <nav class="midd-nav" aria-labelledby="midd-header-nav-label">
       <h2 class="sr-only" id="midd-header-nav-label">Primary navigation</h2>
-      <button class="midd-nav__handle" data-toggle-target=".js-midd-nav" data-toggle-group="midd-header" aria-expanded="false">
+      <button class="midd-nav__handle" data-toggle-target=".js-midd-nav" data-toggle-group="midd-header" aria-expanded="false" aria-labelledby="midd-nav__handle-label">
         {% include 'partials/icon.twig' with { name: 'bars', class: 'mr-1 midd-nav__bars' } %}
         {% include 'partials/icon.twig' with { name: 'times', class: 'mr-1 midd-nav__times' } %}
-        <span class="d-none d-sm-inline">Menu</span>
+        <span class="d-none d-sm-inline" id="midd-nav__handle-label">Menu</span>
       </button>
 
       <ul class="midd-nav__list midd-nav__list--top js-midd-nav">
@@ -31,7 +31,6 @@
             {% if item.items %}
               <button class="midd-nav__handle midd-nav__handle--sub" data-toggle-target=".js-middnav-list-{{ loop.index }}" aria-labelledby="midd-nav__handle-label">
                 {% include 'partials/icon.twig' with { name: 'chevron-down', class: 'midd-nav__chevron' } %}
-                <span class="sr-only" id="midd-nav__handle-label">Expand</span>
               </button>
               <ul class="midd-nav__list midd-nav__list--sub js-middnav-list-{{ loop.index }}">
                 {% for subitem in item.items %}
