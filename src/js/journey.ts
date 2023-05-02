@@ -183,6 +183,13 @@ class Journey {
     this.journeySections.forEach((section) => this.io.observe(section));
   }
 
+  loadVideo(section: HTMLElement) {
+    let videoElem = $('.journey-section__video', section);
+    let source = $('source', videoElem);
+    source.src = source.dataset.src;
+    videoElem.load();
+  }
+
   handleIntersection(entries: any) {
     entries.forEach((entry: any) => {
       if (entry.isIntersecting) {
@@ -198,6 +205,12 @@ class Journey {
           entryId = 2;
         }
 
+        if (
+          window.matchMedia('(min-width: 512px)').matches &&
+          !PREFERS_REDUCED_MOTION
+        ) {
+          this.loadVideo(entry.target);
+        }
         if (
           this.getAnimationThreshold(entryId, 'line') > this.animPauseThreshold
         ) {
@@ -222,6 +235,8 @@ MicroModal.init({
     if (modal.swiper) {
       modal.swiper.scrollToTop();
     }
+
+    $$('[data-journey-overlay-close]', modal).forEach((el) => el.focus());
   },
   disableScroll: true
 });
