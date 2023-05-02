@@ -9,12 +9,12 @@
 @keyframes dot-ripple-ease-out {
   0% {
     stroke: #f4b824;
-    stroke-width: 1;
+    stroke-width: 2;
     r: 8px;
   }
   30% {
     stroke: #f4b824;
-    stroke-width: 1;
+    stroke-width: 2;
   }
   100% {
     stroke: transparent;
@@ -26,17 +26,34 @@
 @keyframes dot-ripple-persist {
   0% {
     stroke: #f4b824;
-    stroke-width: 0.5;
+    stroke-width: 1;
     r: 8px;
   }
   50% {
     stroke: #f4b824;
-    stroke-width: 0.75;
+    stroke-width: 1.5;
   }
   100% {
     stroke: #f4b824;
-    stroke-width: 1;
+    stroke-width: 2;
     r: 20px;
+  }
+}
+
+@keyframes dot-ripple-persist-mobile {
+  0% {
+    stroke: #f4b824;
+    stroke-width: 1;
+    r: 8px;
+  }
+  50% {
+    stroke: #f4b824;
+    stroke-width: 1.5;
+  }
+  100% {
+    stroke: #f4b824;
+    stroke-width: 2;
+    r: 16px;
   }
 }
 
@@ -182,13 +199,13 @@
   }
 
   .journey-link--section .journey--link {
-    font-size: $typescale-2;
+    font-size: $typescale-1;
     font-weight: $font-weight-medium;
     line-height: 1.25;
     fill: white;
 
     @include breakpoint(sm) {
-      font-size: $typescale-3;
+      font-size: $typescale-2;
     }
 
     &:hover {
@@ -196,7 +213,11 @@
         animation-delay: 0s !important;
         stroke: #f4b824;
         stroke-width: 0;
-        animation: dot-ripple-persist forwards 1s ease-out;
+        animation: dot-ripple-persist-mobile forwards 1s ease-out;
+
+        @include breakpoint(md) {
+          animation-name: dot-ripple-persist;
+        }
       }
     }
 
@@ -219,20 +240,6 @@
 
   @include breakpoint(lg) {
     padding-top: percentage(9/16);
-  }
-
-  &:first-child {
-    .journey-section__body {
-      .journey-section__body-content {
-        justify-content: initial;
-        padding-top: rem(116);
-
-        @include breakpoint(sm) {
-          padding-top: 0;
-          justify-content: center;
-        }
-      }
-    }
   }
 
   .journey-section__background {
