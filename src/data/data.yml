@@ -415,18 +415,16 @@ midd_nav:
     items:
       - href: http://www.middlebury.edu
         text: Middlebury College
-      - href: http://www.middlebury.edu/ls
-        text: Language Schools
-      - href: http://www.middlebury.edu/blse
-        text: Bread Loaf School of English
-      - href: http://www.middlebury.edu/bread-loaf-conferences
-        text: Bread Loaf Writers' Conference
       - href: https://www.middlebury.edu/institute/
-        text: Institute of International Studies at Monterey
+        text: Middlebury Institute of International Studies
+      - href: http://www.middlebury.edu/ls
+        text: Middlebury Language Schools
       - href: http://www.middlebury.edu/study-abroad
-        text: C.V. Starr Schools Abroad
-      - href: http://www.middlebury.edu/environment
-        text: School of the Environment
+        text: Middlebury C.V. Starr Schools Abroad
+      - href: http://www.middlebury.edu/blse
+        text: Middlebury Bread Loaf School of English
+      - href: http://www.middlebury.edu/bread-loaf-conferences
+        text: Middlebury Bread Loaf Writers' Conference
   - href: http://www.middlebury.edu/about
     text: About Middlebury
   - href: http://www.middlebury.edu/office/
@@ -729,3 +727,13 @@ journey_gallery_data:
     alt: ""
     sizes: ""
     caption: Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
+
+four_fluencies:
+  - title: Solving the Climate Crisis
+    blurb: Middlebury transforming our energy system and responding to issues of climate change, social injustice, and the well-being of all.
+  - title: Analyzing Data
+    blurb: Middlebury providing students access to powerful technological tools and supporting their ability to apply them across disciplines for critical exploration.
+  - title: Transforming Conflict
+    blurb: Middlebury’s incubator for research, teaching, and student experiences to shift the dynamics underlying conflict to address divisiveness in society.
+  - title: Understanding Cultural Difference
+    blurb: Middlebury fostering students’ ability to listen, communicate, and take action in communities with a range of linguistic and cultural backgrounds.

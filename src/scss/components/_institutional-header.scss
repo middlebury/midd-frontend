@@ -1,3 +1,9 @@
+$midd-header-background-gradient: linear-gradient(
+  0deg,
+  rgba(0, 0, 0, 0) 4%,
+  rgba(0, 0, 0, 0.4) 100%
+);
+
 .midd-header.midd-header--transparent {
   background-color: unset;
 }
@@ -9,15 +15,31 @@
   width: 100%;
   z-index: $z-index-midd-header-transparent;
   transition: 0.2s background-color;
+  height: 75px;
+
+  @include breakpoint(sm) {
+    height: 100px;
+  }
+
+  @include breakpoint(lg) {
+    height: 120px;
+  }
 
   .midd-header__container {
+    max-width: initial;
     align-items: flex-start;
     padding-left: $spacing-2;
     padding-right: $spacing-2;
+    opacity: 1;
+
+    @include breakpoint(md) {
+      padding-left: $spacing-3;
+      padding-right: $spacing-3;
+    }
 
     @include breakpoint(lg) {
-      padding-left: $spacing-4;
-      padding-right: $spacing-4;
+      padding-left: $spacing-5;
+      padding-right: $spacing-5;
     }
   }
 
@@ -28,6 +50,10 @@
   .midd-header__brand {
     height: fit-content;
     padding-top: $spacing-2;
+
+    @include breakpoint(md) {
+      padding-top: $spacing-3;
+    }
 
     @include breakpoint(lg) {
       padding-top: $spacing-4;
@@ -58,10 +84,14 @@
   }
 
   &.has-toggler {
+    background-image: $midd-header-background-gradient;
+
     &.is-toggled {
+      background-image: none;
       background-color: $navy-dark;
 
       @include breakpoint(lg) {
+        background-image: $midd-header-background-gradient;
         background-color: unset;
       }
     }
@@ -69,6 +99,10 @@
 
   .midd-nav {
     padding-top: $spacing-2;
+
+    @include breakpoint(lg) {
+      padding-top: 0;
+    }
 
     .midd-nav__handle {
       padding-left: $spacing-4;
@@ -87,19 +121,12 @@
     }
 
     .midd-nav__item--top {
-      &:last-child {
-        .midd-nav__link--top::after {
-          @include breakpoint(lg) {
-            padding-left: $spacing-4;
-            content: '|';
-          }
-        }
-      }
-
-      .midd-nav__link--top {
-        border: 0;
+      &:last-child::after {
         @include breakpoint(lg) {
-          padding: $spacing-3 0;
+          color: $white;
+          padding-top: $spacing-3;
+          padding-left: $spacing-4;
+          content: '|';
         }
       }
     }
@@ -111,13 +138,15 @@
 
   .midd-search {
     padding-top: $spacing-2;
-    // margin-right: $spacing-5;
+
+    @include breakpoint(lg) {
+      padding-top: 0;
+    }
 
     .midd-search__handle {
       display: flex;
-      padding: $spacing-3 0;
-      border: 0;
       opacity: 1;
+      padding-right: 0;
 
       &::after {
         padding-left: $spacing-4;

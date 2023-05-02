@@ -1,22 +1,20 @@
 import { $$ } from './utils/dom';
 import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
+import { VALID_ASPECT_RATIO } from './utils/check-aspect-ratio';
 
 let defaultOptions = {
   container: document.body,
   panelSelector: '.journey section',
-  directionThreshold: 200,
+  directionThreshold: 20,
   delay: 0,
-  duration: 150,
+  duration: 600,
   easing: function (t: any) {
     return t;
   }
 };
 
 async function lazyLoadPanelSnap() {
-  if (
-    window.matchMedia('(min-width: 1024px)').matches &&
-    !PREFERS_REDUCED_MOTION
-  ) {
+  if (VALID_ASPECT_RATIO && !PREFERS_REDUCED_MOTION) {
     const { default: PanelSnap } = await import(
       /* webpackChunkName: "panelsnap" */ 'panelsnap'
     );

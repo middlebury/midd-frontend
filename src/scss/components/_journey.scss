@@ -6,7 +6,7 @@
   }
 }
 
-@keyframes dot-ripple {
+@keyframes dot-ripple-ease-out {
   0% {
     stroke: #f4b824;
     stroke-width: 1;
@@ -21,6 +21,23 @@
   100% {
     stroke: transparent;
     stroke-width: 0;
+    r: 20px;
+  }
+}
+
+@keyframes dot-ripple-persist {
+  0% {
+    stroke: #f4b824;
+    stroke-width: 0.5;
+    r: 8px;
+  }
+  50% {
+    stroke: #f4b824;
+    stroke-width: 0.75;
+  }
+  100% {
+    stroke: #f4b824;
+    stroke-width: 1;
     r: 20px;
   }
 }
@@ -134,28 +151,6 @@
     }
   }
 
-  .journey-link--section .journey--link {
-    font-size: $typescale-2;
-    font-weight: $font-weight-medium;
-    line-height: 1.25;
-    fill: white;
-
-    @include breakpoint(sm) {
-      font-size: $typescale-3;
-    }
-
-    &:hover .journey--dot-ripple {
-      stroke: #f4b824;
-      stroke-width: 0;
-      animation: dot-ripple 2s infinite ease-out;
-    }
-
-    .journey--link-text {
-      color: white;
-      fill: white;
-    }
-  }
-
   .journey-link--section.animate {
     .journey--link:nth-child(2) .journey--dot-ripple {
       animation-delay: 1.85s;
@@ -182,7 +177,36 @@
     }
 
     .journey--dot-ripple {
-      animation: dot-ripple 2s ease-out;
+      animation: dot-ripple-ease-out 2s ease-out;
+    }
+
+    &.disable-animate .journey--dot-ripple {
+      animation: unset;
+    }
+  }
+
+  .journey-link--section .journey--link {
+    font-size: $typescale-2;
+    font-weight: $font-weight-medium;
+    line-height: 1.25;
+    fill: white;
+
+    @include breakpoint(sm) {
+      font-size: $typescale-3;
+    }
+
+    &:hover {
+      .journey--dot-ripple {
+        animation-delay: 0s !important;
+        stroke: #f4b824;
+        stroke-width: 0;
+        animation: dot-ripple-persist forwards 1s ease-out;
+      }
+    }
+
+    .journey--link-text {
+      color: white;
+      fill: white;
     }
   }
 }
@@ -199,6 +223,20 @@
 
   @include breakpoint(lg) {
     padding-top: percentage(9/16);
+  }
+
+  &:first-child {
+    .journey-section__body {
+      .journey-section__body-content {
+        justify-content: initial;
+        padding-top: rem(116);
+
+        @include breakpoint(sm) {
+          padding-top: 0;
+          justify-content: center;
+        }
+      }
+    }
   }
 
   .journey-section__background {
@@ -313,7 +351,7 @@
   .journey-video--button {
     position: absolute;
     bottom: $spacing-3;
-    right: $spacing-3;
+    left: $spacing-3;
     color: white;
     z-index: 30;
     opacity: 0.5;
@@ -325,7 +363,7 @@
 
     @include breakpoint(lg) {
       bottom: $spacing-5;
-      right: $spacing-5;
+      left: $spacing-5;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -390,6 +428,10 @@
       justify-content: center;
       height: 100%;
 
+      @include breakpoint(sm) {
+        padding-top: 0;
+      }
+
       &.align-left {
         .row {
           justify-content: flex-start;
@@ -433,7 +475,7 @@
         font-family: $font-family-sans-serif;
       }
 
-      h2 {
+      h1 {
         font-size: $typescale-7;
 
         @include breakpoint(lg) {

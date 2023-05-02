@@ -1,6 +1,6 @@
 import MicroModal from 'micromodal';
 import anime, { AnimeInstance } from 'animejs';
-import { $, $$ } from './utils/dom';
+import { $, $$, addClass } from './utils/dom';
 import JourneySwiper from './journey-swiper';
 import onscroll from './utils/onscroll';
 import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
@@ -8,7 +8,7 @@ import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
 class Journey {
   elem: HTMLElement;
   pathEl: SVGGeometryElement;
-  animUpdateValue: number;
+  animPauseThreshold: number;
   totalPathLength: number;
   journeyLineAnimInstance: AnimeInstance;
   journeySections: HTMLElement[];
@@ -17,6 +17,11 @@ class Journey {
   deviceType: string;
   timeout: NodeJS.Timeout;
   scrollRef: object;
+  sectionNames: string[];
+  sectionIndex: number;
+  sectionLinksElems: {
+    [key: number]: HTMLElement;
+  };
   deviceInfo: {
     [key: string]: {
       [key: string]: number[];
@@ -27,7 +32,10 @@ class Journey {
     this.elem = el;
     this.journeySections = $$('.js-journey-section');
     this.firstSection = this.journeySections.shift();
-    this.animUpdateValue = 0;
+    this.animPauseThreshold = 0;
+    this.sectionIndex = 0;
+    this.sectionNames = ['learning', 'thinking', 'opportunity'];
+    this.sectionLinksElems = {};
     this.deviceInfo = {
       desktop: {
         dotsAnimBreaks: [0, 34, 70],
@@ -61,26 +69,6 @@ class Journey {
     }
   }
 
-  addListeners() {
-    window.addEventListener('resize', (e) => {
-      clearTimeout(this.timeout);
-      this.timeout = setTimeout(this.handleScroll, 250);
-    });
-
-    this.scrollRef = onscroll(this.handleScroll);
-  }
-
-  handleScroll() {
-    if (
-      this.firstSection.clientHeight - window.innerHeight >
-      -this.firstSection.getBoundingClientRect().top
-    ) {
-      $('.school-picker').classList.remove('not-fixed');
-    } else {
-      $('.school-picker').classList.add('not-fixed');
-    }
-  }
-
   deviceInit() {
     this.handleScroll();
     if (window.matchMedia('(min-width: 1024px)').matches) {
@@ -92,6 +80,40 @@ class Journey {
     }
 
     this.pathEl = $(`.journey-line--${this.deviceType} path`, this.elem);
+    for (let i = 0; i < 3; i++) {
+      this.sectionLinksElems[i] = $(
+        `.journey-links--${this.deviceType} .${this.sectionNames[i]}`
+      );
+    }
+  }
+
+  addListeners() {
+    window.addEventListener('resize', (e) => {
+      clearTimeout(this.timeout);
+      this.timeout = setTimeout(this.handleScroll, 250);
+    });
+
+    this.scrollRef = onscroll(this.handleScroll);
+
+    Object.values(this.sectionLinksElems).forEach((el) =>
+      $('.journey--link:last-child', el).addEventListener(
+        'animationend',
+        () => {
+          addClass(el, 'disable-animate');
+        }
+      )
+    );
+  }
+
+  handleScroll() {
+    if (
+      this.firstSection.clientHeight - window.innerHeight >
+      -this.firstSection.getBoundingClientRect().top
+    ) {
+      $('.school-picker').classList.remove('not-fixed');
+    } else {
+      $('.school-picker').classList.add('not-fixed');
+    }
   }
 
   svgInit() {
@@ -125,29 +147,29 @@ class Journey {
     });
   }
 
+  getAnimationThreshold(index: number, type: string) {
+    if (type === 'line') {
+      return this.deviceInfo[this.deviceType].lineAnimBreaks[index];
+    } else {
+      return this.deviceInfo[this.deviceType].dotsAnimBreaks[index];
+    }
+  }
+
   animUpdate(anim: AnimeInstance) {
     const animProgress = Math.round(anim.progress * 10) / 10;
 
     // Logic for the dots to animate
-    if (animProgress >= this.deviceInfo[this.deviceType].dotsAnimBreaks[0]) {
-      $(`.journey-links--${this.deviceType} .learning`).classList.add(
-        'animate'
-      );
-    }
-    if (animProgress >= this.deviceInfo[this.deviceType].dotsAnimBreaks[1]) {
-      $(`.journey-links--${this.deviceType} .thinking`).classList.add(
-        'animate'
-      );
-    }
-    if (animProgress >= this.deviceInfo[this.deviceType].dotsAnimBreaks[2]) {
-      $(`.journey-links--${this.deviceType} .opportunity`).classList.add(
-        'animate'
-      );
+    for (let i = 0; i < this.sectionNames.length; i++) {
+      if (animProgress >= this.getAnimationThreshold(i, 'dots')) {
+        this.sectionIndex = i;
+      }
     }
 
+    addClass(this.sectionLinksElems[this.sectionIndex], 'animate');
+
     if (
-      animProgress >= this.animUpdateValue - 0.5 &&
-      animProgress <= this.animUpdateValue + 0.5
+      animProgress >= this.animPauseThreshold - 0.5 &&
+      animProgress <= this.animPauseThreshold + 0.5
     ) {
       this.journeyLineAnimInstance.pause();
     }
@@ -164,24 +186,22 @@ class Journey {
   handleIntersection(entries: any) {
     entries.forEach((entry: any) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('active');
+        // entry.target.classList.add('active');
         let entryId = 0;
         const currentSection = entry.target.id;
 
-        if (currentSection === 'learning') {
+        if (currentSection === this.sectionNames[0]) {
           entryId = 0;
-        } else if (currentSection === 'thinking') {
+        } else if (currentSection === this.sectionNames[1]) {
           entryId = 1;
-        } else if (currentSection === 'opportunity') {
+        } else if (currentSection === this.sectionNames[2]) {
           entryId = 2;
         }
 
         if (
-          this.deviceInfo[this.deviceType].lineAnimBreaks[entryId] >
-          this.animUpdateValue
+          this.getAnimationThreshold(entryId, 'line') > this.animPauseThreshold
         ) {
-          this.animUpdateValue =
-            this.deviceInfo[this.deviceType].lineAnimBreaks[entryId];
+          this.animPauseThreshold = this.getAnimationThreshold(entryId, 'line');
           this.journeyLineAnimInstance.play();
         }
 
@@ -198,6 +218,9 @@ MicroModal.init({
     if (!modal.swiper) {
       const swiper = $('.journey-swiper');
       modal.swiper = new JourneySwiper(swiper);
+    }
+    if (modal.swiper) {
+      modal.swiper.scrollToTop();
     }
   },
   disableScroll: true
