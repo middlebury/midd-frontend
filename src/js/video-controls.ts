@@ -1,5 +1,4 @@
 import { $, $$ } from './utils/dom';
-import lozad from 'lozad';
 import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
 
 class VideoControls {
@@ -38,17 +37,6 @@ class VideoControls {
   }
 
   addListeners() {
-    // init lazy loaded videos from tablet
-    if (
-      window.matchMedia('(min-width: 512px)').matches &&
-      !PREFERS_REDUCED_MOTION
-    ) {
-      const lazyLoadVideos = lozad(this.videoElement, {
-        threshold: 0.5 // ratio of element convergence
-      });
-      lazyLoadVideos.observe();
-    }
-
     this.controls.addEventListener('click', this.handleClick);
   }
 

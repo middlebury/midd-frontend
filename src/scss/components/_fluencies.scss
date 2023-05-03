@@ -90,115 +90,142 @@
         padding-right: $spacing-3;
       }
 
+      .focus-area-item__media {
+        position: relative;
+
+        &::before {
+          content: '';
+          display: block;
+          padding-top: 100%;
+          width: 100%;
+        }
+
+        a {
+          height: 100%;
+          width: 100%;
+          left: 0;
+          top: 0;
+          position: absolute;
+
+          img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+          }
+        }
+      }
+
+      .focus-area-item__content {
+        position: relative;
+        border-bottom: solid $spacing-2 $blue;
+        background-color: $white;
+        color: $black;
+
+        &::before {
+          content: '';
+          display: block;
+          padding-top: percentage(143/166);
+          width: 100%;
+
+          @include breakpoint(xl) {
+            padding-top: percentage(133/166);
+          }
+        }
+
+        .focus-area-item__content-text {
+          height: 100%;
+          width: 100%;
+          left: 0;
+          top: 0;
+          position: absolute;
+          padding: $spacing-3;
+
+          a {
+            display: block;
+            width: 65%;
+
+            &:hover {
+              text-decoration-thickness: 1px;
+            }
+          }
+
+          h3 {
+            font-size: $typescale-5;
+            font-weight: $font-weight-normal;
+            color: $navy;
+            padding-bottom: $spacing-2;
+
+            @include breakpoint(md) {
+              font-size: $typescale-6;
+            }
+            @include breakpoint(xl) {
+              font-size: rem(32);
+              font-weight: $font-weight-light;
+            }
+          }
+
+          p {
+            font-size: $typescale-3;
+          }
+        }
+      }
+
+      &:first-child {
+        .focus-area-item__content-text a {
+          width: 65%;
+
+          @include breakpoint(lg) {
+            width: 75%;
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        .focus-area-item__content-text a {
+          width: 55%;
+
+          @include breakpoint(lg) {
+            width: 65%;
+          }
+        }
+      }
+
       &:last-child {
         margin: 0;
 
-        .focus-area-item__content .focus-area-item__content-text a {
-          width: 100%;
-        }
-      }
-    }
-  }
+        .focus-area-item__content-text a {
+          width: 85%;
 
-  .focus-area-item__media {
-    position: relative;
-
-    &::before {
-      content: '';
-      display: block;
-      padding-top: 100%;
-      width: 100%;
-    }
-
-    a {
-      height: 100%;
-      width: 100%;
-      left: 0;
-      top: 0;
-      position: absolute;
-
-      img {
-        height: 100%;
-        object-fit: cover;
-        width: 100%;
-      }
-    }
-  }
-
-  .focus-area-item__content {
-    position: relative;
-    border-bottom: solid $spacing-2 $blue;
-    background-color: $white;
-    color: $black;
-
-    &::before {
-      content: '';
-      display: block;
-      padding-top: percentage(143/166);
-      width: 100%;
-
-      @include breakpoint(xl) {
-        padding-top: percentage(133/166);
-      }
-    }
-
-    .focus-area-item__content-text {
-      height: 100%;
-      width: 100%;
-      left: 0;
-      top: 0;
-      position: absolute;
-      padding: $spacing-3;
-
-      a {
-        display: block;
-        width: 65%;
-
-        &:hover {
-          text-decoration-thickness: 1px;
+          @include breakpoint(lg) {
+            width: 100%;
+          }
         }
       }
 
-      h3 {
-        font-size: $typescale-5;
-        font-weight: $font-weight-normal;
+      .focus-area-item--button {
         color: $navy;
-        padding-bottom: $spacing-2;
+        font-size: $typescale-1;
+        font-weight: $font-weight-semibold;
+        letter-spacing: $letter-spacing;
+        text-transform: uppercase;
+
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding: $spacing-1 $spacing-3;
+        border-top: 1px solid $gray-light;
+
+        .icon {
+          width: 1.5em;
+          height: 1.5em;
+        }
 
         @include breakpoint(md) {
-          font-size: $typescale-6;
-        }
-        @include breakpoint(xl) {
-          font-size: rem(32);
-          font-weight: $font-weight-light;
+          padding: $spacing-2 $spacing-3;
         }
       }
-
-      p {
-        font-size: $typescale-3;
-      }
-    }
-  }
-
-  .focus-area-item--button {
-    color: $navy;
-    font-size: $typescale-1;
-    font-weight: $font-weight-semibold;
-    letter-spacing: $letter-spacing;
-    text-transform: uppercase;
-
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    padding: $spacing-1 $spacing-3;
-    border-top: 1px solid $gray-light;
-
-    @include breakpoint(md) {
-      font-size: $typescale-2;
-      font-weight: $font-weight-normal;
-      padding: $spacing-2 $spacing-3;
     }
   }
 }
