@@ -11,7 +11,7 @@
       {% if content_type == 'video' %}
         {% include 'partials/video.twig' with {
           id: hash_class,
-          hide_title: true,
+          hide_title_label: true,
           grid_video: true
         } %}
       {% elseif content_type == 'story' %}
@@ -25,7 +25,7 @@
             <div class="col-md-4 mb-5 mb-md-7">
               {% include 'partials/portrait-video.twig' with {
                   id: hash_class,
-                  hide_title: true,
+                  hide_title_label: true,
                   cobblestone_modal: true
                 } %}
             </div>
@@ -37,7 +37,7 @@
             <div class="col-md-4 mb-5 mb-lg-7">
               {% include 'partials/video.twig' with {
                   id: hash_class,
-                  hide_title: true,
+                  hide_title_label: true,
                   grid_video: true
                 } %}
             </div>
