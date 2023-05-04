@@ -602,7 +602,7 @@ $school-theme-colors: (
 
       h3 {
         font-size: $typescale-6;
-        font-weight: $font-weight-medium;
+        font-weight: $font-weight-semibold;
         margin-bottom: $spacing-2;
         margin-top: $spacing-5;
 
@@ -615,6 +615,8 @@ $school-theme-colors: (
         }
 
         @include breakpoint(lg) {
+          font-size: rem(32);
+          font-weight: $font-weight-normal;
           margin-top: $spacing-7;
         }
 
@@ -624,10 +626,6 @@ $school-theme-colors: (
           @include breakpoint(sm) {
             margin-top: $spacing-3;
           }
-
-          // @include breakpoint(lg) {
-          //   margin-top: $spacing-7;
-          // }
         }
       }
 
@@ -653,6 +651,10 @@ $school-theme-colors: (
       h2 > a,
       h3 > a {
         border-bottom: none;
+
+        &:hover {
+          border-bottom: 1px solid $navy;
+        }
       }
 
       h3 ~ a {
@@ -813,8 +815,13 @@ $school-theme-colors: (
       text-align: center;
       border-top: 1px solid rgba($color-journey-border, 0.5);
       padding-top: $spacing-2;
-      margin-bottom: $spacing-7;
+      margin-bottom: $spacing-5;
+
+      @include breakpoint(lg) {
+        margin-bottom: $spacing-7;
+      }
     }
+
     .articles-block {
       color: $black;
 
@@ -837,7 +844,7 @@ $school-theme-colors: (
           }
 
           @media only screen and (min-width: 1200px) {
-            padding-top: percentage(9/16);
+            padding-top: percentage(234/416);
           }
         }
 
