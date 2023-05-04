@@ -197,41 +197,69 @@
           </div>
           <nav class="midd-nav" aria-labelledby="midd-header-nav-label">
             <h2 class="sr-only" id="midd-header-nav-label">Primary navigation</h2>
-            <button class="midd-nav__handle" data-toggle-target=".js-midd-nav" data-toggle-group="midd-header" aria-expanded="false">
+            <button class="midd-nav__handle" data-toggle-target=".js-midd-nav" data-toggle-group="midd-header" aria-expanded="false" aria-labelledby="midd-nav__handle-label">
               <svg class="icon mr-1 midd-nav__bars " focusable="false" aria-hidden="true">
                 <use xlink:href="#icon-bars">
               </svg>
               <svg class="icon mr-1 midd-nav__times " focusable="false" aria-hidden="true">
                 <use xlink:href="#icon-times">
               </svg>
-              <span class="d-none d-sm-inline">Menu</span>
+              <span class="d-none d-sm-inline" id="midd-nav__handle-label">Menu</span>
             </button>
             <ul class="midd-nav__list midd-nav__list--top js-midd-nav">
               <li class="midd-nav__item midd-nav__item--top">
                 <a href="#" class="midd-nav__link midd-nav__link--top"> Our Schools </a>
-                <button class="midd-nav__handle midd-nav__handle--sub" data-toggle-target=".js-middnav-list-1">
+                <button class="midd-nav__handle midd-nav__handle--sub" data-toggle-target=".js-middnav-list-1" aria-labelledby="midd-nav__handle-label">
                   <svg class="icon midd-nav__chevron " focusable="false" aria-hidden="true">
                     <use xlink:href="#icon-chevron-down">
                   </svg>
                 </button>
                 <ul class="midd-nav__list midd-nav__list--sub js-middnav-list-1">
                   <li class="midd-nav__item">
-                    <a href="http://www.middlebury.edu" class="midd-nav__link midd-nav__link--sub">Middlebury College</a>
+                    <a href="http://www.middlebury.edu/college/" class="midd-nav__link midd-nav__link--sub">Middlebury College</a>
                   </li>
                   <li class="midd-nav__item">
                     <a href="https://www.middlebury.edu/institute/" class="midd-nav__link midd-nav__link--sub">Middlebury Institute of International Studies</a>
                   </li>
                   <li class="midd-nav__item">
-                    <a href="http://www.middlebury.edu/ls" class="midd-nav__link midd-nav__link--sub">Middlebury Language Schools</a>
+                    <a href="http://www.middlebury.edu/language-schools" class="midd-nav__link midd-nav__link--sub">Middlebury Language Schools</a>
                   </li>
                   <li class="midd-nav__item">
-                    <a href="http://www.middlebury.edu/study-abroad" class="midd-nav__link midd-nav__link--sub">Middlebury C.V. Starr Schools Abroad</a>
+                    <a href="http://www.middlebury.edu/schools-abroad" class="midd-nav__link midd-nav__link--sub">Middlebury C.V. Starr Schools Abroad</a>
                   </li>
                   <li class="midd-nav__item">
-                    <a href="http://www.middlebury.edu/blse" class="midd-nav__link midd-nav__link--sub">Middlebury Bread Loaf School of English</a>
+                    <a href="http://www.middlebury.edu/school-english" class="midd-nav__link midd-nav__link--sub">Middlebury Bread Loaf School of English</a>
                   </li>
                   <li class="midd-nav__item">
-                    <a href="http://www.middlebury.edu/bread-loaf-conferences" class="midd-nav__link midd-nav__link--sub">Middlebury Bread Loaf Writers' Conference</a>
+                    <a href="http://www.middlebury.edu/writers-conference" class="midd-nav__link midd-nav__link--sub">Middlebury Bread Loaf Writers' Conference</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="midd-nav__item midd-nav__item--top">
+                <a href="#" class="midd-nav__link midd-nav__link--top"> Admissions </a>
+                <button class="midd-nav__handle midd-nav__handle--sub" data-toggle-target=".js-middnav-list-2" aria-labelledby="midd-nav__handle-label">
+                  <svg class="icon midd-nav__chevron " focusable="false" aria-hidden="true">
+                    <use xlink:href="#icon-chevron-down">
+                  </svg>
+                </button>
+                <ul class="midd-nav__list midd-nav__list--sub js-middnav-list-2">
+                  <li class="midd-nav__item">
+                    <a href="http://www.middlebury.edu/college/admissions" class="midd-nav__link midd-nav__link--sub">Middlebury College</a>
+                  </li>
+                  <li class="midd-nav__item">
+                    <a href="https://www.middlebury.edu/institute/admissions" class="midd-nav__link midd-nav__link--sub">Middlebury Institute of International Studies</a>
+                  </li>
+                  <li class="midd-nav__item">
+                    <a href="http://www.middlebury.edu/language-schools/admissions" class="midd-nav__link midd-nav__link--sub">Middlebury Language Schools</a>
+                  </li>
+                  <li class="midd-nav__item">
+                    <a href="http://www.middlebury.edu/schools-abroad/admissions" class="midd-nav__link midd-nav__link--sub">Middlebury C.V. Starr Schools Abroad</a>
+                  </li>
+                  <li class="midd-nav__item">
+                    <a href="http://www.middlebury.edu/school-english/admissions" class="midd-nav__link midd-nav__link--sub">Middlebury Bread Loaf School of English</a>
+                  </li>
+                  <li class="midd-nav__item">
+                    <a href="http://www.middlebury.edu/writers-conference" class="midd-nav__link midd-nav__link--sub">Middlebury Bread Loaf Writers' Conference</a>
                   </li>
                 </ul>
               </li>
@@ -245,14 +273,14 @@
           </nav>
           <section class="midd-search" aria-labelledby="midd-search-label">
             <h2 class="sr-only" id="midd-search-label">Search</h2>
-            <a href="/search" class="midd-search__handle" role="button" data-toggle-target=".js-midd-search" data-toggle-group="midd-header" data-toggle-focus=".js-midd-search-input" aria-expanded="false" aria-haspopup="true">
+            <a href="/search" class="midd-search__handle" role="button" data-toggle-target=".js-midd-search" data-toggle-group="midd-header" data-toggle-focus=".js-midd-search-input" aria-expanded="false" aria-haspopup="true" aria-labelledby="midd-search__handle-label">
               <svg class="icon midd-search__mag " focusable="false" aria-hidden="true">
                 <use xlink:href="#icon-search">
               </svg>
               <svg class="icon midd-search__times " focusable="false" aria-hidden="true">
                 <use xlink:href="#icon-times">
               </svg>
-              <span class="d-none d-sm-inline">Search</span>
+              <span class="d-none d-sm-inline" id="midd-search__handle-label">Search</span>
             </a>
             <div class="midd-search__content js-midd-search">
               <form action="https://www.middlebury.edu/search" method="GET">
@@ -380,7 +408,7 @@
                 <div class="journey-section__body-content align-left">
                   <div class="row">
                     <div class="col-12 col-sm-8 col-lg-7 pr-8 pr-sm-3 journey-section__text">
-                      <p id="midd-page-journey-second" class="blurb"> A breadth and depth of <strong>learning</strong> and <strong>experience</strong> … and capacity for <strong>exploration</strong> that will last a lifetime </p>
+                      <p id="midd-page-journey-second" class="blurb"> A breadth and depth of <strong>learning</strong> and <strong>experience</strong> … a capacity for <strong>exploration</strong> that will last you a lifetime </p>
                     </div>
                   </div>
                 </div>
@@ -393,14 +421,14 @@
               </video>
             </figure>
             <button aria-label="Play/Pause Background Video" class="journey-video--button" data-journey-video-trigger>
-              <span aria-labelledby="journey-video--pause" class="journey-video--button-pause">
-                <span id="journey-video--pause" class="sr-only">Pause Animation</span>
+              <span aria-labelledby="journey-video--pause--learning" class="journey-video--button-pause">
+                <span id="journey-video--pause--learning" class="sr-only">Pause Animation</span>
                 <svg class="icon homepage-button " focusable="false" aria-hidden="true">
                   <use xlink:href="#icon-pause-homepage">
                 </svg>
               </span>
-              <span aria-labelledby="journey-video--play" class="journey-video--button-play">
-                <span id="journey-video--play" class="sr-only">Play Animation</span>
+              <span aria-labelledby="journey-video--play--learning" class="journey-video--button-play">
+                <span id="journey-video--play--learning" class="sr-only">Play Animation</span>
                 <svg class="icon homepage-button " focusable="false" aria-hidden="true">
                   <use xlink:href="#icon-play-homepage">
                 </svg>
@@ -492,14 +520,14 @@
               </video>
             </figure>
             <button aria-label="Play/Pause Background Video" class="journey-video--button" data-journey-video-trigger>
-              <span aria-labelledby="journey-video--pause" class="journey-video--button-pause">
-                <span id="journey-video--pause" class="sr-only">Pause Animation</span>
+              <span aria-labelledby="journey-video--pause--thinking" class="journey-video--button-pause">
+                <span id="journey-video--pause--thinking" class="sr-only">Pause Animation</span>
                 <svg class="icon homepage-button " focusable="false" aria-hidden="true">
                   <use xlink:href="#icon-pause-homepage">
                 </svg>
               </span>
-              <span aria-labelledby="journey-video--play" class="journey-video--button-play">
-                <span id="journey-video--play" class="sr-only">Play Animation</span>
+              <span aria-labelledby="journey-video--play--thinking" class="journey-video--button-play">
+                <span id="journey-video--play--thinking" class="sr-only">Play Animation</span>
                 <svg class="icon homepage-button " focusable="false" aria-hidden="true">
                   <use xlink:href="#icon-play-homepage">
                 </svg>
@@ -595,14 +623,14 @@
               </video>
             </figure>
             <button aria-label="Play/Pause Background Video" class="journey-video--button" data-journey-video-trigger>
-              <span aria-labelledby="journey-video--pause" class="journey-video--button-pause">
-                <span id="journey-video--pause" class="sr-only">Pause Animation</span>
+              <span aria-labelledby="journey-video--pause--opportunity" class="journey-video--button-pause">
+                <span id="journey-video--pause--opportunity" class="sr-only">Pause Animation</span>
                 <svg class="icon homepage-button " focusable="false" aria-hidden="true">
                   <use xlink:href="#icon-pause-homepage">
                 </svg>
               </span>
-              <span aria-labelledby="journey-video--play" class="journey-video--button-play">
-                <span id="journey-video--play" class="sr-only">Play Animation</span>
+              <span aria-labelledby="journey-video--play--opportunity" class="journey-video--button-play">
+                <span id="journey-video--play--opportunity" class="sr-only">Play Animation</span>
                 <svg class="icon homepage-button " focusable="false" aria-hidden="true">
                   <use xlink:href="#icon-play-homepage">
                 </svg>
@@ -656,11 +684,11 @@
                   <div class="journey-modal__overlay swiper-slide video-slide" data-hash=slide0>
                     <div class="container px-0 journey-modal__overlay-container">
                       <div class="col-lg-10 m-auto mb-5 mb-md-7 mb-lg-9">
-                        <h2 class="journey-modal--title ">Why Middlebury</h2>
+                        <h2 class="journey-modal--title " id="midd-video-label-slide0">Why Middlebury</h2>
                         <!-- video iframe html should be escaped -->
                         <figure class="video landscape-video--grid js-expand-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                           <div class="video__content js-video-content">
-                            <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-826">
+                            <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-817">
                               <img src="https://via.placeholder.com/1136x639" srcset="https://via.placeholder.com/400x225 400w,https://via.placeholder.com/640x360 640w,https://via.placeholder.com/832x468 832w,https://via.placeholder.com/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
                               <span class="button  button--light video__button"> Play <span class="ml-3">
                                   <svg class="icon  " focusable="false" aria-hidden="true">
@@ -671,14 +699,14 @@
                             </a>
                           </div>
                           <figcaption class=" grid-video__body">
-                            <h3 class=sr-only id="midd-video-label-826">Practical Skills for Positive Change</h3>
+                            <h3 class=sr-only>Practical Skills for Positive Change</h3>
                             <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
-                            <div class="transcript js-transcript-826 grid-video__transcript">
-                              <a href="#midd-transcript-826" class="transcript__button" data-toggle-target=".js-transcript-826" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                            <div class="transcript js-transcript-817 grid-video__transcript">
+                              <a href="#midd-transcript-817" class="transcript__button" data-toggle-target=".js-transcript-817" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                                   <use xlink:href="#icon-chevron-down">
                                 </svg>
                               </a>
-                              <div class="transcript__body" id="midd-transcript-826">
+                              <div class="transcript__body" id="midd-transcript-817">
                                 <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                 <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                 <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -692,12 +720,12 @@
                   <div class="journey-modal__overlay swiper-slide story-slide" data-hash=slide1>
                     <div class="container px-0 journey-modal__overlay-container">
                       <div class="col-lg-10 m-auto mb-5 mb-md-7 mb-lg-9">
-                        <h2 class="journey-modal--title ">Immersive Environments</h2>
-                        <article class="journey-modal__story" aria-describedby="midd-video-label-16">
+                        <h2 class="journey-modal--title " id="midd-video-label-slide1">Immersive Environments</h2>
+                        <article class="journey-modal__story" aria-describedby="midd-video-label-30">
                           <figure class="story__image">
                             <img src="https://via.placeholder.com/1136x639" srcset="https://via.placeholder.com/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
                             <figcaption class="story__image-caption">
-                              <h3 class="sr-only" id="midd-video-label-16">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                              <h3 class="sr-only">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
                               <p class="story__image-caption--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. Suspendisse commodo pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
                             </figcaption>
                           </figure>
@@ -729,15 +757,15 @@
                   <div class="journey-modal__overlay swiper-slide portrait-video-slide" data-hash=slide2>
                     <div class="container px-0 journey-modal__overlay-container">
                       <div class="col-12 mb-md-0 mb-lg-7">
-                        <h2 class="journey-modal--title ">The Undergraduate Experience</h2>
+                        <h2 class="journey-modal--title " id="midd-video-label-slide2">The Undergraduate Experience</h2>
                         <div class="row">
                           <div class="col-md-4 mb-5 mb-md-7">
                             <figure class=" portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                               <div class="portrait-video__content js-video-content">
-                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-1224">
+                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-397">
                                   <img src="https://via.placeholder.com/306x554" srcset="https://via.placeholder.com/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
                                   <div class="portrait-video__body">
-                                    <h3 class="portrait-video__title" id="midd-video-label-1224"> What do students do after graduation? </h3>
+                                    <h3 class="portrait-video__title" id="midd-video-label-397"> What do students do after graduation? </h3>
                                     <span class="button button--primary button--sm button--block button--light mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
                                         <use xlink:href="#icon-play">
                                       </svg>
@@ -745,12 +773,12 @@
                                   </div>
                                 </a>
                               </div>
-                              <div class="transcript js-transcript-1224 mt-2">
-                                <a href="#midd-transcript-1224" class="transcript__button" data-toggle-target=".js-transcript-1224" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                              <div class="transcript js-transcript-397 mt-2">
+                                <a href="#midd-transcript-397" class="transcript__button" data-toggle-target=".js-transcript-397" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                                     <use xlink:href="#icon-chevron-down">
                                   </svg>
                                 </a>
-                                <div class="transcript__body" id="midd-transcript-1224">
+                                <div class="transcript__body" id="midd-transcript-397">
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -761,10 +789,10 @@
                           <div class="col-md-4 mb-5 mb-md-7">
                             <figure class=" portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                               <div class="portrait-video__content js-video-content">
-                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-723">
+                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-659">
                                   <img src="https://via.placeholder.com/306x554" srcset="https://via.placeholder.com/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
                                   <div class="portrait-video__body">
-                                    <h3 class="portrait-video__title" id="midd-video-label-723"> What do students do after graduation? </h3>
+                                    <h3 class="portrait-video__title" id="midd-video-label-659"> What do students do after graduation? </h3>
                                     <span class="button button--primary button--sm button--block button--light mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
                                         <use xlink:href="#icon-play">
                                       </svg>
@@ -772,12 +800,12 @@
                                   </div>
                                 </a>
                               </div>
-                              <div class="transcript js-transcript-723 mt-2">
-                                <a href="#midd-transcript-723" class="transcript__button" data-toggle-target=".js-transcript-723" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                              <div class="transcript js-transcript-659 mt-2">
+                                <a href="#midd-transcript-659" class="transcript__button" data-toggle-target=".js-transcript-659" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                                     <use xlink:href="#icon-chevron-down">
                                   </svg>
                                 </a>
-                                <div class="transcript__body" id="midd-transcript-723">
+                                <div class="transcript__body" id="midd-transcript-659">
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -788,10 +816,10 @@
                           <div class="col-md-4 mb-5 mb-md-7">
                             <figure class=" portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                               <div class="portrait-video__content js-video-content">
-                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-604">
+                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-1156">
                                   <img src="https://via.placeholder.com/306x554" srcset="https://via.placeholder.com/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
                                   <div class="portrait-video__body">
-                                    <h3 class="portrait-video__title" id="midd-video-label-604"> What do students do after graduation? </h3>
+                                    <h3 class="portrait-video__title" id="midd-video-label-1156"> What do students do after graduation? </h3>
                                     <span class="button button--primary button--sm button--block button--light mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
                                         <use xlink:href="#icon-play">
                                       </svg>
@@ -799,12 +827,12 @@
                                   </div>
                                 </a>
                               </div>
-                              <div class="transcript js-transcript-604 mt-2">
-                                <a href="#midd-transcript-604" class="transcript__button" data-toggle-target=".js-transcript-604" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                              <div class="transcript js-transcript-1156 mt-2">
+                                <a href="#midd-transcript-1156" class="transcript__button" data-toggle-target=".js-transcript-1156" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                                     <use xlink:href="#icon-chevron-down">
                                   </svg>
                                 </a>
-                                <div class="transcript__body" id="midd-transcript-604">
+                                <div class="transcript__body" id="midd-transcript-1156">
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -815,10 +843,10 @@
                           <div class="col-md-4 mb-5 mb-md-7">
                             <figure class=" portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                               <div class="portrait-video__content js-video-content">
-                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-407">
+                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-1162">
                                   <img src="https://via.placeholder.com/306x554" srcset="https://via.placeholder.com/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
                                   <div class="portrait-video__body">
-                                    <h3 class="portrait-video__title" id="midd-video-label-407"> What do students do after graduation? </h3>
+                                    <h3 class="portrait-video__title" id="midd-video-label-1162"> What do students do after graduation? </h3>
                                     <span class="button button--primary button--sm button--block button--light mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
                                         <use xlink:href="#icon-play">
                                       </svg>
@@ -826,12 +854,12 @@
                                   </div>
                                 </a>
                               </div>
-                              <div class="transcript js-transcript-407 mt-2">
-                                <a href="#midd-transcript-407" class="transcript__button" data-toggle-target=".js-transcript-407" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                              <div class="transcript js-transcript-1162 mt-2">
+                                <a href="#midd-transcript-1162" class="transcript__button" data-toggle-target=".js-transcript-1162" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                                     <use xlink:href="#icon-chevron-down">
                                   </svg>
                                 </a>
-                                <div class="transcript__body" id="midd-transcript-407">
+                                <div class="transcript__body" id="midd-transcript-1162">
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -842,10 +870,10 @@
                           <div class="col-md-4 mb-5 mb-md-7">
                             <figure class=" portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                               <div class="portrait-video__content js-video-content">
-                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-248">
+                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-1031">
                                   <img src="https://via.placeholder.com/306x554" srcset="https://via.placeholder.com/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
                                   <div class="portrait-video__body">
-                                    <h3 class="portrait-video__title" id="midd-video-label-248"> What do students do after graduation? </h3>
+                                    <h3 class="portrait-video__title" id="midd-video-label-1031"> What do students do after graduation? </h3>
                                     <span class="button button--primary button--sm button--block button--light mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
                                         <use xlink:href="#icon-play">
                                       </svg>
@@ -853,12 +881,12 @@
                                   </div>
                                 </a>
                               </div>
-                              <div class="transcript js-transcript-248 mt-2">
-                                <a href="#midd-transcript-248" class="transcript__button" data-toggle-target=".js-transcript-248" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                              <div class="transcript js-transcript-1031 mt-2">
+                                <a href="#midd-transcript-1031" class="transcript__button" data-toggle-target=".js-transcript-1031" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                                     <use xlink:href="#icon-chevron-down">
                                   </svg>
                                 </a>
-                                <div class="transcript__body" id="midd-transcript-248">
+                                <div class="transcript__body" id="midd-transcript-1031">
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -873,26 +901,26 @@
                   <div class="journey-modal__overlay swiper-slide gallery-slide" data-hash=slide3>
                     <div class="container px-0 journey-modal__overlay-container">
                       <div class="col-lg-12 px-3 px-lg-5 m-auto mb-5 mb-md-7 mb-lg-9">
-                        <h2 class="journey-modal--title offset-lg-1">Alumni in the World</h2>
+                        <h2 class="journey-modal--title offset-lg-1" id="midd-video-label-slide3">Alumni in the World</h2>
                         <p class="journey-modal--blurb col-lg-10 px-0 offset-lg-1">Learning at Middlebury is not a passive experience. Sure, many—if not most—students will find plenty of time for quiet contemplation. Their academic journeys will also involve plenty of “doing”—whether that means participation in competitive fellowships or internships; entrepreneurial ventures at the local, state, national, and international levels; field research with faculty; or co- and extracurricular activities that perfectly complement and enhance those more quiet moments.</p>
-                        <div class="lightbox__images">
-                          <figure class="lightbox__figure media media--contain-caption mb-5 mb-md-6 mb-lg-8" id="midd-lightbox--item-1" data-journey-gallery-item>
+                        <div class="lightbox__images" aria-describedby="midd-video-label-slide3">
+                          <figure class="lightbox__figure media media--contain-caption mb-5 mb-md-6 mb-lg-8" id="midd-lightbox-slide3-item-1" data-journey-gallery-item>
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1376 774'/%3E" data-src="http://placekitten.com/1376/774" data-srcset="https://placekitten.com/1376/774 1376w,https://placekitten.com/1136/639 1136w,https://placekitten.com/736/414 736w,https://placekitten.com/320/180 320w" width="1376" alt="" />
                             <figcaption class="media__caption text-white"> Lorem ipsum <a href="#">dolor</a> sit amet consectetur adipisicing elit. </figcaption>
                           </figure>
-                          <figure class="lightbox__figure media media--contain-caption mb-5 mb-md-6 mb-lg-8" id="midd-lightbox--item-2" data-journey-gallery-item>
+                          <figure class="lightbox__figure media media--contain-caption mb-5 mb-md-6 mb-lg-8" id="midd-lightbox-slide3-item-2" data-journey-gallery-item>
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1376 774'/%3E" data-src="http://placekitten.com/1376/774" data-srcset="https://placekitten.com/1376/774 1376w,https://placekitten.com/1136/639 1136w,https://placekitten.com/736/414 736w,https://placekitten.com/320/180 320w" width="1376" alt="" />
                             <figcaption class="media__caption text-white"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam! </figcaption>
                           </figure>
-                          <figure class="lightbox__figure media media--contain-caption mb-5 mb-md-6 mb-lg-8" id="midd-lightbox--item-3" data-journey-gallery-item>
+                          <figure class="lightbox__figure media media--contain-caption mb-5 mb-md-6 mb-lg-8" id="midd-lightbox-slide3-item-3" data-journey-gallery-item>
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1376 774'/%3E" data-src="http://placekitten.com/1376/774" data-srcset="https://placekitten.com/1376/774 1376w,https://placekitten.com/1136/639 1136w,https://placekitten.com/736/414 736w,https://placekitten.com/320/180 320w" width="1376" alt="" />
                             <figcaption class="media__caption text-white"> Lorem ipsum dolor sit amet consectetur adipisicing elit. </figcaption>
                           </figure>
-                          <figure class="lightbox__figure media media--contain-caption mb-5 mb-md-6 mb-lg-8" id="midd-lightbox--item-4" data-journey-gallery-item>
+                          <figure class="lightbox__figure media media--contain-caption mb-5 mb-md-6 mb-lg-8" id="midd-lightbox-slide3-item-4" data-journey-gallery-item>
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1376 774'/%3E" data-src="http://placekitten.com/1376/774" data-srcset="https://placekitten.com/1376/774 1376w,https://placekitten.com/1136/639 1136w,https://placekitten.com/736/414 736w,https://placekitten.com/320/180 320w" width="1376" alt="" />
                             <figcaption class="media__caption text-white"> Lorem ipsum dolor sit amet consectetur adipisicing elit. </figcaption>
                           </figure>
-                          <figure class="lightbox__figure media media--contain-caption mb-5 mb-md-6 mb-lg-8" id="midd-lightbox--item-5" data-journey-gallery-item>
+                          <figure class="lightbox__figure media media--contain-caption mb-5 mb-md-6 mb-lg-8" id="midd-lightbox-slide3-item-5" data-journey-gallery-item>
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1376 774'/%3E" data-src="http://placekitten.com/1376/774" data-srcset="https://placekitten.com/1376/774 1376w,https://placekitten.com/1136/639 1136w,https://placekitten.com/736/414 736w,https://placekitten.com/320/180 320w" width="1376" alt="" />
                             <figcaption class="media__caption text-white"> Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam! </figcaption>
                           </figure>
@@ -959,14 +987,14 @@
                   <div class="journey-modal__overlay swiper-slide video-group-slide" data-hash=slide4>
                     <div class="container px-0 journey-modal__overlay-container">
                       <div class="col-12 mb-3 mb-md-4 mb-lg-7">
-                        <h2 class="journey-modal--title offset-lg-1">Middlebury in the News</h2>
+                        <h2 class="journey-modal--title offset-lg-1" id="midd-video-label-slide4">Middlebury in the News</h2>
                         <p class="journey-modal--blurb col-lg-10 px-0 offset-lg-1">Learning at Middlebury is not a passive experience. Sure, many—if not most—students will find plenty of time for quiet contemplation. Their academic journeys will also involve plenty of “doing”—whether that means participation in competitive fellowships or internships; entrepreneurial ventures at the local, state, national, and international levels; field research with faculty; or co- and extracurricular activities that perfectly complement and enhance those more quiet moments.</p>
                         <div class="row">
                           <div class="col-md-4 mb-5 mb-lg-7">
                             <!-- video iframe html should be escaped -->
                             <figure class="video landscape-video--grid js-expand-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                               <div class="video__content js-video-content">
-                                <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-880">
+                                <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-36">
                                   <img src="https://via.placeholder.com/1136x639" srcset="https://via.placeholder.com/400x225 400w,https://via.placeholder.com/640x360 640w,https://via.placeholder.com/832x468 832w,https://via.placeholder.com/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
                                   <span class="button  button--light video__button"> Play <span class="ml-3">
                                       <svg class="icon  " focusable="false" aria-hidden="true">
@@ -977,14 +1005,14 @@
                                 </a>
                               </div>
                               <figcaption class=" grid-video__body">
-                                <h3 class=sr-only id="midd-video-label-880">Practical Skills for Positive Change</h3>
+                                <h3 class=sr-only>Practical Skills for Positive Change</h3>
                                 <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
-                                <div class="transcript js-transcript-880 grid-video__transcript">
-                                  <a href="#midd-transcript-880" class="transcript__button" data-toggle-target=".js-transcript-880" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                                <div class="transcript js-transcript-36 grid-video__transcript">
+                                  <a href="#midd-transcript-36" class="transcript__button" data-toggle-target=".js-transcript-36" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                                       <use xlink:href="#icon-chevron-down">
                                     </svg>
                                   </a>
-                                  <div class="transcript__body" id="midd-transcript-880">
+                                  <div class="transcript__body" id="midd-transcript-36">
                                     <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                     <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                     <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -997,7 +1025,7 @@
                             <!-- video iframe html should be escaped -->
                             <figure class="video landscape-video--grid js-expand-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                               <div class="video__content js-video-content">
-                                <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-1160">
+                                <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-423">
                                   <img src="https://via.placeholder.com/1136x639" srcset="https://via.placeholder.com/400x225 400w,https://via.placeholder.com/640x360 640w,https://via.placeholder.com/832x468 832w,https://via.placeholder.com/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
                                   <span class="button  button--light video__button"> Play <span class="ml-3">
                                       <svg class="icon  " focusable="false" aria-hidden="true">
@@ -1008,14 +1036,14 @@
                                 </a>
                               </div>
                               <figcaption class=" grid-video__body">
-                                <h3 class=sr-only id="midd-video-label-1160">Practical Skills for Positive Change</h3>
+                                <h3 class=sr-only>Practical Skills for Positive Change</h3>
                                 <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
-                                <div class="transcript js-transcript-1160 grid-video__transcript">
-                                  <a href="#midd-transcript-1160" class="transcript__button" data-toggle-target=".js-transcript-1160" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                                <div class="transcript js-transcript-423 grid-video__transcript">
+                                  <a href="#midd-transcript-423" class="transcript__button" data-toggle-target=".js-transcript-423" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                                       <use xlink:href="#icon-chevron-down">
                                     </svg>
                                   </a>
-                                  <div class="transcript__body" id="midd-transcript-1160">
+                                  <div class="transcript__body" id="midd-transcript-423">
                                     <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                     <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                     <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -1028,7 +1056,7 @@
                             <!-- video iframe html should be escaped -->
                             <figure class="video landscape-video--grid js-expand-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                               <div class="video__content js-video-content">
-                                <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-837">
+                                <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-232">
                                   <img src="https://via.placeholder.com/1136x639" srcset="https://via.placeholder.com/400x225 400w,https://via.placeholder.com/640x360 640w,https://via.placeholder.com/832x468 832w,https://via.placeholder.com/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
                                   <span class="button  button--light video__button"> Play <span class="ml-3">
                                       <svg class="icon  " focusable="false" aria-hidden="true">
@@ -1039,14 +1067,14 @@
                                 </a>
                               </div>
                               <figcaption class=" grid-video__body">
-                                <h3 class=sr-only id="midd-video-label-837">Practical Skills for Positive Change</h3>
+                                <h3 class=sr-only>Practical Skills for Positive Change</h3>
                                 <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
-                                <div class="transcript js-transcript-837 grid-video__transcript">
-                                  <a href="#midd-transcript-837" class="transcript__button" data-toggle-target=".js-transcript-837" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                                <div class="transcript js-transcript-232 grid-video__transcript">
+                                  <a href="#midd-transcript-232" class="transcript__button" data-toggle-target=".js-transcript-232" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                                       <use xlink:href="#icon-chevron-down">
                                     </svg>
                                   </a>
-                                  <div class="transcript__body" id="midd-transcript-837">
+                                  <div class="transcript__body" id="midd-transcript-232">
                                     <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                     <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                     <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -1059,7 +1087,7 @@
                             <!-- video iframe html should be escaped -->
                             <figure class="video landscape-video--grid js-expand-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                               <div class="video__content js-video-content">
-                                <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-1145">
+                                <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-195">
                                   <img src="https://via.placeholder.com/1136x639" srcset="https://via.placeholder.com/400x225 400w,https://via.placeholder.com/640x360 640w,https://via.placeholder.com/832x468 832w,https://via.placeholder.com/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
                                   <span class="button  button--light video__button"> Play <span class="ml-3">
                                       <svg class="icon  " focusable="false" aria-hidden="true">
@@ -1070,14 +1098,14 @@
                                 </a>
                               </div>
                               <figcaption class=" grid-video__body">
-                                <h3 class=sr-only id="midd-video-label-1145">Practical Skills for Positive Change</h3>
+                                <h3 class=sr-only>Practical Skills for Positive Change</h3>
                                 <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
-                                <div class="transcript js-transcript-1145 grid-video__transcript">
-                                  <a href="#midd-transcript-1145" class="transcript__button" data-toggle-target=".js-transcript-1145" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                                <div class="transcript js-transcript-195 grid-video__transcript">
+                                  <a href="#midd-transcript-195" class="transcript__button" data-toggle-target=".js-transcript-195" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                                       <use xlink:href="#icon-chevron-down">
                                     </svg>
                                   </a>
-                                  <div class="transcript__body" id="midd-transcript-1145">
+                                  <div class="transcript__body" id="midd-transcript-195">
                                     <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                     <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                     <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -1090,7 +1118,7 @@
                             <!-- video iframe html should be escaped -->
                             <figure class="video landscape-video--grid js-expand-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                               <div class="video__content js-video-content">
-                                <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-472">
+                                <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-330">
                                   <img src="https://via.placeholder.com/1136x639" srcset="https://via.placeholder.com/400x225 400w,https://via.placeholder.com/640x360 640w,https://via.placeholder.com/832x468 832w,https://via.placeholder.com/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
                                   <span class="button  button--light video__button"> Play <span class="ml-3">
                                       <svg class="icon  " focusable="false" aria-hidden="true">
@@ -1101,14 +1129,14 @@
                                 </a>
                               </div>
                               <figcaption class=" grid-video__body">
-                                <h3 class=sr-only id="midd-video-label-472">Practical Skills for Positive Change</h3>
+                                <h3 class=sr-only>Practical Skills for Positive Change</h3>
                                 <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
-                                <div class="transcript js-transcript-472 grid-video__transcript">
-                                  <a href="#midd-transcript-472" class="transcript__button" data-toggle-target=".js-transcript-472" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                                <div class="transcript js-transcript-330 grid-video__transcript">
+                                  <a href="#midd-transcript-330" class="transcript__button" data-toggle-target=".js-transcript-330" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                                       <use xlink:href="#icon-chevron-down">
                                     </svg>
                                   </a>
-                                  <div class="transcript__body" id="midd-transcript-472">
+                                  <div class="transcript__body" id="midd-transcript-330">
                                     <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                     <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                     <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -1180,13 +1208,13 @@
                   <div class="journey-modal__overlay swiper-slide story-slide" data-hash=slide5>
                     <div class="container px-0 journey-modal__overlay-container">
                       <div class="col-lg-10 m-auto mb-5 mb-md-7 mb-lg-9">
-                        <h2 class="journey-modal--title offset-lg-1">Students in Action</h2>
+                        <h2 class="journey-modal--title offset-lg-1" id="midd-video-label-slide5">Students in Action</h2>
                         <p class="journey-modal--blurb col-lg-10 px-0 offset-lg-1">Learning at Middlebury is not a passive experience. Sure, many—if not most—students will find plenty of time for quiet contemplation. Their academic journeys will also involve plenty of “doing”—whether that means participation in competitive fellowships or internships; entrepreneurial ventures at the local, state, national, and international levels; field research with faculty; or co- and extracurricular activities that perfectly complement and enhance those more quiet moments.</p>
-                        <article class="journey-modal__story" aria-describedby="midd-video-label-36">
+                        <article class="journey-modal__story" aria-describedby="midd-video-label-67">
                           <figure class="story__image">
                             <img src="https://via.placeholder.com/1136x639" srcset="https://via.placeholder.com/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
                             <figcaption class="story__image-caption">
-                              <h3 class="sr-only" id="midd-video-label-36">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                              <h3 class="sr-only">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
                               <p class="story__image-caption--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. Suspendisse commodo pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
                             </figcaption>
                           </figure>
@@ -1274,15 +1302,15 @@
                   <div class="journey-modal__overlay swiper-slide portrait-video-slide" data-hash=slide6>
                     <div class="container px-0 journey-modal__overlay-container">
                       <div class="col-12 mb-md-0 mb-lg-7">
-                        <h2 class="journey-modal--title ">Connected Middlebury</h2>
+                        <h2 class="journey-modal--title " id="midd-video-label-slide6">Connected Middlebury</h2>
                         <div class="row">
                           <div class="col-md-4 mb-5 mb-md-7">
                             <figure class=" portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                               <div class="portrait-video__content js-video-content">
-                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-353">
+                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-467">
                                   <img src="https://via.placeholder.com/306x554" srcset="https://via.placeholder.com/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
                                   <div class="portrait-video__body">
-                                    <h3 class="portrait-video__title" id="midd-video-label-353"> What do students do after graduation? </h3>
+                                    <h3 class="portrait-video__title" id="midd-video-label-467"> What do students do after graduation? </h3>
                                     <span class="button button--primary button--sm button--block button--light mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
                                         <use xlink:href="#icon-play">
                                       </svg>
@@ -1290,12 +1318,12 @@
                                   </div>
                                 </a>
                               </div>
-                              <div class="transcript js-transcript-353 mt-2">
-                                <a href="#midd-transcript-353" class="transcript__button" data-toggle-target=".js-transcript-353" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                              <div class="transcript js-transcript-467 mt-2">
+                                <a href="#midd-transcript-467" class="transcript__button" data-toggle-target=".js-transcript-467" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                                     <use xlink:href="#icon-chevron-down">
                                   </svg>
                                 </a>
-                                <div class="transcript__body" id="midd-transcript-353">
+                                <div class="transcript__body" id="midd-transcript-467">
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -1306,10 +1334,10 @@
                           <div class="col-md-4 mb-5 mb-md-7">
                             <figure class=" portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                               <div class="portrait-video__content js-video-content">
-                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-1136">
+                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-767">
                                   <img src="https://via.placeholder.com/306x554" srcset="https://via.placeholder.com/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
                                   <div class="portrait-video__body">
-                                    <h3 class="portrait-video__title" id="midd-video-label-1136"> What do students do after graduation? </h3>
+                                    <h3 class="portrait-video__title" id="midd-video-label-767"> What do students do after graduation? </h3>
                                     <span class="button button--primary button--sm button--block button--light mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
                                         <use xlink:href="#icon-play">
                                       </svg>
@@ -1317,12 +1345,12 @@
                                   </div>
                                 </a>
                               </div>
-                              <div class="transcript js-transcript-1136 mt-2">
-                                <a href="#midd-transcript-1136" class="transcript__button" data-toggle-target=".js-transcript-1136" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                              <div class="transcript js-transcript-767 mt-2">
+                                <a href="#midd-transcript-767" class="transcript__button" data-toggle-target=".js-transcript-767" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                                     <use xlink:href="#icon-chevron-down">
                                   </svg>
                                 </a>
-                                <div class="transcript__body" id="midd-transcript-1136">
+                                <div class="transcript__body" id="midd-transcript-767">
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -1333,10 +1361,10 @@
                           <div class="col-md-4 mb-5 mb-md-7">
                             <figure class=" portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                               <div class="portrait-video__content js-video-content">
-                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-530">
+                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-14">
                                   <img src="https://via.placeholder.com/306x554" srcset="https://via.placeholder.com/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
                                   <div class="portrait-video__body">
-                                    <h3 class="portrait-video__title" id="midd-video-label-530"> What do students do after graduation? </h3>
+                                    <h3 class="portrait-video__title" id="midd-video-label-14"> What do students do after graduation? </h3>
                                     <span class="button button--primary button--sm button--block button--light mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
                                         <use xlink:href="#icon-play">
                                       </svg>
@@ -1344,12 +1372,12 @@
                                   </div>
                                 </a>
                               </div>
-                              <div class="transcript js-transcript-530 mt-2">
-                                <a href="#midd-transcript-530" class="transcript__button" data-toggle-target=".js-transcript-530" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                              <div class="transcript js-transcript-14 mt-2">
+                                <a href="#midd-transcript-14" class="transcript__button" data-toggle-target=".js-transcript-14" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                                     <use xlink:href="#icon-chevron-down">
                                   </svg>
                                 </a>
-                                <div class="transcript__body" id="midd-transcript-530">
+                                <div class="transcript__body" id="midd-transcript-14">
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -1360,10 +1388,10 @@
                           <div class="col-md-4 mb-5 mb-md-7">
                             <figure class=" portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                               <div class="portrait-video__content js-video-content">
-                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-750">
+                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-1147">
                                   <img src="https://via.placeholder.com/306x554" srcset="https://via.placeholder.com/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
                                   <div class="portrait-video__body">
-                                    <h3 class="portrait-video__title" id="midd-video-label-750"> What do students do after graduation? </h3>
+                                    <h3 class="portrait-video__title" id="midd-video-label-1147"> What do students do after graduation? </h3>
                                     <span class="button button--primary button--sm button--block button--light mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
                                         <use xlink:href="#icon-play">
                                       </svg>
@@ -1371,12 +1399,12 @@
                                   </div>
                                 </a>
                               </div>
-                              <div class="transcript js-transcript-750 mt-2">
-                                <a href="#midd-transcript-750" class="transcript__button" data-toggle-target=".js-transcript-750" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                              <div class="transcript js-transcript-1147 mt-2">
+                                <a href="#midd-transcript-1147" class="transcript__button" data-toggle-target=".js-transcript-1147" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                                     <use xlink:href="#icon-chevron-down">
                                   </svg>
                                 </a>
-                                <div class="transcript__body" id="midd-transcript-750">
+                                <div class="transcript__body" id="midd-transcript-1147">
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -1387,10 +1415,10 @@
                           <div class="col-md-4 mb-5 mb-md-7">
                             <figure class=" portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                               <div class="portrait-video__content js-video-content">
-                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-871">
+                                <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-1010">
                                   <img src="https://via.placeholder.com/306x554" srcset="https://via.placeholder.com/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
                                   <div class="portrait-video__body">
-                                    <h3 class="portrait-video__title" id="midd-video-label-871"> What do students do after graduation? </h3>
+                                    <h3 class="portrait-video__title" id="midd-video-label-1010"> What do students do after graduation? </h3>
                                     <span class="button button--primary button--sm button--block button--light mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
                                         <use xlink:href="#icon-play">
                                       </svg>
@@ -1398,12 +1426,12 @@
                                   </div>
                                 </a>
                               </div>
-                              <div class="transcript js-transcript-871 mt-2">
-                                <a href="#midd-transcript-871" class="transcript__button" data-toggle-target=".js-transcript-871" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                              <div class="transcript js-transcript-1010 mt-2">
+                                <a href="#midd-transcript-1010" class="transcript__button" data-toggle-target=".js-transcript-1010" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                                     <use xlink:href="#icon-chevron-down">
                                   </svg>
                                 </a>
-                                <div class="transcript__body" id="midd-transcript-871">
+                                <div class="transcript__body" id="midd-transcript-1010">
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                                   <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -1418,25 +1446,25 @@
                   <div class="journey-modal__overlay swiper-slide gallery-slide" data-hash=slide7>
                     <div class="container px-0 journey-modal__overlay-container">
                       <div class="col-lg-12 px-3 px-lg-5 m-auto mb-5 mb-md-7 mb-lg-9">
-                        <h2 class="journey-modal--title ">Middlebury College</h2>
-                        <div class="lightbox__images">
-                          <figure class="lightbox__figure media media--contain-caption mb-5 mb-md-6 mb-lg-8" id="midd-lightbox--item-1" data-journey-gallery-item>
+                        <h2 class="journey-modal--title " id="midd-video-label-slide7">Middlebury College</h2>
+                        <div class="lightbox__images" aria-describedby="midd-video-label-slide7">
+                          <figure class="lightbox__figure media media--contain-caption mb-5 mb-md-6 mb-lg-8" id="midd-lightbox-slide7-item-1" data-journey-gallery-item>
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1376 774'/%3E" data-src="http://placekitten.com/1376/774" data-srcset="https://placekitten.com/1376/774 1376w,https://placekitten.com/1136/639 1136w,https://placekitten.com/736/414 736w,https://placekitten.com/320/180 320w" width="1376" alt="" />
                             <figcaption class="media__caption text-white"> Lorem ipsum <a href="#">dolor</a> sit amet consectetur adipisicing elit. </figcaption>
                           </figure>
-                          <figure class="lightbox__figure media media--contain-caption mb-5 mb-md-6 mb-lg-8" id="midd-lightbox--item-2" data-journey-gallery-item>
+                          <figure class="lightbox__figure media media--contain-caption mb-5 mb-md-6 mb-lg-8" id="midd-lightbox-slide7-item-2" data-journey-gallery-item>
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1376 774'/%3E" data-src="http://placekitten.com/1376/774" data-srcset="https://placekitten.com/1376/774 1376w,https://placekitten.com/1136/639 1136w,https://placekitten.com/736/414 736w,https://placekitten.com/320/180 320w" width="1376" alt="" />
                             <figcaption class="media__caption text-white"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam! </figcaption>
                           </figure>
-                          <figure class="lightbox__figure media media--contain-caption mb-5 mb-md-6 mb-lg-8" id="midd-lightbox--item-3" data-journey-gallery-item>
+                          <figure class="lightbox__figure media media--contain-caption mb-5 mb-md-6 mb-lg-8" id="midd-lightbox-slide7-item-3" data-journey-gallery-item>
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1376 774'/%3E" data-src="http://placekitten.com/1376/774" data-srcset="https://placekitten.com/1376/774 1376w,https://placekitten.com/1136/639 1136w,https://placekitten.com/736/414 736w,https://placekitten.com/320/180 320w" width="1376" alt="" />
                             <figcaption class="media__caption text-white"> Lorem ipsum dolor sit amet consectetur adipisicing elit. </figcaption>
                           </figure>
-                          <figure class="lightbox__figure media media--contain-caption mb-5 mb-md-6 mb-lg-8" id="midd-lightbox--item-4" data-journey-gallery-item>
+                          <figure class="lightbox__figure media media--contain-caption mb-5 mb-md-6 mb-lg-8" id="midd-lightbox-slide7-item-4" data-journey-gallery-item>
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1376 774'/%3E" data-src="http://placekitten.com/1376/774" data-srcset="https://placekitten.com/1376/774 1376w,https://placekitten.com/1136/639 1136w,https://placekitten.com/736/414 736w,https://placekitten.com/320/180 320w" width="1376" alt="" />
                             <figcaption class="media__caption text-white"> Lorem ipsum dolor sit amet consectetur adipisicing elit. </figcaption>
                           </figure>
-                          <figure class="lightbox__figure media media--contain-caption mb-5 mb-md-6 mb-lg-8" id="midd-lightbox--item-5" data-journey-gallery-item>
+                          <figure class="lightbox__figure media media--contain-caption mb-5 mb-md-6 mb-lg-8" id="midd-lightbox-slide7-item-5" data-journey-gallery-item>
                             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1376 774'/%3E" data-src="http://placekitten.com/1376/774" data-srcset="https://placekitten.com/1376/774 1376w,https://placekitten.com/1136/639 1136w,https://placekitten.com/736/414 736w,https://placekitten.com/320/180 320w" width="1376" alt="" />
                             <figcaption class="media__caption text-white"> Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam! </figcaption>
                           </figure>
@@ -1447,12 +1475,12 @@
                   <div class="journey-modal__overlay swiper-slide story-list-slide" data-hash=slide8>
                     <div class="container px-0 journey-modal__overlay-container">
                       <div class="col-lg-10 m-auto mb-5 mb-md-7 mb-lg-9">
-                        <h2 class="journey-modal--title ">Graduate and Professional Schools</h2>
-                        <article class="journey-modal__story" aria-describedby="midd-video-label-21">
+                        <h2 class="journey-modal--title " id="midd-video-label-slide8">Graduate and Professional Schools</h2>
+                        <article class="journey-modal__story" aria-describedby="midd-video-label-0">
                           <figure class="story__image">
                             <img src="https://via.placeholder.com/1136x639" srcset="https://via.placeholder.com/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
                             <figcaption class="story__image-caption">
-                              <h3 class="sr-only" id="midd-video-label-21">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                              <h3 class="sr-only">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
                               <p class="story__image-caption--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. Suspendisse commodo pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
                             </figcaption>
                           </figure>

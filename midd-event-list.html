@@ -197,41 +197,69 @@
           </div>
           <nav class="midd-nav" aria-labelledby="midd-header-nav-label">
             <h2 class="sr-only" id="midd-header-nav-label">Primary navigation</h2>
-            <button class="midd-nav__handle" data-toggle-target=".js-midd-nav" data-toggle-group="midd-header" aria-expanded="false">
+            <button class="midd-nav__handle" data-toggle-target=".js-midd-nav" data-toggle-group="midd-header" aria-expanded="false" aria-labelledby="midd-nav__handle-label">
               <svg class="icon mr-1 midd-nav__bars " focusable="false" aria-hidden="true">
                 <use xlink:href="#icon-bars">
               </svg>
               <svg class="icon mr-1 midd-nav__times " focusable="false" aria-hidden="true">
                 <use xlink:href="#icon-times">
               </svg>
-              <span class="d-none d-sm-inline">Menu</span>
+              <span class="d-none d-sm-inline" id="midd-nav__handle-label">Menu</span>
             </button>
             <ul class="midd-nav__list midd-nav__list--top js-midd-nav">
               <li class="midd-nav__item midd-nav__item--top">
                 <a href="#" class="midd-nav__link midd-nav__link--top"> Our Schools </a>
-                <button class="midd-nav__handle midd-nav__handle--sub" data-toggle-target=".js-middnav-list-1">
+                <button class="midd-nav__handle midd-nav__handle--sub" data-toggle-target=".js-middnav-list-1" aria-labelledby="midd-nav__handle-label">
                   <svg class="icon midd-nav__chevron " focusable="false" aria-hidden="true">
                     <use xlink:href="#icon-chevron-down">
                   </svg>
                 </button>
                 <ul class="midd-nav__list midd-nav__list--sub js-middnav-list-1">
                   <li class="midd-nav__item">
-                    <a href="http://www.middlebury.edu" class="midd-nav__link midd-nav__link--sub">Middlebury College</a>
+                    <a href="http://www.middlebury.edu/college/" class="midd-nav__link midd-nav__link--sub">Middlebury College</a>
                   </li>
                   <li class="midd-nav__item">
                     <a href="https://www.middlebury.edu/institute/" class="midd-nav__link midd-nav__link--sub">Middlebury Institute of International Studies</a>
                   </li>
                   <li class="midd-nav__item">
-                    <a href="http://www.middlebury.edu/ls" class="midd-nav__link midd-nav__link--sub">Middlebury Language Schools</a>
+                    <a href="http://www.middlebury.edu/language-schools" class="midd-nav__link midd-nav__link--sub">Middlebury Language Schools</a>
                   </li>
                   <li class="midd-nav__item">
-                    <a href="http://www.middlebury.edu/study-abroad" class="midd-nav__link midd-nav__link--sub">Middlebury C.V. Starr Schools Abroad</a>
+                    <a href="http://www.middlebury.edu/schools-abroad" class="midd-nav__link midd-nav__link--sub">Middlebury C.V. Starr Schools Abroad</a>
                   </li>
                   <li class="midd-nav__item">
-                    <a href="http://www.middlebury.edu/blse" class="midd-nav__link midd-nav__link--sub">Middlebury Bread Loaf School of English</a>
+                    <a href="http://www.middlebury.edu/school-english" class="midd-nav__link midd-nav__link--sub">Middlebury Bread Loaf School of English</a>
                   </li>
                   <li class="midd-nav__item">
-                    <a href="http://www.middlebury.edu/bread-loaf-conferences" class="midd-nav__link midd-nav__link--sub">Middlebury Bread Loaf Writers' Conference</a>
+                    <a href="http://www.middlebury.edu/writers-conference" class="midd-nav__link midd-nav__link--sub">Middlebury Bread Loaf Writers' Conference</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="midd-nav__item midd-nav__item--top">
+                <a href="#" class="midd-nav__link midd-nav__link--top"> Admissions </a>
+                <button class="midd-nav__handle midd-nav__handle--sub" data-toggle-target=".js-middnav-list-2" aria-labelledby="midd-nav__handle-label">
+                  <svg class="icon midd-nav__chevron " focusable="false" aria-hidden="true">
+                    <use xlink:href="#icon-chevron-down">
+                  </svg>
+                </button>
+                <ul class="midd-nav__list midd-nav__list--sub js-middnav-list-2">
+                  <li class="midd-nav__item">
+                    <a href="http://www.middlebury.edu/college/admissions" class="midd-nav__link midd-nav__link--sub">Middlebury College</a>
+                  </li>
+                  <li class="midd-nav__item">
+                    <a href="https://www.middlebury.edu/institute/admissions" class="midd-nav__link midd-nav__link--sub">Middlebury Institute of International Studies</a>
+                  </li>
+                  <li class="midd-nav__item">
+                    <a href="http://www.middlebury.edu/language-schools/admissions" class="midd-nav__link midd-nav__link--sub">Middlebury Language Schools</a>
+                  </li>
+                  <li class="midd-nav__item">
+                    <a href="http://www.middlebury.edu/schools-abroad/admissions" class="midd-nav__link midd-nav__link--sub">Middlebury C.V. Starr Schools Abroad</a>
+                  </li>
+                  <li class="midd-nav__item">
+                    <a href="http://www.middlebury.edu/school-english/admissions" class="midd-nav__link midd-nav__link--sub">Middlebury Bread Loaf School of English</a>
+                  </li>
+                  <li class="midd-nav__item">
+                    <a href="http://www.middlebury.edu/writers-conference" class="midd-nav__link midd-nav__link--sub">Middlebury Bread Loaf Writers' Conference</a>
                   </li>
                 </ul>
               </li>
@@ -245,14 +273,14 @@
           </nav>
           <section class="midd-search" aria-labelledby="midd-search-label">
             <h2 class="sr-only" id="midd-search-label">Search</h2>
-            <a href="/search" class="midd-search__handle" role="button" data-toggle-target=".js-midd-search" data-toggle-group="midd-header" data-toggle-focus=".js-midd-search-input" aria-expanded="false" aria-haspopup="true">
+            <a href="/search" class="midd-search__handle" role="button" data-toggle-target=".js-midd-search" data-toggle-group="midd-header" data-toggle-focus=".js-midd-search-input" aria-expanded="false" aria-haspopup="true" aria-labelledby="midd-search__handle-label">
               <svg class="icon midd-search__mag " focusable="false" aria-hidden="true">
                 <use xlink:href="#icon-search">
               </svg>
               <svg class="icon midd-search__times " focusable="false" aria-hidden="true">
                 <use xlink:href="#icon-times">
               </svg>
-              <span class="d-none d-sm-inline">Search</span>
+              <span class="d-none d-sm-inline" id="midd-search__handle-label">Search</span>
             </a>
             <div class="midd-search__content js-midd-search">
               <form action="https://www.middlebury.edu/search" method="GET">
@@ -317,7 +345,7 @@
                   </div>
                   <fieldset class="filter">
                     <legend class="filter__legend">
-                      <button class="filter__button" data-toggle-target=".js-filter-508" aria-expanded="true"> Categories <svg class="icon filter__icon-close " focusable="false" aria-hidden="true">
+                      <button class="filter__button" data-toggle-target=".js-filter-1078" aria-expanded="true"> Categories <svg class="icon filter__icon-close " focusable="false" aria-hidden="true">
                           <use xlink:href="#icon-minus">
                         </svg>
                         <svg class="icon filter__icon-open " focusable="false" aria-hidden="true">
@@ -325,18 +353,18 @@
                         </svg>
                       </button>
                     </legend>
-                    <div class="filter__body js-filter-508">
+                    <div class="filter__body js-filter-1078">
                       <div class="checkbox checkbox--filter">
-                        <input type="checkbox" class="checkbox__input" id="checkbox-item-508-1" />
-                        <label for="checkbox-item-508-1" id="checkbox-label-508-1" class="checkbox__label"> Minors </label>
+                        <input type="checkbox" class="checkbox__input" id="checkbox-item-1078-1" />
+                        <label for="checkbox-item-1078-1" id="checkbox-label-1078-1" class="checkbox__label"> Minors </label>
                       </div>
                       <div class="checkbox checkbox--filter">
-                        <input type="checkbox" class="checkbox__input" id="checkbox-item-508-2" />
-                        <label for="checkbox-item-508-2" id="checkbox-label-508-2" class="checkbox__label"> Majors </label>
+                        <input type="checkbox" class="checkbox__input" id="checkbox-item-1078-2" />
+                        <label for="checkbox-item-1078-2" id="checkbox-label-1078-2" class="checkbox__label"> Majors </label>
                       </div>
                       <div class="checkbox checkbox--filter">
-                        <input type="checkbox" class="checkbox__input" id="checkbox-item-508-3" />
-                        <label for="checkbox-item-508-3" id="checkbox-label-508-3" class="checkbox__label"> Programs </label>
+                        <input type="checkbox" class="checkbox__input" id="checkbox-item-1078-3" />
+                        <label for="checkbox-item-1078-3" id="checkbox-label-1078-3" class="checkbox__label"> Programs </label>
                       </div>
                     </div>
                   </fieldset>

@@ -197,41 +197,69 @@
           </div>
           <nav class="midd-nav" aria-labelledby="midd-header-nav-label">
             <h2 class="sr-only" id="midd-header-nav-label">Primary navigation</h2>
-            <button class="midd-nav__handle" data-toggle-target=".js-midd-nav" data-toggle-group="midd-header" aria-expanded="false">
+            <button class="midd-nav__handle" data-toggle-target=".js-midd-nav" data-toggle-group="midd-header" aria-expanded="false" aria-labelledby="midd-nav__handle-label">
               <svg class="icon mr-1 midd-nav__bars " focusable="false" aria-hidden="true">
                 <use xlink:href="#icon-bars">
               </svg>
               <svg class="icon mr-1 midd-nav__times " focusable="false" aria-hidden="true">
                 <use xlink:href="#icon-times">
               </svg>
-              <span class="d-none d-sm-inline">Menu</span>
+              <span class="d-none d-sm-inline" id="midd-nav__handle-label">Menu</span>
             </button>
             <ul class="midd-nav__list midd-nav__list--top js-midd-nav">
               <li class="midd-nav__item midd-nav__item--top">
                 <a href="#" class="midd-nav__link midd-nav__link--top"> Our Schools </a>
-                <button class="midd-nav__handle midd-nav__handle--sub" data-toggle-target=".js-middnav-list-1">
+                <button class="midd-nav__handle midd-nav__handle--sub" data-toggle-target=".js-middnav-list-1" aria-labelledby="midd-nav__handle-label">
                   <svg class="icon midd-nav__chevron " focusable="false" aria-hidden="true">
                     <use xlink:href="#icon-chevron-down">
                   </svg>
                 </button>
                 <ul class="midd-nav__list midd-nav__list--sub js-middnav-list-1">
                   <li class="midd-nav__item">
-                    <a href="http://www.middlebury.edu" class="midd-nav__link midd-nav__link--sub">Middlebury College</a>
+                    <a href="http://www.middlebury.edu/college/" class="midd-nav__link midd-nav__link--sub">Middlebury College</a>
                   </li>
                   <li class="midd-nav__item">
                     <a href="https://www.middlebury.edu/institute/" class="midd-nav__link midd-nav__link--sub">Middlebury Institute of International Studies</a>
                   </li>
                   <li class="midd-nav__item">
-                    <a href="http://www.middlebury.edu/ls" class="midd-nav__link midd-nav__link--sub">Middlebury Language Schools</a>
+                    <a href="http://www.middlebury.edu/language-schools" class="midd-nav__link midd-nav__link--sub">Middlebury Language Schools</a>
                   </li>
                   <li class="midd-nav__item">
-                    <a href="http://www.middlebury.edu/study-abroad" class="midd-nav__link midd-nav__link--sub">Middlebury C.V. Starr Schools Abroad</a>
+                    <a href="http://www.middlebury.edu/schools-abroad" class="midd-nav__link midd-nav__link--sub">Middlebury C.V. Starr Schools Abroad</a>
                   </li>
                   <li class="midd-nav__item">
-                    <a href="http://www.middlebury.edu/blse" class="midd-nav__link midd-nav__link--sub">Middlebury Bread Loaf School of English</a>
+                    <a href="http://www.middlebury.edu/school-english" class="midd-nav__link midd-nav__link--sub">Middlebury Bread Loaf School of English</a>
                   </li>
                   <li class="midd-nav__item">
-                    <a href="http://www.middlebury.edu/bread-loaf-conferences" class="midd-nav__link midd-nav__link--sub">Middlebury Bread Loaf Writers' Conference</a>
+                    <a href="http://www.middlebury.edu/writers-conference" class="midd-nav__link midd-nav__link--sub">Middlebury Bread Loaf Writers' Conference</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="midd-nav__item midd-nav__item--top">
+                <a href="#" class="midd-nav__link midd-nav__link--top"> Admissions </a>
+                <button class="midd-nav__handle midd-nav__handle--sub" data-toggle-target=".js-middnav-list-2" aria-labelledby="midd-nav__handle-label">
+                  <svg class="icon midd-nav__chevron " focusable="false" aria-hidden="true">
+                    <use xlink:href="#icon-chevron-down">
+                  </svg>
+                </button>
+                <ul class="midd-nav__list midd-nav__list--sub js-middnav-list-2">
+                  <li class="midd-nav__item">
+                    <a href="http://www.middlebury.edu/college/admissions" class="midd-nav__link midd-nav__link--sub">Middlebury College</a>
+                  </li>
+                  <li class="midd-nav__item">
+                    <a href="https://www.middlebury.edu/institute/admissions" class="midd-nav__link midd-nav__link--sub">Middlebury Institute of International Studies</a>
+                  </li>
+                  <li class="midd-nav__item">
+                    <a href="http://www.middlebury.edu/language-schools/admissions" class="midd-nav__link midd-nav__link--sub">Middlebury Language Schools</a>
+                  </li>
+                  <li class="midd-nav__item">
+                    <a href="http://www.middlebury.edu/schools-abroad/admissions" class="midd-nav__link midd-nav__link--sub">Middlebury C.V. Starr Schools Abroad</a>
+                  </li>
+                  <li class="midd-nav__item">
+                    <a href="http://www.middlebury.edu/school-english/admissions" class="midd-nav__link midd-nav__link--sub">Middlebury Bread Loaf School of English</a>
+                  </li>
+                  <li class="midd-nav__item">
+                    <a href="http://www.middlebury.edu/writers-conference" class="midd-nav__link midd-nav__link--sub">Middlebury Bread Loaf Writers' Conference</a>
                   </li>
                 </ul>
               </li>
@@ -245,14 +273,14 @@
           </nav>
           <section class="midd-search" aria-labelledby="midd-search-label">
             <h2 class="sr-only" id="midd-search-label">Search</h2>
-            <a href="/search" class="midd-search__handle" role="button" data-toggle-target=".js-midd-search" data-toggle-group="midd-header" data-toggle-focus=".js-midd-search-input" aria-expanded="false" aria-haspopup="true">
+            <a href="/search" class="midd-search__handle" role="button" data-toggle-target=".js-midd-search" data-toggle-group="midd-header" data-toggle-focus=".js-midd-search-input" aria-expanded="false" aria-haspopup="true" aria-labelledby="midd-search__handle-label">
               <svg class="icon midd-search__mag " focusable="false" aria-hidden="true">
                 <use xlink:href="#icon-search">
               </svg>
               <svg class="icon midd-search__times " focusable="false" aria-hidden="true">
                 <use xlink:href="#icon-times">
               </svg>
-              <span class="d-none d-sm-inline">Search</span>
+              <span class="d-none d-sm-inline" id="midd-search__handle-label">Search</span>
             </a>
             <div class="midd-search__content js-midd-search">
               <form action="https://www.middlebury.edu/search" method="GET">
@@ -426,14 +454,14 @@
                     signupFormObj.drawForm();
                   </script>
                 </div>
-                <section class="section paragraph" aria-labelledby="section-302-label" data-digest-content>
+                <section class="section paragraph" aria-labelledby="section-702-label" data-digest-content>
                   <div class="section__header">
-                    <h2 class="section__title" id="section-302-label"> Schedule Component </h2>
+                    <h2 class="section__title" id="section-702-label"> Schedule Component </h2>
                     <p class="section__text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis reiciendis quod temporibus enim non beatae ipsa explicabo necessitatibus iure. Asperiores optio ad repudiandae culpa voluptatum pariatur saepe, tenetur recusandae possimus? </p>
                   </div>
                   <div class="schedule-header">
                     <p class="schedule-header__date"> Sunday, December 10 </p>
-                    <h3 id="midd-event-302" class="schedule-header__title"> Arrival Day This Title is longer so it extends outside the normal render area&nbsp;<a class="anchorjs-link" aria-label="Anchor" data-anchorjs-icon="&#59851;" href="#midd-event-302" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a>
+                    <h3 id="midd-event-702" class="schedule-header__title"> Arrival Day This Title is longer so it extends outside the normal render area&nbsp;<a class="anchorjs-link" aria-label="Anchor" data-anchorjs-icon="&#59851;" href="#midd-event-702" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a>
                     </h3>
                   </div>
                   <div class="schedule-item">
@@ -606,81 +634,81 @@
                     <input data-drupal-selector="edit-submit" type="submit" id="edit-submit" name="op" value="Submit" class="button button--primary js-form-submit form-submit" />
                   </form>
                 </div>
-                <div class="paragraph flowchart" id="65" data-flowchart>
-                  <div id="flowchart-65-1" class="flowchart__item " data-flowchart-item>
+                <div class="paragraph flowchart" id="581" data-flowchart>
+                  <div id="flowchart-581-1" class="flowchart__item " data-flowchart-item>
                     <h3 class="h3 mb-2 flowchart__title"> Do you need chat functionality? </h3>
                     <div class="mt-4">
                       <div class="radio">
-                        <a href="#flowchart-65-2" class="radio__label" data-flowchart-btn> Yes </a>
+                        <a href="#flowchart-581-2" class="radio__label" data-flowchart-btn> Yes </a>
                       </div>
                       <div class="radio">
-                        <a href="#flowchart-65-3" class="radio__label" data-flowchart-btn> No </a>
+                        <a href="#flowchart-581-3" class="radio__label" data-flowchart-btn> No </a>
                       </div>
                     </div>
                   </div>
-                  <div id="flowchart-65-2" class="flowchart__item " data-flowchart-item>
+                  <div id="flowchart-581-2" class="flowchart__item " data-flowchart-item>
                     <h3 class="h3 mb-2 flowchart__title"> Will your chats include sensitive data or will you be collaborating with external guests? </h3>
                     <div class="typography"> Specifically will include sensitive content, not just discussion around sensitive topics – distinguish between “Change the SSN” and “Change SSN from xxx-xx-xxxx to...” </div>
                     <div class="mt-4">
                       <div class="radio">
-                        <a href="#flowchart-65-4" class="radio__label" data-flowchart-btn> Yes </a>
+                        <a href="#flowchart-581-4" class="radio__label" data-flowchart-btn> Yes </a>
                       </div>
                       <div class="radio">
-                        <a href="#flowchart-65-5" class="radio__label" data-flowchart-btn> No </a>
+                        <a href="#flowchart-581-5" class="radio__label" data-flowchart-btn> No </a>
                       </div>
                     </div>
                   </div>
-                  <div id="flowchart-65-3" class="flowchart__item  flowchart__item--answer" data-flowchart-item>
+                  <div id="flowchart-581-3" class="flowchart__item  flowchart__item--answer" data-flowchart-item>
                     <span class="d-block text-caps mb-5">Based on your answers</span>
                     <div class="typography"> Do not use chat. </div>
                   </div>
-                  <div id="flowchart-65-4" class="flowchart__item " data-flowchart-item>
+                  <div id="flowchart-581-4" class="flowchart__item " data-flowchart-item>
                     <h3 class="h3 mb-2 flowchart__title"> Has you department or collaborants selected a tool? </h3>
                     <div class="mt-4">
                       <div class="radio">
-                        <a href="#flowchart-65-5" class="radio__label" data-flowchart-btn> Yes </a>
+                        <a href="#flowchart-581-5" class="radio__label" data-flowchart-btn> Yes </a>
                       </div>
                       <div class="radio">
-                        <a href="#flowchart-65-7" class="radio__label" data-flowchart-btn> No </a>
+                        <a href="#flowchart-581-7" class="radio__label" data-flowchart-btn> No </a>
                       </div>
                     </div>
                   </div>
-                  <div id="flowchart-65-5" class="flowchart__item " data-flowchart-item>
+                  <div id="flowchart-581-5" class="flowchart__item " data-flowchart-item>
                     <h3 class="h3 mb-2 flowchart__title"> Teams or Zoom? </h3>
                     <div class="mt-4">
                       <div class="radio">
-                        <a href="#flowchart-65-6" class="radio__label" data-flowchart-btn> Yes </a>
+                        <a href="#flowchart-581-6" class="radio__label" data-flowchart-btn> Yes </a>
                       </div>
                       <div class="radio">
-                        <a href="#flowchart-65-8" class="radio__label" data-flowchart-btn> No </a>
+                        <a href="#flowchart-581-8" class="radio__label" data-flowchart-btn> No </a>
                       </div>
                     </div>
                   </div>
-                  <div id="flowchart-65-6" class="flowchart__item  flowchart__item--answer" data-flowchart-item>
+                  <div id="flowchart-581-6" class="flowchart__item  flowchart__item--answer" data-flowchart-item>
                     <span class="d-block text-caps mb-5">Based on your answers</span>
                     <div class="typography"> Use Teams or Zoom. </div>
                   </div>
-                  <div id="flowchart-65-7" class="flowchart__item " data-flowchart-item>
+                  <div id="flowchart-581-7" class="flowchart__item " data-flowchart-item>
                     <h3 class="h3 mb-2 flowchart__title"> Simple Chat? (vs. a more fully featured, integrated capability?) </h3>
                     <div class="typography"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. </div>
                     <div class="mt-4">
                       <div class="radio">
-                        <a href="#flowchart-65-9" class="radio__label" data-flowchart-btn> Yes </a>
+                        <a href="#flowchart-581-9" class="radio__label" data-flowchart-btn> Yes </a>
                       </div>
                       <div class="radio">
-                        <a href="#flowchart-65-10" class="radio__label" data-flowchart-btn> No </a>
+                        <a href="#flowchart-581-10" class="radio__label" data-flowchart-btn> No </a>
                       </div>
                     </div>
                   </div>
-                  <div id="flowchart-65-8" class="flowchart__item  flowchart__item--answer" data-flowchart-item>
+                  <div id="flowchart-581-8" class="flowchart__item  flowchart__item--answer" data-flowchart-item>
                     <span class="d-block text-caps mb-5">Based on your answers</span>
                     <div class="typography"> Use select tool but consider switching to Teams or Zoom. </div>
                   </div>
-                  <div id="flowchart-65-9" class="flowchart__item  flowchart__item--answer" data-flowchart-item>
+                  <div id="flowchart-581-9" class="flowchart__item  flowchart__item--answer" data-flowchart-item>
                     <span class="d-block text-caps mb-5">Based on your answers</span>
                     <div class="typography"> We suggest Teams. <a href="#">Set up your Teams account</a>. </div>
                   </div>
-                  <div id="flowchart-65-10" class="flowchart__item  flowchart__item--answer" data-flowchart-item>
+                  <div id="flowchart-581-10" class="flowchart__item  flowchart__item--answer" data-flowchart-item>
                     <span class="d-block text-caps mb-5">Based on your answers</span>
                     <div class="typography"> We suggest Zoom. <a href="#">Set up your Zoom account</a>. </div>
                   </div>
@@ -696,10 +724,10 @@
                     <div class="col-md-6 col-lg-4 mb-7">
                       <figure class=" portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                         <div class="portrait-video__content js-video-content">
-                          <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-1150">
+                          <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-40">
                             <img src="https://via.placeholder.com/306x554" srcset="https://via.placeholder.com/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
                             <div class="portrait-video__body">
-                              <h3 class="portrait-video__title" id="midd-video-label-1150"> What do students do after graduation? </h3>
+                              <h3 class="portrait-video__title" id="midd-video-label-40"> What do students do after graduation? </h3>
                               <span class="button button--primary button--sm button--block  mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
                                   <use xlink:href="#icon-play">
                                 </svg>
@@ -707,12 +735,12 @@
                             </div>
                           </a>
                         </div>
-                        <div class="transcript js-transcript-1150 mt-2">
-                          <a href="#midd-transcript-1150" class="transcript__button" data-toggle-target=".js-transcript-1150" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                        <div class="transcript js-transcript-40 mt-2">
+                          <a href="#midd-transcript-40" class="transcript__button" data-toggle-target=".js-transcript-40" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                               <use xlink:href="#icon-chevron-down">
                             </svg>
                           </a>
-                          <div class="transcript__body" id="midd-transcript-1150">
+                          <div class="transcript__body" id="midd-transcript-40">
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -723,10 +751,10 @@
                     <div class="col-md-6 col-lg-4 mb-7">
                       <figure class=" portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                         <div class="portrait-video__content js-video-content">
-                          <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-684">
+                          <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-416">
                             <img src="https://via.placeholder.com/306x554" srcset="https://via.placeholder.com/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
                             <div class="portrait-video__body">
-                              <h3 class="portrait-video__title" id="midd-video-label-684"> What do students do after graduation? </h3>
+                              <h3 class="portrait-video__title" id="midd-video-label-416"> What do students do after graduation? </h3>
                               <span class="button button--primary button--sm button--block  mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
                                   <use xlink:href="#icon-play">
                                 </svg>
@@ -734,12 +762,12 @@
                             </div>
                           </a>
                         </div>
-                        <div class="transcript js-transcript-684 mt-2">
-                          <a href="#midd-transcript-684" class="transcript__button" data-toggle-target=".js-transcript-684" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                        <div class="transcript js-transcript-416 mt-2">
+                          <a href="#midd-transcript-416" class="transcript__button" data-toggle-target=".js-transcript-416" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                               <use xlink:href="#icon-chevron-down">
                             </svg>
                           </a>
-                          <div class="transcript__body" id="midd-transcript-684">
+                          <div class="transcript__body" id="midd-transcript-416">
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -750,10 +778,10 @@
                     <div class="col-md-6 col-lg-4 mb-7">
                       <figure class=" portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                         <div class="portrait-video__content js-video-content">
-                          <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-181">
+                          <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-764">
                             <img src="https://via.placeholder.com/306x554" srcset="https://via.placeholder.com/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
                             <div class="portrait-video__body">
-                              <h3 class="portrait-video__title" id="midd-video-label-181"> What do students do after graduation? </h3>
+                              <h3 class="portrait-video__title" id="midd-video-label-764"> What do students do after graduation? </h3>
                               <span class="button button--primary button--sm button--block  mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
                                   <use xlink:href="#icon-play">
                                 </svg>
@@ -761,12 +789,12 @@
                             </div>
                           </a>
                         </div>
-                        <div class="transcript js-transcript-181 mt-2">
-                          <a href="#midd-transcript-181" class="transcript__button" data-toggle-target=".js-transcript-181" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                        <div class="transcript js-transcript-764 mt-2">
+                          <a href="#midd-transcript-764" class="transcript__button" data-toggle-target=".js-transcript-764" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                               <use xlink:href="#icon-chevron-down">
                             </svg>
                           </a>
-                          <div class="transcript__body" id="midd-transcript-181">
+                          <div class="transcript__body" id="midd-transcript-764">
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -777,10 +805,10 @@
                     <div class="col-md-6 col-lg-4 mb-7">
                       <figure class=" portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                         <div class="portrait-video__content js-video-content">
-                          <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-397">
+                          <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-1185">
                             <img src="https://via.placeholder.com/306x554" srcset="https://via.placeholder.com/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
                             <div class="portrait-video__body">
-                              <h3 class="portrait-video__title" id="midd-video-label-397"> What do students do after graduation? </h3>
+                              <h3 class="portrait-video__title" id="midd-video-label-1185"> What do students do after graduation? </h3>
                               <span class="button button--primary button--sm button--block  mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
                                   <use xlink:href="#icon-play">
                                 </svg>
@@ -788,12 +816,12 @@
                             </div>
                           </a>
                         </div>
-                        <div class="transcript js-transcript-397 mt-2">
-                          <a href="#midd-transcript-397" class="transcript__button" data-toggle-target=".js-transcript-397" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                        <div class="transcript js-transcript-1185 mt-2">
+                          <a href="#midd-transcript-1185" class="transcript__button" data-toggle-target=".js-transcript-1185" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                               <use xlink:href="#icon-chevron-down">
                             </svg>
                           </a>
-                          <div class="transcript__body" id="midd-transcript-397">
+                          <div class="transcript__body" id="midd-transcript-1185">
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -804,10 +832,10 @@
                     <div class="col-md-6 col-lg-4 mb-7">
                       <figure class=" portrait-video js-video" data-video='<iframe src="https://player.vimeo.com/video/398243397?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                         <div class="portrait-video__content js-video-content">
-                          <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-1219">
+                          <a href="https://player.vimeo.com/video/398243397" class="js-video-link portrait-video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-1072">
                             <img src="https://via.placeholder.com/306x554" srcset="https://via.placeholder.com/306x554 306w" sizes="(max-width: 306px) 100vw, 306px" alt="" />
                             <div class="portrait-video__body">
-                              <h3 class="portrait-video__title" id="midd-video-label-1219"> What do students do after graduation? </h3>
+                              <h3 class="portrait-video__title" id="midd-video-label-1072"> What do students do after graduation? </h3>
                               <span class="button button--primary button--sm button--block  mt-2"> Play <svg class="icon ml-1 " focusable="false" aria-hidden="true">
                                   <use xlink:href="#icon-play">
                                 </svg>
@@ -815,12 +843,12 @@
                             </div>
                           </a>
                         </div>
-                        <div class="transcript js-transcript-1219 mt-2">
-                          <a href="#midd-transcript-1219" class="transcript__button" data-toggle-target=".js-transcript-1219" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                        <div class="transcript js-transcript-1072 mt-2">
+                          <a href="#midd-transcript-1072" class="transcript__button" data-toggle-target=".js-transcript-1072" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                               <use xlink:href="#icon-chevron-down">
                             </svg>
                           </a>
-                          <div class="transcript__body" id="midd-transcript-1219">
+                          <div class="transcript__body" id="midd-transcript-1072">
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                             <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -847,7 +875,7 @@
                       <!-- video iframe html should be escaped -->
                       <figure class="video js-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                         <div class="video__content js-video-content">
-                          <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-102">
+                          <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-1098">
                             <img src="https://via.placeholder.com/1136x639" srcset="https://via.placeholder.com/400x225 400w,https://via.placeholder.com/640x360 640w,https://via.placeholder.com/832x468 832w,https://via.placeholder.com/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
                             <span class="button  button--primary video__button"> Play <span class="ml-3">
                                 <svg class="icon  " focusable="false" aria-hidden="true">
@@ -858,14 +886,14 @@
                           </a>
                         </div>
                         <figcaption class=" video__body">
-                          <h3 class=video__title id="midd-video-label-102">Practical Skills for Positive Change</h3>
+                          <h3 class=video__title id="midd-video-label-1098">Practical Skills for Positive Change</h3>
                           <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
-                          <div class="transcript js-transcript-102 grid-video__transcript">
-                            <a href="#midd-transcript-102" class="transcript__button" data-toggle-target=".js-transcript-102" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                          <div class="transcript js-transcript-1098 grid-video__transcript">
+                            <a href="#midd-transcript-1098" class="transcript__button" data-toggle-target=".js-transcript-1098" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                                 <use xlink:href="#icon-chevron-down">
                               </svg>
                             </a>
-                            <div class="transcript__body" id="midd-transcript-102">
+                            <div class="transcript__body" id="midd-transcript-1098">
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -878,7 +906,7 @@
                       <!-- video iframe html should be escaped -->
                       <figure class="video js-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                         <div class="video__content js-video-content">
-                          <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-610">
+                          <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-922">
                             <img src="https://via.placeholder.com/1136x639" srcset="https://via.placeholder.com/400x225 400w,https://via.placeholder.com/640x360 640w,https://via.placeholder.com/832x468 832w,https://via.placeholder.com/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
                             <span class="button  button--primary video__button"> Play <span class="ml-3">
                                 <svg class="icon  " focusable="false" aria-hidden="true">
@@ -889,14 +917,14 @@
                           </a>
                         </div>
                         <figcaption class=" video__body">
-                          <h3 class=video__title id="midd-video-label-610">Practical Skills for Positive Change</h3>
+                          <h3 class=video__title id="midd-video-label-922">Practical Skills for Positive Change</h3>
                           <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
-                          <div class="transcript js-transcript-610 grid-video__transcript">
-                            <a href="#midd-transcript-610" class="transcript__button" data-toggle-target=".js-transcript-610" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                          <div class="transcript js-transcript-922 grid-video__transcript">
+                            <a href="#midd-transcript-922" class="transcript__button" data-toggle-target=".js-transcript-922" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                                 <use xlink:href="#icon-chevron-down">
                               </svg>
                             </a>
-                            <div class="transcript__body" id="midd-transcript-610">
+                            <div class="transcript__body" id="midd-transcript-922">
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -909,7 +937,7 @@
                       <!-- video iframe html should be escaped -->
                       <figure class="video js-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                         <div class="video__content js-video-content">
-                          <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-109">
+                          <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-510">
                             <img src="https://via.placeholder.com/1136x639" srcset="https://via.placeholder.com/400x225 400w,https://via.placeholder.com/640x360 640w,https://via.placeholder.com/832x468 832w,https://via.placeholder.com/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
                             <span class="button  button--primary video__button"> Play <span class="ml-3">
                                 <svg class="icon  " focusable="false" aria-hidden="true">
@@ -920,14 +948,14 @@
                           </a>
                         </div>
                         <figcaption class=" video__body">
-                          <h3 class=video__title id="midd-video-label-109">Practical Skills for Positive Change</h3>
+                          <h3 class=video__title id="midd-video-label-510">Practical Skills for Positive Change</h3>
                           <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
-                          <div class="transcript js-transcript-109 grid-video__transcript">
-                            <a href="#midd-transcript-109" class="transcript__button" data-toggle-target=".js-transcript-109" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                          <div class="transcript js-transcript-510 grid-video__transcript">
+                            <a href="#midd-transcript-510" class="transcript__button" data-toggle-target=".js-transcript-510" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                                 <use xlink:href="#icon-chevron-down">
                               </svg>
                             </a>
-                            <div class="transcript__body" id="midd-transcript-109">
+                            <div class="transcript__body" id="midd-transcript-510">
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -940,7 +968,7 @@
                       <!-- video iframe html should be escaped -->
                       <figure class="video js-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                         <div class="video__content js-video-content">
-                          <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-697">
+                          <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-794">
                             <img src="https://via.placeholder.com/1136x639" srcset="https://via.placeholder.com/400x225 400w,https://via.placeholder.com/640x360 640w,https://via.placeholder.com/832x468 832w,https://via.placeholder.com/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
                             <span class="button  button--primary video__button"> Play <span class="ml-3">
                                 <svg class="icon  " focusable="false" aria-hidden="true">
@@ -951,14 +979,14 @@
                           </a>
                         </div>
                         <figcaption class=" video__body">
-                          <h3 class=video__title id="midd-video-label-697">Practical Skills for Positive Change</h3>
+                          <h3 class=video__title id="midd-video-label-794">Practical Skills for Positive Change</h3>
                           <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
-                          <div class="transcript js-transcript-697 grid-video__transcript">
-                            <a href="#midd-transcript-697" class="transcript__button" data-toggle-target=".js-transcript-697" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                          <div class="transcript js-transcript-794 grid-video__transcript">
+                            <a href="#midd-transcript-794" class="transcript__button" data-toggle-target=".js-transcript-794" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                                 <use xlink:href="#icon-chevron-down">
                               </svg>
                             </a>
-                            <div class="transcript__body" id="midd-transcript-697">
+                            <div class="transcript__body" id="midd-transcript-794">
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -971,7 +999,7 @@
                       <!-- video iframe html should be escaped -->
                       <figure class="video js-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                         <div class="video__content js-video-content">
-                          <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-962">
+                          <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-25">
                             <img src="https://via.placeholder.com/1136x639" srcset="https://via.placeholder.com/400x225 400w,https://via.placeholder.com/640x360 640w,https://via.placeholder.com/832x468 832w,https://via.placeholder.com/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
                             <span class="button  button--primary video__button"> Play <span class="ml-3">
                                 <svg class="icon  " focusable="false" aria-hidden="true">
@@ -982,14 +1010,14 @@
                           </a>
                         </div>
                         <figcaption class=" video__body">
-                          <h3 class=video__title id="midd-video-label-962">Practical Skills for Positive Change</h3>
+                          <h3 class=video__title id="midd-video-label-25">Practical Skills for Positive Change</h3>
                           <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
-                          <div class="transcript js-transcript-962 grid-video__transcript">
-                            <a href="#midd-transcript-962" class="transcript__button" data-toggle-target=".js-transcript-962" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                          <div class="transcript js-transcript-25 grid-video__transcript">
+                            <a href="#midd-transcript-25" class="transcript__button" data-toggle-target=".js-transcript-25" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                                 <use xlink:href="#icon-chevron-down">
                               </svg>
                             </a>
-                            <div class="transcript__body" id="midd-transcript-962">
+                            <div class="transcript__body" id="midd-transcript-25">
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                               <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
@@ -2279,14 +2307,14 @@
                   <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h2>
                   <p>Lorem ipsum, dolor sit amet <a href="">consectetur</a> adipisicing elit. Rerum commodi qui dolor, voluptas praesentium numquam assumenda harum enim alias nihil recusandae expedita. Ipsam nobis eum porro beatae magni laudantium incidunt?</p>
                 </div>
-                <section class="section paragraph" aria-labelledby="section-41-label" data-digest-content>
+                <section class="section paragraph" aria-labelledby="section-317-label" data-digest-content>
                   <div class="section__header">
-                    <h2 class="section__title" id="section-41-label"> Schedule Component </h2>
+                    <h2 class="section__title" id="section-317-label"> Schedule Component </h2>
                     <p class="section__text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis reiciendis quod temporibus enim non beatae ipsa explicabo necessitatibus iure. Asperiores optio ad repudiandae culpa voluptatum pariatur saepe, tenetur recusandae possimus? </p>
                   </div>
                   <div class="schedule-header">
                     <p class="schedule-header__date"> Sunday, December 10 </p>
-                    <h3 id="midd-event-41" class="schedule-header__title"> Arrival Day This Title is longer so it extends outside the normal render area&nbsp;<a class="anchorjs-link" aria-label="Anchor" data-anchorjs-icon="&#59851;" href="#midd-event-41" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a>
+                    <h3 id="midd-event-317" class="schedule-header__title"> Arrival Day This Title is longer so it extends outside the normal render area&nbsp;<a class="anchorjs-link" aria-label="Anchor" data-anchorjs-icon="&#59851;" href="#midd-event-317" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a>
                     </h3>
                   </div>
                   <div class="schedule-item">
@@ -2443,153 +2471,153 @@
                 <section class="section paragraph--faq" data-digest-content>
                   <h2 class="section__title"> Frequently Asked Questions </h2>
                   <div class="accordion">
-                    <div class="accordion-item js-accordion-item-969">
+                    <div class="accordion-item js-accordion-item-1000">
                       <h3 class="accordion-item__title" role="tab">
-                        <a href="#midd-accordion-item-label-969" class="accordion-item__link" data-toggle-target=".js-accordion-item-969" aria-expanded="false" aria-controls="midd-accordion-content-969" aria-labelledby="midd-accordion-item-label-969" role="button">
+                        <a href="#midd-accordion-item-label-1000" class="accordion-item__link" data-toggle-target=".js-accordion-item-1000" aria-expanded="false" aria-controls="midd-accordion-content-1000" aria-labelledby="midd-accordion-item-label-1000" role="button">
                           <span class="accordion-item__char" aria-hidden>Q</span>
-                          <span class="accordion-item__label" id="midd-accordion-item-label-969"><span class="badge badge--primary mr-2">New</span>Lorem ipsum dolor sit amet, consectetur adipiscing elitc?</span>
+                          <span class="accordion-item__label" id="midd-accordion-item-label-1000"><span class="badge badge--primary mr-2">New</span>Lorem ipsum dolor sit amet, consectetur adipiscing elitc?</span>
                           <svg class="icon accordion-item__icon " focusable="false" aria-hidden="true">
                             <use xlink:href="#icon-chevron-down">
                           </svg>
                         </a>
                       </h3>
-                      <div class="accordion-item__content" id="midd-accordion-content-969" role="tabpanel" aria-labelledby="midd-accordion-item-label-969">
+                      <div class="accordion-item__content" id="midd-accordion-content-1000" role="tabpanel" aria-labelledby="midd-accordion-item-label-1000">
                         <span class="accordion-item__char" aria-hidden>A</span>
                         <div class="typography">
                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </div>
                       </div>
                     </div>
-                    <div class="accordion-item js-accordion-item-1193">
+                    <div class="accordion-item js-accordion-item-609">
                       <h3 class="accordion-item__title" role="tab">
-                        <a href="#midd-accordion-item-label-1193" class="accordion-item__link" data-toggle-target=".js-accordion-item-1193" aria-expanded="false" aria-controls="midd-accordion-content-1193" aria-labelledby="midd-accordion-item-label-1193" role="button">
+                        <a href="#midd-accordion-item-label-609" class="accordion-item__link" data-toggle-target=".js-accordion-item-609" aria-expanded="false" aria-controls="midd-accordion-content-609" aria-labelledby="midd-accordion-item-label-609" role="button">
                           <span class="accordion-item__char" aria-hidden>Q</span>
-                          <span class="accordion-item__label" id="midd-accordion-item-label-1193"><span class="badge badge--primary mr-2">Updated</span>Lorem ipsum dolor sit amet elit?</span>
+                          <span class="accordion-item__label" id="midd-accordion-item-label-609"><span class="badge badge--primary mr-2">Updated</span>Lorem ipsum dolor sit amet elit?</span>
                           <svg class="icon accordion-item__icon " focusable="false" aria-hidden="true">
                             <use xlink:href="#icon-chevron-down">
                           </svg>
                         </a>
                       </h3>
-                      <div class="accordion-item__content" id="midd-accordion-content-1193" role="tabpanel" aria-labelledby="midd-accordion-item-label-1193">
+                      <div class="accordion-item__content" id="midd-accordion-content-609" role="tabpanel" aria-labelledby="midd-accordion-item-label-609">
                         <span class="accordion-item__char" aria-hidden>A</span>
                         <div class="typography">
                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </div>
                       </div>
                     </div>
-                    <div class="accordion-item js-accordion-item-196">
+                    <div class="accordion-item js-accordion-item-212">
                       <h3 class="accordion-item__title" role="tab">
-                        <a href="#midd-accordion-item-label-196" class="accordion-item__link" data-toggle-target=".js-accordion-item-196" aria-expanded="false" aria-controls="midd-accordion-content-196" aria-labelledby="midd-accordion-item-label-196" role="button">
+                        <a href="#midd-accordion-item-label-212" class="accordion-item__link" data-toggle-target=".js-accordion-item-212" aria-expanded="false" aria-controls="midd-accordion-content-212" aria-labelledby="midd-accordion-item-label-212" role="button">
                           <span class="accordion-item__char" aria-hidden>Q</span>
-                          <span class="accordion-item__label" id="midd-accordion-item-label-196">Lorem ipsum consectetur adipiscing elit lorem ipsum consectetur adipiscing elit?</span>
+                          <span class="accordion-item__label" id="midd-accordion-item-label-212">Lorem ipsum consectetur adipiscing elit lorem ipsum consectetur adipiscing elit?</span>
                           <svg class="icon accordion-item__icon " focusable="false" aria-hidden="true">
                             <use xlink:href="#icon-chevron-down">
                           </svg>
                         </a>
                       </h3>
-                      <div class="accordion-item__content" id="midd-accordion-content-196" role="tabpanel" aria-labelledby="midd-accordion-item-label-196">
+                      <div class="accordion-item__content" id="midd-accordion-content-212" role="tabpanel" aria-labelledby="midd-accordion-item-label-212">
                         <span class="accordion-item__char" aria-hidden>A</span>
                         <div class="typography">
                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </div>
                       </div>
                     </div>
-                    <div class="accordion-item js-accordion-item-819">
+                    <div class="accordion-item js-accordion-item-1097">
                       <h3 class="accordion-item__title" role="tab">
-                        <a href="#midd-accordion-item-label-819" class="accordion-item__link" data-toggle-target=".js-accordion-item-819" aria-expanded="false" aria-controls="midd-accordion-content-819" aria-labelledby="midd-accordion-item-label-819" role="button">
+                        <a href="#midd-accordion-item-label-1097" class="accordion-item__link" data-toggle-target=".js-accordion-item-1097" aria-expanded="false" aria-controls="midd-accordion-content-1097" aria-labelledby="midd-accordion-item-label-1097" role="button">
                           <span class="accordion-item__char" aria-hidden>Q</span>
-                          <span class="accordion-item__label" id="midd-accordion-item-label-819">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</span>
+                          <span class="accordion-item__label" id="midd-accordion-item-label-1097">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</span>
                           <svg class="icon accordion-item__icon " focusable="false" aria-hidden="true">
                             <use xlink:href="#icon-chevron-down">
                           </svg>
                         </a>
                       </h3>
-                      <div class="accordion-item__content" id="midd-accordion-content-819" role="tabpanel" aria-labelledby="midd-accordion-item-label-819">
+                      <div class="accordion-item__content" id="midd-accordion-content-1097" role="tabpanel" aria-labelledby="midd-accordion-item-label-1097">
                         <span class="accordion-item__char" aria-hidden>A</span>
                         <div class="typography">
                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </div>
                       </div>
                     </div>
-                    <div class="accordion-item js-accordion-item-1168">
+                    <div class="accordion-item js-accordion-item-1076">
                       <h3 class="accordion-item__title" role="tab">
-                        <a href="#midd-accordion-item-label-1168" class="accordion-item__link" data-toggle-target=".js-accordion-item-1168" aria-expanded="false" aria-controls="midd-accordion-content-1168" aria-labelledby="midd-accordion-item-label-1168" role="button">
+                        <a href="#midd-accordion-item-label-1076" class="accordion-item__link" data-toggle-target=".js-accordion-item-1076" aria-expanded="false" aria-controls="midd-accordion-content-1076" aria-labelledby="midd-accordion-item-label-1076" role="button">
                           <span class="accordion-item__char" aria-hidden>Q</span>
-                          <span class="accordion-item__label" id="midd-accordion-item-label-1168">Lorem iipsum consectetur adipiscing elit lorem ipsum psum consectetur adipiscing elit lorem ipsum consectetur adipiscing elit?</span>
+                          <span class="accordion-item__label" id="midd-accordion-item-label-1076">Lorem iipsum consectetur adipiscing elit lorem ipsum psum consectetur adipiscing elit lorem ipsum consectetur adipiscing elit?</span>
                           <svg class="icon accordion-item__icon " focusable="false" aria-hidden="true">
                             <use xlink:href="#icon-chevron-down">
                           </svg>
                         </a>
                       </h3>
-                      <div class="accordion-item__content" id="midd-accordion-content-1168" role="tabpanel" aria-labelledby="midd-accordion-item-label-1168">
+                      <div class="accordion-item__content" id="midd-accordion-content-1076" role="tabpanel" aria-labelledby="midd-accordion-item-label-1076">
                         <span class="accordion-item__char" aria-hidden>A</span>
                         <div class="typography">
                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </div>
                       </div>
                     </div>
-                    <div class="accordion-item js-accordion-item-1134">
+                    <div class="accordion-item js-accordion-item-329">
                       <h3 class="accordion-item__title" role="tab">
-                        <a href="#midd-accordion-item-label-1134" class="accordion-item__link" data-toggle-target=".js-accordion-item-1134" aria-expanded="false" aria-controls="midd-accordion-content-1134" aria-labelledby="midd-accordion-item-label-1134" role="button">
+                        <a href="#midd-accordion-item-label-329" class="accordion-item__link" data-toggle-target=".js-accordion-item-329" aria-expanded="false" aria-controls="midd-accordion-content-329" aria-labelledby="midd-accordion-item-label-329" role="button">
                           <span class="accordion-item__char" aria-hidden>Q</span>
-                          <span class="accordion-item__label" id="midd-accordion-item-label-1134">Lorem ipsum consectetur adipiscing elit?</span>
+                          <span class="accordion-item__label" id="midd-accordion-item-label-329">Lorem ipsum consectetur adipiscing elit?</span>
                           <svg class="icon accordion-item__icon " focusable="false" aria-hidden="true">
                             <use xlink:href="#icon-chevron-down">
                           </svg>
                         </a>
                       </h3>
-                      <div class="accordion-item__content" id="midd-accordion-content-1134" role="tabpanel" aria-labelledby="midd-accordion-item-label-1134">
+                      <div class="accordion-item__content" id="midd-accordion-content-329" role="tabpanel" aria-labelledby="midd-accordion-item-label-329">
                         <span class="accordion-item__char" aria-hidden>A</span>
                         <div class="typography">
                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </div>
                       </div>
                     </div>
-                    <div class="accordion-item js-accordion-item-56">
+                    <div class="accordion-item js-accordion-item-308">
                       <h3 class="accordion-item__title" role="tab">
-                        <a href="#midd-accordion-item-label-56" class="accordion-item__link" data-toggle-target=".js-accordion-item-56" aria-expanded="false" aria-controls="midd-accordion-content-56" aria-labelledby="midd-accordion-item-label-56" role="button">
+                        <a href="#midd-accordion-item-label-308" class="accordion-item__link" data-toggle-target=".js-accordion-item-308" aria-expanded="false" aria-controls="midd-accordion-content-308" aria-labelledby="midd-accordion-item-label-308" role="button">
                           <span class="accordion-item__char" aria-hidden>Q</span>
-                          <span class="accordion-item__label" id="midd-accordion-item-label-56">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</span>
+                          <span class="accordion-item__label" id="midd-accordion-item-label-308">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</span>
                           <svg class="icon accordion-item__icon " focusable="false" aria-hidden="true">
                             <use xlink:href="#icon-chevron-down">
                           </svg>
                         </a>
                       </h3>
-                      <div class="accordion-item__content" id="midd-accordion-content-56" role="tabpanel" aria-labelledby="midd-accordion-item-label-56">
+                      <div class="accordion-item__content" id="midd-accordion-content-308" role="tabpanel" aria-labelledby="midd-accordion-item-label-308">
                         <span class="accordion-item__char" aria-hidden>A</span>
                         <div class="typography">
                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </div>
                       </div>
                     </div>
-                    <div class="accordion-item js-accordion-item-997">
+                    <div class="accordion-item js-accordion-item-628">
                       <h3 class="accordion-item__title" role="tab">
-                        <a href="#midd-accordion-item-label-997" class="accordion-item__link" data-toggle-target=".js-accordion-item-997" aria-expanded="false" aria-controls="midd-accordion-content-997" aria-labelledby="midd-accordion-item-label-997" role="button">
+                        <a href="#midd-accordion-item-label-628" class="accordion-item__link" data-toggle-target=".js-accordion-item-628" aria-expanded="false" aria-controls="midd-accordion-content-628" aria-labelledby="midd-accordion-item-label-628" role="button">
                           <span class="accordion-item__char" aria-hidden>Q</span>
-                          <span class="accordion-item__label" id="midd-accordion-item-label-997">Lorem ipsum dolor sit amet elit?</span>
+                          <span class="accordion-item__label" id="midd-accordion-item-label-628">Lorem ipsum dolor sit amet elit?</span>
                           <svg class="icon accordion-item__icon " focusable="false" aria-hidden="true">
                             <use xlink:href="#icon-chevron-down">
                           </svg>
                         </a>
                       </h3>
-                      <div class="accordion-item__content" id="midd-accordion-content-997" role="tabpanel" aria-labelledby="midd-accordion-item-label-997">
+                      <div class="accordion-item__content" id="midd-accordion-content-628" role="tabpanel" aria-labelledby="midd-accordion-item-label-628">
                         <span class="accordion-item__char" aria-hidden>A</span>
                         <div class="typography">
                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </div>
                       </div>
                     </div>
-                    <div class="accordion-item js-accordion-item-559">
+                    <div class="accordion-item js-accordion-item-322">
                       <h3 class="accordion-item__title" role="tab">
-                        <a href="#midd-accordion-item-label-559" class="accordion-item__link" data-toggle-target=".js-accordion-item-559" aria-expanded="false" aria-controls="midd-accordion-content-559" aria-labelledby="midd-accordion-item-label-559" role="button">
+                        <a href="#midd-accordion-item-label-322" class="accordion-item__link" data-toggle-target=".js-accordion-item-322" aria-expanded="false" aria-controls="midd-accordion-content-322" aria-labelledby="midd-accordion-item-label-322" role="button">
                           <span class="accordion-item__char" aria-hidden>Q</span>
-                          <span class="accordion-item__label" id="midd-accordion-item-label-559">Lorem ipsum consectetur adipiscing elit?</span>
+                          <span class="accordion-item__label" id="midd-accordion-item-label-322">Lorem ipsum consectetur adipiscing elit?</span>
                           <svg class="icon accordion-item__icon " focusable="false" aria-hidden="true">
                             <use xlink:href="#icon-chevron-down">
                           </svg>
                         </a>
                       </h3>
-                      <div class="accordion-item__content" id="midd-accordion-content-559" role="tabpanel" aria-labelledby="midd-accordion-item-label-559">
+                      <div class="accordion-item__content" id="midd-accordion-content-322" role="tabpanel" aria-labelledby="midd-accordion-item-label-322">
                         <span class="accordion-item__char" aria-hidden>A</span>
                         <div class="typography">
                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -2598,16 +2626,16 @@
                     </div>
                   </div>
                 </section>
-                <section class="section paragraph--course-list js-filter-269" data-digest-content>
+                <section class="section paragraph--course-list js-filter-852" data-digest-content>
                   <div class="section__header">
                     <h2 class="section__title"> Course Title </h2>
                     <p class="section__text"> These are the courses I teach. </p>
                   </div>
                   <div class="accordion">
-                    <div class="accordion-item js-accordion-item-784 accordion-item-current accordion-item-upcoming">
+                    <div class="accordion-item js-accordion-item-471 accordion-item-current accordion-item-upcoming">
                       <h3 class="accordion-item__title" role="tab">
-                        <a href="#midd-accordion-item-label-784" class="accordion-item__link" data-toggle-target=".js-accordion-item-784" aria-expanded="false" aria-controls="midd-accordion-content-784" aria-labelledby="midd-accordion-item-label-784" role="button">
-                          <span id="midd-accordion-item-label-784">
+                        <a href="#midd-accordion-item-label-471" class="accordion-item__link" data-toggle-target=".js-accordion-item-471" aria-expanded="false" aria-controls="midd-accordion-content-471" aria-labelledby="midd-accordion-item-label-471" role="button">
+                          <span id="midd-accordion-item-label-471">
                             <p class="accordion-item__label--bold">biol 0140<span class="badge badge--primary badge--outline ml-2">Current</span><span class="badge badge--primary badge--outline ml-2">Upcoming</span></p> Ecology and Evolution
                           </span>
                           <svg class="icon accordion-item__icon " focusable="false" aria-hidden="true">
@@ -2615,7 +2643,7 @@
                           </svg>
                         </a>
                       </h3>
-                      <div class="accordion-item__content--column" id="midd-accordion-content-784" role="tabpanel" aria-labelledby="midd-accordion-item-label-784">
+                      <div class="accordion-item__content--column" id="midd-accordion-content-471" role="tabpanel" aria-labelledby="midd-accordion-item-label-471">
                         <p class="accordion-item__sub-title">Course Description</p>
                         <div class="typography">
                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -2631,10 +2659,10 @@
                         </div>
                       </div>
                     </div>
-                    <div class="accordion-item js-accordion-item-1114">
+                    <div class="accordion-item js-accordion-item-5">
                       <h3 class="accordion-item__title" role="tab">
-                        <a href="#midd-accordion-item-label-1114" class="accordion-item__link" data-toggle-target=".js-accordion-item-1114" aria-expanded="false" aria-controls="midd-accordion-content-1114" aria-labelledby="midd-accordion-item-label-1114" role="button">
-                          <span id="midd-accordion-item-label-1114">
+                        <a href="#midd-accordion-item-label-5" class="accordion-item__link" data-toggle-target=".js-accordion-item-5" aria-expanded="false" aria-controls="midd-accordion-content-5" aria-labelledby="midd-accordion-item-label-5" role="button">
+                          <span id="midd-accordion-item-label-5">
                             <p class="accordion-item__label--bold">biol 0140</p> Film and Television, from Apocolipse Now to the Simpsons
                           </span>
                           <svg class="icon accordion-item__icon " focusable="false" aria-hidden="true">
@@ -2642,7 +2670,7 @@
                           </svg>
                         </a>
                       </h3>
-                      <div class="accordion-item__content--column" id="midd-accordion-content-1114" role="tabpanel" aria-labelledby="midd-accordion-item-label-1114">
+                      <div class="accordion-item__content--column" id="midd-accordion-content-5" role="tabpanel" aria-labelledby="midd-accordion-item-label-5">
                         <p class="accordion-item__sub-title">Course Description</p>
                         <div class="typography">
                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -2653,10 +2681,10 @@
                         </div>
                       </div>
                     </div>
-                    <div class="accordion-item js-accordion-item-624 accordion-item-current">
+                    <div class="accordion-item js-accordion-item-201 accordion-item-current">
                       <h3 class="accordion-item__title" role="tab">
-                        <a href="#midd-accordion-item-label-624" class="accordion-item__link" data-toggle-target=".js-accordion-item-624" aria-expanded="false" aria-controls="midd-accordion-content-624" aria-labelledby="midd-accordion-item-label-624" role="button">
-                          <span id="midd-accordion-item-label-624">
+                        <a href="#midd-accordion-item-label-201" class="accordion-item__link" data-toggle-target=".js-accordion-item-201" aria-expanded="false" aria-controls="midd-accordion-content-201" aria-labelledby="midd-accordion-item-label-201" role="button">
+                          <span id="midd-accordion-item-label-201">
                             <p class="accordion-item__label--bold">biol 0140<span class="badge badge--primary badge--outline ml-2">Current</span></p> Biology of Plants Growing in the Forest
                           </span>
                           <svg class="icon accordion-item__icon " focusable="false" aria-hidden="true">
@@ -2664,7 +2692,7 @@
                           </svg>
                         </a>
                       </h3>
-                      <div class="accordion-item__content--column" id="midd-accordion-content-624" role="tabpanel" aria-labelledby="midd-accordion-item-label-624">
+                      <div class="accordion-item__content--column" id="midd-accordion-content-201" role="tabpanel" aria-labelledby="midd-accordion-item-label-201">
                         <p class="accordion-item__sub-title">Course Description</p>
                         <div class="typography">
                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -2679,10 +2707,10 @@
                         </div>
                       </div>
                     </div>
-                    <div class="accordion-item js-accordion-item-69 accordion-item-upcoming">
+                    <div class="accordion-item js-accordion-item-400 accordion-item-upcoming">
                       <h3 class="accordion-item__title" role="tab">
-                        <a href="#midd-accordion-item-label-69" class="accordion-item__link" data-toggle-target=".js-accordion-item-69" aria-expanded="false" aria-controls="midd-accordion-content-69" aria-labelledby="midd-accordion-item-label-69" role="button">
-                          <span id="midd-accordion-item-label-69">
+                        <a href="#midd-accordion-item-label-400" class="accordion-item__link" data-toggle-target=".js-accordion-item-400" aria-expanded="false" aria-controls="midd-accordion-content-400" aria-labelledby="midd-accordion-item-label-400" role="button">
+                          <span id="midd-accordion-item-label-400">
                             <p class="accordion-item__label--bold">biol 0140<span class="badge badge--primary badge--outline ml-2">Upcoming</span></p> Tropical Ecology and how reefs grow
                           </span>
                           <svg class="icon accordion-item__icon " focusable="false" aria-hidden="true">
@@ -2690,7 +2718,7 @@
                           </svg>
                         </a>
                       </h3>
-                      <div class="accordion-item__content--column" id="midd-accordion-content-69" role="tabpanel" aria-labelledby="midd-accordion-item-label-69">
+                      <div class="accordion-item__content--column" id="midd-accordion-content-400" role="tabpanel" aria-labelledby="midd-accordion-item-label-400">
                         <p class="accordion-item__sub-title">Course Description</p>
                         <div class="typography">
                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -2701,10 +2729,10 @@
                         </div>
                       </div>
                     </div>
-                    <div class="accordion-item js-accordion-item-813">
+                    <div class="accordion-item js-accordion-item-2">
                       <h3 class="accordion-item__title" role="tab">
-                        <a href="#midd-accordion-item-label-813" class="accordion-item__link" data-toggle-target=".js-accordion-item-813" aria-expanded="false" aria-controls="midd-accordion-content-813" aria-labelledby="midd-accordion-item-label-813" role="button">
-                          <span id="midd-accordion-item-label-813">
+                        <a href="#midd-accordion-item-label-2" class="accordion-item__link" data-toggle-target=".js-accordion-item-2" aria-expanded="false" aria-controls="midd-accordion-content-2" aria-labelledby="midd-accordion-item-label-2" role="button">
+                          <span id="midd-accordion-item-label-2">
                             <p class="accordion-item__label--bold">biol 0140</p> Teaching Literature from Around the World
                           </span>
                           <svg class="icon accordion-item__icon " focusable="false" aria-hidden="true">
@@ -2712,7 +2740,7 @@
                           </svg>
                         </a>
                       </h3>
-                      <div class="accordion-item__content--column" id="midd-accordion-content-813" role="tabpanel" aria-labelledby="midd-accordion-item-label-813">
+                      <div class="accordion-item__content--column" id="midd-accordion-content-2" role="tabpanel" aria-labelledby="midd-accordion-item-label-2">
                         <p class="accordion-item__sub-title">Course Description</p>
                         <div class="typography">
                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -2873,7 +2901,7 @@
                   <!-- video iframe html should be escaped -->
                   <figure class="video js-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
                     <div class="video__content js-video-content">
-                      <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-712">
+                      <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-1039">
                         <img src="https://via.placeholder.com/1136x639" srcset="https://via.placeholder.com/400x225 400w,https://via.placeholder.com/640x360 640w,https://via.placeholder.com/832x468 832w,https://via.placeholder.com/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
                         <span class="button  button--primary video__button"> Play <span class="ml-3">
                             <svg class="icon  " focusable="false" aria-hidden="true">
@@ -2884,14 +2912,14 @@
                       </a>
                     </div>
                     <figcaption class=" video__body">
-                      <h3 class=video__title id="midd-video-label-712">Practical Skills for Positive Change</h3>
+                      <h3 class=video__title id="midd-video-label-1039">Practical Skills for Positive Change</h3>
                       <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
-                      <div class="transcript js-transcript-712 grid-video__transcript">
-                        <a href="#midd-transcript-712" class="transcript__button" data-toggle-target=".js-transcript-712" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
+                      <div class="transcript js-transcript-1039 grid-video__transcript">
+                        <a href="#midd-transcript-1039" class="transcript__button" data-toggle-target=".js-transcript-1039" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
                             <use xlink:href="#icon-chevron-down">
                           </svg>
                         </a>
-                        <div class="transcript__body" id="midd-transcript-712">
+                        <div class="transcript__body" id="midd-transcript-1039">
                           <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                           <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
                           <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
