@@ -1,17 +1,21 @@
-<article class="story-list-item clearfix" aria-labelledby="midd-story-label-{{id}}">
+<article class="story-list-item clearfix"
+  aria-labelledby="midd-story-label-{{ id }}">
   <div class="float-right">
     <a href="">
       <figure class="media">
-        {% include 'partials/img.twig' with { name: 'journey_story_teaser' } %}
+        {% include 'partials/img.twig' with {
+          name: 'journey_story_teaser'
+        } %}
       </figure>
     </a>
   </div>
 
   <div class="col-sm-7 px-0">
-    <h2 id="midd-story-label-{{id}}">
+    <h2 id="midd-story-label-{{ id }}">
       <a href="#">
         {% if env.test or random(1) %}
-          Longer headline starting here lorem ipsum dolor sit amet consectetur adipisicing elit
+          Longer headline starting here lorem ipsum dolor sit amet consectetur
+          adipisicing elit
         {% else %}
           Shorter headline a few words
         {% endif %}
@@ -20,8 +24,15 @@
     <p class="f4">
       Student/Alumni's Name
     </p>
-    <p class="f4 mt-2"><em>Publisher Name</em></p>
-    <p class="f4 mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum rem dolor harum consequuntur laudantium commodi accusantium debitis quisquam eligendi deleniti itaque saepe voluptatibus soluta necessitatibus, voluptas minus possimus? Itaque, sed.</p>
-    <a class="f4 story-link">Link to Story</a>
+    <p class="f4 mt-2">
+      <em>Publisher Name</em>
+    </p>
+    <p class="f4 mb-3">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum rem dolor
+      harum consequuntur laudantium commodi accusantium debitis quisquam
+      eligendi deleniti itaque saepe voluptatibus soluta necessitatibus,
+      voluptas minus possimus? Itaque, sed.
+    </p>
+    <a class="f2 font-medium story-link">Link to Story</a>
   </div>
 </article>
