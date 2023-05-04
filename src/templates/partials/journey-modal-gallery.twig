@@ -1,6 +1,6 @@
 {# <div class="journey-modal-gallery lightbox"> #}
 {% set placehold = 'https://placekitten.com/' %}
-<div class="lightbox__images">
+<div class="lightbox__images" aria-describedby="midd-video-label-{{id}}">
 
   {% for item in journey_gallery_data %}
     {% set src = '' %}

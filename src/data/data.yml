@@ -413,17 +413,32 @@ midd_nav:
   - text: Our Schools
     href: "#"
     items:
-      - href: http://www.middlebury.edu
+      - href: http://www.middlebury.edu/college/
         text: Middlebury College
       - href: https://www.middlebury.edu/institute/
         text: Middlebury Institute of International Studies
-      - href: http://www.middlebury.edu/ls
+      - href: http://www.middlebury.edu/language-schools
         text: Middlebury Language Schools
-      - href: http://www.middlebury.edu/study-abroad
+      - href: http://www.middlebury.edu/schools-abroad
         text: Middlebury C.V. Starr Schools Abroad
-      - href: http://www.middlebury.edu/blse
+      - href: http://www.middlebury.edu/school-english
         text: Middlebury Bread Loaf School of English
-      - href: http://www.middlebury.edu/bread-loaf-conferences
+      - href: http://www.middlebury.edu/writers-conference
+        text: Middlebury Bread Loaf Writers' Conference
+  - text: Admissions
+    href: "#"
+    items:
+      - href: http://www.middlebury.edu/college/admissions
+        text: Middlebury College
+      - href: https://www.middlebury.edu/institute/admissions
+        text: Middlebury Institute of International Studies
+      - href: http://www.middlebury.edu/language-schools/admissions
+        text: Middlebury Language Schools
+      - href: http://www.middlebury.edu/schools-abroad/admissions
+        text: Middlebury C.V. Starr Schools Abroad
+      - href: http://www.middlebury.edu/school-english/admissions
+        text: Middlebury Bread Loaf School of English
+      - href: http://www.middlebury.edu/writers-conference
         text: Middlebury Bread Loaf Writers' Conference
   - href: http://www.middlebury.edu/about
     text: About Middlebury
