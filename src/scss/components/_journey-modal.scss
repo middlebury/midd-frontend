@@ -377,15 +377,16 @@ $school-theme-colors: (
       text-decoration: underline;
       color: $white;
       background: $navy;
+      opacity: 1;
+    }
+
+    &:focus {
+      color: $navy;
+      background: $white;
     }
 
     .icon {
       margin-left: $spacing-3 !important;
-    }
-
-    &:hover,
-    &:focus {
-      opacity: 1;
     }
 
     &.desktop {
