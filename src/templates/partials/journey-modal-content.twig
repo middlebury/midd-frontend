@@ -3,7 +3,7 @@
 
 <div class="journey-modal__overlay swiper-slide {{content_type}}-slide" data-hash={{hash_class}}>
   <div class="container px-0 journey-modal__overlay-container">
-    <div class="{% if content_type == 'portrait-video'%}col-12 mb-md-0 mb-lg-7{% elseif content_type == 'video-group'%}col-12 mb-2 mb-md-4 mb-lg-5{% elseif content_type == 'gallery' %}col-lg-12 px-3 px-lg-5 m-auto mb-5 mb-md-7 mb-lg-9{% else %}col-lg-10 m-auto mb-5 mb-md-7 mb-lg-9{% endif %}">
+    <div class="{% if content_type == 'portrait-video'%}col-12 mb-md-0 mb-lg-7{% elseif content_type == 'video-group'%}col-12 mb-3 mb-md-4 mb-lg-7{% elseif content_type == 'gallery' %}col-lg-12 px-3 px-lg-5 m-auto mb-5 mb-md-7 mb-lg-9{% else %}col-lg-10 m-auto mb-5 mb-md-7 mb-lg-9{% endif %}">
       <h2 class="journey-modal--title {{blurb ? 'offset-lg-1' : ''}}" id="midd-video-label-{{hash_class}}">{{label}}</h2>
       {% if blurb %}
         <p class="journey-modal--blurb col-lg-10 px-0 offset-lg-1">Learning at Middlebury is not a passive experience. Sure, many—if not most—students will find plenty of time for quiet contemplation. Their academic journeys will also involve plenty of “doing”—whether that means participation in competitive fellowships or internships; entrepreneurial ventures at the local, state, national, and international levels; field research with faculty; or co- and extracurricular activities that perfectly complement and enhance those more quiet moments.</p>
@@ -34,7 +34,7 @@
       {% elseif content_type == 'video-group' %}
         <div class="row">
           {% for item in 1..5 %}
-            <div class="col-md-4 mb-4 mb-lg-8">
+            <div class="col-md-4 mb-5 mb-lg-7">
               {% include 'partials/video.twig' with {
                   id: hash_class,
                   hide_title: true,
