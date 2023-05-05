@@ -838,10 +838,10 @@ $school-theme-colors: (
           display: block;
           content: '';
           width: 100%;
-          padding-top: percentage(178/288);
+          padding-top: percentage(185/288);
 
           @include breakpoint(md) {
-            padding-top: percentage(210/224);
+            padding-top: percentage(255/272);
           }
 
           @media only screen and (min-width: 1200px) {
