@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "ES2015",
+    "module": "ES2020",
     "noImplicitAny": true,
     "target": "ES5",
     "jsx": "react",
@@ -12,5 +12,5 @@
     "allowJs": true
   },
   "include": ["src/js/**/*.ts"],
-  "exclude": ["./src/js/journey.ts"]
+  "exclude": ["src/js/journey-old.ts"]
 }

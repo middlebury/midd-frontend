@@ -77,6 +77,7 @@ $navy-light: #174872 !default;
 $navy: #0d395f !default;
 $navy-dark: #022543 !default;
 
+$blue-darker: #002444 !default;
 $blue-dark: #407ab1 !default;
 $blue: #75a3cd !default;
 $blue-light: #97bbd5 !default;
@@ -91,6 +92,7 @@ $green-light: #23b39c !default;
 $teal: #017c9f !default;
 $yellow: #ffc107 !default;
 $yellow-light: #fedb85 !default;
+$journey-yellow: #f4b824;
 
 // shades
 $white: #fff !default;
@@ -101,6 +103,8 @@ $gray: #767676 !default;
 $gray-light: #dedede !default;
 $gray-lighter: #f8f8f8 !default;
 $gray-dark: #414142 !default;
+
+$color-journey-border: #d9d9d9;
 
 // util colors
 $color-active: $sky;
@@ -196,6 +200,7 @@ $font-weight-bold: 700;
 $line-height-solid: 1;
 $line-height-heading: 1.4;
 $line-height-body: 1.7;
+$line-height-journey: 1.1;
 
 $line-heights: (
   'body': $line-height-body,
@@ -352,6 +357,13 @@ $btn-themes: (
     border-color: $btn-light-bg,
     hover-color: $btn-light-color,
     hover-bg: $btn-light-bg
+  ),
+  'dark-outline': (
+    color: $btn-light-color,
+    bg: transparent,
+    border-color: $btn-light-color,
+    hover-color: $btn-light-bg,
+    hover-bg: $btn-light-color
   )
 );
 
@@ -473,8 +485,10 @@ $z-index-box-menu: 6;
 $z-index-app-header-nav: 6;
 $z-index-app-header-search: 6;
 
-$z-index-to-top-button: 9;
+$z-index-to-top-button: 25;
 
 $z-index-homepage-header-button: 10;
 
 $z-index-dispatches: 2;
+
+$z-index-journey-modal: 5;
