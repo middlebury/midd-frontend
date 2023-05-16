@@ -845,7 +845,11 @@ $school-theme-colors: (
           }
 
           @media only screen and (min-width: 1200px) {
-            padding-top: percentage(234/416);
+            padding-top: percentage(200/330);
+          }
+
+          @include breakpoint(xl) {
+            padding-top: percentage(9/16);
           }
         }
 

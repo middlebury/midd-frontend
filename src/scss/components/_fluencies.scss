@@ -165,7 +165,11 @@
           }
 
           p {
-            font-size: $typescale-3;
+            font-size: $typescale-2;
+
+            @include breakpoint(xl) {
+              font-size: $typescale-3;
+            }
           }
         }
       }
