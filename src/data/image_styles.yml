@@ -244,8 +244,8 @@ image_styles:
     title: Images in portrait video on homepage
     ratio: "9:16"
     srcset:
-      - 416x740
-      - 336x598
-      - 290x516
       - 224x399
+      - 290x516
+      - 336x598
+      - 416x740
     sizes: "(max-width: 416px) 100vw, 416px"
