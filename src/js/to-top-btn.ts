@@ -33,4 +33,7 @@ if (btn) {
 
 // Functionality for the college homepage grid's 'Show Less' button for jumping top on click
 const gridBtn = $('.js-grid-to-top-btn');
-const gridBtnSmoothScroll = new SmoothScroll([gridBtn]);
+
+if(gridBtn) {
+  new SmoothScroll([gridBtn]);
+}
