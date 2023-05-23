@@ -12,7 +12,8 @@
         {% include 'partials/video.twig' with {
           id: hash_class,
           hide_title_label: true,
-          grid_video: true
+          grid_video: true,
+          lazy: true
         } %}
       {% elseif content_type == 'story' %}
         {% include 'partials/journey-modal-story.twig' with {
@@ -26,7 +27,8 @@
               {% include 'partials/portrait-video.twig' with {
                   id: hash_class,
                   hide_title_label: true,
-                  cobblestone_modal: true
+                  cobblestone_modal: true,
+                  lazy: true
                 } %}
             </div>
           {% endfor %}
@@ -38,7 +40,8 @@
               {% include 'partials/video.twig' with {
                   id: hash_class,
                   hide_title_label: true,
-                  grid_video: true
+                  grid_video: true,
+                  lazy: true
                 } %}
             </div>
           {% endfor %}
