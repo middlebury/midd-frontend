@@ -9,7 +9,8 @@
   </span>
 
   {% include 'partials/img.twig' with {
-    name: image_name
+    name: image_name,
+    lazy: true
   } %}
 </div>
 
@@ -38,7 +39,8 @@
     {% if content_type == 'play' %}
       {% include 'partials/video.twig' with {
         grid_video: true,
-        grid_caption_offset: true
+        grid_caption_offset: true,
+        lazy: true
       } %}
       {# {% include 'partials/portrait-video.twig' with {
               grid_video: true,
@@ -47,7 +49,8 @@
     {% elseif content_type == 'expand' %}
       <figure class="grid-modal__image">
         {% include 'partials/img.twig' with {
-          name: overlay_image
+          name: overlay_image,
+          lazy: true
         } %}
         <figcaption class="offset-lg-1 grid-image__body">
           <h3 class="sr-only" id="midd-video-label-729">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
