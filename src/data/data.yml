@@ -413,6 +413,42 @@ midd_nav:
   - text: Our Schools
     href: "#"
     items:
+      - href: http://www.middlebury.edu/college/
+        text: Middlebury College
+      - href: https://www.middlebury.edu/institute/
+        text: Middlebury Institute of International Studies
+      - href: http://www.middlebury.edu/language-schools
+        text: Middlebury Language Schools
+      - href: http://www.middlebury.edu/schools-abroad
+        text: Middlebury C.V. Starr Schools Abroad
+      - href: http://www.middlebury.edu/school-english
+        text: Middlebury Bread Loaf School of English
+      - href: http://www.middlebury.edu/writers-conference
+        text: Middlebury Bread Loaf Writers' Conference
+  - text: Admissions
+    href: "#"
+    items:
+      - href: http://www.middlebury.edu/college/admissions
+        text: Middlebury College Admissions
+      - href: https://www.middlebury.edu/institute/admissions
+        text: Middlebury Institute of International Studies Admissions
+      - href: http://www.middlebury.edu/language-schools/admissions
+        text: Middlebury Language Schools Admissions
+      - href: http://www.middlebury.edu/schools-abroad/admissions
+        text: Middlebury C.V. Starr Schools Abroad Admissions
+      - href: http://www.middlebury.edu/school-english/admissions
+        text: Middlebury Bread Loaf School of English Admissions
+      - href: http://www.middlebury.edu/writers-conference
+        text: Middlebury Bread Loaf Writers' Conference Admissions
+  - href: http://www.middlebury.edu/about
+    text: About Middlebury
+  - href: http://www.middlebury.edu/office/
+    text: Offices and Services
+
+institutional_nav:
+  - text: Our Schools
+    href: "#"
+    items:
       - href: http://www.middlebury.edu
         text: Middlebury College
       - href: http://www.middlebury.edu/ls
@@ -427,10 +463,10 @@ midd_nav:
         text: C.V. Starr Schools Abroad
       - href: http://www.middlebury.edu/environment
         text: School of the Environment
-  - href: http://www.middlebury.edu/about
-    text: About Middlebury
-  - href: http://www.middlebury.edu/office/
-    text: Offices and Services
+  - text: About Middlebury
+    href: "#"
+  - text: Office and Services
+    href: "#"
 
 system_status:
   - name: Internet<br>(Northbound Link)
@@ -645,3 +681,74 @@ area_of_study:
   - category: W
     course_names:
       - name: Writing and Rhetoric Program
+
+journey_gallery_data:
+  - src: http://placekitten.com/1376/774
+    width: 1376
+    height: 774
+    srcset:
+      - 1376/774
+      - 1136/639
+      - 736/414
+      - 320/180
+    alt: ""
+    sizes: ""
+    caption: Lorem ipsum <a href="#">dolor</a> sit amet consectetur adipisicing elit.
+
+  - src: http://placekitten.com/1376/774
+    width: 1376
+    height: 774
+    srcset:
+      - 1376/774
+      - 1136/639
+      - 736/414
+      - 320/180
+    alt: ""
+    sizes: ""
+    caption: Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
+
+  - src: http://placekitten.com/1376/774
+    width: 1376
+    height: 774
+    srcset:
+      - 1376/774
+      - 1136/639
+      - 736/414
+      - 320/180
+    alt: ""
+    sizes: ""
+    caption: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+
+  - src: http://placekitten.com/1376/774
+    width: 1376
+    height: 774
+    srcset:
+      - 1376/774
+      - 1136/639
+      - 736/414
+      - 320/180
+    alt: ""
+    sizes: ""
+    caption: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+
+  - src: http://placekitten.com/1376/774
+    width: 1376
+    height: 774
+    srcset:
+      - 1376/774
+      - 1136/639
+      - 736/414
+      - 320/180
+    alt: ""
+    sizes: ""
+    caption: Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
+
+four_fluencies:
+  - title: Solving the Climate Crisis
+    blurb: Middlebury transforming our energy system and responding to issues of climate change, social injustice, and the well-being of all.
+  - title: Analyzing Data
+    blurb: Middlebury providing students access to powerful technological tools and supporting their ability to apply them across disciplines for critical exploration.
+  - title: Transforming Conflict
+    blurb: Middlebury’s incubator for research, teaching, and student experiences to shift the dynamics underlying conflict to address divisiveness in society.
+  - title: Understanding Cultural Difference
+    blurb: Middlebury fostering students’ ability to listen, communicate, and take action in communities with a range of linguistic and cultural backgrounds.

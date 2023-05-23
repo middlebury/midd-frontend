@@ -17,7 +17,7 @@
       margin-bottom: 0;
     }
 
-    > .form_label {
+    >.form_label {
       display: none;
     }
   }
@@ -28,7 +28,7 @@
 
   .action,
   .form_question,
-  fieldset > div {
+  fieldset>div {
     @include form-group;
   }
 
@@ -68,7 +68,8 @@
       display: flex;
     }
 
-    select, input {
+    select,
+    input {
       @include breakpoint(sm) {
         flex: 0 0 auto;
         margin-bottom: 0;
@@ -78,5 +79,9 @@
         margin-right: $spacing-3;
       }
     }
+  }
+
+  .form_loading.hidden {
+    display: none;
   }
 }

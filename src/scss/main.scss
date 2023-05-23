@@ -9,7 +9,7 @@
 
 // vendor
 @import '../../node_modules/normalize.css/normalize';
-@import '../../node_modules/swiper/swiper';
+@import '../../node_modules/swiper/swiper.scss';
 @import '../../node_modules/swiper/modules/a11y/a11y';
 
 // base
@@ -35,17 +35,21 @@
 @import 'components/card-carousel';
 @import 'components/chart';
 @import 'components/checkboxes';
+@import 'components/cookie-banner';
 @import 'components/count';
 @import 'components/course-list';
 @import 'components/cta-bar';
 @import 'components/cta-group';
 @import 'components/datepicker';
 @import 'components/digest';
+@import 'components/dispatches-item';
+@import 'components/dispatches';
 @import 'components/drawer-nav';
 @import 'components/drawer';
 @import 'components/dropdown';
 @import 'components/emma-form';
 @import 'components/flowchart';
+@import 'components/fluencies';
 @import 'components/filter';
 @import 'components/foldable';
 @import 'components/footer-menu';
@@ -60,7 +64,9 @@
 @import 'components/icon';
 @import 'components/image';
 @import 'components/input-group';
-// @import 'components/journey';
+@import 'components/institutional-header';
+@import 'components/journey';
+@import 'components/journey-modal';
 @import 'components/lib-search';
 @import 'components/lightbox';
 @import 'components/link-list';
@@ -74,10 +80,12 @@
 @import 'components/mega-cta';
 @import 'components/midd-footer';
 @import 'components/midd-header';
+@import 'components/miis-header';
 @import 'components/midd-nav';
 @import 'components/midd-search';
 @import 'components/nav';
 @import 'components/nav-dropdown';
+@import 'components/non-discrimination-policy';
 @import 'components/office-hours';
 @import 'components/office-footer';
 @import 'components/page-header';

@@ -1,70 +1,250 @@
-// https://www.visualcinnamon.com/2016/01/animating-dashed-line-d3
+import MicroModal from 'micromodal';
+import anime, { AnimeInstance } from 'animejs';
+import { $, $$, addClass } from './utils/dom';
+import JourneySwiper from './journey-swiper';
+import onscroll from './utils/onscroll';
+import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
+import lozad from 'lozad';
 
-// Code not used in production yet. Remove eslint-disable when we ship it.
-/* eslint-disable */
+class Journey {
+  elem: HTMLElement;
+  pathEl: SVGGeometryElement;
+  animPauseThreshold: number;
+  totalPathLength: number;
+  journeyLineAnimInstance: AnimeInstance;
+  journeySections: HTMLElement[];
+  firstSection: HTMLElement;
+  io: IntersectionObserver;
+  deviceType: string;
+  timeout: NodeJS.Timeout;
+  scrollRef: object;
+  sectionNames: string[];
+  sectionIndex: number;
+  sectionLinksElems: {
+    [key: number]: HTMLElement;
+  };
+  deviceInfo: {
+    [key: string]: {
+      [key: string]: number[];
+    };
+  };
 
-const pathEl = document.querySelector('.journey-line--desktop path');
-// @ts-expect-error ts-migrate(2531) FIXME: Object is possibly 'null'.
-const totalLength = pathEl.getTotalLength();
-const dashing = '2, 2';
+  constructor(el: HTMLElement) {
+    this.elem = el;
+    this.journeySections = $$('.js-journey-section');
+    this.firstSection = this.journeySections.shift();
+    this.animPauseThreshold = 0;
+    this.sectionIndex = 0;
+    this.sectionNames = ['learning', 'thinking', 'opportunity'];
+    this.sectionLinksElems = {};
+    this.deviceInfo = {
+      desktop: {
+        dotsAnimBreaks: [0, 34, 70],
+        lineAnimBreaks: [25, 60, 101]
+      },
+      tablet: {
+        dotsAnimBreaks: [0, 39, 77],
+        lineAnimBreaks: [29, 67, 101]
+      },
+      mobile: {
+        dotsAnimBreaks: [0, 32, 70],
+        lineAnimBreaks: [28, 65, 101]
+      }
+    };
 
-const dashLength = dashing
-  .split(/[\s,]/)
-  .map(a => parseFloat(a) || 0)
-  .reduce((a, b) => a + b, 0);
+    this.handleIntersection = this.handleIntersection.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
+    this.deviceInit = this.deviceInit.bind(this);
+    this.init();
+  }
 
-const dashCount = Math.ceil(totalLength / dashLength);
-const newDashes = new Array(dashCount).join(dashing + ' ');
-const dashArray = newDashes + ' 0, ' + totalLength;
+  init() {
+    window.location.hash = '';
+    this.deviceInit();
+    this.addListeners();
 
-// @ts-expect-error ts-migrate(2578) FIXME: Unused '@ts-expect-error' directive.
-// @ts-expect-error ts-migrate(2531) FIXME: Object is possibly 'null'.
-pathEl.setAttribute('stroke-dashoffset', totalLength);
-// @ts-expect-error ts-migrate(2578) FIXME: Unused '@ts-expect-error' directive.
-// @ts-expect-error ts-migrate(2531) FIXME: Object is possibly 'null'.
-pathEl.setAttribute('stroke-dasharray', dashArray);
+    if (!PREFERS_REDUCED_MOTION) {
+      this.svgInit();
+      this.animInit();
+      this.sectionInit();
+    }
 
-// @ts-expect-error ts-migrate(2304) FIXME: Cannot find name 'anime'.
-const journeyLine = anime({
-  targets: pathEl,
-  strokeDashoffset: [totalLength, 0],
-  duration: 6000,
-  easing: 'linear',
-  autoplay: false
-});
+    const observer = lozad('.js-lazy-load');
+    observer.observe();
+  }
 
-// setTimeout(() => {
-//   journeyLine.pause();
-// }, 1600);
+  deviceInit() {
+    this.handleScroll();
+    if (window.matchMedia('(min-width: 1024px)').matches) {
+      this.deviceType = 'desktop';
+    } else if (window.matchMedia('(min-width: 512px)').matches) {
+      this.deviceType = 'tablet';
+    } else {
+      this.deviceType = 'mobile';
+    }
 
-const sections = document.querySelectorAll('.js-journey-section');
+    this.pathEl = $(`.journey-line--${this.deviceType} path`, this.elem);
+    for (let i = 0; i < 3; i++) {
+      this.sectionLinksElems[i] = $(
+        `.journey-links--${this.deviceType} .${this.sectionNames[i]}`
+      );
+    }
+  }
 
-sections.forEach(elem => {
-  const io = new IntersectionObserver(handleIntersection, {
-    threshold: [0.5] // add class when elem is half in view
-  });
+  addListeners() {
+    window.addEventListener('resize', (e) => {
+      clearTimeout(this.timeout);
+      this.timeout = setTimeout(this.handleScroll, 250);
+    });
 
-  io.observe(elem);
+    this.scrollRef = onscroll(this.handleScroll);
 
-  function handleIntersection(entries: any) {
-    entries.forEach((entry: any) => {
-      if (entry.intersectionRatio > 0) {
-        // makeChart(elem, chartConfig);
-        console.log('section in view');
-
-        elem.classList.add('play');
-
-        if (elem.hasAttribute('data-line-duration')) {
-          journeyLine.play();
-
-          setTimeout(() => {
-            journeyLine.pause();
-          // @ts-expect-error ts-migrate(2769) FIXME: Type 'null' is not assignable to type 'number | un... Remove this comment to see the full error message
-          }, elem.getAttribute('data-line-duration'));
+    Object.values(this.sectionLinksElems).forEach((el) =>
+      $('.journey--link:last-child', el).addEventListener(
+        'animationend',
+        () => {
+          addClass(el, 'disable-animate');
         }
+      )
+    );
+  }
 
-        io.unobserve(entry.target);
+  handleScroll() {
+    if (
+      this.firstSection.clientHeight - window.innerHeight >
+      -this.firstSection.getBoundingClientRect().top
+    ) {
+      $('.school-picker').classList.remove('not-fixed');
+    } else {
+      $('.school-picker').classList.add('not-fixed');
+    }
+  }
+
+  svgInit() {
+    this.totalPathLength = this.pathEl.getTotalLength();
+    const dashing = '4, 4';
+
+    const dashLength = dashing
+      .split(/[\s,]/)
+      .map((a) => parseFloat(a) || 0)
+      .reduce((a, b) => a + b, 0);
+
+    const dashCount = Math.ceil(this.totalPathLength / dashLength) + 1;
+    const newDashes = new Array(dashCount).join(dashing + ' ');
+    const dashArray = newDashes + ' 0, ' + this.totalPathLength;
+
+    this.pathEl.setAttribute('stroke-dashoffset', `${this.totalPathLength}`);
+
+    this.pathEl.setAttribute('stroke-dasharray', dashArray);
+  }
+
+  animInit() {
+    this.journeyLineAnimInstance = anime({
+      targets: this.pathEl,
+      strokeDashoffset: [this.totalPathLength, 0],
+      duration: 10000,
+      easing: 'linear',
+      autoplay: false,
+      update: (anim) => {
+        this.animUpdate(anim);
       }
     });
   }
+
+  getAnimationThreshold(index: number, type: string) {
+    if (type === 'line') {
+      return this.deviceInfo[this.deviceType].lineAnimBreaks[index];
+    } else {
+      return this.deviceInfo[this.deviceType].dotsAnimBreaks[index];
+    }
+  }
+
+  animUpdate(anim: AnimeInstance) {
+    const animProgress = Math.round(anim.progress * 10) / 10;
+
+    // Logic for the dots to animate
+    for (let i = 0; i < this.sectionNames.length; i++) {
+      if (animProgress >= this.getAnimationThreshold(i, 'dots')) {
+        this.sectionIndex = i;
+      }
+    }
+
+    addClass(this.sectionLinksElems[this.sectionIndex], 'animate');
+
+    if (
+      animProgress >= this.animPauseThreshold - 0.5 &&
+      animProgress <= this.animPauseThreshold + 0.5
+    ) {
+      this.journeyLineAnimInstance.pause();
+    }
+  }
+
+  sectionInit() {
+    this.io = new IntersectionObserver(this.handleIntersection, {
+      threshold: 0.5 // add class when elem is half in view
+    });
+
+    this.journeySections.forEach((section) => this.io.observe(section));
+  }
+
+  loadVideo(section: HTMLElement) {
+    let videoElem = $('.journey-section__video', section);
+    let source = $('source', videoElem);
+    source.src = source.dataset.src;
+    videoElem.load();
+  }
+
+  handleIntersection(entries: any) {
+    entries.forEach((entry: any) => {
+      if (entry.isIntersecting) {
+        // entry.target.classList.add('active');
+        let entryId = 0;
+        const currentSection = entry.target.id;
+
+        if (currentSection === this.sectionNames[0]) {
+          entryId = 0;
+        } else if (currentSection === this.sectionNames[1]) {
+          entryId = 1;
+        } else if (currentSection === this.sectionNames[2]) {
+          entryId = 2;
+        }
+
+        if (
+          window.matchMedia('(min-width: 512px)').matches &&
+          !PREFERS_REDUCED_MOTION
+        ) {
+          this.loadVideo(entry.target);
+        }
+        if (
+          this.getAnimationThreshold(entryId, 'line') > this.animPauseThreshold
+        ) {
+          this.animPauseThreshold = this.getAnimationThreshold(entryId, 'line');
+          this.journeyLineAnimInstance.play();
+        }
+
+        this.io.unobserve(entry.target);
+      }
+    });
+  }
+}
+
+MicroModal.init({
+  openTrigger: 'data-journey-overlay-open',
+  closeTrigger: 'data-journey-overlay-close',
+  onShow: (modal: any) => {
+    if (!modal.swiper) {
+      const swiper = $('.journey-swiper');
+      modal.swiper = new JourneySwiper(swiper);
+    }
+    if (modal.swiper) {
+      modal.swiper.scrollToTop();
+    }
+
+    $$('[data-journey-overlay-close]', modal).forEach((el) => el.focus());
+  },
+  disableScroll: true
 });
+
+const journey = $$('.journey');
+
+journey.forEach((item: HTMLElement) => new Journey(item));

@@ -51,7 +51,7 @@ const paths = {
   },
   images: {
     // ignore sub folders in production build since demo images may be too big.
-    src: `./src/images/${PROD ? '*' : '**/*'}.{png,jpg,svg}`,
+    src: `./src/images/${PROD ? '*' : '**/**/*'}.{png,jpg,svg,mp4}`,
     dest: './dist/images/'
   }
 };
@@ -84,7 +84,8 @@ const clean = () =>
     './dist/**/*.html',
     './dist/**/*.js',
     './dist/**/*.css',
-    './dist/images/*'
+    './dist/images/*',
+    './dist/*.json'
   ]);
 
 const serve = () =>
@@ -261,6 +262,10 @@ const copyDeps = () => {
     .pipe(gulp.dest('./dist/js'));
 };
 
+const copyMeta = () => {
+  return gulp.src(['./composer.json']).pipe(gulp.dest('./dist/'));
+};
+
 const deployDist = () => {
   if (!THEME_DIR) {
     return console.error('No `--themeDir` argument passed');
@@ -270,7 +275,10 @@ const deployDist = () => {
     .src(
       [
         './dist/css/main.css',
-        './dist/js/bundle.js',
+        './dist/js/main.bundle.js',
+        './dist/js/journey.bundle.js',
+        './dist/js/swiper.bundle.js',
+        './dist/js/panelsnap.bundle.js',
         './dist/js/Chart.min.js',
         './dist/images/*'
       ],
@@ -356,6 +364,7 @@ const buildIconSprite = () =>
 const build = gulp.series(
   clean,
   copyDeps,
+  copyMeta,
   gulp.parallel(html, images, lintStyles, styles, scripts),
   reportFilesizes
 );

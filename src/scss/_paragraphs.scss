@@ -99,6 +99,7 @@
 .paragraph--quad-story,
 .paragraph--stat-panel,
 .paragraph--card-carousel,
+.paragraph--dispatches,
 .paragraph--logo-bar,
 .paragraph--waveform {
   @extend %paragraph-full-width;
@@ -167,7 +168,15 @@
 }
 
 .paragraph--profile-list {
-  @extend %paragraph-space;
+  &.section {
+    margin-top: $spacing-8;
+    margin-bottom: $spacing-8;
+
+    @include breakpoint(lg) {
+      margin-top: $spacing-9;
+      margin-bottom: $spacing-9;
+    }
+  }
 }
 
 .paragraph--spotlight {
@@ -182,6 +191,10 @@
 .paragraph--card-carousel {
   @extend %paragraph-space;
   // @extend %paragraph-full-width;
+}
+
+.paragraph--dispatches {
+  // @extend %paragraph-space;
 }
 
 .paragraph--quad-story {
@@ -265,6 +278,16 @@
 
   @media print {
     margin-top: 0;
+  }
+}
+
+.paragraph--policy {
+  padding-top: $spacing-4;
+  padding-bottom: $spacing-4;
+
+  @include breakpoint(md) {
+    padding-top: $spacing-5;
+    padding-bottom: $spacing-5;
   }
 }
 

@@ -86,6 +86,24 @@ $text-colors: (
 }
 
 ///
+/// pronouns
+///
+
+.pronouns {
+  font-family: $font-family-serif;
+  font-size: $typescale-7;
+  line-height: $line-height-heading;
+
+  @include breakpoint(md) {
+    font-size: rem(32);
+  }
+
+  @include breakpoint(lg) {
+    font-size: $typescale-8;
+  }
+}
+
+///
 /// lead
 ///
 
