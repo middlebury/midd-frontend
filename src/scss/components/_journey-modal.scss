@@ -492,6 +492,10 @@ $school-theme-colors: (
     .portrait-video {
       max-width: initial;
 
+      img {
+        height: 100%;
+      }
+
       .transcript__button {
         color: $white;
         &:hover {
@@ -586,6 +590,7 @@ $school-theme-colors: (
       }
 
       img {
+        width: 100%;
         margin-bottom: $spacing-2;
 
         @include breakpoint(sm) {
@@ -712,6 +717,10 @@ $school-theme-colors: (
           .story-link {
             @include link-border;
           }
+        }
+
+        img {
+          width: auto;
         }
       }
 
