@@ -916,7 +916,7 @@ $school-theme-colors: (
             line-height: 1.25;
           }
 
-          @include breakpoint(xl) {
+          @media only screen and (min-width: 1440px) {
             font-size: rem(32);
             font-weight: $font-weight-light;
             padding-bottom: $spacing-2;
