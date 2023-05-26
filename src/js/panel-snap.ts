@@ -1,11 +1,13 @@
-import { $$ } from './utils/dom';
+import { $, $$ } from './utils/dom';
 import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
 import { VALID_ASPECT_RATIO } from './utils/check-aspect-ratio';
+
+let deltaY = window.innerHeight - $('.journey section').getBoundingClientRect().height
 
 let defaultOptions = {
   container: document.body,
   panelSelector: '.journey section',
-  directionThreshold: 20,
+  directionThreshold: deltaY > 0 ? deltaY : 50,
   delay: 0,
   duration: 600,
   easing: function (t: any) {
