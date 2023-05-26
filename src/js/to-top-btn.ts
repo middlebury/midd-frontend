@@ -12,7 +12,7 @@ function makeToTopBtn(btn: HTMLElement) {
 
   // Set the required scroll length to 3x browser height so we don't
   // show the button on short pages.
-  const threshold = window.innerHeight * 3;
+  const threshold = window.innerHeight * 3.25;
 
   const hideOrShowBtn = () => {
     if (window.pageYOffset > threshold) {
