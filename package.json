@@ -5,8 +5,10 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "gulp dev",
+    "dev:campaign": "PROJ=campaign gulp dev",
     "dev:saw": "gulp devSaw",
     "build": "NODE_ENV=production gulp build",
+    "build:campaign": "NODE_ENV=production PROJ=campaign gulp build",
     "build:scripts": "NODE_ENV=production gulp scripts",
     "build:styles": "NODE_ENV=production gulp styles",
     "build:icons": "NODE_ENV=production gulp icons",

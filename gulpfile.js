@@ -31,28 +31,35 @@ const webpack = require('webpack-stream');
 
 dotenv.config();
 
+let pathPrefix = '';
+
 const PROD = process.env.NODE_ENV === 'production';
 const TEST = process.env.CI;
+const CAMP_PROJ = process.env.PROJ === 'campaign' ? 'campaign' : '';
 
 const THEME_DIR = process.env.THEME_DIR || args.themeDir || '';
 
+if(CAMP_PROJ) {
+  pathPrefix = `/${CAMP_PROJ}`;
+}
+
 const paths = {
   html: {
-    src: ['./src/templates/*.twig', '!./src/templates/*layout.twig'],
-    dest: './dist'
+    src: [`./src${pathPrefix}/templates/*.twig`, `!./src${pathPrefix}/templates/*layout.twig`],
+    dest: `./dist${pathPrefix}`
   },
   styles: {
-    src: './src/scss/**/*.scss',
-    dest: './dist/css/'
+    src: `./src${pathPrefix}/scss/**/*.scss`,
+    dest: `./dist${pathPrefix}/css/`
   },
   scripts: {
-    src: './src/js/index.ts',
-    dest: './dist/js/'
+    src: `./src${pathPrefix}/js/index.ts`,
+    dest: `./dist${pathPrefix}/js/`
   },
   images: {
     // ignore sub folders in production build since demo images may be too big.
-    src: `./src/images/${PROD ? '*' : '**/**/*'}.{png,jpg,svg,mp4}`,
-    dest: './dist/images/'
+    src: `./src${pathPrefix}/images/${PROD ? '*' : '**/**/*'}.{png,jpg,svg,mp4}`,
+    dest: `./dist${pathPrefix}/images/`
   }
 };
 
@@ -81,16 +88,16 @@ const onError = function (err) {
 
 const clean = () =>
   del([
-    './dist/**/*.html',
-    './dist/**/*.js',
-    './dist/**/*.css',
-    './dist/images/*',
+    './dist/**/**/*.html',
+    './dist/**/**/*.js',
+    './dist/**/**/*.css',
+    `./dist${pathPrefix}/images/*`,
     './dist/*.json'
   ]);
 
 const serve = () =>
   browserSync.init({
-    files: './dist/**/*',
+    files: './dist/**/**/*',
     notify: false,
     server: {
       baseDir: './dist'
@@ -101,9 +108,9 @@ const serve = () =>
 
 const copyIcons = () =>
   gulp
-    .src('./dist/icons/sprites/symbol/svg/sprite.symbol.svg')
+    .src(`./dist${pathPrefix}/icons/sprites/symbol/svg/sprite.symbol.svg`)
     .pipe(rename('icons.twig'))
-    .pipe(gulp.dest('./src/templates/partials'));
+    .pipe(gulp.dest(`./src${pathPrefix}/templates/partials`));
 
 const lintStyles = () => {
   return gulp.src(paths.styles.src).pipe(
@@ -165,10 +172,10 @@ const html = () =>
     .pipe(
       data(function () {
         const ymlData = yaml.load(
-          fs.readFileSync('./src/data/data.yml', 'utf8')
+          fs.readFileSync(`./src${pathPrefix}/data/data.yml`, 'utf8')
         );
         const imageStyles = yaml.load(
-          fs.readFileSync('./src/data/image_styles.yml', 'utf8')
+          fs.readFileSync(`./src${pathPrefix}/data/image_styles.yml`, 'utf8')
         );
 
         return {
@@ -185,7 +192,7 @@ const html = () =>
     )
     .pipe(
       twig({
-        base: './src/templates',
+        base: `./src${pathPrefix}/templates`,
         filters: [
           {
             name: 'exists',
@@ -245,9 +252,9 @@ const images = () =>
 const replaceImagePaths = () => {
   const imagesDir = args.imagesDir || '/images/';
   return gulp
-    .src('./dist/css/*.css')
+    .src(`./dist${pathPrefix}/css/*.css`)
     .pipe(replace('/images/', imagesDir))
-    .pipe(gulp.dest('./dist/css'));
+    .pipe(gulp.dest(`./dist${pathPrefix}/css`));
 };
 
 const copyDeps = () => {
@@ -259,7 +266,7 @@ const copyDeps = () => {
       './node_modules/iframe-resizer/js/iframeResizer.min.js',
       './node_modules/iframe-resizer/js/iframeResizer.contentWindow.min.js'
     ])
-    .pipe(gulp.dest('./dist/js'));
+    .pipe(gulp.dest(`./dist${pathPrefix}/js`));
 };
 
 const copyMeta = () => {
@@ -274,13 +281,13 @@ const deployDist = () => {
   return gulp
     .src(
       [
-        './dist/css/main.css',
-        './dist/js/main.bundle.js',
-        './dist/js/journey.bundle.js',
-        './dist/js/swiper.bundle.js',
-        './dist/js/panelsnap.bundle.js',
-        './dist/js/Chart.min.js',
-        './dist/images/*'
+        `./dist${pathPrefix}/css/main.css`,
+        `./dist${pathPrefix}/js/main.bundle.js`,
+        `./dist${pathPrefix}/js/journey.bundle.js`,
+        `./dist${pathPrefix}/js/swiper.bundle.js`,
+        `./dist${pathPrefix}/js/panelsnap.bundle.js`,
+        `./dist${pathPrefix}/js/Chart.min.js`,
+        `./dist${pathPrefix}/images/*`
       ],
       {
         base: './dist'
@@ -290,15 +297,15 @@ const deployDist = () => {
 };
 
 const watch = () => {
-  gulp.watch('./src/templates/**/*.twig', html);
+  gulp.watch(`./src${pathPrefix}/templates/**/*.twig`, html);
   gulp.watch(paths.styles.src, gulp.parallel(styles, lintStyles));
   gulp.watch(paths.images.src, images);
-  gulp.watch('./src/data/*.yml', html);
+  gulp.watch(`./src${pathPrefix}/data/*.yml`, html);
 };
 
 const reportFilesizes = () =>
   gulp
-    .src('./dist/**/*.{css,js}')
+    .src('./dist/**/**/*.{css,js}')
     .pipe(
       size({
         showFiles: true,
@@ -335,11 +342,11 @@ const minifySvgs = (src) =>
 
 // clean up and minify svgs
 const cleanAndCopyIcons = () =>
-  minifySvgs('./src/icons/*.svg').pipe(gulp.dest('./dist/icons/svg'));
+  minifySvgs(`./src${pathPrefix}/icons/*.svg`).pipe(gulp.dest(`./dist${pathPrefix}/icons/svg`));
 
 // create svg sprite
 const buildIconSprite = () =>
-  minifySvgs('./src/icons/*.svg')
+  minifySvgs(`./src${pathPrefix}/icons/*.svg`)
     .pipe(
       svgSprite({
         svg: {
@@ -359,7 +366,7 @@ const buildIconSprite = () =>
         }
       })
     )
-    .pipe(gulp.dest('./dist/icons/sprites'));
+    .pipe(gulp.dest(`./dist${pathPrefix}/icons/sprites`));
 
 const build = gulp.series(
   clean,

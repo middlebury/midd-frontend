@@ -4,6 +4,7 @@ const BundleAnalyzerPlugin =
 const path = require('path');
 
 const PROD = process.env.NODE_ENV === 'production';
+const CAMP_PROJ = process.env.PROJ === 'campaign';
 
 const plugins = [
   // ignore moment imported by pikaday
@@ -15,7 +16,7 @@ const plugins = [
 module.exports = {
   watch: !PROD,
   mode: PROD ? 'production' : 'development',
-  entry: {
+  entry: CAMP_PROJ ? './src/campaign/js/index.ts' : {
     main: './src/js/index.ts',
     journey: './src/js/journey-module.ts'
   },
@@ -39,7 +40,8 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js']
   },
   output: {
-    filename: '[name].bundle.js'
+    filename: CAMP_PROJ ? 'bundle.js' : '[name].bundle.js'
   },
-  plugins: PROD ? plugins : [...plugins, new BundleAnalyzerPlugin()]
+  // plugins: PROD ? plugins : [...plugins, new BundleAnalyzerPlugin()]
+  plugins: PROD ? plugins : [...plugins]
 };
