@@ -35,7 +35,7 @@ class JourneySwiper {
     this.translate = 0;
     this.halfWindowWidth = window.innerWidth / 2;
     this.closeBtn = $('[data-journey-overlay-close]');
-    this.loadingEls = $$('[data-loading');
+    this.loadingEls = $$('[data-loading]');
 
     this.swiperInit = this.swiperInit.bind(this);
     this.swiperUpdate = this.swiperUpdate.bind(this);
