@@ -112,7 +112,7 @@ class JourneySwiper {
               slidePrevTransitionEnd: (swiper) => {
                 swiper.allowSlidePrev = true;
               },
-              transitionStart: () => {
+              transitionEnd: () => {
                 this.swiperUpdate();
                 this.scrollToTop();
               }
