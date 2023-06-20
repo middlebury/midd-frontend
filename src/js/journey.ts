@@ -4,6 +4,7 @@ import { $, $$, addClass } from './utils/dom';
 import JourneySwiper from './journey-swiper';
 import onscroll from './utils/onscroll';
 import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
+import lozad from 'lozad';
 
 class Journey {
   elem: HTMLElement;
@@ -67,6 +68,9 @@ class Journey {
       this.animInit();
       this.sectionInit();
     }
+
+    const observer = lozad('.js-lazy-load');
+    observer.observe();
   }
 
   deviceInit() {

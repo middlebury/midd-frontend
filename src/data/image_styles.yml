@@ -197,8 +197,8 @@ image_styles:
       - 253x142
       - 304x171
 
-  journey_modal_image:
-    title: Institutional Homepage modal Image
+  journey_story_splash_image:
+    title: Modal story splash image on homepage
     ratio: "16:9"
     srcset:
       - 1136x639
@@ -206,15 +206,15 @@ image_styles:
     title: Background poster image
     ratio: "16:9"
     srcset:
-      - 1440x810
       - 1200x675
+      - 1440x810
   journey_fluencies:
     title: Four fluencies display image
     ratio: "1:1"
     srcset:
-      - 332x332
-      - 278x278
       - 224x224
+      - 278x278
+      - 332x332
   journey_image_text:
     title: Image with Text component
     ratio: "3:4"
@@ -226,8 +226,26 @@ image_styles:
     title: Teaser image for story list
     ratio: "16:9"
     srcset:
-      - 296x166
-      - 235x132
-      - 224x126
       - 256x144
+      - 224x126
+      - 235x132
+      - 296x166
     sizes: "(max-width: 512px) 256px, (max-width: 768px) 224px, (max-width: 1200px) 235px, 296px"
+  journey_story_images:
+    title: Images in story content type on homepage
+    ratio: "16:9"
+    srcset:
+      - 290x163
+      - 608x342
+      - 736x414
+      - 896x504
+    sizes: "(max-width: 896px) 100vw, 896px"
+  journey_portrait_video:
+    title: Images in portrait video on homepage
+    ratio: "9:16"
+    srcset:
+      - 224x399
+      - 290x516
+      - 336x598
+      - 416x740
+    sizes: "(max-width: 416px) 100vw, 416px"

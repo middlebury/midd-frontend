@@ -492,6 +492,10 @@ $school-theme-colors: (
     .portrait-video {
       max-width: initial;
 
+      img {
+        height: 100%;
+      }
+
       .transcript__button {
         color: $white;
         &:hover {
@@ -586,6 +590,7 @@ $school-theme-colors: (
       }
 
       img {
+        width: 100%;
         margin-bottom: $spacing-2;
 
         @include breakpoint(sm) {
@@ -712,6 +717,10 @@ $school-theme-colors: (
           .story-link {
             @include link-border;
           }
+        }
+
+        img {
+          width: auto;
         }
       }
 
@@ -845,7 +854,11 @@ $school-theme-colors: (
           }
 
           @media only screen and (min-width: 1200px) {
-            padding-top: percentage(234/416);
+            padding-top: percentage(200/330);
+          }
+
+          @include breakpoint(xl) {
+            padding-top: percentage(9/16);
           }
         }
 
@@ -903,7 +916,7 @@ $school-theme-colors: (
             line-height: 1.25;
           }
 
-          @include breakpoint(xl) {
+          @media only screen and (min-width: 1440px) {
             font-size: rem(32);
             font-weight: $font-weight-light;
             padding-bottom: $spacing-2;

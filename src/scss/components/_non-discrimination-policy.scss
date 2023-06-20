@@ -1,9 +1,20 @@
 .paragraph--policy {
   background: rgba($gray-light, 0.3);
-  font-size: $typescale-2;
   font-weight: $font-weight-light;
 
-  @include breakpoint(lg) {
-    font-size: $typescale-3;
+  p {
+    font-size: $typescale-2;
+
+    @include breakpoint(lg) {
+      font-size: $typescale-3;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
