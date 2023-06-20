@@ -21,6 +21,7 @@ class JourneySwiper {
   timeout: NodeJS.Timeout;
   activeVideoClass: string;
   closeBtn: HTMLElement;
+  loadingEls: HTMLElement[];
 
   constructor(el: HTMLElement) {
     this.elem = el;
@@ -34,6 +35,7 @@ class JourneySwiper {
     this.translate = 0;
     this.halfWindowWidth = window.innerWidth / 2;
     this.closeBtn = $('[data-journey-overlay-close]');
+    this.loadingEls = $$('[data-loading');
 
     this.swiperInit = this.swiperInit.bind(this);
     this.swiperUpdate = this.swiperUpdate.bind(this);
@@ -116,6 +118,8 @@ class JourneySwiper {
               }
             }
           });
+
+          this.loadingEls.forEach((el) => el.classList.add('has-loaded'));
         }
       )
       .catch((error) => 'An error occurred while loading Swiper');
