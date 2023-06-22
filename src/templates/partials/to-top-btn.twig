@@ -1,4 +1,4 @@
-<a href="#midd-pagetop" class="button button--sm to-top-btn js-to-top-btn">
+<a href="#midd-pagetop" class="button button--sm to-top-btn {{journey ? 'js-journey-to-top-btn' : 'js-to-top-btn'}}">
   {% include 'partials/icon.twig' with {
     name: 'caret-up',
     class: 'mb-1'
