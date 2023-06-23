@@ -1,11 +1,11 @@
 {% set id = random(1234) %}
-{# {% set grid_item_2 = random(['video', 'image', 'stats', 'quote']) %}
+{% set grid_item_2 = random(['video', 'image', 'stats', 'quote']) %}
 {% set grid_item_3 = random(['video', 'image', 'quote']) %}
-{% set grid_item_4 = random(['image', 'stats']) %} #}
+{% set grid_item_4 = random(['image', 'stats']) %}
 
-{% set grid_item_2 = random(['quote']) %}
+{# {% set grid_item_2 = random(['quote']) %}
 {% set grid_item_3 = random(['quote']) %}
-{% set grid_item_4 = random(['stats']) %}
+{% set grid_item_4 = random(['stats']) %} #}
 
 <div class="paragraph paragraph--full">
   {% include 'paragraphs/homepage-grid-header.twig' %}
@@ -102,10 +102,11 @@
           name: 'chevron-down'
         } %}
       </span>
-      <span class="button--show-less">Show Less{% include 'partials/icon.twig' with {
+      <a href="#midd-pagetop" class="button--show-less js-grid-to-top-btn">
+        Show Less{% include 'partials/icon.twig' with {
           name: 'chevron-up'
         } %}
-      </span>
+      </a>
     </button>
   </div>
 </div>

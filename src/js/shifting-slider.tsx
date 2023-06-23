@@ -1,5 +1,6 @@
 import { $, $$ } from './utils/dom';
 import Superclamp from 'superclamp';
+import animation from './utils/animation';
 
 /**
  * Adds functionality to the waveform component to make the shift left or right
@@ -39,10 +40,17 @@ class ShiftingSlider {
   /* Stores the bar elements of the waveform to make the tooltips work */
   waveformListItems: HTMLElement[];
 
+  /* Stores the delay time in ms for the setTimeout function used by the resize event listener */
+  delay: number;
+
+  /* Stores the timeoutID returned by the setTimeout function, which is used clear the timeout */
+  timeout: NodeJS.Timeout;
+
   constructor(elem: HTMLElement) {
     this.elem = elem;
     this.wrapperElem = $('.waveform__wrapper');
     this.shift = 0;
+    this.delay = 250;
     this.prevDirection = '';
     this.waveformListItems = $$('.waveform__list-item');
     this.handleHover = this.handleHover.bind(this);
@@ -55,10 +63,14 @@ class ShiftingSlider {
   }
 
   init() {
+    animation();
     this.onWindowResize();
     this.addSuperclampListener();
-    window.onresize = this.onWindowResize;
-
+    window.addEventListener('resize', () => {
+      clearTimeout(this.timeout);
+      this.timeout = setTimeout(this.onWindowResize, this.delay);
+    });
+    
     // Adds intersection observer to make the waveform slide in when
     // it comes into view
     const io = new IntersectionObserver((entries) => {
@@ -173,10 +185,11 @@ class ShiftingSlider {
     }
 
     if (shift === 0 || shift <= -this.scrollWidth) {
-      this.intervalId = clearInterval(this.intervalId);
+      this.intervalId = window.cancelAnimationFrame(this.intervalId);
     }
 
     this.elem.style.left = shift + 'px';
+    this.intervalId = window.requestAnimationFrame(() => this.scroll(direction));
   }
 
   /**
@@ -188,7 +201,8 @@ class ShiftingSlider {
    * left or right
    */
   animate(speed: number, direction: string) {
-    this.intervalId = setInterval(() => this.scroll(direction), speed);
+    // this.intervalId = setInterval(() => this.scroll(direction), speed);
+    this.intervalId = window.requestAnimationFrame(() => this.scroll(direction));
   }
 
   /**
@@ -228,7 +242,7 @@ class ShiftingSlider {
    */
   handleMouseLeave() {
     if (this.intervalId) {
-      this.intervalId = clearInterval(this.intervalId);
+      this.intervalId = window.cancelAnimationFrame(this.intervalId);
       this.setDirection('');
     }
   }
@@ -270,7 +284,7 @@ class ShiftingSlider {
 
     if (direction !== this.prevDirection) {
       if (this.intervalId) {
-        this.intervalId = clearInterval(this.intervalId);
+        this.intervalId = window.cancelAnimationFrame(this.intervalId);
       }
       if (direction !== '') {
         this.animate(10, direction);

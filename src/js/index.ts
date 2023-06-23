@@ -16,6 +16,7 @@ import 'object-fit-images';
  * Custom JS imports
  */
 
+import './lazy-load';
 import './headroom'; // sticky site headers
 import './toggler'; // toggler util used in transcript toggle, accordions, and more
 import './single-toggler';
