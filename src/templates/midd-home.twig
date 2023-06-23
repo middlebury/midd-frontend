@@ -105,7 +105,9 @@
     background_light: true
   }%}
   {% include 'paragraphs/non-discrimination-policy.twig' %}
-  {% include 'partials/midd-footer.twig' %}
+  {% include 'partials/midd-footer.twig' with {
+    journey: true
+  }%}
 {% endblock %}
 
 {% block scripts %}

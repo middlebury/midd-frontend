@@ -30,7 +30,8 @@
       </button>
     </div>
     <div class="journey-modal__controls">
-      <div class="journey-modal__cobblestones">
+      <p class="journey-modal__controls--loading-text" data-loading>Loading...</p>
+      <div class="journey-modal__cobblestones is-loading" data-loading>
         <button class="journey-modal__cobblestones-button js-journey-prev-button" aria-label="Previous" id="journey-modal-button-prev">
           {% include 'partials/icon.twig' with {
             name: 'chevron-left',
@@ -59,7 +60,8 @@
       </button>
     </div>
   </header>
-  <div class="swiper journey-swiper">
+  <p class="journey-swiper--loading-text" data-loading>Loading...</p>
+  <div class="swiper journey-swiper is-loading" data-loading>
     <div class="swiper-wrapper">
       {% for label in section_learning %}
         {% include 'partials/journey-modal-content.twig' with {

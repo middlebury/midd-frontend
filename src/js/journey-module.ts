@@ -3,7 +3,7 @@
  */
 
 // Common polyfills
-import './polyfills.ts';
+import './polyfills';
 
 import './lazy-load';
 import './headroom'; // sticky site headers

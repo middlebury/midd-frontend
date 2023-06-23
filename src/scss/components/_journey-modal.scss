@@ -172,6 +172,16 @@ $school-theme-colors: (
     // }
   }
 
+  .journey-modal__controls--loading-text {
+    display: flex;
+    padding-top: $spacing-3;
+    padding-right: rem(224);
+
+    &.has-loaded {
+      display: none;
+    }
+  }
+
   .journey-modal__cobblestones {
     display: flex;
     position: relative;
@@ -184,6 +194,14 @@ $school-theme-colors: (
     @include breakpoint(xl) {
       padding-right: $spacing-4;
       padding-top: rem(14);
+    }
+  
+    &.is-loading {
+      display: none;
+  
+      &.has-loaded {
+        display: flex;
+      }
     }
 
     .journey-modal__cobblestones-button {
@@ -413,6 +431,27 @@ $school-theme-colors: (
       height: 1.5em;
     }
   }
+}
+
+.journey-swiper {
+  &.is-loading {
+    display: none;
+
+    &.has-loaded {
+      display: block;
+    }
+  }
+}
+
+.journey-swiper--loading-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: rem(112);
+
+  &.has-loaded {
+    display: none;
+  } 
 }
 
 .journey-modal__overlay {
@@ -916,7 +955,7 @@ $school-theme-colors: (
             line-height: 1.25;
           }
 
-          @include breakpoint(xl) {
+          @media only screen and (min-width: 1440px) {
             font-size: rem(32);
             font-weight: $font-weight-light;
             padding-bottom: $spacing-2;
