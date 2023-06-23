@@ -1,9 +1,10 @@
-const webpack = require('webpack');
-const BundleAnalyzerPlugin =
-  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const path = require('path');
+import webpack from 'webpack';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'; 
 
 const PROD = process.env.NODE_ENV === 'production';
+
+// const BundleAnalyzerPlugin =
+//   require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const plugins = [
   // ignore moment imported by pikaday
@@ -12,7 +13,7 @@ const plugins = [
   })
 ];
 
-module.exports = {
+const config = {
   watch: !PROD,
   mode: PROD ? 'production' : 'development',
   entry: {
@@ -43,3 +44,5 @@ module.exports = {
   },
   plugins: PROD ? plugins : [...plugins, new BundleAnalyzerPlugin()]
 };
+
+export default config;
