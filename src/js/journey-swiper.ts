@@ -21,6 +21,7 @@ class JourneySwiper {
   timeout: NodeJS.Timeout;
   activeVideoClass: string;
   closeBtn: HTMLElement;
+  loadingEls: HTMLElement[];
 
   constructor(el: HTMLElement) {
     this.elem = el;
@@ -34,6 +35,7 @@ class JourneySwiper {
     this.translate = 0;
     this.halfWindowWidth = window.innerWidth / 2;
     this.closeBtn = $('[data-journey-overlay-close]');
+    this.loadingEls = $$('[data-loading]');
 
     this.swiperInit = this.swiperInit.bind(this);
     this.swiperUpdate = this.swiperUpdate.bind(this);
@@ -58,6 +60,8 @@ class JourneySwiper {
     return import(/* webpackChunkName: "swiper" */ 'swiper')
       .then(
         ({ default: Swiper, Navigation, A11y, Pagination, HashNavigation }) => {
+          this.loadingEls.forEach((el) => el.classList.add('has-loaded'));
+          
           this.swiperEl = new Swiper(this.swiperClass, {
             modules: [Navigation, Pagination, HashNavigation, A11y],
             autoHeight: true,

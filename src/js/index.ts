@@ -3,7 +3,7 @@
  */
 
 // Common polyfills
-import './polyfills.ts';
+import './polyfills';
 
 // used in flowchart, offices, lightbox
 import 'mdn-polyfills/Element.prototype.closest';

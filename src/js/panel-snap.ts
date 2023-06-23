@@ -1,11 +1,15 @@
-import { $$ } from './utils/dom';
+import { $, $$ } from './utils/dom';
 import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
 import { VALID_ASPECT_RATIO } from './utils/check-aspect-ratio';
+
+// Check if section height is less than the viewport height. If it is less than the viewport height, 
+// then set the directionThreshold as the difference to prevent scroll issues.
+let deltaY = window.innerHeight - $('.journey section').getBoundingClientRect().height;
 
 let defaultOptions = {
   container: document.body,
   panelSelector: '.journey section',
-  directionThreshold: 20,
+  directionThreshold: deltaY > 0 ? deltaY : 50,
   delay: 0,
   duration: 600,
   easing: function (t: any) {

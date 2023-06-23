@@ -181,7 +181,7 @@ class Journey {
 
   sectionInit() {
     this.io = new IntersectionObserver(this.handleIntersection, {
-      threshold: 0.5 // add class when elem is half in view
+      threshold: 0.4 // add class when elem is half in view
     });
 
     this.journeySections.forEach((section) => this.io.observe(section));
