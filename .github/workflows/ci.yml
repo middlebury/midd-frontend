@@ -45,7 +45,7 @@ jobs:
 
       - name: Replace images
         if: github.ref == 'refs/heads/master'
-        run: gulp replaceImagePaths --imagesDir="https://www.middlebury.edu/office/themes/custom/middlebury_theme/images/"
+        run: gulp replaceImagePaths --imagesDir="https://www.middlebury.edu/themes/custom/middlebury_theme/images/"
 
       - name: Deploy
         if: github.ref == 'refs/heads/master'
