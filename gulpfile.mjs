@@ -14,7 +14,8 @@ import imagemin, { mozjpeg, optipng, svgo } from 'gulp-imagemin';
 import replace from 'gulp-replace';
 import yaml from 'js-yaml';
 import { deleteAsync } from 'del';
-import args from 'yargs';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 import gulpIf from 'gulp-if';
 import size from 'gulp-size';
 import rename from 'gulp-rename';
@@ -32,6 +33,7 @@ import stylelint from 'gulp-stylelint';
 import webpack from 'webpack-stream';
 import config from './webpack.config.mjs';
 
+const args = yargs(hideBin(process.argv))
 const sass = gulpSass(nodeSass);
 
 dotenv.config();
@@ -39,7 +41,7 @@ dotenv.config();
 const PROD = process.env.NODE_ENV === 'production';
 const TEST = process.env.CI;
 
-const THEME_DIR = process.env.THEME_DIR || args.themeDir || '';
+const THEME_DIR = process.env.THEME_DIR || args.argv.themeDir || '';
 
 const paths = {
   html: {
@@ -245,7 +247,7 @@ const images = () =>
     .pipe(gulp.dest(paths.images.dest));
 
 const replaceImagePaths = () => {
-  const imagesDir = args.imagesDir || '/images/';
+  const imagesDir = args.argv.imagesDir || '/images/';
   return gulp
     .src('./dist/css/*.css')
     .pipe(replace('/images/', imagesDir))
@@ -374,5 +376,5 @@ task(
 );
 task('icons', series(buildIconSprite, copyIcons));
 task('dev', parallel('build', watch, serve));
-task('devSaw', series(buildIconSprite, copyIcons));
+task('devSaw', parallel('build', watch));
 task('deploy', series(replaceImagePaths, deployDist));
