@@ -266,6 +266,10 @@ const copyDeps = () => {
     .pipe(gulp.dest('./dist/js'));
 };
 
+const copyMeta = () => {
+  return gulp.src(['./composer.json']).pipe(gulp.dest('./dist/'));
+};
+
 const deployDist = () => {
   if (!THEME_DIR) {
     return console.error('No `--themeDir` argument passed');
@@ -370,6 +374,7 @@ task(
   series(
     clean,
     copyDeps,
+    copyMeta,
     parallel(html, images, lintStyles, styles, scripts),
     reportFilesizes
   )
