@@ -279,8 +279,7 @@ const deployDist = () => {
     .src(
       [
         './dist/css/main.css',
-        './dist/js/bundle.js',
-        './dist/js/Chart.min.js',
+        './dist/js/*',
         './dist/images/*'
       ],
       {
