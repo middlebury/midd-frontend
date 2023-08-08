@@ -1,5 +1,5 @@
 <ul class="d-inline-flex {{class}}">
-  {% for name in ['discord', 'linkedin', 'instagram', 'tiktok', 'youtube', 'mastodon', 'pinterest', 'twitter', 'vimeo', 'facebook', 'wechat', 'weibo'] %}
+  {% for name in ['discord', 'linkedin', 'instagram', 'tiktok', 'youtube', 'mastodon', 'pinterest', 'twitter', 'vimeo', 'facebook', 'wechat', 'weibo', 'x', 'threads'] %}
     {% if env.test or random(1) %}
       <li class="mr-1">
         <a href="#" class="d-inline-block {% if light %}text-white hover-fadeout{% else %}hover-fadein{% endif %} {{office_footer ? " px-1" : " p-1"}}">
