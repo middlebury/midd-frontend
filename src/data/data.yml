@@ -82,6 +82,42 @@ footer_nav:
       - text: Site Editor Login
         url: https://www.middlebury.edu/institute/saml/login?destination=/
 
+utility_footer_nav:
+  - title: Quick Links
+    width: 12
+    four_cols: true
+    items:
+      - text: BannerWeb
+        url: https://ssb-prod.ec.middlebury.edu/PNTR/twbkwbis.P_WWWLogin?
+      - text: Campus Map
+        url: http://www.myatlascms.com/map/index.php?id=972
+      - text: Contact Us
+        url: https://www.middlebury.edu/institute/institute-approach/about/contact-us
+      - text: Course Hub
+        url: http://courses.miis.edu/
+      - text: Directory
+        url: https://directory.miis.edu/
+      - text: Emergency
+        url: https://www.middlebury.edu/institute/offices-services/security
+      - text: Employment
+        url: https://middlebury.peopleadmin.com/
+      - text: EthicsPoint
+        url: https://secure.ethicspoint.com/domain/media/en/gui/28296/index.html
+      - text: Offices and Services
+        url: /institute/offices-services
+      - text: Oracle Cloud
+        url: https://myapps.microsoft.com/gmhec.org
+      - text: State Authorization
+        url: https://www.middlebury.edu/institute/institute-approach/about/strf
+      - text: WebMail
+        url: https://mail.middlebury.edu/owa/auth/logon.aspx
+      - text: Website Support
+        url: http://go.middlebury.edu/sitehelp
+      - text: Zoom Web Conferencing
+        url: https://middlebury.zoom.us
+      - text: Site Editor Login
+        url: https://www.middlebury.edu/institute/saml/login?destination=/
+
 secondary_footer_nav:
   - text: About Middlebury
     href: http://www.middlebury.edu/about
@@ -96,7 +132,7 @@ secondary_footer_nav:
   - text: Privacy
     href: http://www.middlebury.edu/about/privacy
   - text: Site-Editor login
-    href: "#"
+    href: '#'
 
 social_links:
   - text: Instagram
@@ -297,104 +333,104 @@ gallery_data:
     thumb: http://placekitten.com/64/36
     width: 1280
     height: 720
-    alt: ""
-    srcset: ""
-    sizes: ""
+    alt: ''
+    srcset: ''
+    sizes: ''
     caption: Lorem ipsum <a href="#">dolor</a> sit amet consectetur adipisicing elit.
 
   - src: http://placekitten.com/1440/810
     thumb: http://placekitten.com/64/36
     width: 1440
     height: 810
-    alt: ""
-    srcset: ""
-    sizes: ""
+    alt: ''
+    srcset: ''
+    sizes: ''
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
 
   - src: http://placekitten.com/640/360
     thumb: http://placekitten.com/64/36
     width: 640
     height: 360
-    alt: ""
-    srcset: ""
-    sizes: ""
+    alt: ''
+    srcset: ''
+    sizes: ''
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
   - src: http://placekitten.com/320/130
     thumb: http://placekitten.com/64/36
     width: 320
     height: 130
-    alt: ""
-    srcset: ""
-    sizes: ""
+    alt: ''
+    srcset: ''
+    sizes: ''
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
   - src: http://placekitten.com/960/540
     thumb: http://placekitten.com/64/36
     width: 960
     height: 540
-    alt: ""
-    srcset: ""
-    sizes: ""
+    alt: ''
+    srcset: ''
+    sizes: ''
     caption: Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
 
   - src: http://placekitten.com/400/800
     width: 400
     height: 800
     thumb: http://placekitten.com/40/80
-    alt: ""
-    srcset: ""
-    sizes: ""
+    alt: ''
+    srcset: ''
+    sizes: ''
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
 
   - src: http://placekitten.com/400/800
     width: 400
     height: 800
     thumb: http://placekitten.com/40/80
-    alt: ""
-    srcset: ""
-    sizes: ""
+    alt: ''
+    srcset: ''
+    sizes: ''
 
   - src: http://placekitten.com/450/800
     width: 450
     height: 800
     thumb: http://placekitten.com/40/80
-    alt: ""
-    srcset: ""
-    sizes: ""
+    alt: ''
+    srcset: ''
+    sizes: ''
 
   - src: http://placekitten.com/700/600
     width: 700
     height: 600
     thumb: http://placekitten.com/40/80
-    alt: ""
-    srcset: ""
-    sizes: ""
+    alt: ''
+    srcset: ''
+    sizes: ''
 
   - src: http://placekitten.com/700/600
     width: 700
     height: 600
     thumb: http://placekitten.com/40/80
-    alt: ""
-    srcset: ""
-    sizes: ""
+    alt: ''
+    srcset: ''
+    sizes: ''
 
   - src: http://placekitten.com/960/540
     thumb: http://placekitten.com/64/36
     width: 960
     height: 540
-    alt: ""
-    srcset: ""
-    sizes: ""
+    alt: ''
+    srcset: ''
+    sizes: ''
     caption: Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
 
   - src: http://placekitten.com/400/800
     thumb: http://placekitten.com/40/80
-    alt: ""
+    alt: ''
     width: 400
     height: 800
-    srcset: ""
-    sizes: ""
+    srcset: ''
+    sizes: ''
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
 
 top_level_nav_example:
@@ -411,7 +447,7 @@ top_level_nav_example:
 
 midd_nav:
   - text: Our Schools
-    href: "#"
+    href: '#'
     items:
       - href: http://www.middlebury.edu/college/
         text: Middlebury College
@@ -426,7 +462,7 @@ midd_nav:
       - href: http://www.middlebury.edu/writers-conference
         text: Middlebury Bread Loaf Writers' Conference
   - text: Admissions
-    href: "#"
+    href: '#'
     items:
       - href: http://www.middlebury.edu/college/admissions
         text: Middlebury College Admissions
@@ -447,7 +483,7 @@ midd_nav:
 
 institutional_nav:
   - text: Our Schools
-    href: "#"
+    href: '#'
     items:
       - href: http://www.middlebury.edu
         text: Middlebury College
@@ -464,9 +500,9 @@ institutional_nav:
       - href: http://www.middlebury.edu/environment
         text: School of the Environment
   - text: About Middlebury
-    href: "#"
+    href: '#'
   - text: Office and Services
-    href: "#"
+    href: '#'
 
 system_status:
   - name: Internet<br>(Northbound Link)
@@ -475,18 +511,18 @@ system_status:
     type: warning
   - name: Email
     type: danger
-    link: "#"
+    link: '#'
   - name: Self-Service Banner (SSB)
     type: paused
   - name: Internet Native Banner (INB)
   - name: Oracle Finance
   - name: Google Apps
-    link: "#"
+    link: '#'
   - name: Office365
-    link: "#"
+    link: '#'
   - name: VPN
   - name: Zoom
-    link: "#"
+    link: '#'
   - name: Directory
   - name: GO
   - name: WordPress
@@ -691,8 +727,8 @@ journey_gallery_data:
       - 1136/639
       - 736/414
       - 320/180
-    alt: ""
-    sizes: ""
+    alt: ''
+    sizes: ''
     caption: Lorem ipsum <a href="#">dolor</a> sit amet consectetur adipisicing elit.
 
   - src: http://placekitten.com/1376/774
@@ -703,8 +739,8 @@ journey_gallery_data:
       - 1136/639
       - 736/414
       - 320/180
-    alt: ""
-    sizes: ""
+    alt: ''
+    sizes: ''
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
 
   - src: http://placekitten.com/1376/774
@@ -715,8 +751,8 @@ journey_gallery_data:
       - 1136/639
       - 736/414
       - 320/180
-    alt: ""
-    sizes: ""
+    alt: ''
+    sizes: ''
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
   - src: http://placekitten.com/1376/774
@@ -727,8 +763,8 @@ journey_gallery_data:
       - 1136/639
       - 736/414
       - 320/180
-    alt: ""
-    sizes: ""
+    alt: ''
+    sizes: ''
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
   - src: http://placekitten.com/1376/774
@@ -739,8 +775,8 @@ journey_gallery_data:
       - 1136/639
       - 736/414
       - 320/180
-    alt: ""
-    sizes: ""
+    alt: ''
+    sizes: ''
     caption: Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
 
 four_fluencies:
