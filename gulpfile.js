@@ -31,7 +31,7 @@ import gulpSvgo from 'gulp-svgo';
 import dom from 'gulp-dom';
 import stylelint from 'gulp-stylelint';
 import webpack from 'webpack-stream';
-import config from './webpack.config.mjs';
+import config from './webpack.config.js';
 
 const args = yargs(hideBin(process.argv))
 const sass = gulpSass(nodeSass);
