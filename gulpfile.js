@@ -29,7 +29,7 @@ import dotenv from 'dotenv';
 import svgSprite from 'gulp-svg-sprite';
 import gulpSvgo from 'gulp-svgo';
 import dom from 'gulp-dom';
-import stylelint from 'gulp-stylelint';
+import gulpStylelint from 'gulp-stylelint';
 import webpack from 'webpack-stream';
 import config from './webpack.config.js';
 
@@ -113,7 +113,7 @@ const copyIcons = () =>
 
 const lintStyles = () => {
   return gulp.src(paths.styles.src).pipe(
-    stylelint({
+    gulpStylelint({
       failAfterError: false,
       reporters: [{ formatter: 'string', console: true }]
     })
