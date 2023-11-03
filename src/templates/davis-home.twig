@@ -1,0 +1,29 @@
+{% extends "school-home.twig" %}
+
+{% set theme = 'davis' %}
+{% set is_front = false %}
+å
+{% block layout_header %}
+  {% embed 'partials/davis-header.twig' %}
+    {% block school_logo %}
+      <div class="">
+        <img
+          src="images/davis-globe.png"
+          alt="Globe in logo for Davis United World College Scholars Program"
+        />
+        <img
+          src="images/davis-uwc-logo-309x35.png"
+          srcset="images/davis-uwc-logo-288x36.png 288w, images/davis-uwc-logo-309x35.png 309w"
+          sizes="(min-width: 768px) 309px, 288px"
+          alt="Davis United World College Scholars Program"
+        />
+      </div>
+      <span class="sr-only">Davis United World College Scholars Program Logo</span>
+    {% endblock %}
+  {% endembed %}
+{% endblock %}
+
+{% block content %}
+
+
+{% endblock %}
