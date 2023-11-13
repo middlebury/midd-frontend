@@ -29,8 +29,8 @@
   color: $white;
   font-size: $typescale-2;
   display: block;
-  padding-top: $spacing-1;
-  padding-bottom: $spacing-1;
+  padding-top: rem(12);
+  padding-bottom: rem(12);
   white-space: nowrap;
 
   @include breakpoint(lg) {
@@ -86,8 +86,8 @@
     
     .midd-footer__link {
       @include breakpoint(lg) {
-        padding-top: $spacing-1;
-        padding-bottom: $spacing-1;
+        padding-top: rem(12);
+        padding-bottom: rem(12);
       }
 
       @include breakpoint(xl) {
