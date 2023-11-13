@@ -34,7 +34,11 @@
     },
     menus: footer_nav
   } %}
-  {% include 'partials/midd-footer.twig' %}
+  {% if theme == 'davis' %}
+    {% include 'partials/davis-footer.twig' %}
+  {% else %}
+    {% include 'partials/midd-footer.twig' %}
+  {% endif %}
 {% endblock %}
 
 {% block layout_before_body_close %}
