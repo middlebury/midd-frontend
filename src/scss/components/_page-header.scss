@@ -12,12 +12,15 @@
   img {
     @include absolute-fill;
     object-fit: cover;
-    font-family: 'object-fit: cover;';
   }
 
   .page-header__title {
     color: $white;
     padding-right: $spacing-4; // make room for tooltip on image
+  }
+
+  .theme-davis & {
+    min-height: 400px;
   }
 }
 
