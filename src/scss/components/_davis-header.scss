@@ -66,6 +66,28 @@
   }
 }
 
+.theme-davis {
+  .page-header--has-image {
+    min-height: 400px;
+  }
+
+  .drawer__content {
+    background: $black;
+  }
+
+  .drawer-nav__item {
+    border-top-color: $gray;
+  }
+
+  .drawer-nav__handle {
+    border-left-color: $gray;
+  }
+
+  .drawer-nav__list {
+    border-top-color: $gray; 
+  }
+}
+
 .davis-nav {
   @include print-hide;
   display: none;
