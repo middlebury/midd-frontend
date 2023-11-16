@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   </head>
-  <body class=" " id="midd-pagetop">
+  <body class=" theme-davis" id="midd-pagetop">
     <aside class="cookie-banner js-cookie-banner is-toggled">
       <p>We use cookies and other technologies to better understand a visitor's experience and to help improve our websites. By continuing to use the website, you consent to Middlebury's use of cookies and other technologies as outlined in our <a href="#">Privacy Policy</a>.</p>
       <button class="cookie-banner__button cookie-banner__button--close" aria-label="Close cookie consent banner" data-toggle-target=".js-cookie-banner"> Close <svg class="icon ml-1 cookie-banner__button-icon " focusable="false" aria-hidden="true">
@@ -200,520 +200,231 @@
       </svg>
     </div>
     <div class="site-container">
-      <header class="midd-header">
-        <div class="midd-header__container">
-          <div class="midd-header__brand">
-            <a href="">
-              <img src="images/midd-shield.svg" class="midd-header__shield" alt="Logo for Middlebury">
-              <img src="images/midd-wordmark.svg" width="116px" height="23px" class="midd-header__wordmark" alt="Middlebury">
-              <span class="sr-only">Middlebury</span>
-            </a>
-          </div>
-          <nav class="midd-nav" aria-labelledby="midd-header-nav-label">
-            <h2 class="sr-only" id="midd-header-nav-label">Primary navigation</h2>
-            <button class="midd-nav__handle" data-toggle-target=".js-midd-nav" data-toggle-group="midd-header" aria-expanded="false" aria-labelledby="midd-nav__handle-label">
-              <svg class="icon mr-1 midd-nav__bars " focusable="false" aria-hidden="true">
-                <use xlink:href="#icon-bars">
-              </svg>
-              <svg class="icon mr-1 midd-nav__times " focusable="false" aria-hidden="true">
-                <use xlink:href="#icon-times">
-              </svg>
-              <span class="d-none d-sm-inline" id="midd-nav__handle-label">Menu</span>
-            </button>
-            <ul class="midd-nav__list midd-nav__list--top js-midd-nav">
-              <li class="midd-nav__item midd-nav__item--top">
-                <a href="#" class="midd-nav__link midd-nav__link--top"> Our Schools </a>
-                <button class="midd-nav__handle midd-nav__handle--sub" data-toggle-target=".js-middnav-list-1" aria-labelledby="midd-nav__handle-label">
-                  <svg class="icon midd-nav__chevron " focusable="false" aria-hidden="true">
-                    <use xlink:href="#icon-chevron-down">
-                  </svg>
-                </button>
-                <ul class="midd-nav__list midd-nav__list--sub js-middnav-list-1">
-                  <li class="midd-nav__item">
-                    <a href="http://www.middlebury.edu/college/" class="midd-nav__link midd-nav__link--sub">Middlebury College</a>
-                  </li>
-                  <li class="midd-nav__item">
-                    <a href="https://www.middlebury.edu/institute/" class="midd-nav__link midd-nav__link--sub">Middlebury Institute of International Studies</a>
-                  </li>
-                  <li class="midd-nav__item">
-                    <a href="http://www.middlebury.edu/language-schools" class="midd-nav__link midd-nav__link--sub">Middlebury Language Schools</a>
-                  </li>
-                  <li class="midd-nav__item">
-                    <a href="http://www.middlebury.edu/schools-abroad" class="midd-nav__link midd-nav__link--sub">Middlebury C.V. Starr Schools Abroad</a>
-                  </li>
-                  <li class="midd-nav__item">
-                    <a href="http://www.middlebury.edu/school-english" class="midd-nav__link midd-nav__link--sub">Middlebury Bread Loaf School of English</a>
-                  </li>
-                  <li class="midd-nav__item">
-                    <a href="http://www.middlebury.edu/writers-conference" class="midd-nav__link midd-nav__link--sub">Middlebury Bread Loaf Writers' Conference</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="midd-nav__item midd-nav__item--top">
-                <a href="#" class="midd-nav__link midd-nav__link--top"> Admissions </a>
-                <button class="midd-nav__handle midd-nav__handle--sub" data-toggle-target=".js-middnav-list-2" aria-labelledby="midd-nav__handle-label">
-                  <svg class="icon midd-nav__chevron " focusable="false" aria-hidden="true">
-                    <use xlink:href="#icon-chevron-down">
-                  </svg>
-                </button>
-                <ul class="midd-nav__list midd-nav__list--sub js-middnav-list-2">
-                  <li class="midd-nav__item">
-                    <a href="http://www.middlebury.edu/college/admissions" class="midd-nav__link midd-nav__link--sub">Middlebury College Admissions</a>
-                  </li>
-                  <li class="midd-nav__item">
-                    <a href="https://www.middlebury.edu/institute/admissions" class="midd-nav__link midd-nav__link--sub">Middlebury Institute of International Studies Admissions</a>
-                  </li>
-                  <li class="midd-nav__item">
-                    <a href="http://www.middlebury.edu/language-schools/admissions" class="midd-nav__link midd-nav__link--sub">Middlebury Language Schools Admissions</a>
-                  </li>
-                  <li class="midd-nav__item">
-                    <a href="http://www.middlebury.edu/schools-abroad/admissions" class="midd-nav__link midd-nav__link--sub">Middlebury C.V. Starr Schools Abroad Admissions</a>
-                  </li>
-                  <li class="midd-nav__item">
-                    <a href="http://www.middlebury.edu/school-english/admissions" class="midd-nav__link midd-nav__link--sub">Middlebury Bread Loaf School of English Admissions</a>
-                  </li>
-                  <li class="midd-nav__item">
-                    <a href="http://www.middlebury.edu/writers-conference" class="midd-nav__link midd-nav__link--sub">Middlebury Bread Loaf Writers' Conference Admissions</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="midd-nav__item midd-nav__item--top">
-                <a href="http://www.middlebury.edu/about" class="midd-nav__link midd-nav__link--top"> About Middlebury </a>
-              </li>
-              <li class="midd-nav__item midd-nav__item--top">
-                <a href="http://www.middlebury.edu/office/" class="midd-nav__link midd-nav__link--top"> Offices and Services </a>
-              </li>
-            </ul>
-          </nav>
-          <section class="midd-search" aria-labelledby="midd-search-label">
-            <h2 class="sr-only" id="midd-search-label">Search</h2>
-            <a href="/search" class="midd-search__handle" role="button" data-toggle-target=".js-midd-search" data-toggle-group="midd-header" data-toggle-focus=".js-midd-search-input" aria-expanded="false" aria-haspopup="true" aria-labelledby="midd-search__handle-label">
-              <svg class="icon midd-search__mag " focusable="false" aria-hidden="true">
-                <use xlink:href="#icon-search">
-              </svg>
-              <svg class="icon midd-search__times " focusable="false" aria-hidden="true">
-                <use xlink:href="#icon-times">
-              </svg>
-              <span class="d-none d-sm-inline" id="midd-search__handle-label">Search</span>
-            </a>
-            <div class="midd-search__content js-midd-search">
-              <form action="https://www.middlebury.edu/search" method="GET">
-                <label for="midd-search-input" class="sr-only">Search</label>
-                <div class="input-group">
-                  <input type="search" class="form-control form-control--sm midd-search__input js-midd-search-input" id="midd-search-input" placeholder="Search" name="q2" required />
-                  <button type="submit" class="button button--sm midd-search__submit">
-                    <span class="sr-only">Search</span>
-                    <svg class="icon  " focusable="false" aria-hidden="true">
-                      <use xlink:href="#icon-search">
-                    </svg>
-                  </button>
-                </div>
-              </form>
+      <header class="davis-header school-header js-headroom">
+        <div class="container">
+          <div class="school-header__main">
+            <div class="school-header__menu-content">
+              <a href="#" class="school-header__logo">
+                <img src="images/davis-globe.png" alt="Globe in logo for Davis United World College Scholars Program" />
+                <img src="images/davis-uwc-logo-309x35.png" srcset="images/davis-uwc-logo-288x36.png 288w, images/davis-uwc-logo-309x35.png 309w" sizes="(min-width: 768px) 309px, 288px" alt="Davis United World College Scholars Program" />
+                <span class="sr-only">Davis United World College Scholars Program</span>
+              </a>
+              <div class="davis-nav__menu">
+                <nav aria-labelledby="midd-main-nav-label">
+                  <h2 class="sr-only" id="midd-main-nav-label">Main navigation</h2>
+                  <ul class="davis-nav__list">
+                    <li class="davis-nav__item">
+                      <a href="" class="davis-nav__link davis-nav__link--top">About the College</a>
+                      <ul class="davis-nav__list davis-nav__list--sub  davis-nav__list--cols">
+                        <li class="davis-nav__item davis-nav__item--sub">
+                          <a href="" class="davis-nav__link davis-nav__link--sub">Liberal Arts at Middlebury</a>
+                        </li>
+                        <li class="davis-nav__item davis-nav__item--sub">
+                          <a href="" class="davis-nav__link davis-nav__link--sub">Faculty Directory</a>
+                        </li>
+                        <li class="davis-nav__item davis-nav__item--sub">
+                          <a href="" class="davis-nav__link davis-nav__link--sub">Departments and Programs</a>
+                        </li>
+                        <li class="davis-nav__item davis-nav__item--sub">
+                          <a href="" class="davis-nav__link davis-nav__link--sub">The Library</a>
+                        </li>
+                        <li class="davis-nav__item davis-nav__item--sub">
+                          <a href="" class="davis-nav__link davis-nav__link--sub">J-Term</a>
+                        </li>
+                        <li class="davis-nav__item davis-nav__item--sub">
+                          <a href="" class="davis-nav__link davis-nav__link--sub">Summer Studies</a>
+                        </li>
+                        <li class="davis-nav__item davis-nav__item--sub">
+                          <a href="" class="davis-nav__link davis-nav__link--sub">Study Abroad</a>
+                        </li>
+                        <li class="davis-nav__item davis-nav__item--sub">
+                          <a href="" class="davis-nav__link davis-nav__link--sub">Academic Resources and Centers</a>
+                        </li>
+                        <li class="davis-nav__item davis-nav__item--sub">
+                          <a href="" class="davis-nav__link davis-nav__link--sub">Academic Calendar</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="davis-nav__item">
+                      <a href="" class="davis-nav__link davis-nav__link--top">Life at Middlebury</a>
+                    </li>
+                    <li class="davis-nav__item">
+                      <a href="" class="davis-nav__link davis-nav__link--top davis-nav__link--active">Academics</a>
+                      <ul class="davis-nav__list davis-nav__list--sub ">
+                        <li class="davis-nav__item davis-nav__item--sub">
+                          <a href="" class="davis-nav__link davis-nav__link--sub">Liberal Arts at Middlebury</a>
+                        </li>
+                        <li class="davis-nav__item davis-nav__item--sub">
+                          <a href="" class="davis-nav__link davis-nav__link--sub">Faculty Directory</a>
+                        </li>
+                        <li class="davis-nav__item davis-nav__item--sub">
+                          <a href="" class="davis-nav__link davis-nav__link--sub">Departments and Programs</a>
+                        </li>
+                        <li class="davis-nav__item davis-nav__item--sub">
+                          <a href="" class="davis-nav__link davis-nav__link--sub">The Library</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="davis-nav__item">
+                      <a href="" class="davis-nav__link davis-nav__link--top">Admissions</a>
+                    </li>
+                    <li class="davis-nav__item">
+                      <a href="" class="davis-nav__link davis-nav__link--top">News</a>
+                    </li>
+                    <li class="davis-nav__item">
+                      <a href="" class="davis-nav__link davis-nav__link--top">Events</a>
+                    </li>
+                    <li class="davis-nav__item d-none d-xl-block">
+                      <a href="/search" class="davis-nav__link davis-nav__link--top" role="button" aria-label="Toggle site search" aria-expanded="false" aria-haspopup="true" data-toggle-target=".js-site-search-xl" data-toggle-focus=".js-site-search-input" data-toggle-group="school-header">
+                        <svg class="icon mr-1 school-search__mag " focusable="false" aria-hidden="true">
+                          <use xlink:href="#icon-search">
+                        </svg>
+                        <svg class="icon mr-1 school-search__times " focusable="false" aria-hidden="true">
+                          <use xlink:href="#icon-times">
+                        </svg> Search </a>
+                      <div class="school-search__content d-none d-xl-block js-site-search-xl">
+                        <form class="">
+                          <div class="input-group">
+                            <label for="midd-school-search" class="sr-only">Search</label>
+                            <input type="search" class="form-control js-site-search-input" id="midd-school-search" placeholder="Search">
+                            <button type="submit" class="button px-3 button--primary">
+                              <span class="sr-only">Search</span>
+                              <svg class="icon  " focusable="false" aria-hidden="true">
+                                <use xlink:href="#icon-search">
+                              </svg>
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
             </div>
-          </section>
+            <div class="school-header__util-links">
+              <div class="davis-nav">
+                <nav aria-labelledby="midd-secondary-nav-label">
+                  <h2 class="sr-only" id="midd-secondary-nav-label">Secondary navigation</h2>
+                  <ul class="davis-nav__list">
+                    <li class="davis-nav__item">
+                      <a href="" class="davis-nav__link davis-nav__link--util">Midd Students</a>
+                    </li>
+                    <li class="davis-nav__item">
+                      <a href="" class="davis-nav__link davis-nav__link--util">Parents</a>
+                    </li>
+                    <li class="davis-nav__item">
+                      <a href="" class="davis-nav__link davis-nav__link--util">Advisors</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <button class="davis-nav__handle" data-drawer="midd-nav-drawer" aria-label="Open navigation">
+                <svg class="icon mr-1 " focusable="false" aria-hidden="true">
+                  <use xlink:href="#icon-bars">
+                </svg>
+                <span class="d-none d-sm-inline">Menu</span>
+              </button>
+              <div class="school-search">
+                <a href="/search" class="school-search__handle d-xl-none" role="button" aria-label="Toggle site search" aria-expanded="false" aria-haspopup="true" data-toggle-target=".js-site-search" data-toggle-focus=".js-site-search-input" data-toggle-group="school-header">
+                  <svg class="icon mr-1 school-search__mag " focusable="false" aria-hidden="true">
+                    <use xlink:href="#icon-search">
+                  </svg>
+                  <svg class="icon mr-1 school-search__times " focusable="false" aria-hidden="true">
+                    <use xlink:href="#icon-times">
+                  </svg>
+                  <span class="d-none d-sm-inline">Search</span>
+                </a>
+                <div class="school-search__content d-xl-none js-site-search">
+                  <form class="">
+                    <div class="input-group">
+                      <label for="midd-school-search" class="sr-only">Search</label>
+                      <input type="search" class="form-control js-site-search-input" id="midd-school-search" placeholder="Search">
+                      <button type="submit" class="button px-3 button--primary">
+                        <span class="sr-only">Search</span>
+                        <svg class="icon  " focusable="false" aria-hidden="true">
+                          <use xlink:href="#icon-search">
+                        </svg>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </header>
       <main class="main" id="midd-main" aria-labelledby="midd-page-header-label">
         <div class="container px-0">
-          <header class="page-header" aria-labelledby="midd-page-header-label">
+          <header class="page-header page-header--has-image" aria-labelledby="midd-page-header-label">
+            <figure class="page-header__figure">
+              <img src="https://via.placeholder.com/1440x576" srcset="https://via.placeholder.com/400x160 400w,https://via.placeholder.com/640x256 640w,https://via.placeholder.com/960x384 960w,https://via.placeholder.com/1280x512 1280w,https://via.placeholder.com/1440x576 1440w" sizes="(max-width: 1440px) 100vw, 1440px" alt="" />
+              <figcaption class="page-header__caption">
+                <div class="tooltip tooltip--light">
+                  <button class="tooltip__button" aria-labelledby="midd-tooltip-label-413">
+                    <svg class="icon f5 icon--lg" focusable="false" aria-hidden="true">
+                      <use xlink:href="#icon-info">
+                    </svg>
+                  </button>
+                  <div class="tooltip__label" role="tooltip" id="midd-tooltip-label-413"> some caption for top level image </div>
+                </div>
+              </figcaption>
+            </figure>
             <div class="page-header__main">
               <div class="page-header__content">
-                <nav class="breadcrumb " aria-labelledby="midd-breadcrumb-label">
-                  <h2 class="sr-only" id="midd-breadcrumb-label">Breadcrumb</h2>
-                  <ol class="breadcrumb__list">
-                    <li class="breadcrumb__item">
-                      <a href="" class="breadcrumb__link">Middlebury</a>
-                    </li>
-                  </ol>
-                </nav>
-                <h1 class="page-header__title" id="midd-page-header-label">Events</h1>
+                <h1 class="page-header__title" id="midd-page-header-label"></h1>
               </div>
             </div>
           </header>
         </div>
         <div class="container">
           <div class="row">
-            <div class="col-md-10 offset-md-1 col-lg-3 offset-lg-0 mb-4">
-              <form>
-                <div class="mb-5">
-                  <label for="midd-sidebar-search" class="label">Search Events</label>
-                  <div class="input-group">
-                    <input type="search" placeholder="Type keywords..." id="midd-sidebar-search" class="form-control form-control--sm" required />
-                    <button type="submit" class="button button--primary button--outline px-4 button--sm">
-                      <span class="sr-only">Search</span>
-                      <svg class="icon  " focusable="false" aria-hidden="true">
-                        <use xlink:href="#icon-search">
-                      </svg>
-                    </button>
-                  </div>
+            <div class="paragraphs paragraphs--wide">
+              <div class="paragraph--full paragraph--davis-lead">
+                <div class="container px-0">
+                  <p class="davis-lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste iusto blanditiis dolorem illum accusantium, praesentium labore cumque fugit eos, quasi corporis voluptas aut! Doloremque similique dolorem enim, quos ipsam soluta!</p>
                 </div>
-              </form>
-              <form class="mb-7">
-                <div class="filters">
-                  <div class="filters__header">
-                    <h2 class="filters__title"> Filters </h2>
-                    <a href="" class="button button--sm px-0">
-                      <svg class="icon mr-1 " focusable="false" aria-hidden="true">
-                        <use xlink:href="#icon-redo">
-                      </svg> Clear </a>
-                  </div>
-                  <fieldset class="filter">
-                    <legend class="filter__legend">
-                      <button class="filter__button" data-toggle-target=".js-filter-526" aria-expanded="true"> Categories <svg class="icon filter__icon-close " focusable="false" aria-hidden="true">
-                          <use xlink:href="#icon-minus">
-                        </svg>
-                        <svg class="icon filter__icon-open " focusable="false" aria-hidden="true">
-                          <use xlink:href="#icon-plus">
-                        </svg>
-                      </button>
-                    </legend>
-                    <div class="filter__body js-filter-526">
-                      <div class="checkbox checkbox--filter">
-                        <input type="checkbox" class="checkbox__input" id="checkbox-item-526-1" />
-                        <label for="checkbox-item-526-1" id="checkbox-label-526-1" class="checkbox__label"> Minors </label>
-                      </div>
-                      <div class="checkbox checkbox--filter">
-                        <input type="checkbox" class="checkbox__input" id="checkbox-item-526-2" />
-                        <label for="checkbox-item-526-2" id="checkbox-label-526-2" class="checkbox__label"> Majors </label>
-                      </div>
-                      <div class="checkbox checkbox--filter">
-                        <input type="checkbox" class="checkbox__input" id="checkbox-item-526-3" />
-                        <label for="checkbox-item-526-3" id="checkbox-label-526-3" class="checkbox__label"> Programs </label>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <input type="submit" class="sr-only sr-focusable" value="Apply Filters" />
-                </div>
-              </form>
-            </div>
-            <div class="col-md-10 offset-md-1 col-lg-7 offset-lg-0">
-              <div class="mb-5 d-flex bg-gray-lighter py-2 flex-wrap">
-                <a href="" class="button button--sm">
-                  <svg class="icon  " focusable="false" aria-hidden="true">
-                    <use xlink:href="#icon-times">
-                  </svg> Photograph </a>
-                <a href="" class="button button--sm">
-                  <svg class="icon  " focusable="false" aria-hidden="true">
-                    <use xlink:href="#icon-times">
-                  </svg> 1980 </a>
-                <a href="" class="ml-auto button button--sm">
-                  <svg class="icon mr-1 " focusable="false" aria-hidden="true">
-                    <use xlink:href="#icon-redo">
-                  </svg> Clear Filters </a>
               </div>
-              <section class="section">
-                <h2 class="section__title"> Sunday, May 23 </h2>
-                <ul class="list list--dividers list--md">
-                  <li class="list__item">
-                    <article class="d-flex" aria-labelledby="midd-event-0-header">
-                      <time datetime="" class="text-center mt-1 lh-solid">
-                        <span class="f3 d-block">Jun</span>
-                        <span class="f7 d-block">24</span>
-                      </time>
-                      <div class="w-100 pl-3 clearfix">
-                        <figure class="mb-2 float-md-right ml-md-3">
-                          <a href="">
-                            <img src="https://via.placeholder.com/240x135" srcset="https://via.placeholder.com/240x135 240w" sizes="(max-width: 240px) 100vw, 240px" alt="" />
-                          </a>
-                        </figure>
-                        <h3 class="h3" id="midd-event-0-header">
-                          <a href="#" title=" on June 24, 2017 &middot; 11:45 AM"> Museum of Art Lecture Series </a>
-                        </h3>
-                        <time datetime="" class="d-block font-medium">11:45 AM</time>
-                        <p class="f3 my-3"> Lorem ipsum dolor si... </p>
-                        <p class="f3 font-medium"> McCone Irvine Auditorium </p>
-                        <small class="f2 text-gray">Open to the Public</small>
-                      </div>
-                    </article>
-                  </li>
-                  <li class="list__item">
-                    <article class="d-flex" aria-labelledby="midd-event-1-header">
-                      <time datetime="" class="text-center mt-1 lh-solid">
-                        <span class="f3 d-block">Jun</span>
-                        <span class="f7 d-block">24</span>
-                      </time>
-                      <div class="w-100 pl-3 clearfix">
-                        <figure class="mb-2 float-md-right ml-md-3">
-                          <a href="">
-                            <img src="https://via.placeholder.com/240x135" srcset="https://via.placeholder.com/240x135 240w" sizes="(max-width: 240px) 100vw, 240px" alt="" />
-                          </a>
-                        </figure>
-                        <h3 class="h3" id="midd-event-1-header">
-                          <a href="#" title=" on June 24, 2017 &middot; 11:45 AM"> Museum of Art Lecture Series </a>
-                        </h3>
-                        <time datetime="" class="d-block font-medium">11:45 AM</time>
-                        <p class="f3 my-3"> Lorem ipsum dolor sit amet, consectetur adipisicin... </p>
-                        <p class="f3 font-medium"> McCone Irvine Auditorium </p>
-                        <small class="f2 text-gray">Open to the Public</small>
-                      </div>
-                    </article>
-                  </li>
-                  <li class="list__item">
-                    <article class="d-flex" aria-labelledby="midd-event-2-header">
-                      <time datetime="" class="text-center mt-1 lh-solid">
-                        <span class="f3 d-block">Jun</span>
-                        <span class="f7 d-block">24</span>
-                      </time>
-                      <div class="w-100 pl-3 clearfix">
-                        <figure class="mb-2 float-md-right ml-md-3">
-                          <a href="">
-                            <img src="https://via.placeholder.com/240x135" srcset="https://via.placeholder.com/240x135 240w" sizes="(max-width: 240px) 100vw, 240px" alt="" />
-                          </a>
-                        </figure>
-                        <h3 class="h3" id="midd-event-2-header">
-                          <a href="#" title=" on June 24, 2017 &middot; 11:45 AM"> Museum of Art Lecture Series </a>
-                        </h3>
-                        <time datetime="" class="d-block font-medium">11:45 AM</time>
-                        <p class="f3 my-3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores ... </p>
-                        <p class="f3 font-medium"> McCone Irvine Auditorium </p>
-                        <small class="f2 text-gray">Open to the Public</small>
-                      </div>
-                    </article>
-                  </li>
-                  <li class="list__item">
-                    <article class="d-flex" aria-labelledby="midd-event-3-header">
-                      <time datetime="" class="text-center mt-1 lh-solid">
-                        <span class="f3 d-block">Jun</span>
-                        <span class="f7 d-block">24</span>
-                      </time>
-                      <div class="w-100 pl-3 clearfix">
-                        <figure class="mb-2 float-md-right ml-md-3">
-                          <a href="">
-                            <img src="https://via.placeholder.com/240x135" srcset="https://via.placeholder.com/240x135 240w" sizes="(max-width: 240px) 100vw, 240px" alt="" />
-                          </a>
-                        </figure>
-                        <h3 class="h3" id="midd-event-3-header">
-                          <a href="#" title=" on June 24, 2017 &middot; 11:45 AM"> Museum of Art Lecture Series </a>
-                        </h3>
-                        <time datetime="" class="d-block font-medium">11:45 AM</time>
-                        <p class="f3 my-3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores illum quas, voluptatum atque v... </p>
-                        <p class="f3 font-medium"> McCone Irvine Auditorium </p>
-                        <small class="f2 text-gray">Open to the Public</small>
-                      </div>
-                    </article>
-                  </li>
-                </ul>
-              </section>
-              <section class="section">
-                <h2 class="section__title"> Sunday, May 23 </h2>
-                <ul class="list list--dividers list--md">
-                  <li class="list__item">
-                    <article class="d-flex" aria-labelledby="midd-event-0-header">
-                      <time datetime="" class="text-center mt-1 lh-solid">
-                        <span class="f3 d-block">Jun</span>
-                        <span class="f7 d-block">24</span>
-                      </time>
-                      <div class="w-100 pl-3 clearfix">
-                        <figure class="mb-2 float-md-right ml-md-3">
-                          <a href="">
-                            <img src="https://via.placeholder.com/240x135" srcset="https://via.placeholder.com/240x135 240w" sizes="(max-width: 240px) 100vw, 240px" alt="" />
-                          </a>
-                        </figure>
-                        <h3 class="h3" id="midd-event-0-header">
-                          <a href="#" title=" on June 24, 2017 &middot; 11:45 AM"> Museum of Art Lecture Series </a>
-                        </h3>
-                        <time datetime="" class="d-block font-medium">11:45 AM</time>
-                        <p class="f3 my-3"> Lorem ipsum dolor si... </p>
-                        <p class="f3 font-medium"> McCone Irvine Auditorium </p>
-                        <small class="f2 text-gray">Open to the Public</small>
-                      </div>
-                    </article>
-                  </li>
-                  <li class="list__item">
-                    <article class="d-flex" aria-labelledby="midd-event-1-header">
-                      <time datetime="" class="text-center mt-1 lh-solid">
-                        <span class="f3 d-block">Jun</span>
-                        <span class="f7 d-block">24</span>
-                      </time>
-                      <div class="w-100 pl-3 clearfix">
-                        <figure class="mb-2 float-md-right ml-md-3">
-                          <a href="">
-                            <img src="https://via.placeholder.com/240x135" srcset="https://via.placeholder.com/240x135 240w" sizes="(max-width: 240px) 100vw, 240px" alt="" />
-                          </a>
-                        </figure>
-                        <h3 class="h3" id="midd-event-1-header">
-                          <a href="#" title=" on June 24, 2017 &middot; 11:45 AM"> Museum of Art Lecture Series </a>
-                        </h3>
-                        <time datetime="" class="d-block font-medium">11:45 AM</time>
-                        <p class="f3 my-3"> Lorem ipsum dolor sit amet, consectetur adipisicin... </p>
-                        <p class="f3 font-medium"> McCone Irvine Auditorium </p>
-                        <small class="f2 text-gray">Open to the Public</small>
-                      </div>
-                    </article>
-                  </li>
-                  <li class="list__item">
-                    <article class="d-flex" aria-labelledby="midd-event-2-header">
-                      <time datetime="" class="text-center mt-1 lh-solid">
-                        <span class="f3 d-block">Jun</span>
-                        <span class="f7 d-block">24</span>
-                      </time>
-                      <div class="w-100 pl-3 clearfix">
-                        <figure class="mb-2 float-md-right ml-md-3">
-                          <a href="">
-                            <img src="https://via.placeholder.com/240x135" srcset="https://via.placeholder.com/240x135 240w" sizes="(max-width: 240px) 100vw, 240px" alt="" />
-                          </a>
-                        </figure>
-                        <h3 class="h3" id="midd-event-2-header">
-                          <a href="#" title=" on June 24, 2017 &middot; 11:45 AM"> Museum of Art Lecture Series </a>
-                        </h3>
-                        <time datetime="" class="d-block font-medium">11:45 AM</time>
-                        <p class="f3 my-3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores ... </p>
-                        <p class="f3 font-medium"> McCone Irvine Auditorium </p>
-                        <small class="f2 text-gray">Open to the Public</small>
-                      </div>
-                    </article>
-                  </li>
-                  <li class="list__item">
-                    <article class="d-flex" aria-labelledby="midd-event-3-header">
-                      <time datetime="" class="text-center mt-1 lh-solid">
-                        <span class="f3 d-block">Jun</span>
-                        <span class="f7 d-block">24</span>
-                      </time>
-                      <div class="w-100 pl-3 clearfix">
-                        <figure class="mb-2 float-md-right ml-md-3">
-                          <a href="">
-                            <img src="https://via.placeholder.com/240x135" srcset="https://via.placeholder.com/240x135 240w" sizes="(max-width: 240px) 100vw, 240px" alt="" />
-                          </a>
-                        </figure>
-                        <h3 class="h3" id="midd-event-3-header">
-                          <a href="#" title=" on June 24, 2017 &middot; 11:45 AM"> Museum of Art Lecture Series </a>
-                        </h3>
-                        <time datetime="" class="d-block font-medium">11:45 AM</time>
-                        <p class="f3 my-3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores illum quas, voluptatum atque v... </p>
-                        <p class="f3 font-medium"> McCone Irvine Auditorium </p>
-                        <small class="f2 text-gray">Open to the Public</small>
-                      </div>
-                    </article>
-                  </li>
-                </ul>
-              </section>
-              <section class="section">
-                <h2 class="section__title"> Sunday, May 23 </h2>
-                <ul class="list list--dividers list--md">
-                  <li class="list__item">
-                    <article class="d-flex" aria-labelledby="midd-event-0-header">
-                      <time datetime="" class="text-center mt-1 lh-solid">
-                        <span class="f3 d-block">Jun</span>
-                        <span class="f7 d-block">24</span>
-                      </time>
-                      <div class="w-100 pl-3 clearfix">
-                        <figure class="mb-2 float-md-right ml-md-3">
-                          <a href="">
-                            <img src="https://via.placeholder.com/240x135" srcset="https://via.placeholder.com/240x135 240w" sizes="(max-width: 240px) 100vw, 240px" alt="" />
-                          </a>
-                        </figure>
-                        <h3 class="h3" id="midd-event-0-header">
-                          <a href="#" title=" on June 24, 2017 &middot; 11:45 AM"> Museum of Art Lecture Series </a>
-                        </h3>
-                        <time datetime="" class="d-block font-medium">11:45 AM</time>
-                        <p class="f3 my-3"> Lorem ipsum dolor si... </p>
-                        <p class="f3 font-medium"> McCone Irvine Auditorium </p>
-                        <small class="f2 text-gray">Open to the Public</small>
-                      </div>
-                    </article>
-                  </li>
-                  <li class="list__item">
-                    <article class="d-flex" aria-labelledby="midd-event-1-header">
-                      <time datetime="" class="text-center mt-1 lh-solid">
-                        <span class="f3 d-block">Jun</span>
-                        <span class="f7 d-block">24</span>
-                      </time>
-                      <div class="w-100 pl-3 clearfix">
-                        <figure class="mb-2 float-md-right ml-md-3">
-                          <a href="">
-                            <img src="https://via.placeholder.com/240x135" srcset="https://via.placeholder.com/240x135 240w" sizes="(max-width: 240px) 100vw, 240px" alt="" />
-                          </a>
-                        </figure>
-                        <h3 class="h3" id="midd-event-1-header">
-                          <a href="#" title=" on June 24, 2017 &middot; 11:45 AM"> Museum of Art Lecture Series </a>
-                        </h3>
-                        <time datetime="" class="d-block font-medium">11:45 AM</time>
-                        <p class="f3 my-3"> Lorem ipsum dolor sit amet, consectetur adipisicin... </p>
-                        <p class="f3 font-medium"> McCone Irvine Auditorium </p>
-                        <small class="f2 text-gray">Open to the Public</small>
-                      </div>
-                    </article>
-                  </li>
-                  <li class="list__item">
-                    <article class="d-flex" aria-labelledby="midd-event-2-header">
-                      <time datetime="" class="text-center mt-1 lh-solid">
-                        <span class="f3 d-block">Jun</span>
-                        <span class="f7 d-block">24</span>
-                      </time>
-                      <div class="w-100 pl-3 clearfix">
-                        <figure class="mb-2 float-md-right ml-md-3">
-                          <a href="">
-                            <img src="https://via.placeholder.com/240x135" srcset="https://via.placeholder.com/240x135 240w" sizes="(max-width: 240px) 100vw, 240px" alt="" />
-                          </a>
-                        </figure>
-                        <h3 class="h3" id="midd-event-2-header">
-                          <a href="#" title=" on June 24, 2017 &middot; 11:45 AM"> Museum of Art Lecture Series </a>
-                        </h3>
-                        <time datetime="" class="d-block font-medium">11:45 AM</time>
-                        <p class="f3 my-3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores ... </p>
-                        <p class="f3 font-medium"> McCone Irvine Auditorium </p>
-                        <small class="f2 text-gray">Open to the Public</small>
-                      </div>
-                    </article>
-                  </li>
-                  <li class="list__item">
-                    <article class="d-flex" aria-labelledby="midd-event-3-header">
-                      <time datetime="" class="text-center mt-1 lh-solid">
-                        <span class="f3 d-block">Jun</span>
-                        <span class="f7 d-block">24</span>
-                      </time>
-                      <div class="w-100 pl-3 clearfix">
-                        <figure class="mb-2 float-md-right ml-md-3">
-                          <a href="">
-                            <img src="https://via.placeholder.com/240x135" srcset="https://via.placeholder.com/240x135 240w" sizes="(max-width: 240px) 100vw, 240px" alt="" />
-                          </a>
-                        </figure>
-                        <h3 class="h3" id="midd-event-3-header">
-                          <a href="#" title=" on June 24, 2017 &middot; 11:45 AM"> Museum of Art Lecture Series </a>
-                        </h3>
-                        <time datetime="" class="d-block font-medium">11:45 AM</time>
-                        <p class="f3 my-3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores illum quas, voluptatum atque v... </p>
-                        <p class="f3 font-medium"> McCone Irvine Auditorium </p>
-                        <small class="f2 text-gray">Open to the Public</small>
-                      </div>
-                    </article>
-                  </li>
-                </ul>
-              </section>
-              <nav class="pagination">
-                <ul class="pagination__list">
-                  <li class="pagination__item pagination__item--previous">
-                    <a href="#" class="pagination__link">Previous</a>
-                  </li>
-                  <li class="pagination__item pagination__item--first"><a href="" class="pagination__link">1</a></li>
-                  <li class="pagination__item pagination__item--others"><span>&hellip;</span></li>
-                  <li class="pagination__item"><a href="" class="pagination__link">2</a></li>
-                  <li class="pagination__item"><a href="" class="pagination__link">3</a></li>
-                  <li class="pagination__item pagination__item--active"><a href="" class="pagination__link pagination__link--active">4</a></li>
-                  <li class="pagination__item"><a href="" class="pagination__link">5</a></li>
-                  <li class="pagination__item pagination__item--others"><span>&hellip;</span></li>
-                  <li class="pagination__item pagination__item--last"><a href="" class="pagination__link">21</a></li>
-                  <li class="pagination__item pagination__item--next">
-                    <a href="#" class="pagination__link">Next</a>
-                  </li>
-                </ul>
-              </nav>
+              <p class="lead paragraph--lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste iusto blanditiis dolorem illum accusantium, praesentium labore cumque fugit eos, quasi corporis voluptas aut! Doloremque similique dolorem enim, quos ipsam soluta!</p>
+              <div class="paragraph--chart" data-digest-content>
+                <div class="chart-group__list chart-group__list--3+">
+                  <div class="chart-group__item chart-group__item--stats">
+                    <div class="stats">
+                      <span class="stats__label"><span data-countup>160</span></span>
+                      <span class="stats__text">countries represented</span>
+                    </div>
+                  </div>
+                  <div class="chart-group__item chart-group__item--stats">
+                    <div class="stats">
+                      <span class="stats__label"><span data-countup>4000</span></span>
+                      <span class="stats__text">current scholars</span>
+                    </div>
+                  </div>
+                  <div class="chart-group__item chart-group__item--stats">
+                    <div class="stats">
+                      <span class="stats__label"><span data-countup>10000</span></span>
+                      <span class="stats__text">alumni</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </main>
-      <nav class="midd-footer">
+      <nav class="midd-footer davis-footer">
         <h2 class="sr-only"> Additional Navigation </h2>
         <div class="container">
           <div class="row">
-            <div class="col-lg-3">
-              <div class="mb-4 mb-lg-0">
-                <a href="https://www.middlebury.edu">
-                  <img src="images/middlebury-logo-white.svg" alt="Middlebury" width="195" height="71" />
+            <div class="col-xl-4">
+              <div class="mb-2 mb-xl-0">
+                <a class="davis-logo" href="https://www.middlebury.edu">
+                  <img src="images/davis-globe.png" alt="Globe in logo for Davis United World College Scholars Program" />
+                  <img src="images/davis-uwc-logo-309x35.png" srcset="images/davis-uwc-logo-288x36.png 288w, images/davis-uwc-logo-309x35.png 309w" sizes="(min-width: 768px) 309px, 288px" alt="Davis United World College Scholars Program" />
+                  <span class="sr-only">Davis United World College Scholars Program Logo</span>
                 </a>
               </div>
             </div>
-            <div class="col-lg-9">
+            <div class="col-xl-8">
               <ul class="midd-footer__list">
                 <li class="midd-footer__item">
                   <a href="http://www.middlebury.edu/about" class="midd-footer__link"> About Middlebury </a>
@@ -748,6 +459,108 @@
             <span class="sr-only">Back to</span> Top </span>
         </a>
       </nav>
+    </div>
+    <div class="drawer" id="midd-nav-drawer" aria-hidden="true">
+      <div class="drawer__overlay" tabindex="-1" data-drawer-close>
+        <div class="drawer__content" role="dialog" aria-modal="true" aria-labelledby="midd-modal-1-title">
+          <div class="drawer__header">
+            <h2 class="sr-only" id="midd-modal-1-title">Navigation</h2>
+            <button class="drawer__close" aria-label="Close modal" data-drawer-close>
+              <svg class="icon mr-1 " focusable="false" aria-hidden="true">
+                <use xlink:href="#icon-times">
+              </svg> Close </button>
+          </div>
+          <div id="midd-modal-1-content">
+            <nav class="drawer-nav" aria-labelledby="midd-drawer-nav-label">
+              <h2 class="sr-only" id="midd-drawer-nav-label">Navigation</h2>
+              <ul class="drawer-nav__list drawer-nav__list--top">
+                <li class="drawer-nav__item">
+                  <a href="" class="drawer-nav__link drawer-nav__link--top">About the College</a>
+                  <button class="drawer-nav__handle" data-toggle-target=".js-subnav-1" aria-haspopup="true" aria-expanded="false" aria-controls="midd-subnav-1">
+                    <svg class="icon drawer-nav__chevron " focusable="false" aria-hidden="true">
+                      <use xlink:href="#icon-chevron-down">
+                    </svg>
+                  </button>
+                  <ul class="drawer-nav__list drawer-nav__list--sub js-subnav-1" id="midd-subnav-1">
+                    <li class="drawer-nav__item drawer-nav__item--sub">
+                      <a href="" class="drawer-nav__link drawer-nav__link--sub">Liberal Arts at Middlebury</a>
+                    </li>
+                    <li class="drawer-nav__item drawer-nav__item--sub">
+                      <a href="" class="drawer-nav__link drawer-nav__link--sub">Faculty Directory</a>
+                    </li>
+                    <li class="drawer-nav__item drawer-nav__item--sub">
+                      <a href="" class="drawer-nav__link drawer-nav__link--sub">Departments and Programs</a>
+                    </li>
+                    <li class="drawer-nav__item drawer-nav__item--sub">
+                      <a href="" class="drawer-nav__link drawer-nav__link--sub">The Library</a>
+                    </li>
+                    <li class="drawer-nav__item drawer-nav__item--sub">
+                      <a href="" class="drawer-nav__link drawer-nav__link--sub">J-Term</a>
+                    </li>
+                    <li class="drawer-nav__item drawer-nav__item--sub">
+                      <a href="" class="drawer-nav__link drawer-nav__link--sub">Summer Studies</a>
+                    </li>
+                    <li class="drawer-nav__item drawer-nav__item--sub">
+                      <a href="" class="drawer-nav__link drawer-nav__link--sub">Study Abroad</a>
+                    </li>
+                    <li class="drawer-nav__item drawer-nav__item--sub">
+                      <a href="" class="drawer-nav__link drawer-nav__link--sub">Academic Resources and Centers</a>
+                    </li>
+                    <li class="drawer-nav__item drawer-nav__item--sub">
+                      <a href="" class="drawer-nav__link drawer-nav__link--sub">Academic Calendar</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="drawer-nav__item">
+                  <a href="" class="drawer-nav__link drawer-nav__link--top">Life at Middlebury</a>
+                </li>
+                <li class="drawer-nav__item">
+                  <a href="" class="drawer-nav__link drawer-nav__link--top">Academics</a>
+                  <button class="drawer-nav__handle" data-toggle-target=".js-subnav-3" aria-haspopup="true" aria-expanded="false" aria-controls="midd-subnav-3">
+                    <svg class="icon drawer-nav__chevron " focusable="false" aria-hidden="true">
+                      <use xlink:href="#icon-chevron-down">
+                    </svg>
+                  </button>
+                  <ul class="drawer-nav__list drawer-nav__list--sub js-subnav-3" id="midd-subnav-3">
+                    <li class="drawer-nav__item drawer-nav__item--sub">
+                      <a href="" class="drawer-nav__link drawer-nav__link--sub">Liberal Arts at Middlebury</a>
+                    </li>
+                    <li class="drawer-nav__item drawer-nav__item--sub">
+                      <a href="" class="drawer-nav__link drawer-nav__link--sub">Faculty Directory</a>
+                    </li>
+                    <li class="drawer-nav__item drawer-nav__item--sub">
+                      <a href="" class="drawer-nav__link drawer-nav__link--sub">Departments and Programs</a>
+                    </li>
+                    <li class="drawer-nav__item drawer-nav__item--sub">
+                      <a href="" class="drawer-nav__link drawer-nav__link--sub">The Library</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="drawer-nav__item">
+                  <a href="" class="drawer-nav__link drawer-nav__link--top">Admissions</a>
+                </li>
+                <li class="drawer-nav__item">
+                  <a href="" class="drawer-nav__link drawer-nav__link--top">News</a>
+                </li>
+                <li class="drawer-nav__item">
+                  <a href="" class="drawer-nav__link drawer-nav__link--top">Events</a>
+                </li>
+              </ul>
+              <ul class="drawer-nav__list drawer-nav__list--util">
+                <li class="drawer-nav__item">
+                  <a href="" class="drawer-nav__link drawer-nav__link--util">Midd Students</a>
+                </li>
+                <li class="drawer-nav__item">
+                  <a href="" class="drawer-nav__link drawer-nav__link--util">Parents</a>
+                </li>
+                <li class="drawer-nav__item">
+                  <a href="" class="drawer-nav__link drawer-nav__link--util">Advisors</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="js/main.bundle.js" async></script>
   </body>
