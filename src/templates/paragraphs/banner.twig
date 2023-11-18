@@ -1,0 +1,19 @@
+<aside class="banner">
+    <figure class="container px-0">
+        <span class="banner__top-line"></span>
+        <a href="#">
+            {% include 'partials/img.twig' with {
+                name: 'journey_banner'
+            } %}
+        </a>
+        <div class="banner__content">
+            <a href="#" class="banner__campaign-logo" href="">
+                {% include 'partials/campaign-logo.twig' %}
+                <span class="sr-only">For Every Future, the Campaign for Middlebury</span>
+            </a>
+            <a href="#" class="banner__link">Engage and Give »</a>
+        </div>
+        <span class="banner__bottom-line"></span>
+        <figcaption class="sr-only"></figcaption>
+    </figure>
+</aside>
