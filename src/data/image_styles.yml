@@ -254,7 +254,7 @@ image_styles:
     title: Banner image on homepage
     ratio: '24:5'
     srcset:
-      - 425x88
-      - 736x153
+      - 512x107
+      - 736x154
       - 1136x237
       - 1376x287
