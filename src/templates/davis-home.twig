@@ -22,10 +22,10 @@
   <div class="container">
     <div class="row">
       <div class="paragraphs paragraphs--wide">
-        {% include 'partials/lead.twig' %}
         {% include 'partials/lead.twig' with {
-          theme: ''
-        } %}
+          pulled_up: true
+        }%}
+        {% include 'partials/lead.twig' %}
         {% include 'paragraphs/chart-group.twig' with {
           items: [
             { type: 'stats', number: 160, label: 'countries represented', },
