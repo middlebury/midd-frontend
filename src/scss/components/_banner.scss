@@ -102,7 +102,7 @@
   .banner__link {
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: $spacing-3;
     margin-bottom: $spacing-3;
     color: $white;
     font-size: $typescale-1;
@@ -112,6 +112,11 @@
 
     @include breakpoint(sm) {
       margin-bottom: $spacing-4;
+      right: $spacing-4;
+    }
+
+    @include breakpoint(xl) {
+      right: $spacing-5;
     }
   }
 }
