@@ -117,6 +117,30 @@ $text-colors: (
   }
 }
 
+.davis-lead {
+  font-size: $typescale-6;
+  font-weight: $font-weight-light;
+  background-color: $white;
+  border-top: $spacing-2 solid $black;
+  padding: $spacing-2;
+  margin-left: $spacing-3;
+  margin-right: $spacing-3;
+
+  @include breakpoint(sm) {
+    font-size: rem(32);
+  }
+
+  @include breakpoint(md) {
+    padding: $spacing-2 $spacing-3;
+  }
+
+  @include breakpoint(lg) {
+    padding: $spacing-3 $spacing-5;
+    margin-left: $spacing-5;
+    margin-right: $spacing-5;
+  }
+}
+
 .text-caps {
   @include small-caps;
 }
