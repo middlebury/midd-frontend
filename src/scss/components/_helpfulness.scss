@@ -45,6 +45,8 @@
 
 .helpfulness--unanswered {
   .form-item-helpfulness-comments,
+  .form-item-helpfulness-comments-yes,
+  .form-item-helpfulness-comments-no,
   .helpfulness_no_description,
   .helpfulness_yes_description,
   .helpfulness_yes_title,
@@ -55,15 +57,13 @@
 }
 
 .helpfulness--yes {
-  .helpfulness_no_description,
-  .helpfulness_no_title {
+  .form-item-helpfulness-comments-no {
     display: none;
   }
 }
 
 .helpfulness--no {
-  .helpfulness_yes_description,
-  .helpfulness_yes_title {
+  .form-item-helpfulness-comments-yes {
     display: none;
   }
 }

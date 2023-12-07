@@ -25,6 +25,7 @@
   a[href*='drive.google.com'],
   a[href*='docs.google.com'],
   a[href*='.pdf'],
+  a[href^='/media/'],
   a[href*='middleburycollege-my.sharepoint.com'] {
     &:after {
       font-size: rem(10);
@@ -53,7 +54,8 @@
     }
   }
 
-  a[href*='.pdf'] {
+  a[href*='.pdf'],
+  a[href^='/media/'] {
     &:after {
       content: 'PDF';
     }
@@ -95,7 +97,7 @@
   }
 
   ul {
-    > li {
+    >li {
       position: relative;
 
       &:before {
@@ -112,7 +114,7 @@
     list-style-type: none;
     counter-reset: ol;
 
-    > li {
+    >li {
       counter-increment: ol;
       position: relative;
 
@@ -160,8 +162,8 @@
   // because @at-root seems to make the styles root for the entire list of selectors
   // instead of the single selector it is used in front of.
   // See https://stackoverflow.com/q/36902927/2193516
-  @at-root .paragraph--text + .paragraph--text > h2,
-    .lead + .paragraph--text > h2 {
+  @at-root .paragraph--text+.paragraph--text>h2,
+  .lead+.paragraph--text>h2 {
     @include h2;
     margin-top: $spacing-7;
     margin-bottom: $spacing-4;
@@ -211,6 +213,13 @@
     font-weight: $font-weight-semibold;
   }
 
+  h6>a,
+  h5>a,
+  h4>a,
+  h3>a {
+    font-weight: 600;
+  }
+
   table {
     @extend %table;
   }
@@ -245,6 +254,7 @@
 }
 
 .typography--sm {
+
   li,
   p {
     font-size: $typescale-2;

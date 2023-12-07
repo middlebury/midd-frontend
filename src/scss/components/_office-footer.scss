@@ -40,8 +40,23 @@
   }
 }
 
-.office-footer__col h3 {
+.office-footer__col div {
   &:not(:first-child) {
-    margin-top: $spacing-4;
+    h3 {
+      margin-left: -$spacing-3;
+      margin-right: -$spacing-3;
+      margin-top: $spacing-4;
+      padding-top: $spacing-4;
+      border-top: 1px solid $border-color;
+
+      @include breakpoint(lg) {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
   }
+}
+
+.office-footer__col h4 {
+  margin-top: rem(14);
 }

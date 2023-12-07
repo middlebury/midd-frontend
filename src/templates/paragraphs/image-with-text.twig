@@ -1,6 +1,6 @@
 <div class="paragraph--image-text media-object {% if right %} media-object--right{% endif %}" data-digest-content>
   <div class="media-object__image">
-    {% include 'partials/image-with-caption.twig' with { name: 'image_text',
+    {% include 'partials/image-with-caption.twig' with { name: journey_modal ? 'journey_image_text' : 'image_text',
     caption: 'test caption for image with text.' } %}
   </div>
   <div class="media-object__body">

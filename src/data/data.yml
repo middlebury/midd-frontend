@@ -28,36 +28,91 @@ site_nav:
 
 footer_nav:
   - title: Information for
-    width: 8
+    width: 6
     cols: true
     items:
-      - text: Students
-        url: /institute/students
       - text: Alumni
         url: /institute/alumni
-      - text: Faculty and Staff
-        url: /institute/faculty-staff
+      - text: Donors
+        url: /institute/giving
       - text: Employers
         url: /institute/advancing-your-career/employers
+      - text: Faculty and Staff
+        url: /institute/faculty-staff
       - text: Media
         url: /institute/offices-services/communications
       - text: Partners
         url: /institute/leadership-impact/global-partnerships
-      - text: Donors
-        url: /institute/giving
+      - text: Students
+        url: /institute/students
       - text: Visitors
         url: /institute/admissions/visit
   - title: Quick Links
-    width: 4
+    width: 6
+    cols: true
     items:
-      - text: Offices and Services
-        url: /institute/offices-services
       - text: BannerWeb
         url: https://ssb-prod.ec.middlebury.edu/PNTR/twbkwbis.P_WWWLogin?
+      - text: Campus Map
+        url: http://www.myatlascms.com/map/index.php?id=972
+      - text: Contact Us
+        url: https://www.middlebury.edu/institute/institute-approach/about/contact-us
+      - text: Course Hub
+        url: http://courses.miis.edu/
+      - text: Directory
+        url: https://directory.miis.edu/
+      - text: Emergency
+        url: https://www.middlebury.edu/institute/offices-services/security
+      - text: Employment
+        url: https://middlebury.peopleadmin.com/
       - text: EthicsPoint
         url: https://secure.ethicspoint.com/domain/media/en/gui/28296/index.html
+      - text: Offices and Services
+        url: /institute/offices-services
+      - text: Oracle Cloud
+        url: https://myapps.microsoft.com/gmhec.org
+      - text: State Authorization
+        url: https://www.middlebury.edu/institute/institute-approach/about/strf
       - text: WebMail
         url: https://mail.middlebury.edu/owa/auth/logon.aspx
+      - text: Website Support
+        url: http://go.middlebury.edu/sitehelp
+      - text: Zoom Web Conferencing
+        url: https://middlebury.zoom.us
+      - text: Site Editor Login
+        url: https://www.middlebury.edu/institute/saml/login?destination=/
+
+utility_footer_nav:
+  - title: Quick Links
+    width: 12
+    four_cols: true
+    items:
+      - text: BannerWeb
+        url: https://ssb-prod.ec.middlebury.edu/PNTR/twbkwbis.P_WWWLogin?
+      - text: Campus Map
+        url: http://www.myatlascms.com/map/index.php?id=972
+      - text: Contact Us
+        url: https://www.middlebury.edu/institute/institute-approach/about/contact-us
+      - text: Course Hub
+        url: http://courses.miis.edu/
+      - text: Directory
+        url: https://directory.miis.edu/
+      - text: Emergency
+        url: https://www.middlebury.edu/institute/offices-services/security
+      - text: Employment
+        url: https://middlebury.peopleadmin.com/
+      - text: EthicsPoint
+        url: https://secure.ethicspoint.com/domain/media/en/gui/28296/index.html
+      - text: Offices and Services
+        url: /institute/offices-services
+      - text: Oracle Cloud
+        url: https://myapps.microsoft.com/gmhec.org
+      - text: State Authorization
+        url: https://www.middlebury.edu/institute/institute-approach/about/strf
+      - text: WebMail
+        url: https://mail.middlebury.edu/owa/auth/logon.aspx
+      - text: Website Support
+        url: http://go.middlebury.edu/sitehelp
       - text: Zoom Web Conferencing
         url: https://middlebury.zoom.us
       - text: Site Editor Login
@@ -394,6 +449,42 @@ midd_nav:
   - text: Our Schools
     href: '#'
     items:
+      - href: http://www.middlebury.edu/college/
+        text: Middlebury College
+      - href: https://www.middlebury.edu/institute/
+        text: Middlebury Institute of International Studies
+      - href: http://www.middlebury.edu/language-schools
+        text: Middlebury Language Schools
+      - href: http://www.middlebury.edu/schools-abroad
+        text: Middlebury C.V. Starr Schools Abroad
+      - href: http://www.middlebury.edu/school-english
+        text: Middlebury Bread Loaf School of English
+      - href: http://www.middlebury.edu/writers-conference
+        text: Middlebury Bread Loaf Writers' Conference
+  - text: Admissions
+    href: '#'
+    items:
+      - href: http://www.middlebury.edu/college/admissions
+        text: Middlebury College Admissions
+      - href: https://www.middlebury.edu/institute/admissions
+        text: Middlebury Institute of International Studies Admissions
+      - href: http://www.middlebury.edu/language-schools/admissions
+        text: Middlebury Language Schools Admissions
+      - href: http://www.middlebury.edu/schools-abroad/admissions
+        text: Middlebury C.V. Starr Schools Abroad Admissions
+      - href: http://www.middlebury.edu/school-english/admissions
+        text: Middlebury Bread Loaf School of English Admissions
+      - href: http://www.middlebury.edu/writers-conference
+        text: Middlebury Bread Loaf Writers' Conference Admissions
+  - href: http://www.middlebury.edu/about
+    text: About Middlebury
+  - href: http://www.middlebury.edu/office/
+    text: Offices and Services
+
+institutional_nav:
+  - text: Our Schools
+    href: '#'
+    items:
       - href: http://www.middlebury.edu
         text: Middlebury College
       - href: http://www.middlebury.edu/ls
@@ -408,10 +499,10 @@ midd_nav:
         text: C.V. Starr Schools Abroad
       - href: http://www.middlebury.edu/environment
         text: School of the Environment
-  - href: http://www.middlebury.edu/about
-    text: About Middlebury
-  - href: http://www.middlebury.edu/office/
-    text: Offices and Services
+  - text: About Middlebury
+    href: '#'
+  - text: Office and Services
+    href: '#'
 
 system_status:
   - name: Internet<br>(Northbound Link)
@@ -513,3 +604,187 @@ flowchart_data:
   - id: 10
     text: We suggest Zoom. <a href="#">Set up your Zoom account</a>.
     answer: true
+
+area_of_study:
+  - category: A
+    course_names:
+      - name: African Studies
+      - name: African American Studies
+      - name: American Studies
+      - name: Anthropology
+      - name: Arabic
+  - category: B
+    course_names:
+      - name: Biology
+      - name: Black Studies
+  - category: C
+    course_names:
+      - name: Chemistry & Biochemistry
+      - name: Chinese
+      - name: Classics and Classical Studies
+      - name: Comparative Literature
+      - name: Computer Science
+      - name: Creative Writing
+  - category: D
+    course_names:
+      - name: Dance
+  - category: E
+    course_names:
+      - name: Economics
+      - name: Education Studies
+      - name: English & American Literatures
+      - name: Environmental Studies
+  - category: F
+    course_names:
+      - name: Film & Media Culture
+      - name: First-Year Seminars
+      - name: Food Studies Minor
+      - name: French and Francophone Studies
+  - category: G
+    course_names:
+      - name: Gender, Sexuality & Feminist Studies
+      - name: Geography
+      - name: Geology
+      - name: German
+      - name: Global Health Minor
+      - name: Greek
+  - category: H
+    course_names:
+      - name: Hebrew
+      - name: History of Art & Architecture
+        tracks:
+          - name: Architectural Studies
+          - name: Art History
+      - name: History
+  - category: I
+    course_names:
+      - name: Independent Scholar
+      - name: International Politics & Economics
+      - name: International & Global Studies
+        tracks:
+          - name: African Studies
+          - name: East Asian Studies
+          - name: European Studies
+          - name: Global Environmental Change
+          - name: Global Gender and Sexuality Studies
+          - name: Global Migration and Diaspora Studies
+          - name: Global Security Studies
+          - name: Latin American Studies
+          - name: Middle East and North Africa Studies
+          - name: Russian & East European Studies
+          - name: South Asian Studies
+      - name: Italian
+  - category: J
+    course_names:
+      - name: Japanese Studies
+      - name: Jewish Studies
+  - category: L
+    course_names:
+      - name: Latin
+      - name: Linguistics Minor
+      - name: Literary Studies
+      - name: Luso-Hispanic Studies
+        tracks:
+          - name: Spanish
+          - name: Portuguese
+  - category: M
+    course_names:
+      - name: Mathematics
+      - name: Molecular Biology & Biochemistry
+      - name: Music
+  - category: N
+    course_names:
+      - name: Neuroscience
+  - category: P
+    course_names:
+      - name: Philosophy
+      - name: Physical Education
+      - name: Physics
+      - name: Political Science
+      - name: Psychology
+  - category: R
+    course_names:
+      - name: Religion
+      - name: Russian
+  - category: S
+    course_names:
+      - name: Sociology
+      - name: South Asian Studies Minor
+      - name: Studio Art
+  - category: T
+    course_names:
+      - name: Theatre
+  - category: W
+    course_names:
+      - name: Writing and Rhetoric Program
+
+journey_gallery_data:
+  - src: http://placekitten.com/1376/774
+    width: 1376
+    height: 774
+    srcset:
+      - 1376/774
+      - 1136/639
+      - 736/414
+      - 320/180
+    alt: ''
+    sizes: ''
+    caption: Lorem ipsum <a href="#">dolor</a> sit amet consectetur adipisicing elit.
+
+  - src: http://placekitten.com/1376/774
+    width: 1376
+    height: 774
+    srcset:
+      - 1376/774
+      - 1136/639
+      - 736/414
+      - 320/180
+    alt: ''
+    sizes: ''
+    caption: Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
+
+  - src: http://placekitten.com/1376/774
+    width: 1376
+    height: 774
+    srcset:
+      - 1376/774
+      - 1136/639
+      - 736/414
+      - 320/180
+    alt: ''
+    sizes: ''
+    caption: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+
+  - src: http://placekitten.com/1376/774
+    width: 1376
+    height: 774
+    srcset:
+      - 1376/774
+      - 1136/639
+      - 736/414
+      - 320/180
+    alt: ''
+    sizes: ''
+    caption: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+
+  - src: http://placekitten.com/1376/774
+    width: 1376
+    height: 774
+    srcset:
+      - 1376/774
+      - 1136/639
+      - 736/414
+      - 320/180
+    alt: ''
+    sizes: ''
+    caption: Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
+
+four_fluencies:
+  - title: Solving the Climate Crisis
+    blurb: Middlebury transforming our energy system and responding to issues of climate change, social injustice, and the well-being of all.
+  - title: Analyzing Data
+    blurb: Middlebury providing students access to powerful technological tools and supporting their ability to apply them across disciplines for critical exploration.
+  - title: Transforming Conflict
+    blurb: Middlebury’s incubator for research, teaching, and student experiences to shift the dynamics underlying conflict to address divisiveness in society.
+  - title: Understanding Cultural Difference
+    blurb: Middlebury fostering students’ ability to listen, communicate, and take action in communities with a range of linguistic and cultural backgrounds.

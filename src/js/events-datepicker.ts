@@ -8,6 +8,7 @@ declare global {
         currentPath: string;
       };
     };
+    MicroModal: any;
   }
 }
 
@@ -70,23 +71,24 @@ if (datePicker) {
     setDefaultDate: Boolean(defaultDate),
     format: 'YYYY-MM-DD',
     toString(date, format) {
-        // you should do formatting based on the passed format,
-        // but we will just return 'D/M/YYYY' for simplicity
-        const day = date.getDate();
-        const month = date.getMonth() + 1;
-        const year = date.getFullYear();
-        return `${year}-${month}-${day}`;
+      // you should do formatting based on the passed format,
+      // but we will just return 'D/M/YYYY' for simplicity
+      const day = date.getDate();
+      const month = date.getMonth() + 1;
+      const year = date.getFullYear();
+      return `${year}-${month}-${day}`;
     },
     parse(dateString, format) {
-        // dateString is the result of `toString` method
-        const parts = dateString.split('-');
-        const year = parseInt(parts[0], 10);
-        const month = parseInt(parts[1], 10) - 1;
-        const day = parseInt(parts[2], 10);
-        return new Date(year, month, day);
+      // dateString is the result of `toString` method
+      const parts = dateString.split('-');
+      const year = parseInt(parts[0], 10);
+      const month = parseInt(parts[1], 10) - 1;
+      const day = parseInt(parts[2], 10);
+      return new Date(year, month, day);
     },
     onSelect(date: Date) {
       searchParams.set('start-date', dateToStr(date));
+      searchParams.delete('page');
       window.location.search = searchParams.toString();
     }
   });
@@ -120,6 +122,7 @@ const pikaTitle = document.querySelector('.pika-title');
 
 if (pikaTitle) {
   pikaTitle.setAttribute('aria-atomic', 'true');
+  pikaTitle.setAttribute('aria-level', '3');
 }
 
 const pikaTable = document.querySelector('.pika-table');
@@ -128,3 +131,9 @@ if (pikaTable) {
   pikaTable.removeAttribute('cellpadding');
   pikaTable.removeAttribute('cellspacing');
 }
+
+const pikaRowTd = document.querySelectorAll('.pika-row td');
+
+pikaRowTd.forEach((td: HTMLElement) => {
+  td.setAttribute('role', 'gridcell');
+});

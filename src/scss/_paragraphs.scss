@@ -98,7 +98,10 @@
 .paragraph--themed-panel,
 .paragraph--quad-story,
 .paragraph--stat-panel,
-.paragraph--card-carousel {
+.paragraph--card-carousel,
+.paragraph--dispatches,
+.paragraph--logo-bar,
+.paragraph--waveform {
   @extend %paragraph-full-width;
 }
 
@@ -165,7 +168,15 @@
 }
 
 .paragraph--profile-list {
-  @extend %paragraph-space;
+  &.section {
+    margin-top: $spacing-8;
+    margin-bottom: $spacing-8;
+
+    @include breakpoint(lg) {
+      margin-top: $spacing-9;
+      margin-bottom: $spacing-9;
+    }
+  }
 }
 
 .paragraph--spotlight {
@@ -173,9 +184,17 @@
   @extend %paragraph-space;
 }
 
+.paragraph--waveform {
+  @extend %paragraph-space;
+}
+
 .paragraph--card-carousel {
   @extend %paragraph-space;
   // @extend %paragraph-full-width;
+}
+
+.paragraph--dispatches {
+  // @extend %paragraph-space;
 }
 
 .paragraph--quad-story {
@@ -244,6 +263,10 @@
   @extend %paragraph-space;
 }
 
+.paragraph--logo-bar {
+  @extend %paragraph-space;
+}
+
 .paragraph--pull-up {
   margin-top: -6rem;
   position: relative;
@@ -255,6 +278,31 @@
 
   @media print {
     margin-top: 0;
+  }
+}
+
+.paragraph--lead-pulled-up {
+  margin-top: -8rem !important;
+  margin-bottom: $spacing-7;
+  position: relative;
+  z-index: 3;
+
+  @include breakpoint(md) {
+    margin-top: -6rem !important;
+  }
+
+  @media print {
+    margin-top: 0;
+  }
+}
+
+.paragraph--policy {
+  padding-top: $spacing-4;
+  padding-bottom: $spacing-4;
+
+  @include breakpoint(md) {
+    padding-top: $spacing-5;
+    padding-bottom: $spacing-5;
   }
 }
 

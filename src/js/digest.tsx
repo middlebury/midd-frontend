@@ -45,7 +45,7 @@ function addHeadingAnchors(): HTMLElement[] | null {
   // as well as apply AnochrJS to them.
   // first-child gets section__titles and > h2 gets children of text components
   const headingSelector =
-    '[data-digest-content] h2:first-child, [data-digest-content] > h2';
+    '[data-digest-content] h2:not(:empty):first-child, [data-digest-content] > h2:not(:empty)';
 
   // Get all headings in the data-digest-content
   const headings = $$(headingSelector);
@@ -68,13 +68,13 @@ function addHeadingAnchors(): HTMLElement[] | null {
       .replace(/[\u201C\u201D\u2018\u2019°]/g, '')
       // replace double hyphens with one
       .replace(/-+/g, '-');
-
-    // if heading text begins with a number, we need to prefix some a-z text
+      
+    // if heading text begins with a number or if it's not an alphabet, we need to prefix some a-z text
     // so selectors in digest nav are valid
-    if (!isNaN(Number(id.charAt(0)))) {
-      id = 'section-' + id;
+    if (!isNaN(Number(id.charAt(0))) || !(/[a-zA-Z]/).test(id.charAt(0))) {
+      id = 'section-' + id.replace(/^-/g, '');
     }
-
+    
     const anchor = $('.anchorjs-link', heading);
     anchor.href = '#' + id;
 

@@ -9,8 +9,8 @@
 
 // vendor
 @import '../../node_modules/normalize.css/normalize';
-@import '../../node_modules/swiper/swiper';
-@import '../../node_modules/swiper/components/a11y/a11y';
+@import '../../node_modules/swiper/swiper.scss';
+@import '../../node_modules/swiper/modules/a11y/a11y';
 
 // base
 @import 'global';
@@ -28,6 +28,7 @@
 @import 'components/app-header';
 @import 'components/audio';
 @import 'components/badge';
+@import 'components/banner';
 @import 'components/box-menu';
 @import 'components/breadcrumb';
 @import 'components/button';
@@ -35,49 +36,67 @@
 @import 'components/card-carousel';
 @import 'components/chart';
 @import 'components/checkboxes';
+@import 'components/cookie-banner';
 @import 'components/count';
+@import 'components/course-list';
 @import 'components/cta-bar';
 @import 'components/cta-group';
 @import 'components/datepicker';
+@import 'components/davis-header';
 @import 'components/digest';
+@import 'components/dispatches-item';
+@import 'components/dispatches';
 @import 'components/drawer-nav';
 @import 'components/drawer';
 @import 'components/dropdown';
 @import 'components/emma-form';
 @import 'components/flowchart';
+@import 'components/fluencies';
 @import 'components/filter';
 @import 'components/foldable';
 @import 'components/footer-menu';
 @import 'components/form';
 @import 'components/gallery';
+// @import 'components/grid-stats';
 @import 'components/grid';
 @import 'components/helpfulness';
+@import 'components/homepage-grid';
+@import 'components/homepage-grid-header';
+@import 'components/homepage-grid-item';
 @import 'components/icon';
 @import 'components/image';
 @import 'components/input-group';
-// @import 'components/journey';
+@import 'components/institutional-header';
+@import 'components/journey';
+@import 'components/journey-modal';
 @import 'components/lib-search';
 @import 'components/lightbox';
 @import 'components/link-list';
 @import 'components/list';
+@import 'components/logo-bar';
 @import 'components/ls-hero';
+@import 'components/major-minor-list-table';
 @import 'components/masquerade';
 @import 'components/media-object';
 @import 'components/media';
 @import 'components/mega-cta';
 @import 'components/midd-footer';
 @import 'components/midd-header';
+@import 'components/miis-header';
 @import 'components/midd-nav';
 @import 'components/midd-search';
 @import 'components/nav';
 @import 'components/nav-dropdown';
+@import 'components/non-discrimination-policy';
 @import 'components/office-hours';
 @import 'components/office-footer';
 @import 'components/page-header';
 @import 'components/page-image';
 @import 'components/page-nav';
 @import 'components/pagination';
+@import 'components/pardot-form';
 @import 'components/portrait-video';
+@import 'components/profile-detail';
 @import 'components/profile-spotlight-item';
 @import 'components/quote';
 @import 'components/radios';
@@ -101,11 +120,13 @@
 @import 'components/top-btn';
 @import 'components/transcript';
 @import 'components/video';
+@import 'components/waveform';
 
 // scope
 @import 'scope/typography';
 @import 'scope/google-custom-search';
 @import 'scope/webform';
+@import 'scope/slateform';
 
 // utils
 @import 'utils/background';

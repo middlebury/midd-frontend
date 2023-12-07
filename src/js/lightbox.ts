@@ -275,7 +275,7 @@ class Lightbox {
   }
 }
 
-MicroModal.init({
+const lightboxConfig = {
   openTrigger: 'data-lightbox-open',
   closeTrigger: 'data-lightbox-close',
   onShow: (modal: any) => {
@@ -290,4 +290,17 @@ MicroModal.init({
     }
   },
   disableScroll: true
-});
+};
+
+MicroModal.init(lightboxConfig);
+
+const lightbox = $('[data-lightbox-open]');
+
+if(lightbox) {
+  on(lightbox, 'click', (e) => e.preventDefault());
+  on(lightbox, 'keydown', (e) => {
+    if (e.keyCode === 32) {
+      MicroModal.show(lightbox.getAttribute('data-lightbox-open'), lightboxConfig);
+    }
+  });
+}

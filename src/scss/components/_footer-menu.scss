@@ -18,6 +18,12 @@
   }
 }
 
+.footer-menu__list--four-cols {
+  @include breakpoint(sm) {
+    columns: 4;
+  }
+}
+
 .footer-menu__item {
   &:not(:last-child) {
     margin-bottom: $spacing-4;

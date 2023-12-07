@@ -8,7 +8,7 @@
 
 ## Requirements
 
-- Node ^12.14.1
+- Node ^18.13.0
 
 To check if you already have node installed, open terminal and use the following command:
 
@@ -18,9 +18,9 @@ node -v
 
 ## Getting started
 
-Clone the repo to a local machine, using your preferred method. 
+Clone the repo to a local machine, using your preferred method.
 
-*SAW is not used to work in this repo due to conflict with SAW and how node works.*
+_SAW is not used to work in this repo due to conflict with SAW and how node works._
 
 Open terminal and change directory into the cloned local repo.
 
@@ -30,8 +30,7 @@ Install node modules:
 npm install
 ```
 
-You may be asked to fix dependencies, go ahead and go that.
-
+You may be asked to fix dependencies, go ahead and do that.
 
 ### Development
 

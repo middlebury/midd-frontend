@@ -7,15 +7,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Use Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: '12.x'
+          node-version: "18.x"
 
       - name: Cache Node.js modules
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -45,7 +45,7 @@ jobs:
 
       - name: Replace images
         if: github.ref == 'refs/heads/master'
-        run: gulp replaceImagePaths --imagesDir="https://www.middlebury.edu/office/themes/custom/middlebury_theme/images/"
+        run: gulp replaceImagePaths --imagesDir="https://www.middlebury.edu/themes/custom/middlebury_theme/images/"
 
       - name: Deploy
         if: github.ref == 'refs/heads/master'
