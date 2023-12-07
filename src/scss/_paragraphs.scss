@@ -281,6 +281,21 @@
   }
 }
 
+.paragraph--lead-pulled-up {
+  margin-top: -8rem !important;
+  margin-bottom: $spacing-7;
+  position: relative;
+  z-index: 3;
+
+  @include breakpoint(md) {
+    margin-top: -6rem !important;
+  }
+
+  @media print {
+    margin-top: 0;
+  }
+}
+
 .paragraph--policy {
   padding-top: $spacing-4;
   padding-bottom: $spacing-4;
