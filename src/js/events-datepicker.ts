@@ -66,7 +66,6 @@ if (datePicker) {
   const picker = new Pikaday({
     field: datePicker,
     bound: false,
-    minDate: new Date(),
     defaultDate,
     setDefaultDate: Boolean(defaultDate),
     format: 'YYYY-MM-DD',
