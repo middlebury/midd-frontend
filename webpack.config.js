@@ -16,6 +16,9 @@ const plugins = [
 const config = {
   watch: !PROD,
   mode: PROD ? 'production' : 'development',
+  optimization: {
+    usedExports: true
+  },
   entry: {
     main: './src/js/index.ts',
     journey: './src/js/journey-module.ts'
@@ -26,7 +29,7 @@ const config = {
     rules: [
       {
         // here doing the swiper loader and declaring no sideEffects
-        test: /swiper\.esm\.js/,
+        test: /\.mjs$/,
         sideEffects: false
       },
       {

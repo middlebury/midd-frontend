@@ -1,5 +1,7 @@
 import { $, $$, checkElement } from './utils/dom';
 import VideoSwap from './video';
+import Swiper from 'swiper';
+import { Navigation, A11y, Pagination, HashNavigation } from 'swiper/modules';
 import lozad from 'lozad';
 import anime from 'animejs';
 
@@ -56,87 +58,80 @@ class JourneySwiper {
     this.addListeners();
   }
 
-  async getSwiper() {
-    return import(/* webpackChunkName: "swiper" */ 'swiper')
-      .then(
-        ({ default: Swiper, Navigation, A11y, Pagination, HashNavigation }) => {
-          this.loadingEls.forEach((el) => el.classList.add('has-loaded'));
-          
-          this.swiperEl = new Swiper(this.swiperClass, {
-            modules: [Navigation, Pagination, HashNavigation, A11y],
-            autoHeight: true,
-            hashNavigation: {
-              replaceState: true,
-              watchState: true
-            },
-            navigation: {
-              nextEl: '.js-journey-next-button',
-              prevEl: '.js-journey-prev-button'
-            },
-            pagination: {
-              el: this.paginationClass,
-              bulletClass: 'journey-modal__cb-link',
-              clickable: true,
-              renderBullet: function (index, className) {
-                const labels = [
-                  'Why Middlebury',
-                  'Immersive Environments',
-                  'The Undergraduate Experience',
-                  'Alumni in the World',
-                  'Middlebury in the News',
-                  'Students in Action',
-                  'Connected Middlebury',
-                  'Middlebury College',
-                  'Graduate and Professional Schools'
-                ];
-                return `
-                  <a class="journey-modal__cb-link ${className}" href="#" role="button">
-                    <span class="cb-link__text">
-                      ${labels[index]}
-                    </span>
-                    <span class="cb-link__circle-wrapper">
-                      <span class="cb-link__circle inner"></span>
-                      <span class="cb-link__circle outer"></span>
-                    </span>
-                  </a>`;
-              }
-            },
-            on: {
-              slideNextTransitionStart: (swiper) => {
-                swiper.allowSlideNext = false;
-              },
-              slideNextTransitionEnd: (swiper) => {
-                swiper.allowSlideNext = true;
-              },
-              slidePrevTransitionStart: (swiper) => {
-                swiper.allowSlidePrev = false;
-              },
-              slidePrevTransitionEnd: (swiper) => {
-                swiper.allowSlidePrev = true;
-              },
-              transitionStart: () => {
-                this.swiperUpdate();
-                this.scrollToTop();
-              }
-            }
-          });
+  getSwiper() {
+    this.loadingEls.forEach((el) => el.classList.add('has-loaded'));
+    
+    this.swiperEl = new Swiper(this.swiperClass, {
+      modules: [Navigation, Pagination, HashNavigation, A11y],
+      autoHeight: true,
+      hashNavigation: {
+        replaceState: true,
+        watchState: true
+      },
+      navigation: {
+        nextEl: '.js-journey-next-button',
+        prevEl: '.js-journey-prev-button'
+      },
+      pagination: {
+        el: this.paginationClass,
+        bulletClass: 'journey-modal__cb-link',
+        clickable: true,
+        renderBullet: function (index, className) {
+          const labels = [
+            'Why Middlebury',
+            'Immersive Environments',
+            'The Undergraduate Experience',
+            'Alumni in the World',
+            'Middlebury in the News',
+            'Students in Action',
+            'Connected Middlebury',
+            'Middlebury College',
+            'Graduate and Professional Schools'
+          ];
+          return `
+            <a class="journey-modal__cb-link ${className}" href="#" role="button">
+              <span class="cb-link__text">
+                ${labels[index]}
+              </span>
+              <span class="cb-link__circle-wrapper">
+                <span class="cb-link__circle inner"></span>
+                <span class="cb-link__circle outer"></span>
+              </span>
+            </a>`;
         }
-      )
-      .catch((error) => 'An error occurred while loading Swiper');
+      },
+      on: {
+        slideNextTransitionStart: (swiper) => {
+          swiper.allowSlideNext = false;
+        },
+        slideNextTransitionEnd: (swiper) => {
+          swiper.allowSlideNext = true;
+        },
+        slidePrevTransitionStart: (swiper) => {
+          swiper.allowSlidePrev = false;
+        },
+        slidePrevTransitionEnd: (swiper) => {
+          swiper.allowSlidePrev = true;
+        },
+        transitionStart: () => {
+          this.swiperUpdate();
+          this.scrollToTop();
+        }
+      }
+    });
   }
 
   swiperInit() {
-    this.getSwiper().then(() => {
-      this.closeBtn.focus();
-      // init lazy loaded gallery images
-      const lazyGalleryImages = lozad('[data-journey-gallery-item] img');
-      lazyGalleryImages.observe();
+    this.getSwiper();
+    this.closeBtn.focus();
+    // init lazy loaded gallery images
+    const lazyGalleryImages = lozad('[data-journey-gallery-item] img');
+    lazyGalleryImages.observe();
 
-      this.swiperParentEl.style.transform = `translateX(${this.translate}px)`;
+    this.swiperParentEl.style.transform = `translateX(${this.translate}px)`;
 
-      // Initialize video elements with VideoSwap class to enable showing/hiding videos
-      this.initVideoElems();
-    });
+    // Initialize video elements with VideoSwap class to enable showing/hiding videos
+    this.initVideoElems();
   }
 
   addListeners() {

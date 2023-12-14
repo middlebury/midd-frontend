@@ -1,4 +1,5 @@
-// import { Swiper, Navigation, A11y, SwiperOptions } from 'swiper';
+import Swiper from 'swiper';
+import { Navigation, A11y } from 'swiper/modules';
 
 import { $, $$ } from './utils/dom';
 import config from './config';
@@ -20,46 +21,42 @@ export function randomizeChildren(elem: HTMLElement) {
 const carousels = $$('.js-card-carousel');
 
 carousels.forEach((el: HTMLElement) => {
-  import(/* webpackChunkName: "swiper" */ 'swiper').then(
-    ({ Swiper, Navigation, A11y }) => {
-      function createCardCarousel(elem: HTMLElement, swiperConfig: {}) {
-        const swiperWrapper = $('.js-swiper-wrapper', elem);
-        const swiperContainer = $('.js-swiper-container', elem);
-        const randomize = elem.hasAttribute('data-randomize');
+  function createCardCarousel(elem: HTMLElement, swiperConfig: {}) {
+    const swiperWrapper = $('.js-swiper-wrapper', elem);
+    const swiperContainer = $('.js-swiper-container', elem);
+    const randomize = elem.hasAttribute('data-randomize');
 
-        // do nothing if no swiper elements
-        if (!swiperWrapper || !swiperWrapper.firstChild || !swiperContainer) {
-          return;
-        }
-
-        if (randomize) {
-          randomizeChildren(swiperWrapper);
-        }
-
-        return new Swiper(swiperContainer, swiperConfig);
-      }
-
-      const carouselSwiperConfig = {
-        modules: [Navigation, A11y],
-        a11y: {},
-        slidesPerView: 1,
-        grabCursor: true,
-        breakpoints: {
-          [config.breakpoints.lg]: {
-            slidesPerView: 2
-          },
-          [config.breakpoints.xl]: {
-            slidesPerView: 3
-          }
-        },
-        navigation: {
-          nextEl: $('.js-card-carousel-next-button', el) as HTMLElement,
-          prevEl: $('.js-card-carousel-prev-button', el) as HTMLElement,
-          disabledClass: 'button--disabled'
-        }
-      };
-
-      createCardCarousel(el, carouselSwiperConfig);
+    // do nothing if no swiper elements
+    if (!swiperWrapper || !swiperWrapper.firstChild || !swiperContainer) {
+      return;
     }
-  );
+
+    if (randomize) {
+      randomizeChildren(swiperWrapper);
+    }
+
+    return new Swiper(swiperContainer, swiperConfig);
+  }
+
+  const carouselSwiperConfig = {
+    modules: [Navigation, A11y],
+    a11y: {},
+    slidesPerView: 1,
+    grabCursor: true,
+    breakpoints: {
+      [config.breakpoints.lg]: {
+        slidesPerView: 2
+      },
+      [config.breakpoints.xl]: {
+        slidesPerView: 3
+      }
+    },
+    navigation: {
+      nextEl: $('.js-card-carousel-next-button', el) as HTMLElement,
+      prevEl: $('.js-card-carousel-prev-button', el) as HTMLElement,
+      disabledClass: 'button--disabled'
+    }
+  };
+
+  createCardCarousel(el, carouselSwiperConfig);
 });
