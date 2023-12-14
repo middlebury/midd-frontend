@@ -17,6 +17,7 @@ image_styles:
       - 960x384
       - 1280x512
       - 1440x576
+
   story_teaser:
     title: News Story teaser
     ratio: '16:9'
