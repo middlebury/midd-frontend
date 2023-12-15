@@ -2,8 +2,14 @@
 	<div
 		class="gallery__image">
 		{# should link to drupal page rendering the gallery images #}
-    <a href="/gallery-images#modal-{{ id }}" class="sr-only" target="_blank">View the gallery in a new window.</a>
-		<a class="gallery__link" data-lightbox-open="midd-lightbox-1" aria-label="Open gallery" aria-describedby="midd-gallery-1-label midd-gallery-1-count" role="button">
+    <a
+      href="/"
+      class="gallery__link"
+      data-lightbox-open="midd-lightbox-1"
+      aria-label="Open gallery"
+      aria-describedby="midd-gallery-1-label midd-gallery-1-count"
+      role="button"
+    >
 			{% include 'partials/img.twig' with { name: 'video' } %}
 			<span class="button button--primary gallery__button">
 				Open Gallery
