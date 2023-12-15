@@ -1,7 +1,6 @@
 import { $, $$ } from './utils/dom';
 import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
 import { VALID_ASPECT_RATIO } from './utils/check-aspect-ratio';
-import PanelSnap from 'panelsnap';
 
 // Check if section height is less than the viewport height. If it is less than the viewport height, 
 // then set the directionThreshold as the difference to prevent scroll issues.
@@ -18,8 +17,12 @@ let defaultOptions = {
   }
 };
 
- function lazyLoadPanelSnap() {
+async function lazyLoadPanelSnap() {
   if (VALID_ASPECT_RATIO && !PREFERS_REDUCED_MOTION) {
+    const { default: PanelSnap } = await import(
+      /* webpackChunkName: "panelsnap" */ 'panelsnap'
+    );
+
     journey.forEach(() => new PanelSnap(defaultOptions));
   }
 }
@@ -27,5 +30,7 @@ let defaultOptions = {
 const journey = $$('.journey');
 
 if (journey.length !== 0) {
-  lazyLoadPanelSnap();
+  lazyLoadPanelSnap().catch(
+    (error) => 'An error occurred while loading panelsnap'
+  );
 }

@@ -26,7 +26,7 @@ const config = {
   module: {
     rules: [
       {
-        // here doing the swiper loader and declaring no sideEffects
+        // declaring no sideEffects for files with .mjs extension which is mainly swiper
         test: /\.mjs$/,
         sideEffects: false
       },
