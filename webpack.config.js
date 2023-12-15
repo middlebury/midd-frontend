@@ -2,9 +2,7 @@ import webpack from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'; 
 
 const PROD = process.env.NODE_ENV === 'production';
-
-// const BundleAnalyzerPlugin =
-//   require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const ASSET_PATH = process.env.ASSET_PATH || '/js/';
 
 const plugins = [
   // ignore moment imported by pikaday
@@ -43,6 +41,7 @@ const config = {
     extensions: ['.tsx', '.ts', '.js']
   },
   output: {
+    publicPath: ASSET_PATH,
     filename: '[name].bundle.js'
   },
   plugins: PROD ? plugins : [...plugins, new BundleAnalyzerPlugin()]
