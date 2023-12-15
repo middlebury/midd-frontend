@@ -66,7 +66,6 @@ if (datePicker) {
   const picker = new Pikaday({
     field: datePicker,
     bound: false,
-    minDate: new Date(),
     defaultDate,
     setDefaultDate: Boolean(defaultDate),
     format: 'YYYY-MM-DD',
@@ -122,6 +121,7 @@ const pikaTitle = document.querySelector('.pika-title');
 
 if (pikaTitle) {
   pikaTitle.setAttribute('aria-atomic', 'true');
+  pikaTitle.setAttribute('aria-level', '3');
 }
 
 const pikaTable = document.querySelector('.pika-table');
@@ -130,3 +130,9 @@ if (pikaTable) {
   pikaTable.removeAttribute('cellpadding');
   pikaTable.removeAttribute('cellspacing');
 }
+
+const pikaRowTd = document.querySelectorAll('.pika-row td');
+
+pikaRowTd.forEach((td: HTMLElement) => {
+  td.setAttribute('role', 'gridcell');
+});
