@@ -102,7 +102,7 @@
     "promise-polyfill": "^8.3.0",
     "stickybits": "^3.7.9",
     "superclamp": "^0.2.3",
-    "swiper": "^9.4.1"
+    "swiper": "^11.0.5"
   },
   "bundlesize": [
     {

@@ -59,7 +59,9 @@ class JourneySwiper {
   async getSwiper() {
     return import(/* webpackChunkName: "swiper" */ 'swiper')
       .then(
-        ({ default: Swiper, Navigation, A11y, Pagination, HashNavigation }) => {
+        ({ default: Swiper }) => {
+          import(/* webpackChunkName: "swiper" */ 'swiper/modules').then(({Navigation, Pagination, HashNavigation, A11y}) => {
+
           this.loadingEls.forEach((el) => el.classList.add('has-loaded'));
           
           this.swiperEl = new Swiper(this.swiperClass, {
@@ -120,8 +122,8 @@ class JourneySwiper {
               }
             }
           });
-        }
-      )
+        })
+      })
       .catch((error) => 'An error occurred while loading Swiper');
   }
 
