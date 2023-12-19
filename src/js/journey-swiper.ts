@@ -122,7 +122,6 @@ class JourneySwiper {
               },
               activeIndexChange: (swiper) => {
                 if(isNaN(swiper.activeIndex)) {
-                  console.log('isNan');
                   swiper.activeIndex = swiper.previousIndex;
                   swiper.update();
                   this.swiperUpdate();
