@@ -200,6 +200,9 @@ class JourneySwiper {
     else if (hash !== this.swiperEl?.activeIndex) {
       this.swiperEl?.slideTo(hash, 300, false);
     }
+    else if (hash == this.swiperEl?.activeIndex) {
+      this.swiperUpdate();
+    }
   }
 
   resetNavigation() {
