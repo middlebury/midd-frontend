@@ -120,13 +120,6 @@ class JourneySwiper {
                 this.swiperUpdate();
                 this.scrollToTop();
               },
-              activeIndexChange: (swiper) => {
-                if(isNaN(swiper.activeIndex)) {
-                  swiper.activeIndex = swiper.previousIndex;
-                  swiper.update();
-                  this.swiperUpdate();
-                }
-              }
             }
           });
         })
@@ -204,7 +197,7 @@ class JourneySwiper {
     if (isNaN(hash)) {
       MicroModal?.close();
     }
-    if (hash !== this.swiperEl?.activeIndex) {
+    else if (hash !== this.swiperEl?.activeIndex) {
       this.swiperEl?.slideTo(hash, 300, false);
     }
   }
@@ -230,7 +223,7 @@ class JourneySwiper {
   swiperUpdate() {
     this.currentEl = $('.swiper-pagination-bullet-active', this.paginationEl);
     let scrollWidth = this.swiperParentEl.scrollWidth;
-
+    
     // Check if the scrolling distance exceeds the element width,
     // if it does set it to the element width so that it doesn't
     // scroll past the width
