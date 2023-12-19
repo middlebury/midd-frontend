@@ -119,6 +119,13 @@ class JourneySwiper {
               transitionStart: () => {
                 this.swiperUpdate();
                 this.scrollToTop();
+              },
+              activeIndexChange: (swiper) => {
+                if(isNaN(swiper.activeIndex)) {
+                  swiper.activeIndex = swiper.previousIndex;
+                  swiper.update();
+                  this.swiperUpdate();
+                }
               }
             }
           });
@@ -197,8 +204,8 @@ class JourneySwiper {
     if (isNaN(hash)) {
       MicroModal?.close();
     }
-    if (hash !== this.swiperEl.activeIndex) {
-      this.swiperEl.slideTo(hash, 300, false);
+    if (hash !== this.swiperEl?.activeIndex) {
+      this.swiperEl?.slideTo(hash, 300, false);
     }
   }
 
