@@ -58,7 +58,7 @@ class Journey {
   }
 
   init() {
-    window.location.hash = '';
+    location.assign(window.location.toString().split('#')[0]);
     this.deviceInit();
     this.addListeners();
 
