@@ -1,5 +1,4 @@
 {% set filter_active = true %}
-{% set day = "Sunday, May 23" %}
 
 {% embed 'partials/sidebar-layout.twig' %}
   {% block nav %}
@@ -22,15 +21,13 @@
     {% for y in 0..2 %}
       <section class="section">
         <h2 class="section__title">
-          {{day}}
+          Sunday, May 23
         </h2>
 
         <ul class="list list--dividers list--md">
           {% for i in 0..3 %}
             <li class="list__item">
-              {% include 'partials/event-teaser.twig' with {
-                day: day 
-              }%}
+              {% include 'partials/event-teaser.twig' %}
             </li>
           {% endfor %}
         </ul>
