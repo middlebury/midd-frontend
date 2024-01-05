@@ -28,7 +28,7 @@ import './events-datepicker'; // make the events datepicker accessible
 import './audio-player'; // custom Preact audio player
 import './offices'; // middlebury.edu/office homepage script for filtering items shown
 import './mover'; // mover util for moving an element from one element to another at a breakpoint. Doesn't work if event listeners are on any of the elements that are moved.TODO: remove me and use css-grid to move layout around
-import './accordion';
+import './on-load-utils';
 import './lightbox';
 import './card-carousel';
 import './dropdown';
