@@ -17,7 +17,6 @@ image_styles:
       - 960x384
       - 1280x512
       - 1440x576
-
   story_teaser:
     title: News Story teaser
     ratio: '16:9'
@@ -249,3 +248,12 @@ image_styles:
       - 336x598
       - 416x740
     sizes: '(max-width: 416px) 100vw, 416px'
+
+  journey_banner:
+    title: Banner image on homepage
+    ratio: '24:5'
+    srcset:
+      - 512x107
+      - 736x154
+      - 1136x237
+      - 1376x287

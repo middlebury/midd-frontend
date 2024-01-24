@@ -10,7 +10,6 @@
 // vendor
 @import '../../node_modules/normalize.css/normalize';
 @import '../../node_modules/swiper/swiper.scss';
-@import '../../node_modules/swiper/modules/a11y/a11y';
 
 // base
 @import 'global';
@@ -28,6 +27,7 @@
 @import 'components/app-header';
 @import 'components/audio';
 @import 'components/badge';
+@import 'components/banner';
 @import 'components/box-menu';
 @import 'components/breadcrumb';
 @import 'components/button';

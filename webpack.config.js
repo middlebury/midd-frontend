@@ -2,9 +2,7 @@ import webpack from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'; 
 
 const PROD = process.env.NODE_ENV === 'production';
-
-// const BundleAnalyzerPlugin =
-//   require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const ASSET_PATH = process.env.ASSET_PATH || '/js/';
 
 const plugins = [
   // ignore moment imported by pikaday
@@ -16,6 +14,9 @@ const plugins = [
 const config = {
   watch: !PROD,
   mode: PROD ? 'production' : 'development',
+  optimization: {
+    usedExports: true
+  },
   entry: {
     main: './src/js/index.ts',
     journey: './src/js/journey-module.ts'
@@ -25,8 +26,8 @@ const config = {
   module: {
     rules: [
       {
-        // here doing the swiper loader and declaring no sideEffects
-        test: /swiper\.esm\.js/,
+        // declaring no sideEffects for files with .mjs extension which is mainly swiper
+        test: /\.mjs$/,
         sideEffects: false
       },
       {
@@ -40,6 +41,7 @@ const config = {
     extensions: ['.tsx', '.ts', '.js']
   },
   output: {
+    publicPath: ASSET_PATH,
     filename: '[name].bundle.js'
   },
   plugins: PROD ? plugins : [...plugins, new BundleAnalyzerPlugin()]
