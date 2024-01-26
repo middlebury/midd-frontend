@@ -48,7 +48,15 @@ class SingleToggler {
 
   addListeners() {
     this.elem.addEventListener('click', this.handleElemClick);
+    this.elem.addEventListener('keydown', this.handleElemKeyDown);
   }
+
+  handleElemKeyDown = (e: KeyboardEvent) => {
+    if (e.code === 'Space' || e.code === 'Enter') {
+      e.preventDefault();
+      this.toggle();
+    }
+  };
 
   getSingleTarget(elem: HTMLElement) {
     const singleTarget = elem.getAttribute('data-toggle-single-target');
