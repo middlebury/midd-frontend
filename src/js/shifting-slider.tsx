@@ -127,7 +127,7 @@ class ShiftingSlider {
    * Updates the visibleElemWidth, totalElemWidth and scrollWidth on window resize
    * because the width of the waveform changes with the window size.
    * Also removes event listeners on mobile screen size, adds them on desktop screen sizes
-   * i.e. > 1024.
+   * i.e. > 1024px.
    */
   onWindowResize() {
     // Enable superclamp to clamp overflow text on cards
