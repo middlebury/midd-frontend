@@ -88,7 +88,7 @@
     "clamp-js-main": "^0.11.6",
     "focus-within-polyfill": "^5.2.1",
     "headroom.js": "^0.12.0",
-    "iframe-resizer": "4.3.9",
+    "iframe-resizer": "4.3.8",
     "intersection-observer": "^0.12.0",
     "lodash": "^4.17.21",
     "lozad": "^1.16.0",
