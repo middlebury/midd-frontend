@@ -285,8 +285,7 @@
               </li>
             </ul>
           </nav>
-          <section class="midd-search" aria-labelledby="midd-search-label">
-            <h2 class="sr-only" id="midd-search-label">Search</h2>
+          <section class="midd-search" aria-label="Search">
             <a href="/search" class="midd-search__handle" role="button" data-toggle-target=".js-midd-search" data-toggle-group="midd-header" data-toggle-focus=".js-midd-search-input" aria-expanded="false" aria-haspopup="true" aria-labelledby="midd-search__handle-label">
               <svg class="icon midd-search__mag " focusable="false" aria-hidden="true">
                 <use xlink:href="#icon-search">
@@ -297,8 +296,7 @@
               <span class="d-none d-sm-inline" id="midd-search__handle-label">Search</span>
             </a>
             <div class="midd-search__content js-midd-search">
-              <form action="https://www.middlebury.edu/search" method="GET">
-                <label for="midd-search-input" class="sr-only">Search</label>
+              <form action="https://www.middlebury.edu/search" method="GET" role="search">
                 <div class="input-group">
                   <input type="search" class="form-control form-control--sm midd-search__input js-midd-search-input" id="midd-search-input" placeholder="Search" name="q2" required />
                   <button type="submit" class="button button--sm midd-search__submit">
