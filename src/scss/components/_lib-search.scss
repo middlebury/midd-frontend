@@ -2,20 +2,17 @@
   min-height: 260px;
   display: grid;
   grid-template-columns: 1fr;
+  background: $navy-dark;
 }
 
 .lib-search__content {
   grid-row-start: 1;
   grid-column-start: 1;
   z-index: 1;
-  background: linear-gradient(to top, rgba($navy-dark, 1) 60%, rgba($navy-dark, 0.7) 80%);
+  background: rgba($navy-dark, 0.7);
   
   > *, a {
     color: $white;
-  }
-
-  @include breakpoint(lg) {
-    background: linear-gradient(to top, rgba($navy-dark, 1) 30%, rgba($navy-dark, 0.7));
   }
 
   .lib-search__title {
