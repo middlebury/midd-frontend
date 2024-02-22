@@ -5,3 +5,9 @@ import { $ } from './utils/dom';
 if(location.hash.includes('#midd-accordion-item-label')) {
   $(location.hash.replace('#midd-accordion-item-label', '.js-accordion-item'))?.classList.add('is-toggled');
 }
+
+// Add role="list" to ul elements in text component for accessibility
+// https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html
+const typoUlElements = document.querySelectorAll('.paragraph--text ul, .paragraph--text ol');
+
+typoUlElements.forEach(el => el.setAttribute('role', 'list'));

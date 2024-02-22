@@ -1,6 +1,7 @@
 import { $, $$ } from './utils/dom';
 import Superclamp from 'superclamp';
 import animation from './utils/animation';
+import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
 
 /**
  * Adds functionality to the waveform component to make the shift left or right
@@ -54,7 +55,7 @@ class ShiftingSlider {
     this.prevDirection = '';
     this.waveformListItems = $$('.waveform__list-item');
     this.handleHover = this.handleHover.bind(this);
-    this.handleMouseOut = this.handleMouseOut.bind(this);
+    this.removeTooltip = this.removeTooltip.bind(this);
     this.handleMouseMove = this.handleMouseMove.bind(this);
     this.onWindowResize = this.onWindowResize.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
@@ -70,20 +71,28 @@ class ShiftingSlider {
       clearTimeout(this.timeout);
       this.timeout = setTimeout(this.onWindowResize, this.delay);
     });
-    
-    // Adds intersection observer to make the waveform slide in when
-    // it comes into view
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.intersectionRatio > 0) {
-          this.checkElemPosition(entry);
 
-          io.unobserve(this.elem);
-        }
+    this.elem.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.code === 'Tab') {
+        this.handleKeydown(e);
+      }
+    }); 
+
+    if(!PREFERS_REDUCED_MOTION) {
+      // Adds intersection observer to make the waveform slide in when
+      // it comes into view
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio > 0) {
+            this.checkElemPosition(entry);
+
+            io.unobserve(this.elem);
+          }
+        });
       });
-    });
 
-    io.observe(this.elem);
+      io.observe(this.elem);
+    }
   }
 
   /**
@@ -92,7 +101,7 @@ class ShiftingSlider {
   addListeners() {
     this.elem.addEventListener('mouseover', this.handleHover);
     this.elem.addEventListener('mousemove', this.handleHover);
-    this.elem.addEventListener('mouseout', this.handleMouseOut);
+    this.elem.addEventListener('mouseout', this.removeTooltip);
     this.wrapperElem.addEventListener('mouseleave', this.handleMouseLeave);
 
     this.waveformListItems.forEach((listItem) => {
@@ -106,7 +115,7 @@ class ShiftingSlider {
   destroy() {
     this.elem.removeEventListener('mouseover', this.handleHover);
     this.elem.removeEventListener('mousemove', this.handleHover);
-    this.elem.removeEventListener('mouseout', this.handleMouseOut);
+    this.elem.removeEventListener('mouseout', this.removeTooltip);
     this.wrapperElem.addEventListener('mouseleave', this.handleMouseLeave);
 
     this.waveformListItems.forEach((listItem) => {
@@ -118,7 +127,7 @@ class ShiftingSlider {
    * Updates the visibleElemWidth, totalElemWidth and scrollWidth on window resize
    * because the width of the waveform changes with the window size.
    * Also removes event listeners on mobile screen size, adds them on desktop screen sizes
-   * i.e. > 1024.
+   * i.e. > 1024px.
    */
   onWindowResize() {
     // Enable superclamp to clamp overflow text on cards
@@ -135,7 +144,7 @@ class ShiftingSlider {
       this.elem.style.left = -this.scrollWidth + 'px';
     }
 
-    if (window.innerWidth >= 1024) {
+    if (window.innerWidth >= 1024 && !PREFERS_REDUCED_MOTION) {
       this.addListeners();
     } else {
       this.elem.style.left = 0 + 'px';
@@ -149,6 +158,11 @@ class ShiftingSlider {
   addSuperclampListener() {
     this.waveformListItems.forEach((elem) => {
       elem.addEventListener('click', Superclamp.reclampAll);
+      elem.addEventListener('keydown', (e: KeyboardEvent) => {
+        if (e.code === 'Space' || e.code === 'Enter') {
+          Superclamp.reclampAll();
+        }
+      }); 
     });
   }
 
@@ -189,6 +203,7 @@ class ShiftingSlider {
     }
 
     this.elem.style.left = shift + 'px';
+    this.shift = shift;
     this.intervalId = window.requestAnimationFrame(() => this.scroll(direction));
   }
 
@@ -212,7 +227,7 @@ class ShiftingSlider {
    * @param e the Mouse Event
    * @returns Exits the functipn if there's no data-tooltip attribute set
    */
-  handleTooltip(e: MouseEvent) {
+  handleTooltip(e: MouseEvent | UIEvent) {
     let target = e.target as HTMLElement;
 
     // if we have tooltip HTML...
@@ -230,7 +245,7 @@ class ShiftingSlider {
   /**
    * Removes the tooltip element when the cursor leaves the bar
    */
-  handleMouseOut() {
+  removeTooltip() {
     if (this.tooltipElem) {
       this.tooltipElem.remove();
       this.tooltipElem = null;
@@ -267,6 +282,11 @@ class ShiftingSlider {
       this.handleTooltip(e);
     }
 
+    if (this.elem.style.overflow === 'scroll') {
+      this.elem.style.overflow = 'initial';
+      this.elem.style.left = this.shift + 'px';
+    }
+
     var x = e.clientX;
     var direction = '';
 
@@ -291,6 +311,12 @@ class ShiftingSlider {
       }
     }
     this.setDirection(direction);
+  }
+
+  handleKeydown(e: KeyboardEvent) {
+    this.elem.style.left = 0 + 'px';
+    this.elem.style.overflow = 'scroll';
+    this.shift = -this.elem.scrollLeft;
   }
 
   /**
