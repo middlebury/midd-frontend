@@ -39,7 +39,7 @@
     "@types/pikaday": "^1.7.5",
     "autoprefixer": "^10.4.18",
     "browser-sync": "^3.0.2",
-    "bundlesize": "^0.18.1",
+    "bundlesize": "^0.18.2",
     "css-mqpacker": "^7.0.0",
     "cssnano": "^6.1.0",
     "del": "^7.0.0",
