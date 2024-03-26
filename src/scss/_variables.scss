@@ -107,37 +107,37 @@ $gray-dark: #414142 !default;
 $color-journey-border: #d9d9d9;
 
 // util colors
-$color-active: $sky; // --> reference type
+$color-active: $sky;
 $danger: #dc3545 !default;
-$info: $blue-lighter !default; // --> reference type
-$warning: $yellow-light !default; // --> reference type
-$success: #5e7d31 !default; 
+$info: $blue-lighter !default;
+$warning: $yellow-light !default;
+$success: #5e7d31 !default;
 
 // brand colors
-$color-primary: $navy !default; // --> reference type
-$color-primary-dark: $navy-dark !default; // --> reference type
+$color-primary: $navy !default;
+$color-primary-dark: $navy-dark !default;
 
 // school colors
-$color-college: $navy; // --> reference type
-$color-schools-abroad: $blue; // --> reference type
-$color-language-schools: #8f9a17; 
+$color-college: $navy;
+$color-schools-abroad: $blue;
+$color-language-schools: #8f9a17;
 $color-school-english: #c26533;
 $color-writers-conference: $yellow;
-$color-institute: #97bbd5; // --> should be reference type
+$color-institute: #97bbd5;
 
 // Scholaraly Icon colors
 $scholarly-icons: (
   orcid: #a6ce39,
   scopus: #fe8300,
   github: #191717,
-  middlebury-shield: #0d395f // --> should be reference type
+  middlebury-shield: #0d395f
 );
 
 ////
 /// Themes
 ////
 
-$themes: ( // --> reference type
+$themes: (
   college: $color-college,
   institute: $color-institute,
   sa: $color-schools-abroad,
