@@ -26,6 +26,14 @@ site_nav:
     - text: News
     - text: Events
 
+wrmc_site_nav:
+  items:
+    - text: Schedule
+    - text: Charts
+    - text: The Studio
+    - text: Blog
+    - text: About
+
 footer_nav:
   - title: Information for
     width: 6
