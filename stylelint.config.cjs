@@ -16,7 +16,7 @@ module.exports = {
     'scss/at-import-partial-extension': null,
 
     // xo disables border: 0 which is fine
-    'declaration-property-value-blacklist': null,
+    'declaration-property-value-disallowed-list': null,
 
     // too many errors with this one currently
     'no-descending-specificity': null,
