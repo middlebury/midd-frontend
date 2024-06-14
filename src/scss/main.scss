@@ -59,9 +59,9 @@
 // @import 'components/grid-stats';
 @import 'components/grid';
 @import 'components/helpfulness';
-@import 'components/homepage-grid';
-@import 'components/homepage-grid-header';
-@import 'components/homepage-grid-item';
+@import 'components/college-homepage-grid';
+@import 'components/college-homepage-grid-header';
+@import 'components/college-homepage-grid-item';
 @import 'components/icon';
 @import 'components/image';
 @import 'components/input-group';
@@ -120,8 +120,12 @@
 @import 'components/transcript';
 @import 'components/video';
 @import 'components/waveform';
+@import 'components/wrmc-accordion';
+@import 'components/wrmc-footer';
 @import 'components/wrmc-header';
+@import 'components/wrmc-show-teaser';
 @import 'components/wrmc-status-bar';
+@import 'components/wrmc-top-thirty-songs';
 
 // scope
 @import 'scope/typography';

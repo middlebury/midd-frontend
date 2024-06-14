@@ -1,58 +1,31 @@
-{% set playlist_items = [
-    {
-      album: 'Mk.gee',
-      song: 'Two Star & The Dream Police'
-    },
-    {
-      album: 'Quadeca',
-      song: 'SCRAPYARD' 
-    },
-    {
-      album: 'Selmer',
-      song: 'Body Wash' 
-    },
-    {
-      album: 'Abby Sage',
-      song: 'The Rot' 
-    },
-    {
-      album: 'Mike, Tony Seltzer',
-      song: 'Pinball' 
-    },
-    {
-      album: 'Jean Dawson',
-      song: 'Boohoo' 
-    },
-    {
-      album: 'Faye Webster',
-      song: 'Underdressed at the Symphony' 
-    },
-    {
-      album: 'Matt Champion',
-      song: 'Slug' 
-    }
-]%}
 <aside class="status-bar">
-  <h2 class="status-bar__broadcast-status"><span>on</span><span>air</span></h2>
-  <div class="status-bar-row">
-    <article class="status-bar-section">
-      <h3>Current Show</h3>
-      <p>Grilled Cheese Sandwich <em>with DJ Hurricane</em></p>
-    </article>
-    <article class="status-bar-section">
-      <h3>Contact the DJ</h3>
-      <p>
-        <a href="tel:+18024436323">802-443-6323</a><span>&#x25B2;</span>
-        <a>Use Our App to Chat</a>
-      <p>
-    </article>
+  <h2 class="status-bar__broadcast-status"><span>on</span><br><span>air</span></h2>
+  <hr class="status-bar-divider">
+  <div class="status-bar-content">
+    <div class="status-bar-row">
+      <article class="status-bar-section section-show">
+        <h3>Current Show</h3>
+        <p>Grilled Cheese Sandwich<em>with DJ Hurricane</em></p>
+      </article>
+      <article class="status-bar-section section-contact">
+        <h3>Contact the DJ</h3>
+        <p>
+          <a href="tel:+18024436323">802-443-6323</a><span class="text-separator">&#x25B2;</span>
+          <a>Use Our App to Chat</a>
+        <p>
+      </article>
+    </div>
+    <div class="status-bar-row">
+      <article class="status-bar-section section-playlist">
+        <h3>Current Playlist</h3>
+        <ul class="status-bar-section__playlist-items">
+        {% for item in playlist_items %}
+          <li>
+            <p>{{item.artist}}<em>{{item.song}}</em>{{ loop.last ? '' : '<span class="text-separator">&#x25B2;</span>'}}</p>
+          </li>
+        {% endfor %}
+        </ul>
+      </article>
+    </div>
   </div>
-  <article class="status-bar-section">
-    <h3>Current Playlist</h3>
-    <ul class="status-bar-section__playlist">
-    {% for item in playlist_items %}
-      <li><p>{{item.album}}<em>{{item.song}}</em>{{ loop.last ? '' : '<span>&#x25B2;</span>'}}</p></li>
-    {% endfor %}
-    </ul>
-  </article>
 </aside>

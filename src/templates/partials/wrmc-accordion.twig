@@ -1,0 +1,114 @@
+{% set day_of_week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] %}
+{% set wrmc_schedule_items = [
+  {
+    start_time: '4:00',
+    end_time: '5:00',
+    meridiem: 'AM',
+    title: 'Mixed Confetti',
+    meridiem: 'AM',
+    hosts: 'Aaron Smith, Blair Kloman, Pooja Gunturu',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    genre: 'Blues'
+  },
+  {
+    start_time: '5:00',
+    end_time: '6:00',
+    meridiem: 'AM',
+    title: 'Grilled Cheese Sandwich',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    genre: 'Folk Rock'
+  },
+  {
+    start_time: '6:00',
+    end_time: '7:00',
+    meridiem: 'AM',
+    title: 'Too Many Exclamation Marks',
+    hosts: 'Matt Jennings and Tom',
+    genre: 'Jazz'
+  },
+  {
+    start_time: '7:00',
+    end_time: '8:00',
+    meridiem: 'AM',
+    title: 'Echo Locations',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    genre: 'Hip Hop'
+  },
+  {
+    start_time: '9:00',
+    end_time: '10:00',
+    title: 'Jazz Band, Hand and Feet',
+    genre: 'Blues'
+  },
+  {
+    start_time: '11:00',
+    end_time: '12:00',
+    meridiem: 'PM',
+    title: 'Mr. and Mrs. Send It',
+    hosts: 'Sid Vicious',
+    genre: 'Blues'
+  },
+  {
+    start_time: '1:00',
+    end_time: '2:00',
+    meridiem: 'PM',
+    title: 'Experimental Jetset Companion',
+    genre: 'Blues'
+  },
+  {
+    start_time: '2:00',
+    end_time: '3:00',
+    meridiem: 'PM',
+    title: 'Hot Chocolate on the Bus',
+    hosts: 'Adam Yauch',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    genre: 'Blues'
+  },
+  {
+    start_time: '3:00',
+    end_time: '4:00',
+    meridiem: 'PM',
+    title: 'I Love Rock and Roll',
+    hosts: 'Matt Jennings and Tom',
+    genre: 'Folk Rock'
+  }
+] %}
+
+<div class="wrmc-accordion" data-toggle-all-group>
+  <div class="wrmc-accordion-toggle-links">
+    <a href="#" data-toggle-open-all>open all</a>
+    <a href="#" data-toggle-close-all>close all</a>
+  </div>
+  {% for day in day_of_week %}
+
+    {# ID must be unique on the page #}
+    {% set id = random(1234) %}
+
+    <div class="wrmc-accordion-item js-accordion-item-{{id}}">
+      <h3 class="wrmc-accordion-item__title" role="tab">
+        <a
+            href="#midd-accordion-item-label-{{id}}"
+            class="wrmc-accordion-item__link"
+            data-toggle-target=".js-accordion-item-{{id}}"
+            aria-expanded="false"
+            aria-controls="midd-accordion-content-{{id}}"
+            aria-labelledby="midd-accordion-item-label-{{id}}"
+            role="button"
+          >
+          <span>{{day}}</span>
+
+          <span class="wrmc-accordion-item-close">&ndash;</span>
+          <span class="wrmc-accordion-item-open">&#43;</span>
+        </a>
+      </h3>
+
+      <div class="wrmc-accordion-item__content" id="midd-accordion-content-{{id}}" role="tabpanel" aria-labelledby="midd-accordion-item-label-{{id}}">
+        {% for item in wrmc_schedule_items %}
+          {% include 'partials/wrmc-show-teaser.twig' %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+
+</div>
+
