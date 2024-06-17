@@ -29,7 +29,7 @@ import dotenv from 'dotenv';
 import svgSprite from 'gulp-svg-sprite';
 import gulpSvgo from 'gulp-svgo';
 import dom from 'gulp-dom';
-import gulpStylelint from 'gulp-stylelint';
+import gulpStylelint from '@ronilaukkarinen/gulp-stylelint';
 import webpack from 'webpack-stream';
 import config from './webpack.config.js';
 
