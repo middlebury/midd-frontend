@@ -11,10 +11,14 @@
   font-weight: $font-weight-semibold;
   line-height: $line-height-solid;
   text-transform: uppercase;
-  padding-bottom: $spacing-2;
+  margin-bottom: $spacing-3;
 
   a:first-child {
     margin-right: rem(20);
+  }
+
+  @include breakpoint(md) {
+    margin-bottom: $spacing-2;
   }
 }
 
@@ -102,12 +106,11 @@
 .wrmc-accordion-item__content {
   display: flex;
   flex-direction: column;
-}
 
-.wrmc-accordion-item__content,
-.wrmc-accordion-item__content--column {
-  padding-left: $spacing-3;
-  padding-right: $spacing-3;
+  // @include breakpoint(md) {
+  //   padding-left: $spacing-3;
+  //   padding-right: $spacing-3;
+  // }
 
   .wrmc-accordion-item.has-toggler & {
     display: none;
@@ -115,10 +118,6 @@
 
   .wrmc-accordion-item.is-toggled & {
     display: flex; // must be flex for faq accordions
-
-    &--column {
-      flex-direction: column;
-    }
   }
 
   @media print {

@@ -71,8 +71,12 @@
   line-height: $line-height-solid;
   text-transform: uppercase;
   padding-top: $spacing-3;
-  padding-right: $spacing-5;
+  padding-right: $spacing-3;
   z-index: 7;
+
+  @include breakpoint(lg) {
+    padding-right: $spacing-5;
+  }
 
   .page-header__list-ellipsis {
     & > span {

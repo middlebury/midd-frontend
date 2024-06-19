@@ -3,6 +3,7 @@
   align-items: center;
   background-color: $black;
   color: $white;
+  overflow: hidden;
 
   .status-bar__broadcast-status {
     font-family: $font-family-sans-serif;

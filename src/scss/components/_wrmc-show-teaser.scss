@@ -1,16 +1,38 @@
 .show-teaser {
   display: flex;
-  width: 100%;
-  padding: $spacing-4 0;
+  flex-direction: column;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: $spacing-4 $spacing-3;
 
+  &:first-child {
+    padding-top: $spacing-3;
+  }
+
+  @include breakpoint(md) {
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
+
+    &:first-child {
+      padding-top: $spacing-4;
+    }
+  }
+  
   &:not(:last-child){
     border-bottom: 1px solid $gray-light;
   }
 }
 
 .show-time {
-  flex: 0 0 30%;
-  width: 30%;
+  margin-bottom: $spacing-2;
+
+  @include breakpoint(md) {
+    flex: 0 0 30%;
+    width: 30%;
+    margin-bottom: 0;
+  }
 }
 
 .show-details {

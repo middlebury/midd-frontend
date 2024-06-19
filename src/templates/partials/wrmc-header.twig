@@ -1,6 +1,6 @@
 <header class="wrmc-header js-headroom">
 
-  <div class="px-3 px-md-5">
+  <div class="px-3 px-lg-5">
 
     <div class="wrmc-header__main">
 
@@ -12,10 +12,13 @@
             <img class="wrmc-header__logo-background" src="images/wrmc-triangle.svg"/>
             <img src="images/wrmc-ear.png" srcset="images/wrmc-ear@2x.png 182w" sizes="(max-width: 512px) 62px, (max-width: 768px) 89px, 91px"/>
             <div class="wrmc-header__logo-wordmark">
-              <img src="images/wrmc-91.11-fm-wordmark.png" srcset="images/wrmc-91.11-fm-wordmark-96x52.png 96w, images/wrmc-91.11-fm-wordmark.png 478w, images/wrmc-91.11-fm-wordmark@2x.png 944w" sizes="(max-width: 512px) 96px, (max-width: 768px) 363px, 478px"/>
-              <img src="images/wrmc-wordmark.png" srcset="images/wrmc-wordmark-137x32.png 137w, images/wrmc-wordmark.png 313w, images/wrmc-wordmark@2x.png 626w" sizes="(max-width: 512px) 137px, (min-width: 513px) 313px"/>
+              <span>WRMC 91.1FM</span>
+              <span>Middlebury Radio Station</span>
             </div>
-            <span class="sr-only">WRMC 91.1FM Middlebury Radio Station</span>
+            {# <div class="wrmc-header__logo-wordmark">
+              <img src="images/wrmc-91.11-fm-wordmark.png" srcset="images/wrmc-91.11-fm-wordmark-94x45.png 94w, images/wrmc-91.11-fm-wordmark.png 478w, images/wrmc-91.11-fm-wordmark@2x.png 944w" sizes="(max-width: 512px) 94px, (max-width: 768px) 363px, 478px"/>
+              <img src="images/wrmc-wordmark.png" srcset="images/wrmc-wordmark-135x32.png 135w, images/wrmc-wordmark.png 313w, images/wrmc-wordmark@2x.png 626w" sizes="(max-width: 512px) 135px, (min-width: 513px) 313px"/>
+            </div>  #}
           </a>
           {% if is_front %}
           </h1>
@@ -25,12 +28,6 @@
       <div class="wrmc-header__content">
 
         <div class="wrmc-nav">
-          {# Mobile burger menu icon #}
-          <button class="wrmc-nav__handle" data-drawer="midd-nav-drawer" aria-label="Open navigation">
-            {% include 'partials/icon.twig' with { name: 'bars', class: 'mr-1' } %}
-            <span class="d-none d-md-inline">Menu</span>
-          </button>
-
           <div class="wrmc-nav__menu">
 
             <nav class="wrmc-nav__secondary-menu" aria-labelledby="midd-secondary-nav-label">
@@ -54,7 +51,7 @@
                   </li>
                 {% endfor %}
 
-                <li class="wrmc-nav__item d-none d-xl-block">
+                <li class="wrmc-nav__item d-none d-lg-block">
                   <a href="/search" class="school-search__handle" role="button" aria-label="Toggle site search" aria-expanded="false" aria-haspopup="true" data-toggle-target=".js-site-search" data-toggle-focus=".js-site-search-input" data-toggle-group="wrmc-header">
 
                     {% include 'partials/icon.twig' with {
@@ -70,6 +67,12 @@
             </nav>
 
           </div>
+
+           {# Mobile burger menu icon #}
+          <button class="wrmc-nav__handle" data-drawer="midd-nav-drawer" aria-label="Open navigation">
+            {% include 'partials/icon.twig' with { name: 'bars', class: 'mr-2' } %}
+            <span class="d-inline d-lg-none">Menu</span>
+          </button>
 
         </div>
 
