@@ -88,7 +88,7 @@ $school-header-breakpoint: xl;
   justify-content: flex-start;
   flex-direction: row-reverse;
 
-  @include breakpoint($school-header-breakpoint) {
+  @include breakpoint(md) {
     position: relative;
   }
 }
@@ -107,7 +107,7 @@ $school-header-breakpoint: xl;
   background: none;
   border: 0;
 
-  @include breakpoint($school-header-breakpoint) {
+  @include breakpoint(lg) {
     display: none;
   }
 }
@@ -117,7 +117,7 @@ $school-header-breakpoint: xl;
   padding-top: $spacing-3;
   padding-bottom: $spacing-2;
 
-  @include breakpoint($school-header-breakpoint) {
+  @include breakpoint(md) {
     display: flex;
     flex-direction: column;
   }
@@ -170,10 +170,14 @@ $school-header-breakpoint: xl;
 }
 
 .wrmc-nav__list {
-  display: flex;
+  display: none;
   justify-content: flex-end;
   align-items: baseline;
   margin-top: $spacing-6;
+
+  @include breakpoint(lg) {
+    display: flex;
+  }
 }
 
 .wrmc-nav__list--sub {
