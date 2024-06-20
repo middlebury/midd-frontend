@@ -36,6 +36,10 @@
   span {
     margin-left: -$spacing-2;
   }
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .wrmc-footer__logo-image {

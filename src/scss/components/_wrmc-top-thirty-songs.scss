@@ -1,6 +1,12 @@
 .paragraph--top-thirty-songs {
+  justify-content: center;
+  
   .row {
-    row-gap: $spacing-8;
+    row-gap: $spacing-6;
+
+    @include breakpoint(md) {
+      row-gap: $spacing-8;
+    }
   }
 }
 
@@ -19,7 +25,6 @@
       &:before {
         content: "0" counter(ol);
         position: absolute;
-        // left: $spacing-6;
         z-index: 8;
         font-size: rem(18);
         font-weight: $font-weight-semibold;
@@ -71,7 +76,11 @@
     font-weight: $font-weight-bold;
 
     &.song__artist {
-      margin-top: $spacing-2;
+      margin-top: $spacing-1;
+
+      @include breakpoint(md) {
+        margin-top: $spacing-2;
+      }
     }
 
     &.song__title {
@@ -79,4 +88,3 @@
     }
   }
 }
-

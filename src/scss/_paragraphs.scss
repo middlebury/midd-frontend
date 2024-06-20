@@ -311,5 +311,7 @@
 }
 
 .paragraph--top-thirty-songs {
-  margin-top: $spacing-3 !important;
+  @include breakpoint(md) {
+    margin-top: $spacing-3 !important;
+  }
 }

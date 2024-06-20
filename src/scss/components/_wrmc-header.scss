@@ -71,8 +71,12 @@ $school-header-breakpoint: xl;
 .wrmc-header__logo-background {
   position: absolute;
   top: 0;
-  left: 0;
+  left: -$spacing-4;
   z-index: -1;
+
+  @include breakpoint(md) {
+    left: 0;
+  }
 }
 
 .wrmc-header__logo-wordmark {
@@ -285,13 +289,13 @@ $school-header-breakpoint: xl;
   .school-search__handle {
     padding: 0;
     padding-bottom: $spacing-1;
+    font-size: $typescale-2;
     font-weight: $font-weight-semibold;
   }
 }
 
 .wrmc-nav__link {
   display: block;
-  // padding-top: $spacing-3;
   padding-bottom: $spacing-1;
   color: $navy;
   font-size: $typescale-2;
