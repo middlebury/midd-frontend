@@ -8,7 +8,7 @@
     {# ID must be unique on the page #}
     {% set id = random(1234) %}
 
-    <div class="wrmc-accordion-item {{"now"|date('l') == day ? "is-toggled" : ""}} js-accordion-item-{{id}}">
+    <div class="wrmc-accordion-item {{"now"|date('l') == schedule_item.day ? "is-toggled" : ""}} js-accordion-item-{{id}}">
       <h3 class="wrmc-accordion-item__title" role="tab">
         <a
             href="#midd-accordion-item-label-{{id}}"
