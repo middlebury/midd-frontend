@@ -344,3 +344,23 @@ $school-header-breakpoint: xl;
   }
 }
 
+.wrmc-drawer.drawer {
+  .wrmc-nav__secondary-menu {
+    justify-content: flex-start;
+    padding-left: $spacing-3;
+
+    @include breakpoint(md) {
+      display: none;
+    }
+  }
+
+  .drawer__content {
+    background-color: $wrmc-blue-light;
+  }
+
+  .drawer__close,
+  .drawer-nav__link {
+    color: $navy;
+  }
+}
+
