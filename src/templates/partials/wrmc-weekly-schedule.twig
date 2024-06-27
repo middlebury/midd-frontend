@@ -1,0 +1,61 @@
+<div class="d-none d-md-block paragraph--full">
+  <div class="weekly-schedule container">
+    <div class="row pl-3 pr-2 pl-lg-5 pr-lg-0">
+      {% for item in wrmc_schedule_items %}
+        {% set outer_loop_index = loop.index %}
+        {% set schedule_item_index = 0 %}
+        <article class="weekly-schedule__column">
+           <h3>{{item.day}}</h3>
+            {% for i in 4..27 %}
+              {% set meridiem = (i < 12) or (i > 23) ? "AM" : "PM" %}
+              {% if i < 13 %}
+                {% set time = i ~ ":00" %}
+              {% elseif (i > 12) and (i < 25) %}
+                {% set time = (i - 12) ~ ":00" %}
+              {% else %}
+                {% set time = (i - 24) ~ ":00" %}
+              {% endif %}
+
+              {% set schedule_item = item.schedule[schedule_item_index] %}
+
+              {% if (schedule_item.start_time == time) and (schedule_item.meridiem == meridiem) %}
+                {% set id = random(1234) %}
+
+                {# set class to align show description according to postion of parent in the component #}
+                {% if outer_loop_index <= 4 %}
+                  {% if i >= 12 %}
+                    {% set class = 'align-top' %}
+                  {% endif %}
+                {% elseif outer_loop_index > 4 %}
+                  {% if (i < 12) %}
+                    {% set class = 'align-right' %}
+                  {% else %}
+                    {% set class = 'align-top-right' %}
+                  {% endif %}
+                {% endif %}
+                <div class="weekly-schedule__show-wrapper js-show-teaser-{{id}}">
+                  <button data-toggle-target=".js-show-teaser-{{id}}">
+                    <article class="weekly-schedule__show">
+                      <time datetime="{{schedule_item.start_time}}" aria-label="show starts at {{schedule_item.start_time}} {{meridiem}}">{{schedule_item.start_time}} {{meridiem}}</time>
+                      <h4>{{schedule_item.title}}</h4>
+                      {% set schedule_item_index = schedule_item_index + 1 %}
+                    </article>
+                  </button>
+                  <div class="weekly-schedule__show-teaser {{class}}">
+                    {% include 'partials/wrmc-show-teaser.twig' with {
+                      item: schedule_item
+                    } %}
+                  </div>
+                </div>
+              {% else %}
+                <time class="weekly-schedule__time" datetime="{{time}}" aria-label="show starts at {{time}} {{meridiem}}">{{time}} {{meridiem}}</time>
+              {% endif %}
+            {% endfor %}
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<div class="d-block d-md-none">
+  {% include 'partials/wrmc-accordion.twig' %}
+</div>

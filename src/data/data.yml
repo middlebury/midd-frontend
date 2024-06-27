@@ -879,6 +879,13 @@ wrmc_schedule_items:
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         genre: Blues
 
+      - start_time: 2:00
+        end_time: 3:00
+        meridiem: AM
+        title: I Love Rock and Roll
+        hosts: Matt Jennings and Tom
+        genre: Folk Rock
+
   - day: Friday
     schedule:
       - start_time: 7:00
