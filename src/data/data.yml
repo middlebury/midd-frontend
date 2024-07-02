@@ -26,6 +26,14 @@ site_nav:
     - text: News
     - text: Events
 
+wrmc_site_nav:
+  items:
+    - text: Schedule
+    - text: Charts
+    - text: The Studio
+    - text: Blog
+    - text: About
+
 footer_nav:
   - title: Information for
     width: 6
@@ -133,6 +141,10 @@ secondary_footer_nav:
     href: http://www.middlebury.edu/about/privacy
   - text: Site-Editor login
     href: '#'
+
+wrmc_footer_nav:
+  - text: Log In
+    href: http://www.middlebury.edu/about
 
 social_links:
   - text: Instagram
@@ -788,3 +800,233 @@ four_fluencies:
     blurb: Middlebury’s incubator for research, teaching, and student experiences to shift the dynamics underlying conflict to address divisiveness in society.
   - title: Understanding Cultural Difference
     blurb: Middlebury fostering students’ ability to listen, communicate, and take action in communities with a range of linguistic and cultural backgrounds.
+
+wrmc_schedule_items:
+  - day: Monday
+    schedule:
+      - start_time: 4:00
+        end_time: 5:00
+        meridiem: AM
+        title: Mixed Confetti
+        hosts: Aaron Smith, Blair Kloman, Pooja Gunturu
+        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        genre: Blues
+
+      - start_time: 2:00
+        end_time: 3:00
+        meridiem: PM
+        title: Hot Chocolate on the Bus
+        hosts: Adam Yauch
+        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        genre: Blues
+
+      - start_time: 11:00
+        end_time: 12:00
+        meridiem: PM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genre: Blues
+
+  - day: Tuesday
+    schedule:
+      - start_time: 5:00
+        end_time: 6:00
+        meridiem: AM
+        title: Grilled Cheese Sandwich
+        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        genre: Folk Rock
+
+      - start_time: 9:00
+        end_time: 10:00
+        meridiem: AM
+        title: Jazz Band, Hand and Feet
+        genre: Blues
+
+      - start_time: 12:00
+        end_time: 1:00
+        meridiem: AM
+        title: Jazz Band, Hand and Feet
+        genre: Blues
+
+  - day: Wednesday
+    schedule:
+      - start_time: 1:00
+        end_time: 2:00
+        meridiem: PM
+        title: Experimental Jetset Companion
+        genre: Blues
+
+      - start_time: 11:00
+        end_time: 12:00
+        meridiem: PM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genre: Blues
+
+  - day: Thursday
+    schedule:
+      - start_time: 9:00
+        end_time: 10:00
+        meridiem: AM
+        title: Jazz Band, Hand and Feet
+        genre: Blues
+
+      - start_time: 2:00
+        end_time: 3:00
+        meridiem: PM
+        title: Hot Chocolate on the Bus
+        hosts: Adam Yauch
+        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        genre: Blues
+
+      - start_time: 2:00
+        end_time: 3:00
+        meridiem: AM
+        title: I Love Rock and Roll
+        hosts: Matt Jennings and Tom
+        genre: Folk Rock
+
+  - day: Friday
+    schedule:
+      - start_time: 7:00
+        end_time: 8:00
+        meridiem: AM
+        title: Echo Locations
+        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        genre: Hip Hop
+
+      - start_time: 9:00
+        end_time: 10:00
+        meridiem: AM
+        title: Jazz Band, Hand and Feet
+        genre: Blues
+
+      - start_time: 11:00
+        end_time: 12:00
+        meridiem: PM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genre: Blues
+
+  - day: Saturday
+    schedule:
+      - start_time: 1:00
+        end_time: 2:00
+        meridiem: PM
+        title: Experimental Jetset Companion
+        genre: Blues
+
+      - start_time: 2:00
+        end_time: 3:00
+        meridiem: PM
+        title: Hot Chocolate on the Bus
+        hosts: Adam Yauch
+        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        genre: Blues
+
+  - day: Sunday
+    schedule:
+      - start_time: 10:00
+        end_time: 11:00
+        meridiem: AM
+        title: Experimental Jetset Companion
+        genre: Blues
+
+      - start_time: 2:00
+        end_time: 3:00
+        meridiem: PM
+        title: Hot Chocolate on the Bus
+        hosts: Adam Yauch
+        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        genre: Blues
+
+      - start_time: 2:00
+        end_time: 3:00
+        meridiem: AM
+        title: I Love Rock and Roll
+        hosts: Matt Jennings and Tom
+        genre: Folk Rock
+
+playlist_items:
+  - artist: Mk.gee
+    song: Two Star & The Dream Police
+  - artist: Quadeca
+    song: SCRAPYARD
+  - artist: Selmer
+    song: Body Wash
+  - artist: Abby Sage
+    song: The Rot
+  - artist: Mike, Tony Seltzer
+    song: Pinball
+  - artist: Jean Dawson
+    song: Boohoo
+  - artist: Faye Webster
+    song: Underdressed at the Symphony
+  - artist: Matt Champion
+    song: Slug
+  - artist: Hana Vu
+    song: Care
+  - artist: DESTIN CONRAD
+    song: SUBMISSIVE2
+
+top_thirty:
+  - artist: Mk.gee
+    song: Two Star & The Dream Police
+  - artist: Quadeca
+    song: SCRAPYARD
+  - artist: Selmer
+    song: Body Wash
+  - artist: Abby Sage
+    song: The Rot
+  - artist: Mike, Tony Seltzer
+    song: Pinball
+  - artist: Jean Dawson
+    song: Boohoo
+  - artist: Faye Webster
+    song: Underdressed at the Symphony
+  - artist: Matt Champion
+    song: Slug
+  - artist: Hana Vu
+    song: Care
+  - artist: DESTIN CONRAD
+    song: SUBMISSIVE2
+  - artist: Adrianne Lenker
+    song: Fool
+  - artist: Maggie Rogers
+    song: Don't Forget Me
+  - artist: Little Simz
+    song: Drop 7
+  - artist: Zack Villere
+    song: Singles 2017 - 2021
+  - artist: Loukeman
+    song: Sd-2
+  - artist: Tommy Richman
+    song: THE RUSH
+  - artist: RiTchie
+    song: Dizzy
+  - artist: Schoolboy Q
+    song: BLUE LIPS
+  - artist: Colouring
+    song: Love To You, Mate
+  - artist: Iron & Wine
+    song: All in Good Time
+  - artist: Diamond Day
+    song: Connect the Dots
+  - artist: DJ Lucas
+    song: Lil Old Town
+  - artist: Laney Jones
+    song: Stay at Home
+  - artist: MRCY
+    song: Lorelai
+  - artist: sagun
+    song: Issues
+  - artist: Serpentwithfeet
+    song: GRIP
+  - artist: foamboy
+    song: Eating Me Alive
+  - artist: MiLES.
+    song: Life Thru New Lens
+  - artist: Erika de Casier
+    song: Still
+  - artist: CZARFACE
+    song: CZARTIFICIAL INTELLIGENCE

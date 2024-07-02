@@ -257,3 +257,12 @@ image_styles:
       - 736x154
       - 1136x237
       - 1376x287
+  wrmc_top_thirty_splash_image:
+    title: WRMC Top Thirty Splash Image
+    ratio: '1:1'
+    srcset:
+      - 128x128
+      - 160x160
+      - 136x136
+      - 176x176
+    sizes: '(max-width: 512px) 128px, (max-width: 768px) 160px, (max-width: 1200px) 136px, 176px'
