@@ -1,14 +1,14 @@
-
-<article class="show-teaser" aria-labelledby="midd-event-{{ i }}-header">
+{% set id = random(1234) %}
+<article class="show-teaser {{class}}" aria-labelledby="wrmc-show-teaser-header-{{id}}" {% if role %} role={{role}} {% endif %}>
   <div class="show-time">
     <time datetime="{{item.start_time}}" class="" aria-label="show starts at {{item.start_time}} {{item.meridiem}}">{{item.start_time}}</time><time datetime="{{item.end_time}}" class="" aria-label="show ends at {{item.end_time}} {{item.meridiem}}">-{{item.end_time}} {{item.meridiem}}</time>
   </div>
   <div class="show-details">
-    <h3 id="midd-event-{{ i }}-header">
-      <a href="{{ url|default('#') }}">
-        {{item.title}}
-      </a>
-    </h3>
+    <a href="{{ url|default('#') }}">
+      <h3 id="wrmc-show-teaser-header-{{id}}">
+          {{item.title}}
+      </h3>
+    </a>
     {% if item.hosts %}
       <p class="show-details__hosts">
         <em>{{item.hosts}}</em>

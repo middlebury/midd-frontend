@@ -24,6 +24,10 @@
 
 .wrmc-accordion-item {
   margin-bottom: $spacing-2;
+
+  &.is-toggled {
+    margin-bottom: 0;
+  }
 }
 
 .wrmc-accordion-item__char {
@@ -103,7 +107,7 @@
   }
 }
 
-.wrmc-accordion-item__content {
+.wrmc-accordion-item__content-list {
   display: flex;
   flex-direction: column;
 
@@ -122,6 +126,26 @@
 
   @media print {
     display: flex !important;
+  }
+}
+
+.wrmc-accordion-item__list-item {
+  &:first-child {
+    padding-top: $spacing-3;
+
+    .show-teaser {
+      padding-top: 0;
+    }
+  }
+
+  @include breakpoint(md) {
+    &:first-child {
+      padding-top: $spacing-4;
+    }
+  }
+  
+  &:not(:last-child){
+    border-bottom: 1px solid $gray-light;
   }
 }
 

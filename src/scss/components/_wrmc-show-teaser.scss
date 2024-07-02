@@ -6,22 +6,10 @@
   margin-right: calc(50% - 50vw);
   padding: $spacing-4 $spacing-3;
 
-  &:first-child {
-    padding-top: $spacing-3;
-  }
-
   @include breakpoint(md) {
     flex-direction: row;
     width: 100%;
     margin: 0;
-
-    &:first-child {
-      padding-top: $spacing-4;
-    }
-  }
-  
-  &:not(:last-child){
-    border-bottom: 1px solid $gray-light;
   }
 }
 

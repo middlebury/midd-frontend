@@ -1,5 +1,5 @@
-<section class="paragraph--top-thirty-songs paragraph--full" aria-labelledby="midd-top-thirty-label">
-  <h2 id="midd-top-thirty-label" class="sr-only">Weekly Top Thirty</h2>
+<section class="paragraph--top-thirty-songs paragraph--full" aria-labelledby="midd-page-header-label">
+  {# <h2 id="midd-top-thirty-label" class="sr-only">Weekly Top Thirty</h2> #}
   <div class="songs container">
     <ol class="row">
       {% for song in top_thirty %}
@@ -12,7 +12,7 @@
           {% else %}
             <div class="song__album-placeholder">
               <div class="song__album-placeholder-image">
-                <img src="images/wrmc-album-default-120x120.png">
+                <img src="images/wrmc-album-default-120x120.png" alt="Album cover placeholder image">
               </div>
             </div>
           {% endif %}

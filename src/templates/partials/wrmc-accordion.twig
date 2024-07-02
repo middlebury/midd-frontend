@@ -1,4 +1,4 @@
-<div class="wrmc-accordion" data-toggle-all-group>
+<section class="wrmc-accordion" aria-labelledby="midd-page-header-label" data-toggle-all-group>
   <div class="wrmc-accordion-toggle-links">
     <a href="#" data-toggle-open-all>open all</a>
     <a href="#" data-toggle-close-all>close all</a>
@@ -8,31 +8,32 @@
     {# ID must be unique on the page #}
     {% set id = random(1234) %}
 
-    <div class="wrmc-accordion-item {{"now"|date('l') == schedule_item.day ? "is-toggled" : ""}} js-accordion-item-{{id}}">
-      <h3 class="wrmc-accordion-item__title" role="tab">
+    <div class="wrmc-accordion-item {{"now"|date('l') == schedule_item.day ? "is-toggled" : (toggle_all ? "is-toggled" : "")}} js-accordion-item-{{id}}">
+      <h2 class="wrmc-accordion-item__title" role="tab">
         <a
-            href="#midd-accordion-item-label-{{id}}"
+            href="#wrmc-accordion-item-label-{{id}}"
             class="wrmc-accordion-item__link"
             data-toggle-target=".js-accordion-item-{{id}}"
-            aria-expanded="false"
-            aria-controls="midd-accordion-content-{{id}}"
-            aria-labelledby="midd-accordion-item-label-{{id}}"
+            aria-expanded="{{"now"|date('l') == schedule_item.day ? "true" : "false"}}"
+            aria-controls="wrmc-accordion-content-{{id}}"
+            aria-labelledby="wrmc-accordion-item-label-{{id}}"
             role="button"
           >
-          <span>{{schedule_item.day}}</span>
+          <span id="wrmc-accordion-item-label-{{id}}">{{schedule_item.day}}</span>
 
           <span class="wrmc-accordion-item-close">&ndash;</span>
           <span class="wrmc-accordion-item-open">&#43;</span>
         </a>
-      </h3>
+      </h2>
 
-      <div class="wrmc-accordion-item__content" id="midd-accordion-content-{{id}}" role="tabpanel" aria-labelledby="midd-accordion-item-label-{{id}}">
+      <ul class="wrmc-accordion-item__content-list" id="midd-accordion-content-{{id}}" role="tabpanel" aria-labelledby="wrmc-accordion-item-label-{{id}}">
         {% for item in schedule_item.schedule %}
-          {% include 'partials/wrmc-show-teaser.twig' %}
+          <li class="wrmc-accordion-item__list-item">
+            {% include 'partials/wrmc-show-teaser.twig' %}
+          </li>
         {% endfor %}
-      </div>
+      </ul>
     </div>
   {% endfor %}
-
-</div>
+</section>
 
