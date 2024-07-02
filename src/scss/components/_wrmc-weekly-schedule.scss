@@ -38,16 +38,15 @@
       &, button {
         width: 100%;
       }
-      
-      button {
-        &:hover ~ .weekly-schedule__show-teaser,
-        &:focus ~ .weekly-schedule__show-teaser {
-          display: block;
-        }
-      }
-      
-      &:hover,
-      &:focus {
+          
+      // button {
+      //   &:hover ~ .weekly-schedule__show-teaser,
+      //   &:focus ~ .weekly-schedule__show-teaser {
+      //     display: block;
+      //   }
+      // }
+
+      &.is-toggled {
         .weekly-schedule__show-teaser {
           display: block;
         }
@@ -87,6 +86,11 @@
       margin-top: $spacing-2;
       background-color: $white;
       filter: drop-shadow(0px 0px $spacing-2 rgba(0, 0, 0, 0.2));
+
+      &:focus,
+      &:hover {
+        display: block;
+      }
 
       &.align-top {
         bottom: calc(100% + #{$spacing-2});
