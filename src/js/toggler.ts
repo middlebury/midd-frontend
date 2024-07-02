@@ -49,6 +49,8 @@ class Toggler {
 
   groupParent: HTMLElement;
 
+  toggleAllParent: HTMLElement;
+
   constructor(elem: HTMLElement) {
     // this.isToggled = false;
     this.elem = elem;
@@ -65,6 +67,8 @@ class Toggler {
 
     const parent = elem.getAttribute('data-toggle-group-parent');
     this.groupParent = group ? $(`.${group}`) : null;
+
+    this.toggleAllParent = $('[data-toggle-all-group]');
 
     this.handleElemClick = this.handleElemClick.bind(this);
 
@@ -197,6 +201,10 @@ class Toggler {
     if (elem) {
       elem.classList.remove(this.activeClass);
       this.setAriaExpanded(elem, false);
+
+      if(this.toggleAllParent && this.isToggled(this.toggleAllParent)) {
+        this.toggleAllParent.classList.remove(this.activeClass);
+      }
     }
   }
 

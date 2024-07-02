@@ -102,6 +102,7 @@ class GroupToggler {
 
   openAll() {
     this.elem.classList.add(this.activeClass);
+
     this.group.forEach((elem) => {
       const target = this.getTarget(elem);
       target.classList.add(this.activeClass);
@@ -122,15 +123,6 @@ class GroupToggler {
   isToggled(elem: HTMLElement) {
     return elem.classList.contains(this.activeClass);
   }
-
-  // toggle() {
-  //   if (!this.isToggled(this.elem)) {
-
-  //     return this.openAll();
-  //   }
-
-  //   this.closeAll();
-  // }
 }
 
 const groupTogglers = $$('[data-toggle-all-group]');
