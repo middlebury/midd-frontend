@@ -14,7 +14,7 @@
             href="#wrmc-accordion-item-label-{{id}}"
             class="wrmc-accordion-item__link"
             data-toggle-target=".js-accordion-item-{{id}}"
-            aria-expanded="{{"now"|date('l') == schedule_item.day ? "true" : "false"}}"
+            aria-expanded="{{"now"|date('l') == schedule_item.day ? "true" : (toggle_all ? "true" : "false")}}"
             aria-controls="wrmc-accordion-content-{{id}}"
             aria-labelledby="wrmc-accordion-item-label-{{id}}"
             role="button"
