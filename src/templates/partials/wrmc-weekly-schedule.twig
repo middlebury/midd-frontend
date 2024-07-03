@@ -34,7 +34,7 @@
                   {% endif %}
                 {% endif %}
                 <div class="weekly-schedule__show-wrapper js-wrmc-show-teaser-{{id}}">
-                  <button aria-haspopup="dialog" data-toggle-target=".js-wrmc-show-teaser-{{id}}">
+                  <button aria-haspopup="dialog" aria-expanded="false" data-toggle-target=".js-wrmc-show-teaser-{{id}}">
                     <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-{{id}}">
                       <time datetime="{{schedule_item.start_time}}" aria-label="show starts at {{schedule_item.start_time}} {{meridiem}}">{{schedule_item.start_time}} {{meridiem}}</time>
                       <h3 id="wrmc-show-title-{{id}}">{{schedule_item.title}}</h3>
