@@ -39,7 +39,22 @@
   align-self: flex-start;
 }
 
+.wrmc-accordion-item__link {
+  color: $black;
+  transition: background-color 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+    background-color: rgba($blue-light, 0.2);
+  }
+}
+
 .wrmc-accordion-item__title {
+  display: flex;
+  justify-content: space-between;
+  padding: $spacing-2;
+  padding-right: $spacing-3;
   font-size: $typescale-3;
   font-family: $font-family-sans-serif;
   font-weight: $font-weight-semibold;
@@ -68,21 +83,6 @@
     }
   }
 
-}
-
-.wrmc-accordion-item__link {
-  display: flex;
-  justify-content: space-between;
-  color: $black;
-  padding: $spacing-2;
-  padding-right: $spacing-3;
-  transition: background-color 0.2s;
-  cursor: pointer;
-
-  &:hover {
-    text-decoration: none;
-    background-color: rgba($blue-light, 0.2);
-  }
 }
 
 .wrmc-accordion-item__label {

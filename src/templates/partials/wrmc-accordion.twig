@@ -10,7 +10,6 @@
       {% set id = random(1234) %}
 
       <div class="wrmc-accordion-item {{"now"|date('l') == schedule_item.day ? "is-toggled" : (toggle_all ? "is-toggled" : "")}} js-accordion-item-{{id}}">
-        <h2 class="wrmc-accordion-item__title">
           <a
               href="#wrmc-accordion-item-label-{{id}}"
               class="wrmc-accordion-item__link"
@@ -20,12 +19,13 @@
               aria-labelledby="wrmc-accordion-item-label-{{id}}"
               role="tab"
             >
-            <span id="wrmc-accordion-item-label-{{id}}">{{schedule_item.day}}</span>
+            <h2 class="wrmc-accordion-item__title">
+              <span id="wrmc-accordion-item-label-{{id}}">{{schedule_item.day}}</span>
 
-            <span class="wrmc-accordion-item-close">&ndash;</span>
-            <span class="wrmc-accordion-item-open">&#43;</span>
+              <span class="wrmc-accordion-item-close">&ndash;</span>
+              <span class="wrmc-accordion-item-open">&#43;</span>
+            </h2>
           </a>
-        </h2>
         <div role="tabpanel" id="midd-accordion-content-{{id}}" aria-labelledby="wrmc-accordion-item-label-{{id}}">
           <ul class="wrmc-accordion-item__content-list">
             {% for item in schedule_item.schedule %}
