@@ -10,7 +10,7 @@
       {% set id = random(1234) %}
 
       <div class="wrmc-accordion-item {{"now"|date('l') == schedule_item.day ? "is-toggled" : (toggle_all ? "is-toggled" : "")}} js-accordion-item-{{id}}">
-        <h2 class="wrmc-accordion-item__title" role="tab">
+        <h2 class="wrmc-accordion-item__title">
           <a
               href="#wrmc-accordion-item-label-{{id}}"
               class="wrmc-accordion-item__link"
@@ -18,7 +18,7 @@
               aria-expanded="{{"now"|date('l') == schedule_item.day ? "true" : (toggle_all ? "true" : "false")}}"
               aria-controls="wrmc-accordion-content-{{id}}"
               aria-labelledby="wrmc-accordion-item-label-{{id}}"
-              role="button"
+              role="tab"
             >
             <span id="wrmc-accordion-item-label-{{id}}">{{schedule_item.day}}</span>
 
