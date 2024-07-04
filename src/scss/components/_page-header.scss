@@ -21,13 +21,12 @@
 }
 
 .page-header--wrmc {
-  // background-image: linear-gradient(229deg, $black 51.12%, rgba($black, 0.70) 78.41%);
   overflow: initial;
 
   .page-header__figure {
     &:before {
       content: '';
-      z-index: 5;
+      z-index: 6;
       width: 75%;
       height: 50%;
       display: block;
@@ -85,7 +84,7 @@
   text-transform: uppercase;
   padding-top: $spacing-3;
   padding-right: $spacing-3;
-  z-index: 7;
+  z-index: 8;
 
   @include breakpoint(lg) {
     padding-right: $spacing-5;
@@ -115,7 +114,7 @@
     ~ .page-header__list {
       background-color: $white;
       transition: background-color 0.2s;
-      z-index: 6;
+      z-index: 7;
 
       .page-header__list-overlay {
         display: block;
@@ -165,20 +164,6 @@
         color: $wrmc-pink;
       }
     }
-  }
-
-  &.is-toggled {
-    // background-color: $white;
-    // transition: background-color 0.2s;
-    // z-index: 6;
-
-    // .page-header__list-overlay {
-    //   display: block;
-    //   padding-left: $spacing-7;
-    //   padding-right: $spacing-5;
-    //   padding-top: rem(56);
-    //   padding-bottom: $spacing-3;
-    // }
   }
 }
 

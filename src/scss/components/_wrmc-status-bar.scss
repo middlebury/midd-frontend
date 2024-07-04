@@ -44,22 +44,14 @@
   }
 
   .status-bar-row {
-    // width: 100%;
     display: flex;
  
     .status-bar-section {
       padding: $spacing-2 rem(12);
 
       &.section-show {
-        // flex: 0 0 30%;
-        // max-width: 30%;
         padding-right: $spacing-4;
         border-right: 1px solid rgba($wrmc-blue-light, 0.5);
-      }
-
-      &.section-contact {
-        // flex: 0 0 70%;
-        // max-width: 70%;
       }
 
       &.section-playlist {

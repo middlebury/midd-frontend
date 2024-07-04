@@ -25,7 +25,7 @@
       &:before {
         content: "0" counter(ol);
         position: absolute;
-        z-index: 8;
+        z-index: 6;
         font-size: rem(18);
         font-weight: $font-weight-semibold;
         line-height: $line-height-solid;
@@ -37,7 +37,7 @@
 
       .song__trapezoid-marker {
         position: absolute;
-        z-index: 7;
+        z-index: 5;
         width: $spacing-5;
         border-bottom: $typescale-5 solid $wrmc-blue-light;
         border-left: 0px solid transparent;
