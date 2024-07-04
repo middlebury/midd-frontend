@@ -6,30 +6,32 @@
   </h2>
   <hr class="status-bar-divider">
   <div class="status-bar-content">
-    <div class="status-bar-row">
-      <article class="status-bar-section section-show">
-        <h3>Current Show</h3>
-        <p>Grilled Cheese Sandwich<em>with DJ Hurricane</em></p>
-      </article>
-      <article class="status-bar-section section-contact">
-        <h3>Contact the DJ</h3>
-        <p>
-          <a href="tel:+18024436323">802-443-6323</a><span class="text-separator">&#x25B2;</span>
-          <a href="#">Use Our App to Chat</a>
-        </p>
-      </article>
-    </div>
-    <div class="status-bar-row">
-      <article class="status-bar-section section-playlist">
-        <h3>Current Playlist</h3>
-        <ul class="status-bar-section__playlist-items">
-        {% for item in playlist_items %}
-          <li>
-            <p>{{item.artist}}<em>{{item.song}}</em>{{ loop.last ? '' : '<span class="text-separator">&#x25B2;</span>'}}</p>
-          </li>
-        {% endfor %}
-        </ul>
-      </article>
+    <div class="status-bar-content__wrapper">
+      <div class="status-bar-row">
+        <article class="status-bar-section section-show">
+          <h3>Current Show</h3>
+          <p>Grilled Cheese Sandwich<em>with DJ Hurricane</em></p>
+        </article>
+        <article class="status-bar-section section-contact">
+          <h3>Contact the DJ</h3>
+          <p>
+            <a href="tel:+18024436323">802-443-6323</a><span class="text-separator">&#x25B2;</span>
+            <a href="#">Use Our App to Chat</a>
+          </p>
+        </article>
+      </div>
+      <div class="status-bar-row">
+        <article class="status-bar-section section-playlist">
+          <h3>Current Playlist</h3>
+          <ul class="status-bar-section__playlist-items">
+          {% for item in playlist_items %}
+            <li>
+              <p>{{item.artist}}<em>{{item.song}}</em>{{ loop.last ? '' : '<span class="text-separator">&#x25B2;</span>'}}</p>
+            </li>
+          {% endfor %}
+          </ul>
+        </article>
+      </div>
     </div>
   </div>
 </aside>

@@ -24,7 +24,7 @@
 
   .status-bar-content {
     width: calc(100% - 95px);
-    min-width: 1344px;
+    // min-width: 1344px;
     overflow: auto;
 
     /* Hide scrollbar for IE, Edge and Firefox */
@@ -37,6 +37,10 @@
     &::-webkit-scrollbar {
       display: none;
     }
+
+    .status-bar-content__wrapper {
+      width: max-content;
+    }
   }
 
   .status-bar-row {
@@ -47,14 +51,15 @@
       padding: $spacing-2 rem(12);
 
       &.section-show {
-        flex: 0 0 30%;
-        max-width: 30%;
+        // flex: 0 0 30%;
+        // max-width: 30%;
+        padding-right: $spacing-4;
         border-right: 1px solid rgba($wrmc-blue-light, 0.5);
       }
 
       &.section-contact {
-        flex: 0 0 70%;
-        max-width: 70%;
+        // flex: 0 0 70%;
+        // max-width: 70%;
       }
 
       &.section-playlist {
