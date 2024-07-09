@@ -61,7 +61,7 @@
         }
       }
 
-      h3 {
+      dd {
         color: $wrmc-blue-light;
         font-family: $font-family-sans-serif;
         font-size: $typescale-2;
@@ -71,7 +71,7 @@
         margin-bottom: $spacing-1;
       }
 
-      p {
+      dt {
         font-size: $typescale-2;
         font-weight: $font-weight-bold;
         line-height: $line-height-solid;
@@ -85,6 +85,11 @@
           color: $white;
 
           @include link-border;
+        }
+
+        p {
+          font-size: inherit;
+          line-height: inherit;
         }
       }
 
