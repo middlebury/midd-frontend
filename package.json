@@ -1,7 +1,7 @@
 {
   "name": "midd-frontend",
   "description": "Frontend assets for Drupal8 middlebury_theme",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "type": "module",
   "scripts": {
     "start": "npm run dev",
