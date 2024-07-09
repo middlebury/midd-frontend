@@ -66,6 +66,13 @@
 
 	{% include 'paragraphs/card-carousel.twig' %}
 
+  {% include 'paragraphs/faq.twig' %}
+
+  {% include 'paragraphs/course-list.twig' with {
+      course_title: 'Course List'
+    } 
+  %}
+
 	{% include 'paragraphs/waveform.twig' with {
     lines: true
   } %}
