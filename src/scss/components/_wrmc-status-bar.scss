@@ -84,7 +84,13 @@
         a {
           color: $white;
 
-          @include link-border;
+          border-bottom: 0.5px solid currentColor;
+          text-decoration: none;
+
+          &:hover {
+            border-bottom-color: transparent;
+            text-decoration: none;
+          }
         }
 
         p {

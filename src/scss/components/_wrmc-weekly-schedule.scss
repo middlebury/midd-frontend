@@ -21,6 +21,12 @@
       letter-spacing: $letter-spacing;
     }
 
+    button:hover {
+      .weekly-schedule__show {
+        background-color: darken($navy, 10%);
+      }
+    }
+
     h2 {
       color: $black;
       font-family: $font-family-sans-serif;
