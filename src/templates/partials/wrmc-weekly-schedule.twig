@@ -32,7 +32,6 @@
                     <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-{{id}}">
                       <h3 id="wrmc-show-title-{{id}}">{{schedule_item.title}}</h3>
                       <time datetime="{{schedule_item.start_time}}" aria-label="show starts at {{schedule_item.start_time}} {{meridiem}}">{{schedule_item.start_time}} {{meridiem}}</time>
-                      {% include 'partials/icon.twig' with { name: 'times', class: 'mt-1 mr-1' } %}
                       {% set schedule_item_index = schedule_item_index + 1 %}
                     </article>
                   </button>

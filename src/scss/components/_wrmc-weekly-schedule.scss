@@ -69,12 +69,12 @@
           padding: $spacing-1 0;
         }
 
-        svg {
-          display: none;
-          position: absolute;
-          top: 0;
-          right: 0;
-        }
+        // svg {
+        //   display: none;
+        //   position: absolute;
+        //   top: 0;
+        //   right: 0;
+        // }
 
         h3 {
           width: 100%;
@@ -89,71 +89,9 @@
       }
     }
 
-    .weekly-schedule__show-teaser {
-      display: none;
-      position: absolute;
-      z-index: 1;
-      width: 50vw;
-      max-width: 468px;
-      margin-top: $spacing-2;
-      background-color: $white;
-      filter: drop-shadow(0px 0px $spacing-2 rgba(0, 0, 0, 0.2));
-
-      &:focus,
-      &:hover {
-        display: block;
-      }
-
-      &.align-top {
-        bottom: calc(100% + #{$spacing-2});
-      }
-
-      &.align-right {
-        right: 0;
-      }
-
-      &.align-top-right {
-        bottom: calc(100% + #{$spacing-2});
-        right: 0;
-      }
-       
-      &.show-teaser {
-        flex-direction: column;
-        font-weight: $font-weight-normal;
-        letter-spacing: initial;
-        padding: $spacing-3;
-
-        .show-time {
-          font-size: $typescale-3;
-          font-weight: $font-weight-normal;
-          line-height: $line-height-body;
-          margin-bottom: $spacing-4;
-        }
-
-        .show-details__description {
-          margin-bottom: 0;
-        }
-
-        .show-details__genre {
-          position: absolute;
-          top: 0;
-          right: 0;
-          margin-top: 0;
-
-          h3 {
-            font-size: 24px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 140%; /* 33.6px */
-          }
-        }
-      }
-    }
-
     .weekly-schedule__time {
       color: $gray;
       margin-bottom: $spacing-4;
     }
-    
   }
 }
