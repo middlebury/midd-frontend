@@ -53,6 +53,8 @@ module.exports = {
 
     'indentation': null,
 
+    'alpha-value-notation': null,
+
     // Disallow qualifying a selector by type.
     'selector-no-qualifying-type': [
       true,
