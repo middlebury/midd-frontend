@@ -1,5 +1,5 @@
 @mixin link-border() {
-  border-bottom: 1px solid currentColor;
+  border-bottom: 1px solid currentcolor;
   text-decoration: none;
 
   &:hover {
@@ -93,6 +93,6 @@
 
 @mixin links-current {
   a {
-    color: currentColor;
+    color: currentcolor;
   }
 }

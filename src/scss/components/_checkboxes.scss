@@ -29,7 +29,7 @@
     width: 1rem;
     margin-right: $spacing-2;
     margin-top: $spacing-1;
-    border: 1px solid currentColor;
+    border: 1px solid currentcolor;
     flex-shrink: 0;
   }
 }
@@ -62,5 +62,5 @@
 }
 
 .checkbox--filter--hidden {
-  display:none;
+  display: none;
 }
