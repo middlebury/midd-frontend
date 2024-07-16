@@ -44,14 +44,14 @@
     padding-top: $spacing-4;
     padding-bottom: $spacing-4;
     background-color: $black;
-  
+
     @include breakpoint(lg) {
       padding-top: $spacing-7;
       padding-bottom: $spacing-7;
     }
-  
+
     .midd-footer__list {
-      @include breakpoint(lg) { 
+      @include breakpoint(lg) {
         display: block;
       }
 
@@ -67,7 +67,7 @@
       img {
         margin-bottom: $spacing-3;
       }
-      
+
       img:first-child {
         margin-right: rem(12);
       }
@@ -83,7 +83,7 @@
         }
       }
     }
-    
+
     .midd-footer__link {
       @include breakpoint(lg) {
         padding-top: $spacing-1;

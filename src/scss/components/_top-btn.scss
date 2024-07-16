@@ -7,7 +7,9 @@
   position: fixed;
   bottom: $spacing-2;
   right: $spacing-2;
-  transition: transform 0.2s, bottom 0.2s;
+  transition:
+    transform 0.2s,
+    bottom 0.2s;
   z-index: $z-index-to-top-button;
 
   &[hidden] {

@@ -195,10 +195,10 @@ $school-theme-colors: (
       padding-right: $spacing-4;
       padding-top: rem(14);
     }
-  
+
     &.is-loading {
       display: none;
-  
+
       &.has-loaded {
         display: flex;
       }
@@ -451,7 +451,7 @@ $school-theme-colors: (
 
   &.has-loaded {
     display: none;
-  } 
+  }
 }
 
 .journey-modal__overlay {
