@@ -28,10 +28,10 @@
   .banner__bottom-line {
     position: absolute;
     display: block;
-    width: percentage(12/12);
+    width: percentage(12 / 12);
 
     @include breakpoint(sm) {
-      width: percentage(9/12);
+      width: percentage(9 / 12);
     }
   }
 
@@ -79,7 +79,6 @@
       &:first-child {
         margin-left: -$spacing-5;
         margin-bottom: $spacing-2;
-
         width: 200px;
 
         @include breakpoint(md) {
