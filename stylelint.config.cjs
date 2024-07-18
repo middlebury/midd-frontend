@@ -55,10 +55,15 @@ module.exports = {
 
     'alpha-value-notation': null,
 
+    'selector-no-qualifying-type': [true, {
+      'ignore': ['class']
+    }],
+
     // deprecated rules in Stylelint v15
     'no-eol-whitespace': null,
     'media-query-list-comma-newline-after': null,
     'declaration-colon-newline-after': null,
+    'at-rule-name-newline-after': null,
 
     // Disallow qualifying a selector by type.
     'selector-no-qualifying-type': [
