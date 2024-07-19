@@ -236,7 +236,7 @@ const html = () =>
 
 const images = () =>
   gulp
-    .src(paths.images.src)
+    .src(paths.images.src, { encoding: false })
     .pipe(
       imagemin([
         mozjpeg({ progressive: true }),
