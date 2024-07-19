@@ -3,8 +3,7 @@
 @mixin breakpoint($breakpoint) {
   @if $breakpoint == '' {
     @content;
-  }
-  @else {
+  } @else {
     $value: map-get($breakpoints, $breakpoint);
 
     // If the key exists in the map
@@ -13,11 +12,9 @@
       @media only screen and (min-width: $value) {
         @content;
       }
-    }
-    @else {
+    } @else {
       // If the key doesn't exist in the map
-      @warn
-       'Unfortunately, no value could be retrieved from `#{$breakpoint}`. '
+      @warn 'Unfortunately, no value could be retrieved from `#{$breakpoint}`. '
         + 'Please make sure it is defined in `$breakpoints` map.';
     }
   }
