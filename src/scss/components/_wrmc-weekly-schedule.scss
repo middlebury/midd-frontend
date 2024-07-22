@@ -19,7 +19,8 @@
       letter-spacing: $letter-spacing;
     }
 
-    button:hover {
+    button:hover,
+    button:focus {
       .weekly-schedule__show {
         background-color: darken($navy, 10%);
       }
@@ -39,16 +40,52 @@
       position: relative;
       margin-bottom: $spacing-4;
 
-      &, button {
-        width: 100%;
+      @each $genre, $genre-color in $wrmc-genre-colors {
+        &.#{$genre} {
+          .weekly-schedule__show {
+            background-color: $genre-color;
+          }
+
+          button:hover,
+          button:focus {
+            .weekly-schedule__show {
+              background-color: darken($genre-color, 10%);
+            }
+          }
+
+          &:focus-within {
+            .weekly-schedule__show {
+              background-color: darken($genre-color, 10%);
+            }
+          }
+        }
       }
 
-      &.is-toggled {
+      &, button {
+        width: 100%;
+
+        &:focus,
+        &:hover {
+          .weekly-schedule__show-teaser {
+            display: block;
+          }
+
+          .weekly-schedule__show {
+            svg {
+              display: block;
+            }
+          }
+        }
+      }
+
+      &:focus-within {
         .weekly-schedule__show-teaser {
           display: block;
         }
 
         .weekly-schedule__show {
+          // background-color: darken($navy, 10%);
+          
           svg {
             display: block;
           }
@@ -60,7 +97,7 @@
         flex-direction: column-reverse;
         align-items: center;
         color: $white;
-        background-color: $navy;
+        // background-color: $navy;
 
         time {
           width: 100%;
@@ -84,7 +121,6 @@
           font-weight: $font-weight-semibold;
           text-transform: capitalize;
           letter-spacing: initial;
-          text-align: left;
         }
       }
     }

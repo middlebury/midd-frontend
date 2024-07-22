@@ -51,6 +51,12 @@
     font-weight: $font-weight-semibold;
     line-height: $line-height-heading;
     text-transform: uppercase;
+
+    @each $genre, $genre-color in $wrmc-genre-colors {
+      &.#{$genre} {
+        background-color: $genre-color;
+      }
+    }
   }
 }
 

@@ -1,3 +1,5 @@
+{% set genres = ['blues', 'country', 'experimental', 'funk', 'indie', 'pop', 'punk', 'rb-soul', 'rock', 'world', 'classical', 'electronic', 'folk', 'jazz', 'heavy-metal', 'hip-hop', 'kpop', 'latin', 'reggae', 'news', 'talk'] %}
+
 <section class="paragraph--full d-none d-md-block" aria-labelledby="midd-page-header-label">
   <div class="container weekly-schedule">
     <div class="row pl-3 pr-2 pl-lg-5 pr-lg-0">
@@ -27,18 +29,19 @@
                 {% elseif outer_loop_index > 4 %}
                   {% set class = 'align-top-right' %}
                 {% endif %}
-                <div class="weekly-schedule__show-wrapper js-wrmc-show-teaser-{{id}}">
-                  <button aria-haspopup="dialog" aria-expanded="false" data-toggle-target=".js-wrmc-show-teaser-{{id}}">
+                {% set current_genre = random(genres) %}
+                <div class="weekly-schedule__show-wrapper {{current_genre}}">
+                  <button aria-haspopup="dialog">
                     <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-{{id}}">
                       <h3 id="wrmc-show-title-{{id}}">{{schedule_item.title}}</h3>
                       <time datetime="{{schedule_item.start_time}}" aria-label="show starts at {{schedule_item.start_time}} {{meridiem}}">{{schedule_item.start_time}} {{meridiem}}</time>
-                      {% include 'partials/icon.twig' with { name: 'times', class: 'mt-1 mr-1' } %}
                       {% set schedule_item_index = schedule_item_index + 1 %}
                     </article>
                   </button>
                   {% include 'partials/wrmc-show-teaser.twig' with {
                     item: schedule_item,
                     class: "weekly-schedule__show-teaser " ~ class,
+                    genre: current_genre,
                     role: "dialog"
                   } %}
                 </div>
