@@ -47,12 +47,7 @@
           }
 
           button:hover,
-          button:focus {
-            .weekly-schedule__show {
-              background-color: darken($genre-color, 10%);
-            }
-          }
-
+          button:focus,
           &:focus-within {
             .weekly-schedule__show {
               background-color: darken($genre-color, 10%);

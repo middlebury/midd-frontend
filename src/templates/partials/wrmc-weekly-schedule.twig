@@ -1,5 +1,3 @@
-{% set genres = ['blues', 'country', 'experimental', 'funk', 'indie', 'pop', 'punk', 'rb-soul', 'rock', 'world', 'classical', 'electronic', 'folk', 'jazz', 'heavy-metal', 'hip-hop', 'kpop', 'latin', 'reggae', 'news', 'talk'] %}
-
 <section class="paragraph--full d-none d-md-block" aria-labelledby="midd-page-header-label">
   <div class="container weekly-schedule">
     <div class="row pl-3 pr-2 pl-lg-5 pr-lg-0">
@@ -29,7 +27,12 @@
                 {% elseif outer_loop_index > 4 %}
                   {% set class = 'align-top-right' %}
                 {% endif %}
-                {% set current_genre = random(genres) %}
+
+                {% for genre in genres %}
+                  {% if genre.genre == schedule_item.genre %}
+                    {% set current_genre = genre.genre_class %}
+                  {% endif %}
+                {% endfor %}
                 <div class="weekly-schedule__show-wrapper {{current_genre}}">
                   <button aria-haspopup="dialog">
                     <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-{{id}}">
