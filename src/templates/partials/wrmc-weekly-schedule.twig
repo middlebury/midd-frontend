@@ -23,27 +23,28 @@
 
                 {# set class to align show description according to postion of parent in the component #}
                 {% if outer_loop_index <= 4 %}
-                  {% if i >= 12 %}
-                    {% set class = 'align-top' %}
-                  {% endif %}
+                  {% set class = 'align-top' %}
                 {% elseif outer_loop_index > 4 %}
-                  {% if (i < 12) %}
-                    {% set class = 'align-right' %}
-                  {% else %}
-                    {% set class = 'align-top-right' %}
-                  {% endif %}
+                  {% set class = 'align-top-right' %}
                 {% endif %}
-                <div class="weekly-schedule__show-wrapper js-wrmc-show-teaser-{{id}}">
-                  <button aria-haspopup="dialog" aria-expanded="false" data-toggle-target=".js-wrmc-show-teaser-{{id}}">
+
+                {% for genre in genres %}
+                  {% if genre.genre == schedule_item.genre %}
+                    {% set current_genre = genre.genre_class %}
+                  {% endif %}
+                {% endfor %}
+                <div class="weekly-schedule__show-wrapper {{current_genre}}">
+                  <button aria-haspopup="dialog">
                     <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-{{id}}">
-                      <time datetime="{{schedule_item.start_time}}" aria-label="show starts at {{schedule_item.start_time}} {{meridiem}}">{{schedule_item.start_time}} {{meridiem}}</time>
                       <h3 id="wrmc-show-title-{{id}}">{{schedule_item.title}}</h3>
+                      <time datetime="{{schedule_item.start_time}}" aria-label="show starts at {{schedule_item.start_time}} {{meridiem}}">{{schedule_item.start_time}} {{meridiem}}</time>
                       {% set schedule_item_index = schedule_item_index + 1 %}
                     </article>
                   </button>
                   {% include 'partials/wrmc-show-teaser.twig' with {
                     item: schedule_item,
                     class: "weekly-schedule__show-teaser " ~ class,
+                    genre: current_genre,
                     role: "dialog"
                   } %}
                 </div>

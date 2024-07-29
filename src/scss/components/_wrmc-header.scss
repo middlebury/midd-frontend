@@ -117,8 +117,9 @@ $school-header-breakpoint: xl;
   }
 
   span:last-child {
-    margin-top: $spacing-1;
+    // margin-top: $spacing-1;
     font-size: $typescale-2;
+    line-height: 1.2;
 
     @include breakpoint(sm) {
       margin-left: rem(12);
@@ -297,7 +298,7 @@ $school-header-breakpoint: xl;
 
 .wrmc-nav__link {
   display: block;
-  padding-bottom: $spacing-1;
+  // padding-bottom: $spacing-1;
   color: $navy;
   font-size: $typescale-2;
   font-weight: $font-weight-semibold;
@@ -346,9 +347,18 @@ $school-header-breakpoint: xl;
 }
 
 .wrmc-drawer.drawer {
+  .drawer__header {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: $spacing-5;
+  }
+
   .wrmc-nav__secondary-menu {
     justify-content: flex-start;
     padding-left: $spacing-3;
+    padding-top: $spacing-3;
 
     @include breakpoint(md) {
       display: none;
@@ -357,6 +367,10 @@ $school-header-breakpoint: xl;
 
   .drawer__content {
     background-color: $wrmc-blue-light;
+  }
+
+  .drawer-nav__item {
+    border-top-color: $white;
   }
 
   .drawer__close,
