@@ -20,8 +20,8 @@
     aria-haspopup="true"
     aria-expanded="false"
   >
-    Additional Navigation
-    {% include 'partials/icon.twig' with { name: 'chevron-down', class: 'page-nav__icon' } %}
+    <span class="page-nav__button-text"><span class="page-nav__button-text__label">{{label}}: </span>In this section</span>
+    {% include 'partials/icon.twig' with { name: 'caret-down', class: 'page-nav__icon' } %}
   </button>
   <div class="page-nav__content js-page-nav">
     <h2 class="page-nav__title" id="midd-page-nav-label">

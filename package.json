@@ -1,7 +1,7 @@
 {
   "name": "midd-frontend",
   "description": "Frontend assets for Drupal8 middlebury_theme",
-  "version": "0.0.1",
+  "version": "1.1.0",
   "type": "module",
   "scripts": {
     "start": "npm run dev",
@@ -42,7 +42,7 @@
     "browser-sync": "^3.0.2",
     "bundlesize": "^0.18.2",
     "css-mqpacker": "^7.0.0",
-    "cssnano": "^7.0.1",
+    "cssnano": "^7.0.3",
     "del": "^7.0.0",
     "dotenv": "^16.4.5",
     "gh-pages": "^6.0.0",
@@ -73,8 +73,8 @@
     "stylelint-config-xo-scss": "~0.15.0",
     "stylelint-prettier": "~4.1.0",
     "ts-loader": "^9.4.2",
-    "typescript": "^5.4.5",
-    "webpack": "^5.91.0",
+    "typescript": "^5.5.2",
+    "webpack": "^5.92.1",
     "webpack-bundle-analyzer": "^4.10.1",
     "webpack-stream": "^7.0.0",
     "yargs": "^17.6.2"
@@ -106,7 +106,7 @@
   "bundlesize": [
     {
       "path": "./dist/css/*.css",
-      "maxSize": "30 kB",
+      "maxSize": "32 kB",
       "compression": "brotli"
     },
     {

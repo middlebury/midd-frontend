@@ -1,6 +1,6 @@
 <div class="container px-0">
 
-  <header class="page-header{% if image_src %} page-header--has-image{% endif %}{% if has_menu %} page-header--has-menu{% endif %}{% if app_header %} page-header--app{% endif %}">
+  <header class="page-header{% if image_src %} page-header--has-image{% endif %}{% if has_menu %} page-header--has-menu{% endif %}{% if app_header %} page-header--app{% endif %}{% if theme == 'wrmc' %} page-header--wrmc{% endif %}">
 
     {% if image_src %}
       <figure class="page-header__figure">
@@ -15,6 +15,25 @@
           } %}
         </figcaption>
       </figure>
+    {% endif %}
+
+    {% if weekly_top_ten %}
+      <button class="page-header__list-toggle" data-toggle-target=".js-page-header-list">
+        Weekly Top Ten
+        <span class="page-header__list-ellipsis">
+          <span></span><span></span><span></span>
+        </span>
+      </button>
+      <div class="page-header__list js-page-header-list" role="tooltip">
+        <ol class="page-header__list-overlay">
+          {% for item in playlist_items %}
+            <li>
+              <p>{{item.artist}}</p>
+              <p><em>{{item.song}}</em></p>
+            </li>
+          {% endfor %}
+        </ol>
+      </div>
     {% endif %}
 
     <div class="page-header__main">
