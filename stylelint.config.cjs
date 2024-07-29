@@ -51,15 +51,19 @@ module.exports = {
     // which requires `font-family: 'object-fit: <value>;';`
     'font-family-no-missing-generic-family-keyword': null,
 
-    'indentation': null,
+    // Check if alpha-values are using the number notation
+    'alpha-value-notation': 'number',
 
-    'alpha-value-notation': null,
-
-    'selector-no-qualifying-type': [true, {
-      'ignore': ['class']
-    }],
+    // Allow class selectors qualified by type
+    'selector-no-qualifying-type': [
+      true, 
+      {
+        'ignore': ['class']
+      }
+    ],
 
     // deprecated rules in Stylelint v15
+    'indentation': null,
     'no-eol-whitespace': null,
     'media-query-list-comma-newline-after': null,
     'declaration-colon-newline-after': null,
