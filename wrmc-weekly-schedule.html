@@ -216,8 +216,7 @@
             <div class="wrmc-header__content">
               <div class="wrmc-nav">
                 <div class="wrmc-nav__menu">
-                  <nav class="wrmc-nav__secondary-menu" aria-labelledby="midd-secondary-nav-label">
-                    <h2 class="sr-only" id="midd-secondary-nav-label">Secondary navigation</h2>
+                  <nav class="wrmc-nav__secondary-menu" aria-label="Secondary navigation">
                     <img src="images/wrmc-headphones.svg" alt="Headphones illustration" />
                     <div class="wrmc-nav__secondary-menu--links">
                       <a href="#" class="button button--light">listen now</a>
@@ -290,7 +289,7 @@
         </div>
       </header>
       <aside class="status-bar">
-        <h2 class="status-bar__broadcast-status">
+        <h2 class="status-bar__broadcast-status" role="presentation">
           <span>on</span>
           <br>
           <span>air</span>
@@ -299,54 +298,56 @@
         <div class="status-bar-content">
           <div class="status-bar-content__wrapper">
             <div class="status-bar-row">
-              <article class="status-bar-section section-show">
-                <h3>Current Show</h3>
-                <p>Grilled Cheese Sandwich<em>with DJ Hurricane</em></p>
-              </article>
-              <article class="status-bar-section section-contact">
-                <h3>Contact the DJ</h3>
-                <p>
+              <dl class="status-bar-section section-show">
+                <dd>Current Show</dd>
+                <dt>Grilled Cheese Sandwich<em>with DJ Hurricane</em></dt>
+              </dl>
+              <dl class="status-bar-section section-contact">
+                <dd>Contact the DJ</dd>
+                <dt>
                   <a href="tel:+18024436323">802-443-6323</a><span class="text-separator">&#x25B2;</span>
                   <a href="#">Use Our App to Chat</a>
-                </p>
-              </article>
+                </dt>
+              </dl>
             </div>
             <div class="status-bar-row">
-              <article class="status-bar-section section-playlist">
-                <h3>Current Playlist</h3>
-                <ul class="status-bar-section__playlist-items">
-                  <li>
-                    <p>Mk.gee<em>Two Star & The Dream Police</em><span class="text-separator">&#x25B2;</span></p>
-                  </li>
-                  <li>
-                    <p>Quadeca<em>SCRAPYARD</em><span class="text-separator">&#x25B2;</span></p>
-                  </li>
-                  <li>
-                    <p>Selmer<em>Body Wash</em><span class="text-separator">&#x25B2;</span></p>
-                  </li>
-                  <li>
-                    <p>Abby Sage<em>The Rot</em><span class="text-separator">&#x25B2;</span></p>
-                  </li>
-                  <li>
-                    <p>Mike, Tony Seltzer<em>Pinball</em><span class="text-separator">&#x25B2;</span></p>
-                  </li>
-                  <li>
-                    <p>Jean Dawson<em>Boohoo</em><span class="text-separator">&#x25B2;</span></p>
-                  </li>
-                  <li>
-                    <p>Faye Webster<em>Underdressed at the Symphony</em><span class="text-separator">&#x25B2;</span></p>
-                  </li>
-                  <li>
-                    <p>Matt Champion<em>Slug</em><span class="text-separator">&#x25B2;</span></p>
-                  </li>
-                  <li>
-                    <p>Hana Vu<em>Care</em><span class="text-separator">&#x25B2;</span></p>
-                  </li>
-                  <li>
-                    <p>DESTIN CONRAD<em>SUBMISSIVE2</em></p>
-                  </li>
-                </ul>
-              </article>
+              <dl class="status-bar-section section-playlist">
+                <dd>Current Playlist</dd>
+                <dt>
+                  <ul class="status-bar-section__playlist-items">
+                    <li>
+                      <p>Mk.gee<em>Two Star & The Dream Police</em><span class="text-separator">&#x25B2;</span></p>
+                    </li>
+                    <li>
+                      <p>Quadeca<em>SCRAPYARD</em><span class="text-separator">&#x25B2;</span></p>
+                    </li>
+                    <li>
+                      <p>Selmer<em>Body Wash</em><span class="text-separator">&#x25B2;</span></p>
+                    </li>
+                    <li>
+                      <p>Abby Sage<em>The Rot</em><span class="text-separator">&#x25B2;</span></p>
+                    </li>
+                    <li>
+                      <p>Mike, Tony Seltzer<em>Pinball</em><span class="text-separator">&#x25B2;</span></p>
+                    </li>
+                    <li>
+                      <p>Jean Dawson<em>Boohoo</em><span class="text-separator">&#x25B2;</span></p>
+                    </li>
+                    <li>
+                      <p>Faye Webster<em>Underdressed at the Symphony</em><span class="text-separator">&#x25B2;</span></p>
+                    </li>
+                    <li>
+                      <p>Matt Champion<em>Slug</em><span class="text-separator">&#x25B2;</span></p>
+                    </li>
+                    <li>
+                      <p>Hana Vu<em>Care</em><span class="text-separator">&#x25B2;</span></p>
+                    </li>
+                    <li>
+                      <p>DESTIN CONRAD<em>SUBMISSIVE2</em></p>
+                    </li>
+                  </ul>
+                </dt>
+              </dl>
             </div>
           </div>
         </div>
@@ -358,20 +359,20 @@
               <img src="https://via.placeholder.com/1440x576" srcset="https://via.placeholder.com/400x160 400w,https://via.placeholder.com/640x256 640w,https://via.placeholder.com/960x384 960w,https://via.placeholder.com/1280x512 1280w,https://via.placeholder.com/1440x576 1440w" sizes="(max-width: 1440px) 100vw, 1440px" alt="" />
               <figcaption class="page-header__caption">
                 <div class="tooltip tooltip--light">
-                  <button class="tooltip__button" aria-labelledby="midd-tooltip-label-654">
+                  <button class="tooltip__button" aria-labelledby="midd-tooltip-label-942">
                     <svg class="icon f5 icon--lg" focusable="false" aria-hidden="true">
                       <use xlink:href="#icon-info">
                     </svg>
                   </button>
-                  <div class="tooltip__label" role="tooltip" id="midd-tooltip-label-654"> some caption for top level image </div>
+                  <div class="tooltip__label" role="tooltip" id="midd-tooltip-label-942"> some caption for top level image </div>
                 </div>
               </figcaption>
             </figure>
-            <button class="page-header__list-toggle" data-toggle-target=".js-page-header-list"> Weekly Top Ten <span class="page-header__list-ellipsis">
+            <button class="page-header__list-toggle" aria-describedby="wrmc-tooltip-label-530"> Weekly Top Ten <span class="page-header__list-ellipsis">
                 <span></span><span></span><span></span>
               </span>
             </button>
-            <div class="page-header__list js-page-header-list" role="tooltip">
+            <div class="page-header__list" role="tooltip" id="wrmc-tooltip-label-330">
               <ol class="page-header__list-overlay">
                 <li>
                   <p>Mk.gee</p>
@@ -438,197 +439,197 @@
                   <div class="row pl-3 pr-2 pl-lg-5 pr-lg-0">
                     <article class="weekly-schedule__column" aria-label="Shows scheduled for Monday">
                       <h2>Monday</h2>
-                      <div class="weekly-schedule__show-wrapper js-wrmc-show-teaser-739">
-                        <button aria-haspopup="dialog" aria-expanded="false" data-toggle-target=".js-wrmc-show-teaser-739">
-                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-739">
+                      <div class="weekly-schedule__show-wrapper blues">
+                        <button aria-haspopup="dialog">
+                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-204">
+                            <h3 id="wrmc-show-title-204">Mixed Confetti</h3>
                             <time datetime="4:00" aria-label="show starts at 4:00 AM">4:00 AM</time>
-                            <h3 id="wrmc-show-title-739">Mixed Confetti</h3>
                           </article>
                         </button>
-                        <article class="show-teaser weekly-schedule__show-teaser " aria-labelledby="wrmc-show-teaser-header-763" role=dialog>
+                        <article class="show-teaser weekly-schedule__show-teaser align-top" aria-labelledby="wrmc-show-teaser-header-594" role=dialog>
                           <div class="show-time">
                             <time datetime="4:00" class="" aria-label="show starts at 4:00 AM">4:00</time><time datetime="5:00" class="" aria-label="show ends at 5:00 AM">-5:00 AM</time>
                           </div>
                           <div class="show-details">
                             <a href="#">
-                              <h3 id="wrmc-show-teaser-header-763"> Mixed Confetti </h3>
+                              <h3 id="wrmc-show-teaser-header-594"> Mixed Confetti </h3>
                             </a>
                             <p class="show-details__hosts">
                               <em>Aaron Smith, Blair Kloman, Pooja Gunturu</em>
                             </p>
                             <p class="show-details__description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                            <span class="show-details__genre">Blues</span>
+                            <span class="show-details__genre blues">Blues</span>
                           </div>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-454">
-                          <h3 id="wrmc-show-title-454" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-18">
+                          <h3 id="wrmc-show-title-18" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="5:00" aria-label="show starts at 5:00 AM">5:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-35">
-                          <h3 id="wrmc-show-title-35" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1202">
+                          <h3 id="wrmc-show-title-1202" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="6:00" aria-label="show starts at 6:00 AM">6:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-746">
-                          <h3 id="wrmc-show-title-746" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-747">
+                          <h3 id="wrmc-show-title-747" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="7:00" aria-label="show starts at 7:00 AM">7:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-122">
-                          <h3 id="wrmc-show-title-122" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-296">
+                          <h3 id="wrmc-show-title-296" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="8:00" aria-label="show starts at 8:00 AM">8:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-796">
-                          <h3 id="wrmc-show-title-796" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-230">
+                          <h3 id="wrmc-show-title-230" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="9:00" aria-label="show starts at 9:00 AM">9:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1066">
-                          <h3 id="wrmc-show-title-1066" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-333">
+                          <h3 id="wrmc-show-title-333" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="10:00" aria-label="show starts at 10:00 AM">10:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-753">
-                          <h3 id="wrmc-show-title-753" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-338">
+                          <h3 id="wrmc-show-title-338" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="11:00" aria-label="show starts at 11:00 AM">11:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1052">
-                          <h3 id="wrmc-show-title-1052" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-853">
+                          <h3 id="wrmc-show-title-853" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="12:00" aria-label="show starts at 12:00 PM">12:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-789">
-                          <h3 id="wrmc-show-title-789" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-601">
+                          <h3 id="wrmc-show-title-601" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="1:00" aria-label="show starts at 1:00 PM">1:00 PM</time>
                         </article>
                       </div>
-                      <div class="weekly-schedule__show-wrapper js-wrmc-show-teaser-1075">
-                        <button aria-haspopup="dialog" aria-expanded="false" data-toggle-target=".js-wrmc-show-teaser-1075">
-                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-1075">
+                      <div class="weekly-schedule__show-wrapper country">
+                        <button aria-haspopup="dialog">
+                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-11">
+                            <h3 id="wrmc-show-title-11">Hot Chocolate on the Bus</h3>
                             <time datetime="2:00" aria-label="show starts at 2:00 PM">2:00 PM</time>
-                            <h3 id="wrmc-show-title-1075">Hot Chocolate on the Bus</h3>
                           </article>
                         </button>
-                        <article class="show-teaser weekly-schedule__show-teaser align-top" aria-labelledby="wrmc-show-teaser-header-521" role=dialog>
+                        <article class="show-teaser weekly-schedule__show-teaser align-top" aria-labelledby="wrmc-show-teaser-header-888" role=dialog>
                           <div class="show-time">
                             <time datetime="2:00" class="" aria-label="show starts at 2:00 PM">2:00</time><time datetime="3:00" class="" aria-label="show ends at 3:00 PM">-3:00 PM</time>
                           </div>
                           <div class="show-details">
                             <a href="#">
-                              <h3 id="wrmc-show-teaser-header-521"> Hot Chocolate on the Bus </h3>
+                              <h3 id="wrmc-show-teaser-header-888"> Hot Chocolate on the Bus </h3>
                             </a>
                             <p class="show-details__hosts">
                               <em>Adam Yauch</em>
                             </p>
                             <p class="show-details__description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                            <span class="show-details__genre">Blues</span>
+                            <span class="show-details__genre country">Country</span>
                           </div>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-196">
-                          <h3 id="wrmc-show-title-196" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-81">
+                          <h3 id="wrmc-show-title-81" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="3:00" aria-label="show starts at 3:00 PM">3:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-65">
-                          <h3 id="wrmc-show-title-65" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-746">
+                          <h3 id="wrmc-show-title-746" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="4:00" aria-label="show starts at 4:00 PM">4:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-949">
-                          <h3 id="wrmc-show-title-949" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-607">
+                          <h3 id="wrmc-show-title-607" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="5:00" aria-label="show starts at 5:00 PM">5:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1032">
-                          <h3 id="wrmc-show-title-1032" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1202">
+                          <h3 id="wrmc-show-title-1202" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="6:00" aria-label="show starts at 6:00 PM">6:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-585">
-                          <h3 id="wrmc-show-title-585" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1054">
+                          <h3 id="wrmc-show-title-1054" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="7:00" aria-label="show starts at 7:00 PM">7:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-521">
-                          <h3 id="wrmc-show-title-521" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-235">
+                          <h3 id="wrmc-show-title-235" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="8:00" aria-label="show starts at 8:00 PM">8:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1185">
-                          <h3 id="wrmc-show-title-1185" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-973">
+                          <h3 id="wrmc-show-title-973" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="9:00" aria-label="show starts at 9:00 PM">9:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-866">
-                          <h3 id="wrmc-show-title-866" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-982">
+                          <h3 id="wrmc-show-title-982" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="10:00" aria-label="show starts at 10:00 PM">10:00 PM</time>
                         </article>
                       </div>
-                      <div class="weekly-schedule__show-wrapper js-wrmc-show-teaser-782">
-                        <button aria-haspopup="dialog" aria-expanded="false" data-toggle-target=".js-wrmc-show-teaser-782">
-                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-782">
+                      <div class="weekly-schedule__show-wrapper electronic">
+                        <button aria-haspopup="dialog">
+                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-734">
+                            <h3 id="wrmc-show-title-734">Mr. and Mrs. Send It</h3>
                             <time datetime="11:00" aria-label="show starts at 11:00 PM">11:00 PM</time>
-                            <h3 id="wrmc-show-title-782">Mr. and Mrs. Send It</h3>
                           </article>
                         </button>
-                        <article class="show-teaser weekly-schedule__show-teaser align-top" aria-labelledby="wrmc-show-teaser-header-1165" role=dialog>
+                        <article class="show-teaser weekly-schedule__show-teaser align-top" aria-labelledby="wrmc-show-teaser-header-561" role=dialog>
                           <div class="show-time">
                             <time datetime="11:00" class="" aria-label="show starts at 11:00 PM">11:00</time><time datetime="12:00" class="" aria-label="show ends at 12:00 PM">-12:00 PM</time>
                           </div>
                           <div class="show-details">
                             <a href="#">
-                              <h3 id="wrmc-show-teaser-header-1165"> Mr. and Mrs. Send It </h3>
+                              <h3 id="wrmc-show-teaser-header-561"> Mr. and Mrs. Send It </h3>
                             </a>
                             <p class="show-details__hosts">
                               <em>Sid Vicious</em>
                             </p>
-                            <span class="show-details__genre">Blues</span>
+                            <span class="show-details__genre electronic">Electronic</span>
                           </div>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-268">
-                          <h3 id="wrmc-show-title-268" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-151">
+                          <h3 id="wrmc-show-title-151" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="12:00" aria-label="show starts at 12:00 AM">12:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-335">
-                          <h3 id="wrmc-show-title-335" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-670">
+                          <h3 id="wrmc-show-title-670" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="1:00" aria-label="show starts at 1:00 AM">1:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-709">
-                          <h3 id="wrmc-show-title-709" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-947">
+                          <h3 id="wrmc-show-title-947" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="2:00" aria-label="show starts at 2:00 AM">2:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-675">
-                          <h3 id="wrmc-show-title-675" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-7">
+                          <h3 id="wrmc-show-title-7" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="3:00" aria-label="show starts at 3:00 AM">3:00 AM</time>
                         </article>
                       </div>
@@ -636,186 +637,186 @@
                     <article class="weekly-schedule__column" aria-label="Shows scheduled for Tuesday">
                       <h2>Tuesday</h2>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1128">
-                          <h3 id="wrmc-show-title-1128" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1096">
+                          <h3 id="wrmc-show-title-1096" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="4:00" aria-label="show starts at 4:00 AM">4:00 AM</time>
                         </article>
                       </div>
-                      <div class="weekly-schedule__show-wrapper js-wrmc-show-teaser-729">
-                        <button aria-haspopup="dialog" aria-expanded="false" data-toggle-target=".js-wrmc-show-teaser-729">
-                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-729">
+                      <div class="weekly-schedule__show-wrapper folk">
+                        <button aria-haspopup="dialog">
+                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-327">
+                            <h3 id="wrmc-show-title-327">Grilled Cheese Sandwich</h3>
                             <time datetime="5:00" aria-label="show starts at 5:00 AM">5:00 AM</time>
-                            <h3 id="wrmc-show-title-729">Grilled Cheese Sandwich</h3>
                           </article>
                         </button>
-                        <article class="show-teaser weekly-schedule__show-teaser " aria-labelledby="wrmc-show-teaser-header-1012" role=dialog>
+                        <article class="show-teaser weekly-schedule__show-teaser align-top" aria-labelledby="wrmc-show-teaser-header-349" role=dialog>
                           <div class="show-time">
                             <time datetime="5:00" class="" aria-label="show starts at 5:00 AM">5:00</time><time datetime="6:00" class="" aria-label="show ends at 6:00 AM">-6:00 AM</time>
                           </div>
                           <div class="show-details">
                             <a href="#">
-                              <h3 id="wrmc-show-teaser-header-1012"> Grilled Cheese Sandwich </h3>
+                              <h3 id="wrmc-show-teaser-header-349"> Grilled Cheese Sandwich </h3>
                             </a>
                             <p class="show-details__description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                            <span class="show-details__genre">Folk Rock</span>
+                            <span class="show-details__genre folk">Folk</span>
                           </div>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-736">
-                          <h3 id="wrmc-show-title-736" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-208">
+                          <h3 id="wrmc-show-title-208" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="6:00" aria-label="show starts at 6:00 AM">6:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1034">
-                          <h3 id="wrmc-show-title-1034" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-920">
+                          <h3 id="wrmc-show-title-920" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="7:00" aria-label="show starts at 7:00 AM">7:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-199">
-                          <h3 id="wrmc-show-title-199" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-378">
+                          <h3 id="wrmc-show-title-378" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="8:00" aria-label="show starts at 8:00 AM">8:00 AM</time>
                         </article>
                       </div>
-                      <div class="weekly-schedule__show-wrapper js-wrmc-show-teaser-1000">
-                        <button aria-haspopup="dialog" aria-expanded="false" data-toggle-target=".js-wrmc-show-teaser-1000">
-                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-1000">
+                      <div class="weekly-schedule__show-wrapper punk">
+                        <button aria-haspopup="dialog">
+                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-381">
+                            <h3 id="wrmc-show-title-381">Jazz Band, Hand and Feet</h3>
                             <time datetime="9:00" aria-label="show starts at 9:00 AM">9:00 AM</time>
-                            <h3 id="wrmc-show-title-1000">Jazz Band, Hand and Feet</h3>
                           </article>
                         </button>
-                        <article class="show-teaser weekly-schedule__show-teaser " aria-labelledby="wrmc-show-teaser-header-991" role=dialog>
+                        <article class="show-teaser weekly-schedule__show-teaser align-top" aria-labelledby="wrmc-show-teaser-header-413" role=dialog>
                           <div class="show-time">
                             <time datetime="9:00" class="" aria-label="show starts at 9:00 AM">9:00</time><time datetime="10:00" class="" aria-label="show ends at 10:00 AM">-10:00 AM</time>
                           </div>
                           <div class="show-details">
                             <a href="#">
-                              <h3 id="wrmc-show-teaser-header-991"> Jazz Band, Hand and Feet </h3>
+                              <h3 id="wrmc-show-teaser-header-413"> Jazz Band, Hand and Feet </h3>
                             </a>
-                            <span class="show-details__genre">Blues</span>
+                            <span class="show-details__genre punk">Punk</span>
                           </div>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-349">
-                          <h3 id="wrmc-show-title-349" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-636">
+                          <h3 id="wrmc-show-title-636" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="10:00" aria-label="show starts at 10:00 AM">10:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-458">
-                          <h3 id="wrmc-show-title-458" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-668">
+                          <h3 id="wrmc-show-title-668" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="11:00" aria-label="show starts at 11:00 AM">11:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-75">
-                          <h3 id="wrmc-show-title-75" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-616">
+                          <h3 id="wrmc-show-title-616" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="12:00" aria-label="show starts at 12:00 PM">12:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-281">
-                          <h3 id="wrmc-show-title-281" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-449">
+                          <h3 id="wrmc-show-title-449" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="1:00" aria-label="show starts at 1:00 PM">1:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1016">
-                          <h3 id="wrmc-show-title-1016" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-385">
+                          <h3 id="wrmc-show-title-385" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="2:00" aria-label="show starts at 2:00 PM">2:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-876">
-                          <h3 id="wrmc-show-title-876" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-762">
+                          <h3 id="wrmc-show-title-762" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="3:00" aria-label="show starts at 3:00 PM">3:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-456">
-                          <h3 id="wrmc-show-title-456" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1032">
+                          <h3 id="wrmc-show-title-1032" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="4:00" aria-label="show starts at 4:00 PM">4:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-981">
-                          <h3 id="wrmc-show-title-981" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-740">
+                          <h3 id="wrmc-show-title-740" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="5:00" aria-label="show starts at 5:00 PM">5:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-828">
-                          <h3 id="wrmc-show-title-828" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-284">
+                          <h3 id="wrmc-show-title-284" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="6:00" aria-label="show starts at 6:00 PM">6:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-43">
-                          <h3 id="wrmc-show-title-43" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-855">
+                          <h3 id="wrmc-show-title-855" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="7:00" aria-label="show starts at 7:00 PM">7:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1075">
-                          <h3 id="wrmc-show-title-1075" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-482">
+                          <h3 id="wrmc-show-title-482" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="8:00" aria-label="show starts at 8:00 PM">8:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-782">
-                          <h3 id="wrmc-show-title-782" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-218">
+                          <h3 id="wrmc-show-title-218" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="9:00" aria-label="show starts at 9:00 PM">9:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1126">
-                          <h3 id="wrmc-show-title-1126" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-986">
+                          <h3 id="wrmc-show-title-986" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="10:00" aria-label="show starts at 10:00 PM">10:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-206">
-                          <h3 id="wrmc-show-title-206" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-480">
+                          <h3 id="wrmc-show-title-480" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="11:00" aria-label="show starts at 11:00 PM">11:00 PM</time>
                         </article>
                       </div>
-                      <div class="weekly-schedule__show-wrapper js-wrmc-show-teaser-906">
-                        <button aria-haspopup="dialog" aria-expanded="false" data-toggle-target=".js-wrmc-show-teaser-906">
-                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-906">
+                      <div class="weekly-schedule__show-wrapper rock">
+                        <button aria-haspopup="dialog">
+                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-237">
+                            <h3 id="wrmc-show-title-237">Jazz Band, Hand and Feet</h3>
                             <time datetime="12:00" aria-label="show starts at 12:00 AM">12:00 AM</time>
-                            <h3 id="wrmc-show-title-906">Jazz Band, Hand and Feet</h3>
                           </article>
                         </button>
-                        <article class="show-teaser weekly-schedule__show-teaser align-top" aria-labelledby="wrmc-show-teaser-header-787" role=dialog>
+                        <article class="show-teaser weekly-schedule__show-teaser align-top" aria-labelledby="wrmc-show-teaser-header-1147" role=dialog>
                           <div class="show-time">
                             <time datetime="12:00" class="" aria-label="show starts at 12:00 AM">12:00</time><time datetime="1:00" class="" aria-label="show ends at 1:00 AM">-1:00 AM</time>
                           </div>
                           <div class="show-details">
                             <a href="#">
-                              <h3 id="wrmc-show-teaser-header-787"> Jazz Band, Hand and Feet </h3>
+                              <h3 id="wrmc-show-teaser-header-1147"> Jazz Band, Hand and Feet </h3>
                             </a>
-                            <span class="show-details__genre">Blues</span>
+                            <span class="show-details__genre rock">Rock</span>
                           </div>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-465">
-                          <h3 id="wrmc-show-title-465" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-945">
+                          <h3 id="wrmc-show-title-945" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="1:00" aria-label="show starts at 1:00 AM">1:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-500">
-                          <h3 id="wrmc-show-title-500" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-598">
+                          <h3 id="wrmc-show-title-598" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="2:00" aria-label="show starts at 2:00 AM">2:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-914">
-                          <h3 id="wrmc-show-title-914" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-864">
+                          <h3 id="wrmc-show-title-864" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="3:00" aria-label="show starts at 3:00 AM">3:00 AM</time>
                         </article>
                       </div>
@@ -823,175 +824,175 @@
                     <article class="weekly-schedule__column" aria-label="Shows scheduled for Wednesday">
                       <h2>Wednesday</h2>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-110">
-                          <h3 id="wrmc-show-title-110" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-792">
+                          <h3 id="wrmc-show-title-792" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="4:00" aria-label="show starts at 4:00 AM">4:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-708">
-                          <h3 id="wrmc-show-title-708" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1007">
+                          <h3 id="wrmc-show-title-1007" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="5:00" aria-label="show starts at 5:00 AM">5:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-374">
-                          <h3 id="wrmc-show-title-374" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-584">
+                          <h3 id="wrmc-show-title-584" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="6:00" aria-label="show starts at 6:00 AM">6:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-221">
-                          <h3 id="wrmc-show-title-221" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-817">
+                          <h3 id="wrmc-show-title-817" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="7:00" aria-label="show starts at 7:00 AM">7:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1125">
-                          <h3 id="wrmc-show-title-1125" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-471">
+                          <h3 id="wrmc-show-title-471" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="8:00" aria-label="show starts at 8:00 AM">8:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-112">
-                          <h3 id="wrmc-show-title-112" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-224">
+                          <h3 id="wrmc-show-title-224" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="9:00" aria-label="show starts at 9:00 AM">9:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1055">
-                          <h3 id="wrmc-show-title-1055" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-783">
+                          <h3 id="wrmc-show-title-783" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="10:00" aria-label="show starts at 10:00 AM">10:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1100">
-                          <h3 id="wrmc-show-title-1100" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-909">
+                          <h3 id="wrmc-show-title-909" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="11:00" aria-label="show starts at 11:00 AM">11:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1038">
-                          <h3 id="wrmc-show-title-1038" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1015">
+                          <h3 id="wrmc-show-title-1015" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="12:00" aria-label="show starts at 12:00 PM">12:00 PM</time>
                         </article>
                       </div>
-                      <div class="weekly-schedule__show-wrapper js-wrmc-show-teaser-188">
-                        <button aria-haspopup="dialog" aria-expanded="false" data-toggle-target=".js-wrmc-show-teaser-188">
-                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-188">
+                      <div class="weekly-schedule__show-wrapper world">
+                        <button aria-haspopup="dialog">
+                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-359">
+                            <h3 id="wrmc-show-title-359">Experimental Jetset Companion</h3>
                             <time datetime="1:00" aria-label="show starts at 1:00 PM">1:00 PM</time>
-                            <h3 id="wrmc-show-title-188">Experimental Jetset Companion</h3>
                           </article>
                         </button>
-                        <article class="show-teaser weekly-schedule__show-teaser align-top" aria-labelledby="wrmc-show-teaser-header-867" role=dialog>
+                        <article class="show-teaser weekly-schedule__show-teaser align-top" aria-labelledby="wrmc-show-teaser-header-319" role=dialog>
                           <div class="show-time">
                             <time datetime="1:00" class="" aria-label="show starts at 1:00 PM">1:00</time><time datetime="2:00" class="" aria-label="show ends at 2:00 PM">-2:00 PM</time>
                           </div>
                           <div class="show-details">
                             <a href="#">
-                              <h3 id="wrmc-show-teaser-header-867"> Experimental Jetset Companion </h3>
+                              <h3 id="wrmc-show-teaser-header-319"> Experimental Jetset Companion </h3>
                             </a>
-                            <span class="show-details__genre">Blues</span>
+                            <span class="show-details__genre world">World</span>
                           </div>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-225">
-                          <h3 id="wrmc-show-title-225" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1154">
+                          <h3 id="wrmc-show-title-1154" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="2:00" aria-label="show starts at 2:00 PM">2:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-17">
-                          <h3 id="wrmc-show-title-17" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-379">
+                          <h3 id="wrmc-show-title-379" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="3:00" aria-label="show starts at 3:00 PM">3:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-65">
-                          <h3 id="wrmc-show-title-65" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1213">
+                          <h3 id="wrmc-show-title-1213" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="4:00" aria-label="show starts at 4:00 PM">4:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-902">
-                          <h3 id="wrmc-show-title-902" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1082">
+                          <h3 id="wrmc-show-title-1082" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="5:00" aria-label="show starts at 5:00 PM">5:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1231">
-                          <h3 id="wrmc-show-title-1231" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-508">
+                          <h3 id="wrmc-show-title-508" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="6:00" aria-label="show starts at 6:00 PM">6:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-677">
-                          <h3 id="wrmc-show-title-677" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-672">
+                          <h3 id="wrmc-show-title-672" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="7:00" aria-label="show starts at 7:00 PM">7:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-295">
-                          <h3 id="wrmc-show-title-295" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-337">
+                          <h3 id="wrmc-show-title-337" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="8:00" aria-label="show starts at 8:00 PM">8:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-768">
-                          <h3 id="wrmc-show-title-768" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-89">
+                          <h3 id="wrmc-show-title-89" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="9:00" aria-label="show starts at 9:00 PM">9:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-828">
-                          <h3 id="wrmc-show-title-828" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-222">
+                          <h3 id="wrmc-show-title-222" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="10:00" aria-label="show starts at 10:00 PM">10:00 PM</time>
                         </article>
                       </div>
-                      <div class="weekly-schedule__show-wrapper js-wrmc-show-teaser-110">
-                        <button aria-haspopup="dialog" aria-expanded="false" data-toggle-target=".js-wrmc-show-teaser-110">
-                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-110">
+                      <div class="weekly-schedule__show-wrapper blues">
+                        <button aria-haspopup="dialog">
+                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-1001">
+                            <h3 id="wrmc-show-title-1001">Mr. and Mrs. Send It</h3>
                             <time datetime="11:00" aria-label="show starts at 11:00 PM">11:00 PM</time>
-                            <h3 id="wrmc-show-title-110">Mr. and Mrs. Send It</h3>
                           </article>
                         </button>
-                        <article class="show-teaser weekly-schedule__show-teaser align-top" aria-labelledby="wrmc-show-teaser-header-974" role=dialog>
+                        <article class="show-teaser weekly-schedule__show-teaser align-top" aria-labelledby="wrmc-show-teaser-header-407" role=dialog>
                           <div class="show-time">
                             <time datetime="11:00" class="" aria-label="show starts at 11:00 PM">11:00</time><time datetime="12:00" class="" aria-label="show ends at 12:00 PM">-12:00 PM</time>
                           </div>
                           <div class="show-details">
                             <a href="#">
-                              <h3 id="wrmc-show-teaser-header-974"> Mr. and Mrs. Send It </h3>
+                              <h3 id="wrmc-show-teaser-header-407"> Mr. and Mrs. Send It </h3>
                             </a>
                             <p class="show-details__hosts">
                               <em>Sid Vicious</em>
                             </p>
-                            <span class="show-details__genre">Blues</span>
+                            <span class="show-details__genre blues">Blues</span>
                           </div>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1208">
-                          <h3 id="wrmc-show-title-1208" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1151">
+                          <h3 id="wrmc-show-title-1151" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="12:00" aria-label="show starts at 12:00 AM">12:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1137">
-                          <h3 id="wrmc-show-title-1137" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-870">
+                          <h3 id="wrmc-show-title-870" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="1:00" aria-label="show starts at 1:00 AM">1:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-895">
-                          <h3 id="wrmc-show-title-895" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1043">
+                          <h3 id="wrmc-show-title-1043" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="2:00" aria-label="show starts at 2:00 AM">2:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1171">
-                          <h3 id="wrmc-show-title-1171" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-420">
+                          <h3 id="wrmc-show-title-420" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="3:00" aria-label="show starts at 3:00 AM">3:00 AM</time>
                         </article>
                       </div>
@@ -999,192 +1000,192 @@
                     <article class="weekly-schedule__column" aria-label="Shows scheduled for Thursday">
                       <h2>Thursday</h2>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-413">
-                          <h3 id="wrmc-show-title-413" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-292">
+                          <h3 id="wrmc-show-title-292" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="4:00" aria-label="show starts at 4:00 AM">4:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-264">
-                          <h3 id="wrmc-show-title-264" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-161">
+                          <h3 id="wrmc-show-title-161" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="5:00" aria-label="show starts at 5:00 AM">5:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-977">
-                          <h3 id="wrmc-show-title-977" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1066">
+                          <h3 id="wrmc-show-title-1066" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="6:00" aria-label="show starts at 6:00 AM">6:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-780">
-                          <h3 id="wrmc-show-title-780" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1019">
+                          <h3 id="wrmc-show-title-1019" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="7:00" aria-label="show starts at 7:00 AM">7:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-224">
-                          <h3 id="wrmc-show-title-224" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-287">
+                          <h3 id="wrmc-show-title-287" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="8:00" aria-label="show starts at 8:00 AM">8:00 AM</time>
                         </article>
                       </div>
-                      <div class="weekly-schedule__show-wrapper js-wrmc-show-teaser-826">
-                        <button aria-haspopup="dialog" aria-expanded="false" data-toggle-target=".js-wrmc-show-teaser-826">
-                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-826">
+                      <div class="weekly-schedule__show-wrapper reggae">
+                        <button aria-haspopup="dialog">
+                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-1138">
+                            <h3 id="wrmc-show-title-1138">Jazz Band, Hand and Feet</h3>
                             <time datetime="9:00" aria-label="show starts at 9:00 AM">9:00 AM</time>
-                            <h3 id="wrmc-show-title-826">Jazz Band, Hand and Feet</h3>
                           </article>
                         </button>
-                        <article class="show-teaser weekly-schedule__show-teaser " aria-labelledby="wrmc-show-teaser-header-30" role=dialog>
+                        <article class="show-teaser weekly-schedule__show-teaser align-top" aria-labelledby="wrmc-show-teaser-header-570" role=dialog>
                           <div class="show-time">
                             <time datetime="9:00" class="" aria-label="show starts at 9:00 AM">9:00</time><time datetime="10:00" class="" aria-label="show ends at 10:00 AM">-10:00 AM</time>
                           </div>
                           <div class="show-details">
                             <a href="#">
-                              <h3 id="wrmc-show-teaser-header-30"> Jazz Band, Hand and Feet </h3>
+                              <h3 id="wrmc-show-teaser-header-570"> Jazz Band, Hand and Feet </h3>
                             </a>
-                            <span class="show-details__genre">Blues</span>
+                            <span class="show-details__genre reggae">Reggae</span>
                           </div>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-234">
-                          <h3 id="wrmc-show-title-234" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-741">
+                          <h3 id="wrmc-show-title-741" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="10:00" aria-label="show starts at 10:00 AM">10:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-535">
-                          <h3 id="wrmc-show-title-535" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-287">
+                          <h3 id="wrmc-show-title-287" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="11:00" aria-label="show starts at 11:00 AM">11:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-430">
-                          <h3 id="wrmc-show-title-430" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-829">
+                          <h3 id="wrmc-show-title-829" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="12:00" aria-label="show starts at 12:00 PM">12:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-962">
-                          <h3 id="wrmc-show-title-962" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-223">
+                          <h3 id="wrmc-show-title-223" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="1:00" aria-label="show starts at 1:00 PM">1:00 PM</time>
                         </article>
                       </div>
-                      <div class="weekly-schedule__show-wrapper js-wrmc-show-teaser-700">
-                        <button aria-haspopup="dialog" aria-expanded="false" data-toggle-target=".js-wrmc-show-teaser-700">
-                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-700">
+                      <div class="weekly-schedule__show-wrapper blues">
+                        <button aria-haspopup="dialog">
+                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-501">
+                            <h3 id="wrmc-show-title-501">Hot Chocolate on the Bus</h3>
                             <time datetime="2:00" aria-label="show starts at 2:00 PM">2:00 PM</time>
-                            <h3 id="wrmc-show-title-700">Hot Chocolate on the Bus</h3>
                           </article>
                         </button>
-                        <article class="show-teaser weekly-schedule__show-teaser align-top" aria-labelledby="wrmc-show-teaser-header-62" role=dialog>
+                        <article class="show-teaser weekly-schedule__show-teaser align-top" aria-labelledby="wrmc-show-teaser-header-836" role=dialog>
                           <div class="show-time">
                             <time datetime="2:00" class="" aria-label="show starts at 2:00 PM">2:00</time><time datetime="3:00" class="" aria-label="show ends at 3:00 PM">-3:00 PM</time>
                           </div>
                           <div class="show-details">
                             <a href="#">
-                              <h3 id="wrmc-show-teaser-header-62"> Hot Chocolate on the Bus </h3>
+                              <h3 id="wrmc-show-teaser-header-836"> Hot Chocolate on the Bus </h3>
                             </a>
                             <p class="show-details__hosts">
                               <em>Adam Yauch</em>
                             </p>
                             <p class="show-details__description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                            <span class="show-details__genre">Blues</span>
+                            <span class="show-details__genre blues">Blues</span>
                           </div>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1227">
-                          <h3 id="wrmc-show-title-1227" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1168">
+                          <h3 id="wrmc-show-title-1168" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="3:00" aria-label="show starts at 3:00 PM">3:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-112">
-                          <h3 id="wrmc-show-title-112" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-639">
+                          <h3 id="wrmc-show-title-639" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="4:00" aria-label="show starts at 4:00 PM">4:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-189">
-                          <h3 id="wrmc-show-title-189" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1069">
+                          <h3 id="wrmc-show-title-1069" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="5:00" aria-label="show starts at 5:00 PM">5:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-295">
-                          <h3 id="wrmc-show-title-295" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-909">
+                          <h3 id="wrmc-show-title-909" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="6:00" aria-label="show starts at 6:00 PM">6:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1105">
-                          <h3 id="wrmc-show-title-1105" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1058">
+                          <h3 id="wrmc-show-title-1058" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="7:00" aria-label="show starts at 7:00 PM">7:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1112">
-                          <h3 id="wrmc-show-title-1112" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-186">
+                          <h3 id="wrmc-show-title-186" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="8:00" aria-label="show starts at 8:00 PM">8:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-997">
-                          <h3 id="wrmc-show-title-997" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-197">
+                          <h3 id="wrmc-show-title-197" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="9:00" aria-label="show starts at 9:00 PM">9:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-528">
-                          <h3 id="wrmc-show-title-528" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1010">
+                          <h3 id="wrmc-show-title-1010" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="10:00" aria-label="show starts at 10:00 PM">10:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-247">
-                          <h3 id="wrmc-show-title-247" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-920">
+                          <h3 id="wrmc-show-title-920" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="11:00" aria-label="show starts at 11:00 PM">11:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1046">
-                          <h3 id="wrmc-show-title-1046" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1140">
+                          <h3 id="wrmc-show-title-1140" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="12:00" aria-label="show starts at 12:00 AM">12:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-135">
-                          <h3 id="wrmc-show-title-135" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-455">
+                          <h3 id="wrmc-show-title-455" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="1:00" aria-label="show starts at 1:00 AM">1:00 AM</time>
                         </article>
                       </div>
-                      <div class="weekly-schedule__show-wrapper js-wrmc-show-teaser-840">
-                        <button aria-haspopup="dialog" aria-expanded="false" data-toggle-target=".js-wrmc-show-teaser-840">
-                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-840">
+                      <div class="weekly-schedule__show-wrapper jazz">
+                        <button aria-haspopup="dialog">
+                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-1017">
+                            <h3 id="wrmc-show-title-1017">I Love Rock and Roll</h3>
                             <time datetime="2:00" aria-label="show starts at 2:00 AM">2:00 AM</time>
-                            <h3 id="wrmc-show-title-840">I Love Rock and Roll</h3>
                           </article>
                         </button>
-                        <article class="show-teaser weekly-schedule__show-teaser align-top" aria-labelledby="wrmc-show-teaser-header-883" role=dialog>
+                        <article class="show-teaser weekly-schedule__show-teaser align-top" aria-labelledby="wrmc-show-teaser-header-1001" role=dialog>
                           <div class="show-time">
                             <time datetime="2:00" class="" aria-label="show starts at 2:00 AM">2:00</time><time datetime="3:00" class="" aria-label="show ends at 3:00 AM">-3:00 AM</time>
                           </div>
                           <div class="show-details">
                             <a href="#">
-                              <h3 id="wrmc-show-teaser-header-883"> I Love Rock and Roll </h3>
+                              <h3 id="wrmc-show-teaser-header-1001"> I Love Rock and Roll </h3>
                             </a>
                             <p class="show-details__hosts">
                               <em>Matt Jennings and Tom</em>
                             </p>
-                            <span class="show-details__genre">Folk Rock</span>
+                            <span class="show-details__genre jazz">Jazz</span>
                           </div>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-226">
-                          <h3 id="wrmc-show-title-226" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-772">
+                          <h3 id="wrmc-show-title-772" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="3:00" aria-label="show starts at 3:00 AM">3:00 AM</time>
                         </article>
                       </div>
@@ -1192,189 +1193,189 @@
                     <article class="weekly-schedule__column" aria-label="Shows scheduled for Friday">
                       <h2>Friday</h2>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-506">
-                          <h3 id="wrmc-show-title-506" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-390">
+                          <h3 id="wrmc-show-title-390" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="4:00" aria-label="show starts at 4:00 AM">4:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-561">
-                          <h3 id="wrmc-show-title-561" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-218">
+                          <h3 id="wrmc-show-title-218" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="5:00" aria-label="show starts at 5:00 AM">5:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-851">
-                          <h3 id="wrmc-show-title-851" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1159">
+                          <h3 id="wrmc-show-title-1159" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="6:00" aria-label="show starts at 6:00 AM">6:00 AM</time>
                         </article>
                       </div>
-                      <div class="weekly-schedule__show-wrapper js-wrmc-show-teaser-374">
-                        <button aria-haspopup="dialog" aria-expanded="false" data-toggle-target=".js-wrmc-show-teaser-374">
-                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-374">
+                      <div class="weekly-schedule__show-wrapper hip-hop">
+                        <button aria-haspopup="dialog">
+                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-840">
+                            <h3 id="wrmc-show-title-840">Echo Locations</h3>
                             <time datetime="7:00" aria-label="show starts at 7:00 AM">7:00 AM</time>
-                            <h3 id="wrmc-show-title-374">Echo Locations</h3>
                           </article>
                         </button>
-                        <article class="show-teaser weekly-schedule__show-teaser align-right" aria-labelledby="wrmc-show-teaser-header-293" role=dialog>
+                        <article class="show-teaser weekly-schedule__show-teaser align-top-right" aria-labelledby="wrmc-show-teaser-header-297" role=dialog>
                           <div class="show-time">
                             <time datetime="7:00" class="" aria-label="show starts at 7:00 AM">7:00</time><time datetime="8:00" class="" aria-label="show ends at 8:00 AM">-8:00 AM</time>
                           </div>
                           <div class="show-details">
                             <a href="#">
-                              <h3 id="wrmc-show-teaser-header-293"> Echo Locations </h3>
+                              <h3 id="wrmc-show-teaser-header-297"> Echo Locations </h3>
                             </a>
                             <p class="show-details__description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                            <span class="show-details__genre">Hip Hop</span>
+                            <span class="show-details__genre hip-hop">Hip Hop</span>
                           </div>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-182">
-                          <h3 id="wrmc-show-title-182" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-737">
+                          <h3 id="wrmc-show-title-737" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="8:00" aria-label="show starts at 8:00 AM">8:00 AM</time>
                         </article>
                       </div>
-                      <div class="weekly-schedule__show-wrapper js-wrmc-show-teaser-1168">
-                        <button aria-haspopup="dialog" aria-expanded="false" data-toggle-target=".js-wrmc-show-teaser-1168">
-                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-1168">
+                      <div class="weekly-schedule__show-wrapper latin">
+                        <button aria-haspopup="dialog">
+                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-125">
+                            <h3 id="wrmc-show-title-125">Jazz Band, Hand and Feet</h3>
                             <time datetime="9:00" aria-label="show starts at 9:00 AM">9:00 AM</time>
-                            <h3 id="wrmc-show-title-1168">Jazz Band, Hand and Feet</h3>
                           </article>
                         </button>
-                        <article class="show-teaser weekly-schedule__show-teaser align-right" aria-labelledby="wrmc-show-teaser-header-1077" role=dialog>
+                        <article class="show-teaser weekly-schedule__show-teaser align-top-right" aria-labelledby="wrmc-show-teaser-header-1112" role=dialog>
                           <div class="show-time">
                             <time datetime="9:00" class="" aria-label="show starts at 9:00 AM">9:00</time><time datetime="10:00" class="" aria-label="show ends at 10:00 AM">-10:00 AM</time>
                           </div>
                           <div class="show-details">
                             <a href="#">
-                              <h3 id="wrmc-show-teaser-header-1077"> Jazz Band, Hand and Feet </h3>
+                              <h3 id="wrmc-show-teaser-header-1112"> Jazz Band, Hand and Feet </h3>
                             </a>
-                            <span class="show-details__genre">Blues</span>
+                            <span class="show-details__genre latin">Latin</span>
                           </div>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1115">
-                          <h3 id="wrmc-show-title-1115" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-98">
+                          <h3 id="wrmc-show-title-98" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="10:00" aria-label="show starts at 10:00 AM">10:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1063">
-                          <h3 id="wrmc-show-title-1063" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-447">
+                          <h3 id="wrmc-show-title-447" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="11:00" aria-label="show starts at 11:00 AM">11:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-414">
-                          <h3 id="wrmc-show-title-414" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-548">
+                          <h3 id="wrmc-show-title-548" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="12:00" aria-label="show starts at 12:00 PM">12:00 PM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-948">
-                          <h3 id="wrmc-show-title-948" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="1:00" aria-label="show starts at 1:00 PM">1:00 PM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-378">
-                          <h3 id="wrmc-show-title-378" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="2:00" aria-label="show starts at 2:00 PM">2:00 PM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1046">
-                          <h3 id="wrmc-show-title-1046" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="3:00" aria-label="show starts at 3:00 PM">3:00 PM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-831">
-                          <h3 id="wrmc-show-title-831" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="4:00" aria-label="show starts at 4:00 PM">4:00 PM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-658">
-                          <h3 id="wrmc-show-title-658" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="5:00" aria-label="show starts at 5:00 PM">5:00 PM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-787">
-                          <h3 id="wrmc-show-title-787" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="6:00" aria-label="show starts at 6:00 PM">6:00 PM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-900">
-                          <h3 id="wrmc-show-title-900" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="7:00" aria-label="show starts at 7:00 PM">7:00 PM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-583">
-                          <h3 id="wrmc-show-title-583" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="8:00" aria-label="show starts at 8:00 PM">8:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
                         <article class="text-center" aria-labelledby="wrmc-show-title-703">
                           <h3 id="wrmc-show-title-703" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="1:00" aria-label="show starts at 1:00 PM">1:00 PM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1227">
+                          <h3 id="wrmc-show-title-1227" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="2:00" aria-label="show starts at 2:00 PM">2:00 PM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-689">
+                          <h3 id="wrmc-show-title-689" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="3:00" aria-label="show starts at 3:00 PM">3:00 PM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-727">
+                          <h3 id="wrmc-show-title-727" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="4:00" aria-label="show starts at 4:00 PM">4:00 PM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-701">
+                          <h3 id="wrmc-show-title-701" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="5:00" aria-label="show starts at 5:00 PM">5:00 PM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-511">
+                          <h3 id="wrmc-show-title-511" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="6:00" aria-label="show starts at 6:00 PM">6:00 PM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-316">
+                          <h3 id="wrmc-show-title-316" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="7:00" aria-label="show starts at 7:00 PM">7:00 PM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1209">
+                          <h3 id="wrmc-show-title-1209" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="8:00" aria-label="show starts at 8:00 PM">8:00 PM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-926">
+                          <h3 id="wrmc-show-title-926" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="9:00" aria-label="show starts at 9:00 PM">9:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-342">
-                          <h3 id="wrmc-show-title-342" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-984">
+                          <h3 id="wrmc-show-title-984" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="10:00" aria-label="show starts at 10:00 PM">10:00 PM</time>
                         </article>
                       </div>
-                      <div class="weekly-schedule__show-wrapper js-wrmc-show-teaser-973">
-                        <button aria-haspopup="dialog" aria-expanded="false" data-toggle-target=".js-wrmc-show-teaser-973">
-                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-973">
+                      <div class="weekly-schedule__show-wrapper indie">
+                        <button aria-haspopup="dialog">
+                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-492">
+                            <h3 id="wrmc-show-title-492">Mr. and Mrs. Send It</h3>
                             <time datetime="11:00" aria-label="show starts at 11:00 PM">11:00 PM</time>
-                            <h3 id="wrmc-show-title-973">Mr. and Mrs. Send It</h3>
                           </article>
                         </button>
-                        <article class="show-teaser weekly-schedule__show-teaser align-top-right" aria-labelledby="wrmc-show-teaser-header-1216" role=dialog>
+                        <article class="show-teaser weekly-schedule__show-teaser align-top-right" aria-labelledby="wrmc-show-teaser-header-143" role=dialog>
                           <div class="show-time">
                             <time datetime="11:00" class="" aria-label="show starts at 11:00 PM">11:00</time><time datetime="12:00" class="" aria-label="show ends at 12:00 PM">-12:00 PM</time>
                           </div>
                           <div class="show-details">
                             <a href="#">
-                              <h3 id="wrmc-show-teaser-header-1216"> Mr. and Mrs. Send It </h3>
+                              <h3 id="wrmc-show-teaser-header-143"> Mr. and Mrs. Send It </h3>
                             </a>
                             <p class="show-details__hosts">
                               <em>Sid Vicious</em>
                             </p>
-                            <span class="show-details__genre">Blues</span>
+                            <span class="show-details__genre indie">Indie</span>
                           </div>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-281">
-                          <h3 id="wrmc-show-title-281" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-709">
+                          <h3 id="wrmc-show-title-709" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="12:00" aria-label="show starts at 12:00 AM">12:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-969">
-                          <h3 id="wrmc-show-title-969" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-858">
+                          <h3 id="wrmc-show-title-858" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="1:00" aria-label="show starts at 1:00 AM">1:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-924">
-                          <h3 id="wrmc-show-title-924" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-99">
+                          <h3 id="wrmc-show-title-99" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="2:00" aria-label="show starts at 2:00 AM">2:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-961">
-                          <h3 id="wrmc-show-title-961" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1029">
+                          <h3 id="wrmc-show-title-1029" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="3:00" aria-label="show starts at 3:00 AM">3:00 AM</time>
                         </article>
                       </div>
@@ -1382,20 +1383,197 @@
                     <article class="weekly-schedule__column" aria-label="Shows scheduled for Saturday">
                       <h2>Saturday</h2>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-490">
-                          <h3 id="wrmc-show-title-490" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-206">
+                          <h3 id="wrmc-show-title-206" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="4:00" aria-label="show starts at 4:00 AM">4:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-829">
-                          <h3 id="wrmc-show-title-829" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-507">
+                          <h3 id="wrmc-show-title-507" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="5:00" aria-label="show starts at 5:00 AM">5:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-597">
-                          <h3 id="wrmc-show-title-597" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-211">
+                          <h3 id="wrmc-show-title-211" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="6:00" aria-label="show starts at 6:00 AM">6:00 AM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-984">
+                          <h3 id="wrmc-show-title-984" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="7:00" aria-label="show starts at 7:00 AM">7:00 AM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-695">
+                          <h3 id="wrmc-show-title-695" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="8:00" aria-label="show starts at 8:00 AM">8:00 AM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1204">
+                          <h3 id="wrmc-show-title-1204" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="9:00" aria-label="show starts at 9:00 AM">9:00 AM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1160">
+                          <h3 id="wrmc-show-title-1160" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="10:00" aria-label="show starts at 10:00 AM">10:00 AM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-831">
+                          <h3 id="wrmc-show-title-831" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="11:00" aria-label="show starts at 11:00 AM">11:00 AM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-387">
+                          <h3 id="wrmc-show-title-387" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="12:00" aria-label="show starts at 12:00 PM">12:00 PM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper funk">
+                        <button aria-haspopup="dialog">
+                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-1223">
+                            <h3 id="wrmc-show-title-1223">Experimental Jetset Companion</h3>
+                            <time datetime="1:00" aria-label="show starts at 1:00 PM">1:00 PM</time>
+                          </article>
+                        </button>
+                        <article class="show-teaser weekly-schedule__show-teaser align-top-right" aria-labelledby="wrmc-show-teaser-header-626" role=dialog>
+                          <div class="show-time">
+                            <time datetime="1:00" class="" aria-label="show starts at 1:00 PM">1:00</time><time datetime="2:00" class="" aria-label="show ends at 2:00 PM">-2:00 PM</time>
+                          </div>
+                          <div class="show-details">
+                            <a href="#">
+                              <h3 id="wrmc-show-teaser-header-626"> Experimental Jetset Companion </h3>
+                            </a>
+                            <span class="show-details__genre funk">Funk</span>
+                          </div>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper classical">
+                        <button aria-haspopup="dialog">
+                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-4">
+                            <h3 id="wrmc-show-title-4">Hot Chocolate on the Bus</h3>
+                            <time datetime="2:00" aria-label="show starts at 2:00 PM">2:00 PM</time>
+                          </article>
+                        </button>
+                        <article class="show-teaser weekly-schedule__show-teaser align-top-right" aria-labelledby="wrmc-show-teaser-header-53" role=dialog>
+                          <div class="show-time">
+                            <time datetime="2:00" class="" aria-label="show starts at 2:00 PM">2:00</time><time datetime="3:00" class="" aria-label="show ends at 3:00 PM">-3:00 PM</time>
+                          </div>
+                          <div class="show-details">
+                            <a href="#">
+                              <h3 id="wrmc-show-teaser-header-53"> Hot Chocolate on the Bus </h3>
+                            </a>
+                            <p class="show-details__hosts">
+                              <em>Adam Yauch</em>
+                            </p>
+                            <p class="show-details__description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                            <span class="show-details__genre classical">Classical</span>
+                          </div>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-63">
+                          <h3 id="wrmc-show-title-63" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="3:00" aria-label="show starts at 3:00 PM">3:00 PM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-832">
+                          <h3 id="wrmc-show-title-832" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="4:00" aria-label="show starts at 4:00 PM">4:00 PM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-802">
+                          <h3 id="wrmc-show-title-802" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="5:00" aria-label="show starts at 5:00 PM">5:00 PM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-120">
+                          <h3 id="wrmc-show-title-120" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="6:00" aria-label="show starts at 6:00 PM">6:00 PM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1000">
+                          <h3 id="wrmc-show-title-1000" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="7:00" aria-label="show starts at 7:00 PM">7:00 PM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-997">
+                          <h3 id="wrmc-show-title-997" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="8:00" aria-label="show starts at 8:00 PM">8:00 PM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1106">
+                          <h3 id="wrmc-show-title-1106" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="9:00" aria-label="show starts at 9:00 PM">9:00 PM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-568">
+                          <h3 id="wrmc-show-title-568" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="10:00" aria-label="show starts at 10:00 PM">10:00 PM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-24">
+                          <h3 id="wrmc-show-title-24" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="11:00" aria-label="show starts at 11:00 PM">11:00 PM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-389">
+                          <h3 id="wrmc-show-title-389" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="12:00" aria-label="show starts at 12:00 AM">12:00 AM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-533">
+                          <h3 id="wrmc-show-title-533" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="1:00" aria-label="show starts at 1:00 AM">1:00 AM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1146">
+                          <h3 id="wrmc-show-title-1146" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="2:00" aria-label="show starts at 2:00 AM">2:00 AM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-775">
+                          <h3 id="wrmc-show-title-775" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="3:00" aria-label="show starts at 3:00 AM">3:00 AM</time>
+                        </article>
+                      </div>
+                    </article>
+                    <article class="weekly-schedule__column" aria-label="Shows scheduled for Sunday">
+                      <h2>Sunday</h2>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-49">
+                          <h3 id="wrmc-show-title-49" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="4:00" aria-label="show starts at 4:00 AM">4:00 AM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-874">
+                          <h3 id="wrmc-show-title-874" class="sr-only">No show scheduled</h3>
+                          <time class="weekly-schedule__time" datetime="5:00" aria-label="show starts at 5:00 AM">5:00 AM</time>
+                        </article>
+                      </div>
+                      <div class="weekly-schedule__show-wrapper">
+                        <article class="text-center" aria-labelledby="wrmc-show-title-165">
+                          <h3 id="wrmc-show-title-165" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="6:00" aria-label="show starts at 6:00 AM">6:00 AM</time>
                         </article>
                       </div>
@@ -1406,345 +1584,168 @@
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-784">
-                          <h3 id="wrmc-show-title-784" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-7">
+                          <h3 id="wrmc-show-title-7" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="8:00" aria-label="show starts at 8:00 AM">8:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-22">
-                          <h3 id="wrmc-show-title-22" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-738">
+                          <h3 id="wrmc-show-title-738" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="9:00" aria-label="show starts at 9:00 AM">9:00 AM</time>
                         </article>
                       </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-202">
-                          <h3 id="wrmc-show-title-202" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="10:00" aria-label="show starts at 10:00 AM">10:00 AM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-933">
-                          <h3 id="wrmc-show-title-933" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="11:00" aria-label="show starts at 11:00 AM">11:00 AM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-546">
-                          <h3 id="wrmc-show-title-546" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="12:00" aria-label="show starts at 12:00 PM">12:00 PM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper js-wrmc-show-teaser-1063">
-                        <button aria-haspopup="dialog" aria-expanded="false" data-toggle-target=".js-wrmc-show-teaser-1063">
-                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-1063">
-                            <time datetime="1:00" aria-label="show starts at 1:00 PM">1:00 PM</time>
-                            <h3 id="wrmc-show-title-1063">Experimental Jetset Companion</h3>
-                          </article>
-                        </button>
-                        <article class="show-teaser weekly-schedule__show-teaser align-top-right" aria-labelledby="wrmc-show-teaser-header-76" role=dialog>
-                          <div class="show-time">
-                            <time datetime="1:00" class="" aria-label="show starts at 1:00 PM">1:00</time><time datetime="2:00" class="" aria-label="show ends at 2:00 PM">-2:00 PM</time>
-                          </div>
-                          <div class="show-details">
-                            <a href="#">
-                              <h3 id="wrmc-show-teaser-header-76"> Experimental Jetset Companion </h3>
-                            </a>
-                            <span class="show-details__genre">Blues</span>
-                          </div>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper js-wrmc-show-teaser-315">
-                        <button aria-haspopup="dialog" aria-expanded="false" data-toggle-target=".js-wrmc-show-teaser-315">
-                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-315">
-                            <time datetime="2:00" aria-label="show starts at 2:00 PM">2:00 PM</time>
-                            <h3 id="wrmc-show-title-315">Hot Chocolate on the Bus</h3>
-                          </article>
-                        </button>
-                        <article class="show-teaser weekly-schedule__show-teaser align-top-right" aria-labelledby="wrmc-show-teaser-header-980" role=dialog>
-                          <div class="show-time">
-                            <time datetime="2:00" class="" aria-label="show starts at 2:00 PM">2:00</time><time datetime="3:00" class="" aria-label="show ends at 3:00 PM">-3:00 PM</time>
-                          </div>
-                          <div class="show-details">
-                            <a href="#">
-                              <h3 id="wrmc-show-teaser-header-980"> Hot Chocolate on the Bus </h3>
-                            </a>
-                            <p class="show-details__hosts">
-                              <em>Adam Yauch</em>
-                            </p>
-                            <p class="show-details__description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                            <span class="show-details__genre">Blues</span>
-                          </div>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-388">
-                          <h3 id="wrmc-show-title-388" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="3:00" aria-label="show starts at 3:00 PM">3:00 PM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-20">
-                          <h3 id="wrmc-show-title-20" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="4:00" aria-label="show starts at 4:00 PM">4:00 PM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-415">
-                          <h3 id="wrmc-show-title-415" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="5:00" aria-label="show starts at 5:00 PM">5:00 PM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-385">
-                          <h3 id="wrmc-show-title-385" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="6:00" aria-label="show starts at 6:00 PM">6:00 PM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-117">
-                          <h3 id="wrmc-show-title-117" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="7:00" aria-label="show starts at 7:00 PM">7:00 PM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1124">
-                          <h3 id="wrmc-show-title-1124" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="8:00" aria-label="show starts at 8:00 PM">8:00 PM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-48">
-                          <h3 id="wrmc-show-title-48" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="9:00" aria-label="show starts at 9:00 PM">9:00 PM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1137">
-                          <h3 id="wrmc-show-title-1137" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="10:00" aria-label="show starts at 10:00 PM">10:00 PM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-663">
-                          <h3 id="wrmc-show-title-663" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="11:00" aria-label="show starts at 11:00 PM">11:00 PM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-433">
-                          <h3 id="wrmc-show-title-433" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="12:00" aria-label="show starts at 12:00 AM">12:00 AM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-653">
-                          <h3 id="wrmc-show-title-653" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="1:00" aria-label="show starts at 1:00 AM">1:00 AM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-359">
-                          <h3 id="wrmc-show-title-359" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="2:00" aria-label="show starts at 2:00 AM">2:00 AM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-153">
-                          <h3 id="wrmc-show-title-153" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="3:00" aria-label="show starts at 3:00 AM">3:00 AM</time>
-                        </article>
-                      </div>
-                    </article>
-                    <article class="weekly-schedule__column" aria-label="Shows scheduled for Sunday">
-                      <h2>Sunday</h2>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-67">
-                          <h3 id="wrmc-show-title-67" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="4:00" aria-label="show starts at 4:00 AM">4:00 AM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-573">
-                          <h3 id="wrmc-show-title-573" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="5:00" aria-label="show starts at 5:00 AM">5:00 AM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-940">
-                          <h3 id="wrmc-show-title-940" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="6:00" aria-label="show starts at 6:00 AM">6:00 AM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-861">
-                          <h3 id="wrmc-show-title-861" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="7:00" aria-label="show starts at 7:00 AM">7:00 AM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-448">
-                          <h3 id="wrmc-show-title-448" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="8:00" aria-label="show starts at 8:00 AM">8:00 AM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-882">
-                          <h3 id="wrmc-show-title-882" class="sr-only">No show scheduled</h3>
-                          <time class="weekly-schedule__time" datetime="9:00" aria-label="show starts at 9:00 AM">9:00 AM</time>
-                        </article>
-                      </div>
-                      <div class="weekly-schedule__show-wrapper js-wrmc-show-teaser-547">
-                        <button aria-haspopup="dialog" aria-expanded="false" data-toggle-target=".js-wrmc-show-teaser-547">
-                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-547">
+                      <div class="weekly-schedule__show-wrapper electronic">
+                        <button aria-haspopup="dialog">
+                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-528">
+                            <h3 id="wrmc-show-title-528">Experimental Jetset Companion</h3>
                             <time datetime="10:00" aria-label="show starts at 10:00 AM">10:00 AM</time>
-                            <h3 id="wrmc-show-title-547">Experimental Jetset Companion</h3>
                           </article>
                         </button>
-                        <article class="show-teaser weekly-schedule__show-teaser align-right" aria-labelledby="wrmc-show-teaser-header-588" role=dialog>
+                        <article class="show-teaser weekly-schedule__show-teaser align-top-right" aria-labelledby="wrmc-show-teaser-header-854" role=dialog>
                           <div class="show-time">
                             <time datetime="10:00" class="" aria-label="show starts at 10:00 AM">10:00</time><time datetime="11:00" class="" aria-label="show ends at 11:00 AM">-11:00 AM</time>
                           </div>
                           <div class="show-details">
                             <a href="#">
-                              <h3 id="wrmc-show-teaser-header-588"> Experimental Jetset Companion </h3>
+                              <h3 id="wrmc-show-teaser-header-854"> Experimental Jetset Companion </h3>
                             </a>
-                            <span class="show-details__genre">Blues</span>
+                            <span class="show-details__genre electronic">Electronic</span>
                           </div>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-87">
-                          <h3 id="wrmc-show-title-87" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-272">
+                          <h3 id="wrmc-show-title-272" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="11:00" aria-label="show starts at 11:00 AM">11:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-549">
-                          <h3 id="wrmc-show-title-549" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-486">
+                          <h3 id="wrmc-show-title-486" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="12:00" aria-label="show starts at 12:00 PM">12:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1186">
-                          <h3 id="wrmc-show-title-1186" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-767">
+                          <h3 id="wrmc-show-title-767" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="1:00" aria-label="show starts at 1:00 PM">1:00 PM</time>
                         </article>
                       </div>
-                      <div class="weekly-schedule__show-wrapper js-wrmc-show-teaser-751">
-                        <button aria-haspopup="dialog" aria-expanded="false" data-toggle-target=".js-wrmc-show-teaser-751">
-                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-751">
+                      <div class="weekly-schedule__show-wrapper electronic">
+                        <button aria-haspopup="dialog">
+                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-495">
+                            <h3 id="wrmc-show-title-495">Hot Chocolate on the Bus</h3>
                             <time datetime="2:00" aria-label="show starts at 2:00 PM">2:00 PM</time>
-                            <h3 id="wrmc-show-title-751">Hot Chocolate on the Bus</h3>
                           </article>
                         </button>
-                        <article class="show-teaser weekly-schedule__show-teaser align-top-right" aria-labelledby="wrmc-show-teaser-header-557" role=dialog>
+                        <article class="show-teaser weekly-schedule__show-teaser align-top-right" aria-labelledby="wrmc-show-teaser-header-280" role=dialog>
                           <div class="show-time">
                             <time datetime="2:00" class="" aria-label="show starts at 2:00 PM">2:00</time><time datetime="3:00" class="" aria-label="show ends at 3:00 PM">-3:00 PM</time>
                           </div>
                           <div class="show-details">
                             <a href="#">
-                              <h3 id="wrmc-show-teaser-header-557"> Hot Chocolate on the Bus </h3>
+                              <h3 id="wrmc-show-teaser-header-280"> Hot Chocolate on the Bus </h3>
                             </a>
                             <p class="show-details__hosts">
                               <em>Adam Yauch</em>
                             </p>
                             <p class="show-details__description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                            <span class="show-details__genre">Blues</span>
+                            <span class="show-details__genre electronic">Electronic</span>
                           </div>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-410">
-                          <h3 id="wrmc-show-title-410" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-298">
+                          <h3 id="wrmc-show-title-298" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="3:00" aria-label="show starts at 3:00 PM">3:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-867">
-                          <h3 id="wrmc-show-title-867" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1017">
+                          <h3 id="wrmc-show-title-1017" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="4:00" aria-label="show starts at 4:00 PM">4:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-758">
-                          <h3 id="wrmc-show-title-758" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-264">
+                          <h3 id="wrmc-show-title-264" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="5:00" aria-label="show starts at 5:00 PM">5:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1157">
-                          <h3 id="wrmc-show-title-1157" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-681">
+                          <h3 id="wrmc-show-title-681" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="6:00" aria-label="show starts at 6:00 PM">6:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1122">
-                          <h3 id="wrmc-show-title-1122" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-675">
+                          <h3 id="wrmc-show-title-675" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="7:00" aria-label="show starts at 7:00 PM">7:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-108">
-                          <h3 id="wrmc-show-title-108" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-364">
+                          <h3 id="wrmc-show-title-364" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="8:00" aria-label="show starts at 8:00 PM">8:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-231">
-                          <h3 id="wrmc-show-title-231" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-256">
+                          <h3 id="wrmc-show-title-256" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="9:00" aria-label="show starts at 9:00 PM">9:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1100">
-                          <h3 id="wrmc-show-title-1100" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-1138">
+                          <h3 id="wrmc-show-title-1138" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="10:00" aria-label="show starts at 10:00 PM">10:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-89">
-                          <h3 id="wrmc-show-title-89" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-859">
+                          <h3 id="wrmc-show-title-859" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="11:00" aria-label="show starts at 11:00 PM">11:00 PM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-357">
-                          <h3 id="wrmc-show-title-357" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-608">
+                          <h3 id="wrmc-show-title-608" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="12:00" aria-label="show starts at 12:00 AM">12:00 AM</time>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-1099">
-                          <h3 id="wrmc-show-title-1099" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-701">
+                          <h3 id="wrmc-show-title-701" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="1:00" aria-label="show starts at 1:00 AM">1:00 AM</time>
                         </article>
                       </div>
-                      <div class="weekly-schedule__show-wrapper js-wrmc-show-teaser-727">
-                        <button aria-haspopup="dialog" aria-expanded="false" data-toggle-target=".js-wrmc-show-teaser-727">
-                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-727">
+                      <div class="weekly-schedule__show-wrapper blues">
+                        <button aria-haspopup="dialog">
+                          <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-718">
+                            <h3 id="wrmc-show-title-718">I Love Rock and Roll</h3>
                             <time datetime="2:00" aria-label="show starts at 2:00 AM">2:00 AM</time>
-                            <h3 id="wrmc-show-title-727">I Love Rock and Roll</h3>
                           </article>
                         </button>
-                        <article class="show-teaser weekly-schedule__show-teaser align-top-right" aria-labelledby="wrmc-show-teaser-header-874" role=dialog>
+                        <article class="show-teaser weekly-schedule__show-teaser align-top-right" aria-labelledby="wrmc-show-teaser-header-1174" role=dialog>
                           <div class="show-time">
                             <time datetime="2:00" class="" aria-label="show starts at 2:00 AM">2:00</time><time datetime="3:00" class="" aria-label="show ends at 3:00 AM">-3:00 AM</time>
                           </div>
                           <div class="show-details">
                             <a href="#">
-                              <h3 id="wrmc-show-teaser-header-874"> I Love Rock and Roll </h3>
+                              <h3 id="wrmc-show-teaser-header-1174"> I Love Rock and Roll </h3>
                             </a>
                             <p class="show-details__hosts">
                               <em>Matt Jennings and Tom</em>
                             </p>
-                            <span class="show-details__genre">Folk Rock</span>
+                            <span class="show-details__genre blues">Blues</span>
                           </div>
                         </article>
                       </div>
                       <div class="weekly-schedule__show-wrapper">
-                        <article class="text-center" aria-labelledby="wrmc-show-title-195">
-                          <h3 id="wrmc-show-title-195" class="sr-only">No show scheduled</h3>
+                        <article class="text-center" aria-labelledby="wrmc-show-title-269">
+                          <h3 id="wrmc-show-title-269" class="sr-only">No show scheduled</h3>
                           <time class="weekly-schedule__time" datetime="3:00" aria-label="show starts at 3:00 AM">3:00 AM</time>
                         </article>
                       </div>
@@ -1759,375 +1760,375 @@
                     <a href="#" data-toggle-close-all>close all</a>
                   </div>
                   <div role="tablist">
-                    <div class="wrmc-accordion-item is-toggled js-accordion-item-812">
-                      <a href="#wrmc-accordion-item-label-812" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-812" aria-expanded="true" aria-controls="wrmc-accordion-content-812" aria-labelledby="wrmc-accordion-item-label-812" role="tab">
+                    <div class="wrmc-accordion-item is-toggled js-accordion-item-823">
+                      <a href="#wrmc-accordion-item-label-823" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-823" aria-expanded="true" aria-controls="wrmc-accordion-content-823" aria-labelledby="wrmc-accordion-item-label-823" role="tab">
                         <h2 class="wrmc-accordion-item__title">
-                          <span id="wrmc-accordion-item-label-812">Monday</span>
+                          <span id="wrmc-accordion-item-label-823">Monday</span>
                           <span class="wrmc-accordion-item-close">&ndash;</span>
                           <span class="wrmc-accordion-item-open">&#43;</span>
                         </h2>
                       </a>
-                      <div role="tabpanel" id="midd-accordion-content-812" aria-labelledby="wrmc-accordion-item-label-812">
+                      <div role="tabpanel" id="midd-accordion-content-823" aria-labelledby="wrmc-accordion-item-label-823">
                         <ul class="wrmc-accordion-item__content-list">
                           <li class="wrmc-accordion-item__list-item">
-                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-679">
+                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-154">
                               <div class="show-time">
                                 <time datetime="4:00" class="" aria-label="show starts at 4:00 AM">4:00</time><time datetime="5:00" class="" aria-label="show ends at 5:00 AM">-5:00 AM</time>
                               </div>
                               <div class="show-details">
                                 <a href="#">
-                                  <h3 id="wrmc-show-teaser-header-679"> Mixed Confetti </h3>
+                                  <h3 id="wrmc-show-teaser-header-154"> Mixed Confetti </h3>
                                 </a>
                                 <p class="show-details__hosts">
                                   <em>Aaron Smith, Blair Kloman, Pooja Gunturu</em>
                                 </p>
                                 <p class="show-details__description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                                <span class="show-details__genre">Blues</span>
+                                <span class="show-details__genre blues">Blues</span>
                               </div>
                             </article>
                           </li>
                           <li class="wrmc-accordion-item__list-item">
-                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-649">
+                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-318">
                               <div class="show-time">
                                 <time datetime="2:00" class="" aria-label="show starts at 2:00 PM">2:00</time><time datetime="3:00" class="" aria-label="show ends at 3:00 PM">-3:00 PM</time>
                               </div>
                               <div class="show-details">
                                 <a href="#">
-                                  <h3 id="wrmc-show-teaser-header-649"> Hot Chocolate on the Bus </h3>
+                                  <h3 id="wrmc-show-teaser-header-318"> Hot Chocolate on the Bus </h3>
                                 </a>
                                 <p class="show-details__hosts">
                                   <em>Adam Yauch</em>
                                 </p>
                                 <p class="show-details__description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                <span class="show-details__genre">Blues</span>
+                                <span class="show-details__genre country">Country</span>
                               </div>
                             </article>
                           </li>
                           <li class="wrmc-accordion-item__list-item">
-                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-244">
+                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-523">
                               <div class="show-time">
                                 <time datetime="11:00" class="" aria-label="show starts at 11:00 PM">11:00</time><time datetime="12:00" class="" aria-label="show ends at 12:00 PM">-12:00 PM</time>
                               </div>
                               <div class="show-details">
                                 <a href="#">
-                                  <h3 id="wrmc-show-teaser-header-244"> Mr. and Mrs. Send It </h3>
+                                  <h3 id="wrmc-show-teaser-header-523"> Mr. and Mrs. Send It </h3>
                                 </a>
                                 <p class="show-details__hosts">
                                   <em>Sid Vicious</em>
                                 </p>
-                                <span class="show-details__genre">Blues</span>
+                                <span class="show-details__genre electronic">Electronic</span>
                               </div>
                             </article>
                           </li>
                         </ul>
                       </div>
                     </div>
-                    <div class="wrmc-accordion-item is-toggled js-accordion-item-725">
-                      <a href="#wrmc-accordion-item-label-725" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-725" aria-expanded="true" aria-controls="wrmc-accordion-content-725" aria-labelledby="wrmc-accordion-item-label-725" role="tab">
+                    <div class="wrmc-accordion-item is-toggled js-accordion-item-486">
+                      <a href="#wrmc-accordion-item-label-486" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-486" aria-expanded="true" aria-controls="wrmc-accordion-content-486" aria-labelledby="wrmc-accordion-item-label-486" role="tab">
                         <h2 class="wrmc-accordion-item__title">
-                          <span id="wrmc-accordion-item-label-725">Tuesday</span>
+                          <span id="wrmc-accordion-item-label-486">Tuesday</span>
                           <span class="wrmc-accordion-item-close">&ndash;</span>
                           <span class="wrmc-accordion-item-open">&#43;</span>
                         </h2>
                       </a>
-                      <div role="tabpanel" id="midd-accordion-content-725" aria-labelledby="wrmc-accordion-item-label-725">
+                      <div role="tabpanel" id="midd-accordion-content-486" aria-labelledby="wrmc-accordion-item-label-486">
                         <ul class="wrmc-accordion-item__content-list">
                           <li class="wrmc-accordion-item__list-item">
-                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-646">
+                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-1195">
                               <div class="show-time">
                                 <time datetime="5:00" class="" aria-label="show starts at 5:00 AM">5:00</time><time datetime="6:00" class="" aria-label="show ends at 6:00 AM">-6:00 AM</time>
                               </div>
                               <div class="show-details">
                                 <a href="#">
-                                  <h3 id="wrmc-show-teaser-header-646"> Grilled Cheese Sandwich </h3>
+                                  <h3 id="wrmc-show-teaser-header-1195"> Grilled Cheese Sandwich </h3>
                                 </a>
                                 <p class="show-details__description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                <span class="show-details__genre">Folk Rock</span>
+                                <span class="show-details__genre folk">Folk</span>
                               </div>
                             </article>
                           </li>
                           <li class="wrmc-accordion-item__list-item">
-                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-509">
+                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-522">
                               <div class="show-time">
                                 <time datetime="9:00" class="" aria-label="show starts at 9:00 AM">9:00</time><time datetime="10:00" class="" aria-label="show ends at 10:00 AM">-10:00 AM</time>
                               </div>
                               <div class="show-details">
                                 <a href="#">
-                                  <h3 id="wrmc-show-teaser-header-509"> Jazz Band, Hand and Feet </h3>
+                                  <h3 id="wrmc-show-teaser-header-522"> Jazz Band, Hand and Feet </h3>
                                 </a>
-                                <span class="show-details__genre">Blues</span>
+                                <span class="show-details__genre punk">Punk</span>
                               </div>
                             </article>
                           </li>
                           <li class="wrmc-accordion-item__list-item">
-                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-713">
+                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-528">
                               <div class="show-time">
                                 <time datetime="12:00" class="" aria-label="show starts at 12:00 AM">12:00</time><time datetime="1:00" class="" aria-label="show ends at 1:00 AM">-1:00 AM</time>
                               </div>
                               <div class="show-details">
                                 <a href="#">
-                                  <h3 id="wrmc-show-teaser-header-713"> Jazz Band, Hand and Feet </h3>
+                                  <h3 id="wrmc-show-teaser-header-528"> Jazz Band, Hand and Feet </h3>
                                 </a>
-                                <span class="show-details__genre">Blues</span>
+                                <span class="show-details__genre rock">Rock</span>
                               </div>
                             </article>
                           </li>
                         </ul>
                       </div>
                     </div>
-                    <div class="wrmc-accordion-item is-toggled js-accordion-item-425">
-                      <a href="#wrmc-accordion-item-label-425" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-425" aria-expanded="true" aria-controls="wrmc-accordion-content-425" aria-labelledby="wrmc-accordion-item-label-425" role="tab">
+                    <div class="wrmc-accordion-item is-toggled js-accordion-item-96">
+                      <a href="#wrmc-accordion-item-label-96" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-96" aria-expanded="true" aria-controls="wrmc-accordion-content-96" aria-labelledby="wrmc-accordion-item-label-96" role="tab">
                         <h2 class="wrmc-accordion-item__title">
-                          <span id="wrmc-accordion-item-label-425">Wednesday</span>
+                          <span id="wrmc-accordion-item-label-96">Wednesday</span>
                           <span class="wrmc-accordion-item-close">&ndash;</span>
                           <span class="wrmc-accordion-item-open">&#43;</span>
                         </h2>
                       </a>
-                      <div role="tabpanel" id="midd-accordion-content-425" aria-labelledby="wrmc-accordion-item-label-425">
+                      <div role="tabpanel" id="midd-accordion-content-96" aria-labelledby="wrmc-accordion-item-label-96">
                         <ul class="wrmc-accordion-item__content-list">
                           <li class="wrmc-accordion-item__list-item">
-                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-143">
+                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-365">
                               <div class="show-time">
                                 <time datetime="1:00" class="" aria-label="show starts at 1:00 PM">1:00</time><time datetime="2:00" class="" aria-label="show ends at 2:00 PM">-2:00 PM</time>
                               </div>
                               <div class="show-details">
                                 <a href="#">
-                                  <h3 id="wrmc-show-teaser-header-143"> Experimental Jetset Companion </h3>
+                                  <h3 id="wrmc-show-teaser-header-365"> Experimental Jetset Companion </h3>
                                 </a>
-                                <span class="show-details__genre">Blues</span>
+                                <span class="show-details__genre world">World</span>
                               </div>
                             </article>
                           </li>
                           <li class="wrmc-accordion-item__list-item">
-                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-941">
+                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-336">
                               <div class="show-time">
                                 <time datetime="11:00" class="" aria-label="show starts at 11:00 PM">11:00</time><time datetime="12:00" class="" aria-label="show ends at 12:00 PM">-12:00 PM</time>
                               </div>
                               <div class="show-details">
                                 <a href="#">
-                                  <h3 id="wrmc-show-teaser-header-941"> Mr. and Mrs. Send It </h3>
+                                  <h3 id="wrmc-show-teaser-header-336"> Mr. and Mrs. Send It </h3>
                                 </a>
                                 <p class="show-details__hosts">
                                   <em>Sid Vicious</em>
                                 </p>
-                                <span class="show-details__genre">Blues</span>
+                                <span class="show-details__genre blues">Blues</span>
                               </div>
                             </article>
                           </li>
                         </ul>
                       </div>
                     </div>
-                    <div class="wrmc-accordion-item is-toggled js-accordion-item-452">
-                      <a href="#wrmc-accordion-item-label-452" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-452" aria-expanded="true" aria-controls="wrmc-accordion-content-452" aria-labelledby="wrmc-accordion-item-label-452" role="tab">
+                    <div class="wrmc-accordion-item is-toggled js-accordion-item-61">
+                      <a href="#wrmc-accordion-item-label-61" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-61" aria-expanded="true" aria-controls="wrmc-accordion-content-61" aria-labelledby="wrmc-accordion-item-label-61" role="tab">
                         <h2 class="wrmc-accordion-item__title">
-                          <span id="wrmc-accordion-item-label-452">Thursday</span>
+                          <span id="wrmc-accordion-item-label-61">Thursday</span>
                           <span class="wrmc-accordion-item-close">&ndash;</span>
                           <span class="wrmc-accordion-item-open">&#43;</span>
                         </h2>
                       </a>
-                      <div role="tabpanel" id="midd-accordion-content-452" aria-labelledby="wrmc-accordion-item-label-452">
+                      <div role="tabpanel" id="midd-accordion-content-61" aria-labelledby="wrmc-accordion-item-label-61">
                         <ul class="wrmc-accordion-item__content-list">
                           <li class="wrmc-accordion-item__list-item">
-                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-423">
+                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-467">
                               <div class="show-time">
                                 <time datetime="9:00" class="" aria-label="show starts at 9:00 AM">9:00</time><time datetime="10:00" class="" aria-label="show ends at 10:00 AM">-10:00 AM</time>
                               </div>
                               <div class="show-details">
                                 <a href="#">
-                                  <h3 id="wrmc-show-teaser-header-423"> Jazz Band, Hand and Feet </h3>
+                                  <h3 id="wrmc-show-teaser-header-467"> Jazz Band, Hand and Feet </h3>
                                 </a>
-                                <span class="show-details__genre">Blues</span>
+                                <span class="show-details__genre reggae">Reggae</span>
                               </div>
                             </article>
                           </li>
                           <li class="wrmc-accordion-item__list-item">
-                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-1175">
+                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-629">
                               <div class="show-time">
                                 <time datetime="2:00" class="" aria-label="show starts at 2:00 PM">2:00</time><time datetime="3:00" class="" aria-label="show ends at 3:00 PM">-3:00 PM</time>
                               </div>
                               <div class="show-details">
                                 <a href="#">
-                                  <h3 id="wrmc-show-teaser-header-1175"> Hot Chocolate on the Bus </h3>
+                                  <h3 id="wrmc-show-teaser-header-629"> Hot Chocolate on the Bus </h3>
                                 </a>
                                 <p class="show-details__hosts">
                                   <em>Adam Yauch</em>
                                 </p>
                                 <p class="show-details__description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                <span class="show-details__genre">Blues</span>
+                                <span class="show-details__genre blues">Blues</span>
                               </div>
                             </article>
                           </li>
                           <li class="wrmc-accordion-item__list-item">
-                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-840">
+                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-588">
                               <div class="show-time">
                                 <time datetime="2:00" class="" aria-label="show starts at 2:00 AM">2:00</time><time datetime="3:00" class="" aria-label="show ends at 3:00 AM">-3:00 AM</time>
                               </div>
                               <div class="show-details">
                                 <a href="#">
-                                  <h3 id="wrmc-show-teaser-header-840"> I Love Rock and Roll </h3>
+                                  <h3 id="wrmc-show-teaser-header-588"> I Love Rock and Roll </h3>
                                 </a>
                                 <p class="show-details__hosts">
                                   <em>Matt Jennings and Tom</em>
                                 </p>
-                                <span class="show-details__genre">Folk Rock</span>
+                                <span class="show-details__genre jazz">Jazz</span>
                               </div>
                             </article>
                           </li>
                         </ul>
                       </div>
                     </div>
-                    <div class="wrmc-accordion-item is-toggled js-accordion-item-524">
-                      <a href="#wrmc-accordion-item-label-524" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-524" aria-expanded="true" aria-controls="wrmc-accordion-content-524" aria-labelledby="wrmc-accordion-item-label-524" role="tab">
+                    <div class="wrmc-accordion-item is-toggled js-accordion-item-175">
+                      <a href="#wrmc-accordion-item-label-175" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-175" aria-expanded="true" aria-controls="wrmc-accordion-content-175" aria-labelledby="wrmc-accordion-item-label-175" role="tab">
                         <h2 class="wrmc-accordion-item__title">
-                          <span id="wrmc-accordion-item-label-524">Friday</span>
+                          <span id="wrmc-accordion-item-label-175">Friday</span>
                           <span class="wrmc-accordion-item-close">&ndash;</span>
                           <span class="wrmc-accordion-item-open">&#43;</span>
                         </h2>
                       </a>
-                      <div role="tabpanel" id="midd-accordion-content-524" aria-labelledby="wrmc-accordion-item-label-524">
+                      <div role="tabpanel" id="midd-accordion-content-175" aria-labelledby="wrmc-accordion-item-label-175">
                         <ul class="wrmc-accordion-item__content-list">
                           <li class="wrmc-accordion-item__list-item">
-                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-253">
+                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-210">
                               <div class="show-time">
                                 <time datetime="7:00" class="" aria-label="show starts at 7:00 AM">7:00</time><time datetime="8:00" class="" aria-label="show ends at 8:00 AM">-8:00 AM</time>
                               </div>
                               <div class="show-details">
                                 <a href="#">
-                                  <h3 id="wrmc-show-teaser-header-253"> Echo Locations </h3>
+                                  <h3 id="wrmc-show-teaser-header-210"> Echo Locations </h3>
                                 </a>
                                 <p class="show-details__description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <span class="show-details__genre">Hip Hop</span>
+                                <span class="show-details__genre hip-hop">Hip Hop</span>
                               </div>
                             </article>
                           </li>
                           <li class="wrmc-accordion-item__list-item">
-                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-1085">
+                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-571">
                               <div class="show-time">
                                 <time datetime="9:00" class="" aria-label="show starts at 9:00 AM">9:00</time><time datetime="10:00" class="" aria-label="show ends at 10:00 AM">-10:00 AM</time>
                               </div>
                               <div class="show-details">
                                 <a href="#">
-                                  <h3 id="wrmc-show-teaser-header-1085"> Jazz Band, Hand and Feet </h3>
+                                  <h3 id="wrmc-show-teaser-header-571"> Jazz Band, Hand and Feet </h3>
                                 </a>
-                                <span class="show-details__genre">Blues</span>
+                                <span class="show-details__genre latin">Latin</span>
                               </div>
                             </article>
                           </li>
                           <li class="wrmc-accordion-item__list-item">
-                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-471">
+                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-706">
                               <div class="show-time">
                                 <time datetime="11:00" class="" aria-label="show starts at 11:00 PM">11:00</time><time datetime="12:00" class="" aria-label="show ends at 12:00 PM">-12:00 PM</time>
                               </div>
                               <div class="show-details">
                                 <a href="#">
-                                  <h3 id="wrmc-show-teaser-header-471"> Mr. and Mrs. Send It </h3>
+                                  <h3 id="wrmc-show-teaser-header-706"> Mr. and Mrs. Send It </h3>
                                 </a>
                                 <p class="show-details__hosts">
                                   <em>Sid Vicious</em>
                                 </p>
-                                <span class="show-details__genre">Blues</span>
+                                <span class="show-details__genre indie">Indie</span>
                               </div>
                             </article>
                           </li>
                         </ul>
                       </div>
                     </div>
-                    <div class="wrmc-accordion-item is-toggled js-accordion-item-840">
-                      <a href="#wrmc-accordion-item-label-840" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-840" aria-expanded="true" aria-controls="wrmc-accordion-content-840" aria-labelledby="wrmc-accordion-item-label-840" role="tab">
+                    <div class="wrmc-accordion-item is-toggled js-accordion-item-675">
+                      <a href="#wrmc-accordion-item-label-675" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-675" aria-expanded="true" aria-controls="wrmc-accordion-content-675" aria-labelledby="wrmc-accordion-item-label-675" role="tab">
                         <h2 class="wrmc-accordion-item__title">
-                          <span id="wrmc-accordion-item-label-840">Saturday</span>
+                          <span id="wrmc-accordion-item-label-675">Saturday</span>
                           <span class="wrmc-accordion-item-close">&ndash;</span>
                           <span class="wrmc-accordion-item-open">&#43;</span>
                         </h2>
                       </a>
-                      <div role="tabpanel" id="midd-accordion-content-840" aria-labelledby="wrmc-accordion-item-label-840">
+                      <div role="tabpanel" id="midd-accordion-content-675" aria-labelledby="wrmc-accordion-item-label-675">
                         <ul class="wrmc-accordion-item__content-list">
                           <li class="wrmc-accordion-item__list-item">
-                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-179">
+                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-663">
                               <div class="show-time">
                                 <time datetime="1:00" class="" aria-label="show starts at 1:00 PM">1:00</time><time datetime="2:00" class="" aria-label="show ends at 2:00 PM">-2:00 PM</time>
                               </div>
                               <div class="show-details">
                                 <a href="#">
-                                  <h3 id="wrmc-show-teaser-header-179"> Experimental Jetset Companion </h3>
+                                  <h3 id="wrmc-show-teaser-header-663"> Experimental Jetset Companion </h3>
                                 </a>
-                                <span class="show-details__genre">Blues</span>
+                                <span class="show-details__genre funk">Funk</span>
                               </div>
                             </article>
                           </li>
                           <li class="wrmc-accordion-item__list-item">
-                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-89">
+                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-230">
                               <div class="show-time">
                                 <time datetime="2:00" class="" aria-label="show starts at 2:00 PM">2:00</time><time datetime="3:00" class="" aria-label="show ends at 3:00 PM">-3:00 PM</time>
                               </div>
                               <div class="show-details">
                                 <a href="#">
-                                  <h3 id="wrmc-show-teaser-header-89"> Hot Chocolate on the Bus </h3>
+                                  <h3 id="wrmc-show-teaser-header-230"> Hot Chocolate on the Bus </h3>
                                 </a>
                                 <p class="show-details__hosts">
                                   <em>Adam Yauch</em>
                                 </p>
                                 <p class="show-details__description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                <span class="show-details__genre">Blues</span>
+                                <span class="show-details__genre classical">Classical</span>
                               </div>
                             </article>
                           </li>
                         </ul>
                       </div>
                     </div>
-                    <div class="wrmc-accordion-item is-toggled js-accordion-item-901">
-                      <a href="#wrmc-accordion-item-label-901" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-901" aria-expanded="true" aria-controls="wrmc-accordion-content-901" aria-labelledby="wrmc-accordion-item-label-901" role="tab">
+                    <div class="wrmc-accordion-item is-toggled js-accordion-item-1204">
+                      <a href="#wrmc-accordion-item-label-1204" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-1204" aria-expanded="true" aria-controls="wrmc-accordion-content-1204" aria-labelledby="wrmc-accordion-item-label-1204" role="tab">
                         <h2 class="wrmc-accordion-item__title">
-                          <span id="wrmc-accordion-item-label-901">Sunday</span>
+                          <span id="wrmc-accordion-item-label-1204">Sunday</span>
                           <span class="wrmc-accordion-item-close">&ndash;</span>
                           <span class="wrmc-accordion-item-open">&#43;</span>
                         </h2>
                       </a>
-                      <div role="tabpanel" id="midd-accordion-content-901" aria-labelledby="wrmc-accordion-item-label-901">
+                      <div role="tabpanel" id="midd-accordion-content-1204" aria-labelledby="wrmc-accordion-item-label-1204">
                         <ul class="wrmc-accordion-item__content-list">
                           <li class="wrmc-accordion-item__list-item">
-                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-370">
+                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-892">
                               <div class="show-time">
                                 <time datetime="10:00" class="" aria-label="show starts at 10:00 AM">10:00</time><time datetime="11:00" class="" aria-label="show ends at 11:00 AM">-11:00 AM</time>
                               </div>
                               <div class="show-details">
                                 <a href="#">
-                                  <h3 id="wrmc-show-teaser-header-370"> Experimental Jetset Companion </h3>
+                                  <h3 id="wrmc-show-teaser-header-892"> Experimental Jetset Companion </h3>
                                 </a>
-                                <span class="show-details__genre">Blues</span>
+                                <span class="show-details__genre electronic">Electronic</span>
                               </div>
                             </article>
                           </li>
                           <li class="wrmc-accordion-item__list-item">
-                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-807">
+                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-174">
                               <div class="show-time">
                                 <time datetime="2:00" class="" aria-label="show starts at 2:00 PM">2:00</time><time datetime="3:00" class="" aria-label="show ends at 3:00 PM">-3:00 PM</time>
                               </div>
                               <div class="show-details">
                                 <a href="#">
-                                  <h3 id="wrmc-show-teaser-header-807"> Hot Chocolate on the Bus </h3>
+                                  <h3 id="wrmc-show-teaser-header-174"> Hot Chocolate on the Bus </h3>
                                 </a>
                                 <p class="show-details__hosts">
                                   <em>Adam Yauch</em>
                                 </p>
                                 <p class="show-details__description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                <span class="show-details__genre">Blues</span>
+                                <span class="show-details__genre electronic">Electronic</span>
                               </div>
                             </article>
                           </li>
                           <li class="wrmc-accordion-item__list-item">
-                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-81">
+                            <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-1174">
                               <div class="show-time">
                                 <time datetime="2:00" class="" aria-label="show starts at 2:00 AM">2:00</time><time datetime="3:00" class="" aria-label="show ends at 3:00 AM">-3:00 AM</time>
                               </div>
                               <div class="show-details">
                                 <a href="#">
-                                  <h3 id="wrmc-show-teaser-header-81"> I Love Rock and Roll </h3>
+                                  <h3 id="wrmc-show-teaser-header-1174"> I Love Rock and Roll </h3>
                                 </a>
                                 <p class="show-details__hosts">
                                   <em>Matt Jennings and Tom</em>
                                 </p>
-                                <span class="show-details__genre">Folk Rock</span>
+                                <span class="show-details__genre blues">Blues</span>
                               </div>
                             </article>
                           </li>

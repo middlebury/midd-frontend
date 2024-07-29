@@ -216,8 +216,7 @@
             <div class="wrmc-header__content">
               <div class="wrmc-nav">
                 <div class="wrmc-nav__menu">
-                  <nav class="wrmc-nav__secondary-menu" aria-labelledby="midd-secondary-nav-label">
-                    <h2 class="sr-only" id="midd-secondary-nav-label">Secondary navigation</h2>
+                  <nav class="wrmc-nav__secondary-menu" aria-label="Secondary navigation">
                     <img src="images/wrmc-headphones.svg" alt="Headphones illustration" />
                     <div class="wrmc-nav__secondary-menu--links">
                       <a href="#" class="button button--light">listen now</a>
@@ -290,7 +289,7 @@
         </div>
       </header>
       <aside class="status-bar">
-        <h2 class="status-bar__broadcast-status">
+        <h2 class="status-bar__broadcast-status" role="presentation">
           <span>on</span>
           <br>
           <span>air</span>
@@ -299,54 +298,56 @@
         <div class="status-bar-content">
           <div class="status-bar-content__wrapper">
             <div class="status-bar-row">
-              <article class="status-bar-section section-show">
-                <h3>Current Show</h3>
-                <p>Grilled Cheese Sandwich<em>with DJ Hurricane</em></p>
-              </article>
-              <article class="status-bar-section section-contact">
-                <h3>Contact the DJ</h3>
-                <p>
+              <dl class="status-bar-section section-show">
+                <dd>Current Show</dd>
+                <dt>Grilled Cheese Sandwich<em>with DJ Hurricane</em></dt>
+              </dl>
+              <dl class="status-bar-section section-contact">
+                <dd>Contact the DJ</dd>
+                <dt>
                   <a href="tel:+18024436323">802-443-6323</a><span class="text-separator">&#x25B2;</span>
                   <a href="#">Use Our App to Chat</a>
-                </p>
-              </article>
+                </dt>
+              </dl>
             </div>
             <div class="status-bar-row">
-              <article class="status-bar-section section-playlist">
-                <h3>Current Playlist</h3>
-                <ul class="status-bar-section__playlist-items">
-                  <li>
-                    <p>Mk.gee<em>Two Star & The Dream Police</em><span class="text-separator">&#x25B2;</span></p>
-                  </li>
-                  <li>
-                    <p>Quadeca<em>SCRAPYARD</em><span class="text-separator">&#x25B2;</span></p>
-                  </li>
-                  <li>
-                    <p>Selmer<em>Body Wash</em><span class="text-separator">&#x25B2;</span></p>
-                  </li>
-                  <li>
-                    <p>Abby Sage<em>The Rot</em><span class="text-separator">&#x25B2;</span></p>
-                  </li>
-                  <li>
-                    <p>Mike, Tony Seltzer<em>Pinball</em><span class="text-separator">&#x25B2;</span></p>
-                  </li>
-                  <li>
-                    <p>Jean Dawson<em>Boohoo</em><span class="text-separator">&#x25B2;</span></p>
-                  </li>
-                  <li>
-                    <p>Faye Webster<em>Underdressed at the Symphony</em><span class="text-separator">&#x25B2;</span></p>
-                  </li>
-                  <li>
-                    <p>Matt Champion<em>Slug</em><span class="text-separator">&#x25B2;</span></p>
-                  </li>
-                  <li>
-                    <p>Hana Vu<em>Care</em><span class="text-separator">&#x25B2;</span></p>
-                  </li>
-                  <li>
-                    <p>DESTIN CONRAD<em>SUBMISSIVE2</em></p>
-                  </li>
-                </ul>
-              </article>
+              <dl class="status-bar-section section-playlist">
+                <dd>Current Playlist</dd>
+                <dt>
+                  <ul class="status-bar-section__playlist-items">
+                    <li>
+                      <p>Mk.gee<em>Two Star & The Dream Police</em><span class="text-separator">&#x25B2;</span></p>
+                    </li>
+                    <li>
+                      <p>Quadeca<em>SCRAPYARD</em><span class="text-separator">&#x25B2;</span></p>
+                    </li>
+                    <li>
+                      <p>Selmer<em>Body Wash</em><span class="text-separator">&#x25B2;</span></p>
+                    </li>
+                    <li>
+                      <p>Abby Sage<em>The Rot</em><span class="text-separator">&#x25B2;</span></p>
+                    </li>
+                    <li>
+                      <p>Mike, Tony Seltzer<em>Pinball</em><span class="text-separator">&#x25B2;</span></p>
+                    </li>
+                    <li>
+                      <p>Jean Dawson<em>Boohoo</em><span class="text-separator">&#x25B2;</span></p>
+                    </li>
+                    <li>
+                      <p>Faye Webster<em>Underdressed at the Symphony</em><span class="text-separator">&#x25B2;</span></p>
+                    </li>
+                    <li>
+                      <p>Matt Champion<em>Slug</em><span class="text-separator">&#x25B2;</span></p>
+                    </li>
+                    <li>
+                      <p>Hana Vu<em>Care</em><span class="text-separator">&#x25B2;</span></p>
+                    </li>
+                    <li>
+                      <p>DESTIN CONRAD<em>SUBMISSIVE2</em></p>
+                    </li>
+                  </ul>
+                </dt>
+              </dl>
             </div>
           </div>
         </div>
@@ -358,20 +359,20 @@
               <img src="https://via.placeholder.com/1440x576" srcset="https://via.placeholder.com/400x160 400w,https://via.placeholder.com/640x256 640w,https://via.placeholder.com/960x384 960w,https://via.placeholder.com/1280x512 1280w,https://via.placeholder.com/1440x576 1440w" sizes="(max-width: 1440px) 100vw, 1440px" alt="" />
               <figcaption class="page-header__caption">
                 <div class="tooltip tooltip--light">
-                  <button class="tooltip__button" aria-labelledby="midd-tooltip-label-707">
+                  <button class="tooltip__button" aria-labelledby="midd-tooltip-label-782">
                     <svg class="icon f5 icon--lg" focusable="false" aria-hidden="true">
                       <use xlink:href="#icon-info">
                     </svg>
                   </button>
-                  <div class="tooltip__label" role="tooltip" id="midd-tooltip-label-707"> some caption for top level image </div>
+                  <div class="tooltip__label" role="tooltip" id="midd-tooltip-label-782"> some caption for top level image </div>
                 </div>
               </figcaption>
             </figure>
-            <button class="page-header__list-toggle" data-toggle-target=".js-page-header-list"> Weekly Top Ten <span class="page-header__list-ellipsis">
+            <button class="page-header__list-toggle" aria-describedby="wrmc-tooltip-label-340"> Weekly Top Ten <span class="page-header__list-ellipsis">
                 <span></span><span></span><span></span>
               </span>
             </button>
-            <div class="page-header__list js-page-header-list" role="tooltip">
+            <div class="page-header__list" role="tooltip" id="wrmc-tooltip-label-997">
               <ol class="page-header__list-overlay">
                 <li>
                   <p>Mk.gee</p>
@@ -456,7 +457,11 @@
                     </li>
                     <li class="col-6 col-sm-3 col-lg-2">
                       <span class="song__trapezoid-marker"></span>
-                      <img src="https://via.placeholder.com/176x176" srcset="https://via.placeholder.com/128x128 128w,https://via.placeholder.com/160x160 160w,https://via.placeholder.com/136x136 136w,https://via.placeholder.com/176x176 176w" sizes="(max-width: 512px) 128px, (max-width: 768px) 160px, (max-width: 1200px) 136px, 176px" alt="" />
+                      <div class="song__album-placeholder">
+                        <div class="song__album-placeholder-image">
+                          <img src="images/wrmc-album-default-120x120@2x.png" alt="Album cover placeholder image">
+                        </div>
+                      </div>
                       <p class="song__artist">Abby Sage</p>
                       <p class="song__title"><em>The Rot</em></p>
                     </li>
@@ -470,7 +475,7 @@
                       <span class="song__trapezoid-marker"></span>
                       <div class="song__album-placeholder">
                         <div class="song__album-placeholder-image">
-                          <img src="images/wrmc-album-default-120x120.png" alt="Album cover placeholder image">
+                          <img src="images/wrmc-album-default-120x120@2x.png" alt="Album cover placeholder image">
                         </div>
                       </div>
                       <p class="song__artist">Jean Dawson</p>
@@ -480,7 +485,7 @@
                       <span class="song__trapezoid-marker"></span>
                       <div class="song__album-placeholder">
                         <div class="song__album-placeholder-image">
-                          <img src="images/wrmc-album-default-120x120.png" alt="Album cover placeholder image">
+                          <img src="images/wrmc-album-default-120x120@2x.png" alt="Album cover placeholder image">
                         </div>
                       </div>
                       <p class="song__artist">Faye Webster</p>
@@ -500,11 +505,7 @@
                     </li>
                     <li class="col-6 col-sm-3 col-lg-2">
                       <span class="song__trapezoid-marker"></span>
-                      <div class="song__album-placeholder">
-                        <div class="song__album-placeholder-image">
-                          <img src="images/wrmc-album-default-120x120.png" alt="Album cover placeholder image">
-                        </div>
-                      </div>
+                      <img src="https://via.placeholder.com/176x176" srcset="https://via.placeholder.com/128x128 128w,https://via.placeholder.com/160x160 160w,https://via.placeholder.com/136x136 136w,https://via.placeholder.com/176x176 176w" sizes="(max-width: 512px) 128px, (max-width: 768px) 160px, (max-width: 1200px) 136px, 176px" alt="" />
                       <p class="song__artist">DESTIN CONRAD</p>
                       <p class="song__title"><em>SUBMISSIVE2</em></p>
                     </li>
@@ -512,7 +513,7 @@
                       <span class="song__trapezoid-marker"></span>
                       <div class="song__album-placeholder">
                         <div class="song__album-placeholder-image">
-                          <img src="images/wrmc-album-default-120x120.png" alt="Album cover placeholder image">
+                          <img src="images/wrmc-album-default-120x120@2x.png" alt="Album cover placeholder image">
                         </div>
                       </div>
                       <p class="song__artist">Adrianne Lenker</p>
@@ -526,17 +527,17 @@
                     </li>
                     <li class="col-6 col-sm-3 col-lg-2">
                       <span class="song__trapezoid-marker"></span>
-                      <div class="song__album-placeholder">
-                        <div class="song__album-placeholder-image">
-                          <img src="images/wrmc-album-default-120x120.png" alt="Album cover placeholder image">
-                        </div>
-                      </div>
+                      <img src="https://via.placeholder.com/176x176" srcset="https://via.placeholder.com/128x128 128w,https://via.placeholder.com/160x160 160w,https://via.placeholder.com/136x136 136w,https://via.placeholder.com/176x176 176w" sizes="(max-width: 512px) 128px, (max-width: 768px) 160px, (max-width: 1200px) 136px, 176px" alt="" />
                       <p class="song__artist">Little Simz</p>
                       <p class="song__title"><em>Drop 7</em></p>
                     </li>
                     <li class="col-6 col-sm-3 col-lg-2">
                       <span class="song__trapezoid-marker"></span>
-                      <img src="https://via.placeholder.com/176x176" srcset="https://via.placeholder.com/128x128 128w,https://via.placeholder.com/160x160 160w,https://via.placeholder.com/136x136 136w,https://via.placeholder.com/176x176 176w" sizes="(max-width: 512px) 128px, (max-width: 768px) 160px, (max-width: 1200px) 136px, 176px" alt="" />
+                      <div class="song__album-placeholder">
+                        <div class="song__album-placeholder-image">
+                          <img src="images/wrmc-album-default-120x120@2x.png" alt="Album cover placeholder image">
+                        </div>
+                      </div>
                       <p class="song__artist">Zack Villere</p>
                       <p class="song__title"><em>Singles 2017 - 2021</em></p>
                     </li>
@@ -544,7 +545,7 @@
                       <span class="song__trapezoid-marker"></span>
                       <div class="song__album-placeholder">
                         <div class="song__album-placeholder-image">
-                          <img src="images/wrmc-album-default-120x120.png" alt="Album cover placeholder image">
+                          <img src="images/wrmc-album-default-120x120@2x.png" alt="Album cover placeholder image">
                         </div>
                       </div>
                       <p class="song__artist">Loukeman</p>
@@ -560,7 +561,7 @@
                       <span class="song__trapezoid-marker"></span>
                       <div class="song__album-placeholder">
                         <div class="song__album-placeholder-image">
-                          <img src="images/wrmc-album-default-120x120.png" alt="Album cover placeholder image">
+                          <img src="images/wrmc-album-default-120x120@2x.png" alt="Album cover placeholder image">
                         </div>
                       </div>
                       <p class="song__artist">RiTchie</p>
@@ -568,7 +569,11 @@
                     </li>
                     <li class="col-6 col-sm-3 col-lg-2">
                       <span class="song__trapezoid-marker"></span>
-                      <img src="https://via.placeholder.com/176x176" srcset="https://via.placeholder.com/128x128 128w,https://via.placeholder.com/160x160 160w,https://via.placeholder.com/136x136 136w,https://via.placeholder.com/176x176 176w" sizes="(max-width: 512px) 128px, (max-width: 768px) 160px, (max-width: 1200px) 136px, 176px" alt="" />
+                      <div class="song__album-placeholder">
+                        <div class="song__album-placeholder-image">
+                          <img src="images/wrmc-album-default-120x120@2x.png" alt="Album cover placeholder image">
+                        </div>
+                      </div>
                       <p class="song__artist">Schoolboy Q</p>
                       <p class="song__title"><em>BLUE LIPS</em></p>
                     </li>
@@ -580,7 +585,11 @@
                     </li>
                     <li class="col-6 col-sm-3 col-lg-2">
                       <span class="song__trapezoid-marker"></span>
-                      <img src="https://via.placeholder.com/176x176" srcset="https://via.placeholder.com/128x128 128w,https://via.placeholder.com/160x160 160w,https://via.placeholder.com/136x136 136w,https://via.placeholder.com/176x176 176w" sizes="(max-width: 512px) 128px, (max-width: 768px) 160px, (max-width: 1200px) 136px, 176px" alt="" />
+                      <div class="song__album-placeholder">
+                        <div class="song__album-placeholder-image">
+                          <img src="images/wrmc-album-default-120x120@2x.png" alt="Album cover placeholder image">
+                        </div>
+                      </div>
                       <p class="song__artist">Iron & Wine</p>
                       <p class="song__title"><em>All in Good Time</em></p>
                     </li>
@@ -588,7 +597,7 @@
                       <span class="song__trapezoid-marker"></span>
                       <div class="song__album-placeholder">
                         <div class="song__album-placeholder-image">
-                          <img src="images/wrmc-album-default-120x120.png" alt="Album cover placeholder image">
+                          <img src="images/wrmc-album-default-120x120@2x.png" alt="Album cover placeholder image">
                         </div>
                       </div>
                       <p class="song__artist">Diamond Day</p>
@@ -608,21 +617,13 @@
                     </li>
                     <li class="col-6 col-sm-3 col-lg-2">
                       <span class="song__trapezoid-marker"></span>
-                      <div class="song__album-placeholder">
-                        <div class="song__album-placeholder-image">
-                          <img src="images/wrmc-album-default-120x120.png" alt="Album cover placeholder image">
-                        </div>
-                      </div>
+                      <img src="https://via.placeholder.com/176x176" srcset="https://via.placeholder.com/128x128 128w,https://via.placeholder.com/160x160 160w,https://via.placeholder.com/136x136 136w,https://via.placeholder.com/176x176 176w" sizes="(max-width: 512px) 128px, (max-width: 768px) 160px, (max-width: 1200px) 136px, 176px" alt="" />
                       <p class="song__artist">MRCY</p>
                       <p class="song__title"><em>Lorelai</em></p>
                     </li>
                     <li class="col-6 col-sm-3 col-lg-2">
                       <span class="song__trapezoid-marker"></span>
-                      <div class="song__album-placeholder">
-                        <div class="song__album-placeholder-image">
-                          <img src="images/wrmc-album-default-120x120.png" alt="Album cover placeholder image">
-                        </div>
-                      </div>
+                      <img src="https://via.placeholder.com/176x176" srcset="https://via.placeholder.com/128x128 128w,https://via.placeholder.com/160x160 160w,https://via.placeholder.com/136x136 136w,https://via.placeholder.com/176x176 176w" sizes="(max-width: 512px) 128px, (max-width: 768px) 160px, (max-width: 1200px) 136px, 176px" alt="" />
                       <p class="song__artist">sagun</p>
                       <p class="song__title"><em>Issues</em></p>
                     </li>
@@ -630,7 +631,7 @@
                       <span class="song__trapezoid-marker"></span>
                       <div class="song__album-placeholder">
                         <div class="song__album-placeholder-image">
-                          <img src="images/wrmc-album-default-120x120.png" alt="Album cover placeholder image">
+                          <img src="images/wrmc-album-default-120x120@2x.png" alt="Album cover placeholder image">
                         </div>
                       </div>
                       <p class="song__artist">Serpentwithfeet</p>
@@ -644,17 +645,17 @@
                     </li>
                     <li class="col-6 col-sm-3 col-lg-2">
                       <span class="song__trapezoid-marker"></span>
-                      <div class="song__album-placeholder">
-                        <div class="song__album-placeholder-image">
-                          <img src="images/wrmc-album-default-120x120.png" alt="Album cover placeholder image">
-                        </div>
-                      </div>
+                      <img src="https://via.placeholder.com/176x176" srcset="https://via.placeholder.com/128x128 128w,https://via.placeholder.com/160x160 160w,https://via.placeholder.com/136x136 136w,https://via.placeholder.com/176x176 176w" sizes="(max-width: 512px) 128px, (max-width: 768px) 160px, (max-width: 1200px) 136px, 176px" alt="" />
                       <p class="song__artist">MiLES.</p>
                       <p class="song__title"><em>Life Thru New Lens</em></p>
                     </li>
                     <li class="col-6 col-sm-3 col-lg-2">
                       <span class="song__trapezoid-marker"></span>
-                      <img src="https://via.placeholder.com/176x176" srcset="https://via.placeholder.com/128x128 128w,https://via.placeholder.com/160x160 160w,https://via.placeholder.com/136x136 136w,https://via.placeholder.com/176x176 176w" sizes="(max-width: 512px) 128px, (max-width: 768px) 160px, (max-width: 1200px) 136px, 176px" alt="" />
+                      <div class="song__album-placeholder">
+                        <div class="song__album-placeholder-image">
+                          <img src="images/wrmc-album-default-120x120@2x.png" alt="Album cover placeholder image">
+                        </div>
+                      </div>
                       <p class="song__artist">Erika de Casier</p>
                       <p class="song__title"><em>Still</em></p>
                     </li>
@@ -662,7 +663,7 @@
                       <span class="song__trapezoid-marker"></span>
                       <div class="song__album-placeholder">
                         <div class="song__album-placeholder-image">
-                          <img src="images/wrmc-album-default-120x120.png" alt="Album cover placeholder image">
+                          <img src="images/wrmc-album-default-120x120@2x.png" alt="Album cover placeholder image">
                         </div>
                       </div>
                       <p class="song__artist">CZARFACE</p>

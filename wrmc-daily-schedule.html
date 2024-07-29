@@ -216,8 +216,7 @@
             <div class="wrmc-header__content">
               <div class="wrmc-nav">
                 <div class="wrmc-nav__menu">
-                  <nav class="wrmc-nav__secondary-menu" aria-labelledby="midd-secondary-nav-label">
-                    <h2 class="sr-only" id="midd-secondary-nav-label">Secondary navigation</h2>
+                  <nav class="wrmc-nav__secondary-menu" aria-label="Secondary navigation">
                     <img src="images/wrmc-headphones.svg" alt="Headphones illustration" />
                     <div class="wrmc-nav__secondary-menu--links">
                       <a href="#" class="button button--light">listen now</a>
@@ -290,7 +289,7 @@
         </div>
       </header>
       <aside class="status-bar">
-        <h2 class="status-bar__broadcast-status">
+        <h2 class="status-bar__broadcast-status" role="presentation">
           <span>on</span>
           <br>
           <span>air</span>
@@ -299,54 +298,56 @@
         <div class="status-bar-content">
           <div class="status-bar-content__wrapper">
             <div class="status-bar-row">
-              <article class="status-bar-section section-show">
-                <h3>Current Show</h3>
-                <p>Grilled Cheese Sandwich<em>with DJ Hurricane</em></p>
-              </article>
-              <article class="status-bar-section section-contact">
-                <h3>Contact the DJ</h3>
-                <p>
+              <dl class="status-bar-section section-show">
+                <dd>Current Show</dd>
+                <dt>Grilled Cheese Sandwich<em>with DJ Hurricane</em></dt>
+              </dl>
+              <dl class="status-bar-section section-contact">
+                <dd>Contact the DJ</dd>
+                <dt>
                   <a href="tel:+18024436323">802-443-6323</a><span class="text-separator">&#x25B2;</span>
                   <a href="#">Use Our App to Chat</a>
-                </p>
-              </article>
+                </dt>
+              </dl>
             </div>
             <div class="status-bar-row">
-              <article class="status-bar-section section-playlist">
-                <h3>Current Playlist</h3>
-                <ul class="status-bar-section__playlist-items">
-                  <li>
-                    <p>Mk.gee<em>Two Star & The Dream Police</em><span class="text-separator">&#x25B2;</span></p>
-                  </li>
-                  <li>
-                    <p>Quadeca<em>SCRAPYARD</em><span class="text-separator">&#x25B2;</span></p>
-                  </li>
-                  <li>
-                    <p>Selmer<em>Body Wash</em><span class="text-separator">&#x25B2;</span></p>
-                  </li>
-                  <li>
-                    <p>Abby Sage<em>The Rot</em><span class="text-separator">&#x25B2;</span></p>
-                  </li>
-                  <li>
-                    <p>Mike, Tony Seltzer<em>Pinball</em><span class="text-separator">&#x25B2;</span></p>
-                  </li>
-                  <li>
-                    <p>Jean Dawson<em>Boohoo</em><span class="text-separator">&#x25B2;</span></p>
-                  </li>
-                  <li>
-                    <p>Faye Webster<em>Underdressed at the Symphony</em><span class="text-separator">&#x25B2;</span></p>
-                  </li>
-                  <li>
-                    <p>Matt Champion<em>Slug</em><span class="text-separator">&#x25B2;</span></p>
-                  </li>
-                  <li>
-                    <p>Hana Vu<em>Care</em><span class="text-separator">&#x25B2;</span></p>
-                  </li>
-                  <li>
-                    <p>DESTIN CONRAD<em>SUBMISSIVE2</em></p>
-                  </li>
-                </ul>
-              </article>
+              <dl class="status-bar-section section-playlist">
+                <dd>Current Playlist</dd>
+                <dt>
+                  <ul class="status-bar-section__playlist-items">
+                    <li>
+                      <p>Mk.gee<em>Two Star & The Dream Police</em><span class="text-separator">&#x25B2;</span></p>
+                    </li>
+                    <li>
+                      <p>Quadeca<em>SCRAPYARD</em><span class="text-separator">&#x25B2;</span></p>
+                    </li>
+                    <li>
+                      <p>Selmer<em>Body Wash</em><span class="text-separator">&#x25B2;</span></p>
+                    </li>
+                    <li>
+                      <p>Abby Sage<em>The Rot</em><span class="text-separator">&#x25B2;</span></p>
+                    </li>
+                    <li>
+                      <p>Mike, Tony Seltzer<em>Pinball</em><span class="text-separator">&#x25B2;</span></p>
+                    </li>
+                    <li>
+                      <p>Jean Dawson<em>Boohoo</em><span class="text-separator">&#x25B2;</span></p>
+                    </li>
+                    <li>
+                      <p>Faye Webster<em>Underdressed at the Symphony</em><span class="text-separator">&#x25B2;</span></p>
+                    </li>
+                    <li>
+                      <p>Matt Champion<em>Slug</em><span class="text-separator">&#x25B2;</span></p>
+                    </li>
+                    <li>
+                      <p>Hana Vu<em>Care</em><span class="text-separator">&#x25B2;</span></p>
+                    </li>
+                    <li>
+                      <p>DESTIN CONRAD<em>SUBMISSIVE2</em></p>
+                    </li>
+                  </ul>
+                </dt>
+              </dl>
             </div>
           </div>
         </div>
@@ -358,20 +359,20 @@
               <img src="https://via.placeholder.com/1440x576" srcset="https://via.placeholder.com/400x160 400w,https://via.placeholder.com/640x256 640w,https://via.placeholder.com/960x384 960w,https://via.placeholder.com/1280x512 1280w,https://via.placeholder.com/1440x576 1440w" sizes="(max-width: 1440px) 100vw, 1440px" alt="" />
               <figcaption class="page-header__caption">
                 <div class="tooltip tooltip--light">
-                  <button class="tooltip__button" aria-labelledby="midd-tooltip-label-63">
+                  <button class="tooltip__button" aria-labelledby="midd-tooltip-label-449">
                     <svg class="icon f5 icon--lg" focusable="false" aria-hidden="true">
                       <use xlink:href="#icon-info">
                     </svg>
                   </button>
-                  <div class="tooltip__label" role="tooltip" id="midd-tooltip-label-63"> some caption for top level image </div>
+                  <div class="tooltip__label" role="tooltip" id="midd-tooltip-label-449"> some caption for top level image </div>
                 </div>
               </figcaption>
             </figure>
-            <button class="page-header__list-toggle" data-toggle-target=".js-page-header-list"> Weekly Top Ten <span class="page-header__list-ellipsis">
+            <button class="page-header__list-toggle" aria-describedby="wrmc-tooltip-label-1127"> Weekly Top Ten <span class="page-header__list-ellipsis">
                 <span></span><span></span><span></span>
               </span>
             </button>
-            <div class="page-header__list js-page-header-list" role="tooltip">
+            <div class="page-header__list" role="tooltip" id="wrmc-tooltip-label-679">
               <ol class="page-header__list-overlay">
                 <li>
                   <p>Mk.gee</p>
@@ -439,375 +440,375 @@
                   <a href="#" data-toggle-close-all>close all</a>
                 </div>
                 <div role="tablist">
-                  <div class="wrmc-accordion-item is-toggled js-accordion-item-1160">
-                    <a href="#wrmc-accordion-item-label-1160" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-1160" aria-expanded="true" aria-controls="wrmc-accordion-content-1160" aria-labelledby="wrmc-accordion-item-label-1160" role="tab">
+                  <div class="wrmc-accordion-item is-toggled js-accordion-item-1049">
+                    <a href="#wrmc-accordion-item-label-1049" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-1049" aria-expanded="true" aria-controls="wrmc-accordion-content-1049" aria-labelledby="wrmc-accordion-item-label-1049" role="tab">
                       <h2 class="wrmc-accordion-item__title">
-                        <span id="wrmc-accordion-item-label-1160">Monday</span>
+                        <span id="wrmc-accordion-item-label-1049">Monday</span>
                         <span class="wrmc-accordion-item-close">&ndash;</span>
                         <span class="wrmc-accordion-item-open">&#43;</span>
                       </h2>
                     </a>
-                    <div role="tabpanel" id="midd-accordion-content-1160" aria-labelledby="wrmc-accordion-item-label-1160">
+                    <div role="tabpanel" id="midd-accordion-content-1049" aria-labelledby="wrmc-accordion-item-label-1049">
                       <ul class="wrmc-accordion-item__content-list">
                         <li class="wrmc-accordion-item__list-item">
-                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-562">
+                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-81">
                             <div class="show-time">
                               <time datetime="4:00" class="" aria-label="show starts at 4:00 AM">4:00</time><time datetime="5:00" class="" aria-label="show ends at 5:00 AM">-5:00 AM</time>
                             </div>
                             <div class="show-details">
                               <a href="#">
-                                <h3 id="wrmc-show-teaser-header-562"> Mixed Confetti </h3>
+                                <h3 id="wrmc-show-teaser-header-81"> Mixed Confetti </h3>
                               </a>
                               <p class="show-details__hosts">
                                 <em>Aaron Smith, Blair Kloman, Pooja Gunturu</em>
                               </p>
                               <p class="show-details__description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                              <span class="show-details__genre">Blues</span>
+                              <span class="show-details__genre blues">Blues</span>
                             </div>
                           </article>
                         </li>
                         <li class="wrmc-accordion-item__list-item">
-                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-291">
+                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-254">
                             <div class="show-time">
                               <time datetime="2:00" class="" aria-label="show starts at 2:00 PM">2:00</time><time datetime="3:00" class="" aria-label="show ends at 3:00 PM">-3:00 PM</time>
                             </div>
                             <div class="show-details">
                               <a href="#">
-                                <h3 id="wrmc-show-teaser-header-291"> Hot Chocolate on the Bus </h3>
+                                <h3 id="wrmc-show-teaser-header-254"> Hot Chocolate on the Bus </h3>
                               </a>
                               <p class="show-details__hosts">
                                 <em>Adam Yauch</em>
                               </p>
                               <p class="show-details__description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                              <span class="show-details__genre">Blues</span>
+                              <span class="show-details__genre country">Country</span>
                             </div>
                           </article>
                         </li>
                         <li class="wrmc-accordion-item__list-item">
-                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-247">
+                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-427">
                             <div class="show-time">
                               <time datetime="11:00" class="" aria-label="show starts at 11:00 PM">11:00</time><time datetime="12:00" class="" aria-label="show ends at 12:00 PM">-12:00 PM</time>
                             </div>
                             <div class="show-details">
                               <a href="#">
-                                <h3 id="wrmc-show-teaser-header-247"> Mr. and Mrs. Send It </h3>
+                                <h3 id="wrmc-show-teaser-header-427"> Mr. and Mrs. Send It </h3>
                               </a>
                               <p class="show-details__hosts">
                                 <em>Sid Vicious</em>
                               </p>
-                              <span class="show-details__genre">Blues</span>
+                              <span class="show-details__genre electronic">Electronic</span>
                             </div>
                           </article>
                         </li>
                       </ul>
                     </div>
                   </div>
-                  <div class="wrmc-accordion-item  js-accordion-item-1229">
-                    <a href="#wrmc-accordion-item-label-1229" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-1229" aria-expanded="false" aria-controls="wrmc-accordion-content-1229" aria-labelledby="wrmc-accordion-item-label-1229" role="tab">
+                  <div class="wrmc-accordion-item  js-accordion-item-288">
+                    <a href="#wrmc-accordion-item-label-288" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-288" aria-expanded="false" aria-controls="wrmc-accordion-content-288" aria-labelledby="wrmc-accordion-item-label-288" role="tab">
                       <h2 class="wrmc-accordion-item__title">
-                        <span id="wrmc-accordion-item-label-1229">Tuesday</span>
+                        <span id="wrmc-accordion-item-label-288">Tuesday</span>
                         <span class="wrmc-accordion-item-close">&ndash;</span>
                         <span class="wrmc-accordion-item-open">&#43;</span>
                       </h2>
                     </a>
-                    <div role="tabpanel" id="midd-accordion-content-1229" aria-labelledby="wrmc-accordion-item-label-1229">
+                    <div role="tabpanel" id="midd-accordion-content-288" aria-labelledby="wrmc-accordion-item-label-288">
                       <ul class="wrmc-accordion-item__content-list">
                         <li class="wrmc-accordion-item__list-item">
-                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-446">
+                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-1230">
                             <div class="show-time">
                               <time datetime="5:00" class="" aria-label="show starts at 5:00 AM">5:00</time><time datetime="6:00" class="" aria-label="show ends at 6:00 AM">-6:00 AM</time>
                             </div>
                             <div class="show-details">
                               <a href="#">
-                                <h3 id="wrmc-show-teaser-header-446"> Grilled Cheese Sandwich </h3>
+                                <h3 id="wrmc-show-teaser-header-1230"> Grilled Cheese Sandwich </h3>
                               </a>
                               <p class="show-details__description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                              <span class="show-details__genre">Folk Rock</span>
+                              <span class="show-details__genre folk">Folk</span>
                             </div>
                           </article>
                         </li>
                         <li class="wrmc-accordion-item__list-item">
-                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-956">
+                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-490">
                             <div class="show-time">
                               <time datetime="9:00" class="" aria-label="show starts at 9:00 AM">9:00</time><time datetime="10:00" class="" aria-label="show ends at 10:00 AM">-10:00 AM</time>
                             </div>
                             <div class="show-details">
                               <a href="#">
-                                <h3 id="wrmc-show-teaser-header-956"> Jazz Band, Hand and Feet </h3>
+                                <h3 id="wrmc-show-teaser-header-490"> Jazz Band, Hand and Feet </h3>
                               </a>
-                              <span class="show-details__genre">Blues</span>
+                              <span class="show-details__genre punk">Punk</span>
                             </div>
                           </article>
                         </li>
                         <li class="wrmc-accordion-item__list-item">
-                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-67">
+                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-682">
                             <div class="show-time">
                               <time datetime="12:00" class="" aria-label="show starts at 12:00 AM">12:00</time><time datetime="1:00" class="" aria-label="show ends at 1:00 AM">-1:00 AM</time>
                             </div>
                             <div class="show-details">
                               <a href="#">
-                                <h3 id="wrmc-show-teaser-header-67"> Jazz Band, Hand and Feet </h3>
+                                <h3 id="wrmc-show-teaser-header-682"> Jazz Band, Hand and Feet </h3>
                               </a>
-                              <span class="show-details__genre">Blues</span>
+                              <span class="show-details__genre rock">Rock</span>
                             </div>
                           </article>
                         </li>
                       </ul>
                     </div>
                   </div>
-                  <div class="wrmc-accordion-item  js-accordion-item-946">
-                    <a href="#wrmc-accordion-item-label-946" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-946" aria-expanded="false" aria-controls="wrmc-accordion-content-946" aria-labelledby="wrmc-accordion-item-label-946" role="tab">
+                  <div class="wrmc-accordion-item  js-accordion-item-1230">
+                    <a href="#wrmc-accordion-item-label-1230" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-1230" aria-expanded="false" aria-controls="wrmc-accordion-content-1230" aria-labelledby="wrmc-accordion-item-label-1230" role="tab">
                       <h2 class="wrmc-accordion-item__title">
-                        <span id="wrmc-accordion-item-label-946">Wednesday</span>
+                        <span id="wrmc-accordion-item-label-1230">Wednesday</span>
                         <span class="wrmc-accordion-item-close">&ndash;</span>
                         <span class="wrmc-accordion-item-open">&#43;</span>
                       </h2>
                     </a>
-                    <div role="tabpanel" id="midd-accordion-content-946" aria-labelledby="wrmc-accordion-item-label-946">
+                    <div role="tabpanel" id="midd-accordion-content-1230" aria-labelledby="wrmc-accordion-item-label-1230">
                       <ul class="wrmc-accordion-item__content-list">
                         <li class="wrmc-accordion-item__list-item">
-                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-1184">
+                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-938">
                             <div class="show-time">
                               <time datetime="1:00" class="" aria-label="show starts at 1:00 PM">1:00</time><time datetime="2:00" class="" aria-label="show ends at 2:00 PM">-2:00 PM</time>
                             </div>
                             <div class="show-details">
                               <a href="#">
-                                <h3 id="wrmc-show-teaser-header-1184"> Experimental Jetset Companion </h3>
+                                <h3 id="wrmc-show-teaser-header-938"> Experimental Jetset Companion </h3>
                               </a>
-                              <span class="show-details__genre">Blues</span>
+                              <span class="show-details__genre world">World</span>
                             </div>
                           </article>
                         </li>
                         <li class="wrmc-accordion-item__list-item">
-                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-498">
+                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-1182">
                             <div class="show-time">
                               <time datetime="11:00" class="" aria-label="show starts at 11:00 PM">11:00</time><time datetime="12:00" class="" aria-label="show ends at 12:00 PM">-12:00 PM</time>
                             </div>
                             <div class="show-details">
                               <a href="#">
-                                <h3 id="wrmc-show-teaser-header-498"> Mr. and Mrs. Send It </h3>
+                                <h3 id="wrmc-show-teaser-header-1182"> Mr. and Mrs. Send It </h3>
                               </a>
                               <p class="show-details__hosts">
                                 <em>Sid Vicious</em>
                               </p>
-                              <span class="show-details__genre">Blues</span>
+                              <span class="show-details__genre blues">Blues</span>
                             </div>
                           </article>
                         </li>
                       </ul>
                     </div>
                   </div>
-                  <div class="wrmc-accordion-item  js-accordion-item-362">
-                    <a href="#wrmc-accordion-item-label-362" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-362" aria-expanded="false" aria-controls="wrmc-accordion-content-362" aria-labelledby="wrmc-accordion-item-label-362" role="tab">
+                  <div class="wrmc-accordion-item  js-accordion-item-619">
+                    <a href="#wrmc-accordion-item-label-619" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-619" aria-expanded="false" aria-controls="wrmc-accordion-content-619" aria-labelledby="wrmc-accordion-item-label-619" role="tab">
                       <h2 class="wrmc-accordion-item__title">
-                        <span id="wrmc-accordion-item-label-362">Thursday</span>
+                        <span id="wrmc-accordion-item-label-619">Thursday</span>
                         <span class="wrmc-accordion-item-close">&ndash;</span>
                         <span class="wrmc-accordion-item-open">&#43;</span>
                       </h2>
                     </a>
-                    <div role="tabpanel" id="midd-accordion-content-362" aria-labelledby="wrmc-accordion-item-label-362">
+                    <div role="tabpanel" id="midd-accordion-content-619" aria-labelledby="wrmc-accordion-item-label-619">
                       <ul class="wrmc-accordion-item__content-list">
                         <li class="wrmc-accordion-item__list-item">
-                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-279">
+                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-983">
                             <div class="show-time">
                               <time datetime="9:00" class="" aria-label="show starts at 9:00 AM">9:00</time><time datetime="10:00" class="" aria-label="show ends at 10:00 AM">-10:00 AM</time>
                             </div>
                             <div class="show-details">
                               <a href="#">
-                                <h3 id="wrmc-show-teaser-header-279"> Jazz Band, Hand and Feet </h3>
+                                <h3 id="wrmc-show-teaser-header-983"> Jazz Band, Hand and Feet </h3>
                               </a>
-                              <span class="show-details__genre">Blues</span>
+                              <span class="show-details__genre reggae">Reggae</span>
                             </div>
                           </article>
                         </li>
                         <li class="wrmc-accordion-item__list-item">
-                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-41">
+                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-1016">
                             <div class="show-time">
                               <time datetime="2:00" class="" aria-label="show starts at 2:00 PM">2:00</time><time datetime="3:00" class="" aria-label="show ends at 3:00 PM">-3:00 PM</time>
                             </div>
                             <div class="show-details">
                               <a href="#">
-                                <h3 id="wrmc-show-teaser-header-41"> Hot Chocolate on the Bus </h3>
+                                <h3 id="wrmc-show-teaser-header-1016"> Hot Chocolate on the Bus </h3>
                               </a>
                               <p class="show-details__hosts">
                                 <em>Adam Yauch</em>
                               </p>
                               <p class="show-details__description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                              <span class="show-details__genre">Blues</span>
+                              <span class="show-details__genre blues">Blues</span>
                             </div>
                           </article>
                         </li>
                         <li class="wrmc-accordion-item__list-item">
-                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-180">
+                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-0">
                             <div class="show-time">
                               <time datetime="2:00" class="" aria-label="show starts at 2:00 AM">2:00</time><time datetime="3:00" class="" aria-label="show ends at 3:00 AM">-3:00 AM</time>
                             </div>
                             <div class="show-details">
                               <a href="#">
-                                <h3 id="wrmc-show-teaser-header-180"> I Love Rock and Roll </h3>
+                                <h3 id="wrmc-show-teaser-header-0"> I Love Rock and Roll </h3>
                               </a>
                               <p class="show-details__hosts">
                                 <em>Matt Jennings and Tom</em>
                               </p>
-                              <span class="show-details__genre">Folk Rock</span>
+                              <span class="show-details__genre jazz">Jazz</span>
                             </div>
                           </article>
                         </li>
                       </ul>
                     </div>
                   </div>
-                  <div class="wrmc-accordion-item  js-accordion-item-604">
-                    <a href="#wrmc-accordion-item-label-604" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-604" aria-expanded="false" aria-controls="wrmc-accordion-content-604" aria-labelledby="wrmc-accordion-item-label-604" role="tab">
+                  <div class="wrmc-accordion-item  js-accordion-item-4">
+                    <a href="#wrmc-accordion-item-label-4" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-4" aria-expanded="false" aria-controls="wrmc-accordion-content-4" aria-labelledby="wrmc-accordion-item-label-4" role="tab">
                       <h2 class="wrmc-accordion-item__title">
-                        <span id="wrmc-accordion-item-label-604">Friday</span>
+                        <span id="wrmc-accordion-item-label-4">Friday</span>
                         <span class="wrmc-accordion-item-close">&ndash;</span>
                         <span class="wrmc-accordion-item-open">&#43;</span>
                       </h2>
                     </a>
-                    <div role="tabpanel" id="midd-accordion-content-604" aria-labelledby="wrmc-accordion-item-label-604">
+                    <div role="tabpanel" id="midd-accordion-content-4" aria-labelledby="wrmc-accordion-item-label-4">
                       <ul class="wrmc-accordion-item__content-list">
                         <li class="wrmc-accordion-item__list-item">
-                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-333">
+                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-500">
                             <div class="show-time">
                               <time datetime="7:00" class="" aria-label="show starts at 7:00 AM">7:00</time><time datetime="8:00" class="" aria-label="show ends at 8:00 AM">-8:00 AM</time>
                             </div>
                             <div class="show-details">
                               <a href="#">
-                                <h3 id="wrmc-show-teaser-header-333"> Echo Locations </h3>
+                                <h3 id="wrmc-show-teaser-header-500"> Echo Locations </h3>
                               </a>
                               <p class="show-details__description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                              <span class="show-details__genre">Hip Hop</span>
+                              <span class="show-details__genre hip-hop">Hip Hop</span>
                             </div>
                           </article>
                         </li>
                         <li class="wrmc-accordion-item__list-item">
-                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-208">
+                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-39">
                             <div class="show-time">
                               <time datetime="9:00" class="" aria-label="show starts at 9:00 AM">9:00</time><time datetime="10:00" class="" aria-label="show ends at 10:00 AM">-10:00 AM</time>
                             </div>
                             <div class="show-details">
                               <a href="#">
-                                <h3 id="wrmc-show-teaser-header-208"> Jazz Band, Hand and Feet </h3>
+                                <h3 id="wrmc-show-teaser-header-39"> Jazz Band, Hand and Feet </h3>
                               </a>
-                              <span class="show-details__genre">Blues</span>
+                              <span class="show-details__genre latin">Latin</span>
                             </div>
                           </article>
                         </li>
                         <li class="wrmc-accordion-item__list-item">
-                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-549">
+                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-1150">
                             <div class="show-time">
                               <time datetime="11:00" class="" aria-label="show starts at 11:00 PM">11:00</time><time datetime="12:00" class="" aria-label="show ends at 12:00 PM">-12:00 PM</time>
                             </div>
                             <div class="show-details">
                               <a href="#">
-                                <h3 id="wrmc-show-teaser-header-549"> Mr. and Mrs. Send It </h3>
+                                <h3 id="wrmc-show-teaser-header-1150"> Mr. and Mrs. Send It </h3>
                               </a>
                               <p class="show-details__hosts">
                                 <em>Sid Vicious</em>
                               </p>
-                              <span class="show-details__genre">Blues</span>
+                              <span class="show-details__genre indie">Indie</span>
                             </div>
                           </article>
                         </li>
                       </ul>
                     </div>
                   </div>
-                  <div class="wrmc-accordion-item  js-accordion-item-573">
-                    <a href="#wrmc-accordion-item-label-573" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-573" aria-expanded="false" aria-controls="wrmc-accordion-content-573" aria-labelledby="wrmc-accordion-item-label-573" role="tab">
+                  <div class="wrmc-accordion-item  js-accordion-item-1066">
+                    <a href="#wrmc-accordion-item-label-1066" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-1066" aria-expanded="false" aria-controls="wrmc-accordion-content-1066" aria-labelledby="wrmc-accordion-item-label-1066" role="tab">
                       <h2 class="wrmc-accordion-item__title">
-                        <span id="wrmc-accordion-item-label-573">Saturday</span>
+                        <span id="wrmc-accordion-item-label-1066">Saturday</span>
                         <span class="wrmc-accordion-item-close">&ndash;</span>
                         <span class="wrmc-accordion-item-open">&#43;</span>
                       </h2>
                     </a>
-                    <div role="tabpanel" id="midd-accordion-content-573" aria-labelledby="wrmc-accordion-item-label-573">
+                    <div role="tabpanel" id="midd-accordion-content-1066" aria-labelledby="wrmc-accordion-item-label-1066">
                       <ul class="wrmc-accordion-item__content-list">
                         <li class="wrmc-accordion-item__list-item">
-                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-1103">
+                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-631">
                             <div class="show-time">
                               <time datetime="1:00" class="" aria-label="show starts at 1:00 PM">1:00</time><time datetime="2:00" class="" aria-label="show ends at 2:00 PM">-2:00 PM</time>
                             </div>
                             <div class="show-details">
                               <a href="#">
-                                <h3 id="wrmc-show-teaser-header-1103"> Experimental Jetset Companion </h3>
+                                <h3 id="wrmc-show-teaser-header-631"> Experimental Jetset Companion </h3>
                               </a>
-                              <span class="show-details__genre">Blues</span>
+                              <span class="show-details__genre funk">Funk</span>
                             </div>
                           </article>
                         </li>
                         <li class="wrmc-accordion-item__list-item">
-                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-1067">
+                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-107">
                             <div class="show-time">
                               <time datetime="2:00" class="" aria-label="show starts at 2:00 PM">2:00</time><time datetime="3:00" class="" aria-label="show ends at 3:00 PM">-3:00 PM</time>
                             </div>
                             <div class="show-details">
                               <a href="#">
-                                <h3 id="wrmc-show-teaser-header-1067"> Hot Chocolate on the Bus </h3>
+                                <h3 id="wrmc-show-teaser-header-107"> Hot Chocolate on the Bus </h3>
                               </a>
                               <p class="show-details__hosts">
                                 <em>Adam Yauch</em>
                               </p>
                               <p class="show-details__description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                              <span class="show-details__genre">Blues</span>
+                              <span class="show-details__genre classical">Classical</span>
                             </div>
                           </article>
                         </li>
                       </ul>
                     </div>
                   </div>
-                  <div class="wrmc-accordion-item  js-accordion-item-1197">
-                    <a href="#wrmc-accordion-item-label-1197" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-1197" aria-expanded="false" aria-controls="wrmc-accordion-content-1197" aria-labelledby="wrmc-accordion-item-label-1197" role="tab">
+                  <div class="wrmc-accordion-item  js-accordion-item-195">
+                    <a href="#wrmc-accordion-item-label-195" class="wrmc-accordion-item__link" data-toggle-target=".js-accordion-item-195" aria-expanded="false" aria-controls="wrmc-accordion-content-195" aria-labelledby="wrmc-accordion-item-label-195" role="tab">
                       <h2 class="wrmc-accordion-item__title">
-                        <span id="wrmc-accordion-item-label-1197">Sunday</span>
+                        <span id="wrmc-accordion-item-label-195">Sunday</span>
                         <span class="wrmc-accordion-item-close">&ndash;</span>
                         <span class="wrmc-accordion-item-open">&#43;</span>
                       </h2>
                     </a>
-                    <div role="tabpanel" id="midd-accordion-content-1197" aria-labelledby="wrmc-accordion-item-label-1197">
+                    <div role="tabpanel" id="midd-accordion-content-195" aria-labelledby="wrmc-accordion-item-label-195">
                       <ul class="wrmc-accordion-item__content-list">
                         <li class="wrmc-accordion-item__list-item">
-                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-775">
+                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-421">
                             <div class="show-time">
                               <time datetime="10:00" class="" aria-label="show starts at 10:00 AM">10:00</time><time datetime="11:00" class="" aria-label="show ends at 11:00 AM">-11:00 AM</time>
                             </div>
                             <div class="show-details">
                               <a href="#">
-                                <h3 id="wrmc-show-teaser-header-775"> Experimental Jetset Companion </h3>
+                                <h3 id="wrmc-show-teaser-header-421"> Experimental Jetset Companion </h3>
                               </a>
-                              <span class="show-details__genre">Blues</span>
+                              <span class="show-details__genre electronic">Electronic</span>
                             </div>
                           </article>
                         </li>
                         <li class="wrmc-accordion-item__list-item">
-                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-1204">
+                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-504">
                             <div class="show-time">
                               <time datetime="2:00" class="" aria-label="show starts at 2:00 PM">2:00</time><time datetime="3:00" class="" aria-label="show ends at 3:00 PM">-3:00 PM</time>
                             </div>
                             <div class="show-details">
                               <a href="#">
-                                <h3 id="wrmc-show-teaser-header-1204"> Hot Chocolate on the Bus </h3>
+                                <h3 id="wrmc-show-teaser-header-504"> Hot Chocolate on the Bus </h3>
                               </a>
                               <p class="show-details__hosts">
                                 <em>Adam Yauch</em>
                               </p>
                               <p class="show-details__description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                              <span class="show-details__genre">Blues</span>
+                              <span class="show-details__genre electronic">Electronic</span>
                             </div>
                           </article>
                         </li>
                         <li class="wrmc-accordion-item__list-item">
-                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-80">
+                          <article class="show-teaser " aria-labelledby="wrmc-show-teaser-header-1188">
                             <div class="show-time">
                               <time datetime="2:00" class="" aria-label="show starts at 2:00 AM">2:00</time><time datetime="3:00" class="" aria-label="show ends at 3:00 AM">-3:00 AM</time>
                             </div>
                             <div class="show-details">
                               <a href="#">
-                                <h3 id="wrmc-show-teaser-header-80"> I Love Rock and Roll </h3>
+                                <h3 id="wrmc-show-teaser-header-1188"> I Love Rock and Roll </h3>
                               </a>
                               <p class="show-details__hosts">
                                 <em>Matt Jennings and Tom</em>
                               </p>
-                              <span class="show-details__genre">Folk Rock</span>
+                              <span class="show-details__genre blues">Blues</span>
                             </div>
                           </article>
                         </li>
