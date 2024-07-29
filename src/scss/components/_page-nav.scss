@@ -21,22 +21,15 @@
   // font-family: inherit;
   text-align: left;
   color: $color-primary;
-  display: flex;
-  align-items: center;
 
   @include breakpoint(lg) {
     display: none;
   }
-
-  .page-nav__button-text__label {
-    text-transform: uppercase;
-    letter-spacing: $letter-spacing;
-  }
 }
 
 .page-nav__icon {
+  float: right;
   transition: $chevron-transition;
-  margin-left: $spacing-2;
 
   .page-nav__button.is-toggled & {
     transform: $chevron-transform;
