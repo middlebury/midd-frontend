@@ -21,15 +21,30 @@
   // font-family: inherit;
   text-align: left;
   color: $color-primary;
+  display: flex;
+  flex-direction: column;
 
   @include breakpoint(lg) {
     display: none;
+  }
+
+  .page-nav__button-text__label {
+    @include gray-label;
+    margin-bottom: $spacing-1;
+    line-height: 1.4;
+    color: $gray-semi-light;
+  }
+
+  .page-nav__button-text {
+    display: flex;
+    align-items: center;
   }
 }
 
 .page-nav__icon {
   float: right;
   transition: $chevron-transition;
+  margin-left: $spacing-2;
 
   .page-nav__button.is-toggled & {
     transform: $chevron-transform;
