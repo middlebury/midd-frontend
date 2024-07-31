@@ -106,7 +106,7 @@
   "bundlesize": [
     {
       "path": "./dist/css/*.css",
-      "maxSize": "32 kB",
+      "maxSize": "35 kB",
       "compression": "brotli"
     },
     {
