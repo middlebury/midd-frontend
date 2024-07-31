@@ -58,40 +58,39 @@ class JourneySwiper {
 
   async getSwiper() {
     return import(/* webpackChunkName: "swiper" */ 'swiper')
-      .then(
-        ({ default: Swiper }) => {
-          import(/* webpackChunkName: "swiper" */ 'swiper/modules').then(({Navigation, Pagination, HashNavigation, A11y}) => {
+      .then(({ default: Swiper }) => {
+        import(/* webpackChunkName: "swiper" */ 'swiper/modules').then(
+          ({ Navigation, Pagination, HashNavigation, A11y }) => {
+            this.loadingEls.forEach((el) => el.classList.add('has-loaded'));
 
-          this.loadingEls.forEach((el) => el.classList.add('has-loaded'));
-          
-          this.swiperEl = new Swiper(this.swiperClass, {
-            modules: [Navigation, Pagination, HashNavigation, A11y],
-            autoHeight: true,
-            hashNavigation: {
-              replaceState: true,
-              watchState: true
-            },
-            navigation: {
-              nextEl: '.js-journey-next-button',
-              prevEl: '.js-journey-prev-button'
-            },
-            pagination: {
-              el: this.paginationClass,
-              bulletClass: 'journey-modal__cb-link',
-              clickable: true,
-              renderBullet: function (index, className) {
-                const labels = [
-                  'Why Middlebury',
-                  'Immersive Environments',
-                  'The Undergraduate Experience',
-                  'Alumni in the World',
-                  'Middlebury in the News',
-                  'Students in Action',
-                  'Connected Middlebury',
-                  'Middlebury College',
-                  'Graduate and Professional Schools'
-                ];
-                return `
+            this.swiperEl = new Swiper(this.swiperClass, {
+              modules: [Navigation, Pagination, HashNavigation, A11y],
+              autoHeight: true,
+              hashNavigation: {
+                replaceState: true,
+                watchState: true
+              },
+              navigation: {
+                nextEl: '.js-journey-next-button',
+                prevEl: '.js-journey-prev-button'
+              },
+              pagination: {
+                el: this.paginationClass,
+                bulletClass: 'journey-modal__cb-link',
+                clickable: true,
+                renderBullet: function (index, className) {
+                  const labels = [
+                    'Why Middlebury',
+                    'Immersive Environments',
+                    'The Undergraduate Experience',
+                    'Alumni in the World',
+                    'Middlebury in the News',
+                    'Students in Action',
+                    'Connected Middlebury',
+                    'Middlebury College',
+                    'Graduate and Professional Schools'
+                  ];
+                  return `
                   <a class="journey-modal__cb-link ${className}" href="#" role="button">
                     <span class="cb-link__text">
                       ${labels[index]}
@@ -101,28 +100,29 @@ class JourneySwiper {
                       <span class="cb-link__circle outer"></span>
                     </span>
                   </a>`;
+                }
+              },
+              on: {
+                slideNextTransitionStart: (swiper) => {
+                  swiper.allowSlideNext = false;
+                },
+                slideNextTransitionEnd: (swiper) => {
+                  swiper.allowSlideNext = true;
+                },
+                slidePrevTransitionStart: (swiper) => {
+                  swiper.allowSlidePrev = false;
+                },
+                slidePrevTransitionEnd: (swiper) => {
+                  swiper.allowSlidePrev = true;
+                },
+                transitionStart: () => {
+                  this.swiperUpdate();
+                  this.scrollToTop();
+                }
               }
-            },
-            on: {
-              slideNextTransitionStart: (swiper) => {
-                swiper.allowSlideNext = false;
-              },
-              slideNextTransitionEnd: (swiper) => {
-                swiper.allowSlideNext = true;
-              },
-              slidePrevTransitionStart: (swiper) => {
-                swiper.allowSlidePrev = false;
-              },
-              slidePrevTransitionEnd: (swiper) => {
-                swiper.allowSlidePrev = true;
-              },
-              transitionStart: () => {
-                this.swiperUpdate();
-                this.scrollToTop();
-              },
-            }
-          });
-        })
+            });
+          }
+        );
       })
       .catch((error) => 'An error occurred while loading Swiper');
   }
@@ -196,11 +196,9 @@ class JourneySwiper {
     const { MicroModal } = window;
     if (isNaN(hash)) {
       MicroModal?.close();
-    }
-    else if (hash !== this.swiperEl?.activeIndex) {
+    } else if (hash !== this.swiperEl?.activeIndex) {
       this.swiperEl?.slideTo(hash, 300, false);
-    }
-    else if (hash == this.swiperEl?.activeIndex) {
+    } else if (hash == this.swiperEl?.activeIndex) {
       this.swiperUpdate();
     }
   }
@@ -226,7 +224,7 @@ class JourneySwiper {
   swiperUpdate() {
     this.currentEl = $('.swiper-pagination-bullet-active', this.paginationEl);
     let scrollWidth = this.swiperParentEl.scrollWidth;
-    
+
     // Check if the scrolling distance exceeds the element width,
     // if it does set it to the element width so that it doesn't
     // scroll past the width

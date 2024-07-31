@@ -31,7 +31,8 @@ class ToggleAnimation {
     this.elem = elem;
     this.triggers = $$('[data-animation-trigger]', this.elem);
     this.targets = $$('[data-animation-target]', this.elem);
-    this.finalState = this.targets[0].children[this.targets[0].children.length - 1];
+    this.finalState =
+      this.targets[0].children[this.targets[0].children.length - 1];
 
     this.activeClass = 'run-animation';
 
@@ -61,12 +62,24 @@ class ToggleAnimation {
 
     this.transitionState.splice(-1, 1);
     this.transitionState.forEach((target) => {
-      target.addEventListener('animationstart', this.handleIntermittentAnimationEnd);
-      target.addEventListener('animationend', this.handleIntermittentAnimationEnd);
-    })
+      target.addEventListener(
+        'animationstart',
+        this.handleIntermittentAnimationEnd
+      );
+      target.addEventListener(
+        'animationend',
+        this.handleIntermittentAnimationEnd
+      );
+    });
 
-    this.finalState.addEventListener('animationstart', this.handleFinalAnimationEnd);
-    this.finalState.addEventListener('animationend', this.handleFinalAnimationEnd);
+    this.finalState.addEventListener(
+      'animationstart',
+      this.handleFinalAnimationEnd
+    );
+    this.finalState.addEventListener(
+      'animationend',
+      this.handleFinalAnimationEnd
+    );
   }
 
   hideElement(elem: HTMLElement) {
@@ -120,7 +133,7 @@ class ToggleAnimation {
 
   handleIntermittentAnimationEnd(e: AnimationEvent) {
     const eventTarget = e.target as HTMLElement;
-    
+
     if (e.type == 'animationend') {
       eventTarget.setAttribute('aria-hidden', 'true');
     } else if (e.type == 'animationstart') {

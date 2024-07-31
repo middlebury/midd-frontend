@@ -19,7 +19,9 @@
     padding-right: 0;
     border-bottom: 4px solid transparent;
     opacity: 0.8;
-    transition: opacity 0.2s, border-color 0.2s;
+    transition:
+      opacity 0.2s,
+      border-color 0.2s;
 
     &.is-toggled,
     &:hover {

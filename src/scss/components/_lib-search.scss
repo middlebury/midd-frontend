@@ -10,8 +10,9 @@
   grid-column-start: 1;
   z-index: 1;
   background: rgba($navy-dark, 0.7);
-  
-  > *, a {
+
+  > *,
+  a {
     color: $white;
   }
 
