@@ -32,6 +32,6 @@ if (btn) {
   makeToTopBtn(btn);
 }
 
-if(homepageBtn) {
+if (homepageBtn) {
   makeToTopBtn(homepageBtn, 3.75);
 }

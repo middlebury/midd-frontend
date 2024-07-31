@@ -355,7 +355,10 @@ $btn-border-radius: $input-btn-border-radius !default;
 $btn-font-weight: $font-weight-normal !default;
 $btn-disabled-opacity: 0.5 !default;
 
-$btn-transition: color 0.2s, background-color 0.2s, border-color 0.2s !default;
+$btn-transition:
+  color 0.2s,
+  background-color 0.2s,
+  border-color 0.2s !default;
 
 $btn-themes: (
   'primary': (

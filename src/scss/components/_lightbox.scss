@@ -105,7 +105,9 @@
   border: 0;
 
   img {
-    transition: transform 0.2s, opacity 0.2s;
+    transition:
+      transform 0.2s,
+      opacity 0.2s;
     opacity: 0.75;
   }
 

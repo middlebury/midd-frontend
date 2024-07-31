@@ -224,7 +224,11 @@ $theme-margins-sm: (
   height: 340px;
   margin-right: $spacing-2;
   background-color: $white;
-  transition: background-color 0.2s, min-width 0.5s, margin 0.5s, height 0.5s;
+  transition:
+    background-color 0.2s,
+    min-width 0.5s,
+    margin 0.5s,
+    height 0.5s;
 
   .waveform__list-item--tooltip {
     display: block;

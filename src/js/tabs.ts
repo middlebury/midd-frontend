@@ -128,9 +128,9 @@ class Tabs {
       e.which === 37
         ? index - 1
         : // right key
-        e.which === 39
-        ? index + 1
-        : null;
+          e.which === 39
+          ? index + 1
+          : null;
 
     // check for null instead of !dir since dir can be index 0
     if (dir === null) {

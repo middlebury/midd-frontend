@@ -296,11 +296,14 @@ MicroModal.init(lightboxConfig);
 
 const lightbox = $('[data-lightbox-open]');
 
-if(lightbox) {
+if (lightbox) {
   on(lightbox, 'click', (e) => e.preventDefault());
   on(lightbox, 'keydown', (e) => {
     if (e.keyCode === 32) {
-      MicroModal.show(lightbox.getAttribute('data-lightbox-open'), lightboxConfig);
+      MicroModal.show(
+        lightbox.getAttribute('data-lightbox-open'),
+        lightboxConfig
+      );
     }
   });
 }

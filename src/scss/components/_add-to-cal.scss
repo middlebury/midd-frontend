@@ -7,12 +7,14 @@
   display: none;
 }
 
-.dropdown__list.addtocal-menu, .dropdown__list.addtocal-menu:hover {
+.dropdown__list.addtocal-menu,
+.dropdown__list.addtocal-menu:hover {
   border-top: 1px solid $white;
   background: $navy;
 }
 
-.addtocal-link a.dropdown__link, .addtocal-link a.dropdown__link:hover {
+.addtocal-link a.dropdown__link,
+.addtocal-link a.dropdown__link:hover {
   color: $white;
   background-color: transparent;
 }
