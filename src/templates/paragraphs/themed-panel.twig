@@ -6,16 +6,12 @@
 
       <div class="themed-panel__main">
 
-        <div class="themed-panel__media">
-
-          <figure class="themed-panel__figure">
-            {% include 'partials/img.twig' with {
-              name: 'spotlight'
-            } %}
-          </figure>
-
-          <h2 class="themed-panel__title" id="themed-panel-{{id}}-title">Sustainability and other things that go on and on</h2>
-        </div>
+        <h2 class="themed-panel__title" id="themed-panel-{{id}}-title">Sustainability and other things that go on and on</h2>
+        <figure class="themed-panel__figure">
+          {% include 'partials/img.twig' with {
+            name: 'spotlight'
+          } %}
+        </figure>
 
         <article class="themed-panel__article" aria-labelledby="themed-panel-{{id}}-first">
           <h3 class="themed-panel__heading h2" id="themed-panel-{{id}}-first">
@@ -34,7 +30,7 @@
             </h3>
             <p class="themed-panel__text">Lorem ipsum dolor sit amet consectetur adipisicing ipsum dolor sit amet consectetur adipisicing elit.
             </p>
-            <a href="" class="themed-panel__cta">Read more</a>
+            <a href="" class="themed-panel__cta button button--light button--outline">Read more</a>
           </article>
         {% endfor %}
       </div>
