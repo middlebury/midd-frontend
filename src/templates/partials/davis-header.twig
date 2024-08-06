@@ -5,21 +5,29 @@
     <div class="school-header__main">
 
       <div class="school-header__menu-content">
-        <a href="#" class="school-header__logo">
-          {% block school_logo %}
-            <img
-              src="images/davis-globe.png"
-              alt="Globe in logo for Davis United World College Scholars Program"
-            />
-            <img
-              src="images/davis-uwc-logo-309x35.png"
-              srcset="images/davis-uwc-logo-288x36.png 288w, images/davis-uwc-logo-309x35.png 309w"
-              sizes="(min-width: 768px) 309px, 288px"
-              alt="Davis United World College Scholars Program"
-            />
-            <span class="sr-only">Davis United World College Scholars Program</span>
-          {% endblock %}
-        </a>
+        <div class="school-header__logo">
+          {% if is_front %}
+            <h1 class="school-header__title">
+          {% endif %}
+              <a href="#">
+                {% block school_logo %}
+                  <img
+                    src="images/davis-globe.png"
+                    alt="Globe in logo for Davis United World College Scholars Program"
+                  />
+                  <img
+                    src="images/davis-uwc-logo-309x35.png"
+                    srcset="images/davis-uwc-logo-288x36.png 288w, images/davis-uwc-logo-309x35.png 309w"
+                    sizes="(min-width: 768px) 309px, 288px"
+                    alt="Davis United World College Scholars Program"
+                  />
+                  <span class="sr-only">Davis United World College Scholars Program</span>
+                {% endblock %}
+              </a>
+          {% if is_front %}
+            </h1>
+          {% endif %}
+        </div>
         <div class="davis-nav__menu">
           <nav aria-labelledby="midd-main-nav-label">
             <h2 class="sr-only" id="midd-main-nav-label">Main navigation</h2>
@@ -76,8 +84,7 @@
 
       <div class="school-header__util-links">
         <div class="davis-nav">
-          <nav aria-labelledby="midd-secondary-nav-label">
-            <h2 class="sr-only" id="midd-secondary-nav-label">Secondary navigation</h2>
+          <nav aria-labelledby="midd-secondary-nav-label" aria-label="Secondary navigation">
             <ul class="davis-nav__list">
               {% for item in ['Midd Students', 'Parents', 'Advisors'] %}
                 <li class="davis-nav__item">

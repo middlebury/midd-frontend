@@ -45,8 +45,10 @@
             light: image_src  }
           %}
         {% endif %}
-
-        <h1 class="page-header__title" id="midd-page-header-label">{{title}}</h1>
+        
+        {% if title %}
+          <h1 class="page-header__title" id="midd-page-header-label">{{title}}</h1>
+        {% endif %}
         {{pronouns}}
 
         {{after_title}}
