@@ -12,17 +12,16 @@
             name: 'spotlight'
           } %}
         </figure>
-
-        <article class="themed-panel__article" aria-labelledby="themed-panel-{{id}}-first">
-          <h3 class="themed-panel__heading h2" id="themed-panel-{{id}}-first">
-            <a href="" class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing</a>
-          </h3>
-          <p class="themed-panel__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam dicta nihil reiciendis laboriosam, exercitationem harum numquam rem sint laudantium ducimus optio provident voluptate obcaecati reprehenderit voluptates illum dignissimos corrupti!</p>
-          <a href="" class="themed-panel__cta">Learn more</a>
-        </article>
       </div>
 
       <div class="themed-panel__secondary">
+        <article class="offset-1 col-9 themed-panel__article" aria-labelledby="themed-panel-{{id}}-first">
+          <h3 class="themed-panel__heading h2" id="themed-panel-{{id}}-first">
+            <a href="">Lorem ipsum dolor sit amet consectetur adipisicing</a>
+          </h3>
+          <p class="themed-panel__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam dicta nihil reiciendis laboriosam, exercitationem harum numquam rem sint laudantium ducimus optio provident voluptate obcaecati reprehenderit voluptates illum dignissimos corrupti!</p>
+          <a href="button" class="themed-panel__cta">Learn more</a>
+        </article>
         {% for item in 0..2 %}
           <article class="themed-panel__subarticle" aria-labelledby="themed-panel-{{id}}-{{loop.index}}">
             <h3 class="themed-panel__heading" id="themed-panel-{{id}}-{{loop.index}}">

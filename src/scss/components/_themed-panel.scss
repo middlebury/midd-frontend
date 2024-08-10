@@ -34,12 +34,29 @@
   padding: $spacing-3 $spacing-5;
 }
 
-.themed-panel__article {
-}
-
 .themed-panel__secondary {
   display: flex;
+  // position: relative;
   padding: $spacing-5 0;
+}
+
+.themed-panel__article-background {
+  display: block;
+  background: $navy;
+}
+
+.themed-panel__article {
+  position: absolute;
+  background: $white;
+  padding: $spacing-4;
+
+  &, .themed-panel__heading {
+    color: $navy;
+  }
+
+  .themed-panel__text {
+    color: $black;
+  }
 }
 
 .themed-panel__subarticle {
@@ -59,6 +76,7 @@
 .themed-panel__text {
   color: $white;
   font-size: $typescale-3;
+  margin-bottom: $spacing-4;
 }
 
 .themed-panel__cta {
