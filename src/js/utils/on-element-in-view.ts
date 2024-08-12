@@ -2,8 +2,8 @@ export function onElementInView(
   el: HTMLElement,
   cb: (entry: IntersectionObserverEntry) => void
 ) {
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
       if (entry.intersectionRatio > 0) {
         cb(entry);
 

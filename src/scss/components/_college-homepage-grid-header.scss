@@ -42,7 +42,8 @@ $text-colors: (
     transform: translateX($spacing-8);
   }
 
-  75%, 100% {
+  75%,
+  100% {
     opacity: 1;
     transform: translateX(0);
   }
@@ -107,7 +108,7 @@ $text-colors: (
       ($homepage-animation-sub-duration / 2)}s ease-in-out;
     animation-play-state: inherit;
     font-size: $typescale-7;
-    width: calc(11/12 * 100%);
+    width: calc(11 / 12 * 100%);
 
     .run-animation & {
       animation-name: homepageSlideInOut;
@@ -124,7 +125,7 @@ $text-colors: (
     &:last-child {
       animation: #{$homepage-animation-sub-duration}s ease-in forwards;
       animation-play-state: inherit;
-      width: calc(11/12 * 100%);
+      width: calc(11 / 12 * 100%);
 
       @include breakpoint(sm) {
         width: 100%;
@@ -279,7 +280,7 @@ $text-colors: (
     @include breakpoint(md) {
       margin-bottom: rem(10);
     }
-    
+
     @include breakpoint(lg) {
       margin-bottom: $spacing-3;
     }
@@ -290,15 +291,18 @@ $text-colors: (
       border-radius: $spacing-4;
       background-color: $white;
       color: $navy;
-      transition: color 0.2s, background-color 0.2s;
+      transition:
+        color 0.2s,
+        background-color 0.2s;
 
       @include breakpoint(lg) {
         width: $spacing-7;
         height: $spacing-7;
       }
     }
-        
-    &:hover, &:focus {
+
+    &:hover,
+    &:focus {
       .homepage-button {
         background-color: $navy;
         color: $white;

@@ -14,7 +14,9 @@
   text-align: left;
   color: $navy;
   cursor: pointer;
-  transition: border-color 0.2s, background 0.2s;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
   display: flex;
   align-items: center;
   justify-content: space-between;
