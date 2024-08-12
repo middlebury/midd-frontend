@@ -9,7 +9,16 @@
   border: 0 !important;
 
   @media only screen and (min-width: 512px) {
+    right: 0px !important;
     bottom: 0px !important;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    right: 0px !important;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    right: 100px !important;
   }
 }
 
@@ -58,6 +67,14 @@
 #olark-wrapper #olark-container,
 #olark-wrapper #olark-container:focus:not(.olark-inline) {
   bottom: 144px !important;
+}
+
+#olark-wrapper .olark-launch-button.olark-text-button .olark-button-text {
+  padding: 10px !important;
+}
+
+#olark-wrapper .olark-launch-button.olark-text-button .olark-button-text {
+  line-height: 1em !important;
 }
 
 .typography .anchorjs-link,
