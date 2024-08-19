@@ -15,7 +15,6 @@ import { $, $$ } from './utils/dom';
  * so that courses with the corresponding state(s) are shown.
  */
 class CourseListFilter {
-
   /**
    * The radio buttons.
    */
@@ -69,13 +68,13 @@ class CourseListFilter {
     this.listid = this.elem.getAttribute('data-course-filter');
     this.courses = $$('.js-filter-' + this.listid + ' .accordion-item');
 
-    this.hiddenClass = "course-hidden";
-    this.currentClass = "accordion-item-current";
-    this.upcomingClass = "accordion-item-upcoming";
+    this.hiddenClass = 'course-hidden';
+    this.currentClass = 'accordion-item-current';
+    this.upcomingClass = 'accordion-item-upcoming';
 
-    this.allCoursesClass = "course-list-filter-all";
-    this.currentCoursesClass = "course-list-filter-current";
-    this.upcomingCoursesClass = "course-list-filter-upcoming";
+    this.allCoursesClass = 'course-list-filter-all';
+    this.currentCoursesClass = 'course-list-filter-current';
+    this.upcomingCoursesClass = 'course-list-filter-upcoming';
 
     this.handleElemClick = this.handleElemClick.bind(this);
 
@@ -165,23 +164,19 @@ class CourseListFilter {
           this.show(elem as HTMLElement);
         }
       });
-    }
-    else if (this.elem.classList.contains(this.currentCoursesClass)) {
+    } else if (this.elem.classList.contains(this.currentCoursesClass)) {
       this.courses.forEach((elem) => {
         if (this.isCurrent(elem as HTMLElement)) {
           this.show(elem as HTMLElement);
-        }
-        else {
+        } else {
           this.hide(elem as HTMLElement);
         }
       });
-    }
-    else if (this.elem.classList.contains(this.upcomingCoursesClass)) {
+    } else if (this.elem.classList.contains(this.upcomingCoursesClass)) {
       this.courses.forEach((elem) => {
         if (this.isUpcoming(elem as HTMLElement)) {
           this.show(elem as HTMLElement);
-        }
-        else {
+        } else {
           this.hide(elem as HTMLElement);
         }
       });

@@ -16,7 +16,7 @@ module.exports = {
     'scss/at-import-partial-extension': null,
 
     // xo disables border: 0 which is fine
-    'declaration-property-value-blacklist': null,
+    'declaration-property-value-disallowed-list': null,
 
     // too many errors with this one currently
     'no-descending-specificity': null,
@@ -26,7 +26,7 @@ module.exports = {
 
     // xo blacklists float property and we need it for floating images within text
     // otherwise flexbox usage is encouraged.
-    'property-blacklist': null,
+    // 'property-blacklist': null,
 
     // Allow empty blocks since cssnano removes them and we have some BEM blocks defined without styles currently
     'block-no-empty': null,
@@ -50,6 +50,24 @@ module.exports = {
     // Override no-missing-generic-font from xo since we use object-fit polyfill
     // which requires `font-family: 'object-fit: <value>;';`
     'font-family-no-missing-generic-family-keyword': null,
+
+    // Check if alpha-values are using the number notation
+    'alpha-value-notation': 'number',
+
+    // Allow class selectors qualified by type
+    'selector-no-qualifying-type': [
+      true, 
+      {
+        'ignore': ['class']
+      }
+    ],
+
+    // deprecated rules in Stylelint v15
+    'indentation': null,
+    'no-eol-whitespace': null,
+    'media-query-list-comma-newline-after': null,
+    'declaration-colon-newline-after': null,
+    'at-rule-name-newline-after': null,
 
     // Disallow qualifying a selector by type.
     'selector-no-qualifying-type': [

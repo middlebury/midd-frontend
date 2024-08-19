@@ -84,7 +84,7 @@
   }
 
   .drawer-nav__list {
-    border-top-color: $gray; 
+    border-top-color: $gray;
   }
 }
 
@@ -104,7 +104,7 @@
     text-decoration: none;
 
     &:hover {
-      border-bottom-color: currentColor;
+      border-bottom-color: currentcolor;
       text-decoration: none;
     }
   }
@@ -204,7 +204,9 @@
   font-size: $typescale-2;
   font-weight: $font-weight-semibold;
   opacity: 0.8;
-  transition: opacity 0.2s, border-color 0.2s;
+  transition:
+    opacity 0.2s,
+    border-color 0.2s;
 
   &:hover {
     text-decoration: none;

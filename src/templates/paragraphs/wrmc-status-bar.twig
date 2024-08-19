@@ -1,5 +1,5 @@
 <aside class="status-bar">
-  <h2 class="status-bar__broadcast-status">
+  <h2 class="status-bar__broadcast-status" role="presentation">
     <span>on</span>
     <br>
     <span>air</span>
@@ -8,29 +8,31 @@
   <div class="status-bar-content">
     <div class="status-bar-content__wrapper">
       <div class="status-bar-row">
-        <article class="status-bar-section section-show">
-          <h3>Current Show</h3>
-          <p>Grilled Cheese Sandwich<em>with DJ Hurricane</em></p>
-        </article>
-        <article class="status-bar-section section-contact">
-          <h3>Contact the DJ</h3>
-          <p>
+        <dl class="status-bar-section section-show">
+          <dd>Current Show</dd>
+          <dt>Grilled Cheese Sandwich<em>with DJ Hurricane</em></dt>
+        </dl>
+        <dl class="status-bar-section section-contact">
+          <dd>Contact the DJ</dd>
+          <dt>
             <a href="tel:+18024436323">802-443-6323</a><span class="text-separator">&#x25B2;</span>
             <a href="#">Use Our App to Chat</a>
-          </p>
-        </article>
+          </dt>
+        </dl>
       </div>
       <div class="status-bar-row">
-        <article class="status-bar-section section-playlist">
-          <h3>Current Playlist</h3>
-          <ul class="status-bar-section__playlist-items">
-          {% for item in playlist_items %}
-            <li>
-              <p>{{item.artist}}<em>{{item.song}}</em>{{ loop.last ? '' : '<span class="text-separator">&#x25B2;</span>'}}</p>
-            </li>
-          {% endfor %}
-          </ul>
-        </article>
+        <dl class="status-bar-section section-playlist">
+          <dd>Current Playlist</dd>
+          <dt>
+            <ul class="status-bar-section__playlist-items">
+            {% for item in playlist_items %}
+              <li>
+                <p>{{item.artist}}<em>{{item.song}}</em>{{ loop.last ? '' : '<span class="text-separator">&#x25B2;</span>'}}</p>
+              </li>
+            {% endfor %}
+            </ul>
+          </dt>
+        </dl>
       </div>
     </div>
   </div>

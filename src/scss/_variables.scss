@@ -104,6 +104,7 @@ $black: #202020 !default;
 
 // grays
 $gray: #767676 !default;
+$gray-semi-light: #979797 !default;
 $gray-light: #dedede !default;
 $gray-lighter: #f8f8f8 !default;
 $gray-dark: #414142 !default;
@@ -171,6 +172,30 @@ $font-family-serif: (
   georgia,
   serif
 ) !default;
+
+$wrmc-genre-colors: (
+  blues: #1D6CA6,
+  country: #AC7306,
+  experimental: #C926E4,
+  funk: #07BBD3,
+  indie: #927575,
+  pop: #A60505,
+  punk: #044882,
+  rb-soul: #56A4FF,
+  rock: #047825,
+  world: #52D6FF,
+  classical: #349B76,
+  electronic: #9AA705,
+  folk: #E28A07,
+  jazz: #0CBDBD,
+  heavy-metal: #727070,
+  hip-hop: #01777F,
+  kpop: #8807D7,
+  latin: #81E334,
+  reggae: #E3BF42,
+  news: #8F8D8D,
+  talk: #000000
+);
 
 // type scale
 $typescale-1: rem(12) !default;
@@ -331,7 +356,10 @@ $btn-border-radius: $input-btn-border-radius !default;
 $btn-font-weight: $font-weight-normal !default;
 $btn-disabled-opacity: 0.5 !default;
 
-$btn-transition: color 0.2s, background-color 0.2s, border-color 0.2s !default;
+$btn-transition:
+  color 0.2s,
+  background-color 0.2s,
+  border-color 0.2s !default;
 
 $btn-themes: (
   'primary': (
