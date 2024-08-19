@@ -9,6 +9,12 @@ $list-item-margin-bottom-sm: $spacing-3;
   &:not(:last-child) {
     margin-bottom: $list-item-margin-bottom;
   }
+
+  p:last-child {
+    a {
+      @include link-border;
+    }
+  }
 }
 
 .list--dividers {
