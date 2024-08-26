@@ -1,11 +1,11 @@
 .to-top-btn {
   color: $navy;
-  padding: $spacing-3;
+  padding: rem(14);
   background: $white;
   font-weight: $font-weight-medium;
   box-shadow: 0 0 8px rgba(#000, 0.2);
   position: fixed;
-  bottom: $spacing-2;
+  bottom: $spacing-8;
   right: $spacing-2;
   transition:
     transform 0.2s,
