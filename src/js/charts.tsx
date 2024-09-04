@@ -155,13 +155,13 @@ class MiddChart {
 
   setDefaultGlobals() {
     // Chart.defaults.global.elements.line.tension = 0;
-
-    Chart.defaults.global.defaultFontColor = '#222';
-    Chart.defaults.global.defaultFontFamily =
+    console.log(Chart);
+    Chart.defaults.color = '#222';
+    Chart.defaults.font.family =
       'Open Sans, arial, verdana, sans-serif';
-    Chart.defaults.global.defaultFontSize = 14;
+    Chart.defaults.font.size = 14;
 
-    Chart.defaults.doughnut.cutoutPercentage = 80;
+    Chart.overrides.doughnut.cutout = '80%';
   }
 
   getBaseOptions() {
@@ -231,38 +231,34 @@ class MiddChart {
 
     if (isAxisChart) {
       options.scales = {
-        xAxes: [
-          {
-            scaleLabel: {
-              display: Boolean(xLabel),
-              labelString: xLabel
-            },
-            // @ts-ignore
-            maxBarThickness,
-            ticks: {
-              suggestedMax: max,
-              suggestedMin: min,
-              beginAtZero: !min,
-              callback: xTickCallback
-            }
+        x: {
+          scaleLabel: {
+            display: Boolean(xLabel),
+            labelString: xLabel
+          },
+          // @ts-ignore
+          maxBarThickness,
+          ticks: {
+            suggestedMax: max,
+            suggestedMin: min,
+            beginAtZero: !min,
+            callback: xTickCallback
           }
-        ],
-        yAxes: [
-          {
-            scaleLabel: {
-              display: Boolean(yLabel),
-              labelString: yLabel
-            },
-            // @ts-ignore
-            maxBarThickness,
-            ticks: {
-              suggestedMax: max,
-              suggestedMin: min,
-              beginAtZero: !min,
-              callback: yTickCallback
-            }
+        },
+        y: {
+          scaleLabel: {
+            display: Boolean(yLabel),
+            labelString: yLabel
+          },
+          // @ts-ignore
+          maxBarThickness,
+          ticks: {
+            suggestedMax: max,
+            suggestedMin: min,
+            beginAtZero: !min,
+            callback: yTickCallback
           }
-        ]
+        }
       };
     }
 
@@ -357,7 +353,7 @@ class MiddChart {
       ]
     });
 
-    this.addLegend();
+    // this.addLegend();
   }
 
   addLegend() {
