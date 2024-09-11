@@ -33,6 +33,14 @@
 }
 
 .themed-panel__figure {
+  @include breakpoint(sm) {
+    margin: 0 $spacing-3;
+  }
+
+  @include breakpoint(lg) {
+    margin: 0 $spacing-5;
+  }
+
   img {
     @include breakpoint(xl) {
       object-fit: cover;
