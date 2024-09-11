@@ -128,17 +128,19 @@ utility_footer_nav:
 
 secondary_footer_nav:
   - text: About Middlebury
-    href: http://www.middlebury.edu/about
+    href: https://www.middlebury.edu/about
   - text: Giving
-    href: http://www.middlebury.edu/giving
+    href: https://www.middlebury.edu/giving
   - text: Employment
-    href: http://www.middlebury.edu/offices/business/hr/jobseeker
+    href: https://www.middlebury.edu/offices/business/hr/jobseeker
   - text: Offices and Services
-    href: http://www.middlebury.edu/office/
+    href: https://www.middlebury.edu/office/
   - text: Copyright
-    href: http://www.middlebury.edu/about/copyright
+    href: https://www.middlebury.edu/about/copyright
   - text: Privacy
-    href: http://www.middlebury.edu/about/privacy
+    href: https://www.middlebury.edu/about/privacy
+  - text: Emergency
+    href: https://www.middlebury.edu/emergency-response
   - text: Site-Editor login
     href: '#'
 
