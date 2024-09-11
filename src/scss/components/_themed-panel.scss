@@ -27,7 +27,7 @@
   }
 
   @include breakpoint(lg) {
-    @include h1;
+    font-size: $typescale-10;
     padding: $spacing-3 $spacing-5;
   }
 }
