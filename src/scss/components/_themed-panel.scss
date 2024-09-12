@@ -16,7 +16,7 @@
 }
 
 .themed-panel__title {
-  font-size: $typescale-6;
+  font-size: $typescale-8;
   font-weight: $font-weight-bold;
   color: $white;
   padding: $spacing-3;
@@ -99,7 +99,7 @@
 .themed-panel__subarticles {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
 
   @include breakpoint(md) {
     flex-direction: row;

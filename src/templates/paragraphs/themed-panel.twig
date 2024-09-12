@@ -1,4 +1,16 @@
 {% set id = random(1234) %}
+
+{# set count for number of subarticles and assign appropriate classname #}
+{% set count = 0 %}
+
+{% if count == 1 %}
+  {% set class = "col-md-5" %}
+{% elseif count == 0 %}
+  {% set class = "col-md-10" %}
+{% else %}
+  {% set class = "col-md-4" %}
+{% endif %}
+
 <div class="paragraph--themed-panel">
   <div class="container px-0">
 
@@ -25,8 +37,8 @@
           </article>
         </div>
         <div class="themed-panel__subarticles">
-          {% for item in 0..2 %}
-            <article class="col-auto col-md-4 themed-panel__subarticle" aria-labelledby="themed-panel-{{id}}-{{loop.index}}">
+          {% for item in 0..count %}
+            <article class="col-auto {{class}} themed-panel__subarticle" aria-labelledby="themed-panel-{{id}}-{{loop.index}}">
               <h3 class="themed-panel__heading" id="themed-panel-{{id}}-{{loop.index}}">
                 <a href="" class="text-white">24/7 Support</a>
               </h3>
