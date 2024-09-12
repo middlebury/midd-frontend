@@ -72,6 +72,7 @@
   }
 
   .themed-panel__article {
+    margin: auto;
     margin-top: -$spacing-7;
   }
 }
@@ -98,6 +99,7 @@
 .themed-panel__subarticles {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
 
   @include breakpoint(md) {
     flex-direction: row;
