@@ -70,7 +70,7 @@ interface ChartConfig {
    * The base axis of the dataset. 'x' for vertical bars and 'y' for horizontal bars.
    * https://www.chartjs.org/docs/latest/charts/bar.html#general
    */
-  axis: "x" | "y";
+  axis: 'x' | 'y';
 
   /**
    * Text title to display above chart.
@@ -150,6 +150,7 @@ class MiddChart {
     this.config = config;
 
     this.isGroupChart = config.datasets.length > 1;
+ 
     this.isCircleChart = config.type === 'pie' || config.type === 'doughnut';
 
     if (config.type === 'percentBar') {
@@ -185,9 +186,9 @@ class MiddChart {
     const maxBarThickness = this.isGroupChart ? 16 : 32;
     const isHorizontalBars = type === 'bar' && axis === 'y';
     const isAxisChart = isHorizontalBars || type === 'bar' || type === 'line';
-
+    
     const prefixTick = (value: any) => `${valuePrefix}${value}${valueSuffix}`;
-
+   
     const xTickCallback = isHorizontalBars ? prefixTick : (tick: any) => tick;
     const yTickCallback = isHorizontalBars ? (tick: any) => tick : prefixTick;
 
@@ -197,22 +198,27 @@ class MiddChart {
         duration: PREFERS_REDUCED_MOTION ? 0 : 1000
       },
       maintainAspectRatio: true,
-      legend: {
-        display: false // remove legend since we use html legend
-      },
-      tooltips: {
-        displayColors: false,
-        backgroundColor: '#fff',
-        titleFontColor: '#222',
-        titleFontSize: 16,
-        bodyFontColor: '#222',
-        bodyFontSize: 14,
-        yPadding: 8,
-        xPadding: 8,
-        caretSize: 0,
-        cornerRadius: 0,
-        borderWidth: 1,
-        borderColor: '#ccc'
+      plugins: {
+        legend: {
+          display: false // remove legend since we use html legend
+        },
+        tooltip: {
+          displayColors: false,
+          backgroundColor: '#fff',
+          titleColor: '#222',
+          titleFont: {
+            size: 16
+          },
+          bodyColor: '#222',
+          bodyFont: {
+            size: 14
+          },
+          padding: 8,
+          caretSize: 0,
+          cornerRadius: 0,
+          borderWidth: 1,
+          borderColor: '#ccc'
+        }
       },
       elements: {
         point: {
@@ -289,7 +295,7 @@ class MiddChart {
     this.el.classList.add('chart--loaded');
 
     const { labels, datasets, type, axis } = this.config;
-
+    
     this.el.classList.add('chart', `chart--${type}`);
 
     if (type === 'bar' || axis === 'y' || type === 'line') {
@@ -450,6 +456,6 @@ const els = $$('[data-chart]');
 els.forEach((el) => {
   const config = parseConfig(el);
   if (!config) return;
-  console.log(config);
+  // console.log(config);
   new MiddChart(el, config);
 });
