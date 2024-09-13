@@ -183,7 +183,7 @@ class MiddChart {
       yLabel
     } = this.config;
 
-    const maxBarThickness = this.isGroupChart ? 16 : 32;
+    // const maxBarThickness = this.isGroupChart ? 16 : 32;
     const isHorizontalBars = type === 'bar' && axis === 'y';
     const isAxisChart = isHorizontalBars || type === 'bar' || type === 'line';
     
@@ -191,6 +191,8 @@ class MiddChart {
    
     const xTickCallback = isHorizontalBars ? prefixTick : (tick: any) => tick;
     const yTickCallback = isHorizontalBars ? (tick: any) => tick : prefixTick;
+    // console.log(prefixTick);
+    // console.log(yTickCallback);
 
     const options: ChartOptions = {
       indexAxis: axis,
@@ -233,11 +235,13 @@ class MiddChart {
     };
 
     if (title !== '') {
-      options.title = {
+      options.plugins.title = {
         display: true,
         text: title,
-        fontSize: 14,
-        fontStyle: '500',
+        font: {
+          size: 14,
+          weight: '500'
+        },
         padding: 24
       };
     }
@@ -245,30 +249,30 @@ class MiddChart {
     if (isAxisChart) {
       options.scales = {
         x: {
-          scaleLabel: {
+          title: {
             display: Boolean(xLabel),
-            labelString: xLabel
+            text: xLabel
           },
           // @ts-ignore
-          maxBarThickness,
+          // maxBarThickness,
+          suggestedMax: max,
+          suggestedMin: min,
+          beginAtZero: !min,
           ticks: {
-            suggestedMax: max,
-            suggestedMin: min,
-            beginAtZero: !min,
             callback: xTickCallback
           }
         },
         y: {
-          scaleLabel: {
+          title: {
             display: Boolean(yLabel),
-            labelString: yLabel
+            text: yLabel
           },
           // @ts-ignore
-          maxBarThickness,
+          // maxBarThickness,
+          suggestedMax: max,
+          suggestedMin: min,
+          beginAtZero: !min,
           ticks: {
-            suggestedMax: max,
-            suggestedMin: min,
-            beginAtZero: !min,
             callback: yTickCallback
           }
         }
@@ -295,12 +299,14 @@ class MiddChart {
     this.el.classList.add('chart--loaded');
 
     const { labels, datasets, type, axis } = this.config;
-    
+    console.log(labels, datasets);
     this.el.classList.add('chart', `chart--${type}`);
 
     if (type === 'bar' || axis === 'y' || type === 'line') {
       this.el.classList.add('chart--axis');
     }
+
+    const maxBarThickness = this.isGroupChart ? 16 : 32;
 
     this.canvas = document.createElement('canvas');
     this.canvas.style.width = '500px';
@@ -320,11 +326,13 @@ class MiddChart {
           return {
             ...d,
             borderColor: type === 'line' ? color : 'white',
-            backgroundColor: color
+            backgroundColor: color,
+            maxBarThickness
           };
         }),
         labels
       },
+      // @ts-ignore
       options,
       plugins: [
         {
