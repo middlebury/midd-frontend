@@ -27,7 +27,7 @@
       </div>
 
       <div class="themed-panel__secondary">
-        {% if random(0) %}
+        {# {% if random(0) %} #}
           <div class="themed-panel__main-article">
             <article class="col-md-10 themed-panel__article" aria-labelledby="themed-panel-{{id}}-first">
               <h3 class="themed-panel__heading h2" id="themed-panel-{{id}}-first">
@@ -37,8 +37,8 @@
               <a href="#" class="button button--primary themed-panel__cta">Learn more</a>
             </article>
           </div>
-        {% endif %}
-        {# {% if random(0) %} #}
+        {# {% endif %} #}
+        {% if random(0) %}
           <div class="themed-panel__subarticles">
             {% for item in 0..count %}
               <article class="col-auto {{class}} themed-panel__subarticle" aria-labelledby="themed-panel-{{id}}-{{loop.index}}">
@@ -56,7 +56,7 @@
               </article>
             {% endfor %}
           </div>
-        {# {% endif %} #}
+        {% endif %}
       </div>
 
     </section>
