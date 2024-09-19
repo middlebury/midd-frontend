@@ -1,7 +1,7 @@
 {% set id = random(1234) %}
 
 {# set count for number of subarticles and assign appropriate classname #}
-{% set count = 2 %}
+{% set count = random(2) %}
 
 {% if count == 1 %}
   {% set class = "col-md-5" %}
@@ -27,7 +27,7 @@
       </div>
 
       <div class="themed-panel__secondary">
-        {# {% if random(0) %} #}
+        {% if random(0) %}
           <div class="themed-panel__main-article">
             <article class="col-md-10 themed-panel__article" aria-labelledby="themed-panel-{{id}}-first">
               <h3 class="themed-panel__heading h2" id="themed-panel-{{id}}-first">
@@ -37,7 +37,7 @@
               <a href="#" class="button button--primary themed-panel__cta">Learn more</a>
             </article>
           </div>
-        {# {% endif %} #}
+        {% endif %}
         {% if random(0) %}
           <div class="themed-panel__subarticles">
             {% for item in 0..count %}
