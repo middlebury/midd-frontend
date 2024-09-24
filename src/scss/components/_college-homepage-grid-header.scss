@@ -8,7 +8,12 @@ $text-colors: (
   4: #0d395f
 );
 
-// Animation names have the homepage prefix for names to not match other animation names in the project
+$accessible-text-colors: (
+  1: #407AB0,
+  2: #737C13,
+  3: #B55F30
+);
+
 @keyframes homepageFadeInOut {
   0%,
   100% {
@@ -260,6 +265,14 @@ $text-colors: (
         strong {
           animation-delay: #{($homepage-animation-sub-duration) * ($i - 1)}s;
           animation-name: homepageColorFadeInOut#{$i};
+        }
+      }
+
+      &:nth-child(#{$i}) {
+        @media (prefers-reduced-motion: reduce) {
+          strong, p {
+            color: map-get($accessible-text-colors, $i);
+          }
         }
       }
     }
