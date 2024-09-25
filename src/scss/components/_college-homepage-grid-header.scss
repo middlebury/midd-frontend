@@ -8,10 +8,11 @@ $text-colors: (
   4: #0d395f
 );
 
+// Accessible versions of the text colors listed above with right contrast ratios
 $accessible-text-colors: (
-  1: #407AB0,
-  2: #737C13,
-  3: #B55F30
+  1: #407ab0,
+  2: #737c13,
+  3: #b55f30
 );
 
 @keyframes homepageFadeInOut {
@@ -336,6 +337,14 @@ $accessible-text-colors: (
   .homepage-title--play-button,
   .homepage-title--replay-button {
     display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .homepage-title--pause-button,
+  .homepage-title--play-button,
+  .homepage-title--replay-button {
+    display: none !important;
   }
 }
 
