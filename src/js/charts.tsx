@@ -180,7 +180,8 @@ class MiddChart {
       max,
       min,
       xLabel,
-      yLabel
+      yLabel,
+      labels
     } = this.config;
 
     // const maxBarThickness = this.isGroupChart ? 16 : 32;
@@ -189,10 +190,8 @@ class MiddChart {
     
     const prefixTick = (value: any) => `${valuePrefix}${value}${valueSuffix}`;
    
-    const xTickCallback = isHorizontalBars ? prefixTick : (tick: any) => tick;
-    const yTickCallback = isHorizontalBars ? (tick: any) => tick : prefixTick;
-    // console.log(prefixTick);
-    // console.log(yTickCallback);
+    const xTickCallback = isHorizontalBars ? prefixTick : (tick: any) => labels[tick];
+    const yTickCallback = isHorizontalBars ? (tick: any) => labels[tick] : prefixTick;
 
     const options: ChartOptions = {
       indexAxis: axis,
@@ -299,7 +298,7 @@ class MiddChart {
     this.el.classList.add('chart--loaded');
 
     const { labels, datasets, type, axis } = this.config;
-    console.log(labels, datasets);
+    // console.log(labels, datasets);
     this.el.classList.add('chart', `chart--${type}`);
 
     if (type === 'bar' || axis === 'y' || type === 'line') {
@@ -374,7 +373,7 @@ class MiddChart {
       ]
     });
 
-    // this.addLegend();
+    this.addLegend();
   }
 
   addLegend() {
