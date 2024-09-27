@@ -370,7 +370,7 @@ class MiddChart {
 
     // add html legend
     const legend = this.chart.generateLegend() as string; // returned type for generatedLegend is wrong?
-    // console.log(legend);
+    console.log(legend);
     const legendtag = document.createElement('div');
     legendtag.innerHTML = legend;
 
