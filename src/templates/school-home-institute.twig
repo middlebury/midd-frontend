@@ -79,7 +79,13 @@
 
 	{% include 'paragraphs/quad-story.twig' %}
 
-	{% include 'paragraphs/themed-panel.twig' %}
+	{% include 'paragraphs/themed-panel.twig' with {
+    main_title: true,
+    main_article: true,
+    main_article_cta: true,
+    main_article_title_link: false,
+    subarticles: 3,
+  }%}
 {% endblock %}
 
 {% block layout_footer %}

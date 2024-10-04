@@ -1,11 +1,11 @@
 {% set id = random(1234) %}
 
 {# set count for number of subarticles and assign appropriate classname #}
-{% set count = random(2) %}
+{% set count = subarticles %}
 
-{% if count == 1 %}
+{% if count == 2 %}
   {% set class = "col-md-5" %}
-{% elseif count == 0 %}
+{% elseif count == 1 %}
   {% set class = "col-md-10" %}
 {% else %}
   {% set class = "col-md-4" %}
@@ -18,7 +18,9 @@
 
       <div class="themed-panel__main">
 
-        <h2 class="themed-panel__title" id="themed-panel-{{id}}-title">Sustainability and other things that go on and on</h2>
+        {% if main_title %}
+          <h2 class="themed-panel__title" id="themed-panel-{{id}}-title">Sustainability and other things that go on and on</h2>
+        {% endif %}
         <figure class="themed-panel__figure">
           {% include 'partials/img.twig' with {
             name: 'spotlight'
@@ -27,29 +29,35 @@
       </div>
 
       <div class="themed-panel__secondary">
-        {% if random(1) %}
+        {% if main_article %}
           <div class="themed-panel__main-article">
             <article class="col-md-10 themed-panel__article" aria-labelledby="themed-panel-{{id}}-first">
               <h3 class="themed-panel__heading h2" id="themed-panel-{{id}}-first">
-                <a href="">Lorem ipsum dolor sit amet consectetur adipisicing</a>
+                {% if main_article_title_link %}
+                  <a href="">Lorem ipsum dolor sit amet consectetur adipisicing</a>
+                {% else %}
+                  Lorem ipsum dolor sit amet consectetur adipisicing
+                {% endif %}
               </h3>
-              <p class="themed-panel__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam dicta nihil reiciendis laboriosam, exercitationem harum numquam rem sint laudantium ducimus optio provident voluptate obcaecati reprehenderit voluptates illum dignissimos corrupti!</p>
-              <a href="#" class="button button--primary themed-panel__cta">Learn more</a>
+              <p class="themed-panel__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam dicta nihil reiciendis laboriosam, exercitationem harum numquam rem sint laudantium ducimus <a href="#">optio provident voluptate</a> obcaecati reprehenderit voluptates illum dignissimos corrupti!</p>
+              {% if main_article_cta %}
+                <a href="#" class="button button--primary themed-panel__cta">Learn more</a>
+              {% endif %}
             </article>
           </div>
         {% endif %}
-        {% if random(1) %}
+        {% if subarticles > 0 %}
           <div class="themed-panel__subarticles">
-            {% for item in 0..count %}
+            {% for item in 0..subarticles - 1  %}
               <article class="col-auto {{class}} themed-panel__subarticle" aria-labelledby="themed-panel-{{id}}-{{loop.index}}">
                 <h3 class="themed-panel__heading" id="themed-panel-{{id}}-{{loop.index}}">
                   <a href="" class="text-white">24/7 Support</a>
                 </h3>
                 <p class="themed-panel__text">
                 {% if random(1) %}
-                  Lorem ipsum dolor sit amet consectetur adipisicing ipsum dolor sit amet consectetur adipisicing elit.
+                  Lorem ipsum dolor sit amet consectetur adipisicing ipsum dolor sit amet <a href="#">consectetur adipisicing</a> elit.
                 {% else %}
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quo optio quia molestias ipsa debitis, accusamus tempore quaerat eveniet, perspiciatis, natus provident saepe ducimus placeat dignissimos nemo delectus pariatur nesciunt! Earum eveniet qui provident ad aliquam, assumenda reprehenderit fugit recusandae, est cum deleniti, dolore corrupti doloremque magni. Laboriosam accusantium natus rem adipisci.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quo optio quia molestias ipsa debitis, accusamus tempore quaerat eveniet, perspiciatis, natus provident saepe ducimus placeat dignissimos nemo <a href="#">delectus pariatur</a> nesciunt! Earum eveniet qui provident ad aliquam, assumenda reprehenderit fugit recusandae, est cum deleniti, dolore corrupti doloremque magni. Laboriosam accusantium natus rem adipisci.
                 {% endif %}
                 </p>
                 <a href="" class="button button--light button--outline themed-panel__cta">Read more</a>
