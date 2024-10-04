@@ -94,8 +94,13 @@
 }
 
 .chart-legend__item {
-  font-size: $typescale-2;
+  display: flex;
+  align-items: center;
   margin-bottom: $spacing-1;
+
+  &, p {
+    font-size: $typescale-2;
+  }
 }
 
 .chart-legend__icon {

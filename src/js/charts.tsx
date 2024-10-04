@@ -385,8 +385,8 @@ class MiddChart {
     }
 
     // add html legend
-    // const legend = this.chart.generateLegend() as string; // returned type for generatedLegend is wrong?
-    // console.log(legend);
+    const legendItems = this.chart.options.plugins.legend.labels.generateLabels(this.chart); // returned type for generatedLegend is wrong?
+    console.log(legendItems);
     const legendtag = document.createElement('div');
     // legendtag.innerHTML = legend;
 
@@ -396,6 +396,30 @@ class MiddChart {
       legendtag.classList.add('chart-legend--inline');
     }
 
+    const ul = document.createElement('ul');
+
+    legendItems.forEach((item: any) => {
+      const li = document.createElement('li');
+
+      // color box
+      const boxSpan = document.createElement('span');
+      boxSpan.style.background = item.fillStyle;
+
+      // text
+      const textContainer = document.createElement('p');
+      textContainer.style.color = item.fontColor;
+      textContainer.style.margin = '0';
+      textContainer.style.padding = '0';
+
+      const text = document.createTextNode(item.text);
+      textContainer.appendChild(text);
+
+      li.appendChild(boxSpan);
+      li.appendChild(textContainer);
+      ul.appendChild(li);
+    });
+
+    legendtag.appendChild(ul);
     legendtag.querySelector('ul')?.classList.add('chart-legend__list');
     legendtag.querySelectorAll('li').forEach((li) => {
       li.classList.add('chart-legend__item');
