@@ -30,10 +30,10 @@
   },
   "devDependencies": {
     "@ronilaukkarinen/gulp-stylelint": "^14.1.2",
-    "@types/chart.js": "^2.9.41",
-    "@types/clamp-js-main": "^0.11.2",
     "@types/anchor-js": "^5.0.0",
     "@types/animejs": "^3.1.4",
+    "@types/chart.js": "^2.9.41",
+    "@types/clamp-js-main": "^0.11.2",
     "@types/headroom.js": "^0.12.0",
     "@types/lodash": "^4.17.1",
     "@types/lozad": "^1.16.1",
@@ -83,7 +83,7 @@
   "dependencies": {
     "anchor-js": "^5.0.0",
     "animejs": "^3.2.1",
-    "chart.js": "^3.9.1",
+    "chart.js": "^4.4.4",
     "clamp-js-main": "^0.11.6",
     "focus-within-polyfill": "^5.2.1",
     "headroom.js": "^0.12.0",

@@ -27,7 +27,6 @@ const ALLOW_CHART_TYPES = [
   'pie',
   'doughnut',
   'bar',
-  // 'horizontalBar',
   'line',
   'percentBar' // custom Preact component
 ];
@@ -70,7 +69,7 @@ interface ChartConfig {
    * The base axis of the dataset. 'x' for vertical bars and 'y' for horizontal bars.
    * https://www.chartjs.org/docs/latest/charts/bar.html#general
    */
-  axis: 'x' | 'y' | string;
+  axis: 'x' | 'y';
 
   /**
    * Text title to display above chart.
@@ -240,7 +239,7 @@ class MiddChart {
         text: title,
         font: {
           size: 14,
-          weight: '500'
+          weight: 500
         },
         padding: 24
       };
@@ -299,7 +298,6 @@ class MiddChart {
     this.el.classList.add('chart--loaded');
 
     const { labels, datasets, type, axis } = this.config;
-    // console.log(labels, datasets);
     this.el.classList.add('chart', `chart--${type}`);
 
     if (type === 'bar' || axis === 'y' || type === 'line') {
@@ -387,7 +385,7 @@ class MiddChart {
 
     // add html legend
     const legendItems = this.chart.options.plugins.legend.labels.generateLabels(this.chart); // returned type for generatedLegend is wrong?
-    console.log(legendItems);
+
     const legendtag = document.createElement('div');
     // legendtag.innerHTML = legend;
 
@@ -474,6 +472,7 @@ function parseConfig(el: HTMLElement): ChartConfig | void {
     datasets: parseJsonData(datasets),
     labels: parseJsonData(labels),
     type: chart,
+    // @ts-ignore
     axis,
     title,
     valuePrefix,
@@ -488,6 +487,6 @@ const els = $$('[data-chart]');
 els.forEach((el) => {
   const config = parseConfig(el);
   if (!config) return;
-  // console.log(config);
+  
   new MiddChart(el, config);
 });
