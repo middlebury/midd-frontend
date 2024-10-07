@@ -70,7 +70,7 @@ interface ChartConfig {
    * The base axis of the dataset. 'x' for vertical bars and 'y' for horizontal bars.
    * https://www.chartjs.org/docs/latest/charts/bar.html#general
    */
-  axis: 'x' | 'y';
+  axis: 'x' | 'y' | string;
 
   /**
    * Text title to display above chart.
@@ -167,6 +167,7 @@ class MiddChart {
       'Open Sans, arial, verdana, sans-serif';
     Chart.defaults.font.size = 14;
 
+    // @ts-ignore
     Chart.overrides.doughnut.cutout = '80%';
   }
 
