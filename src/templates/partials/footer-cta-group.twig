@@ -1,9 +1,10 @@
-<div class="{{background_light ? 'footer-cta-light' : 'bg-blue-lighter'}} py-lg-7 text-center border-t border-navy" role="region" aria-labelledby="midd-footer-cta-label">
+<div class="{{background_light ? 'footer-cta-light' : 'bg-blue-lighter'}} py-lg-7 text-center border-t border-navy" role="region" {% if title %} aria-labelledby="midd-footer-cta-label" {% else %} aria-label="More Actions"{% endif %}>
   <div class="container">
-    <h2 class="h2 pt-4 pt-md-5 pt-lg-0 mb-lg-7" id="midd-footer-cta-label">
-      What do you want?
-    </h2>
-
+    {% if title %}
+      <h2 class="h2 pt-4 pt-md-5 pt-lg-0 mb-lg-7" id="midd-footer-cta-label">
+        {{title}}
+      </h2>
+    {% endif %}
     <div class="cta-group">
       {% for i in 0..3 %}
         <div class="cta-group__item {{background_light ? 'blue-border' : ''}}">
