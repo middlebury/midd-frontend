@@ -218,7 +218,13 @@ class MiddChart {
           caretSize: 0,
           cornerRadius: 0,
           borderWidth: 1,
-          borderColor: '#ccc'
+          borderColor: '#ccc',
+          callbacks: {
+            label: (context) => {
+              // console.log(context);
+              return `${context.dataset.label}: ${context.raw}${valueSuffix}`;
+            }
+          }
         }
       },
       elements: {
