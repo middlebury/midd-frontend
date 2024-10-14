@@ -221,7 +221,6 @@ class MiddChart {
           borderColor: '#ccc',
           callbacks: {
             label: (context) => {
-              // console.log(context);
               return `${context.dataset.label}: ${context.raw}${valueSuffix}`;
             }
           }

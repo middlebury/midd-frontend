@@ -58,6 +58,14 @@
   margin-right: 0;
 }
 
+.chart--percentage-bar {
+  figcaption {
+    font-size: $typescale-2;
+    font-weight: $font-weight-medium;
+    text-align: center;
+    padding: $spacing-4;
+  }
+}
 ///
 //// Chart legend
 ///
