@@ -6,16 +6,15 @@
     {% set id = random(1234) %}
 
     <div class="accordion-item js-accordion-item-{{id}}{{ item.current ? " accordion-item-current" : "" }}{{ item.upcoming ? " accordion-item-upcoming" : "" }}">
-      <h3 class="accordion-item__title" role="tab">
-        <a
-          href="#midd-accordion-item-label-{{id}}"
-          class="accordion-item__link"
-          data-toggle-target=".js-accordion-item-{{id}}"
-          aria-expanded="false"
-          aria-controls="midd-accordion-content-{{id}}"
-          aria-labelledby="midd-accordion-item-label-{{id}}"
-          role="button"
-        >
+      <a 
+        href="#midd-accordion-item-label-{{id}}"
+        class="accordion-item__link"
+        data-toggle-target=".js-accordion-item-{{id}}"
+        aria-expanded="false"
+        aria-controls="midd-accordion-content-{{id}}"
+        aria-labelledby="midd-accordion-item-label-{{id}}"
+        role="tab">
+        <h3 class="accordion-item__title">
           {% if faq %}
             <span class="accordion-item__char" aria-hidden>Q</span>
             <span class="accordion-item__label" id="midd-accordion-item-label-{{id}}">{{item.title}}</span>
@@ -27,8 +26,8 @@
           {% endif %}
 
           {% include 'partials/icon.twig' with { name: 'chevron-down', class: 'accordion-item__icon' } %}
-        </a>
-      </h3>
+        </h3>
+      </a>
 
       <div class="accordion-item__content{{course_list ? "--column" : ""}}" id="midd-accordion-content-{{id}}" role="tabpanel" aria-labelledby="midd-accordion-item-label-{{id}}">
         {% if faq %}
