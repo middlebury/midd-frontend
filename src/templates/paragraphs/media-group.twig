@@ -2,28 +2,27 @@
   <div class="paragraphs--wide__offset">
     <div class="section__header">
       <h2 class="section__title">
-        Video group
+        {{title}}
       </h2>
       <p class="section__text">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus
-        quam optio ratione labore possimus iusto corrupti vero fugiat explicabo
-        officiis ex, a sunt obcaecati molestias voluptate eum earum ipsam
-        accusantium.
+        {{blurb}}
       </p>
     </div>
   </div>
 
   <div class="row">
-    {% for item in 1..5 %}
+    {% for item in 1..items %}
       <div class="col-md-6 mb-7">
-        {% if media_type == 'video' %}
+        {% if media_content_type == 'video' %}
           {% include 'partials/video.twig' with {
             id: loop.index
           } %}
-        {% elseif media_type == 'audio' %}
+        {% elseif media_content_type == 'audio' %}
           {% include 'paragraphs/audio.twig' %}
-        {% elseif media_type == 'image' %}
-          {% include 'paragraphs/image-with-text.twig' %}
+        {% elseif media_content_type == 'image' %}
+          {% include 'partials/image-with-caption.twig' with {
+            name: 'schedule'
+          } %}
         {% endif %}
       </div>
     {% endfor %}
