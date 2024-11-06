@@ -33,13 +33,12 @@
 	</div>
 
   {% include 'paragraphs/media-group.twig' with {
-    title: 'Image group',
+    title: 'Media group',
     blurb: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus
         quam optio ratione labore possimus iusto corrupti vero fugiat explicabo
         officiis ex, a sunt obcaecati molestias voluptate eum earum ipsam
         accusantium.',
-    media_content_type: 'image',
-    items: 5
+    media_content_items: ['video', 'image', 'image', 'audio', 'video']
   } %}
 
 	{# {% include 'paragraphs/video-group.twig' %} #}

@@ -11,15 +11,13 @@
   </div>
 
   <div class="row">
-    {% for item in 1..items %}
+    {% for item in media_content_items %}
       <div class="col-md-6 mb-7">
-        {% if media_content_type == 'video' %}
-          {% include 'partials/video.twig' with {
-            id: loop.index
-          } %}
-        {% elseif media_content_type == 'audio' %}
+        {% if item == 'video' %}
+          {% include 'partials/video.twig' %}
+        {% elseif item == 'audio' %}
           {% include 'paragraphs/audio.twig' %}
-        {% elseif media_content_type == 'image' %}
+        {% elseif item == 'image' %}
           {% include 'partials/image-with-caption.twig' with {
             name: 'schedule'
           } %}
