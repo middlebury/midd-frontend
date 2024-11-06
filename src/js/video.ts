@@ -1,4 +1,4 @@
-import { on, off, $, $$ } from './utils/dom';
+import { on, $, $$ } from './utils/dom';
 import decodeHtml from './utils/decode-html';
 import { onOutOfElementView } from './utils/on-element-out-of-view';
 
