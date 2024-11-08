@@ -42,3 +42,28 @@
   transition: opacity 0.2s;
   background: $white;
 }
+
+.cta-bar.link-list {
+  a {
+    color: $white;
+    margin-left: $spacing-3;
+    padding-left: $spacing-3;
+    font-size: $typescale-2;
+    border-left: 1px solid $gray;
+  }
+
+  ul a {
+    margin: 0;
+    border-left: 0;
+  }
+
+  &:hover,
+  &:focus {
+    background: $navy;
+
+    .cta-bar__text,
+    .cta-bar__button {
+      opacity: 1;
+    }
+  }
+}
