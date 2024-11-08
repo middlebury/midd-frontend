@@ -1,4 +1,29 @@
-<a href="{{ link }}" class="cta-bar">
-  <span class="cta-bar__text">{{ text }}</span>
-  <span class="cta-bar__button button button--sm">{{ button }}</span>
-</a>
+{% if cci %}
+  <a href="{{ link }}" class="cta-bar">
+    <span class="cta-bar__text">{{ text }}</span>
+    <span class="cta-bar__button button button--sm">{{ button }}</span>
+  </a>
+{% else %}
+  <div class="cta-bar">
+    {% for name in links %}
+      <div role="cell">
+        <strong class="f2 d-block">{{ name }}</strong>
+        {% if name == 'Links' %}
+          <ul class="f2">
+            <li>
+              <a href="#" class="link-underline">Curriculum Vitae</a>
+            </li>
+            <li>
+              <a href="#" class="link-underline">aaronsmithisthebest.com</a>
+            </li>
+          </ul>
+        {% else %}
+          {% include 'partials/social-links.twig' with {
+            items: social_links
+          } %}
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+

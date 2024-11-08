@@ -1,4 +1,4 @@
-{% extends "anchor-layout.twig" %}
+{% extends 'anchor-layout.twig' %}
 
 {% set page_header = {
   title: 'Top level without image',
@@ -8,6 +8,21 @@
   ],
   has_menu: true
 } %}
+
+{% block before_page_header %}
+  {% include 'partials/cta-bar.twig' with {
+    link: 'https://admissions.middlebury.edu/portal/status',
+    text: 'Check your application',
+    button: 'Applicant Portal'
+  } %}
+{% endblock %}
+
+{# {% block layout_header %}
+  {% include 'partials/midd-header.twig' %}
+  {% include 'partials/anchor-header.twig' with {
+    cta_bar: true
+  }%}
+{% endblock %} #}
 
 {% block page %}
   {% include 'partials/top-level-layout.twig' with {
