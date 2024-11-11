@@ -1,19 +1,19 @@
 {% if cci %}
-  <a href="{{ link }}" class="cta-bar">
+  <div class="cta-bar link-list">
+    <div class="cta-bar__links">
+      <a class="cta-bar__link" href="#">Appointments and Drop-Ins</a>
+      <a class="cta-bar__link" href="#">Handshake</a>
+      <a class="cta-bar__link" href="#">Midd2Midd</a>
+      <a class="cta-bar__link" href="#">Hire a MiddKid</a>
+    </div>
+    {% include 'partials/social-links.twig' with {
+      light: true,
+      class: 'cta-bar__social-links'
+    } %}
+  </div>
+{% else %}
+  <a href="{{ link }}" class="cta-bar"> 
     <span class="cta-bar__text">{{ text }}</span>
     <span class="cta-bar__button button button--sm">{{ button }}</span>
   </a>
-{% else %}
-  <div class="cta-bar link-list">
-    {# <div class="d-flex"> #}
-      {% include 'partials/social-links.twig' with {
-        light: true,
-        large: true
-      } %}
-      <a href="#">Appointments and Drop-Ins</a>
-      <a href="#">Handshake</a>
-      <a href="#">Midd2Midd</a>
-      <a href="#">Hire a MiddKid</a>
-    {# </div> #}
-  </div>
 {% endif %}

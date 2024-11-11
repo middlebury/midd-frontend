@@ -10,6 +10,14 @@
   @media print {
     border-bottom: 0;
   }
+
+  &.anchor-header--cta-bar {
+    padding-top: $spacing-3;
+
+    @include breakpoint(lg) {
+      padding-top: $spacing-4;
+    }
+  }
 }
 
 .anchor-header--front {

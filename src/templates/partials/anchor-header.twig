@@ -1,10 +1,11 @@
 {% set is_front = false %}
-<section class="anchor-header{% if is_front %} anchor-header--front{% endif %}" aria-labelledby="midd-anchor-header-label">
+<section class="anchor-header{% if is_front %} anchor-header--front{% endif %} {{cta_bar ? 'anchor-header--cta-bar' : ''}}" aria-labelledby="midd-anchor-header-label">
   {% if cta_bar %}
     {% include 'partials/cta-bar.twig' with {
       link: 'https://admissions.middlebury.edu/portal/status',
       text: 'Check your application',
-      button: 'Applicant Portal'
+      button: 'Applicant Portal',
+      cci: true
     } %}
   {% endif %}
   <div class="container">
@@ -15,7 +16,7 @@
       {% else %}
         <p class="anchor-header__title" id="midd-anchor-header-label">
       {% endif %}
-        <a href="" class="anchor-header__link">{{page_title|default('Student Financial Services')}}</a>
+        <a href="" class="anchor-header__link">{{page_title}}</a>
       {% if is_front %}
         </h1>
       {% else %}

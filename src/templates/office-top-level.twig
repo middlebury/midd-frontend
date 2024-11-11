@@ -9,20 +9,21 @@
   has_menu: true
 } %}
 
-{% block before_page_header %}
+{# {% block before_page_header %}
   {% include 'partials/cta-bar.twig' with {
     link: 'https://admissions.middlebury.edu/portal/status',
     text: 'Check your application',
-    button: 'Applicant Portal'
+    button: 'Applicant Portal',
+    cci: true
   } %}
-{% endblock %}
+{% endblock %} #}
 
-{# {% block layout_header %}
+{% block layout_header %}
   {% include 'partials/midd-header.twig' %}
   {% include 'partials/anchor-header.twig' with {
     cta_bar: true
   }%}
-{% endblock %} #}
+{% endblock %}
 
 {% block page %}
   {% include 'partials/top-level-layout.twig' with {
