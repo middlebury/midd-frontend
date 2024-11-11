@@ -65,7 +65,7 @@
     "gulp-twig": "^1.2.0",
     "js-yaml": "^4.1.0",
     "node-sass": "^9.0.0",
-    "postcss": "^8.4.41",
+    "postcss": "^8.4.49",
     "prettier": "^3.3.0",
     "prettier-plugin-twig-melody": "^0.4.6",
     "sort-css-media-queries": "^2.0.4",
