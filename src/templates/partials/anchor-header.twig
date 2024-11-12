@@ -1,5 +1,5 @@
-{% set is_front = false %}
-<section class="anchor-header{% if is_front %} anchor-header--front{% endif %} {{cta_bar ? 'anchor-header--cta-bar' : ''}}" aria-labelledby="midd-anchor-header-label">
+{% set is_front = true %}
+<section class="anchor-header{% if is_front %} anchor-header--front{% endif %}" aria-labelledby="midd-anchor-header-label">
   {% if cta_bar %}
     {% include 'partials/cta-bar.twig' with {
       link: 'https://admissions.middlebury.edu/portal/status',
