@@ -110,8 +110,18 @@
     is_front: true
   }%}
     {% block anchor_header_content %}
-      {% include 'partials/cta-bar.twig' with {
-        cci: true
+      {% include 'partials/info-bar.twig' with {
+        class: 'link-list',
+        items: [
+          { text: '<a href="#">Appointments and Drop-Ins</a>' },
+          { text: '<a href="#">Handshake</a>' },
+          { text: '<a href="#">Midd2Midd</a>' },
+          { text: '<a href="#">Hire a MiddKid</a>' }
+        ],
+        show_social_links: {
+          dark: true,
+          items: ['linkedin', 'instagram', 'youtube', 'facebook']
+        }
       } %}
     {% endblock %}
   {% endembed %}
