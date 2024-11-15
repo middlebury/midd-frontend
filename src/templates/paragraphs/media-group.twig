@@ -12,14 +12,14 @@
 
   <div class="row">
     {% for item in media_content_items %}
-      <div class="col-md-6 mb-7">
+      <div class="col-md-6 mb-7 d-flex{{loop.index % 2 == 0 ? '' : ' justify-content-md-end'}} align-items-start">
         {% if item == 'video' %}
           {% include 'partials/video.twig' %}
         {% elseif item == 'audio' %}
           {% include 'paragraphs/audio.twig' %}
         {% elseif item == 'image' %}
           {% include 'partials/image-with-caption.twig' with {
-            name: 'schedule'
+            name: 'media_group'
           } %}
         {% endif %}
       </div>
