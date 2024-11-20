@@ -1,13 +1,19 @@
 {% extends "anchor-layout.twig" %}
 
-{% set is_front = true %}
+{% set is_front = false %}
 {% set page_title = 'Library' %}
 
 {% block layout_header %}
   {% include 'partials/midd-header.twig' %}
   {% embed 'partials/anchor-header.twig' %}
     {% block anchor_header_content %}
-      {% include 'partials/office-hours.twig' %}
+      {% include 'partials/info-bar.twig' with {
+        items: [
+          { text: '<strong>Davis Family Library: </strong> 9 a.m.-5 p.m.' },
+          { text: '<strong>Armstrong Library: </strong> 9 a.m.-5 p.m.' },
+          { text: '<a href="" class="link-underline">View Library hours</a>' }
+        ]
+      } %}
     {% endblock %}
   {% endembed %}
 {% endblock %}
