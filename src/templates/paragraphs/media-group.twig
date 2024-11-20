@@ -12,14 +12,15 @@
 
   <div class="row">
     {% for item in media_content_items %}
-      <div class="col-md-6 mb-7 d-flex{{loop.index % 2 == 0 ? '' : ' justify-content-md-end'}} align-items-start">
+      <div class="col-md-6 mb-7 {{loop.index % 2 == 0 ? 'pl-lg-4' : 'pr-lg-4'}}">
         {% if item == 'video' %}
           {% include 'partials/video.twig' %}
         {% elseif item == 'audio' %}
           {% include 'paragraphs/audio.twig' %}
         {% elseif item == 'image' %}
           {% include 'partials/image-with-caption.twig' with {
-            name: 'media_group'
+            name: 'media_group',
+            class: loop.index % 2 == 1 ? 'float-md-right' : ''
           } %}
         {% endif %}
       </div>
