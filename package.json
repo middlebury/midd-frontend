@@ -35,7 +35,7 @@
     "@types/chart.js": "^2.9.41",
     "@types/clamp-js-main": "^0.11.2",
     "@types/headroom.js": "^0.12.0",
-    "@types/lodash": "^4.17.1",
+    "@types/lodash": "^4.17.13",
     "@types/lozad": "^1.16.1",
     "@types/micromodal": "^0.3.3",
     "@types/pikaday": "^1.7.5",
@@ -44,7 +44,7 @@
     "bundlesize": "^0.18.2",
     "css-mqpacker": "^7.0.0",
     "cssnano": "^7.0.5",
-    "del": "^7.0.0",
+    "del": "^8.0.0",
     "dotenv": "^16.4.5",
     "gh-pages": "^6.0.0",
     "gulp": "^5.0.0",
@@ -52,7 +52,7 @@
     "gulp-dom": "^1.0.0",
     "gulp-if": "^3.0.0",
     "gulp-imagemin": "^9.1.0",
-    "gulp-notify": "^4.0.0",
+    "gulp-notify": "^5.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^10.0.0",
     "gulp-prettify": "^0.5.0",
@@ -66,7 +66,7 @@
     "gulp-twig": "^1.2.0",
     "js-yaml": "^4.1.0",
     "node-sass": "^9.0.0",
-    "postcss": "^8.4.41",
+    "postcss": "^8.4.49",
     "prettier": "^3.3.0",
     "prettier-plugin-twig-melody": "^0.4.6",
     "sort-css-media-queries": "^2.0.4",
@@ -75,7 +75,7 @@
     "stylelint-prettier": "~4.1.0",
     "ts-loader": "^9.4.2",
     "typescript": "^5.5.2",
-    "webpack": "^5.94.0",
+    "webpack": "^5.96.1",
     "webpack-bundle-analyzer": "^4.10.1",
     "webpack-stream": "^7.0.0",
     "yargs": "^17.6.2"
@@ -101,7 +101,7 @@
     "promise-polyfill": "^8.3.0",
     "stickybits": "^3.7.9",
     "superclamp": "^0.2.3",
-    "swiper": "^11.1.10"
+    "swiper": "11.1.14"
   },
   "bundlesize": [
     {
