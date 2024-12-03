@@ -40,7 +40,6 @@ class VideoSwap {
 
   /** iframe string encoded from server */
   iframe: string | null;
-  iframeLabel: string | null;
 
   constructor(elem: HTMLElement) {
     this.elem = elem;
@@ -48,7 +47,6 @@ class VideoSwap {
     this.content = $('.js-video-content', elem);
     this.link = $('.js-video-link', elem);
     this.iframe = elem.getAttribute('data-video');
-    this.iframeLabel = elem.getAttribute('data-video-label');
 
     this.activeClass = 'has-video';
 
@@ -92,8 +90,6 @@ class VideoSwap {
     if (this.content) {
       this.content.innerHTML = html || this.iframe;
       $('iframe', this.content).ariaLabel = 'Video player';
-      // this.content.ariaLabel = 'Video player';
-      console.log(this.content);
     }
 
     onOutOfElementView(this.elem, () => {
