@@ -86,7 +86,14 @@
     }
 
     &:last-child {
+      @include breakpoint(md) {
+        margin-right: 0;
+        padding-right: 0;
+      }
+
       @include breakpoint(lg) {
+        margin-right: $spacing-5;
+        padding-right: $spacing-5;
         border-right: 1px solid $border-color;
       }
     }
@@ -96,7 +103,7 @@
     }
   }
 
-  ul.link-list {
+  ul.d-inline-flex {
     li:first-child {
       a {
         padding-left: 0 !important;
