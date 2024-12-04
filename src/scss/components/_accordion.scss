@@ -23,23 +23,27 @@
   align-self: flex-start;
 }
 
-.accordion-item__title {
-  font-size: $typescale-4;
-  font-family: $font-family-sans-serif;
-  line-height: $line-height-body;
-}
-
 .accordion-item__link {
-  display: flex;
-  justify-content: space-between;
   color: $link-color;
-  padding: $spacing-3;
   font-size: $typescale-4;
-  transition: background-color 0.2s;
   cursor: pointer;
 
   &:hover {
     text-decoration: none;
+  }
+}
+
+.accordion-item__title {
+  display: flex;
+  justify-content: space-between;
+  font-size: $typescale-4;
+  font-family: $font-family-sans-serif;
+  line-height: $line-height-body;
+  padding: $spacing-3;
+  transition: background-color 0.2s;
+
+  &:hover, 
+  &:focus {
     background-color: $gray-lighter;
   }
 }
