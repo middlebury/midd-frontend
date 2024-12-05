@@ -1,12 +1,10 @@
 <div class="info-bar {{info_bar_class}}">
   <div class="container">
-    <div class="info-bar__list">
+    <ul class="info-bar__list">
       {% for item in items %}
-        <div class="info-bar__item">
-          {{item.text}}
-        </div>
+        <li class="info-bar__item">{{item.text}}</li>
       {% endfor %}
-    </div>
+    </ul>
     {% if show_social_links %}
       {% include 'partials/social-links.twig' with show_social_links %}
     {% endif %}
