@@ -34,12 +34,14 @@ interface PercentBarProps {
   labels: string[];
   datasets: DataSet[];
   colors: string[];
+  title?: string;
 }
 
 const PercentBarChart: FunctionComponent<PercentBarProps> = ({
   labels,
   datasets,
-  colors
+  colors,
+  title
 }) => {
   // reconstruct a data array with the first dataset since the component only supports
   // rendering one dataset.
@@ -73,7 +75,8 @@ const PercentBarChart: FunctionComponent<PercentBarProps> = ({
   const sortedLabels = preparedData.map((data: any) => data.label);
 
   return (
-    <div>
+    <figure className='chart--percentage-bar'>
+      {title && <figcaption>{title}</figcaption>}
       <div
         style={{
           display: 'flex',
@@ -101,7 +104,7 @@ const PercentBarChart: FunctionComponent<PercentBarProps> = ({
         })}
       </div>
       <Legend items={sortedLabels} colors={colors} />
-    </div>
+    </figure>
   );
 };
 
