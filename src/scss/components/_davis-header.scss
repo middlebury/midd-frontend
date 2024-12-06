@@ -35,9 +35,14 @@
         position: absolute;
         left: $spacing-3;
         top: rem(70);
+        width: 288px;
 
         @include breakpoint(sm) {
           position: initial;
+        }
+
+        @include breakpoint(md) {
+          width: 309px;
         }
       }
 

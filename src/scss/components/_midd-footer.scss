@@ -72,6 +72,14 @@
       img:first-child {
         margin-right: rem(12);
       }
+
+      img:nth-child(2) {
+        width: 288px;
+
+        @include breakpoint(md) {
+          width: 309px;
+        }
+      }
     }
 
     .midd-footer__item {
