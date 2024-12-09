@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import gulp from 'gulp';
 const { series, parallel, task } = gulp;
 import gulpTwig from 'gulp-twig';
-import gulpSass from 'gulp-sass';
+import gulpSass from 'gulp-sass/legacy.js';
 import nodeSass from 'node-sass';
 import browserSync from 'browser-sync';
 import sourcemaps from 'gulp-sourcemaps';
@@ -33,7 +33,7 @@ import gulpStylelint from '@ronilaukkarinen/gulp-stylelint';
 import webpack from 'webpack-stream';
 import config from './webpack.config.js';
 
-const args = yargs(hideBin(process.argv))
+const args = yargs(hideBin(process.argv));
 const sass = gulpSass(nodeSass);
 
 dotenv.config();
