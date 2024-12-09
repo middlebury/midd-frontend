@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import gulp from 'gulp';
 const { series, parallel, task } = gulp;
 import gulpTwig from 'gulp-twig';
-import gulpSass from 'gulp-sass';
+import gulpSass from 'gulp-sass/legacy.js';
 import nodeSass from 'node-sass';
 import browserSync from 'browser-sync';
 import sourcemaps from 'gulp-sourcemaps';
@@ -33,7 +33,7 @@ import gulpStylelint from '@ronilaukkarinen/gulp-stylelint';
 import webpack from 'webpack-stream';
 import config from './webpack.config.js';
 
-const args = yargs(hideBin(process.argv))
+const args = yargs(hideBin(process.argv));
 const sass = gulpSass(nodeSass);
 
 dotenv.config();
@@ -259,7 +259,7 @@ const copyDeps = () => {
   // http://www.chartjs.org/docs/latest/getting-started/installation.html#bundled-build
   return gulp
     .src([
-      './node_modules/chart.js/dist/Chart.min.js',
+      './node_modules/chart.js/dist/chart.umd.js',
       './node_modules/iframe-resizer/js/iframeResizer.min.js',
       './node_modules/iframe-resizer/js/iframeResizer.contentWindow.min.js'
     ])
