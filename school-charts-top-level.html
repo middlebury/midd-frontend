@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   </head>
-  <body class=" " id="midd-pagetop">
+  <body class=" theme-college" id="midd-pagetop">
     <aside class="cookie-banner js-cookie-banner is-toggled">
       <p>We use cookies and other technologies to better understand a visitor's experience and to help improve our websites. By continuing to use the website, you consent to Middlebury's use of cookies and other technologies as outlined in our <a href="#">Privacy Policy</a>.</p>
       <button class="cookie-banner__button cookie-banner__button--close" aria-label="Close cookie consent banner" data-toggle-target=".js-cookie-banner"> Close <svg class="icon ml-1 cookie-banner__button-icon " focusable="false" aria-hidden="true">
@@ -338,76 +338,82 @@
       </header>
       <main class="main" id="midd-main" aria-labelledby="midd-page-header-label">
         <div class="container px-0">
-          <header class="page-header">
+          <header class="page-header page-header--has-image page-header--has-menu">
+            <figure class="page-header__figure">
+              <img src="https://placehold.co/1440x576" srcset="https://placehold.co/400x160 400w,https://placehold.co/640x256 640w,https://placehold.co/960x384 960w,https://placehold.co/1280x512 1280w,https://placehold.co/1440x576 1440w" sizes="(max-width: 1440px) 100vw, 1440px" alt="" />
+              <figcaption class="page-header__caption">
+                <div class="tooltip tooltip--light">
+                  <button class="tooltip__button" aria-labelledby="midd-tooltip-label-782">
+                    <svg class="icon f5 icon--lg" focusable="false" aria-hidden="true">
+                      <use xlink:href="#icon-info">
+                    </svg>
+                  </button>
+                  <div class="tooltip__label" role="tooltip" id="midd-tooltip-label-782"> some caption for top level image </div>
+                </div>
+              </figcaption>
+            </figure>
             <div class="page-header__main">
               <div class="page-header__content">
-                <nav class="breadcrumb " aria-label="Breadcrumb">
+                <nav class="breadcrumb breadcrumb--light" aria-label="Breadcrumb">
                   <ol class="breadcrumb__list">
                     <li class="breadcrumb__item">
-                      <a href="" class="breadcrumb__link">Offices and Services</a>
+                      <a href="" class="breadcrumb__link">Middlebury C.V. Star Schools Abroad</a>
                     </li>
                     <li class="breadcrumb__item">
-                      <a href="" class="breadcrumb__link">Student Financial Services</a>
+                      <a href="" class="breadcrumb__link">Our Schools</a>
                     </li>
                   </ol>
                 </nav>
-                <h1 class="page-header__title" id="midd-page-header-label">Charts on a page</h1>
+                <h1 class="page-header__title" id="midd-page-header-label">Argentina</h1>
               </div>
             </div>
           </header>
         </div>
         <div class="container">
           <div class="row">
-            <div class="col-md-10 offset-md-1 col-lg-3 offset-lg-0 mb-4">
-              <nav class="page-nav" aria-labelledby="midd-page-nav-label">
-                <button class="page-nav__button" data-toggle-target=".js-page-nav" aria-haspopup="true" aria-expanded="false">
-                  <span class="page-nav__button-text__label">Student Financial Services</span>
-                  <span class="page-nav__button-text">In this section <svg class="icon page-nav__icon " focusable="false" aria-hidden="true">
-                      <use xlink:href="#icon-caret-down">
-                    </svg>
-                  </span>
-                </button>
-                <div class="page-nav__content js-page-nav">
-                  <h2 class="page-nav__title" id="midd-page-nav-label">
-                    <a href="" class="page-nav__link">Student Financial Services</a>
-                  </h2>
-                  <ul class="page-nav__list">
-                    <li class="page-nav__item">
-                      <a href="#" class="page-nav__link">Curriculum</a>
-                    </li>
-                    <li class="page-nav__item page-nav__item--active">
-                      <a href="#" class="page-nav__link">Faculty</a>
-                      <ul class="page-nav__list">
-                        <li class="page-nav__item">
-                          <a href="#" class="page-nav__link">Faculty sub page 1</a>
-                        </li>
-                        <li class="page-nav__item">
-                          <a href="#" class="page-nav__link">Faculty sub page 2</a>
-                        </li>
-                        <li class="page-nav__item">
-                          <a href="#" class="page-nav__link page-nav__link--active">Faculty sub page 3</a>
-                        </li>
-                        <li class="page-nav__item">
-                          <a href="#" class="page-nav__link">Faculty sub page 4</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="page-nav__item">
-                      <a href="#" class="page-nav__link">Financing Your Education</a>
-                    </li>
-                  </ul>
-                </div>
+            <div class="col-md-10 offset-md-1">
+              <nav class="box-menu box-menu--overlap " aria-labelledby="midd-box-menu-label">
+                <h2 class="sr-only" id="midd-box-menu-label">Box menu label (should be picked up from the page title)</h2>
+                <ul class="box-menu__list">
+                  <li class="box-menu__item">
+                    <a href="" class="box-menu__link"> Application Instructions and Deadlines </a>
+                  </li>
+                  <li class="box-menu__item">
+                    <a href="" class="box-menu__link"> Admission Options </a>
+                  </li>
+                  <li class="box-menu__item">
+                    <a href="" class="box-menu__link"> Standardized Tests </a>
+                  </li>
+                  <li class="box-menu__item">
+                    <a href="" class="box-menu__link"> Interview Policy </a>
+                  </li>
+                  <li class="box-menu__item">
+                    <a href="" class="box-menu__link"> February Admission </a>
+                  </li>
+                  <li class="box-menu__item">
+                    <a href="" class="box-menu__link"> Transfer Applicants </a>
+                  </li>
+                  <li class="box-menu__item">
+                    <a href="" class="box-menu__link"> International Applicants </a>
+                  </li>
+                  <li class="box-menu__item">
+                    <a href="" class="box-menu__link"> Undocumented Applicants </a>
+                  </li>
+                  <li class="box-menu__item">
+                    <a href="" class="box-menu__link"> Taking a Gap Year </a>
+                  </li>
+                  <li class="box-menu__item">
+                    <a href="" class="box-menu__link"> NESCAC Admissions Practices </a>
+                  </li>
+                </ul>
               </nav>
             </div>
-            <div class="col-md-10 offset-md-1 col-lg-2 offset-lg-0 order-lg-last mb-4 pl-lg-0">
-              <div data-digest-nav data-sticky data-sticky-offset=".js-headroom"></div>
-            </div>
-            <div class="col-md-10 offset-md-1 col-lg-7 offset-lg-0">
+            <div class="paragraphs paragraphs--wide">
               <div class="paragraphs">
                 <div class="paragraph--chart" data-digest-content>
                   <h2 class="h2 mb-4">Grouped Bar chart</h2>
                   <p class="mb-5 mb-md-7">This bar chart has a suggested maximum value which shows up on the y axis, and a value suffix so it can be presented as a percentage.</p>
-                  <div class="chart" data-chart="bar" data-axis="x" data-datasets='[{"label":"data 1","data":[10,40,70]},{"label":"data 2","data":[15,47,60]},{"label":"data 3","data":[24,42,86]}]' data-labels='["label 1","label 2","label 3"]' data-title="Grouped Bar chart" data-y-label="" data-x-label="" data-max="" data-min="" data-value-prefix="" data-value-suffix="%"></div>
+                  <div class="chart" data-chart="bar" data-axis="x" data-datasets='[{"label":"data 1","data":[10,40,70]},{"label":"data 1","data":[15,47,60]},{"label":"data 1","data":[24,42,86]}]' data-labels='["label 1","label 2","label 3"]' data-title="Grouped Bar chart" data-y-label="" data-x-label="" data-max="" data-min="" data-value-prefix="" data-value-suffix="%"></div>
                 </div>
                 <div class="paragraph--chart" data-digest-content>
                   <h2 class="h2 mb-4">Horizontal Bar chart</h2>
@@ -508,7 +514,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="paragraph--chart" id="midd-map-512" data-digest-content>
+                <div class="paragraph--chart" id="midd-map-847" data-digest-content>
                   <h2 class="h2 mb-4">Map chart</h2>
                   <p class="mb-5 mb-md-7">This is map chart text right here.</p>
                   <svg viewBox="0 0 1031 445" version="1.1">
@@ -728,15 +734,90 @@
                       </g>
                     </g>
                   </svg>
-                  <p class="f2" id="midd-map-text-512"> Germany; United States; China </p>
+                  <p class="f2" id="midd-map-text-847"> Germany; United States; China </p>
                   <style>
-                    #midd-map-512 #DE,
-                    #midd-map-512 #US,
-                    #midd-map-512 #CN
+                    #midd-map-847 #DE,
+                    #midd-map-847 #US,
+                    #midd-map-847 #CN
                     {
                       fill: #0d395f;
                     }
                   </style>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2 mt-7">
+              <div class="bg-gray-lighter mb-6 p-5">
+                <div class="row">
+                  <div class="col-md-6">
+                    <aside class="">
+                      <p class="f2 mb-1">
+                        <strong>Understand Your Departmental Risk and How to Manage It</strong>
+                      </p>
+                    </aside>
+                    <div class="border-b my-6 d-md-none"></div>
+                  </div>
+                  <div class="col-md-6">
+                    <address>
+                      <p class="f2 mb-1">
+                        <strong>Center for Careers and Internships</strong><br> Adirondack House<br> 534 College Street<br> Middlebury, Vermont 05753
+                      </p>
+                      <p class="f2 mb-1">
+                        <a href="mailto:" class="link-underline">internationalprograms<wbr>@middlebury.edu</a><br>
+                        <a href="tel:" class="link-underline">802-443-5100</a>
+                      </p>
+                      <ul class="d-inline-flex ">
+                        <li class="mr-1">
+                          <a href="#" class="d-inline-block hover-fadein  p-1">
+                            <svg class="icon  " focusable="false" aria-hidden="true">
+                              <use xlink:href="#icon-discord">
+                            </svg>
+                            <span class="sr-only">Link to page/content on discord</span>
+                          </a>
+                        </li>
+                        <li class="mr-1">
+                          <a href="#" class="d-inline-block hover-fadein  p-1">
+                            <svg class="icon  " focusable="false" aria-hidden="true">
+                              <use xlink:href="#icon-instagram">
+                            </svg>
+                            <span class="sr-only">Link to page/content on instagram</span>
+                          </a>
+                        </li>
+                        <li class="mr-1">
+                          <a href="#" class="d-inline-block hover-fadein  p-1">
+                            <svg class="icon  " focusable="false" aria-hidden="true">
+                              <use xlink:href="#icon-tiktok">
+                            </svg>
+                            <span class="sr-only">Link to page/content on tiktok</span>
+                          </a>
+                        </li>
+                        <li class="mr-1">
+                          <a href="#" class="d-inline-block hover-fadein  p-1">
+                            <svg class="icon  " focusable="false" aria-hidden="true">
+                              <use xlink:href="#icon-youtube">
+                            </svg>
+                            <span class="sr-only">Link to page/content on youtube</span>
+                          </a>
+                        </li>
+                        <li class="mr-1">
+                          <a href="#" class="d-inline-block hover-fadein  p-1">
+                            <svg class="icon  " focusable="false" aria-hidden="true">
+                              <use xlink:href="#icon-weibo">
+                            </svg>
+                            <span class="sr-only">Link to page/content on weibo</span>
+                          </a>
+                        </li>
+                        <li class="mr-1">
+                          <a href="#" class="d-inline-block hover-fadein  p-1">
+                            <svg class="icon  " focusable="false" aria-hidden="true">
+                              <use xlink:href="#icon-x">
+                            </svg>
+                            <span class="sr-only">Link to page/content on x</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </address>
+                  </div>
                 </div>
               </div>
             </div>
@@ -787,6 +868,22 @@
                   <li class="mr-1">
                     <a href="#" class="d-inline-block hover-fadein  px-1">
                       <svg class="icon  " focusable="false" aria-hidden="true">
+                        <use xlink:href="#icon-linkedin">
+                      </svg>
+                      <span class="sr-only">Link to page/content on linkedin</span>
+                    </a>
+                  </li>
+                  <li class="mr-1">
+                    <a href="#" class="d-inline-block hover-fadein  px-1">
+                      <svg class="icon  " focusable="false" aria-hidden="true">
+                        <use xlink:href="#icon-tiktok">
+                      </svg>
+                      <span class="sr-only">Link to page/content on tiktok</span>
+                    </a>
+                  </li>
+                  <li class="mr-1">
+                    <a href="#" class="d-inline-block hover-fadein  px-1">
+                      <svg class="icon  " focusable="false" aria-hidden="true">
                         <use xlink:href="#icon-youtube">
                       </svg>
                       <span class="sr-only">Link to page/content on youtube</span>
@@ -798,14 +895,6 @@
                         <use xlink:href="#icon-mastodon">
                       </svg>
                       <span class="sr-only">Link to page/content on mastodon</span>
-                    </a>
-                  </li>
-                  <li class="mr-1">
-                    <a href="#" class="d-inline-block hover-fadein  px-1">
-                      <svg class="icon  " focusable="false" aria-hidden="true">
-                        <use xlink:href="#icon-pinterest">
-                      </svg>
-                      <span class="sr-only">Link to page/content on pinterest</span>
                     </a>
                   </li>
                   <li class="mr-1">
@@ -827,17 +916,25 @@
                   <li class="mr-1">
                     <a href="#" class="d-inline-block hover-fadein  px-1">
                       <svg class="icon  " focusable="false" aria-hidden="true">
-                        <use xlink:href="#icon-x">
+                        <use xlink:href="#icon-wechat">
                       </svg>
-                      <span class="sr-only">Link to page/content on x</span>
+                      <span class="sr-only">Link to page/content on wechat</span>
                     </a>
                   </li>
                   <li class="mr-1">
                     <a href="#" class="d-inline-block hover-fadein  px-1">
                       <svg class="icon  " focusable="false" aria-hidden="true">
-                        <use xlink:href="#icon-threads">
+                        <use xlink:href="#icon-weibo">
                       </svg>
-                      <span class="sr-only">Link to page/content on threads</span>
+                      <span class="sr-only">Link to page/content on weibo</span>
+                    </a>
+                  </li>
+                  <li class="mr-1">
+                    <a href="#" class="d-inline-block hover-fadein  px-1">
+                      <svg class="icon  " focusable="false" aria-hidden="true">
+                        <use xlink:href="#icon-x">
+                      </svg>
+                      <span class="sr-only">Link to page/content on x</span>
                     </a>
                   </li>
                 </ul>
@@ -890,22 +987,6 @@
                     <li class="mr-1">
                       <a href="#" class="d-inline-block text-white hover-fadeout  p-1">
                         <svg class="icon f5 " focusable="false" aria-hidden="true">
-                          <use xlink:href="#icon-discord">
-                        </svg>
-                        <span class="sr-only">Link to page/content on discord</span>
-                      </a>
-                    </li>
-                    <li class="mr-1">
-                      <a href="#" class="d-inline-block text-white hover-fadeout  p-1">
-                        <svg class="icon f5 " focusable="false" aria-hidden="true">
-                          <use xlink:href="#icon-linkedin">
-                        </svg>
-                        <span class="sr-only">Link to page/content on linkedin</span>
-                      </a>
-                    </li>
-                    <li class="mr-1">
-                      <a href="#" class="d-inline-block text-white hover-fadeout  p-1">
-                        <svg class="icon f5 " focusable="false" aria-hidden="true">
                           <use xlink:href="#icon-instagram">
                         </svg>
                         <span class="sr-only">Link to page/content on instagram</span>
@@ -938,6 +1019,22 @@
                     <li class="mr-1">
                       <a href="#" class="d-inline-block text-white hover-fadeout  p-1">
                         <svg class="icon f5 " focusable="false" aria-hidden="true">
+                          <use xlink:href="#icon-pinterest">
+                        </svg>
+                        <span class="sr-only">Link to page/content on pinterest</span>
+                      </a>
+                    </li>
+                    <li class="mr-1">
+                      <a href="#" class="d-inline-block text-white hover-fadeout  p-1">
+                        <svg class="icon f5 " focusable="false" aria-hidden="true">
+                          <use xlink:href="#icon-twitter">
+                        </svg>
+                        <span class="sr-only">Link to page/content on twitter</span>
+                      </a>
+                    </li>
+                    <li class="mr-1">
+                      <a href="#" class="d-inline-block text-white hover-fadeout  p-1">
+                        <svg class="icon f5 " focusable="false" aria-hidden="true">
                           <use xlink:href="#icon-vimeo">
                         </svg>
                         <span class="sr-only">Link to page/content on vimeo</span>
@@ -962,17 +1059,17 @@
                     <li class="mr-1">
                       <a href="#" class="d-inline-block text-white hover-fadeout  p-1">
                         <svg class="icon f5 " focusable="false" aria-hidden="true">
-                          <use xlink:href="#icon-x">
+                          <use xlink:href="#icon-weibo">
                         </svg>
-                        <span class="sr-only">Link to page/content on x</span>
+                        <span class="sr-only">Link to page/content on weibo</span>
                       </a>
                     </li>
                     <li class="mr-1">
                       <a href="#" class="d-inline-block text-white hover-fadeout  p-1">
                         <svg class="icon f5 " focusable="false" aria-hidden="true">
-                          <use xlink:href="#icon-threads">
+                          <use xlink:href="#icon-x">
                         </svg>
-                        <span class="sr-only">Link to page/content on threads</span>
+                        <span class="sr-only">Link to page/content on x</span>
                       </a>
                     </li>
                   </ul>
