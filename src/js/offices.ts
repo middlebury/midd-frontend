@@ -127,7 +127,7 @@ import { $, $$, on, hide, show } from './utils/dom';
 
     if (region) {
       region.appendChild(alert);
-      region.setAttribute('aria-live', 'true');
+      region.setAttribute('aria-live', 'polite');
     }
   }
 
