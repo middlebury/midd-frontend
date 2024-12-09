@@ -1,49 +1,30 @@
-{% extends "school-layout.twig" %}
+{% extends 'school-layout.twig' %}
+
+{% set theme = 'college' %}
+
+{% set has_page_image = true %}
 
 {% set page_header = {
-  title: 'Charts on a page',
+  title: 'Argentina',
   breadcrumb: [
-    { text: 'Offices and Services' },
-    { text: 'Student Financial Services' },
-  ]
+    {
+      text: 'Middlebury C.V. Star Schools Abroad'
+    },
+    {
+      text: 'Our Schools'
+    }
+  ],
+  image_src: has_page_image,
+  has_menu: true
 } %}
 
 {% block page %}
-  {% embed 'partials/sidebar-layout.twig' %}
-    {% block nav %}
-
-      {% include 'partials/page-nav.twig' with {
-        label: 'Student Financial Services',
-        items: [
-          { text: 'Curriculum', href: '#' },
-          {
-            text: 'Faculty',
-            href: '#',
-            items: [
-              { text: 'Faculty sub page 1', href: '#' },
-              { text: 'Faculty sub page 2', href: '#' },
-              {
-                text: 'Faculty sub page 3',
-                href: '#',
-                active: true
-              },
-              { text: 'Faculty sub page 4', href: '#' },
-            ]
-          },
-          { text: 'Financing Your Education', href: '#' },
-        ]
-      } %}
-
-    {% endblock %}
-    {% block toc %}
-
-      <div data-digest-nav data-sticky data-sticky-offset=".js-headroom"></div>
-
-    {% endblock %}
-    {% block content %}
-
-      {# {% include 'partials/basic-content.twig' %} #}
-
+  {% embed 'partials/top-level-layout.twig' with {
+    show_menu: true,
+    show_lead: true,
+    has_page_image: has_page_image
+  } %}
+    {% block paragraphs %}
       <div class="paragraphs">
 
 
@@ -57,8 +38,8 @@
               labels: ['label 1', 'label 2', 'label 3'],
               datasets: [
                 { label: 'data 1', data: [10,40,70] },
-                { label: 'data 2', data: [15,47,60] },
-                { label: 'data 3', data: [24,42,86] }
+                { label: 'data 1', data: [15,47,60] },
+                { label: 'data 1', data: [24,42,86] }
               ]
             }
           ]
@@ -205,14 +186,10 @@
             {name: 'China', abbr: 'cn'}
           ]
         } %}
-
-
       </div>
-
     {% endblock %}
   {% endembed %}
 {% endblock %}
-
 
 {% block additional_scripts %}
   <script src="/js/chart.umd.js"></script>
