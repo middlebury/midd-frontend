@@ -99,9 +99,13 @@
 
 	{% include 'paragraphs/text.twig' %}
 
-	{% include 'paragraphs/button.twig' %}
+	{% include 'paragraphs/button.twig' with { 
+    n: 2
+  }%}
 
-	{% include 'paragraphs/button.twig' %}
+	{# {% include 'paragraphs/button.twig' %} #}
+
+   {% include 'paragraphs/two-col-text.twig' %}
 
 	{% include 'paragraphs/text-short.twig' %}
 
