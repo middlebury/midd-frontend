@@ -49,7 +49,7 @@ $midd-header-background-gradient: linear-gradient(
 
   .midd-header__brand {
     height: fit-content;
-    padding-top: rem(12);
+    padding-top: remify(12);
 
     @include breakpoint(md) {
       padding-top: $spacing-3;
@@ -73,11 +73,11 @@ $midd-header-background-gradient: linear-gradient(
 
       .midd-header__wordmark {
         width: 78px;
-        margin-left: rem(8);
+        margin-left: remify(8);
 
         @include breakpoint(md) {
           width: 116px;
-          margin-left: rem(10);
+          margin-left: remify(10);
         }
       }
     }
@@ -179,7 +179,7 @@ $midd-header-background-gradient: linear-gradient(
     .midd-search__mag,
     .midd-search__times {
       @include breakpoint(sm) {
-        margin-right: rem(12);
+        margin-right: remify(12);
       }
     }
   }

@@ -488,7 +488,7 @@
         font-size: $typescale-7;
 
         @include breakpoint(lg) {
-          font-size: rem(40);
+          font-size: remify(40);
         }
 
         @include breakpoint(xl) {
@@ -527,11 +527,11 @@
         line-height: 1.35;
 
         @include breakpoint(lg) {
-          font-size: rem(32);
+          font-size: remify(32);
         }
 
         @include breakpoint(xl) {
-          font-size: rem(40);
+          font-size: remify(40);
         }
       }
     }

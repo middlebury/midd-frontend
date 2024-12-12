@@ -93,13 +93,13 @@ $accessible-text-colors: (
   font-weight: $font-weight-semibold;
   font-size: $typescale-4;
   text-transform: uppercase;
-  letter-spacing: rem(2);
+  letter-spacing: remify(2);
   overflow: hidden;
   width: 100%;
 
   @include breakpoint(md) {
     font-weight: $font-weight-normal;
-    font-size: rem(32);
+    font-size: remify(32);
   }
 
   @include breakpoint(lg) {
@@ -289,10 +289,10 @@ $accessible-text-colors: (
   button {
     position: absolute;
     right: 0;
-    margin-bottom: rem(6);
+    margin-bottom: remify(6);
 
     @include breakpoint(md) {
-      margin-bottom: rem(10);
+      margin-bottom: remify(10);
     }
 
     @include breakpoint(lg) {

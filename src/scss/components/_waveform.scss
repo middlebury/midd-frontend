@@ -200,7 +200,7 @@ $theme-margins-sm: (
   }
 
   @include breakpoint(xl) {
-    padding-bottom: rem(54);
+    padding-bottom: remify(54);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -250,15 +250,15 @@ $theme-margins-sm: (
   }
 
   @include breakpoint(sm) {
-    margin-left: rem(12);
-    margin-right: rem(12);
+    margin-left: remify(12);
+    margin-right: remify(12);
     min-width: $spacing-4;
 
     &:hover {
       background-color: $white !important;
-      margin-left: rem(6);
-      margin-right: rem(6);
-      min-width: rem(36);
+      margin-left: remify(6);
+      margin-right: remify(6);
+      min-width: remify(36);
       cursor: pointer;
     }
   }
@@ -273,8 +273,8 @@ $theme-margins-sm: (
         background-color: $white !important;
 
         &:hover {
-          margin-left: rem(12);
-          margin-right: rem(12);
+          margin-left: remify(12);
+          margin-right: remify(12);
         }
 
         @include breakpoint(sm) {

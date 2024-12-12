@@ -95,7 +95,7 @@ $text-colors: (
   line-height: $line-height-heading;
 
   @include breakpoint(md) {
-    font-size: rem(32);
+    font-size: remify(32);
   }
 
   @include breakpoint(lg) {
@@ -127,7 +127,7 @@ $text-colors: (
   margin-right: $spacing-3;
 
   @include breakpoint(sm) {
-    font-size: rem(32);
+    font-size: remify(32);
   }
 
   @include breakpoint(md) {

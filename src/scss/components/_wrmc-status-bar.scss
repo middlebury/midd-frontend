@@ -12,7 +12,7 @@
     color: $wrmc-green;
     text-transform: uppercase;
     line-height: $line-height-solid;
-    padding: 0 rem(12);
+    padding: 0 remify(12);
   }
 
   .status-bar-divider {
@@ -47,7 +47,7 @@
     display: flex;
  
     .status-bar-section {
-      padding: $spacing-2 rem(12);
+      padding: $spacing-2 remify(12);
 
       &.section-show {
         padding-right: $spacing-4;
@@ -101,7 +101,7 @@
 
       .text-separator {
         color: $wrmc-blue-light;
-        font-size: rem(10);
+        font-size: remify(10);
         padding: 0 $spacing-3;
       }
     }

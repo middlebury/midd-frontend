@@ -127,15 +127,15 @@ $mega-cta-alignments: (
     @include breakpoint(md) {
       padding: 0;
       top: $spacing-8;
-      left: rem(80);
+      left: remify(80);
     }
     @include breakpoint(lg) {
       top: $spacing-8;
-      left: rem(132);
+      left: remify(132);
     }
     @include breakpoint(xl) {
       top: $spacing-8;
-      left: rem(152);
+      left: remify(152);
     }
   }
   &-left-bottom {
@@ -143,17 +143,17 @@ $mega-cta-alignments: (
     @include breakpoint(md) {
       padding: 0;
       top: $spacing-8;
-      left: rem(80);
+      left: remify(80);
     }
     @include breakpoint(lg) {
       top: initial;
       bottom: $spacing-8;
-      left: rem(132);
+      left: remify(132);
     }
     @include breakpoint(xl) {
       top: initial;
       bottom: $spacing-8;
-      left: rem(152);
+      left: remify(152);
     }
   }
   &-right-top {
@@ -161,16 +161,16 @@ $mega-cta-alignments: (
     @include breakpoint(md) {
       padding: 0;
       top: $spacing-8;
-      left: rem(80);
+      left: remify(80);
     }
     @include breakpoint(lg) {
       top: $spacing-8;
-      right: rem(132);
+      right: remify(132);
       left: initial;
     }
     @include breakpoint(xl) {
       top: $spacing-8;
-      right: rem(152);
+      right: remify(152);
     }
   }
   &-right-bottom {
@@ -178,18 +178,18 @@ $mega-cta-alignments: (
     @include breakpoint(md) {
       padding: 0;
       top: $spacing-8;
-      left: rem(80);
+      left: remify(80);
     }
     @include breakpoint(lg) {
       top: initial;
       bottom: $spacing-8;
-      right: rem(132);
+      right: remify(132);
       left: initial;
     }
     @include breakpoint(xl) {
       top: initial;
       bottom: $spacing-8;
-      right: rem(152);
+      right: remify(152);
     }
   }
   @include breakpoint(md) {
@@ -216,7 +216,7 @@ $mega-cta-alignments: (
 
 .mega-cta__title-miis {
   color: $white;
-  font-size: rem(28);
+  font-size: remify(28);
   margin-bottom: $spacing-1;
 }
 
@@ -242,7 +242,7 @@ $mega-cta-alignments: (
 
 .mega-cta__text-miis {
   color: $white;
-  font-size: rem(18);
+  font-size: remify(18);
   margin-bottom: $spacing-5;
 }
 

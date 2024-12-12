@@ -102,7 +102,7 @@ $school-theme-colors: (
   .journey-modal__header--wrapper {
     display: flex;
     justify-content: space-between;
-    margin-top: rem(12);
+    margin-top: remify(12);
 
     @include breakpoint(md) {
       margin-top: $spacing-3;
@@ -143,11 +143,11 @@ $school-theme-colors: (
 
       .midd-header__wordmark {
         width: 78px;
-        margin-left: rem(8);
+        margin-left: remify(8);
 
         @include breakpoint(md) {
           width: 116px;
-          margin-left: rem(10);
+          margin-left: remify(10);
         }
       }
     }
@@ -175,7 +175,7 @@ $school-theme-colors: (
   .journey-modal__controls--loading-text {
     display: flex;
     padding-top: $spacing-3;
-    padding-right: rem(224);
+    padding-right: remify(224);
 
     &.has-loaded {
       display: none;
@@ -193,7 +193,7 @@ $school-theme-colors: (
 
     @include breakpoint(xl) {
       padding-right: $spacing-4;
-      padding-top: rem(14);
+      padding-top: remify(14);
     }
 
     &.is-loading {
@@ -210,7 +210,7 @@ $school-theme-colors: (
 
       @include breakpoint(xl) {
         padding: 0;
-        padding-top: rem(2);
+        padding-top: remify(2);
       }
 
       .icon.journey-modal-button--icon {
@@ -317,7 +317,7 @@ $school-theme-colors: (
         position: absolute;
         bottom: $spacing-3;
         margin-bottom: $spacing-5;
-        width: rem(144);
+        width: remify(144);
 
         @include breakpoint(xl) {
           font-size: $typescale-2;
@@ -337,7 +337,7 @@ $school-theme-colors: (
       }
 
       &:not(:last-child) {
-        // margin-right: rem(28);
+        // margin-right: remify(28);
 
         // @include breakpoint(md) {
         margin: 0;
@@ -374,8 +374,8 @@ $school-theme-colors: (
     font-size: $typescale-2;
     display: flex;
     align-items: center;
-    padding: rem(14);
-    margin-top: -#{rem(12)};
+    padding: remify(14);
+    margin-top: -#{remify(12)};
     transition: background-color 0.2s;
 
     @include breakpoint(sm) {
@@ -447,7 +447,7 @@ $school-theme-colors: (
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: rem(112);
+  padding-top: remify(112);
 
   &.has-loaded {
     display: none;
@@ -459,7 +459,7 @@ $school-theme-colors: (
     margin-top: $spacing-5;
 
     @include breakpoint(md) {
-      margin-top: rem(40);
+      margin-top: remify(40);
     }
 
     @include breakpoint(lg) {
@@ -468,17 +468,17 @@ $school-theme-colors: (
 
     .journey-modal--title {
       font-family: $font-family-sans-serif;
-      font-size: rem(32);
+      font-size: remify(32);
       line-height: 1.25;
       margin-bottom: $spacing-4;
 
       @include breakpoint(md) {
-        font-size: rem(40);
+        font-size: remify(40);
         margin-bottom: $spacing-5;
       }
 
       @include breakpoint(lg) {
-        font-size: rem(56);
+        font-size: remify(56);
         font-weight: $font-weight-light;
         line-height: 1.1;
         margin-bottom: $spacing-6;
@@ -523,7 +523,7 @@ $school-theme-colors: (
         }
 
         @include breakpoint(xl) {
-          margin-top: rem(18);
+          margin-top: remify(18);
         }
       }
     }
@@ -633,7 +633,7 @@ $school-theme-colors: (
         margin-bottom: $spacing-2;
 
         @include breakpoint(sm) {
-          margin-bottom: rem(12);
+          margin-bottom: remify(12);
         }
 
         @include breakpoint(lg) {
@@ -660,7 +660,7 @@ $school-theme-colors: (
         }
 
         @include breakpoint(lg) {
-          font-size: rem(32);
+          font-size: remify(32);
           font-weight: $font-weight-normal;
           margin-top: $spacing-7;
         }
@@ -956,7 +956,7 @@ $school-theme-colors: (
           }
 
           @media only screen and (min-width: 1440px) {
-            font-size: rem(32);
+            font-size: remify(32);
             font-weight: $font-weight-light;
             padding-bottom: $spacing-2;
           }

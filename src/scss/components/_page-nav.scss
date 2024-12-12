@@ -45,7 +45,7 @@
   float: right;
   transition: $chevron-transition;
   margin-left: $spacing-2;
-  margin-top: rem(2);
+  margin-top: remify(2);
 
   .page-nav__button.is-toggled & {
     transform: $chevron-transform;

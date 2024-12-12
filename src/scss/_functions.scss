@@ -12,6 +12,6 @@
 ////
 /// Convert a number into an rem unit given a base font size
 ////
-@function rem($target, $base: 16) {
+@function remify($target, $base: 16) {
   @return $target / $base * 1rem;
 }

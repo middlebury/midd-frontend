@@ -14,7 +14,7 @@
   margin-bottom: $spacing-3;
 
   a:first-child {
-    margin-right: rem(20);
+    margin-right: remify(20);
   }
 
   @include breakpoint(md) {
