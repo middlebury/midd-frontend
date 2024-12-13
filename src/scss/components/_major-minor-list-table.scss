@@ -75,8 +75,8 @@
 
   .row-label--cell {
     line-height: $line-height-solid;
-    padding-top: remify(10);
-    padding-bottom: remify(10);
+    padding-top: rem(10);
+    padding-bottom: rem(10);
     margin: 0;
   }
 
@@ -84,7 +84,7 @@
     text-transform: uppercase;
     color: $gray-dark;
     font-weight: $font-weight-semibold;
-    font-size: remify(12);
+    font-size: rem(12);
     letter-spacing: $letter-spacing;
     padding-left: 2rem !important;
     padding-bottom: 0;

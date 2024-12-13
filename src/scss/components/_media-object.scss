@@ -59,7 +59,7 @@
     font-family: $font-family-serif;
     font-size: $typescale-4;
     line-height: $line-height-heading;
-    margin-bottom: remify(2);
+    margin-bottom: rem(2);
   }
 
   @include breakpoint(sm) {

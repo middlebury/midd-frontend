@@ -2,11 +2,11 @@
 /// Pardot forms stylesheet to be uploaded directly to pardot file hosting and used in landing page templates.
 ////
 
-@use 'functions' as *;
-@use 'variables' as *;
-@use 'mixins' as *;
+@import 'functions';
+@import 'variables';
+@import 'mixins';
 
-@use 'global' as *;
+@import 'global';
 
 .form {
   padding: 2px; /* push in so elems arent hidden */

@@ -185,8 +185,8 @@
   }
 
   .icon.play {
-    height: remify(10);
-    width: remify(12);
+    height: rem(10);
+    width: rem(12);
 
     @include breakpoint(lg) {
       height: $typescale-3;

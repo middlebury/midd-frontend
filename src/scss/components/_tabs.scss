@@ -37,7 +37,7 @@
 
 .tabs__list {
   border-bottom: 4px solid $black;
-  margin-bottom: remify(36);
+  margin-bottom: rem(36);
   padding: 0 $spacing-3;
   display: flex;
   overflow-x: auto;
@@ -113,7 +113,7 @@
 //     }
 
 //     button {
-//       padding: remify(12) $spacing-5;
+//       padding: rem(12) $spacing-5;
 //     }
 //   }
 // }

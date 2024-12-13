@@ -2,16 +2,16 @@
 /// Sass mixins
 ////
 
-@use 'mixins/breakpoints' as *;
-@use 'mixins/grid' as *;
-@use 'mixins/grid-framework' as *;
-@use 'mixins/clearfix' as *;
-@use 'mixins/type' as *;
-@use 'mixins/screen-reader' as *;
-@use 'mixins/forms' as *;
-@use 'mixins/buttons' as *;
-@use 'mixins/waveform-bars' as *;
-@use 'mixins/homepage_grid' as *;
+@import 'mixins/breakpoints';
+@import 'mixins/grid';
+@import 'mixins/grid-framework';
+@import 'mixins/clearfix';
+@import 'mixins/type';
+@import 'mixins/screen-reader';
+@import 'mixins/forms';
+@import 'mixins/buttons';
+@import 'mixins/waveform-bars';
+@import 'mixins/homepage_grid';
 
 @mixin absolute-fill {
   position: absolute;

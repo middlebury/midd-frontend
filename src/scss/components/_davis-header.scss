@@ -27,14 +27,14 @@
 
         @include breakpoint(sm) {
           padding-bottom: 0;
-          padding-right: remify(12);
+          padding-right: rem(12);
         }
       }
 
       img:nth-child(2) {
         position: absolute;
         left: $spacing-3;
-        top: remify(70);
+        top: rem(70);
 
         @include breakpoint(sm) {
           position: initial;

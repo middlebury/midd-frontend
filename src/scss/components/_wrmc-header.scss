@@ -45,7 +45,7 @@ $school-header-breakpoint: xl;
 }
 
 .wrmc-header__logo {
-  // padding: remify(12) 0;
+  // padding: rem(12) 0;
   display: flex;
   align-items: center;
   position: relative;
@@ -99,8 +99,8 @@ $school-header-breakpoint: xl;
   //   width: fit-content;
 
   //   &:last-child {
-  //     margin-left: remify(14);
-  //     margin-top: remify(14);
+  //     margin-left: rem(14);
+  //     margin-top: rem(14);
   //   }
   // }
 
@@ -112,7 +112,7 @@ $school-header-breakpoint: xl;
     }
 
     @include breakpoint(xl) {
-      font-size: remify(64);
+      font-size: rem(64);
     }
   }
 
@@ -122,7 +122,7 @@ $school-header-breakpoint: xl;
     line-height: 1.2;
 
     @include breakpoint(sm) {
-      margin-left: remify(12);
+      margin-left: rem(12);
       margin-top: $spacing-2;
       font-size: $typescale-4;
     }
@@ -208,7 +208,7 @@ $school-header-breakpoint: xl;
       font-size: $typescale-2;
       font-weight: $font-weight-semibold;
       text-transform: uppercase;
-      padding: $spacing-1 remify(12);
+      padding: $spacing-1 rem(12);
       margin: $spacing-3 0;
       width: fit-content;
     }

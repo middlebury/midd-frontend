@@ -83,7 +83,7 @@
 
         @include breakpoint(md) {
           width: initial;
-          margin-left: remify(-144);
+          margin-left: rem(-144);
           margin-bottom: $spacing-3;
         }
       }

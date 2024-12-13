@@ -19,7 +19,7 @@ $pd-week-color: #999;
 
 $pd-font-family: $font-family-sans-serif;
 
-@use '../../../node_modules/pikaday/scss/pikaday' as *;
+@import '../../../node_modules/pikaday/scss/pikaday';
 
 .pika-single {
   z-index: $z-index-datepicker;
