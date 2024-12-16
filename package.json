@@ -5,7 +5,7 @@
     "clean": "rimraf ./dist",
     "serve": "browser-sync start --server 'dist' --files 'dist' --directory --no-notify --no-ghost-mode",
     "html": "node scripts/process-html.js",
-    "styles": "sass src/scss:dist/css --style=compressed && postcss dist/css/*.css --replace",
+    "styles": "sass --quiet src/scss:dist/css --style=compressed && postcss dist/css/*.css --replace",
     "scripts": "webpack --config webpack.config.js",
     "images": "imagemin 'src/images/**/*' --out-dir=dist/images",
     "svg-sprite": "node scripts/generate-svg-sprite.js",
@@ -21,6 +21,7 @@
     "deploy": "npm run build && node scripts/deploy.js"
   },
   "devDependencies": {
+    "@types/pikaday": "^1.7.9",
     "autoprefixer": "^10.4.0",
     "browser-sync": "^2.27.7",
     "cpy-cli": "^5.0.0",
@@ -36,7 +37,7 @@
     "prettier": "^3.4.1",
     "prettier-plugin-twig-melody": "^0.4.6",
     "rimraf": "^3.0.2",
-    "sass": "^1.44.0",
+    "sass": "^1.82.0",
     "sort-css-media-queries": "^2.0.4",
     "stylelint": "^15.11.0",
     "stylelint-config-xo-scss": "~0.15.0",
@@ -49,6 +50,9 @@
     "yaml": "^1.10.2"
   },
   "dependencies": {
-    "chart.js": "^2.9.4"
+    "chart.js": "^2.9.4",
+    "normalize.css": "^8.0.1",
+    "pikaday": "^1.8.2",
+    "swiper": "^11.1.15"
   }
 }
