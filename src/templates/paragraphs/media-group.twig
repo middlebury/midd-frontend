@@ -16,7 +16,7 @@
         {% if item == 'video' %}
           {% include 'partials/video.twig' %}
         {% elseif item == 'audio' %}
-          {% include 'paragraphs/audio.twig' %}
+          {% include 'paragraphs/audio.twig' with {paragraph: false} %}
         {% elseif item == 'image' %}
           {% include 'partials/image-with-caption.twig' with {
             name: 'media_group',

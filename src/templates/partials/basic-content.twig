@@ -60,7 +60,9 @@
 	{% include 'paragraphs/profile-list.twig' %}
 
 	{% if not env.test %}
-		{% include 'paragraphs/audio.twig' %}
+		{% include 'paragraphs/audio.twig' with {
+      paragraph: true
+    } %}
 	{% endif %}
 
 	{% include 'paragraphs/announcement.twig' %}
