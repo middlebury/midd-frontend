@@ -18,10 +18,11 @@
         {% elseif item == 'audio' %}
           {% include 'paragraphs/audio.twig' with {paragraph: false} %}
         {% elseif item == 'image' %}
-          {% include 'partials/image-with-caption.twig' with {
-            name: 'media_group',
-            class: loop.index % 2 == 1 ? 'float-md-right' : ''
-          } %}
+          {% if loop.index % 2 == 1 %}<div class="float-md-right">{% endif %}
+              {% include 'partials/image-with-caption.twig' with {
+                name: 'media_group',
+              } %}
+          {% if loop.index % 2 == 1 %}</div>{% endif %}
         {% endif %}
       </div>
     {% endfor %}
