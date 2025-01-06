@@ -1,9 +1,9 @@
-@use "../core/functions";
-@use "../core/variables";
-@use "../mixins/breakpoints";
-@use "../mixins/homepage_grid";
+@use '../core/functions';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/homepage_grid';
 
-@use "sass:map";
+@use 'sass:map';
 $homepage-animation-duration: 8;
 $homepage-animation-sub-duration: $homepage-animation-duration * 0.25;
 
@@ -277,7 +277,8 @@ $accessible-text-colors: (
 
       &:nth-child(#{$i}) {
         @media (prefers-reduced-motion: reduce) {
-          strong, p {
+          strong,
+          p {
             color: map.get($accessible-text-colors, $i);
           }
         }

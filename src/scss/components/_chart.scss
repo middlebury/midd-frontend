@@ -1,6 +1,6 @@
-@use "../core/variables";
-@use "../mixins/breakpoints";
-@use "../mixins/grid";
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/grid';
 
 ///
 //// chart group
@@ -110,7 +110,8 @@
   align-items: center;
   margin-bottom: variables.$spacing-1;
 
-  &, p {
+  &,
+  p {
     font-size: variables.$typescale-2;
   }
 }

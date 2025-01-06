@@ -1,7 +1,7 @@
-@use "../core/variables";
-@use "../mixins/buttons";
-@use "../mixins/forms";
-@use "../mixins/type";
+@use '../core/variables';
+@use '../mixins/buttons';
+@use '../mixins/forms';
+@use '../mixins/type';
 
 // can't control markrup for emma form so we have to disable class lint
 // stylelint-disable selector-class-pattern

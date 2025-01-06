@@ -1,7 +1,7 @@
-@use "../core/functions";
-@use "../core/variables";
-@use "../mixins/breakpoints";
-@use "../mixins/waveform-bars";
+@use '../core/functions';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/waveform-bars';
 
 $theme-colors: (
   0: #c0e3fd,

@@ -1,11 +1,11 @@
-@use "../core/functions";
-@use "../core/mixins";
-@use "../core/variables";
-@use "../mixins/breakpoints";
-@use "../mixins/grid";
-@use "../mixins/type";
+@use '../core/functions';
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/grid';
+@use '../mixins/type';
 
-@use "sass:math";
+@use 'sass:math';
 .page-header {
 }
 
@@ -40,19 +40,35 @@
       display: block;
       position: absolute;
       right: 0;
-      background: linear-gradient(to bottom left, rgba(variables.$black, 0.9) 0%, transparent 50%);
+      background: linear-gradient(
+        to bottom left,
+        rgba(variables.$black, 0.9) 0%,
+        transparent 50%
+      );
 
       @include breakpoints.breakpoint(sm) {
         width: 50%;
-        background: linear-gradient(to bottom left, rgba(variables.$black, 0.9) 0%, transparent 40%);
+        background: linear-gradient(
+          to bottom left,
+          rgba(variables.$black, 0.9) 0%,
+          transparent 40%
+        );
       }
 
       @include breakpoints.breakpoint(lg) {
-        background: linear-gradient(to bottom left, rgba(variables.$black, 0.9) 0%, transparent 30%);
+        background: linear-gradient(
+          to bottom left,
+          rgba(variables.$black, 0.9) 0%,
+          transparent 30%
+        );
       }
 
       @include breakpoints.breakpoint(xl) {
-        background: linear-gradient(to bottom left, rgba(variables.$black, 0.9) 0%, transparent 25%);
+        background: linear-gradient(
+          to bottom left,
+          rgba(variables.$black, 0.9) 0%,
+          transparent 25%
+        );
       }
     }
   }
@@ -80,7 +96,7 @@
 
 .page-header__list-toggle {
   position: absolute;
-  top:0;
+  top: 0;
   right: 0;
   display: flex;
   align-items: center;
@@ -137,7 +153,7 @@
 
 .page-header__list {
   position: absolute;
-  top:0;
+  top: 0;
   right: 0;
   max-width: 200px;
   box-shadow: 0px 0px variables.$spacing-2 0px rgba(variables.$black, 0.25);
@@ -145,7 +161,8 @@
   .page-header__list-overlay {
     display: none;
 
-    &, p {
+    &,
+    p {
       font-size: variables.$typescale-2;
       font-weight: variables.$font-weight-semibold;
       line-height: variables.$line-height-heading;

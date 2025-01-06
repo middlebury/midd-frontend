@@ -1,7 +1,7 @@
-@use "../core/functions";
-@use "../core/variables";
-@use "../mixins/breakpoints";
-@use "../mixins/type";
+@use '../core/functions';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/type';
 
 .wrmc-footer {
   background-color: variables.$wrmc-blue-light;
@@ -26,7 +26,7 @@
   }
 
   @include breakpoints.breakpoint(lg) {
-    padding: 0 variables.$spacing-5;  
+    padding: 0 variables.$spacing-5;
   }
 }
 

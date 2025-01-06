@@ -1,7 +1,7 @@
-@use "../core/variables";
-@use "../mixins/breakpoints";
+@use '../core/variables';
+@use '../mixins/breakpoints';
 
-@use "sass:math";
+@use 'sass:math';
 .ls-hero {
   position: relative;
   padding-top: math.percentage(2 * 0.2);

@@ -1,6 +1,6 @@
-@use "../core/functions";
-@use "../core/variables";
-@use "../mixins/breakpoints";
+@use '../core/functions';
+@use '../core/variables';
+@use '../mixins/breakpoints';
 
 .wrmc-accordion {
   margin-top: variables.$spacing-3;
@@ -86,7 +86,6 @@
       display: none;
     }
   }
-
 }
 
 .wrmc-accordion-item__label {
@@ -147,8 +146,8 @@
       padding-top: variables.$spacing-4;
     }
   }
-  
-  &:not(:last-child){
+
+  &:not(:last-child) {
     border-bottom: 1px solid variables.$gray-light;
   }
 }

@@ -1,8 +1,8 @@
-@use "../core/variables";
-@use "../mixins/breakpoints";
+@use '../core/variables';
+@use '../mixins/breakpoints';
 
-@use "sass:color";
-@use "sass:math";
+@use 'sass:color';
+@use 'sass:math';
 .weekly-schedule {
   position: relative;
 
@@ -17,10 +17,11 @@
       padding-right: variables.$spacing-5;
     }
 
-    &, button {
+    &,
+    button {
       font-size: variables.$typescale-1;
       font-weight: variables.$font-weight-semibold;
-      line-height: variables.$line-height-heading; 
+      line-height: variables.$line-height-heading;
       letter-spacing: variables.$letter-spacing;
     }
 
@@ -61,7 +62,8 @@
         }
       }
 
-      &, button {
+      &,
+      button {
         width: 100%;
 
         &:focus,
@@ -85,7 +87,7 @@
 
         .weekly-schedule__show {
           // background-color: darken($navy, 10%);
-          
+
           svg {
             display: block;
           }

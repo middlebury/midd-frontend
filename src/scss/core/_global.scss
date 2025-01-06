@@ -1,5 +1,5 @@
-@use "../mixins/type";
-@use "variables";
+@use '../mixins/type';
+@use 'variables';
 
 ////
 /// Contains mainly classless selectors for base resets and styles
@@ -10,7 +10,6 @@
 :after {
   box-sizing: border-box;
 }
-
 
 html,
 body {

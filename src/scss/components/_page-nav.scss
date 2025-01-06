@@ -1,8 +1,8 @@
-@use "../core/functions";
-@use "../core/mixins";
-@use "../core/variables";
-@use "../mixins/breakpoints";
-@use "../mixins/type";
+@use '../core/functions';
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/type';
 
 .page-nav {
   margin-bottom: variables.$spacing-4;

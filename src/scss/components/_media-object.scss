@@ -1,6 +1,6 @@
-@use "../core/functions";
-@use "../core/variables";
-@use "../mixins/breakpoints";
+@use '../core/functions';
+@use '../core/variables';
+@use '../mixins/breakpoints';
 
 %media-object-border-top {
   border-top: 1px solid variables.$gray-light;

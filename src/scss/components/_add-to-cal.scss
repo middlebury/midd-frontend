@@ -1,5 +1,5 @@
-@use "../core/variables";
-@use "../mixins/buttons";
+@use '../core/variables';
+@use '../mixins/buttons';
 
 .dropdown__button.addtocal {
   @include buttons.button-size(sm);

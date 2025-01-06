@@ -1,6 +1,6 @@
-@use "../core/variables";
-@use "../mixins/breakpoints";
-@use "../mixins/type";
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/type';
 
 $profile-detail-programs-border: 1px solid variables.$gray-light;
 $profile-detail-programs-border-thick: 4px solid variables.$gray-light;

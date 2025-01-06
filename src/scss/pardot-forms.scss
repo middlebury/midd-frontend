@@ -7,8 +7,8 @@
 @use 'core/mixins';
 
 @use 'core/global';
-@use "mixins/buttons";
-@use "mixins/forms";
+@use 'mixins/buttons';
+@use 'mixins/forms';
 
 .form {
   padding: 2px; /* push in so elems arent hidden */

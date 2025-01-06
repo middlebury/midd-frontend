@@ -1,9 +1,9 @@
-@use "../core/functions";
-@use "../core/variables";
-@use "../mixins/breakpoints";
-@use "../mixins/type";
+@use '../core/functions';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/type';
 
-@use "sass:math";
+@use 'sass:math';
 $school-theme-colors: (
   college: #0d395f,
   miis: #97bbd5,

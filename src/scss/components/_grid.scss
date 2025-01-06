@@ -1,8 +1,8 @@
-@use "sass:math";
+@use 'sass:math';
 
-@use "../core/variables";
-@use "../mixins/grid";
-@use "../mixins/grid-framework";
+@use '../core/variables';
+@use '../mixins/grid';
+@use '../mixins/grid-framework';
 
 .container {
   @include grid.make-container;

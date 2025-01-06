@@ -1,5 +1,5 @@
-@use "../core/variables";
-@use "breakpoints";
+@use '../core/variables';
+@use 'breakpoints';
 
 @mixin link-border() {
   border-bottom: 1px solid currentcolor;

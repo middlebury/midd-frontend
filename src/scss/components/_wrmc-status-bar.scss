@@ -1,5 +1,5 @@
-@use "../core/functions";
-@use "../core/variables";
+@use '../core/functions';
+@use '../core/variables';
 
 .status-bar {
   display: flex;
@@ -48,7 +48,7 @@
 
   .status-bar-row {
     display: flex;
- 
+
     .status-bar-section {
       padding: variables.$spacing-2 functions.rem(12);
 
@@ -78,7 +78,7 @@
         font-size: variables.$typescale-2;
         font-weight: variables.$font-weight-bold;
         line-height: variables.$line-height-solid;
-        
+
         em {
           color: variables.$wrmc-pink;
           padding-left: variables.$spacing-1;

@@ -1,10 +1,10 @@
-@use "../core/functions";
-@use "../core/variables";
-@use "../mixins/breakpoints";
-@use "../mixins/grid";
-@use "../mixins/type";
+@use '../core/functions';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/grid';
+@use '../mixins/type';
 
-@use "sass:math";
+@use 'sass:math';
 %make-columns {
   text-align: center;
   @include grid.make-col-ready;
@@ -71,7 +71,11 @@ $mega-cta-alignments: (
 @each $key, $pos in $mega-cta-alignments {
   .mega-cta--gradient-#{$key} {
     @include breakpoints.breakpoint(lg) {
-      background: linear-gradient(to $pos, transparent 45%, variables.$black 100%);
+      background: linear-gradient(
+        to $pos,
+        transparent 45%,
+        variables.$black 100%
+      );
     }
   }
 }

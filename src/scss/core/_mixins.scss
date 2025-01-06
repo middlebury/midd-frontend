@@ -12,7 +12,7 @@
 @use '../mixins/buttons';
 @use '../mixins/waveform-bars';
 @use '../mixins/homepage_grid';
-@use "variables";
+@use 'variables';
 
 @mixin absolute-fill {
   position: absolute;

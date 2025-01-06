@@ -1,5 +1,4 @@
-@use "../core/variables";
-
+@use '../core/variables';
 
 @use '../../../node_modules/pikaday/scss/pikaday' with (
   $pd-text-color: variables.$black,

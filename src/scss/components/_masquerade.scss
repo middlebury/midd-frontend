@@ -1,6 +1,6 @@
-@use "../core/variables";
-@use "../mixins/buttons";
-@use "../mixins/forms";
+@use '../core/variables';
+@use '../mixins/buttons';
+@use '../mixins/forms';
 
 .masquerade {
   margin-bottom: variables.$spacing-6;

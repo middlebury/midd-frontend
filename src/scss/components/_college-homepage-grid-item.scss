@@ -1,8 +1,8 @@
-@use "../core/functions";
-@use "../core/variables";
-@use "../mixins/breakpoints";
-@use "../mixins/grid";
-@use "../mixins/type";
+@use '../core/functions';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/grid';
+@use '../mixins/type';
 
 // Grid Hover
 
@@ -199,7 +199,8 @@
 .grid-quote {
   height: 100%;
   width: 100%;
-  background: url(/images/homepage-quote-blue.svg) no-repeat variables.$spacing-2 -0.75rem;
+  background: url(/images/homepage-quote-blue.svg) no-repeat
+    variables.$spacing-2 -0.75rem;
   background-size: 76px 60px;
   background-color: variables.$white;
   color: variables.$navy;

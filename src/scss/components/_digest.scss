@@ -1,6 +1,6 @@
-@use "../core/mixins";
-@use "../core/variables";
-@use "../mixins/breakpoints";
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/breakpoints';
 
 .digest {
   border-left: 1px solid variables.$gray-light;

@@ -1,6 +1,6 @@
-@use "../core/variables";
+@use '../core/variables';
 
-@use "sass:map";
+@use 'sass:map';
 // stylelint-disable scss/no-duplicate-dollar-variables
 
 @mixin breakpoint($breakpoint) {

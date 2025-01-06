@@ -1,11 +1,11 @@
-@use "../core/functions";
-@use "../core/variables";
-@use "../mixins/breakpoints";
+@use '../core/functions';
+@use '../core/variables';
+@use '../mixins/breakpoints';
 
-@use "sass:math";
+@use 'sass:math';
 .paragraph--top-thirty-songs {
   justify-content: center;
-  
+
   .row {
     row-gap: variables.$spacing-6;
 
@@ -28,7 +28,7 @@
       position: relative;
 
       &:before {
-        content: "0" counter(ol);
+        content: '0' counter(ol);
         position: absolute;
         z-index: 6;
         font-size: functions.rem(18);
@@ -36,7 +36,7 @@
         line-height: variables.$line-height-solid;
       }
 
-      &:nth-child(n+10):before {
+      &:nth-child(n + 10):before {
         content: counter(ol);
       }
 
@@ -53,9 +53,9 @@
 
   .song__album-placeholder {
     position: relative;
-    
-    &:before{ 
-      content: "";
+
+    &:before {
+      content: '';
       display: block;
       padding-top: math.percentage(math.div(1, 1));
       background-color: variables.$wrmc-pink;

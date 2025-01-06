@@ -1,6 +1,6 @@
-@use "../core/functions";
-@use "../core/variables";
-@use "../mixins/breakpoints";
+@use '../core/functions';
+@use '../core/variables';
+@use '../mixins/breakpoints';
 
 @for $i from 1 through 4 {
   .quad-#{$i} {

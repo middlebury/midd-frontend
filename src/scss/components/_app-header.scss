@@ -1,9 +1,9 @@
-@use "../core/mixins";
-@use "../core/variables";
-@use "../mixins/breakpoints";
-@use "../mixins/buttons";
-@use "../mixins/grid";
-@use "../mixins/type";
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/buttons';
+@use '../mixins/grid';
+@use '../mixins/type';
 
 $app-header-bp: lg;
 

@@ -1,5 +1,5 @@
-@use "../core/variables";
-@use "../mixins/breakpoints";
+@use '../core/variables';
+@use '../mixins/breakpoints';
 
 .show-teaser {
   display: flex;
@@ -86,7 +86,7 @@
       bottom: calc(100% + #{variables.$spacing-2});
       right: 0;
     }
-     
+
     &.show-teaser {
       flex-direction: column;
       font-weight: variables.$font-weight-normal;

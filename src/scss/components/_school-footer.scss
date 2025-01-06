@@ -1,7 +1,7 @@
-@use "../core/variables";
-@use "../mixins/breakpoints";
-@use "../mixins/grid";
-@use "../mixins/type";
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/grid';
+@use '../mixins/type';
 
 .school-footer {
   background-color: variables.$color-primary;

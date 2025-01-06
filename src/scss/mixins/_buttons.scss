@@ -1,6 +1,6 @@
-@use "../core/variables";
+@use '../core/variables';
 
-@use "sass:map";
+@use 'sass:map';
 @mixin button-reset() {
   border: 0;
   background: transparent;

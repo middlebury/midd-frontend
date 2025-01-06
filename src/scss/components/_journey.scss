@@ -1,8 +1,8 @@
-@use "../core/functions";
-@use "../core/variables";
-@use "../mixins/breakpoints";
+@use '../core/functions';
+@use '../core/variables';
+@use '../mixins/breakpoints';
 
-@use "sass:math";
+@use 'sass:math';
 // Animation styles
 
 @keyframes offset {

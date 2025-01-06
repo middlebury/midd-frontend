@@ -1,9 +1,9 @@
-@use "../core/functions";
-@use "../core/mixins";
-@use "../core/variables";
-@use "../mixins/breakpoints";
-@use "../mixins/type";
-@use "school-header";
+@use '../core/functions';
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/type';
+@use 'school-header';
 
 $school-header-breakpoint: xl;
 
@@ -101,7 +101,6 @@ $school-header-breakpoint: xl;
     line-height: variables.$line-height-solid;
   }
 
-  
   // img {
   //   width: fit-content;
 
@@ -219,7 +218,7 @@ $school-header-breakpoint: xl;
       margin: variables.$spacing-3 0;
       width: fit-content;
     }
-  
+
     a:last-child {
       font-size: variables.$typescale-1;
       font-weight: variables.$font-weight-semibold;
@@ -310,7 +309,9 @@ $school-header-breakpoint: xl;
   font-size: variables.$typescale-2;
   font-weight: variables.$font-weight-semibold;
   opacity: 0.8;
-  transition: opacity 0.2s, border-color 0.2s;
+  transition:
+    opacity 0.2s,
+    border-color 0.2s;
 
   &:hover {
     text-decoration: none;
@@ -385,4 +386,3 @@ $school-header-breakpoint: xl;
     color: variables.$navy;
   }
 }
-

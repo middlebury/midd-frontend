@@ -202,7 +202,7 @@ class Toggler {
       elem.classList.remove(this.activeClass);
       this.setAriaExpanded(elem, false);
 
-      if(this.toggleAllParent && this.isToggled(this.toggleAllParent)) {
+      if (this.toggleAllParent && this.isToggled(this.toggleAllParent)) {
         this.toggleAllParent.classList.remove(this.activeClass);
       }
     }

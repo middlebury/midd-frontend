@@ -1,5 +1,5 @@
-@use "../core/variables";
-@use "../mixins/type";
+@use '../core/variables';
+@use '../mixins/type';
 
 .accordion {
 }
@@ -45,7 +45,7 @@
   padding: variables.$spacing-3;
   transition: background-color 0.2s;
 
-  &:hover, 
+  &:hover,
   &:focus {
     background-color: variables.$gray-lighter;
   }

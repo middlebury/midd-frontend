@@ -1,4 +1,4 @@
-@use "../mixins/forms";
+@use '../mixins/forms';
 
 .radio {
   @include forms.radio;

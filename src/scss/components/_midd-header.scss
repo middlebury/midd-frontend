@@ -1,6 +1,6 @@
-@use "../core/variables";
-@use "../mixins/breakpoints";
-@use "../mixins/grid";
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/grid';
 
 .midd-header {
   background-color: variables.$navy-dark;

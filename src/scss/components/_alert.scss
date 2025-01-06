@@ -1,6 +1,6 @@
-@use "../core/mixins";
-@use "../core/variables";
-@use "../mixins/buttons";
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/buttons';
 
 .alert {
   padding: variables.$spacing-3;

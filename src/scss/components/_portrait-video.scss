@@ -1,7 +1,7 @@
-@use "../core/mixins";
-@use "../core/variables";
+@use '../core/mixins';
+@use '../core/variables';
 
-@use "sass:math";
+@use 'sass:math';
 .portrait-video {
   max-width: 300px;
   margin: 0 auto;

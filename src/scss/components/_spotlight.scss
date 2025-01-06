@@ -1,10 +1,10 @@
-@use "../core/mixins";
-@use "../core/variables";
-@use "../mixins/breakpoints";
-@use "../mixins/grid";
-@use "../mixins/type";
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/grid';
+@use '../mixins/type';
 
-@use "sass:math";
+@use 'sass:math';
 .spotlight {
   position: relative;
   @include breakpoints.breakpoint(lg) {
@@ -56,8 +56,14 @@
 
   @include breakpoints.breakpoint(md) {
     // fake column offset with padding plus gutter width
-    padding-left: calc(#{math.percentage(math.div(1, 12))} + #{variables.$grid-gutter-width * 0.5});
-    padding-right: calc(#{math.percentage(math.div(1, 12))} + #{variables.$grid-gutter-width * 0.5});
+    padding-left: calc(
+      #{math.percentage(math.div(1, 12))} + #{variables.$grid-gutter-width *
+        0.5}
+    );
+    padding-right: calc(
+      #{math.percentage(math.div(1, 12))} + #{variables.$grid-gutter-width *
+        0.5}
+    );
   }
 
   // place after so largest breakpoint overrides
@@ -73,8 +79,14 @@
     // fake column offset with padding plus gutter width
     padding-top: variables.$spacing-5;
     padding-bottom: variables.$spacing-5;
-    padding-left: calc(#{math.percentage(math.div(1, 12))} + #{variables.$grid-gutter-width * 0.5});
-    padding-right: calc(#{math.percentage(math.div(1, 12))} + #{variables.$grid-gutter-width * 0.5});
+    padding-left: calc(
+      #{math.percentage(math.div(1, 12))} + #{variables.$grid-gutter-width *
+        0.5}
+    );
+    padding-right: calc(
+      #{math.percentage(math.div(1, 12))} + #{variables.$grid-gutter-width *
+        0.5}
+    );
   }
 
   // place after so largest breakpoint overrides

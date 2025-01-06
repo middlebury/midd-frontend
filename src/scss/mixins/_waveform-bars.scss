@@ -1,6 +1,6 @@
-@use "breakpoints";
+@use 'breakpoints';
 
-@use "sass:list";
+@use 'sass:list';
 @mixin make-bar-styles($colors, $heights, $margins, $breakpoint) {
   @each $color-index, $color in $colors {
     @each $height-index, $height in $heights {

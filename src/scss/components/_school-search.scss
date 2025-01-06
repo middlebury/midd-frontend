@@ -1,7 +1,7 @@
-@use "../core/mixins";
-@use "../core/variables";
-@use "../mixins/breakpoints";
-@use "school-header";
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use 'school-header';
 
 .school-search {
   @include mixins.print-hide;
