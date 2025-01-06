@@ -1,3 +1,4 @@
+@use "sass:math";
 .banner {
   background-color: $navy-dark;
   padding: $spacing-3;
@@ -28,10 +29,10 @@
   .banner__bottom-line {
     position: absolute;
     display: block;
-    width: percentage(12 / 12);
+    width: math.percentage(12 / 12);
 
     @include breakpoint(sm) {
-      width: percentage(9 / 12);
+      width: math.percentage(9 / 12);
     }
   }
 

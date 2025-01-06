@@ -1,8 +1,9 @@
+@use "sass:math";
 .page-header {
 }
 
 .page-header--has-image {
-  padding-top: percentage(2 / 5);
+  padding-top: math.percentage(2 / 5);
   height: 0;
   position: relative;
   overflow: hidden;

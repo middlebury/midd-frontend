@@ -1,3 +1,4 @@
+@use "sass:math";
 .paragraph--fluencies {
   > h2,
   * {
@@ -124,11 +125,11 @@
         &::before {
           content: '';
           display: block;
-          padding-top: percentage(143/166);
+          padding-top: math.percentage(143/166);
           width: 100%;
 
           @include breakpoint(xl) {
-            padding-top: percentage(133/166);
+            padding-top: math.percentage(133/166);
           }
         }
 

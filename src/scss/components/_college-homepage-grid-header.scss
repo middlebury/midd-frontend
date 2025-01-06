@@ -1,3 +1,4 @@
+@use "sass:map";
 $homepage-animation-duration: 8;
 $homepage-animation-sub-duration: $homepage-animation-duration / 4;
 
@@ -166,7 +167,7 @@ $accessible-text-colors: (
         animation-delay: #{($homepage-animation-sub-duration) * ($i - 1)}s;
 
         strong {
-          color: map-get($text-colors, $i);
+          color: map.get($text-colors, $i);
         }
       }
     }
@@ -272,7 +273,7 @@ $accessible-text-colors: (
       &:nth-child(#{$i}) {
         @media (prefers-reduced-motion: reduce) {
           strong, p {
-            color: map-get($accessible-text-colors, $i);
+            color: map.get($accessible-text-colors, $i);
           }
         }
       }

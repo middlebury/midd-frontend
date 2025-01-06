@@ -1,9 +1,10 @@
+@use "sass:math";
 .gallery {
 }
 
 .gallery__image {
   position: relative;
-  padding-top: percentage(9 / 16);
+  padding-top: math.percentage(9 / 16);
   height: 0;
   overflow: hidden;
 

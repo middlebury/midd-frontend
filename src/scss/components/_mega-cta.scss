@@ -1,3 +1,4 @@
+@use "sass:math";
 %make-columns {
   text-align: center;
   @include make-col-ready;
@@ -18,7 +19,7 @@
 
   @include breakpoint(md) {
     height: 0;
-    padding-top: percentage(9 / 16);
+    padding-top: math.percentage(9 / 16);
     overflow: hidden;
   }
   @include breakpoint(lg) {

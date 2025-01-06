@@ -1,9 +1,10 @@
+@use "sass:math";
 .audio {
 }
 
 .audio__embed {
   position: relative;
-  padding-top: percentage(9 / 16);
+  padding-top: math.percentage(9 / 16);
 
   iframe {
     position: absolute;

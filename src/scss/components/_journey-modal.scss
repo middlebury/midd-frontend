@@ -1,3 +1,4 @@
+@use "sass:math";
 $school-theme-colors: (
   college: #0d395f,
   miis: #97bbd5,
@@ -886,18 +887,18 @@ $school-theme-colors: (
           display: block;
           content: '';
           width: 100%;
-          padding-top: percentage(185/288);
+          padding-top: math.percentage(185/288);
 
           @include breakpoint(md) {
-            padding-top: percentage(255/272);
+            padding-top: math.percentage(255/272);
           }
 
           @media only screen and (min-width: 1200px) {
-            padding-top: percentage(200/330);
+            padding-top: math.percentage(200/330);
           }
 
           @include breakpoint(xl) {
-            padding-top: percentage(9/16);
+            padding-top: math.percentage(9/16);
           }
         }
 

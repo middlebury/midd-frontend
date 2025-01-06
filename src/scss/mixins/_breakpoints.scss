@@ -1,10 +1,11 @@
+@use "sass:map";
 // stylelint-disable scss/no-duplicate-dollar-variables
 
 @mixin breakpoint($breakpoint) {
   @if $breakpoint == '' {
     @content;
   } @else {
-    $value: map-get($breakpoints, $breakpoint);
+    $value: map.get($breakpoints, $breakpoint);
 
     // If the key exists in the map
     @if $value != '' {

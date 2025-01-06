@@ -1,6 +1,7 @@
+@use "sass:math";
 .ls-hero {
   position: relative;
-  padding-top: percentage(2 / 5);
+  padding-top: math.percentage(2 / 5);
   min-height: 480px;
 
   @include breakpoint(md) {

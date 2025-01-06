@@ -1,3 +1,4 @@
+@use "sass:math";
 // Animation styles
 
 @keyframes offset {
@@ -236,14 +237,14 @@
   position: relative;
   // overflow: hidden;
   align-items: center;
-  padding-top: percentage(16/9);
+  padding-top: math.percentage(16/9);
 
   @include breakpoint(sm) {
-    padding-top: percentage(225/256);
+    padding-top: math.percentage(225/256);
   }
 
   @include breakpoint(lg) {
-    padding-top: percentage(9/16);
+    padding-top: math.percentage(9/16);
   }
 
   .journey-section__background {

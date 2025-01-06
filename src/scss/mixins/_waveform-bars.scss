@@ -1,9 +1,10 @@
+@use "sass:list";
 @mixin make-bar-styles($colors, $heights, $margins, $breakpoint) {
   @each $color-index, $color in $colors {
     @each $height-index, $height in $heights {
       @each $margin-index, $margin in $margins {
         @include breakpoint($breakpoint) {
-          .bar-styles-#{$breakpoint}-#{($color-index * (length($heights) * length($margins)))+($height-index * length($margins))
+          .bar-styles-#{$breakpoint}-#{($color-index * (list.length($heights) * list.length($margins)))+($height-index * list.length($margins))
             + $margin-index} {
             margin-top: #{$margin}px;
             height: #{$height}px;

@@ -1,3 +1,4 @@
+@use "sass:math";
 .spotlight {
   position: relative;
   @include breakpoint(lg) {
@@ -10,7 +11,7 @@
 
 .spotlight__figure {
   @include breakpoint(lg) {
-    padding-top: percentage(9 / 16);
+    padding-top: math.percentage(9 / 16);
     position: relative;
     height: 0;
     overflow: hidden;
@@ -49,8 +50,8 @@
 
   @include breakpoint(md) {
     // fake column offset with padding plus gutter width
-    padding-left: calc(#{percentage(1 / 12)} + #{$grid-gutter-width / 2});
-    padding-right: calc(#{percentage(1 / 12)} + #{$grid-gutter-width / 2});
+    padding-left: calc(#{math.percentage(1 / 12)} + #{$grid-gutter-width / 2});
+    padding-right: calc(#{math.percentage(1 / 12)} + #{$grid-gutter-width / 2});
   }
 
   // place after so largest breakpoint overrides
@@ -66,8 +67,8 @@
     // fake column offset with padding plus gutter width
     padding-top: $spacing-5;
     padding-bottom: $spacing-5;
-    padding-left: calc(#{percentage(1 / 12)} + #{$grid-gutter-width / 2});
-    padding-right: calc(#{percentage(1 / 12)} + #{$grid-gutter-width / 2});
+    padding-left: calc(#{math.percentage(1 / 12)} + #{$grid-gutter-width / 2});
+    padding-right: calc(#{math.percentage(1 / 12)} + #{$grid-gutter-width / 2});
   }
 
   // place after so largest breakpoint overrides

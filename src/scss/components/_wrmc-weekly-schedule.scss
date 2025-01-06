@@ -1,8 +1,10 @@
+@use "sass:color";
+@use "sass:math";
 .weekly-schedule {
   position: relative;
 
   .weekly-schedule__column {
-    width: percentage(1/7);
+    width: math.percentage(1/7);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,7 +24,7 @@
     button:hover,
     button:focus {
       .weekly-schedule__show {
-        background-color: darken($navy, 10%);
+        background-color: color.adjust($navy, $lightness: -10%);
       }
     }
 
@@ -50,7 +52,7 @@
           button:focus,
           &:focus-within {
             .weekly-schedule__show {
-              background-color: darken($genre-color, 10%);
+              background-color: color.adjust($genre-color, $lightness: -10%);
             }
           }
         }

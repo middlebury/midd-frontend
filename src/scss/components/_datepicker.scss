@@ -1,25 +1,26 @@
-$pd-text-color: $black;
-$pd-title-color: $color-primary;
-$pd-title-bg: $white;
-$pd-picker-bg: $white;
-$pd-picker-border: $border-color;
-$pd-picker-border-bottom: $border-color;
-$pd-picker-shadow: none;
-$pd-th-color: $black;
-$pd-day-color: $color-primary;
-$pd-day-bg: transparent;
-$pd-day-hover-color: $color-primary;
-$pd-day-hover-bg: $gray-light;
-$pd-day-today-color: $color-primary;
-$pd-day-selected-color: $white;
-$pd-day-selected-bg: $color-primary;
-$pd-day-selected-shadow: transparent;
-$pd-day-disabled-color: #999;
-$pd-week-color: #999;
 
-$pd-font-family: $font-family-sans-serif;
 
-@import '../../../node_modules/pikaday/scss/pikaday';
+@use '../../../node_modules/pikaday/scss/pikaday' with (
+  $pd-text-color: $black,
+  $pd-title-color: $color-primary,
+  $pd-title-bg: $white,
+  $pd-picker-bg: $white,
+  $pd-picker-border: $border-color,
+  $pd-picker-border-bottom: $border-color,
+  $pd-picker-shadow: none,
+  $pd-th-color: $black,
+  $pd-day-color: $color-primary,
+  $pd-day-bg: transparent,
+  $pd-day-hover-color: $color-primary,
+  $pd-day-hover-bg: $gray-light,
+  $pd-day-today-color: $color-primary,
+  $pd-day-selected-color: $white,
+  $pd-day-selected-bg: $color-primary,
+  $pd-day-selected-shadow: transparent,
+  $pd-day-disabled-color: #999,
+  $pd-week-color: #999,
+  $pd-font-family: $font-family-sans-serif
+);
 
 .pika-single {
   z-index: $z-index-datepicker;
@@ -69,8 +70,8 @@ $pd-font-family: $font-family-sans-serif;
   .is-selected & {
     &:focus,
     &:hover {
-      background: $pd-day-selected-bg;
-      color: $pd-day-selected-color;
+      background: pikaday.$pd-day-selected-bg;
+      color: pikaday.$pd-day-selected-color;
     }
   }
 
@@ -81,7 +82,7 @@ $pd-font-family: $font-family-sans-serif;
   }
 
   &:focus {
-    background: $pd-day-hover-bg;
-    color: $pd-day-hover-color;
+    background: pikaday.$pd-day-hover-bg;
+    color: pikaday.$pd-day-hover-color;
   }
 }
