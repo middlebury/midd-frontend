@@ -1,3 +1,7 @@
+@use "../core/functions";
+@use "../core/variables";
+@use "../mixins/breakpoints";
+
 @use "sass:math";
 // Animation styles
 
@@ -78,17 +82,17 @@
 .journey-line-box {
   top: 22%;
 
-  @include breakpoint(sm) {
+  @include breakpoints.breakpoint(sm) {
     top: 16%;
   }
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     top: 24%;
   }
 }
 
 .journey-link-box {
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     top: 0;
   }
 }
@@ -100,11 +104,11 @@
   &.journey-line--desktop {
     display: none;
 
-    @include breakpoint(sm) {
+    @include breakpoints.breakpoint(sm) {
       transform: scale(1.1);
     }
 
-    @include breakpoint(lg) {
+    @include breakpoints.breakpoint(lg) {
       display: inline-block;
       width: 54%;
       right: -23%;
@@ -115,13 +119,13 @@
   &.journey-line--tablet {
     display: none;
 
-    @include breakpoint(sm) {
+    @include breakpoints.breakpoint(sm) {
       display: inline-block;
       width: 60%;
       right: -19%;
     }
 
-    @include breakpoint(lg) {
+    @include breakpoints.breakpoint(lg) {
       display: none;
     }
   }
@@ -131,7 +135,7 @@
     width: 86%;
     right: -10%;
 
-    @include breakpoint(sm) {
+    @include breakpoints.breakpoint(sm) {
       display: none;
     }
   }
@@ -144,7 +148,7 @@
   &.journey-links--desktop {
     display: none;
 
-    @include breakpoint(lg) {
+    @include breakpoints.breakpoint(lg) {
       display: initial;
     }
   }
@@ -152,11 +156,11 @@
   &.journey-links--tablet {
     display: none;
 
-    @include breakpoint(sm) {
+    @include breakpoints.breakpoint(sm) {
       display: initial;
     }
 
-    @include breakpoint(lg) {
+    @include breakpoints.breakpoint(lg) {
       display: none;
     }
   }
@@ -164,7 +168,7 @@
   &.journey-links--mobile {
     display: initial;
 
-    @include breakpoint(sm) {
+    @include breakpoints.breakpoint(sm) {
       display: none;
     }
   }
@@ -173,11 +177,11 @@
     .journey--link:nth-child(2) .journey--dot-ripple {
       animation-delay: 1.85s;
 
-      @include breakpoint(sm) {
+      @include breakpoints.breakpoint(sm) {
         animation-delay: 1s;
       }
 
-      @include breakpoint(lg) {
+      @include breakpoints.breakpoint(lg) {
         animation-delay: 0.75s;
       }
     }
@@ -185,11 +189,11 @@
     .journey--link:nth-child(3) .journey--dot-ripple {
       animation-delay: 2.5s;
 
-      @include breakpoint(sm) {
+      @include breakpoints.breakpoint(sm) {
         animation-delay: 2s;
       }
 
-      @include breakpoint(lg) {
+      @include breakpoints.breakpoint(lg) {
         animation-delay: 1.5s;
       }
     }
@@ -204,13 +208,13 @@
   }
 
   .journey-link--section .journey--link {
-    font-size: $typescale-1;
-    font-weight: $font-weight-medium;
+    font-size: variables.$typescale-1;
+    font-weight: variables.$font-weight-medium;
     line-height: 1.25;
     fill: white;
 
-    @include breakpoint(sm) {
-      font-size: $typescale-2;
+    @include breakpoints.breakpoint(sm) {
+      font-size: variables.$typescale-2;
     }
 
     &:hover {
@@ -220,7 +224,7 @@
         stroke-width: 0;
         animation: dot-ripple-persist-mobile forwards 1s ease-out;
 
-        @include breakpoint(md) {
+        @include breakpoints.breakpoint(md) {
           animation-name: dot-ripple-persist;
         }
       }
@@ -239,11 +243,11 @@
   align-items: center;
   padding-top: math.percentage(16/9);
 
-  @include breakpoint(sm) {
+  @include breakpoints.breakpoint(sm) {
     padding-top: math.percentage(225/256);
   }
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     padding-top: math.percentage(9/16);
   }
 
@@ -256,7 +260,7 @@
     z-index: -1;
     background: transparent no-repeat 50% 0% / cover;
 
-    @include breakpoint(lg) {
+    @include breakpoints.breakpoint(lg) {
       min-width: initial;
       min-height: initial;
       left: 0;
@@ -290,11 +294,11 @@
     .journey-section__background {
       background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-01-320x568.webp?fv=1');
 
-      @include breakpoint(md) {
+      @include breakpoints.breakpoint(md) {
         background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-01-1200x675.webp?fv=1');
       }
 
-      @include breakpoint(xl) {
+      @include breakpoints.breakpoint(xl) {
         background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-01-1440x810.webp?fv=1');
       }
 
@@ -308,11 +312,11 @@
     .journey-section__background {
       background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-02-320x568.webp?fv=1');
 
-      @include breakpoint(md) {
+      @include breakpoints.breakpoint(md) {
         background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-02-1200x675.webp?fv=1');
       }
 
-      @include breakpoint(xl) {
+      @include breakpoints.breakpoint(xl) {
         background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-02-1440x810.webp?fv=1');
       }
 
@@ -326,11 +330,11 @@
     .journey-section__background {
       background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-03-320x568.webp?fv=1');
 
-      @include breakpoint(md) {
+      @include breakpoints.breakpoint(md) {
         background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-03-1200x675.webp?fv=1');
       }
 
-      @include breakpoint(xl) {
+      @include breakpoints.breakpoint(xl) {
         background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-03-1440x810.webp?fv=1');
       }
 
@@ -344,11 +348,11 @@
     .journey-section__background {
       background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-04-320x568.webp?fv=1');
 
-      @include breakpoint(md) {
+      @include breakpoints.breakpoint(md) {
         background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-04-1200x675.webp?fv=1');
       }
 
-      @include breakpoint(xl) {
+      @include breakpoints.breakpoint(xl) {
         background-image: url('https://www.middlebury.edu/sites/default/files/homepage/panel-04-1440x810.webp?fv=1');
       }
 
@@ -360,20 +364,20 @@
 
   .journey-video--button {
     position: absolute;
-    bottom: $spacing-3;
-    left: $spacing-3;
+    bottom: variables.$spacing-3;
+    left: variables.$spacing-3;
     color: white;
     z-index: 30;
     opacity: 0.5;
     display: none;
 
-    @include breakpoint(sm) {
+    @include breakpoints.breakpoint(sm) {
       display: block;
     }
 
-    @include breakpoint(lg) {
-      bottom: $spacing-5;
-      left: $spacing-5;
+    @include breakpoints.breakpoint(lg) {
+      bottom: variables.$spacing-5;
+      left: variables.$spacing-5;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -399,8 +403,8 @@
     }
 
     .icon {
-      width: $typescale-9;
-      height: $typescale-9;
+      width: variables.$typescale-9;
+      height: variables.$typescale-9;
     }
   }
 
@@ -409,12 +413,12 @@
     width: 316%;
     transform: translate(-30%);
 
-    @include breakpoint(sm) {
+    @include breakpoints.breakpoint(sm) {
       width: 156%;
       transform: translate(-15%);
     }
 
-    @include breakpoint(lg) {
+    @include breakpoints.breakpoint(lg) {
       transform: unset;
       width: 100%;
     }
@@ -426,7 +430,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    color: $white;
+    color: variables.$white;
 
     .container {
       height: 100%;
@@ -438,7 +442,7 @@
       justify-content: center;
       height: 100%;
 
-      @include breakpoint(sm) {
+      @include breakpoints.breakpoint(sm) {
         padding-top: 0;
       }
 
@@ -461,7 +465,7 @@
           justify-content: flex-start;
           text-align: left;
 
-          @include breakpoint(lg) {
+          @include breakpoints.breakpoint(lg) {
             justify-content: flex-end;
             text-align: right;
           }
@@ -482,78 +486,78 @@
       text-align: left;
 
       > * {
-        font-family: $font-family-sans-serif;
+        font-family: variables.$font-family-sans-serif;
       }
 
       h1 {
-        font-size: $typescale-7;
+        font-size: variables.$typescale-7;
 
-        @include breakpoint(lg) {
-          font-size: rem(40);
+        @include breakpoints.breakpoint(lg) {
+          font-size: functions.rem(40);
         }
 
-        @include breakpoint(xl) {
-          font-size: $typescale-9;
+        @include breakpoints.breakpoint(xl) {
+          font-size: variables.$typescale-9;
         }
 
-        font-weight: $font-weight-light;
+        font-weight: variables.$font-weight-light;
       }
 
       p.sub-title {
-        font-size: $typescale-1;
-        font-weight: $font-weight-semibold;
-        color: $journey-yellow;
+        font-size: variables.$typescale-1;
+        font-weight: variables.$font-weight-semibold;
+        color: variables.$journey-yellow;
         text-transform: uppercase;
-        margin-top: $spacing-4;
-        letter-spacing: $letter-spacing;
+        margin-top: variables.$spacing-4;
+        letter-spacing: variables.$letter-spacing;
 
-        @include breakpoint(sm) {
-          font-weight: $font-weight-normal;
-          font-size: $typescale-2;
+        @include breakpoints.breakpoint(sm) {
+          font-weight: variables.$font-weight-normal;
+          font-size: variables.$typescale-2;
         }
 
-        @include breakpoint(sm) {
-          margin-top: $spacing-5;
+        @include breakpoints.breakpoint(sm) {
+          margin-top: variables.$spacing-5;
         }
 
-        @include breakpoint(xl) {
-          margin-top: $spacing-7;
-          font-size: $typescale-3;
+        @include breakpoints.breakpoint(xl) {
+          margin-top: variables.$spacing-7;
+          font-size: variables.$typescale-3;
         }
       }
 
       p.blurb {
-        font-size: $typescale-6;
-        font-weight: $font-weight-light;
+        font-size: variables.$typescale-6;
+        font-weight: variables.$font-weight-light;
         line-height: 1.35;
 
-        @include breakpoint(lg) {
-          font-size: rem(32);
+        @include breakpoints.breakpoint(lg) {
+          font-size: functions.rem(32);
         }
 
-        @include breakpoint(xl) {
-          font-size: rem(40);
+        @include breakpoints.breakpoint(xl) {
+          font-size: functions.rem(40);
         }
       }
     }
   }
 
   .school-picker {
-    font-size: $typescale-2;
-    font-weight: $font-weight-semibold;
+    font-size: variables.$typescale-2;
+    font-weight: variables.$font-weight-semibold;
     bottom: 0;
     width: 100%;
     z-index: 25;
     overflow-x: scroll;
     position: fixed;
 
-    @include breakpoint(xl) {
+    @include breakpoints.breakpoint(xl) {
       overflow-x: hidden;
     }
 
-    @include breakpoint(md) {
+    @include breakpoints.breakpoint(md) {
       // firefox
-      scrollbar-color: $gray-light $white;
+      scrollbar-color: variables.$gray-light variables.$white;
       scrollbar-width: 4px;
 
       // for safari and chrome
@@ -579,11 +583,11 @@
       border-collapse: collapse;
 
       li {
-        color: $navy;
-        border-top: $spacing-2 solid currentcolor;
-        padding: $spacing-3 0;
+        color: variables.$navy;
+        border-top: variables.$spacing-2 solid currentcolor;
+        padding: variables.$spacing-3 0;
         text-align: center;
-        transition: $btn-transition;
+        transition: variables.$btn-transition;
         flex: 1 1 0;
         background-image: linear-gradient(
           to top,
@@ -595,7 +599,7 @@
         transition: background-position 0.2s ease-in-out;
 
         &:first-child {
-          color: $blue-light;
+          color: variables.$blue-light;
         }
 
         &:hover {
@@ -605,7 +609,7 @@
         a {
           display: flex;
           justify-content: center;
-          color: $white;
+          color: variables.$white;
 
           span {
             display: block;
@@ -619,7 +623,7 @@
 
         &:not(:last-child) {
           a {
-            border-right: 1px solid $white;
+            border-right: 1px solid variables.$white;
           }
         }
 

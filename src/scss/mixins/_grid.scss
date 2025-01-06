@@ -1,3 +1,6 @@
+@use "../core/variables";
+@use "breakpoints";
+
 @use "sass:math";
 // stylelint-disable scss/no-duplicate-dollar-variables
 
@@ -6,29 +9,29 @@
 // - https://github.com/primer/css/blob/v14.1.0/src/layout/grid.scss
 
 @mixin make-gutters() {
-  padding-right: ($grid-gutter-width / 2);
-  padding-left: ($grid-gutter-width / 2);
+  padding-right: (variables.$grid-gutter-width / 2);
+  padding-left: (variables.$grid-gutter-width / 2);
 
-  @include breakpoint(lg) {
-    padding-right: ($grid-gutter-width-lg / 2);
-    padding-left: ($grid-gutter-width-lg / 2);
+  @include breakpoints.breakpoint(lg) {
+    padding-right: (variables.$grid-gutter-width-lg / 2);
+    padding-left: (variables.$grid-gutter-width-lg / 2);
   }
 }
 
 @mixin make-row-gutters() {
-  margin-right: ($grid-gutter-width / -2);
-  margin-left: ($grid-gutter-width / -2);
+  margin-right: (variables.$grid-gutter-width / -2);
+  margin-left: (variables.$grid-gutter-width / -2);
 
-  @include breakpoint(lg) {
-    margin-right: ($grid-gutter-width-lg / -2);
-    margin-left: ($grid-gutter-width-lg / -2);
+  @include breakpoints.breakpoint(lg) {
+    margin-right: (variables.$grid-gutter-width-lg / -2);
+    margin-left: (variables.$grid-gutter-width-lg / -2);
   }
 }
 
 @mixin make-container() {
   margin-right: auto;
   margin-left: auto;
-  max-width: $container-max-width;
+  max-width: variables.$container-max-width;
   @include make-gutters;
 }
 
@@ -52,7 +55,7 @@
   @include make-gutters;
 }
 
-@mixin make-col($size, $columns: $grid-columns) {
+@mixin make-col($size, $columns: variables.$grid-columns) {
   flex: 0 0 math.percentage($size / $columns);
   // Add a `max-width` to ensure content within each column does not blow out
   // the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
@@ -60,7 +63,7 @@
   max-width: math.percentage($size / $columns);
 }
 
-@mixin make-col-offset($size, $columns: $grid-columns) {
+@mixin make-col-offset($size, $columns: variables.$grid-columns) {
   $num: $size / $columns;
   margin-left: if($num == 0, 0, math.percentage($num));
 }

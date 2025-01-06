@@ -1,34 +1,38 @@
+@use "../mixins/breakpoints";
+@use "../mixins/grid";
+@use "variables";
+
 ////
 /// Paragraphs handle spacing, layout, and alignment of Drupal Paragraphs render in the main content region of a page.
 ////
 
 %paragraph-space {
-  margin-top: $spacing-7;
-  margin-bottom: $spacing-7;
+  margin-top: variables.$spacing-7;
+  margin-bottom: variables.$spacing-7;
 
-  @include breakpoint(md) {
-    margin-top: $spacing-8;
-    margin-bottom: $spacing-8;
+  @include breakpoints.breakpoint(md) {
+    margin-top: variables.$spacing-8;
+    margin-bottom: variables.$spacing-8;
   }
 
-  @include breakpoint(lg) {
-    margin-top: $spacing-9;
-    margin-bottom: $spacing-9;
+  @include breakpoints.breakpoint(lg) {
+    margin-top: variables.$spacing-9;
+    margin-bottom: variables.$spacing-9;
   }
 }
 
 %paragraph-space-sm {
-  margin-top: $spacing-6;
-  margin-bottom: $spacing-5;
+  margin-top: variables.$spacing-6;
+  margin-bottom: variables.$spacing-5;
 
-  @include breakpoint(md) {
-    margin-top: $spacing-7;
-    margin-bottom: $spacing-6;
+  @include breakpoints.breakpoint(md) {
+    margin-top: variables.$spacing-7;
+    margin-bottom: variables.$spacing-6;
   }
 
-  @include breakpoint(lg) {
-    margin-top: $spacing-8;
-    margin-bottom: $spacing-7;
+  @include breakpoints.breakpoint(lg) {
+    margin-top: variables.$spacing-8;
+    margin-bottom: variables.$spacing-7;
   }
 }
 
@@ -38,14 +42,14 @@
 }
 
 .paragraphs {
-  margin-bottom: $spacing-7;
+  margin-bottom: variables.$spacing-7;
 
-  @include breakpoint(md) {
-    margin-bottom: $spacing-8;
+  @include breakpoints.breakpoint(md) {
+    margin-bottom: variables.$spacing-8;
   }
 
-  @include breakpoint(lg) {
-    margin-bottom: $spacing-9;
+  @include breakpoints.breakpoint(lg) {
+    margin-bottom: variables.$spacing-9;
   }
 
   > [class*='paragraph']:first-child {
@@ -58,37 +62,37 @@
 }
 
 .paragraphs--wide {
-  @include make-col-ready;
+  @include grid.make-col-ready;
 
-  @include breakpoint(md) {
-    @include make-col(10);
-    @include make-col-offset(1);
+  @include breakpoints.breakpoint(md) {
+    @include grid.make-col(10);
+    @include grid.make-col-offset(1);
   }
 
-  @include breakpoint(lg) {
-    @include make-col(8);
-    @include make-col-offset(2);
+  @include breakpoints.breakpoint(lg) {
+    @include grid.make-col(8);
+    @include grid.make-col-offset(2);
   }
 
   .paragraph--expand,
   .paragraph--video,
   .paragraph--image:not(.image--left):not(.image--right) {
-    @include breakpoint(lg) {
+    @include breakpoints.breakpoint(lg) {
       // Main column is 10 wide, so we divide by remaining
       // columns on sides to pull them out to 12 columns.
       // More on these techniques here:
       // https://css-tricks.com/full-width-containers-limited-width-parents/
       margin-left: calc(-100% * 2 / 12);
       margin-right: calc(-100% * 2 / 12);
-      @include make-gutters;
+      @include grid.make-gutters;
     }
   }
 
   .paragraphs--wide__offset {
-    @include breakpoint(lg) {
-      @include make-col-offset(1);
-      @include make-col-ready;
-      @include make-col(10);
+    @include breakpoints.breakpoint(lg) {
+      @include grid.make-col-offset(1);
+      @include grid.make-col-ready;
+      @include grid.make-col(10);
     }
   }
 }
@@ -110,7 +114,7 @@
 }
 
 .paragraph--text {
-  margin-bottom: $spacing-4;
+  margin-bottom: variables.$spacing-4;
 }
 
 .paragraph--video {
@@ -122,12 +126,12 @@
 }
 
 .paragraph--quote {
-  margin-top: $spacing-7;
-  margin-bottom: $spacing-7;
+  margin-top: variables.$spacing-7;
+  margin-bottom: variables.$spacing-7;
 
-  @include breakpoint(md) {
-    margin-top: $spacing-8;
-    margin-bottom: $spacing-8;
+  @include breakpoints.breakpoint(md) {
+    margin-top: variables.$spacing-8;
+    margin-bottom: variables.$spacing-8;
   }
 }
 
@@ -136,14 +140,14 @@
 
   &.image--left {
     margin-top: 0;
-    margin-bottom: $spacing-4;
-    margin-right: $spacing-4;
+    margin-bottom: variables.$spacing-4;
+    margin-right: variables.$spacing-4;
   }
 
   &.image--right {
     margin-top: 0;
-    margin-bottom: $spacing-4;
-    margin-left: $spacing-4;
+    margin-bottom: variables.$spacing-4;
+    margin-left: variables.$spacing-4;
   }
 }
 
@@ -173,12 +177,12 @@
 
 .paragraph--profile-list {
   &.section {
-    margin-top: $spacing-8;
-    margin-bottom: $spacing-8;
+    margin-top: variables.$spacing-8;
+    margin-bottom: variables.$spacing-8;
 
-    @include breakpoint(lg) {
-      margin-top: $spacing-9;
-      margin-bottom: $spacing-9;
+    @include breakpoints.breakpoint(lg) {
+      margin-top: variables.$spacing-9;
+      margin-bottom: variables.$spacing-9;
     }
   }
 }
@@ -240,16 +244,16 @@
 .paragraph--button {
   display: flex;
   flex-wrap: wrap;
-  row-gap: $spacing-7;
-  margin-bottom: $spacing-7;
+  row-gap: variables.$spacing-7;
+  margin-bottom: variables.$spacing-7;
 
   .button:not(:last-child) {
-    margin-right: $spacing-4;
+    margin-right: variables.$spacing-4;
   }
 
-  @include breakpoint(md) {
-    margin-bottom: $spacing-8;
-    row-gap: $spacing-8;
+  @include breakpoints.breakpoint(md) {
+    margin-bottom: variables.$spacing-8;
+    row-gap: variables.$spacing-8;
   }
 }
 
@@ -283,7 +287,7 @@
   position: relative;
   z-index: 2;
 
-  @include breakpoint(lg) {
+  @include breakpoints.breakpoint(lg) {
     margin-top: -8rem;
   }
 
@@ -294,11 +298,11 @@
 
 .paragraph--lead-pulled-up {
   margin-top: -8rem !important;
-  margin-bottom: $spacing-7;
+  margin-bottom: variables.$spacing-7;
   position: relative;
   z-index: 3;
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     margin-top: -6rem !important;
   }
 
@@ -308,17 +312,17 @@
 }
 
 .paragraph--policy {
-  padding-top: $spacing-4;
-  padding-bottom: $spacing-4;
+  padding-top: variables.$spacing-4;
+  padding-bottom: variables.$spacing-4;
 
-  @include breakpoint(md) {
-    padding-top: $spacing-5;
-    padding-bottom: $spacing-5;
+  @include breakpoints.breakpoint(md) {
+    padding-top: variables.$spacing-5;
+    padding-bottom: variables.$spacing-5;
   }
 }
 
 .paragraph--top-thirty-songs {
-  @include breakpoint(md) {
-    margin-top: $spacing-3 !important;
+  @include breakpoints.breakpoint(md) {
+    margin-top: variables.$spacing-3 !important;
   }
 }

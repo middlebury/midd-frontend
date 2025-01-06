@@ -1,24 +1,26 @@
+@use "../core/variables";
+
 @use "sass:map";
 @mixin button-reset() {
   border: 0;
   background: transparent;
-  font-size: $btn-font-size;
-  line-height: $btn-line-height;
+  font-size: variables.$btn-font-size;
+  line-height: variables.$btn-line-height;
 }
 
 @mixin button-base() {
   display: inline-block;
-  font-family: $font-family-base;
+  font-family: variables.$font-family-base;
   text-align: center;
-  border: $btn-border-width solid $btn-border-color;
+  border: variables.$btn-border-width solid variables.$btn-border-color;
   cursor: pointer;
   background: transparent;
-  color: $btn-color;
-  transition: $btn-transition;
-  padding: $btn-padding-y $btn-padding-x;
-  font-size: $btn-font-size;
-  line-height: $btn-line-height;
-  border-radius: $btn-border-radius;
+  color: variables.$btn-color;
+  transition: variables.$btn-transition;
+  padding: variables.$btn-padding-y variables.$btn-padding-x;
+  font-size: variables.$btn-font-size;
+  line-height: variables.$btn-line-height;
+  border-radius: variables.$btn-border-radius;
   white-space: nowrap;
 
   &:hover,
@@ -27,7 +29,7 @@
   }
 }
 
-@mixin button-theme($name, $themes: $btn-themes) {
+@mixin button-theme($name, $themes: variables.$btn-themes) {
   $theme: map.get($themes, $name);
   $bg: map.get($theme, 'bg');
   $color: map.get($theme, 'color');
@@ -47,7 +49,7 @@
   }
 }
 
-@mixin button-size($size: 'default', $sizes: $btn-sizes) {
+@mixin button-size($size: 'default', $sizes: variables.$btn-sizes) {
   $btn-map: map.get($sizes, $size);
   $font-size: map.get($btn-map, 'font-size');
   $padding-y: map.get($btn-map, 'padding-y');
@@ -57,6 +59,6 @@
 }
 
 @mixin button-disabled() {
-  opacity: $btn-disabled-opacity;
+  opacity: variables.$btn-disabled-opacity;
   pointer-events: none;
 }
