@@ -1,9 +1,10 @@
-@use "../components/terms";
 @use "../core/functions";
 @use "../core/mixins";
 @use "../core/variables";
 @use "../mixins/breakpoints";
 @use "../mixins/type";
+@use "../components/terms";
+@use "../components/table";
 
 .typography {
   > :first-child {

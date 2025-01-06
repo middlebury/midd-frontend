@@ -177,7 +177,7 @@
   padding-left: variables.$spacing-6;
 
   @include breakpoints.breakpoint(lg) {
-    padding-left: variables.$spacing-4 / 2;
+    padding-left: variables.$spacing-4 * 0.5;
   }
 }
 

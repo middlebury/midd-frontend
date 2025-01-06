@@ -9,7 +9,7 @@
 
 .portrait-video__content {
   position: relative;
-  padding-bottom: math.percentage(16 / 9);
+  padding-bottom: math.percentage(math.div(16, 9));
 
   img,
   iframe {

@@ -2,25 +2,25 @@
 
 
 @use '../../../node_modules/pikaday/scss/pikaday' with (
-  $pd-text-color: $black,
-  $pd-title-color: $color-primary,
-  $pd-title-bg: $white,
-  $pd-picker-bg: $white,
-  $pd-picker-border: $border-color,
-  $pd-picker-border-bottom: $border-color,
+  $pd-text-color: variables.$black,
+  $pd-title-color: variables.$color-primary,
+  $pd-title-bg: variables.$white,
+  $pd-picker-bg: variables.$white,
+  $pd-picker-border: variables.$border-color,
+  $pd-picker-border-bottom: variables.$border-color,
   $pd-picker-shadow: none,
-  $pd-th-color: $black,
-  $pd-day-color: $color-primary,
+  $pd-th-color: variables.$black,
+  $pd-day-color: variables.$color-primary,
   $pd-day-bg: transparent,
-  $pd-day-hover-color: $color-primary,
-  $pd-day-hover-bg: $gray-light,
-  $pd-day-today-color: $color-primary,
-  $pd-day-selected-color: $white,
-  $pd-day-selected-bg: $color-primary,
+  $pd-day-hover-color: variables.$color-primary,
+  $pd-day-hover-bg: variables.$gray-light,
+  $pd-day-today-color: variables.$color-primary,
+  $pd-day-selected-color: variables.$white,
+  $pd-day-selected-bg: variables.$color-primary,
   $pd-day-selected-shadow: transparent,
   $pd-day-disabled-color: #999,
   $pd-week-color: #999,
-  $pd-font-family: $font-family-sans-serif
+  $pd-font-family: variables.$font-family-sans-serif
 );
 
 .pika-single {

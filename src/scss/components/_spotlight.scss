@@ -17,7 +17,7 @@
 
 .spotlight__figure {
   @include breakpoints.breakpoint(lg) {
-    padding-top: math.percentage(9 / 16);
+    padding-top: math.percentage(math.div(9, 16));
     position: relative;
     height: 0;
     overflow: hidden;
@@ -56,8 +56,8 @@
 
   @include breakpoints.breakpoint(md) {
     // fake column offset with padding plus gutter width
-    padding-left: calc(#{math.percentage(1 / 12)} + #{variables.$grid-gutter-width / 2});
-    padding-right: calc(#{math.percentage(1 / 12)} + #{variables.$grid-gutter-width / 2});
+    padding-left: calc(#{math.percentage(math.div(1, 12))} + #{variables.$grid-gutter-width * 0.5});
+    padding-right: calc(#{math.percentage(math.div(1, 12))} + #{variables.$grid-gutter-width * 0.5});
   }
 
   // place after so largest breakpoint overrides
@@ -73,8 +73,8 @@
     // fake column offset with padding plus gutter width
     padding-top: variables.$spacing-5;
     padding-bottom: variables.$spacing-5;
-    padding-left: calc(#{math.percentage(1 / 12)} + #{variables.$grid-gutter-width / 2});
-    padding-right: calc(#{math.percentage(1 / 12)} + #{variables.$grid-gutter-width / 2});
+    padding-left: calc(#{math.percentage(math.div(1, 12))} + #{variables.$grid-gutter-width * 0.5});
+    padding-right: calc(#{math.percentage(math.div(1, 12))} + #{variables.$grid-gutter-width * 0.5});
   }
 
   // place after so largest breakpoint overrides

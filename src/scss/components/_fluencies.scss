@@ -129,11 +129,11 @@
         &::before {
           content: '';
           display: block;
-          padding-top: math.percentage(143/166);
+          padding-top: math.percentage(math.div(143, 166));
           width: 100%;
 
           @include breakpoints.breakpoint(xl) {
-            padding-top: math.percentage(133/166);
+            padding-top: math.percentage(math.div(133, 166));
           }
         }
 

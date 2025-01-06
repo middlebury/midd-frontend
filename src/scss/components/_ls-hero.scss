@@ -4,7 +4,7 @@
 @use "sass:math";
 .ls-hero {
   position: relative;
-  padding-top: math.percentage(2 / 5);
+  padding-top: math.percentage(2 * 0.2);
   min-height: 480px;
 
   @include breakpoints.breakpoint(md) {
@@ -56,8 +56,8 @@
 .ls-hero__item {
   display: inline-block;
   text-align: center;
-  margin-right: variables.$spacing-4 / 2;
-  margin-left: variables.$spacing-4 / 2;
+  margin-right: variables.$spacing-4 * 0.5;
+  margin-left: variables.$spacing-4 * 0.5;
   margin-bottom: variables.$spacing-2;
 }
 

@@ -892,18 +892,18 @@ $school-theme-colors: (
           display: block;
           content: '';
           width: 100%;
-          padding-top: math.percentage(185/288);
+          padding-top: math.percentage(math.div(185, 288));
 
           @include breakpoints.breakpoint(md) {
-            padding-top: math.percentage(255/272);
+            padding-top: math.percentage(math.div(255, 272));
           }
 
           @media only screen and (min-width: 1200px) {
-            padding-top: math.percentage(200/330);
+            padding-top: math.percentage(math.div(200, 330));
           }
 
           @include breakpoints.breakpoint(xl) {
-            padding-top: math.percentage(9/16);
+            padding-top: math.percentage(math.div(9, 16));
           }
         }
 

@@ -5,7 +5,7 @@
 // adapted from Bootstrap v4.1.1
 // https://github.com/twbs/bootstrap/blob/v4.1.1/scss/mixins/_grid-framework.scss
 
-@mixin make-grid-columns($columns: variables.$grid-columns, $breakpoints: $breakpoints) {
+@mixin make-grid-columns($columns: variables.$grid-columns, $breakpoints: variables.$breakpoints) {
   // use placeholders and extend so selectors are combined when css is generated
   %grid-column {
     @include grid.make-col-ready;

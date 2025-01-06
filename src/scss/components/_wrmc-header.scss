@@ -1,4 +1,4 @@
-school-header.@use "../core/functions";
+@use "../core/functions";
 @use "../core/mixins";
 @use "../core/variables";
 @use "../mixins/breakpoints";
@@ -259,7 +259,7 @@ $school-header-breakpoint: xl;
   top: 100%;
   left: 0;
   background-color: variables.$white;
-  padding: #{variables.$spacing-3 / 2} variables.$spacing-3;
+  padding: #{variables.$spacing-3 * 0.5} variables.$spacing-3;
   border: 1px solid variables.$navy;
   transition: opacity 0.2s;
   opacity: 0;
@@ -319,8 +319,8 @@ $school-header-breakpoint: xl;
 }
 
 .wrmc-nav__link--sub {
-  padding-top: variables.$spacing-3 / 2;
-  padding-bottom: variables.$spacing-3 / 2;
+  padding-top: variables.$spacing-3 * 0.5;
+  padding-bottom: variables.$spacing-3 * 0.5;
   font-size: variables.$typescale-2;
 
   &:hover,

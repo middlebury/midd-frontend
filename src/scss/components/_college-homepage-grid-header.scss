@@ -5,7 +5,7 @@
 
 @use "sass:map";
 $homepage-animation-duration: 8;
-$homepage-animation-sub-duration: $homepage-animation-duration / 4;
+$homepage-animation-sub-duration: $homepage-animation-duration * 0.25;
 
 $text-colors: (
   1: #75a3cd,
@@ -117,7 +117,7 @@ $accessible-text-colors: (
     display: block;
     opacity: 0;
     animation: #{$homepage-animation-sub-duration +
-      ($homepage-animation-sub-duration / 2)}s ease-in-out;
+      ($homepage-animation-sub-duration * 0.5)}s ease-in-out;
     animation-play-state: inherit;
     font-size: variables.$typescale-7;
     width: calc(11 / 12 * 100%);
@@ -218,7 +218,7 @@ $accessible-text-colors: (
     p {
       padding-bottom: variables.$spacing-3;
       animation: #{$homepage-animation-sub-duration +
-        ($homepage-animation-sub-duration / 2)}s ease-in-out;
+        ($homepage-animation-sub-duration * 0.5)}s ease-in-out;
       font-size: variables.$typescale-2;
 
       @include breakpoints.breakpoint(md) {
@@ -239,7 +239,7 @@ $accessible-text-colors: (
       color: variables.$navy;
       font-weight: variables.$font-weight-bold;
       animation: #{$homepage-animation-sub-duration +
-        ($homepage-animation-sub-duration / 2)}s ease-in-out;
+        ($homepage-animation-sub-duration * 0.5)}s ease-in-out;
       animation-play-state: inherit;
     }
 

@@ -57,7 +57,7 @@
     &:before{ 
       content: "";
       display: block;
-      padding-top: math.percentage(1/1);
+      padding-top: math.percentage(math.div(1, 1));
       background-color: variables.$wrmc-pink;
     }
 
