@@ -15,14 +15,15 @@
 }
 
 .office-footer__row {
-  @include grid.make-row;
   justify-content: center;
+  @include grid.make-row;
 }
 
 .office-footer__col {
-  @include grid.make-col-ready;
   padding-bottom: variables.$spacing-4;
   padding-top: variables.$spacing-4;
+
+  @include grid.make-col-ready;
 
   @include breakpoints.breakpoint(md) {
     padding-bottom: variables.$spacing-5;
@@ -30,9 +31,9 @@
   }
 
   @include breakpoints.breakpoint(lg) {
-    @include grid.make-col(4);
     padding-top: 0;
     padding-bottom: 0;
+    @include grid.make-col(4);
   }
 
   &:not(:last-child) {

@@ -29,8 +29,8 @@
 select,
 textarea,
 input[type='text'] {
-  @include forms.form-control;
   padding: variables.$spacing-2;
+  @include forms.form-control;
 }
 
 select {

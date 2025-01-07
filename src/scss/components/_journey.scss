@@ -491,7 +491,8 @@
 
       h1 {
         font-size: variables.$typescale-7;
-
+        font-weight: variables.$font-weight-light;
+        
         @include breakpoints.breakpoint(lg) {
           font-size: functions.rem(40);
         }
@@ -499,8 +500,6 @@
         @include breakpoints.breakpoint(xl) {
           font-size: variables.$typescale-9;
         }
-
-        font-weight: variables.$font-weight-light;
       }
 
       p.sub-title {

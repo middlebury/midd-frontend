@@ -157,7 +157,7 @@ $card-carousel-item-colors: (
 );
 
 @each $key, $hex in $card-carousel-item-colors {
-  .card-carousel-item__header--#{$key} {
+  .card-carousel-item__header--#{"" + $key} {
     background: rgba($hex, 0.9);
   }
 }

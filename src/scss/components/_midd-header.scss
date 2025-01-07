@@ -25,9 +25,10 @@
 }
 
 .midd-header__container {
-  @include grid.make-container;
   position: relative;
   display: flex;
+
+  @include grid.make-container;
 }
 
 .midd-header__brand {

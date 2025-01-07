@@ -16,7 +16,7 @@
 .tabs__nav {
   position: relative;
   right: 0;
-  margin: 0 -(variables.$spacing-3);
+  margin: 0 (-(variables.$spacing-3));
 
   @include breakpoints.breakpoint(md) {
     margin: 0;

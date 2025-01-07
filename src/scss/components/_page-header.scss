@@ -209,9 +209,9 @@
 }
 
 .page-header__content {
-  @include grid.make-col-ready;
   padding-top: variables.$spacing-5;
   padding-bottom: variables.$spacing-4;
+  @include grid.make-col-ready;
 
   @include breakpoints.breakpoint(md) {
     padding-top: variables.$spacing-6;

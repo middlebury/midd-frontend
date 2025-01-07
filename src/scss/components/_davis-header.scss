@@ -51,8 +51,10 @@
         }
       }
 
-      padding-top: variables.$spacing-3;
-      padding-bottom: variables.$spacing-3;
+      & {
+        padding-top: variables.$spacing-3;
+        padding-bottom: variables.$spacing-3;
+      }
 
       @include breakpoints.breakpoint(md) {
         padding-top: variables.$spacing-4;
@@ -99,9 +101,9 @@
 }
 
 .davis-nav {
-  @include mixins.print-hide;
   display: none;
 
+  @include mixins.print-hide;
   @include breakpoints.breakpoint(xl) {
     display: initial;
   }

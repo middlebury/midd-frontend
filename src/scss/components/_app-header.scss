@@ -12,12 +12,14 @@ $app-header-bp: lg;
 }
 
 .app-header__wrap {
-  @include grid.make-container;
   display: flex;
 
+  @include grid.make-container;
+  
   @media print {
     display: block;
   }
+  
 }
 
 .app-header__wrap--main {

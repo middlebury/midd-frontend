@@ -25,10 +25,11 @@ $card-carousel-height: 600px;
 
 .card-carousel__title {
   color: variables.$white;
-  @include type.h0;
   // line-height: $h1-line-height;
   margin-bottom: 1rem;
 
+  @include type.h0;
+  
   @include breakpoints.breakpoint(md) {
     margin-bottom: 3rem;
   }

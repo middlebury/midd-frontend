@@ -17,8 +17,8 @@
 }
 
 .chart-group__item {
-  @include grid.make-col-ready;
   margin-bottom: variables.$spacing-5;
+  @include grid.make-col-ready;
 
   // TODO: clever class names we should change to pass stylelint class pattern
   // stylelint-disable-next-line
