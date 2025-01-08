@@ -3,7 +3,7 @@ import gulp from 'gulp';
 const { series, parallel, task } = gulp;
 import gulpTwig from 'gulp-twig';
 import gulpSass from 'gulp-sass/legacy.js';
-import nodeSass from 'node-sass';
+import dartSass from 'sass';
 import browserSync from 'browser-sync';
 import sourcemaps from 'gulp-sourcemaps';
 import plumber from 'gulp-plumber';
@@ -34,7 +34,7 @@ import webpack from 'webpack-stream';
 import config from './webpack.config.js';
 
 const args = yargs(hideBin(process.argv));
-const sass = gulpSass(nodeSass);
+const sass = gulpSass(dartSass);
 
 dotenv.config();
 

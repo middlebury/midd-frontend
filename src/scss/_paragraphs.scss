@@ -243,6 +243,9 @@
 }
 
 .paragraph--button {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: $spacing-7;
   margin-bottom: $spacing-7;
 
   .button:not(:last-child) {
@@ -251,6 +254,7 @@
 
   @include breakpoint(md) {
     margin-bottom: $spacing-8;
+    row-gap: $spacing-8;
   }
 }
 
