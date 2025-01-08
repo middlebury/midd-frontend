@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const Twig = require('twig');
+const _ = require('lodash');
 const yaml = require('js-yaml');
 const prettier = require('prettier');
 const glob = require('glob');
@@ -26,7 +27,6 @@ function processHtml() {
   templates.forEach(templatePath => {
     Twig.extendFilter('exists', (value, args) => {
       if (!value) {
-        console.log(args);
         throw new Error('value is falsy');
       }
 
@@ -55,10 +55,10 @@ function processHtml() {
     
     const template = Twig.twig({ path: templatePath, base: './src/templates', async: false });
     const renderedHtml = template.render(data);
+    console.log(data);
     const prettifiedHtml = prettier.format(renderedHtml, { parser: 'html' });
     
     const outputPath = path.join('./dist', path.basename(templatePath, '.twig') + '.html');
-    // console.log(outputPath);
     fs.writeFileSync(outputPath, JSON.stringify(prettifiedHtml));
   });
 
