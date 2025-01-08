@@ -4,15 +4,16 @@
 
 @use 'sass:math';
 .paragraph--fluencies {
-  > h2,
-  * {
-    font-family: variables.$font-family-sans-serif;
-  }
   padding-top: variables.$spacing-4;
   padding-bottom: variables.$spacing-4;
   background-color: variables.$blue-darker;
   color: variables.$white;
   border-top: solid variables.$spacing-2 variables.$blue;
+
+  > h2,
+  * {
+    font-family: variables.$font-family-sans-serif;
+  }
 
   @include breakpoints.breakpoint(md) {
     padding-top: variables.$spacing-6;
