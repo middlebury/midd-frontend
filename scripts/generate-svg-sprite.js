@@ -1,8 +1,8 @@
-const fs = require('fs');
-const path = require('path');
-const SVGSpriter = require('svg-sprite');
-const glob = require('glob');
-const SVGO = require('svgo');
+import fs from 'node:fs';
+import path from 'node:path';
+import SVGSpriter from 'svg-sprite';
+import glob from 'glob';
+import SVGO from 'svgo';
 
 const svgo = new SVGO({
   plugins: [

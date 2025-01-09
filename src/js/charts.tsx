@@ -27,7 +27,6 @@ const ALLOW_CHART_TYPES = [
   'pie',
   'doughnut',
   'bar',
-  'horizontalBar',
   'line',
   'percentBar' // custom Preact component
 ];
@@ -65,6 +64,12 @@ interface ChartConfig {
    * https://www.chartjs.org/docs/latest/charts/
    */
   type: string;
+
+  /**
+   * The base axis of the dataset. 'x' for vertical bars and 'y' for horizontal bars.
+   * https://www.chartjs.org/docs/latest/charts/bar.html#general
+   */
+  axis: 'x' | 'y';
 
   /**
    * Text title to display above chart.
@@ -144,6 +149,7 @@ class MiddChart {
     this.config = config;
 
     this.isGroupChart = config.datasets.length > 1;
+ 
     this.isCircleChart = config.type === 'pie' || config.type === 'doughnut';
 
     if (config.type === 'percentBar') {
@@ -155,57 +161,70 @@ class MiddChart {
 
   setDefaultGlobals() {
     // Chart.defaults.global.elements.line.tension = 0;
-
-    Chart.defaults.global.defaultFontColor = '#222';
-    Chart.defaults.global.defaultFontFamily =
+    Chart.defaults.color = '#222';
+    Chart.defaults.font.family =
       'Open Sans, arial, verdana, sans-serif';
-    Chart.defaults.global.defaultFontSize = 14;
+    Chart.defaults.font.size = 14;
 
-    Chart.defaults.doughnut.cutoutPercentage = 80;
+    // @ts-ignore
+    Chart.overrides.doughnut.cutout = '80%';
   }
 
   getBaseOptions() {
     const {
       title,
       type,
+      axis,
       valuePrefix = '',
       valueSuffix = '',
       max,
       min,
       xLabel,
-      yLabel
+      yLabel,
+      labels
     } = this.config;
 
-    const maxBarThickness = this.isGroupChart ? 16 : 32;
-    const isHorizontalBars = type === 'horizontalBar';
+    // const maxBarThickness = this.isGroupChart ? 16 : 32;
+    const isHorizontalBars = type === 'bar' && axis === 'y';
     const isAxisChart = isHorizontalBars || type === 'bar' || type === 'line';
-
+    
     const prefixTick = (value: any) => `${valuePrefix}${value}${valueSuffix}`;
-
-    const xTickCallback = isHorizontalBars ? prefixTick : (tick: any) => tick;
-    const yTickCallback = isHorizontalBars ? (tick: any) => tick : prefixTick;
+   
+    const xTickCallback = isHorizontalBars ? prefixTick : (tick: any) => labels[tick];
+    const yTickCallback = isHorizontalBars ? (tick: any) => labels[tick] : prefixTick;
 
     const options: ChartOptions = {
+      indexAxis: axis,
       animation: {
         duration: PREFERS_REDUCED_MOTION ? 0 : 1000
       },
       maintainAspectRatio: true,
-      legend: {
-        display: false // remove legend since we use html legend
-      },
-      tooltips: {
-        displayColors: false,
-        backgroundColor: '#fff',
-        titleFontColor: '#222',
-        titleFontSize: 16,
-        bodyFontColor: '#222',
-        bodyFontSize: 14,
-        yPadding: 8,
-        xPadding: 8,
-        caretSize: 0,
-        cornerRadius: 0,
-        borderWidth: 1,
-        borderColor: '#ccc'
+      plugins: {
+        legend: {
+          display: false // remove legend since we use html legend
+        },
+        tooltip: {
+          displayColors: false,
+          backgroundColor: '#fff',
+          titleColor: '#222',
+          titleFont: {
+            size: 16
+          },
+          bodyColor: '#222',
+          bodyFont: {
+            size: 14
+          },
+          padding: 8,
+          caretSize: 0,
+          cornerRadius: 0,
+          borderWidth: 1,
+          borderColor: '#ccc',
+          callbacks: {
+            label: (context) => {
+              return `${context.dataset.label}: ${context.raw}${valueSuffix}`;
+            }
+          }
+        }
       },
       elements: {
         point: {
@@ -220,49 +239,47 @@ class MiddChart {
     };
 
     if (title !== '') {
-      options.title = {
+      options.plugins.title = {
         display: true,
         text: title,
-        fontSize: 14,
-        fontStyle: '500',
+        font: {
+          size: 14,
+          weight: 500
+        },
         padding: 24
       };
     }
 
     if (isAxisChart) {
       options.scales = {
-        xAxes: [
-          {
-            scaleLabel: {
-              display: Boolean(xLabel),
-              labelString: xLabel
-            },
-            // @ts-ignore
-            maxBarThickness,
-            ticks: {
-              suggestedMax: max,
-              suggestedMin: min,
-              beginAtZero: !min,
-              callback: xTickCallback
-            }
+        x: {
+          title: {
+            display: Boolean(xLabel),
+            text: xLabel
+          },
+          // @ts-ignore
+          // maxBarThickness,
+          suggestedMax: max,
+          suggestedMin: min,
+          beginAtZero: !min,
+          ticks: {
+            callback: xTickCallback
           }
-        ],
-        yAxes: [
-          {
-            scaleLabel: {
-              display: Boolean(yLabel),
-              labelString: yLabel
-            },
-            // @ts-ignore
-            maxBarThickness,
-            ticks: {
-              suggestedMax: max,
-              suggestedMin: min,
-              beginAtZero: !min,
-              callback: yTickCallback
-            }
+        },
+        y: {
+          title: {
+            display: Boolean(yLabel),
+            text: yLabel
+          },
+          // @ts-ignore
+          // maxBarThickness,
+          suggestedMax: max,
+          suggestedMin: min,
+          beginAtZero: !min,
+          ticks: {
+            callback: yTickCallback
           }
-        ]
+        }
       };
     }
 
@@ -285,13 +302,14 @@ class MiddChart {
   draw() {
     this.el.classList.add('chart--loaded');
 
-    const { labels, datasets, type } = this.config;
-
+    const { labels, datasets, type, axis } = this.config;
     this.el.classList.add('chart', `chart--${type}`);
 
-    if (type === 'bar' || type === 'horizontalBar' || type === 'line') {
+    if (type === 'bar' || axis === 'y' || type === 'line') {
       this.el.classList.add('chart--axis');
     }
+
+    const maxBarThickness = this.isGroupChart ? 16 : 32;
 
     this.canvas = document.createElement('canvas');
     this.canvas.style.width = '500px';
@@ -311,11 +329,13 @@ class MiddChart {
           return {
             ...d,
             borderColor: type === 'line' ? color : 'white',
-            backgroundColor: color
+            backgroundColor: color,
+            maxBarThickness
           };
         }),
         labels
       },
+      // @ts-ignore
       options,
       plugins: [
         {
@@ -369,10 +389,10 @@ class MiddChart {
     }
 
     // add html legend
-    const legend = this.chart.generateLegend() as string; // returned type for generatedLegend is wrong?
-    // console.log(legend);
+    const legendItems = this.chart.options.plugins.legend.labels.generateLabels(this.chart); // returned type for generatedLegend is wrong?
+
     const legendtag = document.createElement('div');
-    legendtag.innerHTML = legend;
+    // legendtag.innerHTML = legend;
 
     // add classes for better styling
     legendtag.classList.add('chart-legend');
@@ -380,6 +400,30 @@ class MiddChart {
       legendtag.classList.add('chart-legend--inline');
     }
 
+    const ul = document.createElement('ul');
+
+    legendItems.forEach((item: any) => {
+      const li = document.createElement('li');
+
+      // color box
+      const boxSpan = document.createElement('span');
+      boxSpan.style.background = item.fillStyle;
+
+      // text
+      const textContainer = document.createElement('p');
+      textContainer.style.color = item.fontColor;
+      textContainer.style.margin = '0';
+      textContainer.style.padding = '0';
+
+      const text = document.createTextNode(item.text);
+      textContainer.appendChild(text);
+
+      li.appendChild(boxSpan);
+      li.appendChild(textContainer);
+      ul.appendChild(li);
+    });
+
+    legendtag.appendChild(ul);
     legendtag.querySelector('ul')?.classList.add('chart-legend__list');
     legendtag.querySelectorAll('li').forEach((li) => {
       li.classList.add('chart-legend__item');
@@ -407,6 +451,7 @@ function parseConfig(el: HTMLElement): ChartConfig | void {
     datasets,
     labels,
     chart = 'pie',
+    axis = 'x',
     min,
     max,
     valuePrefix,
@@ -432,6 +477,8 @@ function parseConfig(el: HTMLElement): ChartConfig | void {
     datasets: parseJsonData(datasets),
     labels: parseJsonData(labels),
     type: chart,
+    // @ts-ignore
+    axis,
     title,
     valuePrefix,
     valueSuffix,
@@ -445,5 +492,6 @@ const els = $$('[data-chart]');
 els.forEach((el) => {
   const config = parseConfig(el);
   if (!config) return;
+  
   new MiddChart(el, config);
 });

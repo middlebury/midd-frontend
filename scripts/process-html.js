@@ -1,10 +1,10 @@
-const fs = require('fs');
-const path = require('path');
-const Twig = require('twig');
-const _ = require('lodash');
-const yaml = require('js-yaml');
-const prettier = require('prettier');
-const glob = require('glob');
+import fs from 'node:fs';
+import path from 'node:path';
+import Twig from 'twig';
+import _ from 'lodash';
+import yaml from 'js-yaml';
+import prettier from 'prettier';
+import glob from 'glob';
 
 const PROD = process.env.NODE_ENV === 'production';
 const TEST = process.env.CI;
@@ -55,11 +55,11 @@ function processHtml() {
     
     const template = Twig.twig({ path: templatePath, base: './src/templates', async: false });
     const renderedHtml = template.render(data);
-    console.log(data);
+    // console.log(data);
     const prettifiedHtml = prettier.format(renderedHtml, { parser: 'html' });
-    
+    prettifiedHtml.catch((err) => {console.log(templatePath); console.log(err)});
     const outputPath = path.join('./dist', path.basename(templatePath, '.twig') + '.html');
-    fs.writeFileSync(outputPath, JSON.stringify(prettifiedHtml));
+    fs.writeFileSync(outputPath, renderedHtml);
   });
 
   console.log('HTML processing complete');
