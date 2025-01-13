@@ -41,18 +41,27 @@
 }
 
 .school-footer__secondary {
-  padding-top: variables.$spacing-5;
-  padding-bottom: variables.$spacing-5;
   @include grid.make-col-ready;
 
+  & {
+    padding-top: variables.$spacing-5;
+    padding-bottom: variables.$spacing-5;
+  }
+
   @include breakpoints.breakpoint(md) {
-    margin-left: auto;
     @include grid.make-col(4);
+
+    & {
+      margin-left: auto;
+    }
   }
 
   @include breakpoints.breakpoint(lg) {
-    padding-bottom: 0;
     @include grid.make-col(12);
+
+    & {
+      padding-bottom: 0;
+    }
   }
 
   .school-footer--lite & {
@@ -70,9 +79,12 @@
 }
 
 .school-footer__text {
-  color: variables.$white;
-  margin-bottom: variables.$spacing-4;
   @include type.h0;
+
+  & {
+    color: variables.$white;
+    margin-bottom: variables.$spacing-4;
+  }
 
   @include breakpoints.breakpoint(md) {
     margin-bottom: variables.$spacing-5;
@@ -80,8 +92,11 @@
 }
 
 .school-footer__nav {
-  border-top: 1px solid variables.$navy-light;
   @include grid.make-col-ready;
+
+  & {
+    border-top: 1px solid variables.$navy-light;
+  }
 
   @include breakpoints.breakpoint(md) {
     margin-top: variables.$spacing-5;

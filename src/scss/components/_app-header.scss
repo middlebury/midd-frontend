@@ -12,9 +12,11 @@ $app-header-bp: lg;
 }
 
 .app-header__wrap {
-  display: flex;
-
   @include grid.make-container;
+
+  & {
+    display: flex;
+  }
   
   @media print {
     display: block;

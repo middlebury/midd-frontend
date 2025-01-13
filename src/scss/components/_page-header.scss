@@ -208,9 +208,12 @@
 }
 
 .page-header__content {
-  padding-top: variables.$spacing-5;
-  padding-bottom: variables.$spacing-4;
   @include grid.make-col-ready;
+
+  & {
+    padding-top: variables.$spacing-5;
+    padding-bottom: variables.$spacing-4;
+  }
 
   @include breakpoints.breakpoint(md) {
     padding-top: variables.$spacing-6;

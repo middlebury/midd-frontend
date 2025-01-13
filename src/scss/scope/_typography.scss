@@ -176,10 +176,11 @@
   // See https://stackoverflow.com/q/36902927/2193516
   @at-root .paragraph--text + .paragraph--text > h2,
     .lead + .paragraph--text > h2 {
-    margin-top: variables.$spacing-7;
-    margin-bottom: variables.$spacing-4;
-
     @include type.h2;
+    & {
+      margin-top: variables.$spacing-7;
+      margin-bottom: variables.$spacing-4;
+    }
     
     @include breakpoints.breakpoint(lg) {
       margin-top: variables.$spacing-8;
@@ -188,10 +189,12 @@
   }
 
   h2 {
-    margin-top: variables.$spacing-7;
-    margin-bottom: variables.$spacing-4;
-
     @include type.h2;
+
+    & {
+      margin-top: variables.$spacing-7;
+      margin-bottom: variables.$spacing-4;
+    }
 
     @include breakpoints.breakpoint(lg) {
       margin-top: variables.$spacing-8;

@@ -38,10 +38,12 @@
 }
 
 .anchor-header__title {
-  font-family: variables.$font-family-serif;
-  margin-bottom: variables.$spacing-3;
-
   @include type.h0;
+  
+  & {
+    font-family: variables.$font-family-serif;
+    margin-bottom: variables.$spacing-3;
+  }
 }
 
 .anchor-header__link {

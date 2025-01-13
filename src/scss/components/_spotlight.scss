@@ -48,11 +48,14 @@
 }
 
 .spotlight__title {
-  background: variables.$color-primary;
-  color: variables.$white;
-  padding-top: variables.$spacing-4;
-  padding-bottom: variables.$spacing-4;
   @include type.h0;
+
+  & {
+    background: variables.$color-primary;
+    color: variables.$white;
+    padding-top: variables.$spacing-4;
+    padding-bottom: variables.$spacing-4;
+  }
 
   @include breakpoints.breakpoint(md) {
     // fake column offset with padding plus gutter width

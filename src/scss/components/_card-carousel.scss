@@ -24,11 +24,12 @@ $card-carousel-height: 600px;
 }
 
 .card-carousel__title {
-  color: variables.$white;
-  // line-height: $h1-line-height;
-  margin-bottom: 1rem;
-
   @include type.h0;
+
+  & {
+    color: variables.$white;
+    margin-bottom: 1rem;
+  }
   
   @include breakpoints.breakpoint(md) {
     margin-bottom: 3rem;
