@@ -160,15 +160,14 @@
 
   .page-header__list-overlay {
     display: none;
-
+    counter-reset: ol;
+    
     &,
     p {
       font-size: variables.$typescale-2;
       font-weight: variables.$font-weight-semibold;
       line-height: variables.$line-height-heading;
     }
-
-    counter-reset: ol;
 
     > li {
       counter-increment: ol;

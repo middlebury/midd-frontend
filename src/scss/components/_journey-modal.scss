@@ -590,14 +590,13 @@ $school-theme-colors: (
     h3 {
       font-family: variables.$font-family-sans-serif;
     }
-    background: variables.$white;
-    color: variables.$black;
-    border-bottom: variables.$spacing-2 solid variables.$blue-light;
 
-    // img {
-    //   margin-left: -$spacing-3;
-    //   margin-right: -$spacing-3;
-    // }
+    & {
+      background: variables.$white;
+      color: variables.$black;
+      border-bottom: variables.$spacing-2 solid variables.$blue-light;
+    }
+
     .story__image {
       margin-left: -(variables.$spacing-3);
       margin-right: -(variables.$spacing-3);

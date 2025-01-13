@@ -54,10 +54,13 @@
   input[type='email'],
   input[type='tel'] {
     @include forms.form-control;
-    margin-top: 0; // remove style coming from global form-text, which is meant for helper text
-    padding: variables.$spacing-2;
-    width: auto;
-    max-width: 100%;
+
+    & {
+      margin-top: 0; // remove style coming from global form-text, which is meant for helper text
+      padding: variables.$spacing-2;
+      width: auto;
+      max-width: 100%;
+    }
   }
 
   select {

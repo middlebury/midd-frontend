@@ -89,8 +89,11 @@
 
   @include breakpoints.breakpoint(lg) {
     @include grid.make-col(8);
-    border-left: 1px solid variables.$navy-light;
-    border-top: 0;
-    margin-top: 0;
+
+    & {
+      border-left: 1px solid variables.$navy-light;
+      border-top: 0;
+      margin-top: 0;
+    }
   }
 }

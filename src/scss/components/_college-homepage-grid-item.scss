@@ -363,8 +363,11 @@
 
     .chart-group__item {
       @include grid.make-col(9);
-      padding: 0;
-      margin: auto;
+
+      & {
+        padding: 0;
+        margin: auto;
+      }
 
       .stats__label {
         display: flex;
