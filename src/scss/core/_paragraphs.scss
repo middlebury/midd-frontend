@@ -158,9 +158,9 @@
 .paragraph--two-col-text {
   @extend %paragraph-space;
 
-  @include breakpoint(lg) {
-    margin-top: $spacing-8;
-    margin-bottom: $spacing-8;
+  @include breakpoints.breakpoint(lg) {
+    margin-top: variables.$spacing-8;
+    margin-bottom: variables.$spacing-8;
   }
 }
 
