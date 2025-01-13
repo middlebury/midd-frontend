@@ -157,6 +157,11 @@
 
 .paragraph--two-col-text {
   @extend %paragraph-space;
+
+  @include breakpoint(lg) {
+    margin-top: $spacing-8;
+    margin-bottom: $spacing-8;
+  }
 }
 
 .paragraph--faq {
