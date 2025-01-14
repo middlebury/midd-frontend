@@ -1,37 +1,42 @@
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/type';
+
 .box-menu {
-  box-shadow: inset 0 0 0 1px $gray-light;
-  border-top: 8px solid $navy;
-  margin-bottom: $spacing-7;
-  background-color: $white;
-  @include themify(border-top-color);
+  box-shadow: inset 0 0 0 1px variables.$gray-light;
+  border-top: 8px solid variables.$navy;
+  margin-bottom: variables.$spacing-7;
+  background-color: variables.$white;
+  @include mixins.themify(border-top-color);
 
-  @include print-hide;
+  @include mixins.print-hide;
 
-  @include breakpoint(md) {
-    margin-bottom: $spacing-8;
+  @include breakpoints.breakpoint(md) {
+    margin-bottom: variables.$spacing-8;
   }
 }
 
 .box-menu__list {
-  padding: $spacing-4;
+  padding: variables.$spacing-4;
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     display: flex;
     flex-wrap: wrap;
-    padding-top: $spacing-3;
+    padding-top: variables.$spacing-3;
     padding-bottom: 0;
   }
 }
 
 .box-menu__item {
   &:not(:last-child) {
-    margin-bottom: $spacing-3;
+    margin-bottom: variables.$spacing-3;
   }
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     flex: 0 0 auto;
-    margin-right: $spacing-4;
-    margin-bottom: $spacing-3;
+    margin-right: variables.$spacing-4;
+    margin-bottom: variables.$spacing-3;
   }
 }
 
@@ -39,19 +44,19 @@
  * 1. fixes bug in safari 12 where text wraps. See https://github.com/middlebury/drupal8/issues/838
  */
 .box-menu__link {
-  @include link-border;
+  @include type.link-border;
   display: block; /* 1 */
   border-color: transparent;
 
   &:hover,
   &:focus {
-    color: $sky;
-    border-color: $sky;
+    color: variables.$sky;
+    border-color: variables.$sky;
   }
 }
 
 .box-menu--overlap {
-  margin-top: -#{$spacing-5};
+  margin-top: -#{variables.$spacing-5};
   position: relative;
-  z-index: $z-index-box-menu;
+  z-index: variables.$z-index-box-menu;
 }

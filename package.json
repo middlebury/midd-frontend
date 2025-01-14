@@ -1,7 +1,7 @@
 {
   "name": "midd-frontend",
   "description": "Frontend assets for Drupal8 middlebury_theme",
-  "version": "1.1.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "start": "npm run dev",
@@ -101,7 +101,7 @@
     "promise-polyfill": "^8.3.0",
     "stickybits": "^3.7.9",
     "superclamp": "^0.2.3",
-    "swiper": "11.1.14"
+    "swiper": "^11.2.1"
   },
   "bundlesize": [
     {

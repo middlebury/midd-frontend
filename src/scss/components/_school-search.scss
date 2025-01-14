@@ -1,20 +1,25 @@
+@use '../core/mixins';
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use 'school-header';
+
 .school-search {
-  @include print-hide;
+  @include mixins.print-hide;
 }
 
 .school-search__handle {
   display: inline-block;
-  padding: $spacing-3;
-  font-size: $typescale-2;
-  color: $navy;
+  padding: variables.$spacing-3;
+  font-size: variables.$typescale-2;
+  color: variables.$navy;
 
   &:hover {
     text-decoration: none;
   }
 
-  @include breakpoint($school-header-breakpoint) {
-    font-weight: $font-weight-medium;
-    font-size: $typescale-3;
+  @include breakpoints.breakpoint(school-header.$school-header-breakpoint) {
+    font-weight: variables.$font-weight-medium;
+    font-size: variables.$typescale-3;
     padding-left: 0;
     padding-right: 0;
     border-bottom: 4px solid transparent;
@@ -26,7 +31,7 @@
     &.is-toggled,
     &:hover {
       opacity: 1;
-      @include themify(border-color);
+      @include mixins.themify(border-color);
     }
   }
 }
@@ -36,23 +41,23 @@
   top: 100%;
   right: 0;
   width: 100%;
-  padding: $spacing-3;
-  background-color: $white;
+  padding: variables.$spacing-3;
+  background-color: variables.$white;
   visibility: hidden;
   opacity: 0;
   transition: 0.2s;
-  z-index: $z-index-school-search-content;
-  border-top: 1px solid $color-primary;
-  border-bottom: 1px solid $color-primary;
+  z-index: variables.$z-index-school-search-content;
+  border-top: 1px solid variables.$color-primary;
+  border-bottom: 1px solid variables.$color-primary;
 
   &.is-toggled {
     visibility: visible;
     opacity: 1;
   }
 
-  @include breakpoint($school-header-breakpoint) {
+  @include breakpoints.breakpoint(school-header.$school-header-breakpoint) {
     width: 400px;
-    border: 1px solid $color-primary;
+    border: 1px solid variables.$color-primary;
   }
 }
 
