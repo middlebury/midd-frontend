@@ -343,8 +343,8 @@ offices:
 
 # placeholder gallery data
 gallery_data:
-  - src: http://placekitten.com/1280/720
-    thumb: http://placekitten.com/64/36
+  - src: http://placecats.com/1280/720
+    thumb: http://placecats.com/64/36
     width: 1280
     height: 720
     alt: ''
@@ -352,8 +352,8 @@ gallery_data:
     sizes: ''
     caption: Lorem ipsum <a href="#">dolor</a> sit amet consectetur adipisicing elit.
 
-  - src: http://placekitten.com/1440/810
-    thumb: http://placekitten.com/64/36
+  - src: http://placecats.com/1440/810
+    thumb: http://placecats.com/64/36
     width: 1440
     height: 810
     alt: ''
@@ -361,8 +361,8 @@ gallery_data:
     sizes: ''
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
 
-  - src: http://placekitten.com/640/360
-    thumb: http://placekitten.com/64/36
+  - src: http://placecats.com/640/360
+    thumb: http://placecats.com/64/36
     width: 640
     height: 360
     alt: ''
@@ -370,8 +370,8 @@ gallery_data:
     sizes: ''
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
-  - src: http://placekitten.com/320/130
-    thumb: http://placekitten.com/64/36
+  - src: http://placecats.com/320/130
+    thumb: http://placecats.com/64/36
     width: 320
     height: 130
     alt: ''
@@ -379,8 +379,8 @@ gallery_data:
     sizes: ''
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
-  - src: http://placekitten.com/960/540
-    thumb: http://placekitten.com/64/36
+  - src: http://placecats.com/960/540
+    thumb: http://placecats.com/64/36
     width: 960
     height: 540
     alt: ''
@@ -388,49 +388,49 @@ gallery_data:
     sizes: ''
     caption: Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
 
-  - src: http://placekitten.com/400/800
+  - src: http://placecats.com/400/800
     width: 400
     height: 800
-    thumb: http://placekitten.com/40/80
+    thumb: http://placecats.com/40/80
     alt: ''
     srcset: ''
     sizes: ''
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
 
-  - src: http://placekitten.com/400/800
+  - src: http://placecats.com/400/800
     width: 400
     height: 800
-    thumb: http://placekitten.com/40/80
+    thumb: http://placecats.com/40/80
     alt: ''
     srcset: ''
     sizes: ''
 
-  - src: http://placekitten.com/450/800
+  - src: http://placecats.com/450/800
     width: 450
     height: 800
-    thumb: http://placekitten.com/40/80
+    thumb: http://placecats.com/40/80
     alt: ''
     srcset: ''
     sizes: ''
 
-  - src: http://placekitten.com/700/600
+  - src: http://placecats.com/700/600
     width: 700
     height: 600
-    thumb: http://placekitten.com/40/80
+    thumb: http://placecats.com/40/80
     alt: ''
     srcset: ''
     sizes: ''
 
-  - src: http://placekitten.com/700/600
+  - src: http://placecats.com/700/600
     width: 700
     height: 600
-    thumb: http://placekitten.com/40/80
+    thumb: http://placecats.com/40/80
     alt: ''
     srcset: ''
     sizes: ''
 
-  - src: http://placekitten.com/960/540
-    thumb: http://placekitten.com/64/36
+  - src: http://placecats.com/960/540
+    thumb: http://placecats.com/64/36
     width: 960
     height: 540
     alt: ''
@@ -438,8 +438,8 @@ gallery_data:
     sizes: ''
     caption: Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
 
-  - src: http://placekitten.com/400/800
-    thumb: http://placekitten.com/40/80
+  - src: http://placecats.com/400/800
+    thumb: http://placecats.com/40/80
     alt: ''
     width: 400
     height: 800
@@ -733,7 +733,7 @@ area_of_study:
       - name: Writing and Rhetoric Program
 
 journey_gallery_data:
-  - src: http://placekitten.com/1376/774
+  - src: http://placecats.com/1376/774
     width: 1376
     height: 774
     srcset:
@@ -745,7 +745,7 @@ journey_gallery_data:
     sizes: ''
     caption: Lorem ipsum <a href="#">dolor</a> sit amet consectetur adipisicing elit.
 
-  - src: http://placekitten.com/1376/774
+  - src: http://placecats.com/1376/774
     width: 1376
     height: 774
     srcset:
@@ -757,7 +757,7 @@ journey_gallery_data:
     sizes: ''
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
 
-  - src: http://placekitten.com/1376/774
+  - src: http://placecats.com/1376/774
     width: 1376
     height: 774
     srcset:
@@ -769,7 +769,7 @@ journey_gallery_data:
     sizes: ''
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
-  - src: http://placekitten.com/1376/774
+  - src: http://placecats.com/1376/774
     width: 1376
     height: 774
     srcset:
@@ -781,7 +781,7 @@ journey_gallery_data:
     sizes: ''
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
-  - src: http://placekitten.com/1376/774
+  - src: http://placecats.com/1376/774
     width: 1376
     height: 774
     srcset:

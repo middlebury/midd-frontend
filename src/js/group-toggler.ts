@@ -32,7 +32,7 @@ class GroupToggler {
     this.enabledClass = 'has-toggler';
 
     this.group = $$('[data-toggle-target]', elem);
-    
+
     this.handleElemClick = this.handleElemClick.bind(this);
 
     this.init();
@@ -47,17 +47,33 @@ class GroupToggler {
   destroy() {
     this.elem.classList.remove(this.enabledClass);
     this.elem.classList.remove(this.activeClass);
-    this.openTrigger.removeEventListener('click', (e) => this.handleElemClick(e, 'open'));
-    this.openTrigger.removeEventListener('keydown', (e) => this.handleElemKeyDown(e, 'open'));
-    this.closeTrigger.removeEventListener('click', (e) => this.handleElemClick(e, 'close'));
-    this.closeTrigger.removeEventListener('keydown', (e) => this.handleElemKeyDown(e, 'close'));
+    this.openTrigger.removeEventListener('click', (e) =>
+      this.handleElemClick(e, 'open')
+    );
+    this.openTrigger.removeEventListener('keydown', (e) =>
+      this.handleElemKeyDown(e, 'open')
+    );
+    this.closeTrigger.removeEventListener('click', (e) =>
+      this.handleElemClick(e, 'close')
+    );
+    this.closeTrigger.removeEventListener('keydown', (e) =>
+      this.handleElemKeyDown(e, 'close')
+    );
   }
 
   addListeners() {
-    this.openTrigger.addEventListener('click', (e) => this.handleElemClick(e, 'open'));
-    this.openTrigger.addEventListener('keydown', (e) => this.handleElemKeyDown(e, 'open'));
-    this.closeTrigger.addEventListener('click', (e) => this.handleElemClick(e, 'close'));
-    this.closeTrigger.addEventListener('keydown', (e) => this.handleElemKeyDown(e, 'close'));
+    this.openTrigger.addEventListener('click', (e) =>
+      this.handleElemClick(e, 'open')
+    );
+    this.openTrigger.addEventListener('keydown', (e) =>
+      this.handleElemKeyDown(e, 'open')
+    );
+    this.closeTrigger.addEventListener('click', (e) =>
+      this.handleElemClick(e, 'close')
+    );
+    this.closeTrigger.addEventListener('keydown', (e) =>
+      this.handleElemKeyDown(e, 'close')
+    );
   }
 
   handleElemKeyDown = (e: KeyboardEvent, state: string) => {

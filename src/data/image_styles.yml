@@ -124,6 +124,12 @@ image_styles:
       - 400x225
       - 640x360
 
+  media_group:
+    title: Media Group component
+    ratio: 'any'
+    srcset:
+      - 400x225
+
   event_teaser:
     title: Event teaser
     ratio: 'any'

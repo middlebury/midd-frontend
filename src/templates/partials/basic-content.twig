@@ -32,7 +32,16 @@
 		</p>
 	</div>
 
-	{% include 'paragraphs/video-group.twig' %}
+  {% include 'paragraphs/media-group.twig' with {
+    title: 'Media group',
+    blurb: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus
+        quam optio ratione labore possimus iusto corrupti vero fugiat explicabo
+        officiis ex, a sunt obcaecati molestias voluptate eum earum ipsam
+        accusantium.',
+    media_content_items: ['video', 'image', 'image', 'audio', 'video']
+  } %}
+
+	{# {% include 'paragraphs/video-group.twig' %} #}
 
 	{% include 'paragraphs/status-report.twig' %}
 
@@ -51,7 +60,9 @@
 	{% include 'paragraphs/profile-list.twig' %}
 
 	{% if not env.test %}
-		{% include 'paragraphs/audio.twig' %}
+		{% include 'paragraphs/audio.twig' with {
+      paragraph: true
+    } %}
 	{% endif %}
 
 	{% include 'paragraphs/announcement.twig' %}

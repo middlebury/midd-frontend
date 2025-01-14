@@ -194,6 +194,7 @@ class MiddChart {
     const yTickCallback = isHorizontalBars ? (tick: any) => labels[tick] : prefixTick;
 
     const options: ChartOptions = {
+      // @ts-ignore
       indexAxis: axis,
       animation: {
         duration: PREFERS_REDUCED_MOTION ? 0 : 1000
@@ -220,6 +221,7 @@ class MiddChart {
           borderWidth: 1,
           borderColor: '#ccc',
           callbacks: {
+            // @ts-ignore
             label: (context) => {
               return `${context.dataset.label}: ${context.raw}${valueSuffix}`;
             }
@@ -252,6 +254,7 @@ class MiddChart {
 
     if (isAxisChart) {
       options.scales = {
+        // @ts-ignore
         x: {
           title: {
             display: Boolean(xLabel),
