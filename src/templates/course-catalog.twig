@@ -1,0 +1,87 @@
+{% extends 'course-hub-layout.twig' %}
+
+{% block layout_header %}
+  {% include 'partials/app-header.twig' with {
+    title: 'Course Catalog',
+    items: [
+      {
+        text: 'My Terms',
+        icon: 'chevron-down',
+        icon_class: 'd-none d-lg-inline',
+        active: true,
+        items: [
+          {
+            text: 'Fall 2019'
+          },
+          {
+            text: 'Fall 2019'
+          },
+          {
+            text: 'Fall 2019'
+          },
+          {
+            text: 'Fall 2019'
+          }
+        ]
+      },
+      {
+        text: 'Browse Course Sites'
+      },
+      {
+        text: 'Hub Help'
+      },
+      {
+        text: 'Course Catalog',
+        external: true
+      },
+      {
+        text: 'Schedule Builder',
+        external: true
+      },
+      {
+        text: 'Academic Calendar'
+      }
+    ]
+  } %}
+{% endblock %}
+
+{% set page_header = {
+  title: 'Search in Middlebury College Spring 2025',
+  breadcrumb: [
+    {
+      text: 'All Catalogs'
+    },
+    {
+      text: 'Middlebury College'
+    }
+  ]
+} %}
+
+{% block nav %}
+  {% include 'partials/page-nav.twig' with {
+    label: 'All Catalogs',
+    items: [
+      {
+        text: 'Middlebury College',
+        href: '#',
+        items: [
+          {
+            text: 'Search',
+            href: '#'
+          },
+          {
+            text: 'Course & Requirements',
+            href: '#'
+          }
+        ]
+      },
+      {
+        text: 'My Schedule Planner'
+      }
+    ]
+  } %}
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
