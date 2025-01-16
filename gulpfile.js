@@ -291,7 +291,7 @@ const deployDist = () => {
 
 const watch = () => {
   gulp.watch('./src/templates/**/*.twig', html);
-  gulp.watch(paths.styles.src, gulp.parallel(styles, lintStyles));
+  gulp.watch(paths.styles.src, gulp.parallel(styles));
   gulp.watch(paths.images.src, images);
   gulp.watch('./src/data/*.yml', html);
 };
@@ -374,7 +374,7 @@ task(
     clean,
     copyDeps,
     copyMeta,
-    parallel(html, images, lintStyles, styles, scripts),
+    parallel(html, images, styles, scripts),
     reportFilesizes
   )
 );
