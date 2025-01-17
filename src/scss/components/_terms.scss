@@ -62,3 +62,19 @@
 .terms__text {
   @include terms-text;
 }
+
+.course-catalog-result-card {
+  border-bottom: 1px solid variables.$border-color;
+  
+  .course-title {
+    font-weight: variables.$font-weight-bold;
+  }
+  
+  .terms__title {
+    flex: 0 0 30%;
+  }
+
+  .terms__text {
+    flex: 0 0 60%;
+  }
+}
