@@ -1,5 +1,6 @@
 @use '../core/variables';
 @use '../mixins/forms';
+@use '../mixins/breakpoints';
 
 .label,
 label {
@@ -48,4 +49,37 @@ select.form-control {
   margin-right: variables.$spacing-3;
   // align-items: center;
   margin-bottom: 0;
+}
+
+.course-catalog-search {
+  .form-control {
+    line-height: variables.$line-height-heading;
+  }
+
+  .form-group--course-type .checkbox-group {
+    .checkbox--filter {
+      @include breakpoints.breakpoint(xl) {
+        width: 33%;
+      }
+    }
+  }
+
+  .checkbox-group {
+
+    .checkbox--filter {
+      min-width: 20%;
+
+      .checkbox__label {
+        padding: variables.$spacing-2 variables.$spacing-2;
+
+        &:hover {
+          background: none;
+        }
+      }
+    }
+  }
+
+  .form-check {
+    align-items: baseline;
+  }
 }
