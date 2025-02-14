@@ -1,10 +1,16 @@
-<div class="course-catalog-result-card {{ loop.first ? "mt-7" : "mt-9"}}">
+<div class="course-catalog-result-card mt-5 pb-4">
   <a class="course-title link-underline" href="/offerings/view/catalog/catalog%2FMCUG/offering/section%2F202520%2F21451">BIOL0140B-S25</a>*
-  <a href="/bookmarks/add/catalog/catalog%2FMCUG/course/course%2FAMST0175/csrf_key/67ae32fe6a6f5" title="click to save" class="float-right"><img src="https://catalog.middlebury.edu/images/Crystal_Clear/Crystal_Clear_action_bookmark_Silver.png" alt="star icon" class="icon"> Save</a>
+  <a href="#" title="click to save" class="f2 float-right">
+    {% if random(1) %}
+      <img src="https://catalog.middlebury.edu/images/Crystal_Clear/Crystal_Clear_action_bookmark_Silver.png" alt="star icon" class="icon mr-1">Save
+    {% else %}
+      Log-in to save
+    {% endif %}
+  </a>
   <h3 class="pt-2">Ecology and Evolution</h3>
   <p class="f2 pb-2 pt-2">In this introduction to ecology and evolutionary biology we will cover the topics of interspecific...<a class="link-underline" href="#">read more</a></p>
   <div class="row">
-    <div class="col-md-6 mb-4 mb-lg-0">
+    <div class="col-md-6">
       <dl class="f2">
         <div class="pt-2 pb-2">
           <dt class="d-block font-semibold">Type:</dt>

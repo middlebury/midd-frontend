@@ -83,7 +83,7 @@
 {% endblock %}
 
 {% block content %}
-  <form action="http://learn.middlebury.edu/l/74172/2016-04-04/4fsyft" method="post">
+  <form action="http://learn.middlebury.edu/l/74172/2016-04-04/4fsyft" method="post" data-toggle-all-group>
     <input type="hidden" name="success_location" value="http://www.middlebury.edu/language-schools/thank-you">
     <div class="course-catalog-search row row--sm-gutters">
       <div class="col-md-6 form-group">
@@ -340,160 +340,6 @@
           </optgroup>
 				</select>
       </div>
-      <fieldset class="col-md-6 form-group">
-        <legend class="label">
-          <p class="f2">Satisfies requirements</p>
-          <p class="f1">(Leave all blank for no preference)</p>
-        </legend>
-        <div class="checkbox-group d-flex flex-wrap">
-          {% for item in catalog_search_items.requirements %}
-            <div class="checkbox checkbox--filter">
-              <input type="checkbox" class="checkbox__input" id="checkbox-req-item-{{loop.index}}" value="topic/requirement/{{item.option}}">
-              <label for="checkbox-req-item-{{loop.index}}" id="checkbox-req-label-{{loop.index}}" class="checkbox__label">{{item.option}}</label>
-            </div>
-          {% endfor %}
-        </div>
-      </fieldset>
-      <div class="col-md-6 form-group">
-        <label for="keywords" class="label">Keywords</label>
-        <input type="text" class="form-control" name="keywords" id="keywords" ria-describedby="instructions" required>
-        <p class="f1 font-semibold">By default results only have to match one of the supplied keywords. Use a plus (+) before a word to require it or a minus (-) to exclude it. Use an asterisk (*) as a wildcard.</p>
-      </div>
-
-      <fieldset class="col-md-6 form-group">
-        <legend class="label">Day of the week</legend>
-        <div class="checkbox-group d-flex flex-wrap">
-          {% for item in catalog_search_items.days %}
-            <div class="checkbox checkbox--filter">
-              <p>{{loop.id}}</p>
-              <input type="checkbox" class="checkbox__input" id="checkbox-day-item-{{loop.index}}" value="{{item.day}}">
-              <label for="checkbox-day-item-{{loop.index}}" id="checkbox-day-label-{{loop.index}}" class="checkbox__label">{{item.day}}</label>
-            </div>
-          {% endfor %}
-        </div>
-        <p class="f1 font-semibold mb-3">Leave all unchecked if no preference.</p>
-        {% include 'partials/form-check.twig' with {
-          id: 'course-catalog-days-inclusive',
-          name: 'days_mode',
-          label: 'Inclusive search - meets on all of the selected days and possibly others',
-          value: 'inclusive',
-        } %}
-        {% include 'partials/form-check.twig' with {
-          id: 'course-catalog-days-exclusive',
-          name: 'days_mode',
-          label: 'Exclusive search - meets only on selected days, not on unselected days',
-          value: 'exclusive',
-        } %}
-      </fieldset>
-
-      <div class="col-md-6 form-group">
-        <label for="last_name" class="label">Time</label>
-          <label class="d-inline-flex">From
-            <select class="form-control ml-2" name="time_start" class="time_select">
-              <option value="0" selected="selected">Any Time</option>
-              <option value="1800">12:30 am</option>
-              <option value="3600">1:00 am</option>
-              <option value="5400">1:30 am</option>
-              <option value="7200">2:00 am</option>
-              <option value="9000">2:30 am</option>
-              <option value="10800">3:00 am</option>
-              <option value="12600">3:30 am</option>
-              <option value="14400">4:00 am</option>
-              <option value="16200">4:30 am</option>
-              <option value="18000">5:00 am</option>
-              <option value="19800">5:30 am</option>
-              <option value="21600">6:00 am</option>
-              <option value="23400">6:30 am</option>
-              <option value="25200">7:00 am</option>
-              <option value="27000">7:30 am</option>
-              <option value="28800">8:00 am</option>
-              <option value="30600">8:30 am</option>
-              <option value="32400">9:00 am</option>
-              <option value="34200">9:30 am</option>
-              <option value="36000">10:00 am</option>
-              <option value="37800">10:30 am</option>
-              <option value="39600">11:00 am</option>
-              <option value="41400">11:30 am</option>
-              <option value="43200">12:00 pm</option>
-              <option value="45000">12:30 pm</option>
-              <option value="46800">1:00 pm</option>
-              <option value="48600">1:30 pm</option>
-              <option value="50400">2:00 pm</option>
-              <option value="52200">2:30 pm</option>
-              <option value="54000">3:00 pm</option>
-              <option value="55800">3:30 pm</option>
-              <option value="57600">4:00 pm</option>
-              <option value="59400">4:30 pm</option>
-              <option value="61200">5:00 pm</option>
-              <option value="63000">5:30 pm</option>
-              <option value="64800">6:00 pm</option>
-              <option value="66600">6:30 pm</option>
-              <option value="68400">7:00 pm</option>
-              <option value="70200">7:30 pm</option>
-              <option value="72000">8:00 pm</option>
-              <option value="73800">8:30 pm</option>
-              <option value="75600">9:00 pm</option>
-              <option value="77400">9:30 pm</option>
-              <option value="79200">10:00 pm</option>
-              <option value="81000">10:30 pm</option>
-              <option value="82800">11:00 pm</option>
-              <option value="84600">11:30 pm</option>				
-            </select>
-          </label>
-          <label class="d-inline-flex ml-3">To
-            <select class="form-control ml-2" name="time_end" class="time_select">
-              <option value="1800">12:30 am</option>
-              <option value="3600">1:00 am</option>
-              <option value="5400">1:30 am</option>
-              <option value="7200">2:00 am</option>
-              <option value="9000">2:30 am</option>
-              <option value="10800">3:00 am</option>
-              <option value="12600">3:30 am</option>
-              <option value="14400">4:00 am</option>
-              <option value="16200">4:30 am</option>
-              <option value="18000">5:00 am</option>
-              <option value="19800">5:30 am</option>
-              <option value="21600">6:00 am</option>
-              <option value="23400">6:30 am</option>
-              <option value="25200">7:00 am</option>
-              <option value="27000">7:30 am</option>
-              <option value="28800">8:00 am</option>
-              <option value="30600">8:30 am</option>
-              <option value="32400">9:00 am</option>
-              <option value="34200">9:30 am</option>
-              <option value="36000">10:00 am</option>
-              <option value="37800">10:30 am</option>
-              <option value="39600">11:00 am</option>
-              <option value="41400">11:30 am</option>
-              <option value="43200">12:00 pm</option>
-              <option value="45000">12:30 pm</option>
-              <option value="46800">1:00 pm</option>
-              <option value="48600">1:30 pm</option>
-              <option value="50400">2:00 pm</option>
-              <option value="52200">2:30 pm</option>
-              <option value="54000">3:00 pm</option>
-              <option value="55800">3:30 pm</option>
-              <option value="57600">4:00 pm</option>
-              <option value="59400">4:30 pm</option>
-              <option value="61200">5:00 pm</option>
-              <option value="63000">5:30 pm</option>
-              <option value="64800">6:00 pm</option>
-              <option value="66600">6:30 pm</option>
-              <option value="68400">7:00 pm</option>
-              <option value="70200">7:30 pm</option>
-              <option value="72000">8:00 pm</option>
-              <option value="73800">8:30 pm</option>
-              <option value="75600">9:00 pm</option>
-              <option value="77400">9:30 pm</option>
-              <option value="79200">10:00 pm</option>
-              <option value="81000">10:30 pm</option>
-              <option value="82800">11:00 pm</option>
-              <option value="84600">11:30 pm</option>				
-              <option value="86400" selected="selected">Any Time</option>
-            </select>
-				  </label>
-        </label>
-      </div>
 
       <fieldset class="col-md-6 form-group form-group--course-type">
         <legend class="label">
@@ -510,50 +356,271 @@
         </div>
       </fieldset>
 
-      <fieldset class="col-md-6 form-group">
-        <legend class="label">
-          <p class="f2">Course Modality</p>
-          <p class="f1">(Leave all blank for no preference)</p>
-        </legend>
-        <div class="checkbox-group">
-          {% for item in catalog_search_items.course_modality %}
-            <div class="checkbox checkbox--filter">
-              <input type="checkbox" class="checkbox__input" id="checkbox-mod-item-{{loop.index}}" value="topic/instruction_method/{{item.value}}">
-              <label for="checkbox-mod-item-{{loop.index}}" id="checkbox-mod-label-{{loop.index}}" class="checkbox__label">{{item.label}}</label>
-            </div>
-          {% endfor %}
-        </div>
-      </fieldset>
+      <div class="col-md-6 form-group">
+        <label for="keywords" class="label">Keywords</label>
+        <input type="text" class="form-control" name="keywords" id="keywords" ria-describedby="instructions" required>
+        <p class="f1 font-semibold">By default results only have to match one of the supplied keywords. Use a plus (+) before a word to require it or a minus (-) to exclude it. Use an asterisk (*) as a wildcard.</p>
+      </div>
 
-      <fieldset class="col-md-6 form-group">
-        <legend class="label">
-          <p class="f2">Level</p>
-          <p class="f1">(Leave all blank for no preference)</p>
-        </legend>
-        <div class="checkbox-group">
-          {% for item in catalog_search_items.level %}
-            <div class="checkbox checkbox--filter">
-              <input type="checkbox" class="checkbox__input" id="checkbox-level-item-{{loop.index}}" value="topic/level/{{item.value}}">
-              <label for="checkbox-level-item-{{loop.index}}" id="checkbox-level-label-{{loop.index}}" class="checkbox__label">{{item.label}}</label>
-            </div>
-          {% endfor %}
-        </div>
-      </fieldset>
+      <div class="col-12 mb-5" role="tablist">
+        {% set id = random(1234) %}
+        <div class="my-2 catalog-search-item-tab js-catalog-search-item-{{id}}">
+          <a
+            href="#catalog-search-item-label-{{id}}"
+            class="catalog-search-item__link"
+            data-toggle-target=".js-catalog-search-item-{{id}}"
+            aria-expanded="false"
+            aria-controls="catalog-search-item-content-{{id}}"
+            aria-labelledby="catalog-search-item-label-{{id}}"
+            role="tab"
+          >
+            <h2 class="wrmc-accordion-item__title">
+              <span id="catalog-search-item-label-{{id}}">Day of the week, Time</span>
 
-       <fieldset class="col-md-6 form-group">
-        <legend class="label">
-          <p class="f2">Campus</p>
-          <p class="f1">(Leave all blank for no preference)</p>
-        </legend>
-        <div class="checkbox-group">
-          {% for item in catalog_search_items.campus %}
-            <div class="checkbox checkbox--filter">
-              <input type="checkbox" class="checkbox__input" id="checkbox-campus-item-{{loop.index}}" value="resource/place/campus/{{item.value}}">
-              <label for="checkbox-campus-item-{{loop.index}}" id="checkbox-campus-label-{{loop.index}}" class="checkbox__label">{{item.label}}</label>
+              <span class="catalog-search-item-close">&ndash;</span>
+              <span class="catalog-search-item-open">&#43;</span>
+            </h2>
+          </a>
+          <div role="tabpanel" id="catalog-search-item-content-{{id}}" class="row mx-0 catalog-search-item-content">
+            <fieldset class="col-md-6 form-group">
+              <legend class="label">Day of the week</legend>
+              <div class="checkbox-group d-flex flex-wrap">
+                {% for item in catalog_search_items.days %}
+                  <div class="checkbox checkbox--filter">
+                    <p>{{loop.id}}</p>
+                    <input type="checkbox" class="checkbox__input" id="checkbox-day-item-{{loop.index}}" value="{{item.day}}">
+                    <label for="checkbox-day-item-{{loop.index}}" id="checkbox-day-label-{{loop.index}}" class="checkbox__label">{{item.day}}</label>
+                  </div>
+                {% endfor %}
+              </div>
+              <p class="f1 font-semibold mb-3">Leave all unchecked if no preference.</p>
+              {% include 'partials/form-check.twig' with {
+                id: 'course-catalog-days-inclusive',
+                name: 'days_mode',
+                label: 'Inclusive search - meets on all of the selected days and possibly others',
+                value: 'inclusive',
+              } %}
+              {% include 'partials/form-check.twig' with {
+                id: 'course-catalog-days-exclusive',
+                name: 'days_mode',
+                label: 'Exclusive search - meets only on selected days, not on unselected days',
+                value: 'exclusive',
+              } %}
+            </fieldset>
+
+            <div class="col-md-6 form-group">
+              <label for="last_name" class="label">Time</label>
+                <label class="d-inline-flex">From
+                  <select class="form-control ml-2" name="time_start" class="time_select">
+                    <option value="0" selected="selected">Any Time</option>
+                    <option value="1800">12:30 am</option>
+                    <option value="3600">1:00 am</option>
+                    <option value="5400">1:30 am</option>
+                    <option value="7200">2:00 am</option>
+                    <option value="9000">2:30 am</option>
+                    <option value="10800">3:00 am</option>
+                    <option value="12600">3:30 am</option>
+                    <option value="14400">4:00 am</option>
+                    <option value="16200">4:30 am</option>
+                    <option value="18000">5:00 am</option>
+                    <option value="19800">5:30 am</option>
+                    <option value="21600">6:00 am</option>
+                    <option value="23400">6:30 am</option>
+                    <option value="25200">7:00 am</option>
+                    <option value="27000">7:30 am</option>
+                    <option value="28800">8:00 am</option>
+                    <option value="30600">8:30 am</option>
+                    <option value="32400">9:00 am</option>
+                    <option value="34200">9:30 am</option>
+                    <option value="36000">10:00 am</option>
+                    <option value="37800">10:30 am</option>
+                    <option value="39600">11:00 am</option>
+                    <option value="41400">11:30 am</option>
+                    <option value="43200">12:00 pm</option>
+                    <option value="45000">12:30 pm</option>
+                    <option value="46800">1:00 pm</option>
+                    <option value="48600">1:30 pm</option>
+                    <option value="50400">2:00 pm</option>
+                    <option value="52200">2:30 pm</option>
+                    <option value="54000">3:00 pm</option>
+                    <option value="55800">3:30 pm</option>
+                    <option value="57600">4:00 pm</option>
+                    <option value="59400">4:30 pm</option>
+                    <option value="61200">5:00 pm</option>
+                    <option value="63000">5:30 pm</option>
+                    <option value="64800">6:00 pm</option>
+                    <option value="66600">6:30 pm</option>
+                    <option value="68400">7:00 pm</option>
+                    <option value="70200">7:30 pm</option>
+                    <option value="72000">8:00 pm</option>
+                    <option value="73800">8:30 pm</option>
+                    <option value="75600">9:00 pm</option>
+                    <option value="77400">9:30 pm</option>
+                    <option value="79200">10:00 pm</option>
+                    <option value="81000">10:30 pm</option>
+                    <option value="82800">11:00 pm</option>
+                    <option value="84600">11:30 pm</option>				
+                  </select>
+                </label>
+                <label class="d-inline-flex ml-3">To
+                  <select class="form-control ml-2" name="time_end" class="time_select">
+                    <option value="1800">12:30 am</option>
+                    <option value="3600">1:00 am</option>
+                    <option value="5400">1:30 am</option>
+                    <option value="7200">2:00 am</option>
+                    <option value="9000">2:30 am</option>
+                    <option value="10800">3:00 am</option>
+                    <option value="12600">3:30 am</option>
+                    <option value="14400">4:00 am</option>
+                    <option value="16200">4:30 am</option>
+                    <option value="18000">5:00 am</option>
+                    <option value="19800">5:30 am</option>
+                    <option value="21600">6:00 am</option>
+                    <option value="23400">6:30 am</option>
+                    <option value="25200">7:00 am</option>
+                    <option value="27000">7:30 am</option>
+                    <option value="28800">8:00 am</option>
+                    <option value="30600">8:30 am</option>
+                    <option value="32400">9:00 am</option>
+                    <option value="34200">9:30 am</option>
+                    <option value="36000">10:00 am</option>
+                    <option value="37800">10:30 am</option>
+                    <option value="39600">11:00 am</option>
+                    <option value="41400">11:30 am</option>
+                    <option value="43200">12:00 pm</option>
+                    <option value="45000">12:30 pm</option>
+                    <option value="46800">1:00 pm</option>
+                    <option value="48600">1:30 pm</option>
+                    <option value="50400">2:00 pm</option>
+                    <option value="52200">2:30 pm</option>
+                    <option value="54000">3:00 pm</option>
+                    <option value="55800">3:30 pm</option>
+                    <option value="57600">4:00 pm</option>
+                    <option value="59400">4:30 pm</option>
+                    <option value="61200">5:00 pm</option>
+                    <option value="63000">5:30 pm</option>
+                    <option value="64800">6:00 pm</option>
+                    <option value="66600">6:30 pm</option>
+                    <option value="68400">7:00 pm</option>
+                    <option value="70200">7:30 pm</option>
+                    <option value="72000">8:00 pm</option>
+                    <option value="73800">8:30 pm</option>
+                    <option value="75600">9:00 pm</option>
+                    <option value="77400">9:30 pm</option>
+                    <option value="79200">10:00 pm</option>
+                    <option value="81000">10:30 pm</option>
+                    <option value="82800">11:00 pm</option>
+                    <option value="84600">11:30 pm</option>				
+                    <option value="86400" selected="selected">Any Time</option>
+                  </select>
+                </label>
+              </label>
             </div>
-          {% endfor %}
+          </div>
         </div>
-      </fieldset>
+
+        {% set id = random(1234) %}
+        <div class="my-2 catalog-search-item-tab js-catalog-search-item-{{id}}">
+          <a
+            href="#catalog-search-item-label-{{id}}"
+            class="catalog-search-item__link"
+            data-toggle-target=".js-catalog-search-item-{{id}}"
+            aria-expanded="false"
+            aria-controls="catalog-search-item-content-{{id}}"
+            aria-labelledby="catalog-search-item-label-{{id}}"
+            role="tab"
+          >
+            <h2 class="catalog-search-item__title">
+              <span id="catalog-search-item-label-{{id}}">Course Modality, Level</span>
+
+              <span class="catalog-search-item-close">&ndash;</span>
+              <span class="catalog-search-item-open">&#43;</span>
+            </h2>
+          </a>
+          <div role="tabpanel" id="catalog-search-item-content-{{id}}" class="row mx-0 catalog-search-item-content">
+            <fieldset class="col-md-6 form-group">
+              <legend class="label">
+                <p class="f2">Course Modality</p>
+                <p class="f1">(Leave all blank for no preference)</p>
+              </legend>
+              <div class="checkbox-group">
+                {% for item in catalog_search_items.course_modality %}
+                  <div class="checkbox checkbox--filter">
+                    <input type="checkbox" class="checkbox__input" id="checkbox-mod-item-{{loop.index}}" value="topic/instruction_method/{{item.value}}">
+                    <label for="checkbox-mod-item-{{loop.index}}" id="checkbox-mod-label-{{loop.index}}" class="checkbox__label">{{item.label}}</label>
+                  </div>
+                {% endfor %}
+              </div>
+            </fieldset>
+
+            <fieldset class="col-md-6 form-group">
+              <legend class="label">
+                <p class="f2">Level</p>
+                <p class="f1">(Leave all blank for no preference)</p>
+              </legend>
+              <div class="checkbox-group">
+                {% for item in catalog_search_items.level %}
+                  <div class="checkbox checkbox--filter">
+                    <input type="checkbox" class="checkbox__input" id="checkbox-level-item-{{loop.index}}" value="topic/level/{{item.value}}">
+                    <label for="checkbox-level-item-{{loop.index}}" id="checkbox-level-label-{{loop.index}}" class="checkbox__label">{{item.label}}</label>
+                  </div>
+                {% endfor %}
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        {% set id = random(1234) %}
+        <div class="my-2 catalog-search-item-tab js-catalog-search-item-{{id}}">
+          <a
+            href="#catalog-search-item-label-{{id}}"
+            class="catalog-search-item__link"
+            data-toggle-target=".js-catalog-search-item-{{id}}"
+            aria-expanded="false"
+            aria-controls="catalog-search-item-content-{{id}}"
+            aria-labelledby="catalog-search-item-label-{{id}}"
+            role="tab"
+          >
+            <h2 class="wrmc-accordion-item__title">
+              <span id="catalog-search-item-label-{{id}}">Satisfies requirements, Campus</span>
+
+              <span class="catalog-search-item-close">&ndash;</span>
+              <span class="catalog-search-item-open">&#43;</span>
+            </h2>
+          </a>
+          <div role="tabpanel" id="catalog-search-item-content-{{id}}" class="row mx-0 catalog-search-item-content">
+            <fieldset class="col-md-6 form-group">
+              <legend class="label">
+                <p class="f2">Satisfies requirements</p>
+                <p class="f1">(Leave all blank for no preference)</p>
+              </legend>
+              <div class="checkbox-group d-flex flex-wrap">
+                {% for item in catalog_search_items.requirements %}
+                  <div class="checkbox checkbox--filter">
+                    <input type="checkbox" class="checkbox__input" id="checkbox-req-item-{{loop.index}}" value="topic/requirement/{{item.option}}">
+                    <label for="checkbox-req-item-{{loop.index}}" id="checkbox-req-label-{{loop.index}}" class="checkbox__label">{{item.option}}</label>
+                  </div>
+                {% endfor %}
+              </div>
+            </fieldset>
+
+            <fieldset class="col-md-6 form-group">
+              <legend class="label">
+                <p class="f2">Campus</p>
+                <p class="f1">(Leave all blank for no preference)</p>
+              </legend>
+              <div class="checkbox-group">
+                {% for item in catalog_search_items.campus %}
+                  <div class="checkbox checkbox--filter">
+                    <input type="checkbox" class="checkbox__input" id="checkbox-campus-item-{{loop.index}}" value="resource/place/campus/{{item.value}}">
+                    <label for="checkbox-campus-item-{{loop.index}}" id="checkbox-campus-label-{{loop.index}}" class="checkbox__label">{{item.label}}</label>
+                  </div>
+                {% endfor %}
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
 
       <div class="col-12 col-xl-4 form-group">
         <input type="submit" value="Search" class="button button--primary d-block d-md-inline-block">
