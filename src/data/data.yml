@@ -1032,3 +1032,90 @@ top_thirty:
     song: Still
   - artist: CZARFACE
     song: CZARTIFICIAL INTELLIGENCE
+
+catalog_search_items:
+  requirements:
+    - option: AAL
+    - option: AMR
+    - option: ART
+    - option: CMP
+    - option: CW
+    - option: DED
+    - option: EUR
+    - option: HIS
+    - option: LIT
+    - option: LNG
+    - option: MDE
+    - option: NOA
+    - option: NOR
+    - option: PE
+    - option: PHL
+    - option: SAF
+    - option: SCI
+    - option: SOA
+    - option: SOC
+
+  days:
+    - day: Sunday
+    - day: Monday
+    - day: Tuesday
+    - day: Wednesday
+    - day: Thursday
+    - day: Friday
+    - day: Saturday
+
+  types:
+    - type: Lecture
+      value: LCT
+    - type: Lab
+      value: LAB
+    - type: Discussion
+      value: DSC
+    - type: Drill 1
+      value: DR1
+    - type: Drill 2
+      value: DR2
+    - type: Independent Study
+      value: IND
+    - type: Internship
+      value: INT
+    - type: PE Course
+      value: PE
+    - type: Pre-Lab
+      value: PLB
+    - type: Screening
+      value: SCR
+    - type: Seminar
+      value: SEM
+    - type: Senior Work
+      value: SNR
+    - type: Senior Work-disc. or workshop
+      value: SNZ
+    - type: Additional Lab
+      value: LA2
+    - type: Additional Lab
+      value: LA3
+
+  course_modality:
+    - label: In-Person
+      value: PERS
+    - label: In-Person, Half-Credit
+      value: PERS5
+
+  level:
+    - label: Non-degree
+      value: ND
+    - label: Undergraduate
+      value: UG
+
+  campus:
+    - label: Main
+      value: M
+    - label: Middlebury Institute, CA
+      value: CM
+    - label: Non Midd Student on SA
+      value: N
+    - label: Off-Campus (LS Grad & SUMR St)
+      value: OFF
+    - label: Washington, DC
+      value: DC
