@@ -63,25 +63,3 @@
   @include terms-text;
 }
 
-.course-catalog-result-card {
-  border-bottom: 4px solid variables.$border-color;
-  
-  .course-title {
-    font-weight: variables.$font-weight-bold;
-  }
-  
-  .terms__title {
-    flex: 0 0 30%;
-  }
-
-  .terms__text {
-    flex: 0 0 60%;
-  }
-
-  .terms__title, 
-  .terms__text {
-    font-size: variables.$typescale-2;
-    padding-bottom: variables.$spacing-2;
-    margin-bottom: variables.$spacing-2;
-  }
-}

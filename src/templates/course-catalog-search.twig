@@ -341,7 +341,13 @@
 				</select>
       </div>
 
-      <fieldset class="col-md-6 form-group form-group--course-type">
+      <div class="col-md-12 form-group">
+        <label for="keywords" class="label">Keywords</label>
+        <input type="text" class="form-control" name="keywords" id="keywords" ria-describedby="instructions" required>
+        <p class="f1 font-semibold">By default results only have to match one of the supplied keywords. Use a plus (+) before a word to require it or a minus (-) to exclude it. Use an asterisk (*) as a wildcard.</p>
+      </div>
+
+      <fieldset class="col-md-12 form-group form-group--course-type">
         <legend class="label">
           <p class="f2">Type</p>
           <p class="f1">(Leave all blank for no preference)</p>
@@ -356,12 +362,6 @@
         </div>
       </fieldset>
 
-      <div class="col-md-6 form-group">
-        <label for="keywords" class="label">Keywords</label>
-        <input type="text" class="form-control" name="keywords" id="keywords" ria-describedby="instructions" required>
-        <p class="f1 font-semibold">By default results only have to match one of the supplied keywords. Use a plus (+) before a word to require it or a minus (-) to exclude it. Use an asterisk (*) as a wildcard.</p>
-      </div>
-
       <div class="col-12 mb-5" role="tablist">
         {% set id = random(1234) %}
         <div class="my-2 catalog-search-item-tab js-catalog-search-item-{{id}}">
@@ -374,8 +374,8 @@
             aria-labelledby="catalog-search-item-label-{{id}}"
             role="tab"
           >
-            <h2 class="wrmc-accordion-item__title">
-              <span id="catalog-search-item-label-{{id}}">Day of the week, Time</span>
+            <h2 class="catalog-search-item__title">
+              <span id="catalog-search-item-label-{{id}}">Day of the week, Time, Campus</span>
 
               <span class="catalog-search-item-close">&ndash;</span>
               <span class="catalog-search-item-open">&#43;</span>
@@ -516,6 +516,21 @@
                 </label>
               </label>
             </div>
+
+            <fieldset class="col-md-6 form-group">
+              <legend class="label">
+                <p class="f2">Campus</p>
+                <p class="f1">(Leave all blank for no preference)</p>
+              </legend>
+              <div class="checkbox-group">
+                {% for item in catalog_search_items.campus %}
+                  <div class="checkbox checkbox--filter">
+                    <input type="checkbox" class="checkbox__input" id="checkbox-campus-item-{{loop.index}}" value="resource/place/campus/{{item.value}}">
+                    <label for="checkbox-campus-item-{{loop.index}}" id="checkbox-campus-label-{{loop.index}}" class="checkbox__label">{{item.label}}</label>
+                  </div>
+                {% endfor %}
+              </div>
+            </fieldset>
           </div>
         </div>
 
@@ -531,13 +546,27 @@
             role="tab"
           >
             <h2 class="catalog-search-item__title">
-              <span id="catalog-search-item-label-{{id}}">Course Modality, Level</span>
+              <span id="catalog-search-item-label-{{id}}">Satisfies requirements, Course Modality, Level</span>
 
               <span class="catalog-search-item-close">&ndash;</span>
               <span class="catalog-search-item-open">&#43;</span>
             </h2>
           </a>
           <div role="tabpanel" id="catalog-search-item-content-{{id}}" class="row mx-0 catalog-search-item-content">
+            <fieldset class="col-md-6 form-group">
+              <legend class="label">
+                <p class="f2">Satisfies requirements</p>
+                <p class="f1">(Leave all blank for no preference)</p>
+              </legend>
+              <div class="checkbox-group d-flex flex-wrap">
+                {% for item in catalog_search_items.requirements %}
+                  <div class="checkbox checkbox--filter">
+                    <input type="checkbox" class="checkbox__input" id="checkbox-req-item-{{loop.index}}" value="topic/requirement/{{item.option}}">
+                    <label for="checkbox-req-item-{{loop.index}}" id="checkbox-req-label-{{loop.index}}" class="checkbox__label">{{item.option}}</label>
+                  </div>
+                {% endfor %}
+              </div>
+            </fieldset>
             <fieldset class="col-md-6 form-group">
               <legend class="label">
                 <p class="f2">Course Modality</p>
@@ -563,57 +592,6 @@
                   <div class="checkbox checkbox--filter">
                     <input type="checkbox" class="checkbox__input" id="checkbox-level-item-{{loop.index}}" value="topic/level/{{item.value}}">
                     <label for="checkbox-level-item-{{loop.index}}" id="checkbox-level-label-{{loop.index}}" class="checkbox__label">{{item.label}}</label>
-                  </div>
-                {% endfor %}
-              </div>
-            </fieldset>
-          </div>
-        </div>
-
-        {% set id = random(1234) %}
-        <div class="my-2 catalog-search-item-tab js-catalog-search-item-{{id}}">
-          <a
-            href="#catalog-search-item-label-{{id}}"
-            class="catalog-search-item__link"
-            data-toggle-target=".js-catalog-search-item-{{id}}"
-            aria-expanded="false"
-            aria-controls="catalog-search-item-content-{{id}}"
-            aria-labelledby="catalog-search-item-label-{{id}}"
-            role="tab"
-          >
-            <h2 class="wrmc-accordion-item__title">
-              <span id="catalog-search-item-label-{{id}}">Satisfies requirements, Campus</span>
-
-              <span class="catalog-search-item-close">&ndash;</span>
-              <span class="catalog-search-item-open">&#43;</span>
-            </h2>
-          </a>
-          <div role="tabpanel" id="catalog-search-item-content-{{id}}" class="row mx-0 catalog-search-item-content">
-            <fieldset class="col-md-6 form-group">
-              <legend class="label">
-                <p class="f2">Satisfies requirements</p>
-                <p class="f1">(Leave all blank for no preference)</p>
-              </legend>
-              <div class="checkbox-group d-flex flex-wrap">
-                {% for item in catalog_search_items.requirements %}
-                  <div class="checkbox checkbox--filter">
-                    <input type="checkbox" class="checkbox__input" id="checkbox-req-item-{{loop.index}}" value="topic/requirement/{{item.option}}">
-                    <label for="checkbox-req-item-{{loop.index}}" id="checkbox-req-label-{{loop.index}}" class="checkbox__label">{{item.option}}</label>
-                  </div>
-                {% endfor %}
-              </div>
-            </fieldset>
-
-            <fieldset class="col-md-6 form-group">
-              <legend class="label">
-                <p class="f2">Campus</p>
-                <p class="f1">(Leave all blank for no preference)</p>
-              </legend>
-              <div class="checkbox-group">
-                {% for item in catalog_search_items.campus %}
-                  <div class="checkbox checkbox--filter">
-                    <input type="checkbox" class="checkbox__input" id="checkbox-campus-item-{{loop.index}}" value="resource/place/campus/{{item.value}}">
-                    <label for="checkbox-campus-item-{{loop.index}}" id="checkbox-campus-label-{{loop.index}}" class="checkbox__label">{{item.label}}</label>
                   </div>
                 {% endfor %}
               </div>
