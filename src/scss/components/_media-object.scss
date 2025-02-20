@@ -86,6 +86,10 @@
   @extend %media-object-border-top;
 }
 
+.border-bottom {
+  border-bottom: 1px solid variables.$gray-light;
+}
+
 .paragraph--profile-list {
   .media-object {
     margin-left: -(variables.$spacing-3);
