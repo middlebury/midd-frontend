@@ -7,7 +7,7 @@
 
       {% endblock %}
 
-      {% if _sidebar is not empty %}
+      {% if _sidebar|trim is not empty %}
         <div class="js-sidebar"></div>
       {% endif %}
     </div>
@@ -27,7 +27,7 @@
 
       {% endblock %}
 
-      {% if _sidebar is not empty %}
+      {% if _sidebar|trim is not empty %}
         <div data-move-at="(min-width:64em)" data-move-to=".js-sidebar">
           {{ _sidebar|raw }}
         </div>
