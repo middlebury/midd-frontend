@@ -1,5 +1,6 @@
 import webpack from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'; 
+import path from 'node:path';
 
 const PROD = process.env.NODE_ENV === 'production';
 const ASSET_PATH = process.env.ASSET_PATH || '/js/';
@@ -42,7 +43,8 @@ const config = {
   },
   output: {
     publicPath: ASSET_PATH,
-    filename: '[name].bundle.js'
+    filename: '[name].bundle.js',
+    path: path.join(process.cwd(), 'dist/js')
   },
   plugins: PROD ? plugins : [...plugins, new BundleAnalyzerPlugin()]
 };

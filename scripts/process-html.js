@@ -4,13 +4,14 @@ import Twig from 'twig';
 import _ from 'lodash';
 import yaml from 'js-yaml';
 import prettier from 'prettier';
-import glob from 'glob';
+import { glob } from 'glob';
 
 const PROD = process.env.NODE_ENV === 'production';
 const TEST = process.env.CI;
 
 function processHtml() {
   const templates = glob.sync('./src/templates/*.twig', { ignore: './src/templates/*layout.twig' });
+  console.log(templates);
   const ymlData = yaml.load(fs.readFileSync('./src/data/data.yml', 'utf8'));
   const imageStyles = yaml.load(fs.readFileSync('./src/data/image_styles.yml', 'utf8'));
   
@@ -55,7 +56,7 @@ function processHtml() {
     
     const template = Twig.twig({ path: templatePath, base: './src/templates', async: false });
     const renderedHtml = template.render(data);
-    // console.log(data);
+    
     const prettifiedHtml = prettier.format(renderedHtml, { parser: 'html' });
     prettifiedHtml.catch((err) => {console.log(templatePath); console.log(err)});
     const outputPath = path.join('./dist', path.basename(templatePath, '.twig') + '.html');
