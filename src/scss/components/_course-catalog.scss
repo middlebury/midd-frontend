@@ -1,7 +1,7 @@
 @use '../core/variables';
 @use '../mixins/breakpoints';
 
-.course-catalog-search {
+.catalog-search {
   .form-control {
     line-height: variables.$line-height-heading;
   }
@@ -15,7 +15,6 @@
   }
 
   .checkbox-group {
-
     .checkbox--filter {
       min-width: 20%;
 
@@ -68,7 +67,7 @@
       .catalog-search-item-open {
         display: none;
       }
-      
+
       .catalog-search-item-close {
         display: flex;
       }
@@ -80,10 +79,27 @@
   }
 }
 
-.course-catalog-search-results {
+.catalog-search-results {
   li:not(:last-child) {
-    .course-catalog-result-card {
+    .catalog-result-card {
       border-bottom: 4px solid variables.$border-color;
+    }
+  }
+
+  .catalog-result-card__save-button {
+    display: flex;
+    align-items: flex-start;
+    line-height: 1;
+
+    .icon {
+      stroke: variables.$navy;
+      stroke-width: 1.5;
+      width: variables.$typescale-6;
+      height: variables.$typescale-4;
+
+      &.catalog-result-card__save-button--saved {
+        stroke-width: 0;
+      }
     }
   }
 }

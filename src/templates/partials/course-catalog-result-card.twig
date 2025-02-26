@@ -1,13 +1,22 @@
-<div class="course-catalog-result-card mt-5 pb-4">
+<div class="catalog-result-card mt-5 pb-4">
   <div class="d-inline-block col-6 px-0">
     <p class="f3 font-semibold"><a class="link-underline" href="/offerings/view/catalog/catalog%2FMCUG/offering/section%2F202520%2F21451">AMST0216A-F24</a></p>
     {% if random(1) %}
       <p class="f2 font-semibold">Cross-Listed As: <a class="link-underline" href="/offerings/view/catalog/catalog%2FMCUG/type/genera%3Aoffering%2FLCT/type/genera%3Aoffering%2FSEM/search/Search/offering/section%2F202490%2F92560">HIST0216A-F24</a>*{% if random(1) %}, <a class="link-underline" href="/offerings/view/catalog/catalog%2FMCUG/type/genera%3Aoffering%2FLCT/type/genera%3Aoffering%2FSEM/search/Search/offering/section%2F202490%2F92560">HIST0216B-F24</a>*{% endif %}</p>
     {% endif %}
   </div>
-  <a href="#" title="click to save" class="f2 float-right">
+  <a href="#" title="click to save" class="f2 float-right catalog-result-card__save-button">
     {% if random(1) %}
-      <img src="https://catalog.middlebury.edu/images/Crystal_Clear/Crystal_Clear_action_bookmark_Silver.png" alt="star icon" class="icon mr-1">Save
+      {% include 'partials/icon.twig' with {
+        name: 'save-open'
+      } %}
+      Save
+    {% elseif random(1) %}
+      {% include 'partials/icon.twig' with {
+        name: 'save-close',
+        class: 'catalog-result-card__save-button--saved'
+      } %}
+      Saved
     {% else %}
       Log-in to save
     {% endif %}
