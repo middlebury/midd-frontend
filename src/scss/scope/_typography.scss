@@ -268,6 +268,21 @@
       content: '(' attr(title) ')';
     }
   }
+  
+  details:first-of-type summary {
+    display: inline-block;
+
+    &:before {
+      content: '\002B';
+      // color: variables.$navy;
+      font-size: variables.$typescale-5;
+      margin-right: variables.$spacing-2;
+    }
+  }
+  
+  details[open]:first-of-type summary:before {
+    content: '\2013';
+  }
 }
 
 .typography--sm {
