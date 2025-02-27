@@ -181,7 +181,7 @@
       margin-top: variables.$spacing-7;
       margin-bottom: variables.$spacing-4;
     }
-    
+
     @include breakpoints.breakpoint(lg) {
       margin-top: variables.$spacing-8;
       margin-bottom: variables.$spacing-5;

@@ -69,7 +69,7 @@ $theme-margins-sm: (
   }
 
   to {
-    left: 0px;
+    left: 0;
   }
 }
 
@@ -80,7 +80,7 @@ $theme-margins-sm: (
   .shifting-slider {
     position: relative;
     display: flex;
-    left: 0px;
+    left: 0;
 
     @include breakpoints.breakpoint(lg) {
       left: -50%;
@@ -88,7 +88,7 @@ $theme-margins-sm: (
 
     &.fade-in-element {
       @include breakpoints.breakpoint(lg) {
-        left: 0px;
+        left: 0;
         animation: fade-in 1.4s;
       }
     }

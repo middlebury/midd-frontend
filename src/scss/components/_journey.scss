@@ -492,7 +492,7 @@
       h1 {
         font-size: variables.$typescale-7;
         font-weight: variables.$font-weight-light;
-        
+
         @include breakpoints.breakpoint(lg) {
           font-size: functions.rem(40);
         }

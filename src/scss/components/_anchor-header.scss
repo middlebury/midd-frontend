@@ -39,7 +39,7 @@
 
 .anchor-header__title {
   @include type.h0;
-  
+
   & {
     font-family: variables.$font-family-serif;
     margin-bottom: variables.$spacing-3;

@@ -19,6 +19,7 @@ $drawer-nav-color: variables.$navy-light;
 
 .drawer-nav__chevron {
   transition: variables.$chevron-transition;
+
   .drawer-nav__handle.is-toggled & {
     transform: variables.$chevron-transform;
   }

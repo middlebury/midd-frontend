@@ -17,11 +17,10 @@ $app-header-bp: lg;
   & {
     display: flex;
   }
-  
+
   @media print {
     display: block;
   }
-  
 }
 
 .app-header__wrap--main {

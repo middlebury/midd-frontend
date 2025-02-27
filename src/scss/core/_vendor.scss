@@ -9,12 +9,12 @@
   border: 0 !important;
 
   @media only screen and (min-width: 512px) {
-    right: 0px !important;
-    bottom: 0px !important;
+    right: 0 !important;
+    bottom: 0 !important;
   }
 
   @media only screen and (min-width: 1024px) {
-    right: 0px !important;
+    right: 0 !important;
   }
 
   @media only screen and (min-width: 1200px) {
@@ -48,9 +48,7 @@
 // stylelint-disable selector-max-id
 #olark-wrapper,
 #olark-wrapper .olark-launch-button-wrapper .olark-button-focus-wrapper:focus,
-#olark-wrapper
-  .olark-launch-button-wrapper
-  .olark-button-focus-wrapper:focus-within {
+#olark-wrapper .olark-launch-button-wrapper .olark-button-focus-wrapper:focus-within {
   position: fixed !important;
   bottom: 64px !important;
   right: 100px !important;

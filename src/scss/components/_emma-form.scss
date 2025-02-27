@@ -36,6 +36,7 @@
   input {
     @include forms.form-control;
   }
+
   select {
     @include forms.form-select;
   }

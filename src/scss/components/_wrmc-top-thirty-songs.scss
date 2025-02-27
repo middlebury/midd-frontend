@@ -3,6 +3,7 @@
 @use '../mixins/breakpoints';
 
 @use 'sass:math';
+
 .paragraph--top-thirty-songs {
   justify-content: center;
 
@@ -45,7 +46,7 @@
         z-index: 5;
         width: variables.$spacing-5;
         border-bottom: variables.$typescale-5 solid variables.$wrmc-blue-light;
-        border-left: 0px solid transparent;
+        border-left: 0 solid transparent;
         border-right: variables.$typescale-1 solid transparent;
       }
     }

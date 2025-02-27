@@ -99,6 +99,7 @@
 .schedule-item__speakers {
   margin-bottom: variables.$spacing-3;
 }
+
 .schedule-item__speaker {
   &:not(:last-child) {
     margin-bottom: variables.$spacing-3;

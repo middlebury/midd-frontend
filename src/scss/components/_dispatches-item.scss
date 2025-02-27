@@ -11,13 +11,12 @@ $dispatches-card-height: 470px;
 
 .dispatches-item {
   height: $dispatches-card-height;
-
-  & p + article {
-    padding-top: 0px;
-  }
-
   border: $dispatches-sm-border;
   border-top: 0;
+
+  & p + article {
+    padding-top: 0;
+  }
 
   @include breakpoints.breakpoint(sm) {
     border-left: $dispatches-border;
@@ -53,6 +52,7 @@ $dispatches-card-height: 470px;
 
 .dispatches-item__image-wrapper {
   position: relative;
+
   &:before {
     display: block;
     content: '';
@@ -234,6 +234,7 @@ $dispatches-card-height: 470px;
 
 .dispatches-item__text {
   font-size: variables.$typescale-3;
+
   .dispatches-item__side--front & {
     color: variables.$white;
   }
