@@ -5,7 +5,7 @@
       <p class="f2 font-semibold">Cross-Listed As: <a class="link-underline" href="/offerings/view/catalog/catalog%2FMCUG/type/genera%3Aoffering%2FLCT/type/genera%3Aoffering%2FSEM/search/Search/offering/section%2F202490%2F92560">HIST0216A-F24</a>*{% if random(1) %}, <a class="link-underline" href="/offerings/view/catalog/catalog%2FMCUG/type/genera%3Aoffering%2FLCT/type/genera%3Aoffering%2FSEM/search/Search/offering/section%2F202490%2F92560">HIST0216B-F24</a>*{% endif %}</p>
     {% endif %}
   </div>
-  <a href="#" title="click to save" class="f2 float-right catalog-result-card__save-button">
+  <a href="#" title="click to save" class="f2 float-right catalog-save-button">
     {% if random(1) %}
       {% include 'partials/icon.twig' with {
         name: 'save-open'
@@ -14,7 +14,7 @@
     {% elseif random(1) %}
       {% include 'partials/icon.twig' with {
         name: 'save-close',
-        class: 'catalog-result-card__save-button--saved'
+        class: 'catalog-save-button--saved'
       } %}
       Saved
     {% else %}
