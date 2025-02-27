@@ -1,0 +1,100 @@
+{% set check = '<span class="status-report__icon bg-success"><span class="sr-only">{{ icon.label }}</span><svg class="icon" focusable="false" aria-hidden="true"><use xlink:href="#icon-check"></use></svg></span>' %}
+{% set cross = '<span class="status-report__icon bg-danger"><span class="sr-only">{{ icon.label }}</span><svg class="icon" focusable="false" aria-hidden="true"><use xlink:href="#icon-times"></use></svg></span>' %}
+{% set j_term = '<span class="badge badge--primary badge--outline ml-2">j-term</span>' %}
+
+{% set course_items = [
+  {
+    course_number: 'ENPG 8542',
+    title: 'Environmental & Natural Resource Economics',
+    terms: [check, cross, check, cross],
+    content: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>',
+    terms: '<p>Spring 2017, Spring 2019, Spring 2020, Spring 2021</p>',
+    requirements: '<p>DED, SCI</p>'
+  },
+  {
+    course_number: 'ENPG 8503',
+    title: 'Research Strategies for Environmental Policy',
+    terms: [check, cross, check, cross],
+    content: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>',
+    terms: '<p>Spring 2017, Spring 2019, Spring 2020, Spring 2021</p>',
+  },
+  {
+    course_number: 'ENPG 8506',
+    title: 'Public Policy and the Environment',
+    terms: [check, cross, check, cross],
+    content: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>',
+    terms: '<p>Spring 2017, Spring 2019, Spring 2020, Spring 2021</p>',
+    requirements: '<p>DED, SCI</p>'
+  },
+  {
+    course_number: 'ENPG 8507',
+    title: 'Governing the Global Commons',
+    terms: [cross, check, cross, check],
+    content: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>',
+    requirements: '<p>DED, SCI</p>'
+  },
+  {
+    course_number: 'ENPG 8591',
+    title: 'Applied Conservation Science & Policy',
+    terms: [cross, check, cross, check],
+    content: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
+  },
+  {
+    course_number: 'ENPG 8525',
+    title: 'Environmental Leadership',
+    terms: [cross, check, cross, check],
+    content: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
+  },
+  {
+    course_number: 'TBD',
+    title: 'ICC Course',
+    terms: [check, check, check, check],
+    content: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
+  },
+  {
+    course_number: 'TBD',
+    title: 'PSS-Independent Practicum',
+    terms: [check, check, check, check],
+    content: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
+  }
+] %}
+
+<div class="paragraph--text">
+  <div class="table-accordion">
+    <div>
+      <div class="table-accordion__header">
+        <p>Number</p>
+        <p>Title</p>
+        <p>Fall 25</p>
+        <p>Spring 26</p>
+        <p>Fall 26</p>
+        <p>Spring 27</p>
+      </tr>
+    </div>
+    <div>
+      {% for item in course_items %}
+        <div class="table-accordion__row">
+          <p class="table-accordion__row-cell">{{item.course_number}}</p>
+          <p class="table-accordion__row-cell">{{item.title}}</p>
+
+          {% for term in item.terms %}
+            <p class="table-accordion__row-cell">{{term}}</p>
+          {% endfor %}
+          <p class="table-accordion__row-cell">
+            {% include 'partials/icon.twig' with { name: 'chevron-down', class: 'accordion-item__icon' } %}
+          </p>
+        </div>
+        <div >
+          <p>
+            <div class="accordion-item__content--column">
+              <p class="accordion-item__sub-title">Course Description</p>
+              <div class="typography">
+                {{item.content}}
+              </div>
+            </div>
+          </p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
