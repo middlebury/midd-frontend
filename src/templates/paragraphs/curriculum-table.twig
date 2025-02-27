@@ -4,7 +4,7 @@
 
 {% set course_items = [
   {
-    course_number: 'biol 0140' ~ current_badge ~ upcoming_badge,
+    course_number: 'biol 0140',
     current: true,
     upcoming: true,
     title: 'Ecology and Evolution',
@@ -21,7 +21,7 @@
     terms: '<p>Spring 2017, Spring 2019, Spring 2020, Spring 2021</p>',
   },
   {
-    course_number: 'biol 0140' ~ current_badge,
+    course_number: 'biol 0140',
     current: true,
     upcoming: false,
     title: 'Biology of Plants Growing in the Forest',
@@ -30,7 +30,7 @@
     requirements: '<p>DED, SCI</p>'
   },
   {
-    course_number: 'biol 0140' ~ upcoming_badge,
+    course_number: 'biol 0140',
     current: false,
     upcoming: true,
     title: 'Tropical Ecology and how reefs grow',
@@ -46,65 +46,33 @@
   }
 ] %}
 
-<section class="section paragraph--course-list js-filter-{{id}}" data-digest-content>
-	<div class="section__header">
-		<h2 class="section__title">
-			{{ course_title }}
-		</h2>
-    {% if show_controls %}
-      <p class="section__text">
-        These are the courses taught in this department.
-      </p>
-    {% else %}
-      <p class="section__text">
-        These are the courses I teach.
-      </p>
-    {% endif %}
-	</div>
-  {% if show_controls %}
-    <p class="course-list--text">Courses offered in the past four years. Courses offered currently are as noted.</p>
-    <div class="course-list--filters">
-      <div class="checkbox checkbox--filter">
-        <input id="course-list-filter-all-{{id}}" name="course-list-filter-{{id}}" class="radio__input course-list-filter course-list-filter-all" type="radio" checked data-course-filter="{{id}}">
-        <label class="radio__label" for="course-list-filter-all-{{id}}">Show all courses.</label>
-      </div>
-      <div class="checkbox checkbox--filter">
-        <input id="course-list-filter-current-{{id}}" name="course-list-filter-{{id}}" class="radio__input course-list-filter course-list-filter-current" type="radio" data-course-filter="{{id}}">
-        <label class="radio__label" for="course-list-filter-current-{{id}}">Show current courses.</label>
-      </div>
-      <div class="checkbox checkbox--filter">
-        <input id="course-list-filter-upcoming-{{id}}" name="course-list-filter-{{id}}" class="radio__input course-list-filter course-list-filter-upcoming" type="radio" data-course-filter="{{id}}">
-        <label class="radio__label" for="course-list-filter-upcoming-{{id}}">Show upcoming courses.</label>
-      </div>
+{% embed 'partials/accordion.twig' with {
+  class: 'accordion--table my-9',
+  items: course_items,
+  table: true,
+  column: true
+} %}
+  {% block label %}
+    <span id="midd-accordion-item-label-{{id}}">
+      <p class="accordion-item__label"><span style="text-transform:uppercase;">{{item.course_number}}</span> {{item.title}}</p>
+    </span>
+  {% endblock %}
+  {% block content %}
+    <p class="accordion-item__sub-title">Course Description</p>
+    <div class="typography">
+      {{item.content}}
     </div>
-  {% endif %}
-	{% embed 'partials/accordion.twig' with {
-    items: course_items,
-    column: true
-  } %}
-    {% block label %}
-      <span id="midd-accordion-item-label-{{id}}">
-        <p class="accordion-item__label--bold">{{item.course_number}}</p>
-        {{item.title}}
-      </span>
-    {% endblock %}
-    {% block content %}
-      <p class="accordion-item__sub-title">Course Description</p>
+    {% if item.terms %}
+      <p class="accordion-item__sub-title">Terms Taught</p>
       <div class="typography">
-        {{item.content}}
+        {{item.terms}}
       </div>
-      {% if item.terms %}
-        <p class="accordion-item__sub-title">Terms Taught</p>
-        <div class="typography">
-          {{item.terms}}
-        </div>
-      {% endif %}
-      {% if item.requirements %}
-        <p class="accordion-item__sub-title">Requirements</p>
-        <div class="typography">
-          {{item.requirements}}
-        </div>
-      {% endif %}
-    {% endblock %}
-  {% endembed %}
-</section>
+    {% endif %}
+    {% if item.requirements %}
+      <p class="accordion-item__sub-title">Requirements</p>
+      <div class="typography">
+        {{item.requirements}}
+      </div>
+    {% endif %}
+  {% endblock %}
+{% endembed %}

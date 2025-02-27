@@ -45,11 +45,20 @@
 
 <section class="section paragraph--faq" data-digest-content>
   <h2 class="section__title">
-    Frequently Asked Questions
+    Frequently Asked Questions - New
   </h2>
-  {% include 'partials/accordion.twig' with {
-    items: faq_items,
-    course_list: false,
-    faq: true
+  {% embed 'partials/accordion.twig' with {
+    items: faq_items
   } %}
+    {% block label %}
+      <span class="accordion-item__char" aria-hidden>Q</span>
+      <span class="accordion-item__label" id="midd-accordion-item-label-{{id}}">{{item.title}}</span>
+    {% endblock %}
+    {% block content %}
+      <span class="accordion-item__char" aria-hidden>A</span>
+      <div class="typography">
+        {{item.content}}
+      </div>
+    {% endblock %}
+  {% endembed %}
 </section>
