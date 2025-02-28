@@ -1,0 +1,45 @@
+<div class="curriculum mt-4 mb-6" role="tablist">
+  {% for item in miis_curriculum %}
+  {% set id = random(1234) %}
+    <div class="accordion-item js-accordion-item-{{id}}">
+      <div 
+        href="#midd-accordion-item-label-{{id}}"
+        class="accordion-item__title"
+        data-toggle-target=".js-accordion-item-{{id}}"
+        aria-expanded="false"
+        aria-controls="midd-accordion-content-{{id}}"
+        aria-labelledby="midd-accordion-item-label-{{id}}"
+        role="tab">
+        <h4 class="" id="midd-accordion-item-label-{{id}}">
+          <a class="accordion-item__link">
+            {{item.course_number}}: {{item.title}} (<strong>{{item.semester}}</strong>)
+          </a>
+        </h4>
+        {% include 'partials/icon.twig' with { name: 'chevron-down', class: 'accordion-item__icon' } %}
+      </div>
+      <div 
+        class="accordion-item__content--column"
+        id="midd-accordion-content-{{id}}" 
+        role="tabpanel" 
+        aria-labelledby="midd-accordion-item-label-{{id}}"
+      >
+        <p class="accordion-item__sub-title">Course Description</p>
+        <div class="typography">
+          {{item.content}}
+        </div>
+        {% if item.terms %}
+          <p class="accordion-item__sub-title">Terms Taught</p>
+          <div class="typography">
+            {{item.terms}}
+          </div>
+        {% endif %}
+        {% if item.requirements %}
+          <p class="accordion-item__sub-title">Requirements</p>
+          <div class="typography">
+            {{item.requirements}}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
