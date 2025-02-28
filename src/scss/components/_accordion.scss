@@ -108,3 +108,26 @@
     border-top: 1px solid #dedede;
   }
 }
+
+.curriculum {
+  .accordion-item {
+    border-bottom: 0;
+  }
+
+  .accordion-item__title {
+    justify-content: initial;
+
+    h4 {
+      font-family: variables.$font-family-sans-serif;
+      line-height: variables.$line-height-body;
+    }
+
+    .accordion-item__icon {
+      margin-top: variables.$spacing-1;
+    }
+  }
+
+  .accordion-item__link {
+    @include type.link-border;
+  }
+}
