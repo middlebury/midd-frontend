@@ -4,9 +4,9 @@
 
 .curriculum__row {
   display: grid;
-  grid-template-columns: 4fr repeat(4, 1fr);
+  grid-template-columns: 6fr repeat(4, 1fr);
 
-  .curriculum__row--header {
+  &.curriculum__row--header {
     display: none;
     border-bottom: 5px solid variables.$border-color;
     font-size: variables.$typescale-2;
@@ -17,12 +17,28 @@
 
     @include breakpoints.breakpoint(md) {
       display: grid;
-      grid-template-columns: 4fr repeat(4, 1fr);
       grid-template-rows: max-content max-content;
       white-space: nowrap;
+    }
+  }
 
-      &:not(:last-of-type) {
-        padding-right: variables.$spacing-4;
+  &:not(.curriculum__row--header) {
+    &:hover {
+      background-color: variables.$gray-lighter;
+
+      .accordion-item__content--column {
+        background-color: variables.$white;
+      }
+    }
+
+    .curriculum__cell {
+      padding-top: variables.$spacing-3;
+      padding-bottom: variables.$spacing-3;
+    }
+
+    &:not(:last-of-type) {
+      @include breakpoints.breakpoint(md) {
+        border-bottom: 1px solid variables.$border-color;
       }
     }
   }
@@ -33,6 +49,8 @@
     grid-row-end: span 2;
     grid-column-start: 1;
     grid-column-end: end;
+    padding-left: variables.$spacing-5;
+    padding-right: variables.$spacing-5;
   }
 
   &.is-toggled {
@@ -43,42 +61,39 @@
 }
 
 .curriculum__cell {
+  text-align: center;
+
   &:first-child {
-    display: flex;
     text-align: left;
+    align-self: center;
   }
 
   .accordion-item__link {
     display: flex;
+    align-items: baseline;
   }
 
   .accordion-item__icon {
     transition: variables.$chevron-transition;
+    width: 0.75em;
+    height: 0.75em;
   }
 
   .accordion-item__link.is-toggled .accordion-item__icon {
     transform: variables.$caret-transform;
   }
 
-  text-align: center;
-  padding-top: variables.$spacing-3;
-  padding-bottom: variables.$spacing-3;
-
-  &:before {
-    font-size: variables.$typescale-2;
-    font-weight: variables.$font-weight-semibold;
+  .curriculum__cell-title {
+    font-size: variables.$typescale-4;
     font-family: variables.$font-family-sans-serif;
-    display: block;
-    margin-bottom: variables.$spacing-2;
-
-    @include breakpoints.breakpoint(md) {
-      display: none;
-    }
+    line-height: variables.$line-height-body;
   }
 
-  @include breakpoints.breakpoint(md) {
-    &:not(:last-of-type) {
-      padding-right: variables.$spacing-4;
-    }
+  .curriculum__cell--check {
+    display: inline-flex;
+    padding: variables.$spacing-1;
+    background-color: variables.$blue-lighter;
+    color: variables.$navy;
+    border-radius: variables.$spacing-3;
   }
 }

@@ -1,20 +1,20 @@
-{% set j_term_badge = '<span class="badge badge--primary badge--outline ml-2 pl-1">j-term</span>' %}
+{% set j_term_badge = '<span class="badge badge--primary badge--no-outline p-0">j-term</span>' %}
 
-<h2>Collapse to Accordions</h2>
+{# <h2>Collapse to Accordions</h2> #}
 <div class="" role="tablist">
   <div class="curriculum__row curriculum__row--header">
-    <div class="cell">Course</div>
-    <div class="cell">Fall 25</div>
-    <div class="cell">Spring 26</div>
-    <div class="cell">Fall 26</div>
-    <div class="cell">Spring 27</div>
+    <div class="curriculum__cell">Course</div>
+    <div class="curriculum__cell">Fall 25</div>
+    <div class="curriculum__cell">Spring 26</div>
+    <div class="curriculum__cell">Fall 26</div>
+    <div class="curriculum__cell">Spring 27</div>
   </div>
 
   {% for item in miis_curriculum %}
 
     {% set id = random(1234) %}
 
-    <div class="curriculum__row js-accordion-item-{{id}}">
+    <div class="curriculum__row accordion-item js-accordion-item-{{id}}">
       <div class="curriculum__cell">
         <a 
           href="#midd-accordion-item-label-{{id}}"
@@ -25,8 +25,8 @@
           aria-labelledby="midd-accordion-item-label-{{id}}"
           role="tab">
           <div class="sr-only">Course</div>
-          {% include 'partials/icon.twig' with { name: 'caret-right', class: 'accordion-item__icon ml-0' } %}
-          <div>{{item.course_number}} - {{item.title}}</div>
+          {% include 'partials/icon.twig' with { name: 'caret-right', class: 'accordion-item__icon mx-2' } %}
+          <h3 class="curriculum__cell-title">{{item.course_number}}: {{item.title}}</h3>
         </a>
       </div>
       {% for data in item.semester %}
@@ -36,11 +36,11 @@
             {{j_term_badge}}
           {% else %}
             {% if data.value %}
-              {% include 'partials/icon.twig' with {
-                name: 'check'
-              } %}
-            {% else %}
-              -
+              <span class="curriculum__cell--check">
+                {% include 'partials/icon.twig' with {
+                  name: 'check'
+                } %}
+              </span>
             {% endif %}
           {% endif %}
         </div>
