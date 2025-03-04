@@ -1,0 +1,84 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/type';
+
+.curriculum__row {
+  display: grid;
+  grid-template-columns: 4fr repeat(4, 1fr);
+
+  .curriculum__row--header {
+    display: none;
+    border-bottom: 5px solid variables.$border-color;
+    font-size: variables.$typescale-2;
+    font-weight: variables.$font-weight-semibold;
+    text-align: left;
+    padding-top: variables.$spacing-2;
+    padding-bottom: variables.$spacing-2;
+
+    @include breakpoints.breakpoint(md) {
+      display: grid;
+      grid-template-columns: 4fr repeat(4, 1fr);
+      grid-template-rows: max-content max-content;
+      white-space: nowrap;
+
+      &:not(:last-of-type) {
+        padding-right: variables.$spacing-4;
+      }
+    }
+  }
+
+  .accordion-item__content--column {
+    display: none;
+    grid-row-start: 2;
+    grid-row-end: span 2;
+    grid-column-start: 1;
+    grid-column-end: end;
+  }
+
+  &.is-toggled {
+    .accordion-item__content--column {
+      display: grid;
+    }
+  }
+}
+
+.curriculum__cell {
+  &:first-child {
+    display: flex;
+    text-align: left;
+  }
+
+  .accordion-item__link {
+    display: flex;
+  }
+
+  .accordion-item__icon {
+    transition: variables.$chevron-transition;
+  }
+
+  .accordion-item__link.is-toggled .accordion-item__icon {
+    transform: variables.$caret-transform;
+  }
+
+  text-align: center;
+  padding-top: variables.$spacing-3;
+  padding-bottom: variables.$spacing-3;
+
+  &:before {
+    font-size: variables.$typescale-2;
+    font-weight: variables.$font-weight-semibold;
+    font-family: variables.$font-family-sans-serif;
+    display: block;
+    margin-bottom: variables.$spacing-2;
+
+    @include breakpoints.breakpoint(md) {
+      display: none;
+    }
+  }
+
+  @include breakpoints.breakpoint(md) {
+    &:not(:last-of-type) {
+      padding-right: variables.$spacing-4;
+    }
+  }
+}

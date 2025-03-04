@@ -1,0 +1,68 @@
+{% set j_term_badge = '<span class="badge badge--primary badge--outline ml-2 pl-1">j-term</span>' %}
+
+<h2>Collapse to Accordions</h2>
+<div class="" role="tablist">
+  <div class="curriculum__row curriculum__row--header">
+    <div class="cell">Course</div>
+    <div class="cell">Fall 25</div>
+    <div class="cell">Spring 26</div>
+    <div class="cell">Fall 26</div>
+    <div class="cell">Spring 27</div>
+  </div>
+
+  {% for item in miis_curriculum %}
+
+    {% set id = random(1234) %}
+
+    <div class="curriculum__row js-accordion-item-{{id}}">
+      <div class="curriculum__cell">
+        <a 
+          href="#midd-accordion-item-label-{{id}}"
+          class="accordion-item__link"
+          data-toggle-target=".js-accordion-item-{{id}}"
+          aria-expanded="false"
+          aria-controls="midd-accordion-content-{{id}}"
+          aria-labelledby="midd-accordion-item-label-{{id}}"
+          role="tab">
+          <div class="sr-only">Course</div>
+          {% include 'partials/icon.twig' with { name: 'caret-right', class: 'accordion-item__icon ml-0' } %}
+          <div>{{item.course_number}} - {{item.title}}</div>
+        </a>
+      </div>
+      {% for data in item.semester %}
+        <div class="curriculum__cell">
+          <div class="sr-only">{{data.label}}</div>
+          {% if data.value == 'j-term' %}
+            {{j_term_badge}}
+          {% else %}
+            {% if data.value %}
+              {% include 'partials/icon.twig' with {
+                name: 'check'
+              } %}
+            {% else %}
+              -
+            {% endif %}
+          {% endif %}
+        </div>
+      {% endfor %}
+      <div class="accordion-item__content--column" id="midd-accordion-content-{{id}}" role="tabpanel" aria-labelledby="midd-accordion-item-label-{{id}}">
+        <p class="accordion-item__sub-title">Course Description</p>
+        <div class="typography">
+          {{item.content}}
+        </div>
+        {% if item.terms %}
+          <p class="accordion-item__sub-title">Terms Taught</p>
+          <div class="typography">
+            {{item.terms}}
+          </div>
+        {% endif %}
+        {% if item.requirements %}
+          <p class="accordion-item__sub-title">Requirements</p>
+          <div class="typography">
+            {{item.requirements}}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
