@@ -16,9 +16,9 @@
 
     <div class="curriculum__row accordion-item js-accordion-item-{{id}}">
       <div class="curriculum__cell">
-        <a 
+        <h3 
           href="#midd-accordion-item-label-{{id}}"
-          class="accordion-item__link"
+          class="curriculum__cell-title"
           data-toggle-target=".js-accordion-item-{{id}}"
           aria-expanded="false"
           aria-controls="midd-accordion-content-{{id}}"
@@ -26,8 +26,11 @@
           role="tab">
           <div class="sr-only">Course</div>
           {% include 'partials/icon.twig' with { name: 'caret-right', class: 'accordion-item__icon mx-2' } %}
-          <h3 class="curriculum__cell-title">{{item.course_number}}: {{item.title}}</h3>
-        </a>
+          <a class="accordion-item__link">
+            <span class="accordion-item__label--bold">{{item.course_number}}</span>
+            {{item.title}}
+          </a>
+        </h3>
       </div>
       {% for data in item.semester %}
         <div class="curriculum__cell">

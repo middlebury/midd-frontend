@@ -23,14 +23,6 @@
   }
 
   &:not(.curriculum__row--header) {
-    &:hover {
-      background-color: variables.$gray-lighter;
-
-      .accordion-item__content--column {
-        background-color: variables.$white;
-      }
-    }
-
     .curriculum__cell {
       padding-top: variables.$spacing-3;
       padding-bottom: variables.$spacing-3;
@@ -62,15 +54,10 @@
 
 .curriculum__cell {
   text-align: center;
+  align-content: center;
 
   &:first-child {
     text-align: left;
-    align-self: center;
-  }
-
-  .accordion-item__link {
-    display: flex;
-    align-items: baseline;
   }
 
   .accordion-item__icon {
@@ -79,14 +66,20 @@
     height: 0.75em;
   }
 
-  .accordion-item__link.is-toggled .accordion-item__icon {
-    transform: variables.$caret-transform;
-  }
-
   .curriculum__cell-title {
-    font-size: variables.$typescale-4;
+    display: flex;
+    align-items: baseline;
+    font-size: variables.$typescale-3;
     font-family: variables.$font-family-sans-serif;
     line-height: variables.$line-height-body;
+
+    a {
+      cursor: pointer;
+    }
+  }
+
+  .curriculum__cell-title.is-toggled .accordion-item__icon {
+    transform: variables.$caret-transform;
   }
 
   .curriculum__cell--check {
