@@ -1,13 +1,27 @@
 @use '../core/variables';
 @use '../mixins/breakpoints';
 @use '../mixins/type';
+@use '../core/functions';
+@use '../mixins/screen-reader';
+
+.curriculum {
+  overflow-x: scroll;
+}
+
+.curriculum__rows {
+  min-width: 608px;
+}
 
 .curriculum__row {
   display: grid;
-  grid-template-columns: 6fr repeat(4, 1fr);
+  grid-template-columns: 4fr repeat(4, 1fr);
+
+  @include breakpoints.breakpoint(xl) {
+    grid-template-columns: 6fr repeat(4, 1fr);
+  }
 
   &.curriculum__row--header {
-    display: none;
+    // display: none;
     border-bottom: 5px solid variables.$border-color;
     font-size: variables.$typescale-2;
     font-weight: variables.$font-weight-semibold;
@@ -15,25 +29,25 @@
     padding-top: variables.$spacing-2;
     padding-bottom: variables.$spacing-2;
 
-    @include breakpoints.breakpoint(md) {
-      display: grid;
-      grid-template-rows: max-content max-content;
-      white-space: nowrap;
-    }
+    // @include breakpoints.breakpoint(md) {
+    display: grid;
+    grid-template-rows: max-content max-content;
+    white-space: nowrap;
+    // }
   }
 
   &:not(.curriculum__row--header) {
-    &:hover {
-      background-color: variables.$gray-lighter;
-
-      .accordion-item__content--column {
-        background-color: variables.$white;
-      }
-    }
-
     .curriculum__cell {
       padding-top: variables.$spacing-3;
       padding-bottom: variables.$spacing-3;
+
+      &:not(:first-child) {
+        // display: none;
+
+        // @include breakpoints.breakpoint(md) {
+        //   display: initial;
+        // }
+      }
     }
 
     &:not(:last-of-type) {
@@ -49,8 +63,10 @@
     grid-row-end: span 2;
     grid-column-start: 1;
     grid-column-end: end;
-    padding-left: variables.$spacing-5;
-    padding-right: variables.$spacing-5;
+
+    p {
+      font-size: variables.$typescale-3;
+    }
   }
 
   &.is-toggled {
@@ -68,9 +84,21 @@
     align-self: center;
   }
 
+  .curriculum__cell-label {
+    // @include breakpoints.breakpoint(md) {
+    //   @include screen-reader.sr-only;
+    // }
+  }
+
   .accordion-item__link {
     display: flex;
     align-items: baseline;
+    font-size: variables.$typescale-3;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   .accordion-item__icon {
@@ -84,7 +112,7 @@
   }
 
   .curriculum__cell-title {
-    font-size: variables.$typescale-4;
+    font-size: inherit;
     font-family: variables.$font-family-sans-serif;
     line-height: variables.$line-height-body;
   }
@@ -95,5 +123,10 @@
     background-color: variables.$blue-lighter;
     color: variables.$navy;
     border-radius: variables.$spacing-3;
+
+    .icon {
+      width: 0.875em;
+      height: 0.875em;
+    }
   }
 }

@@ -1,7 +1,7 @@
 {% set j_term_badge = '<span class="badge badge--primary badge--no-outline p-0">j-term</span>' %}
-
+<div class="curriculum">
 {# <h2>Collapse to Accordions</h2> #}
-<div class="" role="tablist">
+<div class="curriculum__rows" role="tablist">
   <div class="curriculum__row curriculum__row--header">
     <div class="curriculum__cell">Course</div>
     <div class="curriculum__cell">Fall 25</div>
@@ -46,18 +46,18 @@
         </div>
       {% endfor %}
       <div class="accordion-item__content--column" id="midd-accordion-content-{{id}}" role="tabpanel" aria-labelledby="midd-accordion-item-label-{{id}}">
-        <p class="accordion-item__sub-title">Course Description</p>
+        <h4 class="accordion-item__sub-title">Course Description</h4>
         <div class="typography">
           {{item.content}}
         </div>
         {% if item.terms %}
-          <p class="accordion-item__sub-title">Terms Taught</p>
+          <h4 class="accordion-item__sub-title">Terms Taught</h4>
           <div class="typography">
             {{item.terms}}
           </div>
         {% endif %}
         {% if item.requirements %}
-          <p class="accordion-item__sub-title">Requirements</p>
+          <h4 class="accordion-item__sub-title">Requirements</h4>
           <div class="typography">
             {{item.requirements}}
           </div>
@@ -65,4 +65,5 @@
       </div>
     </div>
   {% endfor %}
+</div>
 </div>
