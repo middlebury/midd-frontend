@@ -181,7 +181,7 @@
       margin-top: variables.$spacing-7;
       margin-bottom: variables.$spacing-4;
     }
-    
+
     @include breakpoints.breakpoint(lg) {
       margin-top: variables.$spacing-8;
       margin-bottom: variables.$spacing-5;
@@ -267,21 +267,6 @@
     abbr[title]:after {
       content: '(' attr(title) ')';
     }
-  }
-  
-  details:first-of-type summary {
-    display: inline-block;
-
-    &:before {
-      content: '\002B';
-      // color: variables.$navy;
-      font-size: variables.$typescale-5;
-      margin-right: variables.$spacing-2;
-    }
-  }
-  
-  details[open]:first-of-type summary:before {
-    content: '\2013';
   }
 }
 
