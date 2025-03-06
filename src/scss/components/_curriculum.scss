@@ -16,7 +16,7 @@
   }
 
   @include breakpoints.breakpoint(xl) {
-    grid-template-columns: 6fr repeat(4, 1fr);
+    grid-template-columns: 7fr repeat(4, 1fr);
   }
 
   &.curriculum__row--header {
@@ -36,23 +36,6 @@
   }
 
   &:not(.curriculum__row--header) {
-    .curriculum__cell {
-      padding: variables.$spacing-3;
-      padding-left: 0;
-
-      @include breakpoints.breakpoint(md) {
-        padding-right: 0;
-      }
-
-      &:not(:first-child) {
-        display: none;
-
-        @include breakpoints.breakpoint(md) {
-          display: initial;
-        }
-      }
-    }
-
     &:not(:last-of-type) {
       @include breakpoints.breakpoint(md) {
         border-bottom: 1px solid variables.$border-color;
@@ -85,31 +68,18 @@
     text-align: center;
   }
 
-  .curriculum__row:not(.curriculum__row--header) {
-    & {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      padding: variables.$spacing-3;
-      padding-left: 0;
+  .curriculum__row:not(.curriculum__row--header) & {
+    padding: variables.$spacing-3;
+    padding-left: 0;
+
+    &:not(:first-child) {
+      display: none;
 
       @include breakpoints.breakpoint(md) {
-        padding-right: 0;
-      }
-
-      &:not(:first-child) {
-        display: none;
-
-        @include breakpoints.breakpoint(md) {
-          display: flex;
-          justify-content: center;
-        }
+        display: flex;
+        justify-content: center;
       }
     }
-  }
-
-  .curriculum__column-sm-data {
-    padding-left: variables.$spacing-5;
   }
 
   .accordion-item__link {
