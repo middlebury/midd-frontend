@@ -4,24 +4,23 @@
 @use '../core/functions';
 @use '../mixins/screen-reader';
 
-.curriculum {
-  overflow-x: scroll;
-}
-
-.curriculum__rows {
-  min-width: 608px;
-}
-
 .curriculum__row {
-  display: grid;
-  grid-template-columns: 4fr repeat(4, 1fr);
+  display: inline-grid;
+  width: 100%;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  align-items: center;
+
+  @include breakpoints.breakpoint(md) {
+    grid-template-columns: 4fr repeat(4, 1fr);
+  }
 
   @include breakpoints.breakpoint(xl) {
     grid-template-columns: 6fr repeat(4, 1fr);
   }
 
   &.curriculum__row--header {
-    // display: none;
+    display: none;
     border-bottom: 5px solid variables.$border-color;
     font-size: variables.$typescale-2;
     font-weight: variables.$font-weight-semibold;
@@ -29,24 +28,28 @@
     padding-top: variables.$spacing-2;
     padding-bottom: variables.$spacing-2;
 
-    // @include breakpoints.breakpoint(md) {
-    display: grid;
-    grid-template-rows: max-content max-content;
-    white-space: nowrap;
-    // }
+    @include breakpoints.breakpoint(md) {
+      display: grid;
+      grid-template-rows: max-content max-content;
+      white-space: nowrap;
+    }
   }
 
   &:not(.curriculum__row--header) {
     .curriculum__cell {
-      padding-top: variables.$spacing-3;
-      padding-bottom: variables.$spacing-3;
+      padding: variables.$spacing-3;
+      padding-left: 0;
+
+      @include breakpoints.breakpoint(md) {
+        padding-right: 0;
+      }
 
       &:not(:first-child) {
-        // display: none;
+        display: none;
 
-        // @include breakpoints.breakpoint(md) {
-        //   display: initial;
-        // }
+        @include breakpoints.breakpoint(md) {
+          display: initial;
+        }
       }
     }
 
@@ -63,6 +66,7 @@
     grid-row-end: span 2;
     grid-column-start: 1;
     grid-column-end: end;
+    padding-left: variables.$spacing-5;
 
     p {
       font-size: variables.$typescale-3;
@@ -71,23 +75,41 @@
 
   &.is-toggled {
     .accordion-item__content--column {
-      display: grid;
+      display: flex;
     }
   }
 }
 
 .curriculum__cell {
-  text-align: center;
-
-  &:first-child {
-    text-align: left;
-    align-self: center;
+  &:not(:first-child) {
+    text-align: center;
   }
 
-  .curriculum__cell-label {
-    // @include breakpoints.breakpoint(md) {
-    //   @include screen-reader.sr-only;
-    // }
+  .curriculum__row:not(.curriculum__row--header) {
+    & {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: variables.$spacing-3;
+      padding-left: 0;
+
+      @include breakpoints.breakpoint(md) {
+        padding-right: 0;
+      }
+
+      &:not(:first-child) {
+        display: none;
+
+        @include breakpoints.breakpoint(md) {
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  .curriculum__column-sm-data {
+    padding-left: variables.$spacing-5;
   }
 
   .accordion-item__link {
@@ -103,7 +125,7 @@
 
   .accordion-item__icon {
     transition: variables.$chevron-transition;
-    width: 0.75em;
+    // width: 0.75em;
     height: 0.75em;
   }
 
