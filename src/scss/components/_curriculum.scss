@@ -69,15 +69,17 @@
   }
 
   .curriculum__row:not(.curriculum__row--header) & {
-    padding: variables.$spacing-3;
-    padding-left: 0;
+    padding-top: variables.$spacing-3;
+    padding-bottom: variables.$spacing-3;
 
     &:not(:first-child) {
       display: none;
+      padding-right: 0;
 
       @include breakpoints.breakpoint(md) {
         display: flex;
         justify-content: center;
+        align-items: center;
       }
     }
   }
@@ -95,7 +97,6 @@
 
   .accordion-item__icon {
     transition: variables.$chevron-transition;
-    // width: 0.75em;
     height: 0.75em;
   }
 
@@ -109,7 +110,13 @@
     line-height: variables.$line-height-body;
   }
 
-  .curriculum__cell--check {
+  .curriculum__table-data-sm {
+    span:not(:last-child):after {
+      content: ',  ';
+    }
+  }
+
+  .curriculum__cell--checkmark {
     display: inline-flex;
     padding: variables.$spacing-1;
     background-color: variables.$blue-lighter;
