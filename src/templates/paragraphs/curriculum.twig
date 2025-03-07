@@ -1,8 +1,16 @@
-{% set j_term_badge = '<span class="badge badge--primary badge--no-outline p-0">j-term</span>' %}
+{% set j_term_badge = '<span class="badge badge--primary badge--no-outline p-0" aria-hidden="true">j-term</span>' %}
+
+{# {% set id_num_list = [] %}
+{% set id_list = [] %}
+{% for i in 0..miis_curriculum.length - 1 %}
+  {% set id = random(1234) %}
+  {% set id_num_list = [id]|merge(id_num_list) %}
+  {% set id_list = ["midd-accordion-tab-" ~ id]|merge(id_list) %}
+{% endfor %} #}
 
 <div class="paragraph--curriculum">
-  <div class="curriculum__rows" role="tablist">
-    <div class="curriculum__row curriculum__row--header">
+  <ul class="curriculum__rows" aria-label="course list">
+    <div class="curriculum__row curriculum__row--header" aria-hidden="true">
       <div class="curriculum__cell">Course</div>
       <div class="curriculum__cell">Fall 25</div>
       <div class="curriculum__cell">Spring 26</div>
@@ -14,17 +22,18 @@
 
       {% set id = random(1234) %}
 
-      <div class="curriculum__row accordion-item js-accordion-item-{{id}}">
+      <li class="curriculum__row accordion-item js-accordion-item-{{id}}">
         <div class="curriculum__cell">
           <a 
             href="#midd-accordion-item-label-{{id}}"
             class="accordion-item__link"
+            id="midd-accordion-tab-{{id}}"
             data-toggle-target=".js-accordion-item-{{id}}"
             aria-expanded="false"
             aria-controls="midd-accordion-content-{{id}}"
             aria-labelledby="midd-accordion-item-label-{{id}}"
-            role="tab">
-            <div class="sr-only">Course</div>
+          >
+            <span class="sr-only">course number and title</span>
             {% include 'partials/icon.twig' with { name: 'caret-right', class: 'accordion-item__icon mx-2' } %}
             <h3 class="curriculum__cell-title">{{item.course_number}}: {{item.title}}</h3>
           </a>
@@ -46,21 +55,24 @@
         </div>
         {% for data in item.semester %}
           <div class="curriculum__cell">
-            <div class="sr-only">{{data.label}}</div>
             {% if data.value == 'j-term' %}
+              <span class="sr-only">offered in: {{data.label}} ({{data.value}})</span>
               {{j_term_badge}}
             {% else %}
               {% if data.value %}
+                <span class="sr-only">offered in: {{data.label}}</span>
                 <span class="curriculum__cell--checkmark">
                   {% include 'partials/icon.twig' with {
                     name: 'check'
                   } %}
                 </span>
+              {% else %}
+                <span class="sr-only">not offered in: {{data.label}}</span>
               {% endif %}
             {% endif %}
           </div>
         {% endfor %}
-        <div class="accordion-item__content--column" id="midd-accordion-content-{{id}}" role="tabpanel" aria-labelledby="midd-accordion-item-label-{{id}}">
+        <div class="accordion-item__content--column" id="midd-accordion-content-{{id}}" role="region" aria-labelledby="midd-accordion-item-label-{{id}}">
           <h4 class="accordion-item__sub-title">Course Description</h4>
           <div class="typography">
             {{item.content}}
@@ -78,7 +90,7 @@
             </div>
           {% endif %}
         </div>
-      </div>
+      </li>
     {% endfor %}
-  </div>
+  </ul>
 </div>
