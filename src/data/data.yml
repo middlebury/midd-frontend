@@ -812,7 +812,13 @@ wrmc_schedule_items:
         title: Mixed Confetti
         hosts: Aaron Smith, Blair Kloman, Pooja Gunturu
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        genre: Blues
+        genres:
+          - name: Electronic
+            class: electronic
+          - name: Indie
+            class: indie
+          - name: Rock
+            class: rock
 
       - start_time: 2:00
         end_time: 3:00
@@ -820,14 +826,22 @@ wrmc_schedule_items:
         title: Hot Chocolate on the Bus
         hosts: Adam Yauch
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        genre: Country
+        genres:
+          - name: Blues
+            class: blues
+          - name: Country
+            class: country
 
       - start_time: 11:00
         end_time: 12:00
         meridiem: PM
         title: Mr. and Mrs. Send It
         hosts: Sid Vicious
-        genre: Electronic
+        genres:
+          - name: Electronic
+            class: electronic
+          - name: Country
+            class: country
 
   - day: Tuesday
     schedule:
@@ -836,19 +850,29 @@ wrmc_schedule_items:
         meridiem: AM
         title: Grilled Cheese Sandwich
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        genre: Folk
+        genres:
+          - name: Rap
+            class: generic
+          - name: World
+            class: world
 
       - start_time: 9:00
         end_time: 10:00
         meridiem: AM
         title: Jazz Band, Hand and Feet
-        genre: Punk
+        genres:
+          - name: Punk
+            class: punk
+          - name: Rock
+            class: rock
 
       - start_time: 12:00
         end_time: 1:00
         meridiem: AM
         title: Jazz Band, Hand and Feet
-        genre: Rock
+        genres:
+          - name: Rock
+            class: rock
 
   - day: Wednesday
     schedule:
@@ -856,14 +880,22 @@ wrmc_schedule_items:
         end_time: 2:00
         meridiem: PM
         title: Experimental Jetset Companion
-        genre: World
+        genres:
+          - name: World
+            class: world
 
       - start_time: 11:00
         end_time: 12:00
         meridiem: PM
         title: Mr. and Mrs. Send It
         hosts: Sid Vicious
-        genre: Blues
+        genres:
+          - name: Jazz
+            class: jazz
+          - name: Pop
+            class: pop
+          - name: R&B / Soul
+            class: rb-soul
 
   - day: Thursday
     schedule:
@@ -871,7 +903,9 @@ wrmc_schedule_items:
         end_time: 10:00
         meridiem: AM
         title: Jazz Band, Hand and Feet
-        genre: Reggae
+        genres:
+          - name: Reggae
+            class: reggae
 
       - start_time: 2:00
         end_time: 3:00
@@ -879,14 +913,18 @@ wrmc_schedule_items:
         title: Hot Chocolate on the Bus
         hosts: Adam Yauch
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        genre: Blues
+        genres:
+          - name: Blues
+            class: blues
 
       - start_time: 2:00
         end_time: 3:00
         meridiem: AM
         title: I Love Rock and Roll
         hosts: Matt Jennings and Tom
-        genre: Jazz
+        genres:
+          - name: Jazz
+            class: jazz
 
   - day: Friday
     schedule:
@@ -895,20 +933,26 @@ wrmc_schedule_items:
         meridiem: AM
         title: Echo Locations
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        genre: Hip Hop
+        genres:
+          - name: Hip Hop
+            class: hip-hop
 
       - start_time: 9:00
         end_time: 10:00
         meridiem: AM
         title: Jazz Band, Hand and Feet
-        genre: Latin
+        genres:
+          - name: Latin
+            class: latin
 
       - start_time: 11:00
         end_time: 12:00
         meridiem: PM
         title: Mr. and Mrs. Send It
         hosts: Sid Vicious
-        genre: Indie
+        genres:
+          - name: Indie
+            class: indie
 
   - day: Saturday
     schedule:
@@ -916,7 +960,9 @@ wrmc_schedule_items:
         end_time: 2:00
         meridiem: PM
         title: Experimental Jetset Companion
-        genre: Funk
+        genres:
+          - name: Funk
+            class: funk
 
       - start_time: 2:00
         end_time: 3:00
@@ -924,7 +970,9 @@ wrmc_schedule_items:
         title: Hot Chocolate on the Bus
         hosts: Adam Yauch
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        genre: Classical
+        genres:
+          - name: Classical
+            class: classical
 
   - day: Sunday
     schedule:
@@ -932,7 +980,9 @@ wrmc_schedule_items:
         end_time: 11:00
         meridiem: AM
         title: Experimental Jetset Companion
-        genre: Electronic
+        genres:
+          - name: Electronic
+            class: electronic
 
       - start_time: 2:00
         end_time: 3:00
@@ -940,14 +990,18 @@ wrmc_schedule_items:
         title: Hot Chocolate on the Bus
         hosts: Adam Yauch
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        genre: Electronic
+        genres:
+          - name: Electronic
+            class: electronic
 
       - start_time: 2:00
         end_time: 3:00
         meridiem: AM
         title: I Love Rock and Roll
         hosts: Matt Jennings and Tom
-        genre: Blues
+        genres:
+          - name: Blues
+            class: electronic
 
 playlist_items:
   - artist: Mk.gee

@@ -28,12 +28,7 @@
                   {% set class = 'align-top-right' %}
                 {% endif %}
 
-                {% for genre in genres %}
-                  {% if genre.genre == schedule_item.genre %}
-                    {% set current_genre = genre.genre_class %}
-                  {% endif %}
-                {% endfor %}
-                <div class="weekly-schedule__show-wrapper {{current_genre}}">
+                <div class="weekly-schedule__show-wrapper {{schedule_item.genres[0].class}}">
                   <button aria-haspopup="dialog">
                     <article class="weekly-schedule__show" aria-labelledby="wrmc-show-title-{{id}}">
                       <h3 id="wrmc-show-title-{{id}}">{{schedule_item.title}}</h3>
@@ -44,7 +39,6 @@
                   {% include 'partials/wrmc-show-teaser.twig' with {
                     item: schedule_item,
                     class: "weekly-schedule__show-teaser " ~ class,
-                    genre: current_genre,
                     role: "dialog"
                   } %}
                 </div>
