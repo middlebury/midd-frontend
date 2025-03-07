@@ -1133,7 +1133,7 @@ miis_curriculum:
       - label: Spring 27
         value: true
     content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    terms: <p>Fall 2025, Fall 2026</p>
+    terms: <p>Spring 2026, Spring 2027</p>
 
   - course_number: ENPG 8542
     title: Environmental & Natural Resource Economics
@@ -1162,7 +1162,7 @@ miis_curriculum:
       - label: Spring 27
         value: j-term
     content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    terms: <p>Fall 2025, Spring 2026, Fall 2026, Spring 2027</p>
+    terms: <p>Spring 2026 (j-term), Spring 2027 (j-term)</p>
 
   - course_number: ENPG 8506
     title: Public Policy and the Environment
@@ -1191,7 +1191,7 @@ miis_curriculum:
       - label: Spring 27
         value: false
     content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    terms: <p>Winter 2026, Winter 2027</p>
+    terms: <p>Fall 2025, Fall 2026/p>
     requirements: <p>DED, SCI</p>
 
   - course_number: ENPG 8591
@@ -1206,7 +1206,7 @@ miis_curriculum:
       - label: Spring 27
         value: false
     content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    terms: <p>Spring 2026, Spring 2027</p>
+    terms: <p>Fall 2025, Fall 2026</p>
 
   - course_number: ENPG 8525
     title: Environmental Leadership
@@ -1220,7 +1220,7 @@ miis_curriculum:
       - label: Spring 27
         value: j-term
     content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    terms: <p>Spring 2026, Spring 2027</p>
+    terms: <p>Spring 2026 (j-term), Spring 2027 (j-term)</p>
 
   - course_number: TBD
     title: PSS-Independent Practicum
@@ -1234,4 +1234,4 @@ miis_curriculum:
       - label: Spring 27
         value: true
     content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    terms: <p>Spring 2026, Spring 2027</p>
+    terms: <p>Fall 2025, Spring 2026, Fall 2026, Spring 2027</p>
