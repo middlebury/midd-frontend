@@ -1,4 +1,4 @@
-{% set j_term_badge = '<span class="badge badge--primary badge--no-outline p-0" aria-hidden="true">j-term</span>' %}
+{% set j_term_badge = '<span class="badge badge--primary badge--no-outline" aria-hidden="true">j-term</span>' %}
 
 <div class="paragraph--curriculum">
   <ul class="curriculum__rows" aria-label="curriculum course list">
@@ -29,7 +29,7 @@
             <h3 class="curriculum__cell-title" id="midd-accordion-item-label-{{id}}">{{item.course_number}}: {{item.title}}</h3>
           </a>
             
-          <dl class="f2 pt-3 pl-5 d-md-none curriculum__table-data-sm">
+          <dl class="f2 pt-3 pl-5 d-md-none curriculum__table-sm-data">
             <dt class="font-semibold">Offered in:</dt>
             <dd>
               {% for label in item.semester %}

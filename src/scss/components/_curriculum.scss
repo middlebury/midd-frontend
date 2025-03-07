@@ -2,7 +2,6 @@
 @use '../mixins/breakpoints';
 @use '../mixins/type';
 @use '../core/functions';
-@use '../mixins/screen-reader';
 
 .curriculum__row {
   display: inline-grid;
@@ -30,7 +29,6 @@
 
     @include breakpoints.breakpoint(md) {
       display: grid;
-      grid-template-rows: max-content max-content;
       white-space: nowrap;
     }
   }
@@ -71,6 +69,11 @@
   .curriculum__row:not(.curriculum__row--header) & {
     padding-top: variables.$spacing-3;
     padding-bottom: variables.$spacing-3;
+    padding-right: variables.$spacing-3;
+
+    @include breakpoints.breakpoint(md) {
+      padding-right: 0;
+    }
 
     &:not(:first-child) {
       display: none;
@@ -110,7 +113,7 @@
     line-height: variables.$line-height-body;
   }
 
-  .curriculum__table-data-sm {
+  .curriculum__table-sm-data {
     span:not(:last-child):after {
       content: ',  ';
     }
