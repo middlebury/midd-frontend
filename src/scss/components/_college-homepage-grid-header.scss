@@ -154,6 +154,7 @@ $accessible-text-colors: (
 
     @include breakpoints.breakpoint(md) {
       font-size: variables.$typescale-8;
+
       strong {
         font-weight: variables.$font-weight-bold;
       }

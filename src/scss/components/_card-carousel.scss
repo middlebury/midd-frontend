@@ -30,7 +30,7 @@ $card-carousel-height: 600px;
     color: variables.$white;
     margin-bottom: 1rem;
   }
-  
+
   @include breakpoints.breakpoint(md) {
     margin-bottom: 3rem;
   }

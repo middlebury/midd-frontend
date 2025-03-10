@@ -45,6 +45,7 @@
 
 .midd-search__mag {
   margin-right: variables.$spacing-1;
+
   .midd-search__handle.is-toggled & {
     display: none;
   }
@@ -53,6 +54,7 @@
 .midd-search__times {
   display: none;
   margin-right: variables.$spacing-1;
+
   .midd-search__handle.is-toggled & {
     display: inline-block;
   }

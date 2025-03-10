@@ -90,6 +90,7 @@
         display: none;
       }
     }
+
     .filter__icon-close {
       display: none;
       @include breakpoints.breakpoint(lg) {
@@ -105,6 +106,7 @@
         display: block;
       }
     }
+
     .filter__icon-close {
       display: block;
       @include breakpoints.breakpoint(lg) {

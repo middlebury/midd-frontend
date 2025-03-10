@@ -45,6 +45,7 @@
 
 .midd-nav__times {
   display: none;
+
   .midd-nav__handle.is-toggled & {
     display: inline-block;
   }
@@ -183,6 +184,7 @@
 
 .midd-nav__chevron {
   transition: variables.$chevron-transition;
+
   .midd-nav__handle.is-toggled & {
     transform: variables.$chevron-transform;
   }

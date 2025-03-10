@@ -133,6 +133,7 @@ $mega-cta-alignments: (
   position: absolute;
   text-align: left;
   padding: 0 1rem;
+
   &-left-top {
     top: variables.$spacing-7;
     @include breakpoints.breakpoint(md) {
@@ -149,6 +150,7 @@ $mega-cta-alignments: (
       left: functions.rem(152);
     }
   }
+
   &-left-bottom {
     top: variables.$spacing-7;
     @include breakpoints.breakpoint(md) {
@@ -167,6 +169,7 @@ $mega-cta-alignments: (
       left: functions.rem(152);
     }
   }
+
   &-right-top {
     top: variables.$spacing-7;
     @include breakpoints.breakpoint(md) {
@@ -184,6 +187,7 @@ $mega-cta-alignments: (
       right: functions.rem(152);
     }
   }
+
   &-right-bottom {
     top: variables.$spacing-7;
     @include breakpoints.breakpoint(md) {

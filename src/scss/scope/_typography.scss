@@ -26,10 +26,8 @@
   }
 
   a:not([href*='middlebury.edu']):not([href^='#']):not([href^='/']):not(
-      [href^='mailto:']
-    ):not([href*='drive.google.com']):not([href*='docs.google.com']):not(
-      [href*='.pdf']
-    ):not([href*='middleburycollege-my.sharepoint.com']):not([name]) {
+      [href^='mailto:']):not([href*='drive.google.com']):not([href*='docs.google.com']):not(
+      [href*='.pdf']):not([href*='middleburycollege-my.sharepoint.com']):not([name]) {
     @include type.link-external;
   }
 
@@ -177,6 +175,7 @@
   @at-root .paragraph--text + .paragraph--text > h2,
     .lead + .paragraph--text > h2 {
     @include type.h2;
+
     & {
       margin-top: variables.$spacing-7;
       margin-bottom: variables.$spacing-4;

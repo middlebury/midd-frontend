@@ -5,6 +5,7 @@
 @use '../mixins/type';
 
 @use 'sass:math';
+
 .spotlight {
   position: relative;
   @include breakpoints.breakpoint(lg) {
