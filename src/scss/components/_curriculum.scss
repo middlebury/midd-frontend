@@ -18,13 +18,13 @@
     grid-template-columns: 7fr repeat(4, 1fr);
   }
 
-  &.curriculum__row--two-column {
+  &.curriculum__row--three-column {
     @include breakpoints.breakpoint(md) {
       grid-template-columns: 4fr repeat(2, 1fr);
     }
   }
 
-  &.curriculum__row--three-column {
+  &.curriculum__row--four-column {
     @include breakpoints.breakpoint(md) {
       grid-template-columns: 4fr repeat(3, 1fr);
     }

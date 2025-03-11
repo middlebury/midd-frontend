@@ -1,18 +1,18 @@
 {% set j_term_badge = '<span class="badge badge--primary badge--no-outline" aria-hidden="true">j-term</span>' %}
 {% set row_class = '' %}
-{% set no_of_columns = random([3]) %}
+{% set no_of_sem_columns = random([2, 3, 4]) %}
 
-{% if miis_curriculum_header_labels|slice(0, no_of_columns)|length == 3 %}
+{% if miis_curriculum_header_labels|slice(0, no_of_sem_columns)|length == 3 %}
+  {% set row_class = 'curriculum__row--four-column' %}
+{% elseif miis_curriculum_header_labels|slice(0, no_of_sem_columns)|length == 2 %}
   {% set row_class = 'curriculum__row--three-column' %}
-{% elseif miis_curriculum_header_labels|slice(0, no_of_columns)|length == 2 %}
-  {% set row_class = 'curriculum__row--two-column' %}
 {% endif %}
 
 <div class="paragraph--curriculum">
   <ul class="curriculum__rows" aria-label="curriculum course list">
     <div class="curriculum__row {{row_class}} curriculum__row--header" aria-hidden="true">
         <div class="curriculum__cell">Course</div>
-      {% for label in miis_curriculum_header_labels|slice(0, no_of_columns) %}
+      {% for label in miis_curriculum_header_labels|slice(0, no_of_sem_columns) %}
         <div class="curriculum__cell">{{label}}</div>
       {% endfor %}
     </div>
@@ -39,7 +39,7 @@
           <dl class="f2 pt-3 pl-5 d-md-none curriculum__table-sm-data">
             <dt class="font-semibold">Offered in:</dt>
             <dd>
-              {% for label in item.semester|slice(0, no_of_columns) %}
+              {% for label in item.semester|slice(0, no_of_sem_columns) %}
                 {% if label.value %}
                   {% if label.value == 'j-term' %}
                     <span>{{label.label}} ({{label.value}})</span>
@@ -51,7 +51,7 @@
             </dd>
           </dl>
         </div>
-        {% for data in item.semester|slice(0, no_of_columns) %}
+        {% for data in item.semester|slice(0, no_of_sem_columns) %}
           <div class="curriculum__cell">
             {% if data.value == 'j-term' %}
               <span class="sr-only">offered in: {{data.label}} ({{data.value}})</span>
