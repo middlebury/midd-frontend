@@ -18,6 +18,22 @@
     grid-template-columns: 7fr repeat(4, 1fr);
   }
 
+  &.curriculum__row--two-column {
+    @include breakpoints.breakpoint(md) {
+      grid-template-columns: 4fr repeat(2, 1fr);
+    }
+  }
+
+  &.curriculum__row--three-column {
+    @include breakpoints.breakpoint(md) {
+      grid-template-columns: 4fr repeat(3, 1fr);
+    }
+
+    @include breakpoints.breakpoint(xl) {
+      grid-template-columns: 6fr repeat(3, 1fr);
+    }
+  }
+
   &.curriculum__row--header {
     display: none;
     border-bottom: 5px solid variables.$border-color;

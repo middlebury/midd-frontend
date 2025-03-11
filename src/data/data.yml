@@ -1120,6 +1120,12 @@ catalog_search_items:
     - label: Washington, DC
       value: DC
 
+miis_curriculum_header_labels:
+  - Fall 25
+  - Spring 26
+  - Fall 26
+  - Spring 27
+
 miis_curriculum:
   - course_number: ENPG 8503
     title: Research Strategies for Environmental Policy
