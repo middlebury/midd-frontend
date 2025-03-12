@@ -46,10 +46,11 @@
   }
 
   .show-details__genres {
+    margin-top: variables.$spacing-3;
+    display: flex;
+
     .show-details__genre {
-      display: inline-block;
       width: fit-content;
-      margin-top: variables.$spacing-3;
       padding: variables.$spacing-2;
       background-color: variables.$navy;
       color: variables.$white;
@@ -59,7 +60,7 @@
       text-transform: uppercase;
 
       &:not(:first-of-type) {
-        margin-left: variables.$spacing-1;
+        margin-left: variables.$spacing-2;
       }
 
       &:hover {
@@ -132,13 +133,6 @@
         font-size: variables.$typescale-2;
         font-weight: normal;
         letter-spacing: initial;
-      }
-
-      .show-details__genre {
-        position: absolute;
-        top: 0;
-        right: 0;
-        margin-top: 0;
       }
     }
   }

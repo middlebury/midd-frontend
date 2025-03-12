@@ -3,35 +3,6 @@
 {% set theme = 'wrmc' %}
 {% set is_front = false %}
 
-{% set genres = [
-  {genre: 'Blues', genre_class: 'blues' },
-  {genre: 'Country', genre_class: 'country' },
-  {genre: 'Experimental', genre_class: 'experimental' },
-  {genre: 'Funk', genre_class: 'funk' },
-  {genre: 'Indie', genre_class: 'indie' },
-  {genre: 'Pop', genre_class: 'pop' },
-  {genre: 'Punk', genre_class: 'punk' },
-  {genre: 'R&B/Soul', genre_class: 'rb-soul' },
-  {genre: 'Rock', genre_class: 'rock' },
-  {genre: 'World', genre_class: 'world' },
-  {genre: 'Classical', genre_class: 'classical' },
-  {genre: 'Electronic', genre_class: 'electronic' },
-  {genre: 'Folk', genre_class: 'folk' },
-  {genre: 'Jazz', genre_class: 'jazz' },
-  {genre: 'Heavy Metal', genre_class: 'heavy-metal' },
-  {genre: 'Hip Hop', genre_class: 'hip-hop' },
-  {genre: 'Kpop', genre_class: 'kpop' },
-  {genre: 'Latin', genre_class: 'latin' },
-  {genre: 'Reggae', genre_class: 'reggae' },
-  {genre: 'News', genre_class: 'news' },
-  {genre: 'Talk', genre_class: 'talk' }
-]%}
-
-{# initializing variable used by: 
-  wrmc-accordion.twig, 
-  wrmc-weekly-schedule.twig #}
-{% set current_genre = '' %}
-
 {% block layout_header %}
   {% include 'partials/wrmc-header.twig' %}
   {% include 'paragraphs/wrmc-status-bar.twig' %}

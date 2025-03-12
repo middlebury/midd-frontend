@@ -30,15 +30,7 @@
           <ul class="wrmc-accordion-item__content-list">
             {% for item in schedule_item.schedule %}
               <li class="wrmc-accordion-item__list-item">
-                {% set current_genre = '' %}
-                {% for genre in genres %}
-                  {% if genre.genre == item.genre %}
-                    {% set current_genre = genre.genre_class %}
-                  {% endif %}
-                {% endfor %}
-                {% include 'partials/wrmc-show-teaser.twig' with {
-                  genre: current_genre
-                } %}
+                {% include 'partials/wrmc-show-teaser.twig' %}
               </li>
             {% endfor %}
           </ul>
