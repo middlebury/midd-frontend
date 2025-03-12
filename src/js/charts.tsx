@@ -227,7 +227,9 @@ class MiddChart {
             // @ts-ignore
             label: (context) => {
               if (context.dataset.label) {
-                return `${context.dataset.label}: ${context.raw}${valueSuffix}`;
+                return `${context.dataset.label}: ${valuePrefix}${context.raw}${valueSuffix}`;
+              } else {
+                return `${valuePrefix}${context.raw}${valueSuffix}`;
               }
             }
           }
