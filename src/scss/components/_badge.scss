@@ -23,4 +23,10 @@
     background: transparent;
     color: variables.$navy;
   }
+
+  &.badge--no-outline {
+    background: transparent;
+    color: variables.$navy;
+    border-color: transparent;
+  }
 }
