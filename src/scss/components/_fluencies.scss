@@ -3,6 +3,7 @@
 @use '../mixins/breakpoints';
 
 @use 'sass:math';
+
 .paragraph--fluencies {
   padding-top: variables.$spacing-4;
   padding-bottom: variables.$spacing-4;
@@ -74,7 +75,7 @@
       // for safari and chrome
       &::-webkit-scrollbar-thumb {
         border-radius: 2px;
-        background-color: rgba(255, 255, 255, 0.75);
+        background-color: rgb(255 255 255 / 0.75);
       }
     }
 
@@ -99,7 +100,7 @@
       .focus-area-item__media {
         position: relative;
 
-        &::before {
+        &:before {
           content: '';
           display: block;
           padding-top: 100%;
@@ -127,7 +128,7 @@
         background-color: variables.$white;
         color: variables.$black;
 
-        &::before {
+        &:before {
           content: '';
           display: block;
           padding-top: math.percentage(math.div(143, 166));
@@ -219,7 +220,6 @@
         font-weight: variables.$font-weight-semibold;
         letter-spacing: variables.$letter-spacing;
         text-transform: uppercase;
-
         width: 100%;
         display: flex;
         justify-content: space-between;

@@ -162,7 +162,6 @@ $school-theme-colors: (
   .journey-modal__controls {
     display: flex;
     justify-content: center;
-
     padding-right: variables.$spacing-2;
 
     @include breakpoints.breakpoint(md) {
@@ -295,6 +294,7 @@ $school-theme-colors: (
               }
             }
           }
+
           .journey-modal__cb-link:hover {
             .cb-link__text {
               display: block;
@@ -543,6 +543,7 @@ $school-theme-colors: (
 
       .transcript__button {
         color: variables.$white;
+
         &:hover {
           border-color: variables.$white;
         }
@@ -979,7 +980,6 @@ $school-theme-colors: (
           line-height: variables.$line-height-journey;
           letter-spacing: variables.$letter-spacing;
           text-transform: uppercase;
-
           width: 100%;
           display: flex;
           justify-content: space-between;

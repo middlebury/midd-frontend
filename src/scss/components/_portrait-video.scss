@@ -2,6 +2,7 @@
 @use '../core/variables';
 
 @use 'sass:math';
+
 .portrait-video {
   max-width: 300px;
   margin: 0 auto;
@@ -44,6 +45,7 @@
     &:after {
       opacity: 1;
     }
+
     .portrait-video__title {
       transform: translateY(-1rem);
     }

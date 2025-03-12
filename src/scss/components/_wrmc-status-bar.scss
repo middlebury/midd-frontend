@@ -86,8 +86,7 @@
 
         a {
           color: variables.$white;
-
-          border-bottom: 0.5px solid currentColor;
+          border-bottom: 0.5px solid currentcolor;
           text-decoration: none;
 
           &:hover {

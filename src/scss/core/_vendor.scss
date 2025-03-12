@@ -9,12 +9,12 @@
   border: 0 !important;
 
   @media only screen and (min-width: 512px) {
-    right: 0px !important;
-    bottom: 0px !important;
+    right: 0 !important;
+    bottom: 0 !important;
   }
 
   @media only screen and (min-width: 1024px) {
-    right: 0px !important;
+    right: 0 !important;
   }
 
   @media only screen and (min-width: 1200px) {
@@ -73,9 +73,6 @@
 
 #olark-wrapper .olark-launch-button.olark-text-button .olark-button-text {
   padding: 10px !important;
-}
-
-#olark-wrapper .olark-launch-button.olark-text-button .olark-button-text {
   line-height: 1em !important;
 }
 
