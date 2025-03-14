@@ -1001,7 +1001,7 @@ wrmc_schedule_items:
         hosts: Matt Jennings and Tom
         genres:
           - name: Blues
-            class: electronic
+            class: blues
 
 playlist_items:
   - artist: Mk.gee
