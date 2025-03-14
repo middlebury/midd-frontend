@@ -1087,6 +1087,52 @@ top_thirty:
   - artist: CZARFACE
     song: CZARTIFICIAL INTELLIGENCE
 
+all_genres:
+  - name: Blues
+    class: blues
+  - name: Country
+    class: country
+  - name: Experimental
+    class: experimental
+  - name: Funk
+    class: funk
+  - name: Indie
+    class: indie
+  - name: Pop
+    class: pop
+  - name: Punk
+    class: punk
+  - name: R&B/Soul
+    class: rb-soul
+  - name: Rock
+    class: rock
+  - name: World
+    class: world
+  - name: Classical
+    class: classical
+  - name: Electronic
+    class: electronic
+  - name: Folk
+    class: folk
+  - name: Jazz
+    class: jazz
+  - name: Heavy Metal
+    class: heavy-metal
+  - name: Hip Hop
+    class: hip-hop
+  - name: Kpop
+    class: kpop
+  - name: Latin
+    class: latin
+  - name: Reggae
+    class: reggae
+  - name: News
+    class: news
+  - name: Talk
+    class: talk
+  - name: Rap
+    class: generic
+
 catalog_search_items:
   requirements:
     - option: AAL
