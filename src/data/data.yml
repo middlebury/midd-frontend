@@ -1131,7 +1131,7 @@ all_genres:
   - name: Talk
     class: talk
   - name: Rap
-    class: generic
+    class: rap
 
 catalog_search_items:
   requirements:
