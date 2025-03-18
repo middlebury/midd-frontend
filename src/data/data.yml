@@ -813,24 +813,78 @@ wrmc_schedule_items:
         hosts: Aaron Smith, Blair Kloman, Pooja Gunturu
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         genres:
-          - name: Electronic
-            class: electronic
+          - name: Blues
+            class: blues
           - name: Indie
             class: indie
           - name: Rock
             class: rock
 
-      - start_time: 2:00
-        end_time: 3:00
-        meridiem: PM
+      - start_time: 5:00
+        end_time: 6:00
+        meridiem: AM
         title: Hot Chocolate on the Bus
         hosts: Adam Yauch
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         genres:
-          - name: Blues
-            class: blues
           - name: Country
             class: country
+
+      - start_time: 6:00
+        end_time: 7:00
+        meridiem: AM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Experimental
+            class: experimental
+          - name: Country
+            class: country
+
+      - start_time: 1:00
+        end_time: 2:00
+        meridiem: PM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: World
+            class: world
+
+      - start_time: 2:00
+        end_time: 3:00
+        meridiem: PM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Classical
+            class: classical
+
+      - start_time: 4:00
+        end_time: 5:00
+        meridiem: PM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Folk
+            class: folk
+
+      - start_time: 7:00
+        end_time: 8:00
+        meridiem: PM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Hip Hop
+            class: hip-hop
+
+      - start_time: 10:00
+        end_time: 11:00
+        meridiem: PM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Reggae
+            class: reggae
 
       - start_time: 11:00
         end_time: 12:00
@@ -838,31 +892,58 @@ wrmc_schedule_items:
         title: Mr. and Mrs. Send It
         hosts: Sid Vicious
         genres:
-          - name: Electronic
-            class: electronic
-          - name: Country
-            class: country
+          - name: News
+            class: news
 
   - day: Tuesday
     schedule:
-      - start_time: 5:00
-        end_time: 6:00
+      - start_time: 4:00
+        end_time: 5:00
         meridiem: AM
         title: Grilled Cheese Sandwich
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         genres:
-          - name: Rap
-            class: generic
+          - name: Talk
+            class: talk
           - name: World
             class: world
 
-      - start_time: 9:00
-        end_time: 10:00
+      - start_time: 5:00
+        end_time: 6:00
         meridiem: AM
         title: Jazz Band, Hand and Feet
         genres:
-          - name: Punk
-            class: punk
+          - name: Rap
+            class: rap
+          - name: Rock
+            class: rock
+
+      - start_time: 7:00
+        end_time: 8:00
+        meridiem: AM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Funk
+            class: funk
+          - name: Country
+            class: country
+
+      - start_time: 11:00
+        end_time: 12:00
+        meridiem: AM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: R&B/Soul
+            class: rb-soul
+
+      - start_time: 12:00
+        end_time: 1:00
+        meridiem: PM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
           - name: Rock
             class: rock
 
@@ -917,6 +998,33 @@ wrmc_schedule_items:
           - name: Blues
             class: blues
 
+      - start_time: 3:00
+        end_time: 4:00
+        meridiem: PM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Electronic
+            class: electronic
+
+      - start_time: 5:00
+        end_time: 6:00
+        meridiem: PM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Jazz
+            class: jazz
+
+      - start_time: 6:00
+        end_time: 7:00
+        meridiem: PM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Heavy Metal
+            class: heavy-metal
+
       - start_time: 2:00
         end_time: 3:00
         meridiem: AM
@@ -945,6 +1053,24 @@ wrmc_schedule_items:
           - name: Latin
             class: latin
 
+      - start_time: 8:00
+        end_time: 9:00
+        meridiem: PM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Kpop
+            class: kpop
+
+      - start_time: 9:00
+        end_time: 10:00
+        meridiem: PM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Latin
+            class: latin
+
       - start_time: 11:00
         end_time: 12:00
         meridiem: PM
@@ -956,6 +1082,33 @@ wrmc_schedule_items:
 
   - day: Saturday
     schedule:
+      - start_time: 8:00
+        end_time: 9:00
+        meridiem: AM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Indie
+            class: indie
+
+      - start_time: 9:00
+        end_time: 10:00
+        meridiem: AM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Pop
+            class: pop
+
+      - start_time: 10:00
+        end_time: 11:00
+        meridiem: AM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Punk
+            class: punk
+
       - start_time: 1:00
         end_time: 2:00
         meridiem: PM
@@ -973,6 +1126,24 @@ wrmc_schedule_items:
         genres:
           - name: Classical
             class: classical
+
+      - start_time: 2:00
+        end_time: 3:00
+        meridiem: AM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Generic
+            class: generic
+
+      - start_time: 3:00
+        end_time: 4:00
+        meridiem: AM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Rap
+            class: rap
 
   - day: Sunday
     schedule:
@@ -993,6 +1164,24 @@ wrmc_schedule_items:
         genres:
           - name: Electronic
             class: electronic
+
+      - start_time: 12:00
+        end_time: 1:00
+        meridiem: AM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Talk
+            class: talk
+
+      - start_time: 1:00
+        end_time: 2:00
+        meridiem: AM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Rap
+            class: rap
 
       - start_time: 2:00
         end_time: 3:00
