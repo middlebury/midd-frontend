@@ -2,6 +2,7 @@
 @use '../mixins/breakpoints';
 
 @use 'sass:color';
+@use 'sass:map';
 
 .show-teaser {
   display: flex;
@@ -67,12 +68,16 @@
         text-decoration: none;
       }
 
-      @each $genre, $genre-color in variables.$wrmc-genre-colors {
+      @each $genre, $genre-theme in variables.$wrmc-genre-colors {
         &.#{$genre} {
-          background-color: $genre-color;
+          background-color: map.get($genre-theme, 'bg-color');
+          color: map.get($genre-theme, 'color');
 
           &:hover {
-            background-color: color.adjust($genre-color, $lightness: -10%);
+            background-color: color.adjust(
+              map.get($genre-theme, 'bg-color'),
+              $lightness: -10%
+            );
           }
         }
       }
