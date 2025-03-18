@@ -177,6 +177,8 @@ $font-family-serif: (
   serif
 ) !default;
 
+$wrmc-text-dark: $navy-dark;
+
 $wrmc-genre-colors: (
   blues: (
     bg-color: #1d6ca6,
@@ -191,16 +193,16 @@ $wrmc-genre-colors: (
     color: $white
   ),
   funk: (
-    bg-color: #08d0eb,
-    color: $black
+    bg-color: #0ee3ff,
+    color: $wrmc-text-dark
   ),
   indie: (
     bg-color: #916b6b,
     color: $white
   ),
   pop: (
-    bg-color: #a60505,
-    color: $white
+    bg-color: #ff5959,
+    color: $wrmc-text-dark
   ),
   punk: (
     bg-color: #044882,
@@ -208,7 +210,7 @@ $wrmc-genre-colors: (
   ),
   rb-soul: (
     bg-color: #8fceff,
-    color: $black
+    color: $wrmc-text-dark
   ),
   rock: (
     bg-color: #048228,
@@ -216,7 +218,7 @@ $wrmc-genre-colors: (
   ),
   world: (
     bg-color: #47f5ec,
-    color: $black
+    color: $wrmc-text-dark
   ),
   classical: (
     bg-color: #3e8369,
@@ -224,15 +226,15 @@ $wrmc-genre-colors: (
   ),
   electronic: (
     bg-color: #b7c706,
-    color: $black
+    color: $wrmc-text-dark
   ),
   folk: (
     bg-color: #f29407,
-    color: $black
+    color: $wrmc-text-dark
   ),
   jazz: (
-    bg-color: #2bd9d9,
-    color: $black
+    bg-color: #13e9bf,
+    color: $wrmc-text-dark
   ),
   heavy-metal: (
     bg-color: #6b6b6b,
@@ -248,11 +250,11 @@ $wrmc-genre-colors: (
   ),
   latin: (
     bg-color: #85eb35,
-    color: $black
+    color: $wrmc-text-dark
   ),
   reggae: (
     bg-color: #f2cc46,
-    color: $black
+    color: $wrmc-text-dark
   ),
   news: (
     bg-color: #827373,
