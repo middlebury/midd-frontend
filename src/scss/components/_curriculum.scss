@@ -11,6 +11,7 @@
   align-items: center;
 
   @include breakpoints.breakpoint(md) {
+    column-gap: variables.$spacing-2;
     grid-template-columns: 4fr repeat(4, 1fr);
   }
 
