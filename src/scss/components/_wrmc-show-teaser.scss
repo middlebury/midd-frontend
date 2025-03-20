@@ -76,7 +76,7 @@
           &:hover {
             background-color: color.adjust(
               map.get($genre-theme, 'bg-color'),
-              $lightness: -10%
+              $lightness: 5%
             );
           }
         }

@@ -30,7 +30,7 @@
     button:hover,
     button:focus {
       .weekly-schedule__show {
-        background-color: color.adjust(variables.$navy, $lightness: -10%);
+        background-color: color.adjust(variables.$navy, $lightness: -5%);
       }
     }
 
@@ -61,7 +61,7 @@
             .weekly-schedule__show {
               background-color: color.adjust(
                 map.get($genre-theme, 'bg-color'),
-                $lightness: -10%
+                $lightness: 5%
               );
             }
           }
@@ -92,8 +92,6 @@
         }
 
         .weekly-schedule__show {
-          // background-color: darken($navy, 10%);
-
           svg {
             display: block;
           }
