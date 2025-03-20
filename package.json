@@ -92,7 +92,7 @@
     "lodash": "^4.17.21",
     "lozad": "^1.16.0",
     "mdn-polyfills": "^5.20.0",
-    "micromodal": "^0.4.10",
+    "micromodal": "^0.5.2",
     "normalize.css": "^8.0.1",
     "object-fit-images": "^3.2.4",
     "panelsnap": "git+https://github.com/poojagunturu96/panelsnap",
