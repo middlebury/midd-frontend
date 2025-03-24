@@ -63,7 +63,7 @@
     grid-row-start: 2;
     grid-row-end: span 2;
     grid-column-start: 1;
-    grid-column-end: end;
+    grid-column-end: -1;
     padding-left: variables.$spacing-5;
 
     p {
