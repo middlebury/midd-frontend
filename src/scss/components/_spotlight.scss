@@ -8,44 +8,86 @@
 
 .spotlight {
   position: relative;
-  @include breakpoints.breakpoint(lg) {
-    // use padding bottom instead of margin otherwise
-    // paragraph--spotlight does not combine the margins to have
-    // the correct bottom spacing
-    padding-bottom: variables.$spacing-8;
-  }
 }
 
-.spotlight__figure {
-  @include breakpoints.breakpoint(lg) {
-    padding-top: math.percentage(math.div(9, 16));
-    position: relative;
-    height: 0;
-    overflow: hidden;
+.paragraphs.paragraphs--wide {
+  .spotlight {
+    @include breakpoints.breakpoint(lg) {
+      // use padding bottom instead of margin otherwise
+      // paragraph--spotlight does not combine the margins to have
+      // the correct bottom spacing
+      padding-bottom: variables.$spacing-8;
+    }
   }
 
-  img {
+  .spotlight__figure {
     @include breakpoints.breakpoint(lg) {
-      @include mixins.absolute-fill;
-      object-fit: cover;
-      font-family: 'object-fit: cover;';
-      z-index: variables.$z-index-spotlight-image;
+      padding-top: math.percentage(math.div(9, 16));
+      position: relative;
+      height: 0;
+      overflow: hidden;
+    }
+
+    img {
+      @include breakpoints.breakpoint(lg) {
+        @include mixins.absolute-fill;
+        object-fit: cover;
+        font-family: 'object-fit: cover;';
+        z-index: variables.$z-index-spotlight-image;
+      }
+    }
+  }
+
+  .spotlight__content {
+    @include breakpoints.breakpoint(lg) {
+      position: absolute;
+      right: variables.$spacing-6;
+      bottom: 0;
+      // TODO: get rid of magic number?
+      //  same as themed-panel secondary
+      width: 360px;
+      z-index: variables.$z-index-spotlight-content;
     }
   }
 }
 
+// .spotlight__figure {
+//   .paragraphs:not(.paragraphs--wide) {
+//     & {
+//       @include breakpoints.breakpoint(lg) {
+//         padding-top: math.percentage(math.div(9, 16));
+//         position: relative;
+//         height: 0;
+//         overflow: hidden;
+//       }
+
+//       img {
+//         @include breakpoints.breakpoint(lg) {
+//           @include mixins.absolute-fill;
+//           object-fit: cover;
+//           font-family: 'object-fit: cover;';
+//           z-index: variables.$z-index-spotlight-image;
+//         }
+//       }
+//     }
+//   }
+// }
+
 .spotlight__content {
   background: variables.$white;
-
-  @include breakpoints.breakpoint(lg) {
-    position: absolute;
-    right: variables.$spacing-6;
-    bottom: 0;
-    // TODO: get rid of magic number?
-    //  same as themed-panel secondary
-    width: 360px;
-    z-index: variables.$z-index-spotlight-content;
-  }
+  // .paragraphs:not(.paragraphs--wide) {
+  //   & {
+  //     @include breakpoints.breakpoint(lg) {
+  //       position: absolute;
+  //       right: variables.$spacing-6;
+  //       bottom: 0;
+  //       // TODO: get rid of magic number?
+  //       //  same as themed-panel secondary
+  //       width: 360px;
+  //       z-index: variables.$z-index-spotlight-content;
+  //     }
+  //   }
+  // }
 }
 
 .spotlight__title {
