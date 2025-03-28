@@ -1,0 +1,33 @@
+{% extends "app-layout.twig" %}
+
+{% set app_layout_full_width = false %}
+{% set app_title = 'Directory' %}
+
+{% set page_header = {
+  title: 'Middlebury Directory',
+  menu_items: [
+    { text: 'Search the Directory' },
+    { text: 'Change Information' },
+    { text: 'Upload Photo' },
+    { text: 'Class Photo Roster (Faculty Only)' },
+    { text: 'Help' },
+    { text: 'Log Off' }
+  ]
+} %}
+
+{% block nav %}
+  {% include 'partials/page-nav.twig' with {
+    label: 'My Terms',
+    items: [
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+      {text: 'Fall 2019'},
+    ]
+  } %}
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
