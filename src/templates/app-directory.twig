@@ -1,25 +1,17 @@
 {% extends "app-layout.twig" %}
 
-{% set coursehub_layout_full_width = false %}
+{% set app_layout_full_width = false %}
+{% set app_title = 'Directory' %}
 
 {% set page_header = {
-  title: 'Spring 2019',
-  breadcrumb: [
-    { text: 'Course Hub' },
-    { text: 'Browse Course Sites' },
-    { text: 'Middlebury College' },
-  ],
+  title: 'Middlebury Directory',
   menu_items: [
-    { text: 'Application Instructions and Deadlines' },
-    { text: 'Admission Options' },
-    { text: 'Standardized Tests' },
-    { text: 'Interview Policy' },
-    { text: 'February Admission' },
-    { text: 'Transfer Applicants' },
-    { text: 'International Applicants' },
-    { text: 'Undocumented Applicants' },
-    { text: 'Taking a Gap Year' },
-    { text: 'NESCAC Admissions Practices' }
+    { text: 'Search the Directory' },
+    { text: 'Change Information' },
+    { text: 'Upload Photo' },
+    { text: 'Class Photo Roster (Faculty Only)' },
+    { text: 'Help' },
+    { text: 'Log Off' }
   ]
 } %}
 
@@ -37,14 +29,5 @@
 {% endblock %}
 
 {% block content %}
-
-  {# <div class="typography mb-9">
-    <ul>
-      {% for item in ['American Studies', 'Arabic', 'Arts Division', 'Biology', 'Chemistry and Biochemistry', 'Chinese', 'Classics', 'Comparative Literature', 'Computer Science', 'Creative Writing', 'Dance', 'Economics', 'Education Studies', 'English & American Literatures', 'Environmental Studies', 'Film & Media Culture', 'French', 'Gender Sexuality &Fem. Studies', 'Geography', 'Geology', 'German', 'Hebrew (Modern)', 'History', 'History of Art & Architecture', 'Interdepartmental', 'Italian', 'Japanese', 'Linguistics', 'Mathematics', 'Music', 'Neuroscience', 'Philosophy', 'Physics', 'Political Science', 'Portuguese', 'Psychology', 'Religion', 'Russian', 'Sociology', 'Spanish', 'Studio Art', 'Theatre', 'Writing and Rhetoric Program' ] %}
-
-        <li> <a href=""> {{item}} </a> </li>
-      {% endfor %}
-    </ul>
-  </div> #}
 
 {% endblock %}
