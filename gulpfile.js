@@ -22,7 +22,7 @@ import rename from 'gulp-rename';
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import mqPacker from 'css-mqpacker';
-import sortCSSMq from 'sort-css-media-queries';
+import sortCSSmq from 'sort-css-media-queries';
 import cssnano from 'cssnano';
 import _ from 'lodash';
 import dotenv from 'dotenv';
@@ -111,6 +111,9 @@ const copyIcons = () =>
     .pipe(rename('icons.twig'))
     .pipe(gulp.dest('./src/templates/partials'));
 
+// lintStyles is currently turned off as it is too noisy
+// TODO: update how styles are linted without dumping too many
+// notifications in the terminal
 const lintStyles = () => {
   return gulp.src(paths.styles.src).pipe(
     gulpStylelint({
@@ -127,7 +130,7 @@ const styles = () => {
     plugins.push(
       cssnano(),
       mqPacker({
-        sort: sortCSSMq
+        sort: sortCSSmq
       })
     );
   }
@@ -276,22 +279,15 @@ const deployDist = () => {
   }
 
   return gulp
-    .src(
-      [
-        './dist/css/main.css',
-        './dist/js/*',
-        './dist/images/*'
-      ],
-      {
-        base: './dist'
-      }
-    )
+    .src(['./dist/css/main.css', './dist/js/*', './dist/images/*'], {
+      base: './dist'
+    })
     .pipe(gulp.dest(THEME_DIR));
 };
 
 const watch = () => {
   gulp.watch('./src/templates/**/*.twig', html);
-  gulp.watch(paths.styles.src, gulp.parallel(styles, lintStyles));
+  gulp.watch(paths.styles.src, gulp.parallel(styles));
   gulp.watch(paths.images.src, images);
   gulp.watch('./src/data/*.yml', html);
 };
@@ -374,7 +370,7 @@ task(
     clean,
     copyDeps,
     copyMeta,
-    parallel(html, images, lintStyles, styles, scripts),
+    parallel(html, images, styles, scripts),
     reportFilesizes
   )
 );
