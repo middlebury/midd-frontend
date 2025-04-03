@@ -43,7 +43,8 @@
           </div>
         </div>
 
-        <div class="app-header__dropdown">
+        {% if search %}
+          <div class="app-header__dropdown">
 
           <button
             class="app-header__button"
@@ -70,9 +71,8 @@
               </div>
             </form>
           </div>
-
-
-        </div>
+          </div>
+        {% endif %}
       </div>
     </div>
   {% endif %}

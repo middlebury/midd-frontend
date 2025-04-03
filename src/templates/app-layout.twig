@@ -6,7 +6,9 @@
 
 {% block layout_header %}
   {% include 'partials/app-header.twig' with {
-    title: app_title
+    title: app_title,
+    items: app_menu_items,
+    search: false
   } %}
 {% endblock %}
 
@@ -17,15 +19,6 @@
   title: page_header.title,
   menu_items: page_header.menu_items
 } %}
-
-{% block page %}
-  {% if not app_layout_full_width %}
-    {% include 'partials/sidebar-layout.twig' %}
-  {% else %}
-    {% block content %}
-    {% endblock %}
-  {% endif %}
-{% endblock %}
 
 {% block layout_footer %}
   {% include 'partials/midd-footer.twig' %}
