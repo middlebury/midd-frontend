@@ -294,16 +294,20 @@ const lightboxConfig = {
 
 MicroModal.init(lightboxConfig);
 
-const lightbox = $('[data-lightbox-open]');
+const galleryModals = $$('[data-lightbox-open]');
 
-if (lightbox) {
-  on(lightbox, 'click', (e) => e.preventDefault());
-  on(lightbox, 'keydown', (e) => {
-    if (e.keyCode === 32) {
-      MicroModal.show(
-        lightbox.getAttribute('data-lightbox-open'),
-        lightboxConfig
-      );
-    }
+if (galleryModals) {
+  galleryModals.forEach((modal) => {
+    on(modal, 'click', (e) => {
+      e.preventDefault();
+    });
+    on(modal, 'keydown', (e) => {
+      if (e.keyCode === 32) {
+        MicroModal.show(
+          modal.getAttribute('data-lightbox-open'),
+          lightboxConfig
+        );
+      }
+    });
   });
 }
