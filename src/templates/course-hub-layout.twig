@@ -1,7 +1,7 @@
 {% extends 'layout.twig' %}
 
-{% set coursehub_layout_full_width =
-  coursehub_layout_full_width|default(false)
+{% set app_layout_full_width =
+  app_layout_full_width|default(false)
 %}
 
 {% set page_header = {
@@ -52,7 +52,8 @@
       {
         text: 'Academic Calendar'
       }
-    ]
+    ],
+    search: true
   } %}
 {% endblock %}
 
@@ -66,7 +67,7 @@
   {% set _toc = block('toc') %}
   {% set _sidebar = block('sidebar') %}
 
-  {% if not coursehub_layout_full_width %}
+  {% if not app_layout_full_width %}
     {% embed 'partials/sidebar-layout.twig' %}
       {% block nav %}
         {{ _nav|raw }}
