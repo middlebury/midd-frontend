@@ -96,7 +96,7 @@
   &.tabs__button--active,
   &[aria-selected='true'] {
     border-top-color: variables.$black;
-    color: variables.$color-active;
+    color: variables.$navy;
   }
 
   .tabs--light & {
@@ -114,15 +114,3 @@
     }
   }
 }
-
-// .tabs__panel {
-//   .input-group {
-//     .form-control {
-//       padding: 0 $spacing-3;
-//     }
-
-//     button {
-//       padding: rem(12) $spacing-5;
-//     }
-//   }
-// }
