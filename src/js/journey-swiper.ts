@@ -1,7 +1,7 @@
 import { $, $$, checkElement } from './utils/dom';
 import VideoSwap from './video';
 import lozad from 'lozad';
-import anime from 'animejs';
+import { animate } from 'animejs';
 
 class JourneySwiper {
   swiperEl: any;
@@ -181,10 +181,9 @@ class JourneySwiper {
 
   scrollToTop() {
     if (this.modalElem.scrollTop > 0) {
-      anime({
-        targets: this.modalElem,
+      animate(this.modalElem, {
         scrollTop: 0,
-        easing: 'easeInSine',
+        ease: 'easeInSine',
         autoplay: true,
         duration: 300
       });

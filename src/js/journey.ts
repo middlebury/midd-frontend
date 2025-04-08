@@ -139,7 +139,7 @@ class Journey {
       targets: this.pathEl,
       strokeDashoffset: [this.totalPathLength, 0],
       duration: 10000,
-      easing: 'linear',
+      ease: 'linear',
       autoplay: false,
       update: (anim) => {
         this.animUpdate(anim);
