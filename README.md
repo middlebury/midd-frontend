@@ -2,7 +2,7 @@
 
 > Frontend code for middlebury_theme
 
-![CI](https://github.com/middlebury/midd-frontend/workflows/CI/badge.svg)
+![CI](https://github.com/middlebury/midd-frontend/workflows/CI/badge.svg?branch=master)
 [![dependency status](https://david-dm.org/middlebury/midd-frontend.svg)](https://david-dm.org/middlebury/midd-frontend)
 [![dev dependency status](https://david-dm.org/middlebury/midd-frontend/dev-status.svg)](https://david-dm.org/middlebury/midd-frontend?type=dev)
 
