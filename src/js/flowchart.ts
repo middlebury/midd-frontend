@@ -141,6 +141,7 @@ class Flowchart {
 
     animate([target], {
       translateX: [-40, 0],
+      ease: 'outElastic(1, 0.5)',
       duration
     });
 
@@ -156,7 +157,6 @@ class Flowchart {
 
     animate([document.documentElement, document.body], {
       scrollTop,
-      ease: 'inOutElastic(1, .3)',
       duration
     });
   };

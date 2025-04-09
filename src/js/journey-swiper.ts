@@ -183,7 +183,7 @@ class JourneySwiper {
     if (this.modalElem.scrollTop > 0) {
       animate(this.modalElem, {
         scrollTop: 0,
-        ease: 'easeInSine',
+        ease: 'inSine',
         autoplay: true,
         duration: 300
       });

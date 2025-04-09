@@ -1,5 +1,5 @@
 import MicroModal from 'micromodal';
-import anime, { AnimeInstance } from 'animejs';
+import { animate } from 'animejs';
 import { $, $$, addClass } from './utils/dom';
 import JourneySwiper from './journey-swiper';
 import onscroll from './utils/onscroll';
@@ -10,7 +10,7 @@ class Journey {
   pathEl: SVGGeometryElement;
   animPauseThreshold: number;
   totalPathLength: number;
-  journeyLineAnimInstance: AnimeInstance;
+  journeyLineAnimInstance: any;
   journeySections: HTMLElement[];
   firstSection: HTMLElement;
   io: IntersectionObserver;
@@ -135,14 +135,13 @@ class Journey {
   }
 
   animInit() {
-    this.journeyLineAnimInstance = anime({
-      targets: this.pathEl,
+    this.journeyLineAnimInstance = animate(this.pathEl, {
       strokeDashoffset: [this.totalPathLength, 0],
       duration: 10000,
       ease: 'linear',
       autoplay: false,
-      update: (anim) => {
-        this.animUpdate(anim);
+      onUpdate: (self: any) => {
+        this.animUpdate(self);
       }
     });
   }
@@ -155,7 +154,7 @@ class Journey {
     }
   }
 
-  animUpdate(anim: AnimeInstance) {
+  animUpdate(anim: any) {
     const animProgress = Math.round(anim.progress * 10) / 10;
 
     // Logic for the dots to animate
