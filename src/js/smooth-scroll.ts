@@ -42,22 +42,18 @@ interface SmoothScrollOptions {
   onComplete?: (anime: JSAnimation) => void;
 
   /**
-   * animation easing. Options based on animejs easing https://animejs.com/documentation/#linearEasing
+   * animation easing. Options based on animejs easing https://animejs.com/documentation/animation/tween-parameters/ease
    */
   ease?: EasingParam;
 
   /** animation speed duration for animejs */
   duration?: number;
-
-  /** animation elasticity for animejs */
-  elasticity?: number;
 }
 
 const smoothScrollDefaults: SmoothScrollOptions = {
   offset: 0,
-  ease: 'inCubic',
+  ease: 'cubicBezier(1,0,.7,1)',
   duration: 300,
-  elasticity: 500,
   replaceState: false
 };
 
@@ -106,7 +102,7 @@ class SmoothScroll {
       ...options
     };
 
-    const { ease, duration, elasticity, onBegin, onComplete } = config;
+    const { ease, duration, onBegin, onComplete } = config;
 
     this.elems = typeof els === 'string' ? $$(els) : els;
 
@@ -117,7 +113,6 @@ class SmoothScroll {
     this.animeOptions = {
       duration: reducedDuration,
       ease,
-      elasticity,
       onBegin,
       onComplete
     };
@@ -195,14 +190,12 @@ class SmoothScroll {
         ? scrollTop(elem, scrollPosition)
         : elementOffset + scrollPosition - finalOffset;
 
-    const { duration, easing, elasticity, onBegin, onComplete } =
-      this.animeOptions;
+    const { duration, ease, onBegin, onComplete } = this.animeOptions;
 
     this.anime = animate(targets, {
       scrollTop: finalScrollTop,
       duration,
-      easing,
-      elasticity,
+      ease,
       onBegin,
       onComplete
     });

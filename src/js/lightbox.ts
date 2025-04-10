@@ -194,13 +194,12 @@ class Lightbox {
     }
 
     // Use same animation settings as smooth scroller
-    const { ease, elasticity, duration } = this.smoothScroller.animeOptions;
+    const { ease, duration } = this.smoothScroller.animeOptions;
 
     animate(this.thumbsList, {
       scrollTop: thumb.offsetTop - this.thumbsList.scrollTop,
       ease,
       duration,
-      elasticity,
       onBegin: () => {
         this.isAnimatingThumb = true;
       },
