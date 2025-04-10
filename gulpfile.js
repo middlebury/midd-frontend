@@ -22,7 +22,7 @@ import rename from 'gulp-rename';
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import mqPacker from 'css-mqpacker';
-import sortCSSMq from 'sort-css-media-queries';
+import sortCSSmq from 'sort-css-media-queries';
 import cssnano from 'cssnano';
 import _ from 'lodash';
 import dotenv from 'dotenv';
@@ -130,7 +130,7 @@ const styles = () => {
     plugins.push(
       cssnano(),
       mqPacker({
-        sort: sortCSSMq
+        sort: sortCSSmq
       })
     );
   }
