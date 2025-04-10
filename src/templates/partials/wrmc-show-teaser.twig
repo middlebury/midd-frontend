@@ -19,6 +19,10 @@
         {{item.description}}
       </p>
     {% endif %}
-    <span class="show-details__genre {{genre}}">{{item.genre}}</span>
+    <div class="show-details__genres">
+      {% for genre in item.genres %}
+        <a href="#" class="show-details__genre {{genre.class}}">{{genre.name}}</a>
+      {% endfor %}
+    </div>
   </div>
 </article>
