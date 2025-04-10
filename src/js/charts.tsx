@@ -1,7 +1,6 @@
 import { h, render } from 'preact';
 import PercentBarChart from './components/percent-bar-chart';
-import Chart from 'chart.js/auto';
-import { ChartOptions, ChartType } from 'chart.js';
+import { ChartOptions } from 'chart.js';
 
 import { onElementInView } from './utils/on-element-in-view';
 import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
@@ -22,7 +21,7 @@ const colors = [
 
 // Grab chart instance off window since we load chartjs only if there's a chart component
 // on page and don't want to bundle it with the main js bundle.
-// const { Chart } = window;
+const { Chart } = window;
 
 const ALLOW_CHART_TYPES = [
   'pie',
@@ -64,7 +63,7 @@ interface ChartConfig {
    *
    * https://www.chartjs.org/docs/latest/charts/
    */
-  type: ChartType;
+  type: string;
 
   /**
    * The base axis of the dataset. 'x' for vertical bars and 'y' for horizontal bars.
@@ -153,7 +152,7 @@ class MiddChart {
 
     this.isCircleChart = config.type === 'pie' || config.type === 'doughnut';
 
-    if (config.type === ('percentBar' as ChartType)) {
+    if (config.type === 'percentBar') {
       renderPercentBarChart(el, config);
     } else {
       this.init();
@@ -350,7 +349,6 @@ class MiddChart {
       options,
       plugins: [
         {
-          id: 'id',
           // basic recreation of chartjs-plugin-deferred but using intersection observer
           // and allowing us to not install the extra dependency
           beforeInit(chart: any) {
@@ -382,7 +380,7 @@ class MiddChart {
             // only update the dataset once it's in view
             return chart[PLUGIN_KEY].isInView;
           },
-          afterDestroy(chart: any) {
+          destroy(chart: any) {
             chart[PLUGIN_KEY].io.unobserve();
           }
         }
@@ -490,7 +488,7 @@ function parseConfig(el: HTMLElement): ChartConfig | void {
   return {
     datasets: parseJsonData(datasets),
     labels: parseJsonData(labels),
-    type: chart as ChartType,
+    type: chart,
     // @ts-ignore
     axis,
     title,
