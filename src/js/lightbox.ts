@@ -129,12 +129,12 @@ class Lightbox {
       },
 
       // set animating flag so we can skip updating active one when scrolling
-      begin: () => {
+      onBegin: () => {
         this.isAnimating = true;
       },
 
       // unset the animating flag when done
-      complete: () => {
+      onComplete: () => {
         this.isAnimating = false;
       }
     });
@@ -201,10 +201,10 @@ class Lightbox {
       ease,
       duration,
       elasticity,
-      begin: () => {
+      onBegin: () => {
         this.isAnimatingThumb = true;
       },
-      complete: () => {
+      onComplete: () => {
         this.isAnimatingThumb = false;
       }
     });
