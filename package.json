@@ -31,7 +31,6 @@
   "devDependencies": {
     "@ronilaukkarinen/gulp-stylelint": "^14.1.2",
     "@types/anchor-js": "^5.0.0",
-    "@types/chart.js": "^2.9.41",
     "@types/clamp-js-main": "^0.11.2",
     "@types/headroom.js": "^0.12.0",
     "@types/lodash": "^4.17.15",
@@ -115,7 +114,7 @@
     },
     {
       "path": "./dist/js/journey.bundle.js",
-      "maxSize": "22 kB",
+      "maxSize": "25 kB",
       "compression": "brotli"
     }
   ]

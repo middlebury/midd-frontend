@@ -1,6 +1,6 @@
 import { h, render } from 'preact';
 import PercentBarChart from './components/percent-bar-chart';
-import { ChartOptions } from 'chart.js';
+import type * as Charts from 'chart.js';
 
 import { onElementInView } from './utils/on-element-in-view';
 import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
@@ -138,7 +138,7 @@ interface ChartConfig {
  */
 class MiddChart {
   canvas?: HTMLCanvasElement;
-  chart?: Chart;
+  chart?: Charts.Chart;
   config: ChartConfig;
   el: HTMLElement;
   isCircleChart: boolean;
@@ -196,7 +196,7 @@ class MiddChart {
       ? (tick: any) => labels[tick]
       : prefixTick;
 
-    const options: ChartOptions = {
+    const options: Charts.ChartOptions = {
       // @ts-ignore
       indexAxis: axis,
       animation: {
