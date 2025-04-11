@@ -1,5 +1,5 @@
 import MicroModal from 'micromodal';
-import anime, { AnimeInstance } from 'animejs';
+import { animate, JSAnimation } from 'animejs';
 import { $, $$, addClass } from './utils/dom';
 import JourneySwiper from './journey-swiper';
 import onscroll from './utils/onscroll';
@@ -10,7 +10,7 @@ class Journey {
   pathEl: SVGGeometryElement;
   animPauseThreshold: number;
   totalPathLength: number;
-  journeyLineAnimInstance: AnimeInstance;
+  journeyLineAnimInstance: JSAnimation;
   journeySections: HTMLElement[];
   firstSection: HTMLElement;
   io: IntersectionObserver;
@@ -135,14 +135,13 @@ class Journey {
   }
 
   animInit() {
-    this.journeyLineAnimInstance = anime({
-      targets: this.pathEl,
+    this.journeyLineAnimInstance = animate(this.pathEl, {
       strokeDashoffset: [this.totalPathLength, 0],
       duration: 10000,
-      easing: 'linear',
+      ease: 'linear',
       autoplay: false,
-      update: (anim) => {
-        this.animUpdate(anim);
+      onUpdate: (self: JSAnimation) => {
+        this.animUpdate(self);
       }
     });
   }
@@ -155,8 +154,8 @@ class Journey {
     }
   }
 
-  animUpdate(anim: AnimeInstance) {
-    const animProgress = Math.round(anim.progress * 10) / 10;
+  animUpdate(anim: JSAnimation) {
+    const animProgress = Math.round(anim.progress * 100);
 
     // Logic for the dots to animate
     for (let i = 0; i < this.sectionNames.length; i++) {
@@ -172,6 +171,7 @@ class Journey {
       animProgress <= this.animPauseThreshold + 0.5
     ) {
       this.journeyLineAnimInstance.pause();
+      console.log(this.journeyLineAnimInstance);
     }
   }
 
@@ -211,6 +211,10 @@ class Journey {
         ) {
           this.loadVideo(entry.target);
         }
+        // console.log(
+        //   this.getAnimationThreshold(entryId, 'line'),
+        //   this.animPauseThreshold
+        // );
         if (
           this.getAnimationThreshold(entryId, 'line') > this.animPauseThreshold
         ) {
