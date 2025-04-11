@@ -114,7 +114,7 @@
     },
     {
       "path": "./dist/js/journey.bundle.js",
-      "maxSize": "25 kB",
+      "maxSize": "22 kB",
       "compression": "brotli"
     }
   ]
