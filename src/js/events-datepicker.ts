@@ -1,17 +1,5 @@
 import Pikaday from 'pikaday';
 
-declare global {
-  interface Window {
-    drupalSettings: {
-      path: {
-        baseUrl: string;
-        currentPath: string;
-      };
-    };
-    MicroModal: any;
-  }
-}
-
 const pad = (n: number): string => (n >= 10 ? String(n) : `0${n}`);
 
 const getDateObj = (
