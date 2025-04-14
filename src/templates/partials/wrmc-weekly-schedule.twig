@@ -6,8 +6,8 @@
         {% set schedule_item_index = 0 %}
         <article class="weekly-schedule__column" aria-label="Shows scheduled for {{item.day}}">
           <h2>{{item.day}}</h2>
-            {% for i in 4..27 %}
-              {% set meridiem = (i < 12) or (i > 23) ? "AM" : "PM" %}
+            {% for i in 12..35 %}
+              {% set meridiem = (i < 12) or (i > 23) ? "PM" : "AM" %}
               {% if i < 13 %}
                 {% set time = i ~ ":00" %}
               {% elseif (i > 12) and (i < 25) %}
