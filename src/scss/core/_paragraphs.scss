@@ -102,7 +102,6 @@
 }
 
 .paragraph--full,
-.paragraph--spotlight,
 .paragraph--themed-panel,
 .paragraph--quad-story,
 .paragraph--stat-panel,
@@ -111,6 +110,13 @@
 .paragraph--logo-bar,
 .paragraph--waveform {
   @extend %paragraph-full-width;
+}
+
+.paragraphs:not(.paragraphs--wide) {
+  .paragraph--full {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .paragraph--text {
@@ -193,7 +199,6 @@
 }
 
 .paragraph--spotlight {
-  @extend %paragraph-full-width;
   @extend %paragraph-space;
 }
 
@@ -330,4 +335,8 @@
   @include breakpoints.breakpoint(md) {
     margin-top: variables.$spacing-3 !important;
   }
+}
+
+.paragraph--curriculum {
+  margin-bottom: variables.$spacing-7;
 }

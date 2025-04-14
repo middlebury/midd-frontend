@@ -1,5 +1,5 @@
 import webpack from 'webpack';
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'; 
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 const PROD = process.env.NODE_ENV === 'production';
 const ASSET_PATH = process.env.ASSET_PATH || '/js/';
@@ -14,9 +14,6 @@ const plugins = [
 const config = {
   watch: !PROD,
   mode: PROD ? 'production' : 'development',
-  optimization: {
-    usedExports: true
-  },
   entry: {
     main: './src/js/index.ts',
     journey: './src/js/journey-module.ts'
@@ -26,8 +23,8 @@ const config = {
   module: {
     rules: [
       {
-        // declaring no sideEffects for files with .mjs extension which is mainly swiper
-        test: /\.mjs$/,
+        // enable tree shaking of js files
+        test: /\.js$/,
         sideEffects: false
       },
       {

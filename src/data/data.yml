@@ -343,8 +343,8 @@ offices:
 
 # placeholder gallery data
 gallery_data:
-  - src: http://placecats.com/1280/720
-    thumb: http://placecats.com/64/36
+  - src: https://placecats.com/1280/720
+    thumb: https://placecats.com/64/36
     width: 1280
     height: 720
     alt: ''
@@ -352,8 +352,8 @@ gallery_data:
     sizes: ''
     caption: Lorem ipsum <a href="#">dolor</a> sit amet consectetur adipisicing elit.
 
-  - src: http://placecats.com/1440/810
-    thumb: http://placecats.com/64/36
+  - src: https://placecats.com/1440/810
+    thumb: https://placecats.com/64/36
     width: 1440
     height: 810
     alt: ''
@@ -361,8 +361,8 @@ gallery_data:
     sizes: ''
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
 
-  - src: http://placecats.com/640/360
-    thumb: http://placecats.com/64/36
+  - src: https://placecats.com/640/360
+    thumb: https://placecats.com/64/36
     width: 640
     height: 360
     alt: ''
@@ -370,8 +370,8 @@ gallery_data:
     sizes: ''
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
-  - src: http://placecats.com/320/130
-    thumb: http://placecats.com/64/36
+  - src: https://placecats.com/320/130
+    thumb: https://placecats.com/64/36
     width: 320
     height: 130
     alt: ''
@@ -379,8 +379,8 @@ gallery_data:
     sizes: ''
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
-  - src: http://placecats.com/960/540
-    thumb: http://placecats.com/64/36
+  - src: https://placecats.com/960/540
+    thumb: https://placecats.com/64/36
     width: 960
     height: 540
     alt: ''
@@ -388,49 +388,49 @@ gallery_data:
     sizes: ''
     caption: Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
 
-  - src: http://placecats.com/400/800
+  - src: https://placecats.com/400/800
     width: 400
     height: 800
-    thumb: http://placecats.com/40/80
+    thumb: https://placecats.com/40/80
     alt: ''
     srcset: ''
     sizes: ''
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
 
-  - src: http://placecats.com/400/800
+  - src: https://placecats.com/400/800
     width: 400
     height: 800
-    thumb: http://placecats.com/40/80
+    thumb: https://placecats.com/40/80
     alt: ''
     srcset: ''
     sizes: ''
 
-  - src: http://placecats.com/450/800
+  - src: https://placecats.com/450/800
     width: 450
     height: 800
-    thumb: http://placecats.com/40/80
+    thumb: https://placecats.com/40/80
     alt: ''
     srcset: ''
     sizes: ''
 
-  - src: http://placecats.com/700/600
+  - src: https://placecats.com/700/600
     width: 700
     height: 600
-    thumb: http://placecats.com/40/80
+    thumb: https://placecats.com/40/80
     alt: ''
     srcset: ''
     sizes: ''
 
-  - src: http://placecats.com/700/600
+  - src: https://placecats.com/700/600
     width: 700
     height: 600
-    thumb: http://placecats.com/40/80
+    thumb: https://placecats.com/40/80
     alt: ''
     srcset: ''
     sizes: ''
 
-  - src: http://placecats.com/960/540
-    thumb: http://placecats.com/64/36
+  - src: https://placecats.com/960/540
+    thumb: https://placecats.com/64/36
     width: 960
     height: 540
     alt: ''
@@ -438,8 +438,8 @@ gallery_data:
     sizes: ''
     caption: Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
 
-  - src: http://placecats.com/400/800
-    thumb: http://placecats.com/40/80
+  - src: https://placecats.com/400/800
+    thumb: https://placecats.com/40/80
     alt: ''
     width: 400
     height: 800
@@ -733,7 +733,7 @@ area_of_study:
       - name: Writing and Rhetoric Program
 
 journey_gallery_data:
-  - src: http://placecats.com/1376/774
+  - src: https://placecats.com/1376/774
     width: 1376
     height: 774
     srcset:
@@ -745,7 +745,7 @@ journey_gallery_data:
     sizes: ''
     caption: Lorem ipsum <a href="#">dolor</a> sit amet consectetur adipisicing elit.
 
-  - src: http://placecats.com/1376/774
+  - src: https://placecats.com/1376/774
     width: 1376
     height: 774
     srcset:
@@ -757,7 +757,7 @@ journey_gallery_data:
     sizes: ''
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aspernatur accusantium eveniet accusamus tempora sequi fugiat magnam? Porro illo cumque error praesentium dolore labore tenetur obcaecati rerum, inventore sequi totam!
 
-  - src: http://placecats.com/1376/774
+  - src: https://placecats.com/1376/774
     width: 1376
     height: 774
     srcset:
@@ -769,7 +769,7 @@ journey_gallery_data:
     sizes: ''
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
-  - src: http://placecats.com/1376/774
+  - src: https://placecats.com/1376/774
     width: 1376
     height: 774
     srcset:
@@ -781,7 +781,7 @@ journey_gallery_data:
     sizes: ''
     caption: Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
-  - src: http://placecats.com/1376/774
+  - src: https://placecats.com/1376/774
     width: 1376
     height: 774
     srcset:
@@ -1408,3 +1408,125 @@ catalog_search_items:
       value: OFF
     - label: Washington, DC
       value: DC
+
+miis_curriculum_header_labels:
+  - Fall 25
+  - Spring 26
+  - Fall 26
+  - Spring 27
+
+miis_curriculum:
+  - course_number: ENPG 8503
+    title: Research Strategies for Environmental Policy
+    semester:
+      - label: Fall 25
+        value: false
+      - label: Spring 26
+        value: true
+      - label: Fall 26
+        value: false
+      - label: Spring 27
+        value: true
+    content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    terms: <p>Spring 2026, Spring 2027</p>
+
+  - course_number: ENPG 8542
+    title: Environmental & Natural Resource Economics
+    semester:
+      - label: Fall 25
+        value: true
+      - label: Spring 26
+        value: false
+      - label: Fall 26
+        value: true
+      - label: Spring 27
+        value: false
+    content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    terms: <p>Fall 2025, Fall 2026</p>
+    requirements: <p>DED, SCI</p>
+
+  - course_number: TBD
+    title: ICC Course
+    semester:
+      - label: Fall 25
+        value: false
+      - label: Spring 26
+        value: j-term
+      - label: Fall 26
+        value: false
+      - label: Spring 27
+        value: j-term
+    content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    terms: <p>Spring 2026 (j-term), Spring 2027 (j-term)</p>
+
+  - course_number: ENPG 8506
+    title: Public Policy and the Environment
+    semester:
+      - label: Fall 25
+        value: true
+      - label: Spring 26
+        value: false
+      - label: Fall 26
+        value: true
+      - label: Spring 27
+        value: false
+    content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    terms: <p>Fall 2025, Fall 2026</p>
+    requirements: <p>DED, SCI</p>
+
+  - course_number: ENPG 8507
+    title: Governing the Global Commons
+    semester:
+      - label: Fall 25
+        value: true
+      - label: Spring 26
+        value: false
+      - label: Fall 26
+        value: true
+      - label: Spring 27
+        value: false
+    content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    terms: <p>Fall 2025, Fall 2026</p>
+    requirements: <p>DED, SCI</p>
+
+  - course_number: ENPG 8591
+    title: Applied Conservation Science & Policy
+    semester:
+      - label: Fall 25
+        value: true
+      - label: Spring 26
+        value: false
+      - label: Fall 26
+        value: true
+      - label: Spring 27
+        value: false
+    content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    terms: <p>Fall 2025, Fall 2026</p>
+
+  - course_number: ENPG 8525
+    title: Environmental Leadership
+    semester:
+      - label: Fall 25
+        value: false
+      - label: Spring 26
+        value: j-term
+      - label: Fall 26
+        value: false
+      - label: Spring 27
+        value: j-term
+    content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    terms: <p>Spring 2026 (j-term), Spring 2027 (j-term)</p>
+
+  - course_number: TBD
+    title: PSS-Independent Practicum
+    semester:
+      - label: Fall 25
+        value: true
+      - label: Spring 26
+        value: true
+      - label: Fall 26
+        value: true
+      - label: Spring 27
+        value: true
+    content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    terms: <p>Fall 2025, Spring 2026, Fall 2026, Spring 2027</p>

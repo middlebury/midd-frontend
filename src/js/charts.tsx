@@ -1,6 +1,6 @@
 import { h, render } from 'preact';
 import PercentBarChart from './components/percent-bar-chart';
-import { ChartOptions } from 'chart.js';
+import type * as ChartTypes from 'chart.js';
 
 import { onElementInView } from './utils/on-element-in-view';
 import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
@@ -47,7 +47,6 @@ export interface DataSet {
 interface ChartConfig {
   /**
    * Datasets
-   * https://www.chartjs.org/docs/latest/?h=datasets
    */
   datasets: DataSet[];
 
@@ -138,7 +137,7 @@ interface ChartConfig {
  */
 class MiddChart {
   canvas?: HTMLCanvasElement;
-  chart?: Chart;
+  chart?: ChartTypes.Chart;
   config: ChartConfig;
   el: HTMLElement;
   isCircleChart: boolean;
@@ -149,7 +148,7 @@ class MiddChart {
     this.config = config;
 
     this.isGroupChart = config.datasets.length > 1;
- 
+
     this.isCircleChart = config.type === 'pie' || config.type === 'doughnut';
 
     if (config.type === 'percentBar') {
@@ -162,8 +161,7 @@ class MiddChart {
   setDefaultGlobals() {
     // Chart.defaults.global.elements.line.tension = 0;
     Chart.defaults.color = '#222';
-    Chart.defaults.font.family =
-      'Open Sans, arial, verdana, sans-serif';
+    Chart.defaults.font.family = 'Open Sans, arial, verdana, sans-serif';
     Chart.defaults.font.size = 14;
 
     // @ts-ignore
@@ -187,13 +185,17 @@ class MiddChart {
     // const maxBarThickness = this.isGroupChart ? 16 : 32;
     const isHorizontalBars = type === 'bar' && axis === 'y';
     const isAxisChart = isHorizontalBars || type === 'bar' || type === 'line';
-    
-    const prefixTick = (value: any) => `${valuePrefix}${value}${valueSuffix}`;
-   
-    const xTickCallback = isHorizontalBars ? prefixTick : (tick: any) => labels[tick];
-    const yTickCallback = isHorizontalBars ? (tick: any) => labels[tick] : prefixTick;
 
-    const options: ChartOptions = {
+    const prefixTick = (value: any) => `${valuePrefix}${value}${valueSuffix}`;
+
+    const xTickCallback = isHorizontalBars
+      ? prefixTick
+      : (tick: any) => labels[tick];
+    const yTickCallback = isHorizontalBars
+      ? (tick: any) => labels[tick]
+      : prefixTick;
+
+    const options: ChartTypes.ChartOptions = {
       // @ts-ignore
       indexAxis: axis,
       animation: {
@@ -223,7 +225,11 @@ class MiddChart {
           callbacks: {
             // @ts-ignore
             label: (context) => {
-              return `${context.dataset.label}: ${context.raw}${valueSuffix}`;
+              if (context.dataset.label) {
+                return `${context.dataset.label}: ${valuePrefix}${context.raw}${valueSuffix}`;
+              } else {
+                return `${valuePrefix}${context.raw}${valueSuffix}`;
+              }
             }
           }
         }
@@ -392,7 +398,9 @@ class MiddChart {
     }
 
     // add html legend
-    const legendItems = this.chart.options.plugins.legend.labels.generateLabels(this.chart); // returned type for generatedLegend is wrong?
+    const legendItems = this.chart.options.plugins.legend.labels.generateLabels(
+      this.chart
+    ); // returned type for generatedLegend is wrong?
 
     const legendtag = document.createElement('div');
     // legendtag.innerHTML = legend;
@@ -495,6 +503,6 @@ const els = $$('[data-chart]');
 els.forEach((el) => {
   const config = parseConfig(el);
   if (!config) return;
-  
+
   new MiddChart(el, config);
 });

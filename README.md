@@ -2,9 +2,7 @@
 
 > Frontend code for middlebury_theme
 
-![CI](https://github.com/middlebury/midd-frontend/workflows/CI/badge.svg)
-[![dependency status](https://david-dm.org/middlebury/midd-frontend.svg)](https://david-dm.org/middlebury/midd-frontend)
-[![dev dependency status](https://david-dm.org/middlebury/midd-frontend/dev-status.svg)](https://david-dm.org/middlebury/midd-frontend?type=dev)
+[![CI](https://github.com/middlebury/midd-frontend/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/middlebury/midd-frontend/actions/workflows/ci.yml)
 
 ## Requirements
 

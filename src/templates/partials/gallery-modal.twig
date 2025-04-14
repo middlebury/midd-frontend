@@ -1,4 +1,4 @@
-{% set id = 1 %}
+{# {% set id = 1 %} #}
 <div
   id="midd-lightbox-{{id}}"
   aria-hidden="true"
@@ -74,7 +74,7 @@
             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{item.width}} {{item.height}}'/%3E"
             {# src="" #}
             data-src="{{item.src}}"
-            data-srcset="{% for scale in [1, 0.75, 0.5, 0.25] %}http://placecats.com/{{(item.width * scale)|round}}/{{(item.height * scale)|round}} {{(item.width * scale)|round}}w{{not loop.last ? ', ' : ''}}{% endfor %}"
+            data-srcset="{% for scale in [1, 0.75, 0.5, 0.25] %}https://placecats.com/{{(item.width * scale)|round}}/{{(item.height * scale)|round}} {{(item.width * scale)|round}}w{{not loop.last ? ', ' : ''}}{% endfor %}"
             width="{{item.width}}"
             alt=""
           />

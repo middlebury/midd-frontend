@@ -1,6 +1,6 @@
 import MicroModal from 'micromodal';
 import lozad from 'lozad';
-import anime from 'animejs';
+import { animate } from 'animejs';
 
 import { $, $$, on, off, addClass, removeClass } from './utils/dom';
 import onscroll from './utils/onscroll';
@@ -129,12 +129,12 @@ class Lightbox {
       },
 
       // set animating flag so we can skip updating active one when scrolling
-      begin: () => {
+      onBegin: () => {
         this.isAnimating = true;
       },
 
       // unset the animating flag when done
-      complete: () => {
+      onComplete: () => {
         this.isAnimating = false;
       }
     });
@@ -194,18 +194,16 @@ class Lightbox {
     }
 
     // Use same animation settings as smooth scroller
-    const { easing, elasticity, duration } = this.smoothScroller.animeOptions;
+    const { ease, duration } = this.smoothScroller.animeOptions;
 
-    anime({
-      targets: this.thumbsList,
+    animate(this.thumbsList, {
       scrollTop: thumb.offsetTop - this.thumbsList.scrollTop,
-      easing,
+      ease,
       duration,
-      elasticity,
-      begin: () => {
+      onBegin: () => {
         this.isAnimatingThumb = true;
       },
-      complete: () => {
+      onComplete: () => {
         this.isAnimatingThumb = false;
       }
     });
@@ -294,16 +292,20 @@ const lightboxConfig = {
 
 MicroModal.init(lightboxConfig);
 
-const lightbox = $('[data-lightbox-open]');
+const galleryModals = $$('[data-lightbox-open]');
 
-if (lightbox) {
-  on(lightbox, 'click', (e) => e.preventDefault());
-  on(lightbox, 'keydown', (e) => {
-    if (e.keyCode === 32) {
-      MicroModal.show(
-        lightbox.getAttribute('data-lightbox-open'),
-        lightboxConfig
-      );
-    }
+if (galleryModals) {
+  galleryModals.forEach((modal) => {
+    on(modal, 'click', (e) => {
+      e.preventDefault();
+    });
+    on(modal, 'keydown', (e) => {
+      if (e.keyCode === 32) {
+        MicroModal.show(
+          modal.getAttribute('data-lightbox-open'),
+          lightboxConfig
+        );
+      }
+    });
   });
 }
