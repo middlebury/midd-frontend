@@ -13,7 +13,7 @@ let defaultOptions = {
   directionThreshold: deltaY > 0 ? deltaY : 50,
   delay: 0,
   duration: 600,
-  ease: function (t: any) {
+  easing: function (t: any) {
     return t;
   }
 };
