@@ -35,32 +35,11 @@
 {% block page %}
   {% embed 'partials/sidebar-layout.twig' %}
     {% block nav %}
-      {# {% include 'partials/page-nav.twig' with {
-        label: 'Directory',
-        items: [
-          {
-            text: 'Search the Directory',
-            href: '#',
-            active: true
-          },
-          {
-            text: 'Updating Your Information',
-            href: '#'
-          },
-          {
-            text: 'Have a Question',
-            href: '#'
-          },
-          {
-            text: 'Contacting members of the Middlebury Institute Community',
-            href: '#'
-          },
-        ]
-      } %} #}
+
     {% endblock %}
     {% block content %}
       <div class="paragraphs">
-        <div class="paragraph--text typography">
+        <div class="paragraph--text typography" data-digest-content>
           <div id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_pnlSimpleForm" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'ctl00_ctl00_PageContent_PageContent_middDirectoryForm_btnSimpleSearch')">
       
             <h2 class="mt-0">Basic Search</h2>
@@ -151,10 +130,13 @@
             1400 K Street, NW, Suite 1225<br>
             Washington, DC 20005
           </address>
-          <h2>Responsible Use</h2>
-          <p>Information obtained from the Middlebury Directory may not be used to provide addresses for mailings to students, faculty or staff. Any solicitation of business, information, contributions or other response from individuals listed in this directory by email, mail, telephone, or other means is forbidden. Any unauthorized or inappropriate use of the photos or graphics contained within is forbidden.</p>
         </div>
       </div>
+    {% endblock %}
+    {% block toc %}
+
+      <div data-sticky data-digest-nav></div>
+
     {% endblock %}
   {% endembed %}
 {% endblock %}
