@@ -814,11 +814,11 @@ wrmc_schedule_items:
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         genres:
           - name: Blues
-            class: blues
+            class: genre-1d6ca6
           - name: Indie
-            class: indie
+            class: genre-916b6b
           - name: Rock
-            class: rock
+            class: genre-048228
 
       - start_time: 5:00
         end_time: 6:00
@@ -828,7 +828,7 @@ wrmc_schedule_items:
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         genres:
           - name: Country
-            class: country
+            class: genre-a16b06
 
       - start_time: 6:00
         end_time: 7:00
@@ -837,9 +837,9 @@ wrmc_schedule_items:
         hosts: Sid Vicious
         genres:
           - name: Experimental
-            class: experimental
+            class: genre-c425de
           - name: Country
-            class: country
+            class: genre-a16b06
 
       - start_time: 1:00
         end_time: 2:00
@@ -848,7 +848,7 @@ wrmc_schedule_items:
         hosts: Sid Vicious
         genres:
           - name: World
-            class: world
+            class: genre-47f5ec
 
       - start_time: 2:00
         end_time: 3:00
@@ -857,7 +857,7 @@ wrmc_schedule_items:
         hosts: Sid Vicious
         genres:
           - name: Classical
-            class: classical
+            class: genre-3e8369
 
       - start_time: 4:00
         end_time: 5:00
@@ -866,7 +866,7 @@ wrmc_schedule_items:
         hosts: Sid Vicious
         genres:
           - name: Folk
-            class: folk
+            class: genre-f29407
 
       - start_time: 7:00
         end_time: 8:00
@@ -875,7 +875,7 @@ wrmc_schedule_items:
         hosts: Sid Vicious
         genres:
           - name: Hip Hop
-            class: hip-hop
+            class: genre-01777f
 
       - start_time: 10:00
         end_time: 11:00
@@ -884,7 +884,7 @@ wrmc_schedule_items:
         hosts: Sid Vicious
         genres:
           - name: Reggae
-            class: reggae
+            class: genre-f2cc46
 
       - start_time: 11:00
         end_time: 12:00
@@ -893,7 +893,7 @@ wrmc_schedule_items:
         hosts: Sid Vicious
         genres:
           - name: News
-            class: news
+            class: genre-827373
 
   - day: Tuesday
     schedule:
@@ -904,9 +904,9 @@ wrmc_schedule_items:
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         genres:
           - name: Talk
-            class: talk
+            class: genre-000000
           - name: World
-            class: world
+            class: genre-47f5ec
 
       - start_time: 5:00
         end_time: 6:00
@@ -914,9 +914,9 @@ wrmc_schedule_items:
         title: Jazz Band, Hand and Feet
         genres:
           - name: Rap
-            class: rap
+            class: genre-880808
           - name: Rock
-            class: rock
+            class: genre-048228
 
       - start_time: 7:00
         end_time: 8:00
@@ -925,9 +925,9 @@ wrmc_schedule_items:
         hosts: Sid Vicious
         genres:
           - name: Funk
-            class: funk
+            class: genre-ee3ff
           - name: Country
-            class: country
+            class: genre-a16b06
 
       - start_time: 11:00
         end_time: 12:00
@@ -936,7 +936,7 @@ wrmc_schedule_items:
         hosts: Sid Vicious
         genres:
           - name: R&B/Soul
-            class: rb-soul
+            class: genre-8fceff
 
       - start_time: 12:00
         end_time: 1:00
@@ -945,7 +945,7 @@ wrmc_schedule_items:
         hosts: Sid Vicious
         genres:
           - name: Rock
-            class: rock
+            class: genre-048228
 
       - start_time: 12:00
         end_time: 1:00
@@ -953,7 +953,7 @@ wrmc_schedule_items:
         title: Jazz Band, Hand and Feet
         genres:
           - name: Rock
-            class: rock
+            class: genre-048228
 
   - day: Wednesday
     schedule:
@@ -963,7 +963,7 @@ wrmc_schedule_items:
         title: Experimental Jetset Companion
         genres:
           - name: World
-            class: world
+            class: genre-47f5ec
 
       - start_time: 11:00
         end_time: 12:00
@@ -972,11 +972,11 @@ wrmc_schedule_items:
         hosts: Sid Vicious
         genres:
           - name: Jazz
-            class: jazz
+            class: genre-13e9bf
           - name: Pop
-            class: pop
+            class: genre-ff4d4d
           - name: R&B / Soul
-            class: rb-soul
+            class: genre-8fceff
 
   - day: Thursday
     schedule:
@@ -986,7 +986,7 @@ wrmc_schedule_items:
         title: Jazz Band, Hand and Feet
         genres:
           - name: Reggae
-            class: reggae
+            class: genre-f2cc46
 
       - start_time: 2:00
         end_time: 3:00
@@ -996,7 +996,7 @@ wrmc_schedule_items:
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         genres:
           - name: Blues
-            class: blues
+            class: genre-1d6ca6
 
       - start_time: 3:00
         end_time: 4:00
@@ -1005,7 +1005,7 @@ wrmc_schedule_items:
         hosts: Sid Vicious
         genres:
           - name: Electronic
-            class: electronic
+            class: genre-b7c706
 
       - start_time: 5:00
         end_time: 6:00
@@ -1014,7 +1014,7 @@ wrmc_schedule_items:
         hosts: Sid Vicious
         genres:
           - name: Jazz
-            class: jazz
+            class: genre-13e9bf
 
       - start_time: 6:00
         end_time: 7:00
@@ -1023,7 +1023,7 @@ wrmc_schedule_items:
         hosts: Sid Vicious
         genres:
           - name: Heavy Metal
-            class: heavy-metal
+            class: genre-6b6b6b
 
       - start_time: 2:00
         end_time: 3:00
@@ -1032,7 +1032,7 @@ wrmc_schedule_items:
         hosts: Matt Jennings and Tom
         genres:
           - name: Jazz
-            class: jazz
+            class: genre-13e9bf
 
   - day: Friday
     schedule:
@@ -1043,7 +1043,7 @@ wrmc_schedule_items:
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         genres:
           - name: Hip Hop
-            class: hip-hop
+            class: genre-01777f
 
       - start_time: 9:00
         end_time: 10:00
@@ -1051,7 +1051,7 @@ wrmc_schedule_items:
         title: Jazz Band, Hand and Feet
         genres:
           - name: Latin
-            class: latin
+            class: genre-85eb35
 
       - start_time: 8:00
         end_time: 9:00
@@ -1060,7 +1060,7 @@ wrmc_schedule_items:
         hosts: Sid Vicious
         genres:
           - name: Kpop
-            class: kpop
+            class: genre-8807d7
 
       - start_time: 9:00
         end_time: 10:00
@@ -1069,7 +1069,7 @@ wrmc_schedule_items:
         hosts: Sid Vicious
         genres:
           - name: Latin
-            class: latin
+            class: genre-85eb35
 
       - start_time: 11:00
         end_time: 12:00
@@ -1078,7 +1078,7 @@ wrmc_schedule_items:
         hosts: Sid Vicious
         genres:
           - name: Indie
-            class: indie
+            class: genre-916b6b
 
   - day: Saturday
     schedule:
@@ -1089,7 +1089,7 @@ wrmc_schedule_items:
         hosts: Sid Vicious
         genres:
           - name: Indie
-            class: indie
+            class: genre-916b6b
 
       - start_time: 9:00
         end_time: 10:00
@@ -1098,7 +1098,7 @@ wrmc_schedule_items:
         hosts: Sid Vicious
         genres:
           - name: Pop
-            class: pop
+            class: genre-ff4d4d
 
       - start_time: 10:00
         end_time: 11:00
@@ -1107,7 +1107,7 @@ wrmc_schedule_items:
         hosts: Sid Vicious
         genres:
           - name: Punk
-            class: punk
+            class: genre-044882
 
       - start_time: 1:00
         end_time: 2:00
@@ -1115,7 +1115,7 @@ wrmc_schedule_items:
         title: Experimental Jetset Companion
         genres:
           - name: Funk
-            class: funk
+            class: genre-ee3ff
 
       - start_time: 2:00
         end_time: 3:00
@@ -1125,7 +1125,7 @@ wrmc_schedule_items:
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         genres:
           - name: Classical
-            class: classical
+            class: genre-3e8369
 
       - start_time: 2:00
         end_time: 3:00
@@ -1134,7 +1134,7 @@ wrmc_schedule_items:
         hosts: Sid Vicious
         genres:
           - name: Generic
-            class: generic
+            class: genre-0d395f
 
       - start_time: 3:00
         end_time: 4:00
@@ -1143,7 +1143,7 @@ wrmc_schedule_items:
         hosts: Sid Vicious
         genres:
           - name: Rap
-            class: rap
+            class: genre-880808
 
   - day: Sunday
     schedule:
@@ -1153,7 +1153,7 @@ wrmc_schedule_items:
         title: Experimental Jetset Companion
         genres:
           - name: Electronic
-            class: electronic
+            class: genre-b7c706
 
       - start_time: 2:00
         end_time: 3:00
@@ -1163,7 +1163,7 @@ wrmc_schedule_items:
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         genres:
           - name: Electronic
-            class: electronic
+            class: genre-b7c706
 
       - start_time: 12:00
         end_time: 1:00
@@ -1172,7 +1172,7 @@ wrmc_schedule_items:
         hosts: Sid Vicious
         genres:
           - name: Talk
-            class: talk
+            class: genre-000000
 
       - start_time: 1:00
         end_time: 2:00
@@ -1181,7 +1181,7 @@ wrmc_schedule_items:
         hosts: Sid Vicious
         genres:
           - name: Rap
-            class: rap
+            class: genre-880808
 
       - start_time: 2:00
         end_time: 3:00
@@ -1190,7 +1190,7 @@ wrmc_schedule_items:
         hosts: Matt Jennings and Tom
         genres:
           - name: Blues
-            class: blues
+            class: genre-1d6ca6
 
 playlist_items:
   - artist: Mk.gee
@@ -1278,49 +1278,49 @@ top_thirty:
 
 all_genres:
   - name: Blues
-    class: blues
+    class: genre-1d6ca6
   - name: Country
-    class: country
+    class: genre-a16b06
   - name: Experimental
-    class: experimental
+    class: genre-c425de
   - name: Funk
-    class: funk
+    class: genre-ee3ff
   - name: Indie
-    class: indie
+    class: genre-916b6b
   - name: Pop
-    class: pop
+    class: genre-ff4d4d
   - name: Punk
-    class: punk
+    class: genre-044882
   - name: R&B/Soul
-    class: rb-soul
+    class: genre-8fceff
   - name: Rock
-    class: rock
+    class: genre-048228
   - name: World
-    class: world
+    class: genre-47f5ec
   - name: Classical
-    class: classical
+    class: genre-3e8369
   - name: Electronic
-    class: electronic
+    class: genre-b7c706
   - name: Folk
-    class: folk
+    class: genre-f29407
   - name: Jazz
-    class: jazz
+    class: genre-13e9bf
   - name: Heavy Metal
-    class: heavy-metal
+    class: genre-6b6b6b
   - name: Hip Hop
-    class: hip-hop
+    class: genre-01777f
   - name: Kpop
-    class: kpop
+    class: genre-8807d7
   - name: Latin
-    class: latin
+    class: genre-85eb35
   - name: Reggae
-    class: reggae
+    class: genre-f2cc46
   - name: News
-    class: news
+    class: genre-827373
   - name: Talk
-    class: talk
+    class: genre-000000
   - name: Rap
-    class: rap
+    class: genre-880808
 
 catalog_search_items:
   requirements:

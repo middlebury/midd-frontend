@@ -180,98 +180,121 @@ $font-family-serif: (
 $wrmc-text-dark: $navy-dark;
 
 $wrmc-genre-colors: (
-  blues: (
-    bg-color: #1d6ca6,
-    color: $white
-  ),
-  country: (
-    bg-color: #a16b06,
-    color: $white
-  ),
-  experimental: (
-    bg-color: #c425de,
-    color: $white
-  ),
-  funk: (
-    bg-color: #0ee3ff,
-    color: $wrmc-text-dark
-  ),
-  indie: (
-    bg-color: #916b6b,
-    color: $white
-  ),
-  pop: (
-    bg-color: #ff4d4d,
-    color: $wrmc-text-dark
-  ),
-  punk: (
-    bg-color: #044882,
-    color: $white
-  ),
-  rb-soul: (
-    bg-color: #8fceff,
-    color: $wrmc-text-dark
-  ),
-  rock: (
-    bg-color: #048228,
-    color: $white
-  ),
-  world: (
-    bg-color: #47f5ec,
-    color: $wrmc-text-dark
-  ),
-  classical: (
-    bg-color: #3e8369,
-    color: $white
-  ),
-  electronic: (
-    bg-color: #b7c706,
-    color: $wrmc-text-dark
-  ),
-  folk: (
-    bg-color: #f29407,
-    color: $wrmc-text-dark
-  ),
-  jazz: (
-    bg-color: #13e9bf,
-    color: $wrmc-text-dark
-  ),
-  heavy-metal: (
-    bg-color: #6b6b6b,
-    color: $white
-  ),
-  hip-hop: (
-    bg-color: #01777f,
-    color: $white
-  ),
-  kpop: (
-    bg-color: #8807d7,
-    color: $white
-  ),
-  latin: (
-    bg-color: #85eb35,
-    color: $wrmc-text-dark
-  ),
-  reggae: (
-    bg-color: #f2cc46,
-    color: $wrmc-text-dark
-  ),
-  news: (
-    bg-color: #827373,
-    color: $white
-  ),
-  talk: (
-    bg-color: #000,
-    color: $white
-  ),
-  rap: (
-    bg-color: #880808,
-    color: $white
-  ),
-  generic: (
-    bg-color: #0d395f,
-    color: $white
-  )
+  // blues
+  genre-1d6ca6: (
+      bg-color: #1d6ca6,
+      color: $white
+    ),
+  // country
+  genre-a16b06: (
+      bg-color: #a16b06,
+      color: $white
+    ),
+  // experimental
+  genre-c425de: (
+      bg-color: #c425de,
+      color: $white
+    ),
+  // funk
+  genre-ee3ff: (
+      bg-color: #0ee3ff,
+      color: $wrmc-text-dark
+    ),
+  // indie
+  genre-916b6b: (
+      bg-color: #916b6b,
+      color: $white
+    ),
+  // pop
+  genre-ff4d4d: (
+      bg-color: #ff4d4d,
+      color: $wrmc-text-dark
+    ),
+  // punk
+  genre-044882: (
+      bg-color: #044882,
+      color: $white
+    ),
+  // rb-soul
+  genre-8fceff: (
+      bg-color: #8fceff,
+      color: $wrmc-text-dark
+    ),
+  // rock
+  genre-048228: (
+      bg-color: #048228,
+      color: $white
+    ),
+  // world
+  genre-47f5ec: (
+      bg-color: #47f5ec,
+      color: $wrmc-text-dark
+    ),
+  // classical
+  genre-3e8369: (
+      bg-color: #3e8369,
+      color: $white
+    ),
+  // electronic
+  genre-b7c706: (
+      bg-color: #b7c706,
+      color: $wrmc-text-dark
+    ),
+  // folk
+  genre-f29407: (
+      bg-color: #f29407,
+      color: $wrmc-text-dark
+    ),
+  // jazz
+  genre-13e9bf: (
+      bg-color: #13e9bf,
+      color: $wrmc-text-dark
+    ),
+  // heavy-metal
+  genre-6b6b6b: (
+      bg-color: #6b6b6b,
+      color: $white
+    ),
+  // hip-hop
+  genre-01777f: (
+      bg-color: #01777f,
+      color: $white
+    ),
+  // kpop
+  genre-8807d7: (
+      bg-color: #8807d7,
+      color: $white
+    ),
+  // latin
+  genre-85eb35: (
+      bg-color: #85eb35,
+      color: $wrmc-text-dark
+    ),
+  // reggae
+  genre-f2cc46: (
+      bg-color: #f2cc46,
+      color: $wrmc-text-dark
+    ),
+  // news
+  genre-827373: (
+      bg-color: #827373,
+      color: $white
+    ),
+  // talk
+  genre-000000: (
+      bg-color: #000000,
+      color: $white
+    ),
+  // rap
+  genre-880808: (
+      bg-color: #880808,
+      color: $white
+    ),
+  // generic
+  genre-0d395f: (
+      bg-color: #0d395f,
+      color: $white
+    )
 );
 
 // type scale
