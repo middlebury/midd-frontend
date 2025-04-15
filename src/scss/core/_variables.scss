@@ -88,6 +88,7 @@ $blue-lighter: #e5f1fa !default;
 
 $wrmc-blue-light: #a3e6ff !default;
 $wrmc-pink: #ee6cb9 !default;
+$wrmc-pink-darker: #de1b90 !default;
 $wrmc-green: #a7c504 !default;
 
 $sky: #0573cd;
@@ -176,28 +177,101 @@ $font-family-serif: (
   serif
 ) !default;
 
+$wrmc-text-dark: $navy-dark;
+
 $wrmc-genre-colors: (
-  blues: #1d6ca6,
-  country: #ac7306,
-  experimental: #c926e4,
-  funk: #07bbd3,
-  indie: #927575,
-  pop: #a60505,
-  punk: #044882,
-  rb-soul: #56a4ff,
-  rock: #047825,
-  world: #52d6ff,
-  classical: #349b76,
-  electronic: #9aa705,
-  folk: #e28a07,
-  jazz: #0cbdbd,
-  heavy-metal: #727070,
-  hip-hop: #01777f,
-  kpop: #8807d7,
-  latin: #81e334,
-  reggae: #e3bf42,
-  news: #8f8d8d,
-  talk: #000
+  blues: (
+    bg-color: #1d6ca6,
+    color: $white
+  ),
+  country: (
+    bg-color: #a16b06,
+    color: $white
+  ),
+  experimental: (
+    bg-color: #c425de,
+    color: $white
+  ),
+  funk: (
+    bg-color: #0ee3ff,
+    color: $wrmc-text-dark
+  ),
+  indie: (
+    bg-color: #916b6b,
+    color: $white
+  ),
+  pop: (
+    bg-color: #ff4d4d,
+    color: $wrmc-text-dark
+  ),
+  punk: (
+    bg-color: #044882,
+    color: $white
+  ),
+  rb-soul: (
+    bg-color: #8fceff,
+    color: $wrmc-text-dark
+  ),
+  rock: (
+    bg-color: #048228,
+    color: $white
+  ),
+  world: (
+    bg-color: #47f5ec,
+    color: $wrmc-text-dark
+  ),
+  classical: (
+    bg-color: #3e8369,
+    color: $white
+  ),
+  electronic: (
+    bg-color: #b7c706,
+    color: $wrmc-text-dark
+  ),
+  folk: (
+    bg-color: #f29407,
+    color: $wrmc-text-dark
+  ),
+  jazz: (
+    bg-color: #13e9bf,
+    color: $wrmc-text-dark
+  ),
+  heavy-metal: (
+    bg-color: #6b6b6b,
+    color: $white
+  ),
+  hip-hop: (
+    bg-color: #01777f,
+    color: $white
+  ),
+  kpop: (
+    bg-color: #8807d7,
+    color: $white
+  ),
+  latin: (
+    bg-color: #85eb35,
+    color: $wrmc-text-dark
+  ),
+  reggae: (
+    bg-color: #f2cc46,
+    color: $wrmc-text-dark
+  ),
+  news: (
+    bg-color: #827373,
+    color: $white
+  ),
+  talk: (
+    bg-color: #000,
+    color: $white
+  ),
+  rap: (
+    bg-color: #880808,
+    color: $white
+  ),
+  generic: (
+    bg-color: #0d395f,
+    color: $white
+  )
 );
 
 // type scale
