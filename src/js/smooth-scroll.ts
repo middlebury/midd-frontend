@@ -1,4 +1,4 @@
-import { animate, EasingParam, AnimationParams, JSAnimation } from 'animejs';
+import anime, { EasingOptions, AnimeAnimParams, AnimeInstance } from 'animejs';
 
 import { $, $$, on, off } from './utils/dom';
 import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
@@ -36,24 +36,28 @@ interface SmoothScrollOptions {
   replaceState?: boolean;
 
   /** function to call begin scrolling animation starts. */
-  onBegin?: (anime: JSAnimation) => void;
+  begin?: (anime: AnimeInstance) => void;
 
   /** function to call after scrolling animation is done */
-  onComplete?: (anime: JSAnimation) => void;
+  complete?: (anime: AnimeInstance) => void;
 
   /**
-   * animation easing. Options based on animejs easing https://animejs.com/documentation/animation/tween-parameters/ease
+   * animation easing. Options based on animejs easing https://animejs.com/documentation/#linearEasing
    */
-  ease?: EasingParam;
+  easing?: EasingOptions;
 
   /** animation speed duration for animejs */
   duration?: number;
+
+  /** animation elasticity for animejs */
+  elasticity?: number;
 }
 
 const smoothScrollDefaults: SmoothScrollOptions = {
   offset: 0,
-  ease: 'cubicBezier(1,0,.7,1)',
+  easing: 'easeInCubic',
   duration: 300,
+  elasticity: 500,
   replaceState: false
 };
 
@@ -83,11 +87,11 @@ const smoothScrollDefaults: SmoothScrollOptions = {
  * ```
  */
 class SmoothScroll {
-  animeOptions: AnimationParams;
+  animeOptions: AnimeAnimParams;
   elems: NodeListOf<HTMLElement> | HTMLElement[];
   options: SmoothScrollOptions;
   scrollTop?: ScrollTopCallback;
-  anime?: JSAnimation;
+  anime?: AnimeInstance;
 
   /**
    * @param els - selector or element which contain the anchor links
@@ -102,7 +106,7 @@ class SmoothScroll {
       ...options
     };
 
-    const { ease, duration, onBegin, onComplete } = config;
+    const { easing, duration, elasticity, begin, complete } = config;
 
     this.elems = typeof els === 'string' ? $$(els) : els;
 
@@ -112,9 +116,10 @@ class SmoothScroll {
 
     this.animeOptions = {
       duration: reducedDuration,
-      ease,
-      onBegin,
-      onComplete
+      easing,
+      elasticity,
+      begin,
+      complete
     };
 
     this.init();
@@ -185,19 +190,21 @@ class SmoothScroll {
       scrollPosition = container.scrollTop;
     }
 
-    const finalScrollTop: any =
+    const finalScrollTop =
       typeof scrollTop === 'function'
         ? scrollTop(elem, scrollPosition)
         : elementOffset + scrollPosition - finalOffset;
 
-    const { duration, ease, onBegin, onComplete } = this.animeOptions;
+    const { duration, easing, elasticity, begin, complete } = this.animeOptions;
 
-    this.anime = animate(targets, {
+    this.anime = anime({
       scrollTop: finalScrollTop,
+      targets,
       duration,
-      ease,
-      onBegin,
-      onComplete
+      easing,
+      elasticity,
+      begin,
+      complete
     });
 
     if (this.options.replaceState) {

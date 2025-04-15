@@ -1,6 +1,6 @@
 import MicroModal from 'micromodal';
 import lozad from 'lozad';
-import { animate } from 'animejs';
+import anime from 'animejs';
 
 import { $, $$, on, off, addClass, removeClass } from './utils/dom';
 import onscroll from './utils/onscroll';
@@ -129,12 +129,12 @@ class Lightbox {
       },
 
       // set animating flag so we can skip updating active one when scrolling
-      onBegin: () => {
+      begin: () => {
         this.isAnimating = true;
       },
 
       // unset the animating flag when done
-      onComplete: () => {
+      complete: () => {
         this.isAnimating = false;
       }
     });
@@ -194,16 +194,18 @@ class Lightbox {
     }
 
     // Use same animation settings as smooth scroller
-    const { ease, duration } = this.smoothScroller.animeOptions;
+    const { easing, elasticity, duration } = this.smoothScroller.animeOptions;
 
-    animate(this.thumbsList, {
+    anime({
+      targets: this.thumbsList,
       scrollTop: thumb.offsetTop - this.thumbsList.scrollTop,
-      ease,
+      easing,
       duration,
-      onBegin: () => {
+      elasticity,
+      begin: () => {
         this.isAnimatingThumb = true;
       },
-      onComplete: () => {
+      complete: () => {
         this.isAnimatingThumb = false;
       }
     });
