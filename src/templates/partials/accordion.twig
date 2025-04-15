@@ -16,7 +16,7 @@
         role="tab">
         <h3 class="accordion-item__title">
           {% if faq %}
-            <span class="accordion-item__char" aria-hidden>Q</span>
+            <span class="accordion-item__char" aria-hidden="true">Q</span>
             <span class="accordion-item__label" id="midd-accordion-item-label-{{id}}">{{item.title}}</span>
           {% elseif course_list %}
             <span id="midd-accordion-item-label-{{id}}">
@@ -31,7 +31,7 @@
 
       <div class="accordion-item__content{{course_list ? "--column" : ""}}" id="midd-accordion-content-{{id}}" role="tabpanel" aria-labelledby="midd-accordion-item-label-{{id}}">
         {% if faq %}
-          <span class="accordion-item__char" aria-hidden>A</span>
+          <span class="accordion-item__char" aria-hidden="true">A</span>
         {% endif %}
         {% if course_list %}
           <p class="accordion-item__sub-title">Course Description</p>
