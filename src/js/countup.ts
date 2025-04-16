@@ -1,4 +1,4 @@
-import { animate, utils } from 'animejs';
+import anime from 'animejs';
 
 import { $$ } from './utils/dom';
 import { onElementInView } from './utils/on-element-in-view';
@@ -9,17 +9,18 @@ const isFloat = (n: number): boolean => Number(n) === n && n % 1 !== 0;
 function countup(el: HTMLElement, target: number): void {
   const data = { count: 0 };
 
-  const round = !isFloat(target) ? { modifier: utils.round(0) } : {};
+  const round = !isFloat(target);
 
   const duration = PREFERS_REDUCED_MOTION ? 0 : 2000;
 
-  animate(data, {
+  anime({
+    targets: data,
     count: [0, target],
     duration,
-    ...round,
+    round,
     delay: 200,
-    ease: 'outSine',
-    onUpdate() {
+    easing: 'easeOutSine',
+    update() {
       el.innerText = data.count.toLocaleString(undefined, {
         maximumFractionDigits: 2
       });

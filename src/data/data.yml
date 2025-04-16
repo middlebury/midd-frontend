@@ -812,43 +812,148 @@ wrmc_schedule_items:
         title: Mixed Confetti
         hosts: Aaron Smith, Blair Kloman, Pooja Gunturu
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        genre: Blues
+        genres:
+          - name: Blues
+            class: genre-1d6ca6
+          - name: Indie
+            class: genre-916b6b
+          - name: Rock
+            class: genre-048228
+
+      - start_time: 5:00
+        end_time: 6:00
+        meridiem: AM
+        title: Hot Chocolate on the Bus
+        hosts: Adam Yauch
+        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        genres:
+          - name: Country
+            class: genre-a16b06
+
+      - start_time: 6:00
+        end_time: 7:00
+        meridiem: AM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Experimental
+            class: genre-c425de
+          - name: Country
+            class: genre-a16b06
+
+      - start_time: 1:00
+        end_time: 2:00
+        meridiem: PM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: World
+            class: genre-47f5ec
 
       - start_time: 2:00
         end_time: 3:00
         meridiem: PM
-        title: Hot Chocolate on the Bus
-        hosts: Adam Yauch
-        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        genre: Country
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Classical
+            class: genre-3e8369
+
+      - start_time: 4:00
+        end_time: 5:00
+        meridiem: PM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Folk
+            class: genre-f29407
+
+      - start_time: 7:00
+        end_time: 8:00
+        meridiem: PM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Hip Hop
+            class: genre-01777f
+
+      - start_time: 10:00
+        end_time: 11:00
+        meridiem: PM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Reggae
+            class: genre-f2cc46
 
       - start_time: 11:00
         end_time: 12:00
         meridiem: PM
         title: Mr. and Mrs. Send It
         hosts: Sid Vicious
-        genre: Electronic
+        genres:
+          - name: News
+            class: genre-827373
 
   - day: Tuesday
     schedule:
-      - start_time: 5:00
-        end_time: 6:00
+      - start_time: 4:00
+        end_time: 5:00
         meridiem: AM
         title: Grilled Cheese Sandwich
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        genre: Folk
+        genres:
+          - name: Talk
+            class: genre-000000
+          - name: World
+            class: genre-47f5ec
 
-      - start_time: 9:00
-        end_time: 10:00
+      - start_time: 5:00
+        end_time: 6:00
         meridiem: AM
         title: Jazz Band, Hand and Feet
-        genre: Punk
+        genres:
+          - name: Rap
+            class: genre-880808
+          - name: Rock
+            class: genre-048228
+
+      - start_time: 7:00
+        end_time: 8:00
+        meridiem: AM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Funk
+            class: genre-ee3ff
+          - name: Country
+            class: genre-a16b06
+
+      - start_time: 11:00
+        end_time: 12:00
+        meridiem: AM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: R&B/Soul
+            class: genre-8fceff
+
+      - start_time: 12:00
+        end_time: 1:00
+        meridiem: PM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Rock
+            class: genre-048228
 
       - start_time: 12:00
         end_time: 1:00
         meridiem: AM
         title: Jazz Band, Hand and Feet
-        genre: Rock
+        genres:
+          - name: Rock
+            class: genre-048228
 
   - day: Wednesday
     schedule:
@@ -856,14 +961,22 @@ wrmc_schedule_items:
         end_time: 2:00
         meridiem: PM
         title: Experimental Jetset Companion
-        genre: World
+        genres:
+          - name: World
+            class: genre-47f5ec
 
       - start_time: 11:00
         end_time: 12:00
         meridiem: PM
         title: Mr. and Mrs. Send It
         hosts: Sid Vicious
-        genre: Blues
+        genres:
+          - name: Jazz
+            class: genre-13e9bf
+          - name: Pop
+            class: genre-ff4d4d
+          - name: R&B / Soul
+            class: genre-8fceff
 
   - day: Thursday
     schedule:
@@ -871,7 +984,9 @@ wrmc_schedule_items:
         end_time: 10:00
         meridiem: AM
         title: Jazz Band, Hand and Feet
-        genre: Reggae
+        genres:
+          - name: Reggae
+            class: genre-f2cc46
 
       - start_time: 2:00
         end_time: 3:00
@@ -879,14 +994,45 @@ wrmc_schedule_items:
         title: Hot Chocolate on the Bus
         hosts: Adam Yauch
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        genre: Blues
+        genres:
+          - name: Blues
+            class: genre-1d6ca6
+
+      - start_time: 3:00
+        end_time: 4:00
+        meridiem: PM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Electronic
+            class: genre-b7c706
+
+      - start_time: 5:00
+        end_time: 6:00
+        meridiem: PM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Jazz
+            class: genre-13e9bf
+
+      - start_time: 6:00
+        end_time: 7:00
+        meridiem: PM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Heavy Metal
+            class: genre-6b6b6b
 
       - start_time: 2:00
         end_time: 3:00
         meridiem: AM
         title: I Love Rock and Roll
         hosts: Matt Jennings and Tom
-        genre: Jazz
+        genres:
+          - name: Jazz
+            class: genre-13e9bf
 
   - day: Friday
     schedule:
@@ -895,28 +1041,81 @@ wrmc_schedule_items:
         meridiem: AM
         title: Echo Locations
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        genre: Hip Hop
+        genres:
+          - name: Hip Hop
+            class: genre-01777f
 
       - start_time: 9:00
         end_time: 10:00
         meridiem: AM
         title: Jazz Band, Hand and Feet
-        genre: Latin
+        genres:
+          - name: Latin
+            class: genre-85eb35
+
+      - start_time: 8:00
+        end_time: 9:00
+        meridiem: PM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Kpop
+            class: genre-8807d7
+
+      - start_time: 9:00
+        end_time: 10:00
+        meridiem: PM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Latin
+            class: genre-85eb35
 
       - start_time: 11:00
         end_time: 12:00
         meridiem: PM
         title: Mr. and Mrs. Send It
         hosts: Sid Vicious
-        genre: Indie
+        genres:
+          - name: Indie
+            class: genre-916b6b
 
   - day: Saturday
     schedule:
+      - start_time: 8:00
+        end_time: 9:00
+        meridiem: AM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Indie
+            class: genre-916b6b
+
+      - start_time: 9:00
+        end_time: 10:00
+        meridiem: AM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Pop
+            class: genre-ff4d4d
+
+      - start_time: 10:00
+        end_time: 11:00
+        meridiem: AM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Punk
+            class: genre-044882
+
       - start_time: 1:00
         end_time: 2:00
         meridiem: PM
         title: Experimental Jetset Companion
-        genre: Funk
+        genres:
+          - name: Funk
+            class: genre-ee3ff
 
       - start_time: 2:00
         end_time: 3:00
@@ -924,7 +1123,27 @@ wrmc_schedule_items:
         title: Hot Chocolate on the Bus
         hosts: Adam Yauch
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        genre: Classical
+        genres:
+          - name: Classical
+            class: genre-3e8369
+
+      - start_time: 2:00
+        end_time: 3:00
+        meridiem: AM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Generic
+            class: genre-0d395f
+
+      - start_time: 3:00
+        end_time: 4:00
+        meridiem: AM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Rap
+            class: genre-880808
 
   - day: Sunday
     schedule:
@@ -932,7 +1151,9 @@ wrmc_schedule_items:
         end_time: 11:00
         meridiem: AM
         title: Experimental Jetset Companion
-        genre: Electronic
+        genres:
+          - name: Electronic
+            class: genre-b7c706
 
       - start_time: 2:00
         end_time: 3:00
@@ -940,14 +1161,36 @@ wrmc_schedule_items:
         title: Hot Chocolate on the Bus
         hosts: Adam Yauch
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        genre: Electronic
+        genres:
+          - name: Electronic
+            class: genre-b7c706
+
+      - start_time: 12:00
+        end_time: 1:00
+        meridiem: AM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Talk
+            class: genre-000000
+
+      - start_time: 1:00
+        end_time: 2:00
+        meridiem: AM
+        title: Mr. and Mrs. Send It
+        hosts: Sid Vicious
+        genres:
+          - name: Rap
+            class: genre-880808
 
       - start_time: 2:00
         end_time: 3:00
         meridiem: AM
         title: I Love Rock and Roll
         hosts: Matt Jennings and Tom
-        genre: Blues
+        genres:
+          - name: Blues
+            class: genre-1d6ca6
 
 playlist_items:
   - artist: Mk.gee
@@ -1032,6 +1275,52 @@ top_thirty:
     song: Still
   - artist: CZARFACE
     song: CZARTIFICIAL INTELLIGENCE
+
+all_genres:
+  - name: Blues
+    class: genre-1d6ca6
+  - name: Country
+    class: genre-a16b06
+  - name: Experimental
+    class: genre-c425de
+  - name: Funk
+    class: genre-ee3ff
+  - name: Indie
+    class: genre-916b6b
+  - name: Pop
+    class: genre-ff4d4d
+  - name: Punk
+    class: genre-044882
+  - name: R&B/Soul
+    class: genre-8fceff
+  - name: Rock
+    class: genre-048228
+  - name: World
+    class: genre-47f5ec
+  - name: Classical
+    class: genre-3e8369
+  - name: Electronic
+    class: genre-b7c706
+  - name: Folk
+    class: genre-f29407
+  - name: Jazz
+    class: genre-13e9bf
+  - name: Heavy Metal
+    class: genre-6b6b6b
+  - name: Hip Hop
+    class: genre-01777f
+  - name: Kpop
+    class: genre-8807d7
+  - name: Latin
+    class: genre-85eb35
+  - name: Reggae
+    class: genre-f2cc46
+  - name: News
+    class: genre-827373
+  - name: Talk
+    class: genre-000000
+  - name: Rap
+    class: genre-880808
 
 catalog_search_items:
   requirements:

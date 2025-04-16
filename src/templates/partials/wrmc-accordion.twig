@@ -11,13 +11,13 @@
 
       <div class="wrmc-accordion-item {{"now"|date('l') == schedule_item.day ? "is-toggled" : (toggle_all ? "is-toggled" : "")}} js-accordion-item-{{id}}">
         <a
-            href="#wrmc-accordion-item-label-{{id}}"
-            class="wrmc-accordion-item__link"
-            data-toggle-target=".js-accordion-item-{{id}}"
-            aria-expanded="{{"now"|date('l') == schedule_item.day ? "true" : (toggle_all ? "true" : "false")}}"
-            aria-controls="wrmc-accordion-content-{{id}}"
-            aria-labelledby="wrmc-accordion-item-label-{{id}}"
-            role="tab"
+          href="#wrmc-accordion-item-label-{{id}}"
+          class="wrmc-accordion-item__link"
+          data-toggle-target=".js-accordion-item-{{id}}"
+          aria-expanded="{{"now"|date('l') == schedule_item.day ? "true" : (toggle_all ? "true" : "false")}}"
+          aria-controls="wrmc-accordion-content-{{id}}"
+          aria-labelledby="wrmc-accordion-item-label-{{id}}"
+          role="tab"
           >
           <h2 class="wrmc-accordion-item__title">
             <span id="wrmc-accordion-item-label-{{id}}">{{schedule_item.day}}</span>
@@ -30,15 +30,7 @@
           <ul class="wrmc-accordion-item__content-list">
             {% for item in schedule_item.schedule %}
               <li class="wrmc-accordion-item__list-item">
-                {% set current_genre = '' %}
-                {% for genre in genres %}
-                  {% if genre.genre == item.genre %}
-                    {% set current_genre = genre.genre_class %}
-                  {% endif %}
-                {% endfor %}
-                {% include 'partials/wrmc-show-teaser.twig' with {
-                  genre: current_genre
-                } %}
+                {% include 'partials/wrmc-show-teaser.twig' %}
               </li>
             {% endfor %}
           </ul>

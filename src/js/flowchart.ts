@@ -1,4 +1,4 @@
-import { animate, createSpring } from 'animejs';
+import anime from 'animejs';
 
 import { $, $$, on, off, removeClass, addClass, hasClass } from './utils/dom';
 import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
@@ -139,9 +139,9 @@ class Flowchart {
 
     const duration = PREFERS_REDUCED_MOTION ? 0 : 400;
 
-    animate([target], {
+    anime({
+      targets: [target],
       translateX: [-40, 0],
-      ease: 'outElastic(1, 0.5)',
       duration
     });
 
@@ -155,8 +155,11 @@ class Flowchart {
     const scrollPosition = window.pageYOffset;
     const scrollTop = rect.top + scrollPosition - window.innerHeight / 2;
 
-    animate([document.documentElement, document.body], {
+    anime({
+      targets: [document.documentElement, document.body],
       scrollTop,
+      easing: 'easeInCubic',
+      elasticity: 500,
       duration
     });
   };
