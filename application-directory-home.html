@@ -206,38 +206,217 @@
       </svg>
     </div>
     <div class="site-container">
-      <header class="miis-header">
-        <div class="miis-header__container">
-          <div class="miis-header__brand">
-            <a href="">
-              <img src="images/miis-shield.svg" class="miis-header__shield" alt="Logo for Middlebury Institute of International Studies at Monterey">
-              <img src="images/miis-wordmark.svg" class="miis-header__wordmark" alt="Middlebury Institute of International Studies at Monterey">
-              <span class="sr-only">Middlebury Institute of International Studies at Monterey</span>
+      <header class="app-header">
+        <div class="app-header__wrap app-header__wrap--main">
+          <div class="app-header__logo">
+            <a href="#">
+              <img src="images/midd-shield.svg" srcset="images/midd-shield.svg 67w" sizes="(min-width: 1024px) 67px, 44px" alt="Middlebury Shield" />
             </a>
+          </div>
+          <p class="app-header__title" id="midd-app-header-label">
+            <a href="" class="app-header__link">Directory</a>
+        </div>
+        <div class="app-header__secondary">
+          <div class="app-header__wrap">
+            <div class="app-header__dropdown">
+              <button class="app-header__button d-lg-none" data-toggle-target=".js-app-nav" data-toggle-group="app-header" aria-label="Open navigation">
+                <svg class="icon toggled-hide " focusable="false" aria-hidden="true">
+                  <use xlink:href="#icon-bars">
+                </svg>
+                <svg class="icon toggled-show " focusable="false" aria-hidden="true">
+                  <use xlink:href="#icon-times">
+                </svg>
+                <span class="ml-1">Menu</span>
+              </button>
+              <div class="app-header__nav js-app-nav">
+                <nav class="nav" aria-label="Course Hub Navigation">
+                  <ul class="nav__list">
+                    <li class="nav__item nav__item--active ">
+                      <a href="" class="nav__link nav__link--active          "> Search the Directory </a>
+                    </li>
+                    <li class="nav__item ">
+                      <a href="" class="nav__link          "> Change Information </a>
+                    </li>
+                    <li class="nav__item ">
+                      <a href="" class="nav__link          "> Upload Photo </a>
+                    </li>
+                    <li class="nav__item ">
+                      <a href="" class="nav__link          "> Class Photo Roster (Faculty Only) </a>
+                    </li>
+                    <li class="nav__item ">
+                      <a href="" class="nav__link          "> Help </a>
+                    </li>
+                    <li class="nav__item ">
+                      <a href="" class="nav__link          "> Log In </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
           </div>
         </div>
       </header>
       <main class="main" id="midd-main" aria-labelledby="midd-page-header-label">
         <div class="container px-0">
-          <header class="page-header">
+          <header class="page-header page-header--app">
             <div class="page-header__main">
               <div class="page-header__content">
                 <nav class="breadcrumb " aria-label="Breadcrumb">
                   <ol class="breadcrumb__list">
                     <li class="breadcrumb__item">
-                      <a href="" class="breadcrumb__link">Middlebury Institute of International Studies at Monterey</a>
+                      <a href="" class="breadcrumb__link">Middlebury</a>
                     </li>
                     <li class="breadcrumb__item">
-                      <a href="" class="breadcrumb__link">Application</a>
+                      <a href="" class="breadcrumb__link">Directory</a>
                     </li>
                   </ol>
                 </nav>
-                <h1 class="page-header__title" id="midd-page-header-label">Application</h1>
+                <h1 class="page-header__title" id="midd-page-header-label">Search the Directory</h1>
               </div>
             </div>
           </header>
         </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 offset-md-1 col-lg-3 offset-lg-0 mb-4">
+            </div>
+            <div class="col-md-10 offset-md-1 col-lg-2 offset-lg-0 order-lg-last mb-4 pl-lg-0">
+              <div data-sticky data-digest-nav></div>
+            </div>
+            <div class="col-md-10 offset-md-1 col-lg-7 offset-lg-0">
+              <div class="paragraphs">
+                <div class="paragraph--text typography" data-digest-content>
+                  <div id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_pnlSimpleForm" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'ctl00_ctl00_PageContent_PageContent_middDirectoryForm_btnSimpleSearch')">
+                    <h2 class="mt-0">Basic Search</h2>
+                    <div class="row row--sm-gutters">
+                      <div class="col-md-6 col-xl-8 mb-0 form-group">
+                        <label for="txtSimpleSearch">Search the Directory</label>
+                        <input name="ctl00$ctl00$PageContent$PageContent$middDirectoryForm$txtSimpleSearch" type="text" id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_txtSimpleSearch" class="form-control" autofocus="autofocus">
+                      </div>
+                      <div class="col-12 col-xl-4 mb-0 form-group d-flex align-items-end justify-content-end">
+                        <input type="submit" name="ctl00$ctl00$PageContent$PageContent$middDirectoryForm$btnSimpleSearch" value="Search" id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_btnSimpleSearch" class="button button--primary d-block d-md-inline-block">
+                      </div>
+                    </div>
+                  </div>
+                  <div id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_pnlForm" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'ctl00_ctl00_PageContent_PageContent_middDirectoryForm_btnSearch')">
+                    <h2>Advanced Search</h2>
+                    <div class="row row--sm-gutters">
+                      <div class="col-md-6 col-xl-4 form-group">
+                        <label for="txtLastName">Last Name</label>
+                        <input name="ctl00$ctl00$PageContent$PageContent$middDirectoryForm$txtLastName" type="text" id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_txtLastName" class="form-control">
+                        <div data-lastpass-icon-root="" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div>
+                      </div>
+                      <div class="col-md-6 col-xl-4 form-group">
+                        <label id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_Label1" for="txtFirstName">First Name</label>
+                        <input name="ctl00$ctl00$PageContent$PageContent$middDirectoryForm$txtFirstName" type="text" id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_txtFirstName" class="form-control">
+                      </div>
+                      <div class="col-md-6 col-xl-4 form-group">
+                        <label id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_Label2" for="txtSamaccountname">E-mail</label>
+                        <input name="ctl00$ctl00$PageContent$PageContent$middDirectoryForm$txtSamaccountname" type="text" id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_txtSamaccountname" class="form-control">
+                      </div>
+                      <div class="col-md-6 col-xl-4 form-group">
+                        <label id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_Label3" for="txtTelephonenumber">Telephone</label>
+                        <input name="ctl00$ctl00$PageContent$PageContent$middDirectoryForm$txtTelephonenumber" type="text" id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_txtTelephonenumber" class="form-control">
+                      </div>
+                      <div class="col-md-6 col-xl-4 form-group">
+                        <label id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_Label4" for="txtExtensionattribute3">Address</label>
+                        <input name="ctl00$ctl00$PageContent$PageContent$middDirectoryForm$txtExtensionattribute3" type="text" id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_txtExtensionattribute3" class="form-control">
+                      </div>
+                      <div class="col-md-6 col-xl-4 form-group">
+                        <label id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_Label5" for="txtExtensionattribute4">Location</label>
+                        <input name="ctl00$ctl00$PageContent$PageContent$middDirectoryForm$txtExtensionattribute4" type="text" id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_txtExtensionattribute4" class="form-control">
+                      </div>
+                      <div class="col-md-6 col-xl-4 form-group">
+                        <label for="txtTitle">Job Title</label>
+                        <input name="ctl00$ctl00$PageContent$PageContent$middDirectoryForm$txtTitle" type="text" id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_txtTitle" class="form-control">
+                      </div>
+                      <div class="col-md-6 col-xl-4 form-group">
+                        <label for="ddlDepartment">Department (all schools)</label>
+                        <select name="ctl00$ctl00$PageContent$PageContent$middDirectoryForm$ddlDepartment" id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_ddlDepartment" class="form-control">
+                          <option value="">Any Department</option>
+                          <option value="(IA)Graduate School of International Policy and Management">(IA)Graduate School of International Policy and Management</option>
+                          <option value="(IA)GSTILE-Language Studies (MIIS)">(IA)GSTILE-Language Studies (MIIS)</option>
+                          <option value="Abenaki School">Abenaki School</option>
+                          <option value="Admin Online">Admin Online</option>
+                          <option value="Administrators">Administrators</option>
+                          <option value="Advancement">Advancement</option>
+                          <option value="Alumni and Parent Programs">Alumni and Parent Programs</option>
+                          <option value="American Studies">American Studies</option>
+                          <option value="Anderson Freeman Center">Anderson Freeman Center</option>
+                          <option value="Annual Giving">Annual Giving</option>
+                        </select>
+                      </div>
+                      <div class="col-12 col-xl-4 form-group d-flex align-items-end justify-content-end">
+                        <input type="submit" name="ctl00$ctl00$PageContent$PageContent$middDirectoryForm$btnSearch" value="Search" id="ctl00_ctl00_PageContent_PageContent_middDirectoryForm_btnSearch" class="button button--primary d-block d-md-inline-block">
+                      </div>
+                    </div>
+                  </div>
+                  <h2>Responsible Use</h2>
+                  <p>Information obtained from the Middlebury Directory may not be used to provide addresses for mailings to students, faculty or staff. Any solicitation of business, information, contributions or other response from individuals listed in this directory by email, mail, telephone, or other means is forbidden. Any unauthorized or inappropriate use of the photos or graphics contained within is forbidden.</p>
+                  <h2>Updating Your Information</h2>
+                  <p>Updates to the Directory for faculty and staff are made through <a href="mailto:hr@middlebury.edu">Human Resources</a>. Updates for Middlebury College students are made through their Dean's office. Middlebury Institute students should contact the <a href="mailto:records@middlebury.edu">Records Office</a>. These changes will be inputted into the master records, from which the Directory pulls its information. Please note that changes to personal information can take approximately 7 days for those updates to be reflected in the Directory.</p>
+                  <h2>Have a Question</h2>
+                  <p>Faculty and Staff may contact <a href="mailto:hr@middlebury.edu">Human Resources</a> with questions about updating their office or phone information.</p>
+                  <p>If you have questions about the Telephone or Voicemail system, please read the <a href="http://go.middlebury.edu/phone">Faculty &amp; Staff quick Telephone &amp; Voicemail Reference</a>.</p>
+                  <p>Technical questions regarding the Directory should be directed to Web Services at: <a href="mailto:webmaster@middlebury.edu">webmaster@middlebury.edu</a>.</p>
+                  <h2>Contacting members of the Middlebury Institute Community</h2>
+                  <p>When addressing correspondence, please use the Middlebury Institute's central mailroom address for all employees.</p>
+                  <address> Middlebury Institute of International Studies at Monterey<br> Attn: Name or Department<br> 460 Pierce Street<br> Monterey, CA 93940 </address>
+                  <p>or</p>
+                  <address> CNS WDC Office<br> James Martin Center for Nonproliferation Studies<br> Attn: Name or Department<br> 1400 K Street, NW, Suite 1225<br> Washington, DC 20005 </address>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
+      <nav class="midd-footer">
+        <h2 class="sr-only"> Additional Navigation </h2>
+        <div class="container px-0">
+          <div class="col-lg-3">
+            <div class="mb-4 mb-lg-0">
+              <a href="https://www.middlebury.edu">
+                <img src="images/middlebury-logo-white.svg" alt="Middlebury" width="195" height="71" />
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <ul class="midd-footer__list">
+              <li class="midd-footer__item">
+                <a href="https://www.middlebury.edu/about" class="midd-footer__link"> About Middlebury </a>
+              </li>
+              <li class="midd-footer__item">
+                <a href="https://www.middlebury.edu/giving" class="midd-footer__link"> Giving </a>
+              </li>
+              <li class="midd-footer__item">
+                <a href="https://www.middlebury.edu/offices/business/hr/jobseeker" class="midd-footer__link"> Employment </a>
+              </li>
+              <li class="midd-footer__item">
+                <a href="https://www.middlebury.edu/office/" class="midd-footer__link"> Offices and Services </a>
+              </li>
+              <li class="midd-footer__item">
+                <a href="https://www.middlebury.edu/about/copyright" class="midd-footer__link"> Copyright </a>
+              </li>
+              <li class="midd-footer__item">
+                <a href="https://www.middlebury.edu/about/privacy" class="midd-footer__link"> Privacy </a>
+              </li>
+              <li class="midd-footer__item">
+                <a href="https://www.middlebury.edu/emergency-response" class="midd-footer__link"> Emergency </a>
+              </li>
+              <li class="midd-footer__item">
+                <a href="#" class="midd-footer__link"> Site-Editor login </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <a href="#midd-pagetop" class="button button--sm to-top-btn js-to-top-btn">
+          <svg class="icon mb-1 " focusable="false" aria-hidden="true">
+            <use xlink:href="#icon-caret-up">
+          </svg>
+          <span class="text-caps d-block">
+            <span class="sr-only">Back to</span> Top </span>
+        </a>
+      </nav>
     </div>
     <script src="js/main.bundle.js" async></script>
   </body>
