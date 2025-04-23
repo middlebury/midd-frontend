@@ -925,7 +925,7 @@ wrmc_schedule_items:
         hosts: Sid Vicious
         genres:
           - name: Funk
-            class: genre-ee3ff
+            class: genre-0ee3ff
           - name: Country
             class: genre-a16b06
 
@@ -1115,7 +1115,7 @@ wrmc_schedule_items:
         title: Experimental Jetset Companion
         genres:
           - name: Funk
-            class: genre-ee3ff
+            class: genre-0ee3ff
 
       - start_time: 2:00
         end_time: 3:00
@@ -1284,7 +1284,7 @@ all_genres:
   - name: Experimental
     class: genre-c425de
   - name: Funk
-    class: genre-ee3ff
+    class: genre-0ee3ff
   - name: Indie
     class: genre-916b6b
   - name: Pop
