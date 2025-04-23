@@ -43,10 +43,24 @@
     text-align: left;
     padding-top: variables.$spacing-2;
     padding-bottom: variables.$spacing-2;
+    background-color: variables.$white;
 
     @include breakpoints.breakpoint(md) {
       display: grid;
       white-space: nowrap;
+      position: sticky;
+      transition: top 0.4s ease-in-out;
+      top: 0;
+    }
+
+    &.headroom--pinned {
+      @include breakpoints.breakpoint(md) {
+        top: 73px;
+      }
+
+      @include breakpoints.breakpoint(xl) {
+        top: 132px;
+      }
     }
   }
 
