@@ -11,7 +11,7 @@
 
 <div class="paragraph--curriculum">
   <ul class="curriculum__rows" aria-label="curriculum course list">
-    <div class="curriculum__row {{row_class}} curriculum__row--header js-headroom" aria-hidden="true">
+    <div class="curriculum__row {{row_class}} curriculum__row--header js-curriculum-headroom" aria-hidden="true">
         <div class="curriculum__cell">Course</div>
       {% for label in miis_curriculum_header_labels|slice(0, no_of_sem_columns) %}
         <div class="curriculum__cell">{{label}}</div>
