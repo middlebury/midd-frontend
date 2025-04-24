@@ -26,13 +26,18 @@ $app-header-bp: lg;
 .app-header__wrap--main {
   flex-direction: row-reverse;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .app-header__logo {
   position: relative;
   top: 1rem;
+  width: 44px;
   z-index: 2;
+
+  @include breakpoints.breakpoint(lg) {
+    width: 67px;
+  }
 
   @media print {
     float: right;
@@ -41,6 +46,8 @@ $app-header-bp: lg;
 
 .app-header__title {
   @include type.h2;
+  @include grid.make-col(9);
+  margin: auto 0;
 }
 
 .app-header__link {
