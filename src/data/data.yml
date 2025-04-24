@@ -1410,123 +1410,164 @@ catalog_search_items:
       value: DC
 
 miis_curriculum_header_labels:
-  - Fall 25
-  - Spring 26
-  - Fall 26
-  - Spring 27
+  - FA25
+  - SP26
+  - FA26
+  - SP27
 
 miis_curriculum:
-  - course_number: ENPG 8503
-    title: Research Strategies for Environmental Policy
+  - course_number: GGPD 8500
+    title: Policy & Data Analytics (3 Credits)
     semester:
-      - label: Fall 25
-        value: false
-      - label: Spring 26
+      - label: FA25
         value: true
-      - label: Fall 26
-        value: false
-      - label: Spring 27
+      - label: SP26
+        value: true
+      - label: FA26
+        value: true
+      - label: SP27
         value: true
     content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    terms: <p>Spring 2026, Spring 2027</p>
 
-  - course_number: ENPG 8542
-    title: Environmental & Natural Resource Economics
+  - course_number: GGPD 8506
+    title: International Politics & Development (3 Credits)
     semester:
-      - label: Fall 25
-        value: true
-      - label: Spring 26
+      - label: FA25
         value: false
-      - label: Fall 26
+      - label: SP26
         value: true
-      - label: Spring 27
+      - label: FA26
         value: false
+      - label: SP27
+        value: true
     content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    terms: <p>Fall 2025, Fall 2026</p>
-    requirements: <p>DED, SCI</p>
 
-  - course_number: TBD
-    title: ICC Course
+  - course_number: GGPD 8508
+    title: Power, Social Change & Orgs (3 Credits)
     semester:
-      - label: Fall 25
-        value: false
-      - label: Spring 26
-        value: j-term
-      - label: Fall 26
-        value: false
-      - label: Spring 27
-        value: j-term
-    content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    terms: <p>Spring 2026 (j-term), Spring 2027 (j-term)</p>
-
-  - course_number: ENPG 8506
-    title: Public Policy and the Environment
-    semester:
-      - label: Fall 25
+      - label: FA25
         value: true
-      - label: Spring 26
+      - label: SP26
         value: false
-      - label: Fall 26
-        value: true
-      - label: Spring 27
+      - label: FA26
+        value: false
+      - label: SP27
         value: false
     content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    terms: <p>Fall 2025, Fall 2026</p>
-    requirements: <p>DED, SCI</p>
 
-  - course_number: ENPG 8507
-    title: Governing the Global Commons
+  - course_number: GGPD 8515
+    title: Trade Policy & Institutions (3 Credits)
     semester:
-      - label: Fall 25
+      - label: FA25
         value: true
-      - label: Spring 26
+      - label: SP26
         value: false
-      - label: Fall 26
+      - label: FA26
         value: true
-      - label: Spring 27
+      - label: SP27
         value: false
     content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    terms: <p>Fall 2025, Fall 2026</p>
-    requirements: <p>DED, SCI</p>
 
-  - course_number: ENPG 8591
-    title: Applied Conservation Science & Policy
+  - course_number: GGPD 8519
+    title: Org. Development & Leadership (3 Credits)
     semester:
-      - label: Fall 25
-        value: true
-      - label: Spring 26
+      - label: FA25
         value: false
-      - label: Fall 26
+      - label: SP26
         value: true
-      - label: Spring 27
+      - label: FA26
         value: false
-    content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    terms: <p>Fall 2025, Fall 2026</p>
-
-  - course_number: ENPG 8525
-    title: Environmental Leadership
-    semester:
-      - label: Fall 25
-        value: false
-      - label: Spring 26
-        value: j-term
-      - label: Fall 26
-        value: false
-      - label: Spring 27
-        value: j-term
-    content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    terms: <p>Spring 2026 (j-term), Spring 2027 (j-term)</p>
-
-  - course_number: TBD
-    title: PSS-Independent Practicum
-    semester:
-      - label: Fall 25
-        value: true
-      - label: Spring 26
-        value: true
-      - label: Fall 26
-        value: true
-      - label: Spring 27
+      - label: SP27
         value: true
     content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    terms: <p>Fall 2025, Spring 2026, Fall 2026, Spring 2027</p>
+
+  - course_number: GGPD 8521
+    title: International Finance (3 Credits)
+    semester:
+      - label: FA25
+        value: false
+      - label: SP26
+        value: true
+      - label: FA26
+        value: false
+      - label: SP27
+        value: false
+    content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+  - course_number: GGPD 8529
+    title: Dev Theory & Practice (3 Credits)
+    semester:
+      - label: FA25
+        value: true
+      - label: SP26
+        value: false
+      - label: FA26
+        value: true
+      - label: SP27
+        value: false
+    content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+  - course_number: GGPD 8539
+    title: Import/Export & Trade Law Compliance (3 Credits)
+    semester:
+      - label: FA25
+        value: false
+      - label: SP26
+        value: true
+      - label: FA26
+        value: false
+      - label: SP27
+        value: true
+    content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+  - course_number: GGPD 8540
+    title: Trade Law/Dispute Resolution (3 Credits)
+    semester:
+      - label: FA25
+        value: true
+      - label: SP26
+        value: false
+      - label: FA26
+        value: true
+      - label: SP27
+        value: false
+    content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+  - course_number: GGPD 8565
+    title: Intro to Network Analysis (3 Credits)
+    semester:
+      - label: FA25
+        value: true
+      - label: SP26
+        value: true
+      - label: FA26
+        value: true
+      - label: SP27
+        value: true
+    content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+  - course_number: GGPD 8569
+    title: Economics of Inequality (3 Credits)
+    semester:
+      - label: FA25
+        value: true
+      - label: SP26
+        value: false
+      - label: FA26
+        value: true
+      - label: SP27
+        value: false
+    content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+  - course_number: GGPD 8570
+    title: Program Management & Implementation (3 Credits)
+    semester:
+      - label: FA25
+        value: true
+      - label: SP26
+        value: false
+      - label: FA26
+        value: true
+      - label: SP27
+        value: false
+    content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>

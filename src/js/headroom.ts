@@ -1,10 +1,12 @@
 import Headroom from 'headroom.js';
 
-import { $ } from './utils/dom';
+import { $, $$ } from './utils/dom';
 
 const headerElem = $('.js-headroom');
 
-let offset;
+const curriculumHeaderElems = $$('.js-curriculum-headroom');
+
+let offset: number;
 
 if (headerElem && !$('#toolbar-administration')) {
   offset = headerElem.offsetHeight;
@@ -32,5 +34,19 @@ if (headerElem && !$('#toolbar-administration')) {
     setTimeout(function () {
       headerInstance.unpin();
     }, 1000);
+  }
+
+  if (curriculumHeaderElems.length > 0) {
+    curriculumHeaderElems.forEach((curriculumHeaderElem) => {
+      const curriculumHeaderInstance = new Headroom(curriculumHeaderElem, {
+        offset,
+        tolerance: {
+          up: 10,
+          down: 0
+        }
+      });
+
+      curriculumHeaderInstance.init();
+    });
   }
 }
