@@ -1,7 +1,6 @@
 {% set j_term_badge = '<span class="badge badge--primary badge--no-outline" aria-hidden="true">j-term</span>' %}
 {% set row_class = '' %}
-{# {% set no_of_sem_columns = random([2, 3, 4]) %} #}
-{% set no_of_sem_columns = 4 %}
+{% set no_of_sem_columns = random([2, 3, 4]) %}
 
 {% if miis_curriculum_header_labels|slice(0, no_of_sem_columns)|length == 3 %}
   {% set row_class = 'curriculum__row--four-column' %}
