@@ -45,9 +45,10 @@ $app-header-bp: lg;
 }
 
 .app-header__title {
+  margin: auto 0;
+
   @include type.h2;
   @include grid.make-col(9);
-  margin: auto 0;
 }
 
 .app-header__link {
