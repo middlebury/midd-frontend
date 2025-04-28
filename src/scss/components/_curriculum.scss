@@ -51,6 +51,7 @@
       position: sticky;
       transition: top 0.4s ease-in-out;
       top: 0;
+      z-index: variables.$z-index-curriculum-header;
     }
 
     &.headroom--pinned {
