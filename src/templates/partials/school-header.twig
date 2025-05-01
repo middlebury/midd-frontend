@@ -36,17 +36,38 @@
                   <li class="school-nav__item">
 
                     {% set active = loop.index == 3 %}
+                    {% set first = loop.index == 1 %}
 
                     <a href="" class="school-nav__link school-nav__link--top{% if active %} school-nav__link--active{% endif %}">{{item.text}}</a>
 
                     {% if item.items %}
-                      <ul class="school-nav__list school-nav__list--sub {% if item.items.length > 8 %} school-nav__list--cols{% endif %}">
-                        {% for subitem in item.items %}
-                          <li class="school-nav__item school-nav__item--sub">
-                            <a href="" class="school-nav__link school-nav__link--sub">{{subitem.text}}</a>
-                          </li>
-                        {% endfor %}
-                      </ul>
+                      {% if item.text == "Admissions" %}
+                        <div class="school-nav__list school-nav__list--sub school-nav__list--with-buttons">
+                          <ul class="">
+                            {% for subitem in item.items %}
+                              {% if subitem.text %}
+                                <li class="school-nav__item school-nav__item--sub">
+                                  <a href="" class="school-nav__link school-nav__link--sub">{{subitem.text}}</a>
+                                </li>
+                              {% endif %}
+                            {% endfor %}
+                          </ul>
+
+                          <div>
+                            {% for button in item.buttons %}
+                              <a class="button button--outline button--primary">{{button.text}}</a>
+                            {% endfor %}
+                          </div>
+                        </div>
+                      {% else %}
+                        <ul class="school-nav__list school-nav__list--sub {% if item.items.length > 8 %} school-nav__list--cols{% endif %} {% if first %}school-nav__list--with-buttons{% endif %}">
+                          {% for subitem in item.items %}
+                            <li class="school-nav__item school-nav__item--sub">
+                              <a href="" class="school-nav__link school-nav__link--sub">{{subitem.text}}</a>
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
                     {% endif %}
 
                   </li>

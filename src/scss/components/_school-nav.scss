@@ -65,6 +65,14 @@
   min-width: 300px;
 }
 
+.school-nav__list--with-buttons {
+  display: flex;
+
+  .school-nav__link {
+    width: max-content;
+  }
+}
+
 .school-nav__list--cols {
   column-count: 2;
   min-width: 500px;
