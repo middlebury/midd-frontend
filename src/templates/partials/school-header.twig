@@ -7,14 +7,14 @@
       <div class="school-header__logo">
         {% if is_front %}
           <h1 class="school-header__title">
-          {% endif %}
+        {% endif %}
           <a href="">
             {% block school_logo %}
               <img src="images/schools-abroad-logo.svg" srcset="images/schools-abroad-logo.svg 186w" sizes="(min-width: 1280px) 186px, 124px" alt="Logo for Middlebury C.V. Starr Schools Abroad"/>
               <span class="sr-only">Middlebury C.V. Starr Schools Abroad</span>
             {% endblock %}
           </a>
-          {% if is_front %}
+        {% if is_front %}
           </h1>
         {% endif %}
       </div>
@@ -43,7 +43,7 @@
                     {% if item.items %}
                       {% if item.text == "Admissions" %}
                         <div class="school-nav__list school-nav__list--sub school-nav__list--with-buttons">
-                          <ul class="">
+                          <ul class="school-nav__list--with-buttons__col">
                             {% for subitem in item.items %}
                               {% if subitem.text %}
                                 <li class="school-nav__item school-nav__item--sub">
@@ -53,14 +53,14 @@
                             {% endfor %}
                           </ul>
 
-                          <div>
+                          <div class="school-nav__list--with-buttons__col">
                             {% for button in item.buttons %}
-                              <a class="button button--outline button--primary">{{button.text}}</a>
+                              <a class="button button--outline button--primary mt-2 d-block">{{button.text}}</a>
                             {% endfor %}
                           </div>
                         </div>
                       {% else %}
-                        <ul class="school-nav__list school-nav__list--sub {% if item.items.length > 8 %} school-nav__list--cols{% endif %} {% if first %}school-nav__list--with-buttons{% endif %}">
+                        <ul class="school-nav__list school-nav__list--sub {% if item.items.length > 8 %} school-nav__list--cols{% endif %}">
                           {% for subitem in item.items %}
                             <li class="school-nav__item school-nav__item--sub">
                               <a href="" class="school-nav__link school-nav__link--sub">{{subitem.text}}</a>
