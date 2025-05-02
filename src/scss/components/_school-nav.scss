@@ -78,9 +78,10 @@
   flex: 1 1 0;
 
   &:last-child {
+    height: fit-content;
     padding-left: variables.$spacing-3;
     margin-left: variables.$spacing-3;
-    // border-left: 1px solid variables.$gray-light;
+    border-left: 1px solid variables.$gray-light;
   }
 }
 
