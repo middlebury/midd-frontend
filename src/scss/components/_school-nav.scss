@@ -67,6 +67,7 @@
 
 .school-nav__list--with-buttons {
   display: flex;
+  flex-direction: column;
   min-width: 500px;
 
   .school-nav__link {
@@ -75,15 +76,18 @@
 }
 
 .school-nav__list--with-buttons__col {
-  flex: 1 1 0;
+  // flex: 1 1 0;
 
   &:last-child {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: variables.$spacing-3;
-    margin-left: variables.$spacing-3;
-    border-left: 1px solid variables.$gray-light;
+    // height: fit-content;
+    // padding-left: variables.$spacing-3;
+    // margin-left: variables.$spacing-3;
+    border-top: 1px solid variables.$gray-light;
+  }
+
+  .button {
+    flex: 1 1 0;
   }
 }
 
