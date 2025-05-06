@@ -80,7 +80,7 @@
   },
   "dependencies": {
     "anchor-js": "^5.0.0",
-    "animejs": "^4.0.0",
+    "animejs": "^4.0.2",
     "chart.js": "^4.4.7",
     "clamp-js-main": "^0.11.6",
     "focus-within-polyfill": "^5.2.1",
