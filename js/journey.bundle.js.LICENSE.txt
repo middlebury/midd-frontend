@@ -7,3 +7,12 @@
 /*! lozad.js - v1.16.0 - 2020-09-06
 * https://github.com/ApoorvSaxena/lozad.js
 * Copyright (c) 2020 Apoorv Saxena; Licensed MIT */
+
+/**
+ * anime.js - ESM
+ * @version v4.0.2
+ * @author Julian Garnier
+ * @license MIT
+ * @copyright (c) 2025 Julian Garnier
+ * @see https://animejs.com
+ */
