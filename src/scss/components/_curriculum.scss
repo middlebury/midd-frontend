@@ -35,15 +35,24 @@
     }
   }
 
+  &.curriculum__row--one-column {
+    @include breakpoints.breakpoint(md) {
+      grid-template-columns: 1fr;
+    }
+  }
+
   &.curriculum__row--header {
     display: none;
     border-bottom: 5px solid variables.$border-color;
     font-size: variables.$typescale-2;
     font-weight: variables.$font-weight-semibold;
     text-align: left;
-    padding-top: variables.$spacing-2;
-    padding-bottom: variables.$spacing-2;
     background-color: variables.$white;
+
+    .curriculum__cell {
+      padding-top: variables.$spacing-2;
+      padding-bottom: variables.$spacing-2;
+    }
 
     @include breakpoints.breakpoint(md) {
       display: grid;
@@ -62,6 +71,10 @@
       @include breakpoints.breakpoint(xl) {
         top: 131px;
       }
+    }
+
+    &.curriculum__row--one-column {
+      padding: 0;
     }
   }
 

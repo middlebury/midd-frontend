@@ -1410,6 +1410,7 @@ catalog_search_items:
       value: DC
 
 miis_curriculum_header_labels:
+  - Course
   - FA25
   - SP26
   - FA26

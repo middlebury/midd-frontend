@@ -1,21 +1,27 @@
 {% set j_term_badge = '<span class="badge badge--primary badge--no-outline" aria-hidden="true">j-term</span>' %}
 {% set row_class = '' %}
-{% set no_of_sem_columns = random([2, 3, 4]) %}
+{% set no_of_columns = random([1]) %}
+{% set show_labels = false %}
 
-{% if miis_curriculum_header_labels|slice(0, no_of_sem_columns)|length == 3 %}
+{% if no_of_columns == 4 %}
   {% set row_class = 'curriculum__row--four-column' %}
-{% elseif miis_curriculum_header_labels|slice(0, no_of_sem_columns)|length == 2 %}
+{% elseif no_of_columns == 3 %}
   {% set row_class = 'curriculum__row--three-column' %}
+{% elseif no_of_columns == 1 %}
+  {% set row_class = 'curriculum__row--one-column' %}
 {% endif %}
 
 <div class="paragraph--curriculum">
   <ul class="curriculum__rows" aria-label="curriculum course list">
-    <div class="curriculum__row {{row_class}} curriculum__row--header js-curriculum-headroom" aria-hidden="true">
-        <div class="curriculum__cell">Course</div>
-      {% for label in miis_curriculum_header_labels|slice(0, no_of_sem_columns) %}
-        <div class="curriculum__cell">{{label}}</div>
-      {% endfor %}
-    </div>
+    {% if show_labels %}
+      <div class="curriculum__row {{row_class}} curriculum__row--header js-curriculum-headroom" aria-hidden="true">
+        <div class="curriculum__cell">{{miis_curriculum_header_labels[0]}}</div>
+
+        {% for label in miis_curriculum_header_labels|slice(1, no_of_columns - 1) %}
+          <div class="curriculum__cell">{{label}}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
 
     {% for item in miis_curriculum %}
 
@@ -31,27 +37,32 @@
             aria-controls="midd-accordion-content-{{id}}"
             aria-labelledby="midd-accordion-item-label-{{id}}"
           >
-            <span class="sr-only">course number and title</span>
+            {% if title %}
+              <span class="sr-only">{{miis_curriculum_header_labels[0]}}</span>
+            {% endif %}
+            
             {% include 'partials/icon.twig' with { name: 'caret-right', class: 'accordion-item__icon mx-2' } %}
             <h3 class="curriculum__cell-title" id="midd-accordion-item-label-{{id}}">{{item.course_number}}: {{item.title}}</h3>
           </a>
-            
-          <dl class="f2 pt-3 pl-5 d-md-none curriculum__table-sm-data">
-            <dt class="font-semibold">Offered in:</dt>
-            <dd>
-              {% for label in item.semester|slice(0, no_of_sem_columns) %}
-                {% if label.value %}
-                  {% if label.value == 'j-term' %}
-                    <span>{{label.label}} ({{label.value}})</span>
-                  {% else %}
-                    <span>{{label.label}}</span>
+          
+          {% if item.semester|slice(0, no_of_columns - 1) != 0 %}
+            <dl class="f2 pt-3 pl-5 d-md-none curriculum__table-sm-data">
+              <dt class="font-semibold">Offered in:</dt>
+              <dd>
+                {% for label in item.semester|slice(0, no_of_columns - 1) %}
+                  {% if label.value %}
+                    {% if label.value == 'j-term' %}
+                      <span>{{label.label}} ({{label.value}})</span>
+                    {% else %}
+                      <span>{{label.label}}</span>
+                    {% endif %}
                   {% endif %}
-                {% endif %}
-              {% endfor %}
-            </dd>
-          </dl>
+                {% endfor %}
+              </dd>
+            </dl>
+          {% endif %}
         </div>
-        {% for data in item.semester|slice(0, no_of_sem_columns) %}
+        {% for data in item.semester|slice(0, no_of_columns - 1) %}
           <div class="curriculum__cell">
             {% if data.value == 'j-term' %}
               <span class="sr-only">offered in: {{data.label}} ({{data.value}})</span>
