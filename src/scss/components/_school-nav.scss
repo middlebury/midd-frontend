@@ -65,6 +65,32 @@
   min-width: 300px;
 }
 
+.school-nav__list--with-buttons {
+  display: flex;
+  flex-direction: column;
+  min-width: 500px;
+
+  .school-nav__link {
+    width: max-content;
+  }
+}
+
+.school-nav__list--with-buttons__col {
+  // flex: 1 1 0;
+
+  &:last-child {
+    display: flex;
+    // height: fit-content;
+    // padding-left: variables.$spacing-3;
+    // margin-left: variables.$spacing-3;
+    // border-top: 1px solid variables.$gray-light;
+  }
+
+  .button {
+    flex: 1 1 0;
+  }
+}
+
 .school-nav__list--cols {
   column-count: 2;
   min-width: 500px;
