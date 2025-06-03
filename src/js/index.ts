@@ -48,3 +48,4 @@ import './toggle-animation';
 import './dispatches';
 import './cookie-banner';
 import './quicksearch';
+import './utils/chosen';
