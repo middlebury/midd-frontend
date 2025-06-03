@@ -76,6 +76,7 @@
 }
 
 .school-nav__list--with-buttons__col {
+  column-count: 2;
   // flex: 1 1 0;
 
   &:last-child {
