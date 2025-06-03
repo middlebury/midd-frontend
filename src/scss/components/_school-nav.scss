@@ -80,7 +80,7 @@
   &:last-child {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     padding-left: variables.$spacing-3;
     margin-left: variables.$spacing-3;
     border-left: 1px solid variables.$gray-light;
