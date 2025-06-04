@@ -7,15 +7,17 @@ const form =
   $('#views-exposed-form-courses-cmrs-courses');
 
 if (form) {
-  const searchInputs = $$('.chosen-search-input', form);
+  window.onload = () => {
+    const searchInputs = $$('.chosen-search-input', form);
 
-  searchInputs.forEach((input) => {
-    let formLabelId = input.getAttribute('aria-labelledby');
-    let chosenResultsId = input.getAttribute('aria-owns');
-    let chosenResultsElem = $(`#${chosenResultsId}`);
+    searchInputs.forEach((input) => {
+      let formLabelId = input.getAttribute('aria-labelledby');
+      let chosenResultsId = input.getAttribute('aria-owns');
+      let chosenResultsElem = $(`#${chosenResultsId}`);
 
-    chosenResultsElem.setAttribute('aria-labelledby', formLabelId);
-    input.setAttribute('aria-controls', chosenResultsId);
-    input.removeAttribute('aria-owns');
-  });
+      chosenResultsElem.setAttribute('aria-labelledby', formLabelId);
+      input.setAttribute('aria-controls', chosenResultsId);
+      input.removeAttribute('aria-owns');
+    });
+  };
 }
