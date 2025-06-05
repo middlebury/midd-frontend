@@ -4,6 +4,18 @@ site_title: Middlebury College
 
 site_nav:
   items:
+    - text: Admissions
+      items:
+        - text: Apply
+        - text: Visit Middlebury
+        - text: Financial Aid
+        - text: Access and Inclusivity
+        - text: Our Students
+        - text: For Counselors
+      buttons:
+        - text: Apply
+        - text: Visit Middlebury
+        - text: Financial Aid
     - text: About the College
       items:
         - text: Liberal Arts at Middlebury
@@ -22,7 +34,6 @@ site_nav:
         - text: Faculty Directory
         - text: Departments and Programs
         - text: The Library
-    - text: Admissions
     - text: News
     - text: Events
 
