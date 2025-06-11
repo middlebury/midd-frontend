@@ -1,0 +1,64 @@
+{% extends 'school-home.twig' %}
+
+{% set theme = 'institute' %}
+{% set is_front = false %}
+
+{% set page_header = {
+  title: 'Earn a Master’s in Translation and Localization Management',
+  breadcrumb: [
+    { text: 'Middlebury Institute of International Studies' },
+  ],
+  has_menu: true
+} %}
+
+{% block layout_header %}
+	{% embed 'partials/school-header.twig' %}
+		{% block school_logo %}
+			<img src="images/miis-logo.svg" srcset="images/miis-logo.svg 361w" sizes="(min-width: 1280px) 361px, 248px" alt="Logo for Middlebury Institute of International Studies at Monterey"/>
+			<span class="sr-only">
+				Middlebury Institute of International Studies at Monterey
+			</span>
+		{% endblock %}
+	{% endembed %}
+{% endblock %}
+
+{% block content %}
+  <p class="lead">Launch your career in localization management</p>
+	{% embed 'paragraphs/text.twig' %}
+    {% block content %}
+      {# <h2>Launch your career in localization management</h2> #}
+      <p>Graduate Program Highlights:</p>
+      <ul>
+        <li><strong>Develop the language, business, and technology skills you need</strong> for success in this rapidly growing field.</li>
+        <li><strong>Gain professional experience</strong> <em>before</em> you graduate, by running a translation agency and working with real clients.</li>
+        <li><strong>Expand your career opportunities</strong> through this STEM (Science, Technology, Engineering, and Mathematics) designated master’s program.</li>
+        <li><strong>Take advantage of the Monterey location,</strong> which has a high concentration of localization companies and close proximity to tech firms in Silicon Valley.</li>
+      </ul>
+    {% endblock %}
+  {% endembed %}
+
+  {% include 'paragraphs/two-col-text.twig' %}
+
+	{% include 'paragraphs/pardot-form.twig' with {
+    title: 'Find out if IEM is right for you',
+    post_url: 'https://learn.middlebury.edu/l/74172/2021-08-04/21x2y5y',
+    program: 'International Education Management',
+    confirmation: 'http://www.middlebury.edu',
+    button: 'Get Info'
+  } %}
+
+	{% include 'paragraphs/quad-story.twig' %}
+
+  {% include 'paragraphs/media-group.twig' with {
+    title: 'Media group',
+    blurb: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus
+        quam optio ratione labore possimus iusto corrupti vero fugiat explicabo
+        officiis ex, a sunt obcaecati molestias voluptate eum earum ipsam
+        accusantium.',
+    media_content_items : ['video', 'video']
+  } %}
+{% endblock %}
+
+{% block layout_footer %}
+	{% include 'partials/midd-footer.twig' %}
+{% endblock %}
