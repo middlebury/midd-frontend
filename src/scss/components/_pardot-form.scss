@@ -13,18 +13,18 @@
     margin-bottom: variables.$spacing-8;
     margin-top: variables.$spacing-8;
 
-    .section__title {
-      margin-bottom: variables.$spacing-5;
-    }
+    // .section__title {
+    //   margin-bottom: variables.$spacing-5;
+    // }
   }
 
   @include breakpoints.breakpoint(lg) {
     margin-bottom: variables.$spacing-9;
     margin-top: variables.$spacing-9;
 
-    .section__title {
-      margin-bottom: variables.$spacing-7;
-    }
+    // .section__title {
+    //   margin-bottom: variables.$spacing-7;
+    // }
 
     .form-group {
       margin-bottom: variables.$spacing-5;
