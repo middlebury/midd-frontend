@@ -1,39 +1,120 @@
 <section class="section paragraph--pardot-form" data-digest-content>
+  <div class="section__header">
     <h2 class="section__title">{{ title }}</h2>
-    <form action="{{ post_url }}" method="POST">
-        <div class="row row-sm-gutters">
-            <input name="program" type="hidden" value="{{ program }}">
-            <input name="success_location" type="hidden" value="{{ confirmation }}">
-            <div class="col-md-6 col-xl-6 form-group">
-                <label for="midd-pardot-first-name" class="label">First name*</label>
-                <input id="midd-pardot-first-name" name="firstname" type="text" class="form-control" required>
-            </div>
-            <div class="col-md-6 col-xl-6 form-group">
-                <label for="midd-pardot-last-name" class="label">Last name*</label>
-                <input id="midd-pardot-last-name" name="lastname" type="text" class="form-control" required>
-            </div>
-            <div class="col-md-6 col-xl-6 form-group">
-                <label for="midd-pardot-email" class="label">Email*</label>
-                <input id="midd-pardot-email" name="email" type="email" class="form-control" required>
-            </div>
-            <div class="col-md-6 col-xl-6 form-group">
-                <label for="midd-pardot-how-heard" class="label">How did you first learn about us?*</label>
-                <select name="how_heard" class="form-control" id="midd-pardot-how-heard">
-                    <option value="" selected>- None -</option>
-                    <option value="Alumni/Student">Alumni/Student</option>
-                    <option value="College Counselor/Professor">College Counselor/Professor</option>
-                    <option value="Employer">Employer</option>
-                    <option value="Friend/Relative">Friend/Relative</option>
-                    <option value="Fair/Event">Fair/Event</option>
-                    <option value="Internet">Internet</option>
-                    <option value="Social Media">Social Media</option>
-                    <option value="Partner Organization/School">Partner Organization/School</option>
-                    <option value="Other">Other</option>
-                </select>
-            </div>
-            <div class="col-md-12 col-xl-12 form-group">
-                <input type="submit" value="{{ button }}" class="button button--primary">
-            </div>
-        </div>
-    </form>
+    {% if blurb %}
+      <p class="section__text">{{ blurb }}</p>
+    {% endif %}
+  </div>
+  <form action="{{ post_url }}" method="POST">
+    <div class="row row-sm-gutters">
+      <input name="program" type="hidden" value="{{ program }}">
+      <input name="success_location" type="hidden" value="{{ confirmation }}">
+      <div class="col-md-6 col-xl-6 form-group">
+        <label for="midd-pardot-first-name" class="label">First name*</label>
+        <input id="midd-pardot-first-name" name="firstname" type="text" class="form-control" required>
+      </div>
+      <div class="col-md-6 col-xl-6 form-group">
+        <label for="midd-pardot-last-name" class="label">Last name*</label>
+        <input id="midd-pardot-last-name" name="lastname" type="text" class="form-control" required>
+      </div>
+      <div class="col-md-6 col-xl-6 form-group">
+        <label for="midd-pardot-email" class="label">Email*</label>
+        <input id="midd-pardot-email" name="email" type="email" class="form-control" required>
+      </div>
+      <div class="col-md-6 col-xl-6 form-group">
+        <label for="midd-pardot-mobile-phone" class="label">Mobile Phone (recommended)</label>
+        <input id="midd-pardot-mobile-phone" name="mobile-phone" type="text" class="form-control" required>
+      </div>
+      <div class="col-md-6 col-xl-6 form-group">
+        <label for="midd-pardot-country" class="label">Country*</label>
+        <select name="country" class="form-control" id="midd-pardot-country" onchange="">
+          <option value="2262787" selected=""></option>
+          <option value="2262789">United States</option>
+          <option value="2262791">Canada</option>
+          <option value="2262793">Afghanistan</option>
+          <option value="2262795">Albania</option>
+          <option value="2262797">Algeria</option>
+          <option value="2262799">American Samoa</option>
+          <option value="2262801">Andorra</option>
+          <option value="2262803">Angola</option>
+          <option value="2262805">Anguilla</option>
+          <option value="2262807">Antarctica</option>
+          <option value="2262809">Antigua and Barbuda</option>
+          <option value="2262811">Argentina</option>
+          <option value="2262813">Armenia</option>
+          <option value="2262815">Aruba</option>
+          <option value="2262817">Australia</option>
+          <option value="2262819">Austria</option>
+          <option value="2262821">Azerbaijan</option>
+          <option value="2262823">Bahamas</option>
+          <option value="2262825">Bahrain</option>
+          <option value="2262827">Bangladesh</option>
+          <option value="2262829">Barbados</option>
+          <option value="2262831">Belarus</option>
+          <option value="2262833">Belgium</option>
+          <option value="2262835">Belize</option>
+          <option value="2262837">Benin</option>
+          <option value="2262839">Bermuda</option>
+          <option value="2262841">Bhutan</option>
+          <option value="2262843">Bolivia</option>
+          <option value="2262845">Bosnia and Herzegovina</option>
+          <option value="2262847">Botswana</option>
+          <option value="2262849">Brazil</option>
+          <option value="2262851">British Indian Ocean Territory</option>
+          <option value="2262853">British Virgin Islands</option>
+          <option value="2262855">Brunei</option>
+          <option value="2262857">Bulgaria</option>
+          <option value="2262859">Burkina Faso</option>
+          <option value="2262861">Burundi</option>
+          <option value="2262863">Cambodia</option>
+          <option value="2262865">Cameroon</option>
+          <option value="2262867">Cape Verde</option>
+          <option value="2262869">Cayman Islands</option>
+          <option value="2262871">Central African Republic</option>
+          <option value="2262873">Chad</option>
+          <option value="2262875">Chile</option>
+          <option value="2262877">China</option>
+          <option value="2262879">Christmas Island</option>
+          <option value="2262881">Cocos (Keeling) Islands</option>
+          <option value="2262883">Colombia</option>
+          <option value="2262885">Comoros</option>
+          <option value="2262887">Congo</option>
+          <option value="2262889">Cook Islands</option>
+        </select>
+      </div>
+      <div class="col-md-6 col-xl-6 form-group">
+        <label for="midd-pardot-learn-about-us" class="label">How did you first learn about us?*</label>
+        <select name="learn-about-us" class="form-control" id="midd-pardot-learn-about-us" onchange="">
+          <option value="" selected=""></option>
+          <option value="2263417">Alumni/Student</option>
+          <option value="2263419">College Counselor/Professor</option>
+          <option value="2263421">Employer</option>
+          <option value="2263423">Fair/Event</option>
+          <option value="2263425">Friend/Relative</option>
+          <option value="2263427">Internet</option>
+          <option value="2263429">Social Media</option>
+          <option value="2263431">Partner Organization/School</option>
+          <option value="2263433">Other</option>
+        </select>
+      </div>
+       <div class="col-md-6 col-xl-6 form-group">
+        <label for="midd-pardot-language" class="label">Language of Study*</label>
+        <select name="language" class="form-control" id="midd-pardot-language" onchange="">
+          <option value="" selected=""></option>
+          <option value="11688082">Arabic</option>
+          <option value="11688085">Chinese</option>
+          <option value="11688088">English</option>
+          <option value="11688091">French</option>
+          <option value="11688094">German</option>
+          <option value="11688097">Japanese</option>
+          <option value="11688100">Korean</option>
+          <option value="11688103">Russian</option>
+          <option value="11688106">Spanish</option>
+        </select>
+      </div>
+      <div class="col-md-12 col-xl-12 form-group">
+        <input type="submit" value="{{ button }}" class="button button--primary">
+      </div>
+    </div>
+  </form>
 </section>
