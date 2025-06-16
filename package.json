@@ -63,7 +63,7 @@
     "gulp-svgo": "^2.2.1",
     "gulp-twig": "^1.2.0",
     "js-yaml": "^4.1.0",
-    "postcss": "^8.5.2",
+    "postcss": "^8.5.6",
     "prettier": "^3.5.0",
     "prettier-plugin-twig-melody": "^0.4.6",
     "sass": "^1.86.3",
