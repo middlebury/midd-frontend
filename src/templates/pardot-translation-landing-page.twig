@@ -12,33 +12,42 @@
 } %}
 
 {% block layout_header %}
-	{% embed 'partials/school-header.twig' %}
-		{% block school_logo %}
-			<img src="images/miis-logo.svg" srcset="images/miis-logo.svg 361w" sizes="(min-width: 1280px) 361px, 248px" alt="Logo for Middlebury Institute of International Studies at Monterey"/>
-			<span class="sr-only">
-				Middlebury Institute of International Studies at Monterey
-			</span>
-		{% endblock %}
-	{% endembed %}
+  {% embed 'partials/school-header.twig' %}
+    {% block school_logo %}
+      <img src="images/miis-logo.svg" srcset="images/miis-logo.svg 361w" sizes="(min-width: 1280px) 361px, 248px" alt="Logo for Middlebury Institute of International Studies at Monterey"/>
+      <span class="sr-only">
+        Middlebury Institute of International Studies at Monterey
+      </span>
+    {% endblock %}
+  {% endembed %}
 {% endblock %}
 
 {% block content %}
   <p class="lead">Launch your career in localization management</p>
-	{% embed 'paragraphs/text.twig' %}
+  {% embed 'paragraphs/text.twig' %}
     {% block content %}
       {# <h2>Launch your career in localization management</h2> #}
       <p>Graduate Program Highlights:</p>
       <ul>
-        <li><strong>Develop the language, business, and technology skills you need</strong> for success in this rapidly growing field.</li>
-        <li><strong>Gain professional experience</strong> <em>before</em> you graduate, by running a translation agency and working with real clients.</li>
-        <li><strong>Expand your career opportunities</strong> through this STEM (Science, Technology, Engineering, and Mathematics) designated master’s program.</li>
-        <li><strong>Take advantage of the Monterey location,</strong> which has a high concentration of localization companies and close proximity to tech firms in Silicon Valley.</li>
+        <li>
+          <strong>Develop the language, business, and technology skills you need</strong>
+          for success in this rapidly growing field.</li>
+        <li>
+          <strong>Gain professional experience</strong>
+          <em>before</em>
+          you graduate, by running a translation agency and working with real clients.</li>
+        <li>
+          <strong>Expand your career opportunities</strong>
+          through this STEM (Science, Technology, Engineering, and Mathematics) designated master’s program.</li>
+        <li>
+          <strong>Take advantage of the Monterey location,</strong>
+          which has a high concentration of localization companies and close proximity to tech firms in Silicon Valley.</li>
       </ul>
       <p>Fill out this short form to get more information. Your exclusive advisor will be in touch within one business day to guide you through the application process, the program details, how to finance your education, and your career options.</p>
     {% endblock %}
   {% endembed %}
 
-	{% include 'paragraphs/pardot-form.twig' with {
+  {% include 'paragraphs/pardot-form.twig' with {
     title: 'Get more information',
     blurb: 'Fill out this short form to get more information. Your exclusive advisor will be in touch within one business day to guide you through the application process, the program details, how to finance your education, and your career options.',
     post_url: 'https://learn.middlebury.edu/l/74172/2021-08-04/21x2y5y',
@@ -80,7 +89,7 @@
     </div>
   </div>
 
-	{% include 'paragraphs/quad-story.twig' %}
+  {% include 'paragraphs/quad-story.twig' %}
 
   {% include 'paragraphs/media-group.twig' with {
     title: 'Learn Real Solutions for Today’s Localization Challenges',
@@ -89,5 +98,5 @@
 {% endblock %}
 
 {% block layout_footer %}
-	{% include 'partials/midd-footer.twig' %}
+  {% include 'partials/midd-footer.twig' %}
 {% endblock %}
