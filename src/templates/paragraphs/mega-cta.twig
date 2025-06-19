@@ -5,16 +5,12 @@
 
 		{# alignment should be one of left-bottom, left-top, right-bottom, right-top, center #}
 
-		<section class="mega-cta mega-cta--image-{{pin ? pin : 'bottom-left'}} {% if hero %} mega-cta--hero{% endif %}{% if blse %} mega-cta--blse{% endif %}" aria-labelledby="midd-mega-cta-label-{{id}}">
+		<section class="mega-cta {{miis ? 'mega-cta--miis' : ''}} mega-cta--image-{{pin ? pin : 'bottom-left'}} {% if hero %} mega-cta--hero{% endif %}{% if blse %} mega-cta--blse{% endif %}" aria-labelledby="midd-mega-cta-label-{{id}}">
 			<div {% if gradient %} class="mega-cta__back-gradient" {% endif %}>
 				<figure class="mega-cta__back">
-					{% if miis %}
-						<img data-original-image-width="1500" data-original-image-height="1000" srcset="https://saw.middlebury.edu/~imcbride/institute-redesign/sites/www.middlebury.edu.institute/files/styles/400x225/public/2021-08/carlos-colon-NPTS-2019_helping-other-student_computer-lab_1500x1000.JPG?fv=QClXNARD&amp;itok=l6U-0YEv 400w, https://saw.middlebury.edu/~imcbride/institute-redesign/sites/www.middlebury.edu.institute/files/styles/640x360/public/2021-08/carlos-colon-NPTS-2019_helping-other-student_computer-lab_1500x1000.JPG?fv=xL3gpSGz&amp;itok=nj-oj2Kv 640w, https://saw.middlebury.edu/~imcbride/institute-redesign/sites/www.middlebury.edu.institute/files/styles/960x540/public/2021-08/carlos-colon-NPTS-2019_helping-other-student_computer-lab_1500x1000.JPG?fv=GsS7WaEp&amp;itok=N0CGkwWZ 960w, https://saw.middlebury.edu/~imcbride/institute-redesign/sites/www.middlebury.edu.institute/files/styles/1280x720/public/2021-08/carlos-colon-NPTS-2019_helping-other-student_computer-lab_1500x1000.JPG?fv=iQE9u9P2&amp;itok=7PCkhQcT 1280w, https://saw.middlebury.edu/~imcbride/institute-redesign/sites/www.middlebury.edu.institute/files/styles/1440x810/public/2021-08/carlos-colon-NPTS-2019_helping-other-student_computer-lab_1500x1000.JPG?fv=Lao2Vvu6&amp;itok=6L7dR4rf 1440w" sizes="(max-width: 1440px) 100vw, 1440px" src="https://saw.middlebury.edu/~imcbride/institute-redesign/sites/www.middlebury.edu.institute/files/styles/1440x810/public/2021-08/carlos-colon-NPTS-2019_helping-other-student_computer-lab_1500x1000.JPG?fv=Lao2Vvu6&amp;itok=6L7dR4rf" alt="Two students in the computer lab discussing what is the on the computer screen">
-					{% else %}
-						{% include 'partials/img.twig' with {
-							name: 'spotlight'
-						} %}
-					{% endif %}
+          {% include 'partials/img.twig' with {
+            name: 'spotlight'
+          } %}
 					{% if caption %}
 						<figcaption class="mega-cta__caption">
 							{% include 'partials/tooltip.twig' with {
@@ -29,7 +25,7 @@
 			</div>
 
 			<div class="mega-cta__front {% if gradient %} mega-cta--gradient-{{gradient}} {% endif %}">
-				<div class="{% if gradient %} mega-cta__content-miis mega-cta__content-position mega-cta__content-position-{{gradient}} {% else %} mega-cta__content {% endif %}">
+				<div class="{% if gradient %} mega-cta__content mega-cta__content-position mega-cta__content-position-{{gradient}} {% else %} mega-cta__content {% endif %}">
 					{% if title %}
 						<h2 class="mega-cta__title" id="midd-mega-cta-label-{{id}}">{{title|default('What makes Middlebury different?')}}</h2>
 					{% endif %}
