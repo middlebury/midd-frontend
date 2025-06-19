@@ -1,0 +1,24 @@
+<header class="landing-header">
+
+  <div class="container">
+
+    <div class="landing-header__main">
+
+      <div class="landing-header__logo">
+        {% if is_front %}
+          <h1 class="landing-header__title">
+          {% endif %}
+          <a href="">
+            {% block school_logo %}
+              <img src="images/college-logo-white.svg" srcset="images/college-logo-white.svg 180w" sizes="(min-width: 1280px) 180px, 120px" alt="Logo for Middlebury College"/>
+              <span class="sr-only">Middlebury College</span>
+            {% endblock %}
+          </a>
+          {% if is_front %}
+          </h1>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</header>
