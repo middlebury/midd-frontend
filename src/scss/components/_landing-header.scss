@@ -1,0 +1,7 @@
+@use '../core/variables';
+
+.landing-header {
+  background: linear-gradient(109deg, #0d395f 15.52%, #1b76c5 85.63%);
+  padding-top: variables.$spacing-5;
+  padding-bottom: variables.$spacing-5;
+}
