@@ -5,3 +5,13 @@
   padding-top: variables.$spacing-5;
   padding-bottom: variables.$spacing-5;
 }
+
+.landing-header__logo {
+  img {
+    border-right: 1px solid variables.$white;
+  }
+}
+
+.landing-header__logo-text {
+  font-size: variables.$typescale-4 !important;
+}

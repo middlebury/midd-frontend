@@ -4,6 +4,16 @@
   {% include 'partials/admissions-lp-header.twig' %}
 {% endblock %}
 
+{% block page %}
+  <div class="container">
+    <div class="row">
+      <div class="paragraphs paragraphs--wide">
+      {% block content %}{% endblock %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
 {% block layout_footer %}
   {% include 'partials/office-footer.twig' with {
     name: 'Middlebury Admissions',
