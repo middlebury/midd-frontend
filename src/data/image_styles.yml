@@ -99,6 +99,11 @@ image_styles:
       - 960x540
       - 1280x720
       - 1440x810
+  miis_spotlight:
+    title: Spotlight and Themed Panel
+    ratio: '16:9'
+    srcset:
+      - 1440x525
   collection_card:
     title: Collection Item on the Collection content type
     ratio: '16:9'
