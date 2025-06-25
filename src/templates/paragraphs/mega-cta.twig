@@ -3,9 +3,9 @@
 	<div
 		class="container px-0">
 
-		{# alignment should be one of left-bottom, left-top, right-bottom, right-top, center #}
+		{# gradient should be one of left-bottom, left-top, right-bottom, right-top, center #}
 
-		<section class="mega-cta {{miis ? 'mega-cta--miis' : ''}} mega-cta--image-{{pin ? pin : 'bottom-left'}} {% if hero %} mega-cta--hero{% endif %}{% if blse %} mega-cta--blse{% endif %}" aria-labelledby="midd-mega-cta-label-{{id}}">
+		<section class="mega-cta {{miis ? 'mega-cta--miis' : ''}} mega-cta--image{{pin ? '-' ~ pin : '-bottom-left'}} {% if hero %} mega-cta--hero{% endif %}{% if blse %} mega-cta--blse{% endif %}{% if admissions_lp %} mega-cta--lp{% endif %}" aria-labelledby="midd-mega-cta-label-{{id}}">
 			<div {% if gradient %} class="mega-cta__back-gradient" {% endif %}>
 				<figure class="mega-cta__back">
           {% include 'partials/img.twig' with {
