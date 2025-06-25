@@ -1,4 +1,4 @@
-<section class="section paragraph--pardot-form" data-digest-content>
+<section class="section mb-0" data-digest-content>
   <div class="section__header">
     <h2 class="section__title">{{ title }}</h2>
     {% if blurb %}
@@ -6,26 +6,26 @@
     {% endif %}
   </div>
   <form action="{{ post_url }}" method="POST">
-    <div class="row row-sm-gutters">
+    <div class="">
       <input name="program" type="hidden" value="{{ program }}">
       <input name="success_location" type="hidden" value="{{ confirmation }}">
-      <div class="col-md-6 col-xl-6 form-group">
+      <div class="form-group">
         <label for="midd-pardot-first-name" class="label">First name*</label>
         <input id="midd-pardot-first-name" name="firstname" type="text" class="form-control" required>
       </div>
-      <div class="col-md-6 col-xl-6 form-group">
+      <div class="form-group">
         <label for="midd-pardot-last-name" class="label">Last name*</label>
         <input id="midd-pardot-last-name" name="lastname" type="text" class="form-control" required>
       </div>
-      <div class="col-md-6 col-xl-6 form-group">
+      <div class="form-group">
         <label for="midd-pardot-email" class="label">Email*</label>
         <input id="midd-pardot-email" name="email" type="email" class="form-control" required>
       </div>
-      <div class="col-md-6 col-xl-6 form-group">
+      <div class="form-group">
         <label for="midd-pardot-mobile-phone" class="label">Mobile Phone (recommended)</label>
         <input id="midd-pardot-mobile-phone" name="mobile-phone" type="text" class="form-control" required>
       </div>
-      <div class="col-md-6 col-xl-6 form-group">
+      <div class="form-group">
         <label for="midd-pardot-country" class="label">Country*</label>
         <select name="country" class="form-control" id="midd-pardot-country" onchange="">
           <option value="2262787" selected=""></option>
@@ -82,7 +82,7 @@
           <option value="2262889">Cook Islands</option>
         </select>
       </div>
-      <div class="col-md-6 col-xl-6 form-group">
+      <div class="form-group">
         <label for="midd-pardot-learn-about-us" class="label">How did you first learn about us?*</label>
         <select name="learn-about-us" class="form-control" id="midd-pardot-learn-about-us" onchange="">
           <option value="" selected=""></option>
@@ -97,7 +97,7 @@
           <option value="2263433">Other</option>
         </select>
       </div>
-       <div class="col-md-6 col-xl-6 form-group">
+       <div class="form-group">
         <label for="midd-pardot-language" class="label">Language of Study*</label>
         <select name="language" class="form-control" id="midd-pardot-language" onchange="">
           <option value="" selected=""></option>
@@ -112,7 +112,7 @@
           <option value="11688106">Spanish</option>
         </select>
       </div>
-      <div class="col-md-12 col-xl-12 form-group">
+      <div class="form-group">
         <input type="submit" value="{{ button }}" class="button button--primary">
       </div>
     </div>
