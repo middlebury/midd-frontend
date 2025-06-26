@@ -30,3 +30,9 @@
 .border-navy {
   border-color: variables.$navy;
 }
+
+.border-dual-shadow {
+  box-shadow:
+    0 0 0 10px #ed01a7,
+    0 0 0 15px #f99f33;
+}

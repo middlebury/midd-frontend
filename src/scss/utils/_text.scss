@@ -196,3 +196,16 @@ college-homepage-grid-header.$text-colors: (
 .whitespace-no-wrap {
   white-space: nowrap;
 }
+
+.title-sans-serif {
+  font-family: variables.$font-family-sans-serif;
+  font-size: variables.$typescale-11;
+  font-weight: variables.$font-weight-semibold;
+  line-height: variables.$line-height-solid;
+}
+
+.text-dual-shadow {
+  text-shadow:
+    -3px -3px #ed01a7,
+    -6px -6px #f99f33;
+}

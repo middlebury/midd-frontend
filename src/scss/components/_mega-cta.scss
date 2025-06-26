@@ -44,31 +44,43 @@
 
   &.mega-cta--lp {
     overflow: initial;
-    margin-top: 10px;
+    background: none;
 
-    &:after,
-    &:before {
-      content: '';
-      position: absolute;
-      width: calc(100% + 15px);
-      height: calc(100% + 15px);
-      border: 5px solid;
+    .mega-cta__front {
+      .mega-cta__content {
+        z-index: variables.$z-index-mega-cta-front;
+        margin-top: -(variables.$spacing-8);
+        @include breakpoints.breakpoint(md) {
+          @include grid.make-col(8);
+        }
+      }
+      &:after,
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 5px solid;
+      }
+
+      &:after {
+        width: calc(100% - 5px);
+        height: calc(100% - 5px);
+        border-color: #fff791;
+      }
+
+      &:before {
+        width: 100%;
+        height: 100%;
+        border-top-width: 10px;
+        border-left-width: 10px;
+        border-color: variables.$blue;
+      }
     }
 
-    &:after {
-      top: -10px;
-      left: -10px;
-      border-color: #fff791;
-    }
-
-    &:before {
-      width: calc(100% + 20px);
-      height: calc(100% + 20px);
-      top: -10px;
-      left: -10px;
-      border-top-width: 10px;
-      border-left-width: 10px;
-      border-color: #75a3cd;
+    .mega-cta__title {
+      margin-bottom: variables.$spacing-9;
+      color: variables.$blue;
     }
   }
 }
