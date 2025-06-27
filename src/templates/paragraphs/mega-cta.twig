@@ -27,7 +27,11 @@
 			<div class="mega-cta__front {% if gradient %} mega-cta--gradient-{{gradient}} {% endif %}">
 				<div class="{% if gradient %} mega-cta__content mega-cta__content-position mega-cta__content-position-{{gradient}} {% else %} mega-cta__content {% endif %}">
 					{% if title %}
-						<h2 class="mega-cta__title {{admissions_lp ? "title-sans-serif text-dual-shadow" : ""}}" id="midd-mega-cta-label-{{id}}">{{title|default('What makes Middlebury different?')}}</h2>
+            {% if admissions_lp %}
+              <h1 class="mega-cta__title title-sans-serif border-dual-shadow__text" id="midd-mega-cta-label-{{id}}">{{title}}</h1>
+            {% else %}
+						  <h2 class="mega-cta__title" id="midd-mega-cta-label-{{id}}">{{title|default('What makes Middlebury different?')}}</h2>
+            {% endif %}
 					{% endif %}
 					{% if title_link %}
 						<a href="#" class="mega-cta__link">
@@ -41,7 +45,7 @@
 						</p>
 					{% endif %}
           {% if admissions_lp %}
-            <a class="button button--primary" href="">{{link|default('Apply now')}}</a>
+            <a class="button button--primary" href="">{{link}}</a>
           {% else %}
 					  <a class="button button--outline button--light" href="">{{link|default('Apply now')}}</a>
           {% endif %}

@@ -1,5 +1,7 @@
 {% extends 'admissions-lp-layout.twig' %}
 
+{% set theme = 'admissions-lp' %}
+
 {% block content %}
 
   {% include 'paragraphs/mega-cta.twig' with {
@@ -7,5 +9,9 @@
     title: 'Apply to Middlebury',
     link: 'Add Us to the Common App'
   } %}
+
+  {% include 'partials/admissions-lp-box-menu.twig' with {
+    items: admissions_lp_useful_links
+  }%}
   
 {% endblock %}

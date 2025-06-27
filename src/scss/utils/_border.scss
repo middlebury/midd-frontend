@@ -31,8 +31,14 @@
   border-color: variables.$navy;
 }
 
-.border-dual-shadow {
+.border-dual-shadow__box {
   box-shadow:
-    0 0 0 10px #ed01a7,
-    0 0 0 15px #f99f33;
+    -5px -5px 0 0 #fff791,
+    -10px -10px 0 0 #75a3cd;
+}
+
+.border-dual-shadow__text {
+  text-shadow:
+    -3px -3px #ed01a7,
+    -6px -6px #f99f33;
 }
