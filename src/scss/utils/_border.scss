@@ -37,6 +37,12 @@
     -10px -10px 0 0 #75a3cd;
 }
 
+.border-dual-shadow__box--right {
+  box-shadow:
+    5px -5px 0 0 #fff791,
+    10px -10px 0 0 #75a3cd;
+}
+
 .border-dual-shadow__text {
   text-shadow:
     -3px -3px #ed01a7,

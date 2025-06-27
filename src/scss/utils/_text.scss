@@ -123,6 +123,12 @@ college-homepage-grid-header.$text-colors: (
   }
 }
 
+.lead--admissions-lp {
+  font-size: variables.$typescale-9;
+  line-height: variables.$line-height-heading;
+  color: variables.$white;
+}
+
 .davis-lead {
   font-size: variables.$typescale-6;
   font-weight: variables.$font-weight-light;
