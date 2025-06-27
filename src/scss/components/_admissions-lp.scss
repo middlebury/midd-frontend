@@ -1,0 +1,42 @@
+@use '../core/variables';
+@use '../mixins/grid';
+
+.theme-admissions-lp {
+  overflow-x: hidden;
+  background: linear-gradient(
+    174deg,
+    #0d395f 30.66%,
+    #75a3cd 50.81%,
+    #7f9e94 77.49%
+  );
+
+  .typography {
+    .text-background {
+      background: variables.$white;
+      width: calc((10 / 12 * 100%) - variables.$spacing-8);
+      margin: 0 auto;
+    }
+
+    .text-content {
+      width: 80%;
+      margin: 0 auto;
+
+      & > * {
+        font-family: variables.$font-family-sans-serif;
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      h2,
+      h3 {
+        font-weight: variables.$font-weight-semibold;
+      }
+    }
+  }
+}
