@@ -33,12 +33,18 @@
   }
 
   &.mega-cta--miis {
-    @include breakpoints.breakpoint(md) {
-      padding-top: math.percentage(math.div(2, 5));
+    @include breakpoints.breakpoint(lg) {
+      min-height: initial;
+      height: initial;
+      padding-top: unset;
     }
 
     & img {
       object-position: center;
+
+      @include breakpoints.breakpoint(lg) {
+        position: initial;
+      }
     }
   }
 
