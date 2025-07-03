@@ -1,5 +1,6 @@
 @use '../core/variables';
 @use '../mixins/grid';
+@use '../mixins/breakpoints';
 
 .theme-admissions-lp {
   overflow-x: hidden;
@@ -13,8 +14,12 @@
   .typography {
     .text-background {
       background: variables.$white;
-      width: calc((10 / 12 * 100%) - variables.$spacing-8);
-      margin: 0 auto;
+      margin: 0 variables.$spacing-3;
+
+      @include breakpoints.breakpoint(lg) {
+        width: calc((10 / 12 * 100%) - variables.$spacing-8);
+        margin: 0 auto;
+      }
     }
 
     .text-content {

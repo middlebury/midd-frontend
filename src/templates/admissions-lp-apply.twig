@@ -61,5 +61,11 @@
       <p>You might be one of the 100 or so students who are admitted to MIddlebury each year as a Feb! Our February Admissions program is one of the oldest, largest, and most renowned mid-year start programs in the country. Febs get a .5 next to their graduation year, and have their own orientation and graduation.</p>
     {% endblock %}
   {% endembed %}
+
+  {% include 'paragraphs/mega-cta.twig' with {
+    link: 'Add Us to the Common App',
+    banner_cta: true,
+    image: 'mini_mega_cta'
+  } %}
   
 {% endblock %}

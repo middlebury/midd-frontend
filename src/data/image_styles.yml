@@ -104,6 +104,10 @@ image_styles:
     ratio: '16:9'
     srcset:
       - 1440x525
+  banner_cta:
+    title: Smaller mega cta on admissions landing pages
+    srcset:
+      - 1440x250
   collection_card:
     title: Collection Item on the Collection content type
     ratio: '16:9'
