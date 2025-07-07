@@ -130,7 +130,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    font-size: variables.$typescale-2;
+    // font-size: variables.$typescale-2;
     color: variables.$white;
 
     @include breakpoints.breakpoint(lg) {

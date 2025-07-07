@@ -205,7 +205,7 @@ college-homepage-grid-header.$text-colors: (
 
 .title-sans-serif {
   font-family: variables.$font-family-sans-serif;
-  font-size: variables.$typescale-11;
+  font-size: variables.$typescale-11 !important;
   font-weight: variables.$font-weight-semibold;
   line-height: variables.$line-height-solid;
 }
