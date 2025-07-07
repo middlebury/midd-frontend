@@ -1,7 +1,18 @@
 <div class="paragraph--expand paragraph--pull-up">
-  <nav class="box-menu box-menu--admissions-lp border-dual-shadow__box " aria-labelledby="midd-box-menu-label">
-    <h2 class="box-menu__title" id="midd-box-menu-label">Useful Links</h2>
-    <ul class="box-menu__list">
+  <nav class="box-menu box-menu--admissions-lp border-dual-shadow__box" aria-labelledby="midd-box-menu-label">
+    <button 
+      class="box-menu__button"
+      data-toggle-target=".js-box-menu"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <span class="box-menu__title" id="midd-box-menu-label">Useful Links</span>
+      {% include 'partials/icon.twig' with {
+        name: 'chevron-down'
+      } %}
+    </button>
+    <h2 class="box-menu__title d-none d-lg-block" id="midd-box-menu-label">Useful Links</h2>
+    <ul class="box-menu__list js-box-menu">
       {% for item in items %}
         <li class="box-menu__item">
           <a href="" class="box-menu__link{% if item.active %} box-menu__link--active{% endif %}">
