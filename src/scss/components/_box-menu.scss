@@ -82,6 +82,7 @@
   background-color: variables.$navy;
   padding: variables.$spacing-3 variables.$spacing-2;
   margin-bottom: variables.$spacing-4;
+  box-shadow: none;
 
   @include breakpoints.breakpoint(md) {
     padding-left: variables.$spacing-4;
