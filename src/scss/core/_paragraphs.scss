@@ -306,6 +306,18 @@
   }
 }
 
+.paragraph--box-menu__pull-up {
+  margin-top: -4rem;
+
+  @include breakpoints.breakpoint(md) {
+    margin-top: -5rem;
+  }
+
+  @include breakpoints.breakpoint(lg) {
+    margin-top: -8rem;
+  }
+}
+
 .paragraph--lead-pulled-up {
   margin-top: -8rem !important;
   margin-bottom: variables.$spacing-7;
@@ -343,7 +355,17 @@
 
 .theme-admissions-lp {
   .paragraph--text {
-    margin-top: variables.$spacing-9;
-    margin-bottom: variables.$spacing-9;
+    margin-top: variables.$spacing-7;
+    margin-bottom: variables.$spacing-7;
+
+    @include breakpoints.breakpoint(lg) {
+      margin-top: variables.$spacing-8;
+      margin-bottom: variables.$spacing-8;
+    }
+
+    @include breakpoints.breakpoint(lg) {
+      margin-top: variables.$spacing-9;
+      margin-bottom: variables.$spacing-9;
+    }
   }
 }

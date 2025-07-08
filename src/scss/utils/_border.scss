@@ -45,6 +45,12 @@
 
 .border-dual-shadow__text {
   text-shadow:
-    -3px -3px #ed01a7,
-    -6px -6px #f99f33;
+    -2px -2px #ed01a7,
+    -4px -4px #f99f33;
+
+  @include breakpoints.breakpoint(lg) {
+    text-shadow:
+      -3px -3px #ed01a7,
+      -6px -6px #f99f33;
+  }
 }

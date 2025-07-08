@@ -124,9 +124,13 @@ college-homepage-grid-header.$text-colors: (
 }
 
 .lead--admissions-lp {
-  font-size: variables.$typescale-9;
+  font-size: variables.$typescale-8;
   line-height: variables.$line-height-heading;
   color: variables.$white;
+
+  @include breakpoints.breakpoint(lg) {
+    font-size: variables.$typescale-9;
+  }
 }
 
 .davis-lead {
@@ -205,7 +209,4 @@ college-homepage-grid-header.$text-colors: (
 
 .title-sans-serif {
   font-family: variables.$font-family-sans-serif;
-  font-size: variables.$typescale-11 !important;
-  font-weight: variables.$font-weight-semibold;
-  line-height: variables.$line-height-solid;
 }

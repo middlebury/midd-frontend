@@ -1,9 +1,8 @@
 @use '../core/variables';
+@use '../mixins/breakpoints';
 
 .landing-header {
   background: linear-gradient(109deg, #0d395f 15.52%, #1b76c5 85.63%);
-  padding-top: variables.$spacing-5;
-  padding-bottom: variables.$spacing-5;
 }
 
 .landing-header__logo {
@@ -13,5 +12,12 @@
 }
 
 .landing-header__logo-text {
-  font-size: variables.$typescale-4 !important;
+  font-size: variables.$typescale-3;
+  text-transform: uppercase;
+  letter-spacing: variables.$letter-spacing;
+  font-weight: variables.$font-weight-semibold;
+
+  @include breakpoints.breakpoint(md) {
+    font-size: variables.$typescale-6;
+  }
 }

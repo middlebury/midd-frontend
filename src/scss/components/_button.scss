@@ -1,5 +1,6 @@
 @use '../core/variables';
 @use '../mixins/buttons';
+@use '../mixins/breakpoints';
 
 .button {
   @include buttons.button-base;
@@ -32,6 +33,10 @@
 .button--heavy {
   font-size: variables.$typescale-2;
   font-weight: variables.$font-weight-semibold;
+
+  @include breakpoints.breakpoint(lg) {
+    font-size: variables.$typescale-3;
+  }
 }
 
 // Sizes

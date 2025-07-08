@@ -23,8 +23,12 @@
     }
 
     .text-content {
-      width: 80%;
+      width: calc(100% - variables.$spacing-5);
       margin: 0 auto;
+
+      @include breakpoints.breakpoint(md) {
+        width: 80%;
+      }
 
       & > * {
         font-family: variables.$font-family-sans-serif;
