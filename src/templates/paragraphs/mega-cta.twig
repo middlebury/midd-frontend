@@ -6,7 +6,14 @@
 
 		{# gradient should be one of left-bottom, left-top, right-bottom, right-top, center #}
 
-		<section class="mega-cta {{miis ? 'mega-cta--miis' : ''}} mega-cta--image{{pin ? '-' ~ pin : '-bottom-left'}} {% if hero %} mega-cta--hero{% endif %}{% if blse %} mega-cta--blse{% endif %}{% if admissions_lp %} mega-cta--lp {{banner_cta ? 'mega-cta--banner-cta' : '' }}{% endif %}" aria-labelledby="midd-mega-cta-label-{{id}}">
+		<section 
+      class="mega-cta {{miis ? 'mega-cta--miis' : ''}} mega-cta--image{{pin ? '-' ~ pin : '-bottom-left'}} {% if hero %} mega-cta--hero{% endif %}{% if blse %} mega-cta--blse{% endif %}{% if admissions_lp %} mega-cta--lp {{banner_cta ? 'mega-cta--banner-cta' : '' }}{% endif %}" aria-labelledby="midd-mega-cta-label-{{id}}"
+      {% if admissions_lp %}
+        data-border="double-border"
+        data-color-primary="#75a3cd"
+        data-color-secondary="#fff791"
+      {% endif %}
+    >
       {% if gradient %}
 			  <div class="mega-cta__back-gradient">
       {% endif %}
@@ -33,7 +40,15 @@
 				<div class="{% if gradient %} mega-cta__content mega-cta__content-position mega-cta__content-position-{{gradient}} {% else %} mega-cta__content {% endif %}">
 					{% if title %}
             {% if admissions_lp %}
-              <h1 class="mega-cta__title title-sans-serif border-dual-shadow__text" id="midd-mega-cta-label-{{id}}">{{title}}</h1>
+              <h1 
+                class="mega-cta__title title-sans-serif border-dual-shadow__text" 
+                id="midd-mega-cta-label-{{id}}"
+                data-border="text-shadow"
+                data-color-primary="#ED01A7"
+                data-color-secondary="#F99F33"
+              >
+                {{title}}
+              </h1>
             {% else %}
 						  <h2 class="mega-cta__title" id="midd-mega-cta-label-{{id}}">{{title|default('What makes Middlebury different?')}}</h2>
             {% endif %}

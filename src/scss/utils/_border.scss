@@ -33,24 +33,24 @@
 
 .border-dual-shadow__box {
   box-shadow:
-    -5px -5px 0 0 #fff791,
-    -10px -10px 0 0 #75a3cd;
+    -5px -5px 0 0 var(--box-shadow-color-primary),
+    -10px -10px 0 0 var(--box-shadow-color-secondary);
 }
 
 .border-dual-shadow__box--right {
   box-shadow:
-    5px -5px 0 0 #fff791,
-    10px -10px 0 0 #75a3cd;
+    5px -5px 0 0 var(--box-shadow-color-primary),
+    10px -10px 0 0 var(--box-shadow-color-secondary);
 }
 
 .border-dual-shadow__text {
   text-shadow:
-    -2px -2px #ed01a7,
-    -4px -4px #f99f33;
+    -2px -2px var(--text-shadow-color-primary),
+    -4px -4px var(--text-shadow-color-secondary);
 
   @include breakpoints.breakpoint(lg) {
     text-shadow:
-      -3px -3px #ed01a7,
-      -6px -6px #f99f33;
+      -3px -3px var(--text-shadow-color-primary),
+      -6px -6px var(--text-shadow-color-secondary);
   }
 }

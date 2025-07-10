@@ -2,7 +2,12 @@
   {% if admissions_lp %}
     <div class="container">
       <div class="row">
-        <div class="py-4 py-md-5 text-background {{border_class}}">
+        <div 
+          class="py-4 py-md-5 text-background {{border_class}}" 
+          data-border="box-shadow"
+          data-color-primary={{border_color_primary|default("#fff791")}} 
+          data-color-secondary={{border_color_secondary|default("#75a3cd")}}
+        >
           <div class="text-content">
   {% endif %}
   {% block content %}

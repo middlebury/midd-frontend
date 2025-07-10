@@ -11,13 +11,17 @@
   } %}
 
   {% include 'partials/admissions-lp-box-menu.twig' with {
-    items: admissions_lp_useful_links
+    items: admissions_lp_useful_links,
+    border_color_primary: '#fff791',
+    border_color_secondary: '#75a3cd'
   }%}
 
   {% include 'partials/lead.twig' %}
 
   {% embed 'paragraphs/text.twig' with {
-    border_class: 'border-dual-shadow__box--right'
+    border_class: 'border-dual-shadow__box--right',
+    border_color_primary: '#57068C',
+    border_color_secondary: '#F05F84'
   } %}
     {% block content %}
       <h2>Who you are is what matters most</h2>
@@ -54,7 +58,9 @@
   } %}
 
   {% embed 'paragraphs/text.twig' with {
-    border_class: 'border-dual-shadow__box'
+    border_class: 'border-dual-shadow__box',
+    border_color_primary: '#fff791',
+    border_color_secondary: '#75a3cd'
   }%}
     {% block content %}
       <h2>Febs</h2>
