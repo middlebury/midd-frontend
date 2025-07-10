@@ -9,7 +9,7 @@
 		<section 
       class="mega-cta {{miis ? 'mega-cta--miis' : ''}} mega-cta--image{{pin ? '-' ~ pin : '-bottom-left'}} {% if hero %} mega-cta--hero{% endif %}{% if blse %} mega-cta--blse{% endif %}{% if admissions_lp %} mega-cta--lp {{banner_cta ? 'mega-cta--banner-cta' : '' }}{% endif %}" aria-labelledby="midd-mega-cta-label-{{id}}"
       {% if admissions_lp %}
-        data-border="double-border"
+        data-border="dual-border"
         data-color-primary="#75a3cd"
         data-color-secondary="#fff791"
       {% endif %}
@@ -43,9 +43,10 @@
               <h1 
                 class="mega-cta__title title-sans-serif border-dual-shadow__text" 
                 id="midd-mega-cta-label-{{id}}"
+                data-text-color="#75a3cd"
                 data-border="text-shadow"
-                data-color-primary="#ED01A7"
-                data-color-secondary="#F99F33"
+                data-color-primary="#ed01a7"
+                data-color-secondary="#f99f33"
               >
                 {{title}}
               </h1>

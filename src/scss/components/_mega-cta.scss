@@ -78,13 +78,13 @@
         height: 100%;
         border-top-width: 10px;
         border-left-width: 10px;
-        border-color: var(--double-border-color-primary);
+        border-color: var(--dual-border-color-primary);
       }
 
       &:after {
         width: calc(100% - 5px);
         height: calc(100% - 5px);
-        border-color: var(--double-border-color-secondary);
+        border-color: var(--dual-border-color-secondary);
       }
     }
 
@@ -101,7 +101,7 @@
 
     .mega-cta__title {
       font-weight: variables.$font-weight-semibold;
-      color: variables.$blue;
+      color: var(--text-shadow-text-color);
       margin-bottom: variables.$spacing-4;
 
       @include breakpoints.breakpoint(md) {

@@ -5,6 +5,7 @@ class CreateBorder {
   borderType: string;
   colorPrimary: string;
   colorSecondary: string;
+  textColor: string;
 
   constructor(el: HTMLElement) {
     this.elem = el;
@@ -24,6 +25,13 @@ class CreateBorder {
       `--${this.borderType}-color-secondary`,
       this.colorSecondary
     );
+
+    if (this.elem.dataset.textColor) {
+      this.elem.style.setProperty(
+        `--${this.borderType}-text-color`,
+        this.elem.dataset.textColor
+      );
+    }
   }
 }
 
