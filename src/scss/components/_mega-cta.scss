@@ -101,7 +101,7 @@
 
     .mega-cta__title {
       font-weight: variables.$font-weight-semibold;
-      color: var(--text-shadow-text-color);
+      color: var(--text-color);
       margin-bottom: variables.$spacing-4;
 
       @include breakpoints.breakpoint(md) {

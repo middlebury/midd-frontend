@@ -49,4 +49,3 @@ import './dispatches';
 import './cookie-banner';
 import './quicksearch';
 import './utils/chosen';
-import './borders';

@@ -31,19 +31,19 @@
   border-color: variables.$navy;
 }
 
-.border-dual-shadow__box {
+.border-dual-box-shadow {
   box-shadow:
     -5px -5px 0 0 var(--box-shadow-color-primary),
     -10px -10px 0 0 var(--box-shadow-color-secondary);
 }
 
-.border-dual-shadow__box--right {
+.border-dual-box-shadow--right {
   box-shadow:
     5px -5px 0 0 var(--box-shadow-color-primary),
     10px -10px 0 0 var(--box-shadow-color-secondary);
 }
 
-.border-dual-shadow__text {
+.border-dual-text-shadow {
   text-shadow:
     -2px -2px var(--text-shadow-color-primary),
     -4px -4px var(--text-shadow-color-secondary);

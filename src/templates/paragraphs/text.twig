@@ -3,10 +3,8 @@
     <div class="container">
       <div class="row">
         <div 
-          class="py-4 py-md-5 text-background {{border_class}}" 
-          data-border="box-shadow"
-          data-color-primary={{border_color_primary|default("#fff791")}} 
-          data-color-secondary={{border_color_secondary|default("#75a3cd")}}
+          class="py-4 py-md-5 text-background {{box_shadow_class}}" 
+          style="--box-shadow-color-primary: {{box_shadow_color_primary}}; --box-shadow-color-secondary: {{box_shadow_color_secondary}};"
         >
           <div class="text-content">
   {% endif %}

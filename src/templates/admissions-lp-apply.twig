@@ -7,21 +7,26 @@
 
   {% include 'paragraphs/mega-cta.twig' with {
     title: 'Apply to Middlebury',
-    link: 'Add Us to the Common App'
+    link: 'Add Us to the Common App',
+    text_color: '#75a3cd',
+    text_shadow_color_primary: '#ed01a7',
+    text_shadow_color_secondary: '#f99f33',
+    dual_border_color_primary: '#75a3cd',
+    dual_border_color_secondary: '#fff791'
   } %}
 
   {% include 'partials/admissions-lp-box-menu.twig' with {
     items: admissions_lp_useful_links,
-    border_color_primary: '#fff791',
-    border_color_secondary: '#75a3cd'
+    box_shadow_color_primary: '#fff791',
+    box_shadow_color_secondary: '#75a3cd'
   }%}
 
   {% include 'partials/lead.twig' %}
 
   {% embed 'paragraphs/text.twig' with {
-    border_class: 'border-dual-shadow__box--right',
-    border_color_primary: '#57068C',
-    border_color_secondary: '#F05F84'
+    box_shadow_class: 'border-dual-box-shadow--right',
+    box_shadow_color_primary: '#57068C',
+    box_shadow_color_secondary: '#F05F84'
   } %}
     {% block content %}
       <h2>Who you are is what matters most</h2>
@@ -58,9 +63,9 @@
   } %}
 
   {% embed 'paragraphs/text.twig' with {
-    border_class: 'border-dual-shadow__box',
-    border_color_primary: '#fff791',
-    border_color_secondary: '#75a3cd'
+    box_shadow_class: 'border-dual-box-shadow',
+    box_shadow_color_primary: '#fff791',
+    box_shadow_color_secondary: '#75a3cd'
   }%}
     {% block content %}
       <h2>Febs</h2>
@@ -71,7 +76,9 @@
   {% include 'paragraphs/mega-cta.twig' with {
     link: 'Add Us to the Common App',
     banner_cta: true,
-    image: 'banner_cta'
+    image: 'banner_cta',
+    dual_border_color_primary: '#75a3cd',
+    dual_border_color_secondary: '#fff791'
   } %}
   
 {% endblock %}
