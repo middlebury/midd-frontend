@@ -2,8 +2,8 @@
     <div class="paragraph--full paragraph--lead-pulled-up">
         <div class="container px-0">
 {% endif %}
-    <p class="{{pulled_up and theme == "uwc" ? "davis-lead" : "lead paragraph--lead"}}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste iusto blanditiis dolorem illum accusantium, praesentium labore cumque fugit eos, quasi corporis voluptas aut! Doloremque similique dolorem enim, quos ipsam soluta!</p>
+    <p class="{{pulled_up and theme == "uwc" ? "davis-lead" : "lead paragraph--lead"}} {{admissions_lp ? "paragraph--expand lead--admissions-lp" : ""}}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste iusto blanditiis dolorem illum accusantium!</p>
 {% if pulled_up %}
         </div>
     </div>
-{% endif %}
+{% endif %} 
