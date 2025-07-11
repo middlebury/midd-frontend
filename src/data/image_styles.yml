@@ -270,3 +270,7 @@ image_styles:
       - 136x136
       - 176x176
     sizes: '(max-width: 512px) 128px, (max-width: 768px) 160px, (max-width: 1200px) 136px, 176px'
+  pardot_landing_page:
+    title: Banner image on pardot landing page
+    srcset:
+      - 1440x285

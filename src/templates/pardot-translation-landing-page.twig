@@ -2,13 +2,15 @@
 
 {% set theme = 'institute' %}
 {% set is_front = false %}
+{% set has_page_image = true %}
 
 {% set page_header = {
   title: 'Earn a Master’s in Translation and Localization Management',
   breadcrumb: [
     { text: 'Middlebury Institute of International Studies' },
   ],
-  has_menu: true
+  has_menu: false,
+  image_src: has_page_image
 } %}
 
 {% block layout_header %}
@@ -25,7 +27,7 @@
 {% block content %}
   <div class="paragraph paragraph--expand">
     <div class="container px-0">
-      <div class="row">
+      <div class="row row--sm-reverse">
         <div class="col-md-6">
           <p class="lead">Launch your career in localization management</p>
           {% embed 'paragraphs/text.twig' %}
@@ -50,7 +52,7 @@
             {% endblock %}
           {% endembed %}
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 mb-4 mb-md-0">
           {% include 'paragraphs/pardot-form.twig' with {
             post_url: 'https://learn.middlebury.edu/l/74172/2021-08-04/21x2y5y',
             program: 'International Education Management',
@@ -97,8 +99,12 @@
     title: 'Learn Real Solutions for Today’s Localization Challenges',
     media_content_items : ['video', 'video']
   } %}
+
 {% endblock %}
 
 {% block layout_footer %}
+  {% include 'partials/footer-cta-group.twig' with {
+    title: 'Ready to learn more?'
+  } %}
   {% include 'partials/midd-footer.twig' %}
 {% endblock %}

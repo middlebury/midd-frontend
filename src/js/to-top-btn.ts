@@ -12,17 +12,27 @@ function makeToTopBtn(btn: HTMLElement, threshold: number = 3) {
 
   // Set the required scroll length to 3x browser height so we don't
   // show the button on short pages.
-  const totalThreshold = window.innerHeight * threshold;
+  // const totalThreshold = window.innerHeight * threshold;
 
-  const hideOrShowBtn = () => {
-    if (window.pageYOffset > totalThreshold) {
+  // const hideOrShowBtn = () => {
+  //   if (window.pageYOffset > totalThreshold) {
+  //     btn.hidden = false;
+  //   } else {
+  //     btn.hidden = true;
+  //   }
+  // };
+
+  let lastScrollTop = 0;
+
+  onscroll(() => {
+    const st = window.pageYOffset || document.documentElement.scrollTop;
+    if (st > lastScrollTop) {
       btn.hidden = false;
-    } else {
+    } else if (st < lastScrollTop) {
       btn.hidden = true;
     }
-  };
-
-  onscroll(hideOrShowBtn);
+    lastScrollTop = st <= 0 ? 0 : st;
+  });
 }
 
 const btn = $('.js-to-top-btn');

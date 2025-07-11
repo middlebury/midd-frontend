@@ -4,16 +4,17 @@
 
     {% if image_src %}
       <figure class="page-header__figure">
-        {% include 'partials/img.twig' with { name: 'top_level' } %}
+        <img srcset="https://www.middlebury.edu/institute/sites/default/files/styles/400x225/public/2020-07/preview-days-jul-2020-hp.jpg?fv=PrEVE5ey&amp;itok=7C1vVYB2 400w, https://www.middlebury.edu/institute/sites/default/files/styles/640x360/public/2020-07/preview-days-jul-2020-hp.jpg?fv=GWIgct3s&amp;itok=3Ttn0MnX 640w, https://www.middlebury.edu/institute/sites/default/files/styles/960x540/public/2020-07/preview-days-jul-2020-hp.jpg?fv=VhICv304&amp;itok=erqWEcEq 960w, https://www.middlebury.edu/institute/sites/default/files/styles/1280x720/public/2020-07/preview-days-jul-2020-hp.jpg?fv=NwTyzS9f&amp;itok=ALVH1Mke 1280w, https://www.middlebury.edu/institute/sites/default/files/styles/1440x810/public/2020-07/preview-days-jul-2020-hp.jpg?fv=VfRAcaYE&amp;itok=elWxxmgF 1440w" sizes="(max-width: 1440px) 100vw, 1440px" src="https://www.middlebury.edu/institute/sites/default/files/styles/1440x810/public/2020-07/preview-days-jul-2020-hp.jpg?fv=VfRAcaYE&amp;itok=elWxxmgF" alt="Flags of several countries on either side of the corner of a building on campus">
+        {# {% include 'partials/img.twig' with { name: 'pardot_landing_page' } %} #}
 
-        <figcaption class="page-header__caption">
+        {# <figcaption class="page-header__caption">
           {% include 'partials/tooltip.twig' with {
             light: true,
             size: 'lg',
             id: random(1234),
             label: 'some caption for top level image'
           } %}
-        </figcaption>
+        </figcaption> #}
       </figure>
     {% endif %}
 
