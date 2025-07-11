@@ -75,6 +75,12 @@ image_styles:
       - 150x200
       - 300x400
     sizes: '(max-width: 512px) 100px, 300px'
+
+  image_pardot:
+    title: Image on pardot landing page
+    srcset:
+      - 530x298
+
   profile_spotlight_item: # 3:4
     title: Quad runner / profile spotlight
     ratio: '3:4'

@@ -75,8 +75,7 @@
   }
 
   .paragraph--expand,
-  .paragraph--video,
-  .paragraph--image:not(.image--left):not(.image--right) {
+  .paragraph--video {
     @include breakpoints.breakpoint(lg) {
       // Main column is 10 wide, so we divide by remaining
       // columns on sides to pull them out to 12 columns.
@@ -142,7 +141,13 @@
 }
 
 .paragraph--image {
-  @extend %paragraph-space-sm;
+  margin-top: variables.$spacing-6;
+  margin-bottom: variables.$spacing-5;
+
+  @include breakpoints.breakpoint(md) {
+    margin-top: variables.$spacing-7;
+    margin-bottom: variables.$spacing-6;
+  }
 
   &.image--left {
     margin-top: 0;
