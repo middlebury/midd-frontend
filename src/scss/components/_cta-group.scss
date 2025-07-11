@@ -12,6 +12,7 @@
 
 .cta-group {
   @include grid.make-row;
+  justify-content: center;
 }
 
 .cta-group__item {
