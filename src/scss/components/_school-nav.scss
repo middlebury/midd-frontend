@@ -31,6 +31,52 @@
   }
 }
 
+.school-nav__menu {
+  nav:first-child {
+    margin-top: variables.$spacing-3;
+    margin-bottom: -(variables.$spacing-2);
+  }
+
+  nav:last-child {
+    display: flex;
+    justify-content: flex-end;
+
+    .school-nav__list--extended {
+      border-left: 1px solid variables.$navy;
+      margin: variables.$spacing-2 0;
+      margin-left: variables.$spacing-5;
+      padding-left: variables.$spacing-5;
+
+      .school-nav__list {
+        margin: -(variables.$spacing-2) 0;
+
+        .school-nav__link {
+          font-weight: variables.$font-weight-bold;
+        }
+      }
+    }
+  }
+
+  // nav:last-child {
+  //   .school-nav__item:nth-last-child(-n + 3) {
+  //     padding: variables.$spacing-2 0;
+  //     margin: variables.$spacing-2 0;
+
+  //     .school-nav__link {
+  //       padding: 0;
+  //       font-weight: variables.$font-weight-bold;
+  //     }
+  //   }
+
+  //   .school-nav__item:nth-last-child(3) {
+  //     // border-left: 1px solid currentColor;
+  //     &:before {
+  //       content: '|';
+  //     }
+  //   }
+  // }
+}
+
 .school-nav__bars {
   .school-nav__handle.is-toggled & {
     display: none;
@@ -57,6 +103,7 @@
   left: 0;
   background-color: variables.$white;
   padding: #{variables.$spacing-3 * 0.5} variables.$spacing-3;
+  margin-top: -(variables.$spacing-2);
   border: 1px solid variables.$navy;
   transition: opacity 0.2s;
   opacity: 0;
@@ -95,15 +142,15 @@
 
 .school-nav__link {
   display: block;
-  padding-top: variables.$spacing-3;
-  padding-bottom: variables.$spacing-3;
+  padding-top: variables.$spacing-2;
+  padding-bottom: variables.$spacing-2;
   color: variables.$navy;
   font-size: variables.$typescale-3;
   font-weight: variables.$font-weight-medium;
-  opacity: 0.8;
-  transition:
-    opacity 0.2s,
-    border-color 0.2s;
+  // opacity: 0.8;
+  transition: border-color 0.2s;
+  position: relative;
+  z-index: 201;
 
   &:hover {
     text-decoration: none;
@@ -123,7 +170,7 @@
 }
 
 .school-nav__link--top {
-  border-bottom: 4px solid transparent;
+  border-bottom: 16px solid transparent;
 
   .school-nav__item:focus-within &,
   .school-nav__item:hover & {
