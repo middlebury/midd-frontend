@@ -1,7 +1,8 @@
 {% extends "school-home.twig" %}
 
 {% set theme = 'college' %}
-{% set is_front = true %}
+
+{% set has_page_image = true %}
 
 {% block layout_header %}
   {% embed 'partials/school-header.twig' with {
@@ -16,6 +17,16 @@
 
 {% block content %}
 
-  {# {% include 'paragraphs/homepage-grid.twig' %} #}
-
+  {% include 'paragraphs/admissions-mega-cta.twig' with {
+    title: 'YOU. VERMONT. THE WORLD.',
+    text_color: '#75a3cd',
+    text_shadow_color_primary: '#ed01a7',
+    text_shadow_color_secondary: '#f99f33',
+  } %}
+  <div class="paragraph--expand paragraph--pull-up">
+    {% include 'partials/box-menu.twig' with {
+      overlap: has_page_image,
+      items: top_level_nav_example
+    } %}
+  </div>
 {% endblock %}

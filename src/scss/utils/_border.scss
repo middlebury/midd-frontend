@@ -44,11 +44,15 @@
 }
 
 .border-dual-text-shadow {
+  font-weight: variables.$font-weight-semibold;
+  color: var(--text-color);
+
   text-shadow:
     -2px -2px var(--text-shadow-color-primary),
     -4px -4px var(--text-shadow-color-secondary);
 
   @include breakpoints.breakpoint(lg) {
+    font-size: variables.$typescale-10;
     text-shadow:
       -3px -3px var(--text-shadow-color-primary),
       -6px -6px var(--text-shadow-color-secondary);

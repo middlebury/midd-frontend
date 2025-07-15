@@ -42,15 +42,20 @@
 /// text colors
 ///
 
-college-homepage-grid-header.$text-colors: (
-  'white': variables.$white,
-  'gray': variables.$gray
-);
+.text-white {
+  color: variables.$white;
+}
 
-@each $name, $hex in college-homepage-grid-header.$text-colors {
-  .text-#{$name} {
-    color: $hex;
-  }
+.text-gray {
+  color: variables.$gray;
+}
+
+.text-caps {
+  @include type.small-caps;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
 }
 
 ///
@@ -157,10 +162,6 @@ college-homepage-grid-header.$text-colors: (
   }
 }
 
-.text-caps {
-  @include type.small-caps;
-}
-
 ///
 /// Line height
 ///
@@ -205,8 +206,4 @@ college-homepage-grid-header.$text-colors: (
 
 .whitespace-no-wrap {
   white-space: nowrap;
-}
-
-.title-sans-serif {
-  font-family: variables.$font-family-sans-serif;
 }
