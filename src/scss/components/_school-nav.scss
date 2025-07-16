@@ -34,7 +34,6 @@
 .school-nav__menu {
   nav:first-child {
     margin-top: variables.$spacing-3;
-    margin-bottom: -(variables.$spacing-2);
   }
 
   nav:last-child {
@@ -103,7 +102,6 @@
   left: 0;
   background-color: variables.$white;
   padding: #{variables.$spacing-3 * 0.5} variables.$spacing-3;
-  margin-top: -(variables.$spacing-2);
   border: 1px solid variables.$navy;
   transition: opacity 0.2s;
   opacity: 0;
@@ -149,8 +147,6 @@
   font-weight: variables.$font-weight-medium;
   // opacity: 0.8;
   transition: border-color 0.2s;
-  position: relative;
-  z-index: 201;
 
   &:hover {
     text-decoration: none;
@@ -170,7 +166,7 @@
 }
 
 .school-nav__link--top {
-  border-bottom: 16px solid transparent;
+  border-bottom: 8px solid transparent;
 
   .school-nav__item:focus-within &,
   .school-nav__item:hover & {

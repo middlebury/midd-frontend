@@ -12,8 +12,6 @@
   padding: variables.$spacing-2;
   font-size: variables.$typescale-2;
   color: variables.$navy;
-  position: relative;
-  z-index: 202;
 
   &:hover {
     text-decoration: none;
@@ -24,7 +22,7 @@
     font-size: variables.$typescale-3;
     padding-left: 0;
     padding-right: 0;
-    border-bottom: 16px solid transparent;
+    border-bottom: 8px solid transparent;
     // opacity: 0.8;
     transition:
       opacity 0.2s,
