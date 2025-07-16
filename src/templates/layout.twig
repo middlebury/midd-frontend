@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Middlebury Front-end Design System</title>
     <link rel="stylesheet" href="css/main.css">
-    <link
-    href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://www.middlebury.edu/college/themes/custom/middlebury_college_theme/favicon.ico?fv=euUJIkLM" type="image/vnd.microsoft.icon" />
     {# dont index these files if vercel deployment #}
     {% if env.vercel %}
       <meta name="robots" content="noindex"/>
     {% endif %}
   </head>
   <body class="{% if body_class %}{{body_class}}{% endif %} {% if theme %}theme-{{theme}}{% endif %}" id="midd-pagetop">
-    {% include 'paragraphs/cookie-banner.twig' %}
+    {# {% include 'paragraphs/cookie-banner.twig' %} #}
     <nav aria-labelledby="midd-skip-link">
       <a href="#midd-main" class="sr-only sr-focusable" id="midd-skip-link">Skip to content</a>
     </nav>

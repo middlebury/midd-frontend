@@ -3,6 +3,7 @@
 @use '../core/variables';
 @use '../mixins/grid';
 @use '../mixins/grid-framework';
+@use '../mixins/breakpoints';
 
 .container {
   @include grid.make-container;
@@ -15,6 +16,14 @@
 
 .row {
   @include grid.make-row;
+}
+
+.row--sm-reverse {
+  flex-direction: column-reverse;
+
+  @include breakpoints.breakpoint(md) {
+    flex-direction: row;
+  }
 }
 
 .row--no-gutters {

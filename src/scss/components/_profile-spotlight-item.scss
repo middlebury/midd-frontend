@@ -18,6 +18,10 @@
   @include breakpoints.breakpoint(md) {
     margin-right: 0;
   }
+
+  img {
+    width: 100%;
+  }
 }
 
 .profile-spotlight-item__content {

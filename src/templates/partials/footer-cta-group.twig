@@ -6,15 +6,15 @@
       </h2>
     {% endif %}
     <div class="cta-group">
-      {% for i in 0..3 %}
-        <div class="cta-group__item {{background_light ? 'blue-border' : ''}}">
+      {% for i in 0..0 %}
+        <div class="cta-group__item col-12 col-sm-10 col-lg-6{{background_light ? 'blue-border' : ''}}">
           {% if not background_light %}
             <p class="cta-group__text">
-              {% if env.test or random(1) %}
+              {# {% if env.test or random(1) %}
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              {% else %}
-                Lorem ipsum dolor sit
-              {% endif %}
+              {% else %} #}
+                Discover how a Master’s in Translation and Localization Management can equip you to go beyond translation and lead in a globalized world.
+              {# {% endif %} #}
             </p>
           {% endif %}
           <a href="" class="cta-group__button button {{background_light ? 'button--heavy button--light button--dark-outline col-9 col-sm-8 col-lg-auto' : 'button--primary'}}">
