@@ -2,20 +2,37 @@
 
 <div class="paragraph paragraph--full">
 	<div
-		class="container px-0">
+		class="px-0">
 
 		{# gradient should be one of left-bottom, left-top, right-bottom, right-top, center #}
 
 		<section 
-      class="mega-cta mega-cta--admissions-home mega-cta--image{{pin ? '-' ~ pin : '-bottom-left'}}" aria-labelledby="midd-mega-cta-label-{{id}}">
+      class="mega-cta mega-cta--admissions-home mega-cta--image{{pin ? '-' ~ pin : '-bottom-left'}}" aria-labelledby="midd-mega-cta-label-{{id}}" data-background-video-parent>
 				<figure class="mega-cta__back">
-          {% include 'partials/img.twig' with {
-            name: image ?? 'spotlight'
-          } %}
+          <video class="js-lazy-load" playsinline autoplay muted loop data-background-video poster="https://www.middlebury.edu/sites/default/files/homepage/panel-02-1920x1080.webp?fv=1" data-background-video>
+            <source data-src="https://player.vimeo.com/progressive_redirect/playback/827016634/rendition/1080p/file.mp4?loc=external&signature=c3a2a7c399cca676a461c669c502d16d0ea1c90e92dfbdc61a242766ca58ca7b" type="video/mp4">
+            <track kind="descriptions" srclang="en" src="descriptions.vtt" default/>
+          </video>
 				</figure>
+        <button aria-label="Play/Pause Background Video" class="background-video--button" data-background-video-trigger>
+          <span aria-labelledby="background-video--pause--{{name}}" class="background-video--button-pause">
+            <span id="background-video--pause--{{name}}" class="sr-only">Pause Animation</span>
+            {% include 'partials/icon.twig' with {
+              name: 'pause-homepage',
+              class: 'homepage-button'
+            } %}
+          </span>
+          <span aria-labelledby="background-video--play--{{name}}" class="background-video--button-play">
+            <span id="background-video--play--{{name}}" class="sr-only">Play Animation</span>
+            {% include 'partials/icon.twig' with {
+            name: 'play-homepage',
+            class: 'homepage-button'
+          } %}
+          </span>
+        </button>
 
-			<div class="mega-cta__front {% if gradient %} mega-cta--gradient-{{gradient}} {% endif %}">
-				<div class="{% if gradient %} mega-cta__content mega-cta__content-position mega-cta__content-position-{{gradient}} {% else %} mega-cta__content {% endif %}">
+			<div class="mega-cta__front">
+				<div class="mega-cta__content">
 					{% if title %}
             <h1 class="font-sans-serif">
               <span class="f4 font-bold mb-5">Admissions & Financial Aid</span>
