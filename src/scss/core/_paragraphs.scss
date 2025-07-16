@@ -141,11 +141,11 @@
 }
 
 .paragraph--image {
-  margin-top: variables.$spacing-6;
+  // margin-top: variables.$spacing-6;
   margin-bottom: variables.$spacing-5;
 
   @include breakpoints.breakpoint(md) {
-    margin-top: variables.$spacing-7;
+    // margin-top: variables.$spacing-7;
     margin-bottom: variables.$spacing-6;
   }
 

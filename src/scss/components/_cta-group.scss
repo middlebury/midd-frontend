@@ -80,7 +80,8 @@
   }
 }
 
-.cta-group__text {
+.cta-group__text,
+.cta-group__text p {
   font-size: variables.$typescale-4;
   margin-bottom: variables.$spacing-4;
 
