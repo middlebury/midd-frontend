@@ -113,6 +113,24 @@
   }
 
   &.mega-cta--admissions-home {
+    padding-top: calc(100vh - 64px);
+
+    @include breakpoints.breakpoint(lg) {
+      padding-top: calc(100vh - 110px);
+    }
+
+    .mega-cta__back video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      font-family: 'object-fit: cover;';
+      // opacity: 0.4;
+      // z-index: variables.$z-index-mega-cta-image;
+    }
+
     .mega-cta__content {
       flex: initial;
       max-width: initial;
