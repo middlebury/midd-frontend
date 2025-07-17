@@ -14,37 +14,22 @@
             <track kind="descriptions" srclang="en" src="descriptions.vtt" default/>
           </video>
 				</figure>
-        <button aria-label="Play/Pause Background Video" class="background-video--button" data-background-video-trigger>
-          <span aria-labelledby="background-video--pause--{{name}}" class="background-video--button-pause">
-            <span id="background-video--pause--{{name}}" class="sr-only">Pause Animation</span>
-            {% include 'partials/icon.twig' with {
-              name: 'pause-homepage',
-              class: 'homepage-button'
-            } %}
-          </span>
-          <span aria-labelledby="background-video--play--{{name}}" class="background-video--button-play">
-            <span id="background-video--play--{{name}}" class="sr-only">Play Animation</span>
-            {% include 'partials/icon.twig' with {
-            name: 'play-homepage',
-            class: 'homepage-button'
-          } %}
-          </span>
-        </button>
+        {% include 'partials/background-video-controls.twig' %}
 
 			<div class="mega-cta__front">
 				<div class="mega-cta__content">
-					{% if title %}
             <h1 class="font-sans-serif">
               <span class="f4 font-bold mb-5">Admissions & Financial Aid</span>
-              <span
-                class="border-dual-text-shadow mb-6" 
-                id="midd-mega-cta-label-{{id}}"
-                style=" --text-color: {{text_color}}; --text-shadow-color-primary: {{text_shadow_color_primary}}; --text-shadow-color-secondary: {{text_shadow_color_secondary}};"
-              >
-              {{title}}
-              </span>
             </h1>
-					{% endif %}
+            <p
+              class="mega-cta__title font-sans-serif border-dual-text-shadow mb-6" 
+              id="midd-mega-cta-label-{{id}}"
+              style=" --text-color: {{text_color}}; --text-shadow-color-primary: {{text_shadow_color_primary}}; --text-shadow-color-secondary: {{text_shadow_color_secondary}};"
+            >
+              <span>YOU.</span>
+              <span>VERMONT.</span>
+              <span>THE WORLD.</span>
+            </p>
             {% for link in ['Apply now', 'Visit Middlebury', 'Explore Financial Aid'] %}
 					    <a class="button button--primary button--light font-semibold text-uppercase {{loop.last ? "" : "mr-2"}}" href="">{{link}}</a>
             {% endfor %}

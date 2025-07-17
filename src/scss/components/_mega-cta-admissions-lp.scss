@@ -1,0 +1,69 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/grid';
+
+.mega-cta {
+  &.mega-cta--lp {
+    overflow: initial;
+    background: variables.$white;
+
+    &:not(.mega-cta--banner-cta) {
+      min-height: 324px;
+    }
+
+    .mega-cta__front {
+      .mega-cta__content {
+        z-index: variables.$z-index-mega-cta-front;
+        margin-top: -(variables.$spacing-8);
+        @include breakpoints.breakpoint(md) {
+          @include grid.make-col(8);
+        }
+      }
+      &:after,
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 5px solid;
+      }
+
+      &:before {
+        width: 100%;
+        height: 100%;
+        border-top-width: 10px;
+        border-left-width: 10px;
+        border-color: var(--dual-border-color-primary);
+      }
+
+      &:after {
+        width: calc(100% - 5px);
+        height: calc(100% - 5px);
+        border-color: var(--dual-border-color-secondary);
+      }
+    }
+
+    .mega-cta__title {
+      margin-bottom: variables.$spacing-4;
+
+      @include breakpoints.breakpoint(md) {
+        margin-bottom: variables.$spacing-5;
+      }
+
+      @include breakpoints.breakpoint(lg) {
+        margin-bottom: variables.$spacing-9;
+      }
+    }
+
+    &.mega-cta--banner-cta {
+      min-height: 250px;
+      padding-top: 0;
+
+      .mega-cta__front {
+        .mega-cta__content {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
