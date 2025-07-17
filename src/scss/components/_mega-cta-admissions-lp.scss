@@ -1,3 +1,4 @@
+@use '../core/functions';
 @use '../core/variables';
 @use '../mixins/breakpoints';
 @use '../mixins/grid';
@@ -18,7 +19,16 @@
         @include breakpoints.breakpoint(md) {
           @include grid.make-col(8);
         }
+
+        .button {
+          padding: functions.rem(12) variables.$spacing-5;
+
+          @include breakpoints.breakpoint(md) {
+            padding: variables.$spacing-3 variables.$spacing-5;
+          }
+        }
       }
+
       &:after,
       &:before {
         content: '';
@@ -32,18 +42,23 @@
         width: 100%;
         height: 100%;
         border-top-width: 10px;
-        border-left-width: 10px;
+        border-left-width: 0;
+        border-right-width: 0;
         border-color: var(--dual-border-color-primary);
       }
 
       &:after {
-        width: calc(100% - 5px);
+        width: 100%;
         height: calc(100% - 5px);
+        border-left-width: 0;
+        border-right-width: 0;
         border-color: var(--dual-border-color-secondary);
       }
     }
 
     .mega-cta__title {
+      font-size: functions.rem(32);
+      font-weight: variables.$font-weight-semibold;
       margin-bottom: variables.$spacing-4;
 
       @include breakpoints.breakpoint(md) {
@@ -51,6 +66,7 @@
       }
 
       @include breakpoints.breakpoint(lg) {
+        font-size: variables.$typescale-10;
         margin-bottom: variables.$spacing-9;
       }
     }

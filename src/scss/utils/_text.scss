@@ -129,7 +129,7 @@
 }
 
 .lead--admissions-lp {
-  font-size: variables.$typescale-8;
+  font-size: functions.rem(32);
   line-height: variables.$line-height-heading;
   color: variables.$white;
 
