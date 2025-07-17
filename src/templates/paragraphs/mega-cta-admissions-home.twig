@@ -1,0 +1,41 @@
+{% set id = random(1234) %}
+
+<div class="paragraph paragraph--full">
+	<div
+		class="px-0">
+
+		{# gradient should be one of left-bottom, left-top, right-bottom, right-top, center #}
+
+		<section 
+      class="mega-cta mega-cta--admissions-home mega-cta--image{{pin ? '-' ~ pin : '-bottom-left'}}" aria-labelledby="midd-mega-cta-label-{{id}}" data-background-video-parent>
+				<figure class="mega-cta__back">
+          <video class="js-lazy-load" playsinline autoplay muted loop data-background-video poster="https://www.middlebury.edu/sites/default/files/homepage/panel-02-1920x1080.webp?fv=1" data-background-video>
+            <source data-src="https://player.vimeo.com/progressive_redirect/playback/827016634/rendition/1080p/file.mp4?loc=external&signature=c3a2a7c399cca676a461c669c502d16d0ea1c90e92dfbdc61a242766ca58ca7b" type="video/mp4">
+            <track kind="descriptions" srclang="en" src="descriptions.vtt" default/>
+          </video>
+				</figure>
+        {% include 'partials/background-video-controls.twig' %}
+
+			<div class="mega-cta__front">
+				<div class="mega-cta__content">
+            <h1 class="font-sans-serif">
+              <span class="f4 font-bold mb-5">Admissions & Financial Aid</span>
+            </h1>
+            <p
+              class="mega-cta__title font-sans-serif font-semibold border-dual-text-shadow mb-6" 
+              id="midd-mega-cta-label-{{id}}"
+              style=" --text-color: {{text_color}}; --text-shadow-color-primary: {{text_shadow_color_primary}}; --text-shadow-color-secondary: {{text_shadow_color_secondary}};"
+            >
+              <span>YOU.</span>
+              <span>VERMONT.</span>
+              <span>THE WORLD.</span>
+            </p>
+            {% for link in ['Apply now', 'Visit Middlebury', 'Explore Financial Aid'] %}
+					    <a class="button button--primary button--light font-semibold text-uppercase {{loop.last ? "" : "mr-2"}}" href="">{{link}}</a>
+            {% endfor %}
+				</div>
+			</div>
+		</section>
+
+	</div>
+</div>
