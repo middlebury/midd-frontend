@@ -4,7 +4,7 @@
 @use '../mixins/grid';
 
 .mega-cta {
-  &.mega-cta--lp {
+  &.mega-cta--admissions-lp {
     overflow: initial;
     background: variables.$white;
 
@@ -14,7 +14,6 @@
 
     .mega-cta__front {
       .mega-cta__content {
-        z-index: variables.$z-index-mega-cta-front;
         margin-top: -(variables.$spacing-8);
         @include breakpoints.breakpoint(md) {
           @include grid.make-col(8);
@@ -27,32 +26,6 @@
             padding: variables.$spacing-3 variables.$spacing-5;
           }
         }
-      }
-
-      &:after,
-      &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        border: 5px solid;
-      }
-
-      &:before {
-        width: 100%;
-        height: 100%;
-        border-top-width: 10px;
-        border-left-width: 0;
-        border-right-width: 0;
-        border-color: var(--dual-border-color-primary);
-      }
-
-      &:after {
-        width: 100%;
-        height: calc(100% - 5px);
-        border-left-width: 0;
-        border-right-width: 0;
-        border-color: var(--dual-border-color-secondary);
       }
     }
 

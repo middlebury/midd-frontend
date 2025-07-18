@@ -7,10 +7,7 @@
 		{# gradient should be one of left-bottom, left-top, right-bottom, right-top, center #}
 
 		<section 
-      class="mega-cta {{miis ? 'mega-cta--miis' : ''}} mega-cta--image{{pin ? '-' ~ pin : '-bottom-left'}} {% if hero %} mega-cta--hero{% endif %}{% if blse %} mega-cta--blse{% endif %}{% if admissions_lp %} mega-cta--lp {{banner_cta ? 'mega-cta--banner-cta' : '' }}{% endif %}" aria-labelledby="midd-mega-cta-label-{{id}}"
-      {% if admissions_lp %}
-        style="--dual-border-color-primary: {{dual_border_color_primary}}; --dual-border-color-secondary: {{dual_border_color_secondary}};"
-      {% endif %}
+      class="mega-cta {{miis ? 'mega-cta--miis' : ''}} mega-cta--image{{pin ? '-' ~ pin : '-bottom-left'}} {% if hero %} mega-cta--hero{% endif %}{% if blse %} mega-cta--blse{% endif %}{% if admissions_lp %} mega-cta--admissions-lp {{banner_cta ? 'mega-cta--banner-cta' : '' }}{% endif %}" aria-labelledby="midd-mega-cta-label-{{id}}"
     >
       {% if gradient %}
 			  <div class="mega-cta__back-gradient">
@@ -34,7 +31,12 @@
 			  </div>
       {% endif %}
 
-			<div class="mega-cta__front {% if gradient %} mega-cta--gradient-{{gradient}} {% endif %}">
+			<div 
+        class="mega-cta__front {% if gradient %} mega-cta--gradient-{{gradient}} {% endif %} {{dual_border_color_primary ? "mega-cta__front--with-borders" : ""}}"
+        {% if dual_border_color_primary %}
+          style="--dual-border-color-primary: {{dual_border_color_primary}}; --dual-border-color-secondary: {{dual_border_color_secondary}};"
+        {% endif %}
+      >
 				<div class="{% if gradient %} mega-cta__content mega-cta__content-position mega-cta__content-position-{{gradient}} {% else %} mega-cta__content {% endif %}">
 					{% if title %}
             {% if admissions_lp %}
