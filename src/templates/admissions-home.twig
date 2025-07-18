@@ -29,4 +29,20 @@
       items: top_level_nav_example
     } %}
   </div>
+
+  {# 
+    possible options for variables used by mega-cta-custom.twig:
+    pin_content: 'top-left', 'top-right', 'bottom-left', 'bottom-right', 'center', 'center-left', 'center-right'
+    mode: 'dark', 'light' 
+  #}
+  {% include 'paragraphs/mega-cta-custom.twig' with {
+    pin_content: 'center-right',
+    mode: 'light',
+    dual_border_color_primary: '#75a3cd',
+    dual_border_color_secondary: '#fff791',
+    caption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    title_link: 'Water Sanitation Research and Development, India',
+    text: 'Access to safe water and adequate sanitation services has proven to be one of the most efficient ways of improving human health.',
+    link: 'Read more'
+  } %}
 {% endblock %}
