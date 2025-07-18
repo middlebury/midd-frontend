@@ -366,52 +366,6 @@
     }
   }
 
-  .journey-video--button {
-    position: absolute;
-    bottom: variables.$spacing-3;
-    left: variables.$spacing-3;
-    color: white;
-    z-index: 30;
-    opacity: 0.5;
-    display: none;
-
-    @include breakpoints.breakpoint(sm) {
-      display: block;
-    }
-
-    @include breakpoints.breakpoint(lg) {
-      bottom: variables.$spacing-5;
-      left: variables.$spacing-5;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      display: none;
-    }
-
-    .journey-video--button-play {
-      display: none;
-    }
-
-    .journey-video--button-pause {
-      display: block;
-    }
-
-    &.not-playing {
-      .journey-video--button-play {
-        display: block;
-      }
-
-      .journey-video--button-pause {
-        display: none;
-      }
-    }
-
-    .icon {
-      width: variables.$typescale-9;
-      height: variables.$typescale-9;
-    }
-  }
-
   img {
     max-width: initial;
     width: 316%;

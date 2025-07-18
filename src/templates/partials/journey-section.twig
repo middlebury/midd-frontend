@@ -1,4 +1,4 @@
-<section id={{name}} class="journey-section journey-section--{{name}} js-journey-section" data-section={{name}} aria-labelledby="{{ title_label }}">
+<section id={{name}} class="journey-section journey-section--{{name}} js-journey-section" data-section={{name}} aria-labelledby="{{ title_label }}" data-background-video-parent>
   {% if name == 'learning'%}
     <div class="journey-line-box js-journey-line">
       <svg viewbox="0 0 772 2238" xmlns="http://www.w3.org/2000/svg" class="journey-line-svg journey-line--desktop" style="pointer-events:auto;">
@@ -58,26 +58,11 @@
     <figure class="journey-section__background" aria-label="[place alt text here]"></figure>
   {% else %}
     <figure class="journey-section__background" aria-label="[place alt text here]">
-      <video playsinline autoplay muted loop class=" journey-section__video" data-journey-video poster="data:image/gif;base64,r0lgodlhaqabaiaaaaaaap///yh5baeaaaaalaaaaaabaaeaaaibraa7">
+      <video playsinline autoplay muted loop class="journey-section__video" poster="data:image/gif;base64,r0lgodlhaqabaiaaaaaaap///yh5baeaaaaalaaaaaabaaeaaaibraa7" data-background-video>
         <source data-src="{{video}}" type="video/mp4">
         <track kind="descriptions" srclang="en" src="descriptions.vtt" default/>
       </video>
     </figure>
-    <button aria-label="Play/Pause Background Video" class="journey-video--button" data-journey-video-trigger>
-      <span aria-labelledby="journey-video--pause--{{name}}" class="journey-video--button-pause">
-        <span id="journey-video--pause--{{name}}" class="sr-only">Pause Animation</span>
-        {% include 'partials/icon.twig' with {
-          name: 'pause-homepage',
-          class: 'homepage-button'
-        } %}
-      </span>
-      <span aria-labelledby="journey-video--play--{{name}}" class="journey-video--button-play">
-        <span id="journey-video--play--{{name}}" class="sr-only">Play Animation</span>
-        {% include 'partials/icon.twig' with {
-        name: 'play-homepage',
-        class: 'homepage-button'
-      } %}
-      </span>
-    </button>
+    {% include 'partials/background-video-controls.twig' %}
   {% endif %}
 </section>

@@ -30,3 +30,29 @@
 .border-navy {
   border-color: variables.$navy;
 }
+
+.border-dual-box-shadow {
+  box-shadow:
+    -5px -5px 0 0 var(--box-shadow-color-primary),
+    -10px -10px 0 0 var(--box-shadow-color-secondary);
+}
+
+.border-dual-box-shadow--right {
+  box-shadow:
+    5px -5px 0 0 var(--box-shadow-color-primary),
+    10px -10px 0 0 var(--box-shadow-color-secondary);
+}
+
+.border-dual-text-shadow {
+  color: var(--text-color);
+
+  text-shadow:
+    -2px -2px var(--text-shadow-color-primary),
+    -4px -4px var(--text-shadow-color-secondary);
+
+  @include breakpoints.breakpoint(lg) {
+    text-shadow:
+      -3px -3px var(--text-shadow-color-primary),
+      -6px -6px var(--text-shadow-color-secondary);
+  }
+}
