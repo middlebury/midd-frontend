@@ -45,5 +45,12 @@
     link: 'Read more'
   } %}
 
-  {% include 'paragraphs/stat-panel.twig' %}
+  {# 
+    possible options for variables used by stat-panel.twig:
+    blurb: 'true', 'false'
+    align: 'left', 'right' 
+  #}
+  {% include 'paragraphs/stat-panel.twig' with {
+    align: 'left'
+  }%}
 {% endblock %}
