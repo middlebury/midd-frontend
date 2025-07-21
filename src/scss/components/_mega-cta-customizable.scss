@@ -4,10 +4,11 @@
 @use '../mixins/grid';
 
 .mega-cta {
-  &.mega-cta--custom {
+  &.mega-cta--customizable {
     background: unset;
 
     .mega-cta__content {
+      position: absolute;
       text-align: left;
 
       @include breakpoints.breakpoint(md) {
@@ -15,9 +16,7 @@
       }
     }
 
-    .mega-cta-custom__content-position {
-      position: absolute;
-
+    .mega-cta__content {
       &--top-left,
       &--top-right {
         top: variables.$spacing-7;
