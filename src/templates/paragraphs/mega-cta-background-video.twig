@@ -25,9 +25,11 @@
             <span>VERMONT.</span>
             <span>THE WORLD.</span>
           </p>
-          {% for link in ['Apply now', 'Visit Middlebury', 'Explore Financial Aid'] %}
-            <a class="button button--primary button--light font-semibold text-uppercase {{loop.last ? " " : " mr-2"}}" href="">{{link}}</a>
-          {% endfor %}
+          <div class="mega-cta__buttons">
+            {% for link in ['Apply now', 'Visit Middlebury', 'Explore Financial Aid'] %}
+              <a class="button button--primary button--light font-semibold text-uppercase {{loop.last ? "mb-7" : " mr-2 mb-5"}} mb-lg-0" href="">{{link}}</a>
+            {% endfor %}
+          </div>
         </div>
       </div>
     </section>

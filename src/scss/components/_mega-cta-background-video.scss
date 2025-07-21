@@ -40,6 +40,18 @@
         object-fit: cover;
         font-family: 'object-fit: cover;';
       }
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: variables.$navy;
+        opacity: 0.6;
+        z-index: 2;
+      }
     }
 
     .background-video--button {
@@ -49,20 +61,27 @@
     }
 
     .mega-cta__content {
-      flex: initial;
-      max-width: initial;
+      @include breakpoints.breakpoint(lg) {
+        flex: initial;
+        max-width: initial;
+      }
+
+      .mega-cta__buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @include breakpoints.breakpoint(lg) {
+          flex-direction: row;
+        }
+      }
 
       .button {
         width: 100%;
-        margin-bottom: variables.$spacing-5;
 
-        &:last-child {
-          margin-bottom: variables.$spacing-7;
-        }
-
-        @include breakpoints.breakpoint(sm) {
+        @include breakpoints.breakpoint(lg) {
           width: 253px;
-          margin-bottom: variables.$spacing-5;
         }
       }
     }
@@ -83,7 +102,7 @@
       text-align: left;
       font-size: functions.rem(46);
 
-      @include breakpoints.breakpoint(sm) {
+      @include breakpoints.breakpoint(lg) {
         display: block;
         text-align: center;
       }
