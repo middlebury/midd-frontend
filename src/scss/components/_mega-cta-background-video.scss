@@ -3,7 +3,7 @@
 @use '../mixins/breakpoints';
 
 .mega-cta {
-  &.mega-cta--admissions-home {
+  &.mega-cta--background-video {
     padding-top: 640px;
 
     @include breakpoints.breakpoint(sm) {
