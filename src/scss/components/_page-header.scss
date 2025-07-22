@@ -11,11 +11,11 @@
 }
 
 .page-header--has-image {
-  padding-top: math.percentage(2 * 0.2);
+  // padding-top: math.percentage(2 * 0.2);
   height: 0;
   position: relative;
   overflow: hidden;
-  min-height: 300px;
+  min-height: 285px;
   margin-bottom: variables.$spacing-7;
 
   img {
@@ -250,7 +250,21 @@
 }
 
 .page-header__title {
-  @include type.h1;
+  font-size: variables.$typescale-7;
+  line-height: variables.$line-height-heading;
+  font-family: variables.$font-family-serif;
+
+  @include breakpoints.breakpoint(md) {
+    font-size: variables.$typescale-8;
+  }
+
+  @include breakpoints.breakpoint(lg) {
+    font-size: variables.$typescale-9;
+  }
+
+  @include breakpoints.breakpoint(xl) {
+    font-size: variables.$typescale-10;
+  }
 }
 
 .page-header--app {

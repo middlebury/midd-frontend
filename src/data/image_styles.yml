@@ -75,13 +75,17 @@ image_styles:
       - 150x200
       - 300x400
     sizes: '(max-width: 512px) 100px, 300px'
+
+  image_pardot:
+    title: Image on pardot landing page
+    srcset:
+      - 530x298
+
   profile_spotlight_item: # 3:4
     title: Quad runner / profile spotlight
     ratio: '3:4'
     srcset:
-      - 90x120
-      - 144x192
-      - 288x384
+      - 400x225
     sizes: '(max-width: 512px) 90px, (max-width: 768px) 144px, 288px'
   card_carousel: # 3:4
     title: Card Carousel
@@ -277,3 +281,7 @@ image_styles:
       - 136x136
       - 176x176
     sizes: '(max-width: 512px) 128px, (max-width: 768px) 160px, (max-width: 1200px) 136px, 176px'
+  pardot_landing_page:
+    title: Banner image on pardot landing page
+    srcset:
+      - 1440x285
