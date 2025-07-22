@@ -46,11 +46,12 @@
 
     .mega-cta__title {
       font-size: variables.$typescale-6;
-      font-weight: variables.$font-weight-light;
+      font-weight: variables.$font-weight-normal;
       margin-bottom: variables.$spacing-1;
 
       @include breakpoints.breakpoint(lg) {
         font-size: functions.rem(40);
+        font-weight: variables.$font-weight-light;
         margin-bottom: variables.$spacing-2;
       }
     }
