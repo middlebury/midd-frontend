@@ -13,7 +13,7 @@
   font-size: variables.$typescale-2;
   color: variables.$navy;
 
-  @include breakpoints.breakpoint(lg) {
+  @include breakpoints.breakpoint(xl) {
     padding: variables.$spacing-2;
   }
 
