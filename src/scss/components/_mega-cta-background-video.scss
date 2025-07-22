@@ -40,6 +40,18 @@
         object-fit: cover;
         font-family: 'object-fit: cover;';
       }
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: variables.$navy-dark;
+        opacity: 0.6;
+        z-index: 2;
+      }
     }
 
     .background-video--button {
