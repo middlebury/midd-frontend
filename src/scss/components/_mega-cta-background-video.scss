@@ -40,6 +40,18 @@
         object-fit: cover;
         font-family: 'object-fit: cover;';
       }
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: variables.$navy-dark;
+        opacity: 0.75;
+        z-index: 2;
+      }
     }
 
     .background-video--button {
@@ -89,14 +101,16 @@
       flex-direction: column;
       text-align: left;
       font-size: functions.rem(46);
+      font-weight: variables.$font-weight-bold;
+
+      @include breakpoints.breakpoint(md) {
+        font-size: variables.$typescale-11;
+        font-weight: 800;
+      }
 
       @include breakpoints.breakpoint(lg) {
         display: block;
         text-align: center;
-      }
-
-      @include breakpoints.breakpoint(md) {
-        font-size: variables.$typescale-10;
       }
 
       span {
