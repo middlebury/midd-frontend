@@ -171,7 +171,6 @@ class Journey {
       animProgress <= this.animPauseThreshold + 0.5
     ) {
       this.journeyLineAnimInstance.pause();
-      console.log(this.journeyLineAnimInstance);
     }
   }
 
@@ -211,10 +210,7 @@ class Journey {
         ) {
           this.loadVideo(entry.target);
         }
-        // console.log(
-        //   this.getAnimationThreshold(entryId, 'line'),
-        //   this.animPauseThreshold
-        // );
+
         if (
           this.getAnimationThreshold(entryId, 'line') > this.animPauseThreshold
         ) {

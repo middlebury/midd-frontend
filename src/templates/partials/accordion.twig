@@ -23,6 +23,9 @@
               <p class="accordion-item__label--bold">{{item.course_number}}</p>
               {{item.title}}
             </span>
+          {% else %}
+            {# This case is true when using the FAQ component as a generic accordions #}
+            <span class="accordion-item__label" id="midd-accordion-item-label-{{id}}">{{item.title}}</span>
           {% endif %}
 
           {% include 'partials/icon.twig' with { name: 'chevron-down', class: 'accordion-item__icon' } %}
