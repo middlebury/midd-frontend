@@ -5,8 +5,6 @@
 
 .mega-cta {
   &.mega-cta--customizable {
-    background: unset;
-
     .mega-cta__content {
       position: absolute;
       text-align: left;
@@ -41,6 +39,12 @@
       &--bottom-right,
       &--center-right {
         right: 0;
+      }
+    }
+
+    .mega-cta__back {
+      img {
+        opacity: 1;
       }
     }
 

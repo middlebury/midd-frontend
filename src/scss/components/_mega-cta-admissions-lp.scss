@@ -6,7 +6,6 @@
 .mega-cta {
   &.mega-cta--admissions-lp {
     overflow: initial;
-    background: variables.$white;
 
     &:not(.mega-cta--banner-cta) {
       min-height: 324px;
@@ -26,6 +25,12 @@
             padding: variables.$spacing-3 variables.$spacing-5;
           }
         }
+      }
+    }
+
+    .mega-cta__back {
+      img {
+        opacity: 1;
       }
     }
 
