@@ -29,6 +29,10 @@
     } %}
   </div>
 
+  {% include 'partials/lead.twig' with {
+    class: 'lead--admissions-home text-center text-black'
+  } %}
+  
   {# 
     possible options for variables used by mega-cta-custom.twig:
     pin_content: 'top-left', 'top-right', 'bottom-left', 'bottom-right', 'center', 'center-left', 'center-right'

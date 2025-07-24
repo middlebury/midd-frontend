@@ -22,7 +22,9 @@
     box_shadow_color_secondary: '#75a3cd'
   }%}
 
-  {% include 'partials/lead.twig' %}
+  {% include 'partials/lead.twig' with {
+    class: 'paragraph--expand lead--admissions-lp'
+  }%}
 
   {% embed 'paragraphs/text.twig' with {
     box_shadow_class: 'border-dual-box-shadow--right',

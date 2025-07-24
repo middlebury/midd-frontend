@@ -43,11 +43,15 @@
 ///
 
 .text-white {
-  color: variables.$white;
+  color: variables.$white !important;
 }
 
 .text-gray {
-  color: variables.$gray;
+  color: variables.$gray !important;
+}
+
+.text-black {
+  color: variables.$black !important;
 }
 
 .text-caps {
@@ -128,7 +132,8 @@
   }
 }
 
-.lead--admissions-lp {
+.lead--admissions-lp,
+.lead--admissions-home {
   font-size: functions.rem(32);
   line-height: variables.$line-height-heading;
   color: variables.$white;
