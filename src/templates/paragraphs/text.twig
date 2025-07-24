@@ -1,4 +1,13 @@
-<div class="typography paragraph--text" data-digest-content>
+<div class="typography paragraph--text {{ admissions_lp ? "paragraph--full" : "" }}" data-digest-content>
+  {% if admissions_lp %}
+    <div class="container">
+      <div class="row">
+        <div 
+          class="py-4 py-md-5 text-background {{box_shadow_class}}" 
+          style="--box-shadow-color-primary: {{box_shadow_color_primary}}; --box-shadow-color-secondary: {{box_shadow_color_secondary}};"
+        >
+          <div class="text-content">
+  {% endif %}
   {% block content %}
 
     <h2>Text Component</h2>
@@ -259,4 +268,10 @@
 
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit expedita hic, rerum doloremque ab illo facere fuga ducimus minima quisquam eius sunt! Minus, rem aspernatur quasi nihil numquam ipsum a!</p>
   {% endblock %}
+  {% if admissions_lp %}
+          </div>
+        </div>
+      </div>
+    </div> 
+  {% endif %}
 </div>

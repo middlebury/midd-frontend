@@ -2,25 +2,16 @@
 @use '../mixins/breakpoints';
 @use '../mixins/grid';
 
+@use 'sass:math';
+
 .stat-panel {
   position: relative;
   background-color: variables.$gray;
 
   @include breakpoints.breakpoint(lg) {
+    height: 0;
+    padding-top: math.percentage(math.div(9, 16));
     overflow: hidden;
-
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      background-color: variables.$color-primary;
-      opacity: 0.7;
-      z-index: variables.$z-index-stat-panel-overlay;
-    }
   }
 }
 
@@ -47,21 +38,42 @@
     height: 100%;
     width: 100%;
   }
+
+  &:after {
+    @include breakpoints.breakpoint(lg) {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: variables.$color-primary;
+      opacity: 0.7;
+      z-index: variables.$z-index-stat-panel-overlay;
+    }
+  }
 }
 
 .stat-panel__content {
-  @include breakpoints.breakpoint(md) {
-    @include grid.make-row;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
   @include breakpoints.breakpoint(lg) {
-    position: relative;
+    display: flex;
     z-index: variables.$z-index-stat-panel-content;
-    min-height: 700px;
     justify-content: space-between;
     align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    &.stat-panel__content-right {
+      justify-content: flex-end;
+    }
+
+    &.stat-panel__content-left {
+      justify-content: flex-start;
+    }
   }
 }
 
@@ -71,16 +83,19 @@
   @include breakpoints.breakpoint(md) {
     @include grid.make-col-ready;
     @include grid.make-col(6);
+
+    &.stat-panel__item--secondary:first-child {
+      @include grid.make-col(12);
+    }
   }
 
   @include breakpoints.breakpoint(lg) {
-    background-color: transparent !important;
-    padding: variables.$spacing-8;
-    @include grid.make-col(5);
-  }
-
-  @include breakpoints.breakpoint(lg) {
-    @include grid.make-col(4);
+    &,
+    &.stat-panel__item--secondary:first-child {
+      background-color: transparent !important;
+      padding: variables.$spacing-8;
+      @include grid.make-col(5);
+    }
   }
 }
 

@@ -75,6 +75,17 @@
                   </li>
                 {% endfor %}
               </ul>
+              {% if extended %}
+                <span class="school-nav__list--extended">
+                  <ul class="school-nav__list">
+                    {% for item in ['Apply', 'Visit', 'Financial Aid'] %}
+                      <li class="school-nav__item">
+                        <a href="" class="school-nav__link school-nav__link--util">{{item}}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </span>
+              {% endif %}
             </nav>
 
           </div>

@@ -129,6 +129,38 @@ $mega-cta-alignments: (
   }
 }
 
+.mega-cta__front--with-borders {
+  .mega-cta__content {
+    z-index: variables.$z-index-mega-cta-front;
+  }
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 5px solid;
+  }
+
+  &:before {
+    width: 100%;
+    height: 100%;
+    border-top-width: 10px;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-color: var(--dual-border-color-primary);
+  }
+
+  &:after {
+    width: 100%;
+    height: calc(100% - 5px);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-color: var(--dual-border-color-secondary);
+  }
+}
+
 .mega-cta__content {
   @extend %make-columns;
 }

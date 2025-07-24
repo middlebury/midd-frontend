@@ -42,15 +42,24 @@
 /// text colors
 ///
 
-college-homepage-grid-header.$text-colors: (
-  'white': variables.$white,
-  'gray': variables.$gray
-);
+.text-white {
+  color: variables.$white !important;
+}
 
-@each $name, $hex in college-homepage-grid-header.$text-colors {
-  .text-#{$name} {
-    color: $hex;
-  }
+.text-gray {
+  color: variables.$gray !important;
+}
+
+.text-black {
+  color: variables.$black !important;
+}
+
+.text-caps {
+  @include type.small-caps;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
 }
 
 ///
@@ -123,6 +132,17 @@ college-homepage-grid-header.$text-colors: (
   }
 }
 
+.lead--admissions-lp,
+.lead--admissions-home {
+  font-size: functions.rem(32);
+  line-height: variables.$line-height-heading;
+  color: variables.$white;
+
+  @include breakpoints.breakpoint(lg) {
+    font-size: variables.$typescale-9;
+  }
+}
+
 .davis-lead {
   font-size: variables.$typescale-6;
   font-weight: variables.$font-weight-light;
@@ -145,10 +165,6 @@ college-homepage-grid-header.$text-colors: (
     margin-left: variables.$spacing-5;
     margin-right: variables.$spacing-5;
   }
-}
-
-.text-caps {
-  @include type.small-caps;
 }
 
 ///

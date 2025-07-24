@@ -12,7 +12,9 @@
 
 {% include 'paragraphs/text-short.twig' %}
 
-{% include 'paragraphs/stat-panel.twig' %}
+{% include 'paragraphs/stat-panel.twig' with {
+  blurb: true
+}%}
 
 {% include 'paragraphs/text-short.twig' %}
 

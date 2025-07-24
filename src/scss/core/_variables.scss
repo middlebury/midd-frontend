@@ -308,6 +308,7 @@ $typescale-7: functions.rem(28) !default;
 $typescale-8: functions.rem(36) !default;
 $typescale-9: functions.rem(48) !default;
 $typescale-10: functions.rem(64) !default;
+$typescale-11: functions.rem(72) !default;
 
 $typescale: (
   1: $typescale-1,
@@ -326,6 +327,7 @@ $font-weight-normal: 400;
 $font-weight-medium: 500;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
+$font-weight-extrabold: 800;
 
 // line heights
 $line-height-solid: 1;
@@ -629,3 +631,5 @@ $z-index-homepage-header-button: 10;
 $z-index-dispatches: 2;
 
 $z-index-journey-modal: 5;
+
+$z-index-background-video-control: 30;

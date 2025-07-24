@@ -52,6 +52,11 @@ $drawer-nav-color: variables.$navy-light;
   justify-content: space-between;
 }
 
+.drawer-nav__item-cta {
+  border-top-color: variables.$navy;
+  background-color: variables.$navy-light;
+}
+
 .drawer-nav__link {
   display: block;
   padding: variables.$spacing-3;

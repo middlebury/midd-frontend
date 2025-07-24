@@ -13,6 +13,10 @@
   font-size: variables.$typescale-2;
   color: variables.$navy;
 
+  @include breakpoints.breakpoint(xl) {
+    padding: variables.$spacing-2;
+  }
+
   &:hover {
     text-decoration: none;
   }
@@ -22,15 +26,15 @@
     font-size: variables.$typescale-3;
     padding-left: 0;
     padding-right: 0;
-    border-bottom: 4px solid transparent;
-    opacity: 0.8;
+    border-bottom: 8px solid transparent;
+    // opacity: 0.8;
     transition:
       opacity 0.2s,
       border-color 0.2s;
 
     &.is-toggled,
     &:hover {
-      opacity: 1;
+      // opacity: 1;
       @include mixins.themify(border-color);
     }
   }
