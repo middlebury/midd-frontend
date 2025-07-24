@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   </head>
-  <body class=" theme-sa" id="midd-pagetop">
+  <body class=" theme-college" id="midd-pagetop">
     <aside class="cookie-banner js-cookie-banner is-toggled">
       <p>We use cookies and other technologies to better understand a visitor's experience and to help improve our websites. By continuing to use the website, you consent to Middlebury's use of cookies and other technologies as outlined in our <a href="#">Privacy Policy</a>.</p>
       <button class="cookie-banner__button cookie-banner__button--close" aria-label="Close cookie consent banner" data-toggle-target=".js-cookie-banner"> Close <svg class="icon ml-1 cookie-banner__button-icon " focusable="false" aria-hidden="true">
@@ -210,12 +210,10 @@
         <div class="container">
           <div class="school-header__main">
             <div class="school-header__logo">
-              <h1 class="school-header__title">
-                <a href="">
-                  <img src="images/schools-abroad-logo.svg" srcset="images/schools-abroad-logo.svg 186w" sizes="(min-width: 1280px) 186px, 124px" alt="Logo for Middlebury C.V. Starr Schools Abroad" />
-                  <span class="sr-only">Middlebury C.V. Starr Schools Abroad</span>
-                </a>
-              </h1>
+              <a href="">
+                <img src="images/college-logo.svg" srcset="images/college-logo.svg 180w" sizes="(min-width: 1280px) 180px, 120px" alt="Logo for Middlebury College" />
+                <span class="sr-only">Middlebury College</span>
+              </a>
             </div>
             <div class="school-header__content">
               <div class="school-nav">
@@ -312,6 +310,19 @@
                         <a href="" class="school-nav__link school-nav__link--util">Advisors</a>
                       </li>
                     </ul>
+                    <span class="school-nav__list--extended">
+                      <ul class="school-nav__list">
+                        <li class="school-nav__item">
+                          <a href="" class="school-nav__link school-nav__link--util">Apply</a>
+                        </li>
+                        <li class="school-nav__item">
+                          <a href="" class="school-nav__link school-nav__link--util">Visit</a>
+                        </li>
+                        <li class="school-nav__item">
+                          <a href="" class="school-nav__link school-nav__link--util">Financial Aid</a>
+                        </li>
+                      </ul>
+                    </span>
                   </nav>
                 </div>
               </div>
@@ -349,687 +360,127 @@
           <div class="row">
             <div class="paragraphs paragraphs--wide">
               <div class="paragraph paragraph--full">
-                <div class="container px-0">
-                  <section class="mega-cta  mega-cta--image-left-bottom  mega-cta--hero" aria-labelledby="midd-mega-cta-label-22">
+                <div class="px-0">
+                  <section class="mega-cta mega-cta--background-video mega-cta--image-bottom-left" aria-labelledby="midd-mega-cta-label-377" data-background-video-parent>
                     <figure class="mega-cta__back">
-                      <img src="https://placehold.co/1440x810" srcset="https://placehold.co/400x225 400w,https://placehold.co/640x360 640w,https://placehold.co/960x540 960w,https://placehold.co/1280x720 1280w,https://placehold.co/1440x810 1440w" sizes="(max-width: 1440px) 100vw, 1440px" alt="" />
-                      <figcaption class="mega-cta__caption">
-                        <div class="tooltip tooltip--light">
-                          <button class="tooltip__button" aria-labelledby="midd-tooltip-label-716">
-                            <svg class="icon f5 icon--lg" focusable="false" aria-hidden="true">
-                              <use xlink:href="#icon-info">
-                            </svg>
-                          </button>
-                          <div class="tooltip__label" role="tooltip" id="midd-tooltip-label-716"> Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>
-                        </div>
-                      </figcaption>
+                      <video class="js-lazy-load" playsinline autoplay muted loop data-background-video poster="/images/admissions-cover.jpg" data-background-video>
+                        <source data-src="https://player.vimeo.com/progressive_redirect/playback/1102974147/rendition/1080p/file.mp4?loc=external&signature=c289c45cc820d97b7b3546b93f4552ea6b8cb8f0ae17fd09ff7303d0cf40e907" type="video/mp4">
+                        <track kind="descriptions" srclang="en" src="descriptions.vtt" default />
+                      </video>
                     </figure>
-                    <div class="mega-cta__front   ">
-                      <div class=" mega-cta__content ">
-                        <a class="button button--outline button--light" href="">Apply now</a>
+                    <button aria-label="Play/Pause Background Video" class="background-video--button" data-background-video-trigger>
+                      <span aria-labelledby="background-video--pause--" class="background-video--button-pause">
+                        <span id="background-video--pause--" class="sr-only">Pause Animation</span>
+                        <svg class="icon homepage-button " focusable="false" aria-hidden="true">
+                          <use xlink:href="#icon-pause-homepage">
+                        </svg>
+                      </span>
+                      <span aria-labelledby="background-video--play--" class="background-video--button-play">
+                        <span id="background-video--play--" class="sr-only">Play Animation</span>
+                        <svg class="icon homepage-button " focusable="false" aria-hidden="true">
+                          <use xlink:href="#icon-play-homepage">
+                        </svg>
+                      </span>
+                    </button>
+                    <div class="mega-cta__front">
+                      <div class="mega-cta__content">
+                        <h1 class="font-sans-serif">
+                          <span class="f4 font-bold mb-5">Admissions & Financial Aid</span>
+                        </h1>
+                        <p class="mega-cta__title font-sans-serif border-dual-text-shadow mb-6" id="midd-mega-cta-label-377" style=" --text-color: #75a3cd; --text-shadow-color-primary: #ed01a7; --text-shadow-color-secondary: #f99f33;">
+                          <span>YOU.</span>
+                          <span>VERMONT.</span>
+                          <span>THE WORLD.</span>
+                        </p>
+                        <div class="mega-cta__buttons">
+                          <a class="button button--primary button--light font-semibold text-uppercase  mr-2 mb-4 mb-lg-0" href="">Apply now</a>
+                          <a class="button button--primary button--light font-semibold text-uppercase  mr-2 mb-4 mb-lg-0" href="">Visit Middlebury</a>
+                          <a class="button button--primary button--light font-semibold text-uppercase mb-7 mb-lg-0" href="">Explore Financial Aid</a>
+                        </div>
                       </div>
                     </div>
                   </section>
                 </div>
               </div>
               <div class="paragraph--expand paragraph--pull-up">
-                <nav class="themed-box themed-box--compress" aria-labelledby="midd-school-explorer-label">
-                  <h2 class="h2 f6 mb-3" id="midd-school-explorer-label">Explore our Schools</h2>
-                  <div class="d-md-flex align-items-center">
-                    <div class="flex-auto">
-                      <div class="dropdown" data-dropdown>
-                        <button class="dropdown__button" aria-haspopup="true" aria-expanded="false" data-dropdown-button> By Language <svg class="icon dropdown__icon " focusable="false" aria-hidden="true">
-                            <use xlink:href="#icon-chevron-down">
-                          </svg>
-                        </button>
-                        <ul class="dropdown__list" data-dropdown-menu>
-                          <li class="dropdown__item">
-                            <a href="" class="dropdown__link"> Arabic </a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a href="" class="dropdown__link"> Chinese </a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a href="" class="dropdown__link"> English </a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a href="" class="dropdown__link"> French </a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a href="" class="dropdown__link"> German </a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a href="" class="dropdown__link"> Italian </a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a href="" class="dropdown__link"> Japanese </a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a href="" class="dropdown__link"> Portuguese </a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a href="" class="dropdown__link"> Spanish </a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a href="" class="dropdown__link"> Russian </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="font-serif text-center px-3">or</div>
-                    <div class="flex-auto">
-                      <div class="dropdown" data-dropdown>
-                        <button class="dropdown__button" aria-haspopup="true" aria-expanded="false" data-dropdown-button> By Location <svg class="icon dropdown__icon " focusable="false" aria-hidden="true">
-                            <use xlink:href="#icon-chevron-down">
-                          </svg>
-                        </button>
-                        <ul class="dropdown__list" data-dropdown-menu>
-                          <li class="dropdown__item">
-                            <a href="" class="dropdown__link"> Argentina </a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a href="" class="dropdown__link"> Brazil </a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a href="" class="dropdown__link"> Cameroon </a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a href="" class="dropdown__link"> Chile </a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a href="" class="dropdown__link"> China </a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a href="" class="dropdown__link"> France </a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a href="" class="dropdown__link"> Germanty </a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a href="" class="dropdown__link"> India </a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a href="" class="dropdown__link"> Italy </a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a href="" class="dropdown__link"> Japan </a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a href="" class="dropdown__link"> Jordan </a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a href="" class="dropdown__link"> Morocco </a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a href="" class="dropdown__link"> Russia </a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a href="" class="dropdown__link"> Spain </a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a href="" class="dropdown__link"> United Kingdom </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
+                <nav class="box-menu box-menu--overlap " aria-labelledby="midd-box-menu-label">
+                  <h2 class="sr-only" id="midd-box-menu-label">Box menu label (should be picked up from the page title)</h2>
+                  <ul class="box-menu__list">
+                    <li class="box-menu__item">
+                      <a href="" class="box-menu__link"> Application Instructions and Deadlines </a>
+                    </li>
+                    <li class="box-menu__item">
+                      <a href="" class="box-menu__link"> Admission Options </a>
+                    </li>
+                    <li class="box-menu__item">
+                      <a href="" class="box-menu__link"> Standardized Tests </a>
+                    </li>
+                    <li class="box-menu__item">
+                      <a href="" class="box-menu__link"> Interview Policy </a>
+                    </li>
+                    <li class="box-menu__item">
+                      <a href="" class="box-menu__link"> February Admission </a>
+                    </li>
+                    <li class="box-menu__item">
+                      <a href="" class="box-menu__link"> Transfer Applicants </a>
+                    </li>
+                    <li class="box-menu__item">
+                      <a href="" class="box-menu__link"> International Applicants </a>
+                    </li>
+                    <li class="box-menu__item">
+                      <a href="" class="box-menu__link"> Undocumented Applicants </a>
+                    </li>
+                    <li class="box-menu__item">
+                      <a href="" class="box-menu__link"> Taking a Gap Year </a>
+                    </li>
+                    <li class="box-menu__item">
+                      <a href="" class="box-menu__link"> NESCAC Admissions Practices </a>
+                    </li>
+                  </ul>
                 </nav>
               </div>
-              <div class="section paragraph paragraph--expand" data-digest-content>
-                <div class="paragraphs--wide__offset">
-                  <div class="section__header mb-7 mb-lg-8">
-                    <h2 class="section__title"> Media group </h2>
-                    <p class="section__text"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus quam optio ratione labore possimus iusto corrupti vero fugiat explicabo officiis ex, a sunt obcaecati molestias voluptate eum earum ipsam accusantium. </p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6 mb-7 pr-lg-4">
-                    <!-- video iframe html should be escaped -->
-                    <figure class="video js-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
-                      <div class="video__content js-video-content">
-                        <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-123">
-                          <img src="https://placehold.co/1136x639" srcset="https://placehold.co/400x225 400w,https://placehold.co/640x360 640w,https://placehold.co/832x468 832w,https://placehold.co/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
-                          <span class="button  button--primary video__button"> Play <span class="ml-3">
-                              <svg class="icon  " focusable="false" aria-hidden="true">
-                                <use xlink:href="#icon-play">
-                              </svg>
-                            </span>
-                          </span>
-                        </a>
-                      </div>
-                      <figcaption class=" video__body">
-                        <h3 class=video__title id="midd-video-label-123">Practical Skills for Positive Change</h3>
-                        <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
-                        <div class="transcript js-transcript-123 grid-video__transcript">
-                          <a href="#midd-transcript-123" class="transcript__button" data-toggle-target=".js-transcript-123" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
-                              <use xlink:href="#icon-chevron-down">
-                            </svg>
-                          </a>
-                          <div class="transcript__body" id="midd-transcript-123">
-                            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
-                            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
-                            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
-                          </div>
-                        </div>
-                      </figcaption>
-                    </figure>
-                  </div>
-                  <div class="col-md-6 mb-7 pl-lg-4">
-                    <figure class="media media--image media--contain-caption">
-                      <!-- media_group -->
-                      <img src="https://placehold.co/400x225" srcset="https://placehold.co/400x225 400w" sizes="(max-width: 400px) 100vw, 400px" alt="" />
-                      <figcaption class="media__caption"> Lorem ipsum dolor sit amet, consectetur adipiscing elit (Photo: John Doe) </figcaption>
-                    </figure>
-                  </div>
-                  <div class="col-md-6 mb-7 pr-lg-4">
-                    <div class="float-md-right">
-                      <figure class="media media--image media--contain-caption">
-                        <!-- media_group -->
-                        <img src="https://placehold.co/400x225" srcset="https://placehold.co/400x225 400w" sizes="(max-width: 400px) 100vw, 400px" alt="" />
-                        <figcaption class="media__caption"> Lorem ipsum dolor sit amet, consectetur adipiscing elit (Photo: John Doe) </figcaption>
-                      </figure>
-                    </div>
-                  </div>
-                  <div class="col-md-6 mb-7 pl-lg-4">
-                    <div class="audio ">
-                      <div class="js-audio">
-                        <audio controls>
-                          <source src="https://www.middlebury.edu/institute/sites/www.middlebury.edu.institute/files/2018-02/Ace_Your_Interview_v2.mp3" type="audio/mpeg">
-                        </audio>
-                      </div>
-                      <div class="audio__body">
-                        <h3 class="audio__title" id="midd-audio-title-1">Audio title</h3>
-                        <p class="audio__text" id="midd-audio-text-1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis commodi placeat, perferendis ratione vitae officiis vero. Commodi ullam fugiat expedita qui veritatis adipisci minus quod neque! Voluptatum tempora iure quo.</p>
-                        <div class="transcript js-transcript-1111 ">
-                          <a href="#midd-transcript-1111" class="transcript__button" data-toggle-target=".js-transcript-1111" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
-                              <use xlink:href="#icon-chevron-down">
-                            </svg>
-                          </a>
-                          <div class="transcript__body" id="midd-transcript-1111">
-                            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
-                            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
-                            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6 mb-7 pr-lg-4">
-                    <!-- video iframe html should be escaped -->
-                    <figure class="video js-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
-                      <div class="video__content js-video-content">
-                        <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-1003">
-                          <img src="https://placehold.co/1136x639" srcset="https://placehold.co/400x225 400w,https://placehold.co/640x360 640w,https://placehold.co/832x468 832w,https://placehold.co/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
-                          <span class="button  button--primary video__button"> Play <span class="ml-3">
-                              <svg class="icon  " focusable="false" aria-hidden="true">
-                                <use xlink:href="#icon-play">
-                              </svg>
-                            </span>
-                          </span>
-                        </a>
-                      </div>
-                      <figcaption class=" video__body">
-                        <h3 class=video__title id="midd-video-label-1003">Practical Skills for Positive Change</h3>
-                        <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
-                        <div class="transcript js-transcript-1003 grid-video__transcript">
-                          <a href="#midd-transcript-1003" class="transcript__button" data-toggle-target=".js-transcript-1003" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
-                              <use xlink:href="#icon-chevron-down">
-                            </svg>
-                          </a>
-                          <div class="transcript__body" id="midd-transcript-1003">
-                            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
-                            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
-                            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
-                          </div>
-                        </div>
-                      </figcaption>
-                    </figure>
-                  </div>
-                </div>
-              </div>
-              <div class="paragraph--themed-panel">
-                <div class="container px-0">
-                  <section class="themed-panel" aria-labelledby="themed-panel-881-title">
-                    <div class="themed-panel__main">
-                      <h2 class="themed-panel__title" id="themed-panel-881-title">Sustainability and other things that go on and on</h2>
-                      <figure class="themed-panel__figure">
-                        <img src="https://placehold.co/1440x810" srcset="https://placehold.co/400x225 400w,https://placehold.co/640x360 640w,https://placehold.co/960x540 960w,https://placehold.co/1280x720 1280w,https://placehold.co/1440x810 1440w" sizes="(max-width: 1440px) 100vw, 1440px" alt="" />
-                      </figure>
-                    </div>
-                    <div class="themed-panel__secondary">
-                      <div class="themed-panel__main-article">
-                        <article class="col-md-10 themed-panel__article" aria-labelledby="themed-panel-881-first">
-                          <h3 class="themed-panel__heading h2" id="themed-panel-881-first">
-                            <a href="">Lorem ipsum dolor sit amet consectetur adipisicing</a>
-                          </h3>
-                          <p class="themed-panel__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam dicta nihil reiciendis laboriosam, exercitationem harum numquam rem sint laudantium ducimus <a href="#">optio provident voluptate</a> obcaecati reprehenderit voluptates illum dignissimos corrupti!</p>
-                          <a href="#" class="button button--primary themed-panel__cta">Learn more</a>
-                        </article>
-                      </div>
-                      <div class="themed-panel__subarticles">
-                        <article class="col-auto col-md-4 themed-panel__subarticle" aria-labelledby="themed-panel-881-1">
-                          <h3 class="themed-panel__heading" id="themed-panel-881-1">
-                            <a href="" class="text-white">24/7 Support</a>
-                          </h3>
-                          <p class="themed-panel__text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quo optio quia molestias ipsa debitis, accusamus tempore quaerat eveniet, perspiciatis, natus provident saepe ducimus placeat dignissimos nemo <a href="#">delectus pariatur</a> nesciunt! Earum eveniet qui provident ad aliquam, assumenda reprehenderit fugit recusandae, est cum deleniti, dolore corrupti doloremque magni. Laboriosam accusantium natus rem adipisci. </p>
-                          <a href="" class="button button--light button--outline themed-panel__cta">Read more</a>
-                        </article>
-                        <article class="col-auto col-md-4 themed-panel__subarticle" aria-labelledby="themed-panel-881-2">
-                          <h3 class="themed-panel__heading" id="themed-panel-881-2">
-                            <a href="" class="text-white">24/7 Support</a>
-                          </h3>
-                          <p class="themed-panel__text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quo optio quia molestias ipsa debitis, accusamus tempore quaerat eveniet, perspiciatis, natus provident saepe ducimus placeat dignissimos nemo <a href="#">delectus pariatur</a> nesciunt! Earum eveniet qui provident ad aliquam, assumenda reprehenderit fugit recusandae, est cum deleniti, dolore corrupti doloremque magni. Laboriosam accusantium natus rem adipisci. </p>
-                          <a href="" class="button button--light button--outline themed-panel__cta">Read more</a>
-                        </article>
-                        <article class="col-auto col-md-4 themed-panel__subarticle" aria-labelledby="themed-panel-881-3">
-                          <h3 class="themed-panel__heading" id="themed-panel-881-3">
-                            <a href="" class="text-white">24/7 Support</a>
-                          </h3>
-                          <p class="themed-panel__text"> Lorem ipsum dolor sit amet consectetur adipisicing ipsum dolor sit amet <a href="#">consectetur adipisicing</a> elit. </p>
-                          <a href="" class="button button--light button--outline themed-panel__cta">Read more</a>
-                        </article>
-                      </div>
-                    </div>
-                  </section>
-                </div>
-              </div>
-              <div class="paragraph--spotlight paragraph--full" data-digest-content>
-                <div class="container px-0">
-                  <section class="spotlight">
-                    <figure class="spotlight__figure">
-                      <img src="https://placehold.co/1440x810" srcset="https://placehold.co/400x225 400w,https://placehold.co/640x360 640w,https://placehold.co/960x540 960w,https://placehold.co/1280x720 1280w,https://placehold.co/1440x810 1440w" sizes="(max-width: 1440px) 100vw, 1440px" alt="" />
-                    </figure>
-                    <div class="spotlight__content">
-                      <h2 class="spotlight__title">Diversity and Schools Abroad</h2>
-                      <div class="spotlight__body typography">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab sunt, dolore, adipisci aut saepe nemo laudantium est facilis fugiat vero excepturi nisi sint, illo deserunt impedit voluptates nostrum veniam sit!</p>
-                        <p>Modi iure quos omnis mollitia cumque, iusto sunt id maxime eligendi ipsam recusandae ipsum asperiores sequi sint repellat blanditiis doloremque maiores repellendus. Rerum quasi cum omnis saepe. A, repellat cumque!</p>
-                      </div>
-                    </div>
-                  </section>
-                </div>
-              </div>
-              <div class="paragraph--card-carousel">
-                <div class="container px-0">
-                  <section class="card-carousel js-card-carousel" aria-labelledby="midd-card-carousel-label">
-                    <div class="row row--no-gutters">
-                      <div class="col-md-6 col-lg-4 col-xl-3">
-                        <div class="card-carousel__header">
-                          <h2 class="card-carousel__title" id="midd-card-carousel-label">Program Spotlight</h2>
-                          <div class="card-carousel__button">
-                            <a href="#" class="button button--outline button--light">Explore our Programs</a>
-                          </div>
-                          <div class="card-carousel__controls" aria-label="program spotlight controls" role="navigation">
-                            <button class="button button--light button--outline button--circle js-card-carousel-prev-button" aria-label="Previous" id="midd-card-carousel-button-prev">
-                              <span aria-hidden="true">&lsaquo;</span>
-                            </button>
-                            <button class="button button--light button--outline button--circle js-card-carousel-next-button" aria-label="Next" id="midd-card-carousel-button-next">
-                              <span aria-hidden="true">&rsaquo;</span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6 col-lg-8 col-xl-9">
-                        <div class="card-carousel__container swiper js-swiper-container">
-                          <div class="card-carousel__content swiper-wrapper js-swiper-wrapper">
-                            <div class="card-carousel__item swiper-slide">
-                              <article class="card-carousel-item js-card-carousel-item-1" aria-labelledby="midd-card-carousel-1-header">
-                                <figure class="card-carousel-item__image">
-                                  <img src="https://placehold.co/582x776" srcset="https://placehold.co/468x624 468w,https://placehold.co/582x776 582w" sizes="(max-width: 468px) 100vw, (max-width: 580px) 582px, 468px" alt="" />
-                                </figure>
-                                <div class="card-carousel-item__content">
-                                  <div class="card-carousel-item__side card-carousel-item__side--front">
-                                    <button class="card-carousel-item__toggle button button--sm button--primary" aria-label="Show more information for " data-toggle-target=".js-card-carousel-item-1" data-toggle-group="card-carousel">
-                                      <svg class="icon  " focusable="false" aria-hidden="true">
-                                        <use xlink:href="#icon-plus">
-                                      </svg>
-                                    </button>
-                                    <div class="card-carousel-item__header  card-carousel-item__header--band card-carousel-item__header--red ">
-                                      <h3 class="card-carousel-item__title" id="midd-card-carousel-1-header">Some name 1</h3>
-                                      <p class="card-carousel-item__text">Program here</p>
-                                    </div>
-                                    <div class="card-carousel-item__footer">
-                                      <a href="#" class="card-carousel-item__label button button--light"> Program title </a>
-                                    </div>
-                                  </div>
-                                  <aside class="card-carousel-item__side card-carousel-item__side--back" id="midd-card-carousel-item-aside-1" aria-labelledby="midd-card-carousel-1-aside">
-                                    <button class="card-carousel-item__toggle button button--sm button--tertiary" aria-label="Close" data-toggle-target=".js-card-carousel-item-1" data-toggle-group="card-carousel" data-toggle-linked="card-carousel-item-1">
-                                      <svg class="icon  " focusable="false" aria-hidden="true">
-                                        <use xlink:href="#icon-times">
-                                      </svg>
-                                    </button>
-                                    <div class="card-carousel-item__header">
-                                      <h3 class="card-carousel-item__title" id="midd-card-carousel-1-aside"></h3>
-                                      <p class="card-carousel-item__text"></p>
-                                    </div>
-                                    <div class="card-carousel-item__body">
-                                      <div class="typography typography--sm">
-                                        <h4>What made the Institute special?</h4>
-                                        <p>I traveled to Tokyo as part of a seminar on foreign policy, trade, and security. Most of the others were policy and management students, and I was there to provide simultaneous interpretation for the speakers who addressed the class. It was an amazing real-world opportunity to practice my profession.</p>
-                                        <h4>What now?</h4>
-                                        <p>I’m an interpreter and translator for Faraday Future, an innovative company making high-performance electric vehicles and concept cars.</p>
-                                      </div>
-                                    </div>
-                                    <div class="card-carousel-item__footer">
-                                      <a href="#" class="link-underline">Learn more about </a>
-                                    </div>
-                                  </aside>
-                                </div>
-                              </article>
-                            </div>
-                            <div class="card-carousel__item swiper-slide">
-                              <article class="card-carousel-item js-card-carousel-item-2" aria-labelledby="midd-card-carousel-2-header">
-                                <figure class="card-carousel-item__image">
-                                  <img src="https://placehold.co/582x776" srcset="https://placehold.co/468x624 468w,https://placehold.co/582x776 582w" sizes="(max-width: 468px) 100vw, (max-width: 580px) 582px, 468px" alt="" />
-                                </figure>
-                                <div class="card-carousel-item__content">
-                                  <div class="card-carousel-item__side card-carousel-item__side--front">
-                                    <button class="card-carousel-item__toggle button button--sm button--primary" aria-label="Show more information for " data-toggle-target=".js-card-carousel-item-2" data-toggle-group="card-carousel">
-                                      <svg class="icon  " focusable="false" aria-hidden="true">
-                                        <use xlink:href="#icon-plus">
-                                      </svg>
-                                    </button>
-                                    <div class="card-carousel-item__header  card-carousel-item__header--band card-carousel-item__header--green ">
-                                      <h3 class="card-carousel-item__title" id="midd-card-carousel-2-header">Some name 2</h3>
-                                      <p class="card-carousel-item__text">Program here</p>
-                                    </div>
-                                    <div class="card-carousel-item__footer">
-                                      <a href="#" class="card-carousel-item__label button button--light"> Program title </a>
-                                    </div>
-                                  </div>
-                                  <aside class="card-carousel-item__side card-carousel-item__side--back" id="midd-card-carousel-item-aside-2" aria-labelledby="midd-card-carousel-2-aside">
-                                    <button class="card-carousel-item__toggle button button--sm button--tertiary" aria-label="Close" data-toggle-target=".js-card-carousel-item-2" data-toggle-group="card-carousel" data-toggle-linked="card-carousel-item-2">
-                                      <svg class="icon  " focusable="false" aria-hidden="true">
-                                        <use xlink:href="#icon-times">
-                                      </svg>
-                                    </button>
-                                    <div class="card-carousel-item__header">
-                                      <h3 class="card-carousel-item__title" id="midd-card-carousel-2-aside"></h3>
-                                      <p class="card-carousel-item__text"></p>
-                                    </div>
-                                    <div class="card-carousel-item__body">
-                                      <div class="typography typography--sm">
-                                        <h4>What made the Institute special?</h4>
-                                        <p>I traveled to Tokyo as part of a seminar on foreign policy, trade, and security. Most of the others were policy and management students, and I was there to provide simultaneous interpretation for the speakers who addressed the class. It was an amazing real-world opportunity to practice my profession.</p>
-                                        <h4>What now?</h4>
-                                        <p>I’m an interpreter and translator for Faraday Future, an innovative company making high-performance electric vehicles and concept cars.</p>
-                                      </div>
-                                    </div>
-                                    <div class="card-carousel-item__footer">
-                                      <a href="#" class="link-underline">Learn more about </a>
-                                    </div>
-                                  </aside>
-                                </div>
-                              </article>
-                            </div>
-                            <div class="card-carousel__item swiper-slide">
-                              <article class="card-carousel-item js-card-carousel-item-3" aria-labelledby="midd-card-carousel-3-header">
-                                <figure class="card-carousel-item__image">
-                                  <img src="https://placehold.co/582x776" srcset="https://placehold.co/468x624 468w,https://placehold.co/582x776 582w" sizes="(max-width: 468px) 100vw, (max-width: 580px) 582px, 468px" alt="" />
-                                </figure>
-                                <div class="card-carousel-item__content">
-                                  <div class="card-carousel-item__side card-carousel-item__side--front">
-                                    <button class="card-carousel-item__toggle button button--sm button--primary" aria-label="Show more information for " data-toggle-target=".js-card-carousel-item-3" data-toggle-group="card-carousel">
-                                      <svg class="icon  " focusable="false" aria-hidden="true">
-                                        <use xlink:href="#icon-plus">
-                                      </svg>
-                                    </button>
-                                    <div class="card-carousel-item__header  card-carousel-item__header--band card-carousel-item__header--light-blue ">
-                                      <h3 class="card-carousel-item__title" id="midd-card-carousel-3-header">Some name 3</h3>
-                                      <p class="card-carousel-item__text">Program here</p>
-                                    </div>
-                                    <div class="card-carousel-item__footer">
-                                      <a href="#" class="card-carousel-item__label button button--light"> Program title </a>
-                                    </div>
-                                  </div>
-                                  <aside class="card-carousel-item__side card-carousel-item__side--back" id="midd-card-carousel-item-aside-3" aria-labelledby="midd-card-carousel-3-aside">
-                                    <button class="card-carousel-item__toggle button button--sm button--tertiary" aria-label="Close" data-toggle-target=".js-card-carousel-item-3" data-toggle-group="card-carousel" data-toggle-linked="card-carousel-item-3">
-                                      <svg class="icon  " focusable="false" aria-hidden="true">
-                                        <use xlink:href="#icon-times">
-                                      </svg>
-                                    </button>
-                                    <div class="card-carousel-item__header">
-                                      <h3 class="card-carousel-item__title" id="midd-card-carousel-3-aside"></h3>
-                                      <p class="card-carousel-item__text"></p>
-                                    </div>
-                                    <div class="card-carousel-item__body">
-                                      <div class="typography typography--sm">
-                                        <h4>What made the Institute special?</h4>
-                                        <p>I traveled to Tokyo as part of a seminar on foreign policy, trade, and security. Most of the others were policy and management students, and I was there to provide simultaneous interpretation for the speakers who addressed the class. It was an amazing real-world opportunity to practice my profession.</p>
-                                        <h4>What now?</h4>
-                                        <p>I’m an interpreter and translator for Faraday Future, an innovative company making high-performance electric vehicles and concept cars.</p>
-                                      </div>
-                                    </div>
-                                    <div class="card-carousel-item__footer">
-                                      <a href="#" class="link-underline">Learn more about </a>
-                                    </div>
-                                  </aside>
-                                </div>
-                              </article>
-                            </div>
-                            <div class="card-carousel__item swiper-slide">
-                              <article class="card-carousel-item js-card-carousel-item-4" aria-labelledby="midd-card-carousel-4-header">
-                                <figure class="card-carousel-item__image">
-                                  <img src="https://placehold.co/582x776" srcset="https://placehold.co/468x624 468w,https://placehold.co/582x776 582w" sizes="(max-width: 468px) 100vw, (max-width: 580px) 582px, 468px" alt="" />
-                                </figure>
-                                <div class="card-carousel-item__content">
-                                  <div class="card-carousel-item__side card-carousel-item__side--front">
-                                    <button class="card-carousel-item__toggle button button--sm button--primary" aria-label="Show more information for " data-toggle-target=".js-card-carousel-item-4" data-toggle-group="card-carousel">
-                                      <svg class="icon  " focusable="false" aria-hidden="true">
-                                        <use xlink:href="#icon-plus">
-                                      </svg>
-                                    </button>
-                                    <div class="card-carousel-item__header  card-carousel-item__header--band card-carousel-item__header--maroon ">
-                                      <h3 class="card-carousel-item__title" id="midd-card-carousel-4-header">Some name 4</h3>
-                                      <p class="card-carousel-item__text">Program here</p>
-                                    </div>
-                                    <div class="card-carousel-item__footer">
-                                      <a href="#" class="card-carousel-item__label button button--light"> Program title </a>
-                                    </div>
-                                  </div>
-                                  <aside class="card-carousel-item__side card-carousel-item__side--back" id="midd-card-carousel-item-aside-4" aria-labelledby="midd-card-carousel-4-aside">
-                                    <button class="card-carousel-item__toggle button button--sm button--tertiary" aria-label="Close" data-toggle-target=".js-card-carousel-item-4" data-toggle-group="card-carousel" data-toggle-linked="card-carousel-item-4">
-                                      <svg class="icon  " focusable="false" aria-hidden="true">
-                                        <use xlink:href="#icon-times">
-                                      </svg>
-                                    </button>
-                                    <div class="card-carousel-item__header">
-                                      <h3 class="card-carousel-item__title" id="midd-card-carousel-4-aside"></h3>
-                                      <p class="card-carousel-item__text"></p>
-                                    </div>
-                                    <div class="card-carousel-item__body">
-                                      <div class="typography typography--sm">
-                                        <h4>What made the Institute special?</h4>
-                                        <p>I traveled to Tokyo as part of a seminar on foreign policy, trade, and security. Most of the others were policy and management students, and I was there to provide simultaneous interpretation for the speakers who addressed the class. It was an amazing real-world opportunity to practice my profession.</p>
-                                        <h4>What now?</h4>
-                                        <p>I’m an interpreter and translator for Faraday Future, an innovative company making high-performance electric vehicles and concept cars.</p>
-                                      </div>
-                                    </div>
-                                    <div class="card-carousel-item__footer">
-                                      <a href="#" class="link-underline">Learn more about </a>
-                                    </div>
-                                  </aside>
-                                </div>
-                              </article>
-                            </div>
-                            <div class="card-carousel__item swiper-slide">
-                              <article class="card-carousel-item js-card-carousel-item-5" aria-labelledby="midd-card-carousel-5-header">
-                                <figure class="card-carousel-item__image">
-                                  <img src="https://placehold.co/582x776" srcset="https://placehold.co/468x624 468w,https://placehold.co/582x776 582w" sizes="(max-width: 468px) 100vw, (max-width: 580px) 582px, 468px" alt="" />
-                                </figure>
-                                <div class="card-carousel-item__content">
-                                  <div class="card-carousel-item__side card-carousel-item__side--front">
-                                    <button class="card-carousel-item__toggle button button--sm button--primary" aria-label="Show more information for " data-toggle-target=".js-card-carousel-item-5" data-toggle-group="card-carousel">
-                                      <svg class="icon  " focusable="false" aria-hidden="true">
-                                        <use xlink:href="#icon-plus">
-                                      </svg>
-                                    </button>
-                                    <div class="card-carousel-item__header  card-carousel-item__header--band card-carousel-item__header--bronze ">
-                                      <h3 class="card-carousel-item__title" id="midd-card-carousel-5-header">Some name 5</h3>
-                                      <p class="card-carousel-item__text">Program here</p>
-                                    </div>
-                                    <div class="card-carousel-item__footer">
-                                      <a href="#" class="card-carousel-item__label button button--light"> Program title </a>
-                                    </div>
-                                  </div>
-                                  <aside class="card-carousel-item__side card-carousel-item__side--back" id="midd-card-carousel-item-aside-5" aria-labelledby="midd-card-carousel-5-aside">
-                                    <button class="card-carousel-item__toggle button button--sm button--tertiary" aria-label="Close" data-toggle-target=".js-card-carousel-item-5" data-toggle-group="card-carousel" data-toggle-linked="card-carousel-item-5">
-                                      <svg class="icon  " focusable="false" aria-hidden="true">
-                                        <use xlink:href="#icon-times">
-                                      </svg>
-                                    </button>
-                                    <div class="card-carousel-item__header">
-                                      <h3 class="card-carousel-item__title" id="midd-card-carousel-5-aside"></h3>
-                                      <p class="card-carousel-item__text"></p>
-                                    </div>
-                                    <div class="card-carousel-item__body">
-                                      <div class="typography typography--sm">
-                                        <h4>What made the Institute special?</h4>
-                                        <p>I traveled to Tokyo as part of a seminar on foreign policy, trade, and security. Most of the others were policy and management students, and I was there to provide simultaneous interpretation for the speakers who addressed the class. It was an amazing real-world opportunity to practice my profession.</p>
-                                        <h4>What now?</h4>
-                                        <p>I’m an interpreter and translator for Faraday Future, an innovative company making high-performance electric vehicles and concept cars.</p>
-                                      </div>
-                                    </div>
-                                    <div class="card-carousel-item__footer">
-                                      <a href="#" class="link-underline">Learn more about </a>
-                                    </div>
-                                  </aside>
-                                </div>
-                              </article>
-                            </div>
-                            <div class="card-carousel__item swiper-slide">
-                              <article class="card-carousel-item js-card-carousel-item-6" aria-labelledby="midd-card-carousel-6-header">
-                                <figure class="card-carousel-item__image">
-                                  <img src="https://placehold.co/582x776" srcset="https://placehold.co/468x624 468w,https://placehold.co/582x776 582w" sizes="(max-width: 468px) 100vw, (max-width: 580px) 582px, 468px" alt="" />
-                                </figure>
-                                <div class="card-carousel-item__content">
-                                  <div class="card-carousel-item__side card-carousel-item__side--front">
-                                    <button class="card-carousel-item__toggle button button--sm button--primary" aria-label="Show more information for " data-toggle-target=".js-card-carousel-item-6" data-toggle-group="card-carousel">
-                                      <svg class="icon  " focusable="false" aria-hidden="true">
-                                        <use xlink:href="#icon-plus">
-                                      </svg>
-                                    </button>
-                                    <div class="card-carousel-item__header  card-carousel-item__header--band card-carousel-item__header--teal ">
-                                      <h3 class="card-carousel-item__title" id="midd-card-carousel-6-header">Some name 6</h3>
-                                      <p class="card-carousel-item__text">Program here</p>
-                                    </div>
-                                    <div class="card-carousel-item__footer">
-                                      <a href="#" class="card-carousel-item__label button button--light"> Program title </a>
-                                    </div>
-                                  </div>
-                                  <aside class="card-carousel-item__side card-carousel-item__side--back" id="midd-card-carousel-item-aside-6" aria-labelledby="midd-card-carousel-6-aside">
-                                    <button class="card-carousel-item__toggle button button--sm button--tertiary" aria-label="Close" data-toggle-target=".js-card-carousel-item-6" data-toggle-group="card-carousel" data-toggle-linked="card-carousel-item-6">
-                                      <svg class="icon  " focusable="false" aria-hidden="true">
-                                        <use xlink:href="#icon-times">
-                                      </svg>
-                                    </button>
-                                    <div class="card-carousel-item__header">
-                                      <h3 class="card-carousel-item__title" id="midd-card-carousel-6-aside"></h3>
-                                      <p class="card-carousel-item__text"></p>
-                                    </div>
-                                    <div class="card-carousel-item__body">
-                                      <div class="typography typography--sm">
-                                        <h4>What made the Institute special?</h4>
-                                        <p>I traveled to Tokyo as part of a seminar on foreign policy, trade, and security. Most of the others were policy and management students, and I was there to provide simultaneous interpretation for the speakers who addressed the class. It was an amazing real-world opportunity to practice my profession.</p>
-                                        <h4>What now?</h4>
-                                        <p>I’m an interpreter and translator for Faraday Future, an innovative company making high-performance electric vehicles and concept cars.</p>
-                                      </div>
-                                    </div>
-                                    <div class="card-carousel-item__footer">
-                                      <a href="#" class="link-underline">Learn more about </a>
-                                    </div>
-                                  </aside>
-                                </div>
-                              </article>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-                </section>
-              </div>
-              <div class="typography paragraph--text">
-                <h2>Inspring phase: clause that reinforces the prior point.</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, sunt sit impedit aliquid eum vero officiis saepe natus veritatis, ullam quaerat similique quasi molestias numquam voluptate quam incidunt, provident fugiat?</p>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, sunt sit impedit aliquid eum vero officiis saepe natus veritatis, ullam quaerat similique quasi molestias numquam voluptate quam incidunt, provident fugiat?</p>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, sunt sit impedit aliquid eum vero officiis saepe natus veritatis, ullam quaerat similique quasi molestias numquam voluptate quam incidunt, provident fugiat?</p>
-              </div>
-              <div class="paragraph--video">
-                <!-- video iframe html should be escaped -->
-                <figure class="video js-video" data-video='<iframe src="https://player.vimeo.com/video/221201240?autoplay=1" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'>
-                  <div class="video__content js-video-content">
-                    <a href="https://player.vimeo.com/video/221201240" class="js-video-link video__link" role="button" aria-label="Play video" aria-describedby="midd-video-label-754">
-                      <img src="https://placehold.co/1136x639" srcset="https://placehold.co/400x225 400w,https://placehold.co/640x360 640w,https://placehold.co/832x468 832w,https://placehold.co/1136x639 1136w" sizes="(max-width: 1136px) 100vw, 1136px" alt="" />
-                      <span class="button  button--primary video__button"> Play <span class="ml-3">
-                          <svg class="icon  " focusable="false" aria-hidden="true">
-                            <use xlink:href="#icon-play">
-                          </svg>
-                        </span>
-                      </span>
-                    </a>
-                  </div>
-                  <figcaption class=" video__body">
-                    <h3 class=video__title id="midd-video-label-754">Practical Skills for Positive Change</h3>
-                    <p class="video__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra aliquet lacus a tristique. <a href="">Suspendisse commodo</a> pulvinar nisi vel laoreet. Pellentesque id hendrerit velit, vitae consectetur libero.</p>
-                    <div class="transcript js-transcript-754 grid-video__transcript">
-                      <a href="#midd-transcript-754" class="transcript__button" data-toggle-target=".js-transcript-754" aria-label="Toggle transcript" aria-expanded="false" role="button"> Transcript<svg class="icon transcript__icon icon--sm" focusable="false" aria-hidden="true">
-                          <use xlink:href="#icon-chevron-down">
-                        </svg>
-                      </a>
-                      <div class="transcript__body" id="midd-transcript-754">
-                        <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
-                        <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
-                        <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, quo error nesciunt unde magni, vitae ea in vero mollitia porro beatae a temporibus iure excepturi aspernatur dolores iste, dignissimos aut? </p>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-              <div class="announcement typography paragraph--announcement">
-                <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h2>
-                <p>Lorem ipsum, dolor sit amet <a href="">consectetur</a> adipisicing elit. Rerum commodi qui dolor, voluptas praesentium numquam assumenda harum enim alias nihil recusandae expedita. Ipsam nobis eum porro beatae magni laudantium incidunt?</p>
-              </div>
+              <p class="lead paragraph--lead lead--admissions-home text-center text-black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste iusto blanditiis dolorem illum accusantium!</p>
               <div class="paragraph paragraph--full">
                 <div class="container px-0">
-                  <section class="mega-cta  mega-cta--image-bottom-left " aria-labelledby="midd-mega-cta-label-1124">
+                  <section class="mega-cta mega-cta--customizable" aria-labelledby="midd-mega-cta-label-316">
                     <figure class="mega-cta__back">
                       <img src="https://placehold.co/1440x810" srcset="https://placehold.co/400x225 400w,https://placehold.co/640x360 640w,https://placehold.co/960x540 960w,https://placehold.co/1280x720 1280w,https://placehold.co/1440x810 1440w" sizes="(max-width: 1440px) 100vw, 1440px" alt="" />
                     </figure>
-                    <div class="mega-cta__front   ">
-                      <div class=" mega-cta__content ">
-                        <a class="button button--outline button--light" href="">Apply now</a>
+                    <div class="mega-cta__front mega-cta__front--with-borders" style="--dual-border-color-primary: #75a3cd; --dual-border-color-secondary: #fff791;">
+                      <div class="mega-cta__content mega-cta__content--light mega-cta__content--center-right px-3 px-lg-5">
+                        <a href="#" class="mega-cta__link">
+                          <h2 class="mega-cta__title font-sans-serif" id="midd-mega-cta-label-316">Water Sanitation Research and Development, India</h2>
+                        </a>
+                        <p class="mega-cta__text"> Access to safe water and adequate sanitation services has proven to be one of the most efficient ways of improving human health. </p>
+                        <a class="button button--outline  button--primary py-3 px-5 p-lg-3" href="">Read more</a>
                       </div>
                     </div>
                   </section>
                 </div>
               </div>
-              <div class="paragraph--cta-group">
-                <div class="container">
-                  <div class="cta-group">
-                    <div class="cta-group__item">
-                      <h3 class="cta-group__title"> Lorem ipsum dolor sit amet </h3>
-                      <p class="cta-group__text"> March 28-29, 2017 </p>
-                      <a href="" class="cta-group__button button button--primary">Request Info</a>
+              <figure class="paragraph--stat-panel">
+                <div class="container px-0">
+                  <div class="stat-panel">
+                    <div class="stat-panel__media">
+                      <img src="https://placehold.co/1440x810" srcset="https://placehold.co/400x225 400w,https://placehold.co/640x360 640w,https://placehold.co/960x540 960w,https://placehold.co/1280x720 1280w,https://placehold.co/1440x810 1440w" sizes="(max-width: 1440px) 100vw, 1440px" alt="" />
                     </div>
-                    <div class="cta-group__item">
-                      <h3 class="cta-group__title"> Lorem ipsum dolor sit amet </h3>
-                      <p class="cta-group__text"> March 28-29, 2017 </p>
-                      <a href="" class="cta-group__button button button--primary">Request Info</a>
-                    </div>
-                    <div class="cta-group__item">
-                      <h3 class="cta-group__title"> Lorem ipsum dolor sit amet </h3>
-                      <p class="cta-group__text"> March 28-29, 2017 </p>
-                      <a href="" class="cta-group__button button button--primary">Request Info</a>
-                    </div>
-                    <div class="cta-group__item">
-                      <h3 class="cta-group__title"> Lorem ipsum dolor sit amet </h3>
-                      <p class="cta-group__text"> March 28-29, 2017 </p>
-                      <a href="" class="cta-group__button button button--primary">Request Info</a>
-                    </div>
+                    <figcaption class="stat-panel__content stat-panel__content-right">
+                      <div class="stat-panel__item stat-panel__item--secondary">
+                        <h3 class="stat-panel__stats-title">Career Outcomes</h3>
+                        <dl class="stat-panel__stats-list">
+                          <dt class="stat-panel__stats-label">81%</dt>
+                          <dd class="stat-panel__stats-text">Using Language &amp; Cultural Skills</dd>
+                          <dt class="stat-panel__stats-label">85%</dt>
+                          <dd class="stat-panel__stats-text">Pursing Career Passions</dd>
+                          <dt class="stat-panel__stats-label">88%</dt>
+                          <dd class="stat-panel__stats-text">Living Aligned with Values</dd>
+                        </dl>
+                        <a href="#" class="stat-panel__stats-button button button--outline button--light">View Employment Report</a>
+                      </div>
+                    </figcaption>
                   </div>
                 </div>
-              </div>
+              </figure>
             </div>
           </div>
         </div>
@@ -1078,9 +529,41 @@
                   <li class="mr-1">
                     <a href="#" class="d-inline-block hover-fadein  px-1">
                       <svg class="icon  " focusable="false" aria-hidden="true">
-                        <use xlink:href="#icon-pinterest">
+                        <use xlink:href="#icon-discord">
                       </svg>
-                      <span class="sr-only">Link to page/content on pinterest</span>
+                      <span class="sr-only">Link to page/content on discord</span>
+                    </a>
+                  </li>
+                  <li class="mr-1">
+                    <a href="#" class="d-inline-block hover-fadein  px-1">
+                      <svg class="icon  " focusable="false" aria-hidden="true">
+                        <use xlink:href="#icon-linkedin">
+                      </svg>
+                      <span class="sr-only">Link to page/content on linkedin</span>
+                    </a>
+                  </li>
+                  <li class="mr-1">
+                    <a href="#" class="d-inline-block hover-fadein  px-1">
+                      <svg class="icon  " focusable="false" aria-hidden="true">
+                        <use xlink:href="#icon-instagram">
+                      </svg>
+                      <span class="sr-only">Link to page/content on instagram</span>
+                    </a>
+                  </li>
+                  <li class="mr-1">
+                    <a href="#" class="d-inline-block hover-fadein  px-1">
+                      <svg class="icon  " focusable="false" aria-hidden="true">
+                        <use xlink:href="#icon-tiktok">
+                      </svg>
+                      <span class="sr-only">Link to page/content on tiktok</span>
+                    </a>
+                  </li>
+                  <li class="mr-1">
+                    <a href="#" class="d-inline-block hover-fadein  px-1">
+                      <svg class="icon  " focusable="false" aria-hidden="true">
+                        <use xlink:href="#icon-mastodon">
+                      </svg>
+                      <span class="sr-only">Link to page/content on mastodon</span>
                     </a>
                   </li>
                   <li class="mr-1">
@@ -1089,22 +572,6 @@
                         <use xlink:href="#icon-twitter">
                       </svg>
                       <span class="sr-only">Link to page/content on twitter</span>
-                    </a>
-                  </li>
-                  <li class="mr-1">
-                    <a href="#" class="d-inline-block hover-fadein  px-1">
-                      <svg class="icon  " focusable="false" aria-hidden="true">
-                        <use xlink:href="#icon-vimeo">
-                      </svg>
-                      <span class="sr-only">Link to page/content on vimeo</span>
-                    </a>
-                  </li>
-                  <li class="mr-1">
-                    <a href="#" class="d-inline-block hover-fadein  px-1">
-                      <svg class="icon  " focusable="false" aria-hidden="true">
-                        <use xlink:href="#icon-facebook">
-                      </svg>
-                      <span class="sr-only">Link to page/content on facebook</span>
                     </a>
                   </li>
                   <li class="mr-1">
@@ -1121,6 +588,14 @@
                         <use xlink:href="#icon-x">
                       </svg>
                       <span class="sr-only">Link to page/content on x</span>
+                    </a>
+                  </li>
+                  <li class="mr-1">
+                    <a href="#" class="d-inline-block hover-fadein  px-1">
+                      <svg class="icon  " focusable="false" aria-hidden="true">
+                        <use xlink:href="#icon-threads">
+                      </svg>
+                      <span class="sr-only">Link to page/content on threads</span>
                     </a>
                   </li>
                 </ul>
@@ -1181,6 +656,14 @@
                     <li class="mr-1">
                       <a href="#" class="d-inline-block text-white hover-fadeout  p-1">
                         <svg class="icon f5 " focusable="false" aria-hidden="true">
+                          <use xlink:href="#icon-instagram">
+                        </svg>
+                        <span class="sr-only">Link to page/content on instagram</span>
+                      </a>
+                    </li>
+                    <li class="mr-1">
+                      <a href="#" class="d-inline-block text-white hover-fadeout  p-1">
+                        <svg class="icon f5 " focusable="false" aria-hidden="true">
                           <use xlink:href="#icon-tiktok">
                         </svg>
                         <span class="sr-only">Link to page/content on tiktok</span>
@@ -1189,33 +672,25 @@
                     <li class="mr-1">
                       <a href="#" class="d-inline-block text-white hover-fadeout  p-1">
                         <svg class="icon f5 " focusable="false" aria-hidden="true">
-                          <use xlink:href="#icon-mastodon">
+                          <use xlink:href="#icon-youtube">
                         </svg>
-                        <span class="sr-only">Link to page/content on mastodon</span>
+                        <span class="sr-only">Link to page/content on youtube</span>
                       </a>
                     </li>
                     <li class="mr-1">
                       <a href="#" class="d-inline-block text-white hover-fadeout  p-1">
                         <svg class="icon f5 " focusable="false" aria-hidden="true">
-                          <use xlink:href="#icon-twitter">
+                          <use xlink:href="#icon-vimeo">
                         </svg>
-                        <span class="sr-only">Link to page/content on twitter</span>
+                        <span class="sr-only">Link to page/content on vimeo</span>
                       </a>
                     </li>
                     <li class="mr-1">
                       <a href="#" class="d-inline-block text-white hover-fadeout  p-1">
                         <svg class="icon f5 " focusable="false" aria-hidden="true">
-                          <use xlink:href="#icon-facebook">
+                          <use xlink:href="#icon-threads">
                         </svg>
-                        <span class="sr-only">Link to page/content on facebook</span>
-                      </a>
-                    </li>
-                    <li class="mr-1">
-                      <a href="#" class="d-inline-block text-white hover-fadeout  p-1">
-                        <svg class="icon f5 " focusable="false" aria-hidden="true">
-                          <use xlink:href="#icon-wechat">
-                        </svg>
-                        <span class="sr-only">Link to page/content on wechat</span>
+                        <span class="sr-only">Link to page/content on threads</span>
                       </a>
                     </li>
                   </ul>

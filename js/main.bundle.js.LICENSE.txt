@@ -29,7 +29,7 @@
 
 /**
  * anime.js - ESM
- * @version v4.0.2
+ * @version v4.1.1
  * @author Julian Garnier
  * @license MIT
  * @copyright (c) 2025 Julian Garnier
