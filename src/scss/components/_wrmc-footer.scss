@@ -33,7 +33,7 @@
 .wrmc-footer__logo {
   color: variables.$black;
   font-size: variables.$typescale-1;
-  font-weight: 800;
+  font-weight: variables.$font-weight-extrabold;
   line-height: variables.$line-height-solid;
   letter-spacing: variables.$letter-spacing;
   text-transform: uppercase;

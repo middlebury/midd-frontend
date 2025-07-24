@@ -92,7 +92,7 @@ $school-header-breakpoint: xl;
   margin-top: variables.$spacing-1;
   margin-left: variables.$spacing-2;
   font-family: variables.$font-family-sans-serif;
-  font-weight: 800;
+  font-weight: variables.$font-weight-extrabold;
   line-height: variables.$line-height-journey;
   letter-spacing: 2px;
   text-transform: uppercase;

@@ -105,7 +105,7 @@
 
       @include breakpoints.breakpoint(md) {
         font-size: variables.$typescale-11;
-        font-weight: 800;
+        font-weight: variables.$font-weight-extrabold;
       }
 
       @include breakpoints.breakpoint(lg) {
