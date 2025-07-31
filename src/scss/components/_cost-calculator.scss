@@ -1,0 +1,72 @@
+@use '../core/variables';
+
+.cost-calculator__table {
+  .table {
+    tr {
+      display: flex;
+
+      > * {
+        width: 50%;
+      }
+
+      td:first-child,
+      th:first-child {
+        margin-right: variables.$spacing-2;
+      }
+    }
+
+    td {
+      display: flex;
+      justify-content: space-between;
+
+      label {
+        width: 70%;
+      }
+
+      label[for='cost-calc-total-fall-charges'] {
+        font-weight: variables.$font-weight-bold;
+      }
+
+      input {
+        height: fit-content;
+        width: 30%;
+        // padding: variables.$spacing-2;
+      }
+
+      input:disabled {
+        border: none;
+        font-weight: variables.$font-weight-bold;
+        color: variables.$black;
+        background: none;
+        padding: 0;
+        padding-left: variables.$spacing-3;
+        padding-top: variables.$spacing-1;
+      }
+    }
+  }
+
+  &.annual-amount {
+    .table {
+      width: 50%;
+    }
+
+    tbody {
+      border: 1px solid variables.$gray-light;
+    }
+
+    td {
+      width: 100%;
+      padding-left: variables.$spacing-3;
+      padding-right: variables.$spacing-3;
+
+      // label,
+      // input {
+      //   width: 50%;
+      // }
+
+      label {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
