@@ -50,4 +50,3 @@ import './cookie-banner';
 import './quicksearch';
 import './utils/chosen';
 import './video-controls';
-import './cost-calculator';
