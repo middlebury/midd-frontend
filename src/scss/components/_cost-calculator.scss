@@ -1,13 +1,33 @@
 @use '../core/variables';
 
+.cost-calculator {
+  overflow-x: scroll;
+}
+
+.cost-calculator__table {
+  min-width: 500px;
+}
+
 .cost-calculator__table,
 .cost-calculator__table--annual-amount {
   .table {
+    margin-bottom: variables.$spacing-5;
+
+    th {
+      display: initial;
+    }
+
     tr {
       display: flex;
 
       > * {
         width: 50%;
+      }
+
+      &:not(:last-child) {
+        td {
+          border-bottom: 1px solid variables.$gray-light;
+        }
       }
 
       td:first-child,
@@ -48,8 +68,6 @@
 }
 
 .cost-calculator__table--annual-amount {
-  // display: flex;
-
   .table {
     display: inline;
     width: 50%;
@@ -58,13 +76,8 @@
       width: 100%;
     }
 
-    tbody {
-      // border: 1px solid variables.$gray-light;
-    }
-
     td {
-      // padding-left: variables.$spacing-3;
-      // padding-right: variables.$spacing-3;
+      border: 0;
 
       label {
         margin-bottom: 0;
