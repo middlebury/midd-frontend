@@ -1,6 +1,7 @@
 @use '../core/variables';
 
-.cost-calculator__table {
+.cost-calculator__table,
+.cost-calculator__table--annual-amount {
   .table {
     tr {
       display: flex;
@@ -44,25 +45,26 @@
       }
     }
   }
+}
 
-  &.annual-amount {
-    .table {
-      width: 50%;
+.cost-calculator__table--annual-amount {
+  // display: flex;
+
+  .table {
+    display: inline;
+    width: 50%;
+
+    tr > * {
+      width: 100%;
     }
 
     tbody {
-      border: 1px solid variables.$gray-light;
+      // border: 1px solid variables.$gray-light;
     }
 
     td {
-      width: 100%;
-      padding-left: variables.$spacing-3;
-      padding-right: variables.$spacing-3;
-
-      // label,
-      // input {
-      //   width: 50%;
-      // }
+      // padding-left: variables.$spacing-3;
+      // padding-right: variables.$spacing-3;
 
       label {
         margin-bottom: 0;
