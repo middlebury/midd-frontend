@@ -3,12 +3,14 @@ import { $, $$ } from './utils/dom';
 class CostCalculator {
   form: HTMLFormElement;
   tables: HTMLElement[];
-  chargesSum: Number[];
-  creditsSum: Number[];
+  chargesSum: number;
+  creditsSum: number;
+  totalSum: number;
 
   constructor(form: HTMLFormElement) {
     this.form = form;
     this.tables = $$('.table', form);
+    this.chargesSum = this.creditsSum = this.totalSum = 0;
 
     this.validateInput = this.validateInput.bind(this);
 
@@ -21,6 +23,7 @@ class CostCalculator {
 
   addEventListeners = () => {
     const inputElems = $$('input:not(input[disabled="disabled"])', this.form);
+    console.log;
     inputElems.forEach((el) => {
       el.addEventListener('change', (e) => this.validateInput(e));
     });
@@ -33,48 +36,55 @@ class CostCalculator {
 
   validateInput(e: Event) {
     let value = (e.target as HTMLInputElement).value;
+    let isNumber = /^\d+$/.test(value);
     let floatValue = parseFloat(value);
 
     if (
-      isNaN(floatValue) ||
+      !isNumber ||
       this.isEmpty(value) ||
       value.indexOf(',') != -1 ||
       floatValue < 0
     ) {
       alert(
-        'Please enter a valid amount that is greater than 0 and not a letter or symbol.'
+        'Please enter a valid amount that is greater than 0 and does not contain a letter or symbol.'
       );
 
       (e.target as HTMLInputElement).focus();
       (e.target as HTMLInputElement).select();
-    }
-    this.calculateTotal();
+    } else this.calculateTotal();
   }
 
-  calcSum(values: HTMLElement[]) {
+  calcSum(els: HTMLElement[]) {
     let sum = 0;
-    values.forEach((value) => {
-      sum += parseFloat((value as HTMLInputElement).value);
+    els.forEach((el) => {
+      sum += parseFloat((el as HTMLInputElement).value);
     });
 
     return sum;
   }
 
   calculateTotal() {
-    this.tables.forEach((table) => {
+    this.totalSum = 0;
+    this.tables.slice(0, -1).forEach((table) => {
       let charges = $$('.js-charges', table);
       let credits = $$('.js-credits', table);
 
-      if (charges.length != 0 || credits.length != 0) {
-        if (this.calcSum(charges)) {
-          this.chargesSum.push(this.calcSum(charges));
-        }
-        // this.creditsSum.push(this.calcSum(credits));
-        console.log(this.chargesSum);
-      }
+      this.chargesSum = this.calcSum(charges);
+      this.creditsSum = this.calcSum(credits);
+      this.totalSum += this.chargesSum - this.creditsSum;
+
+      $('[name="total-charges"]', table).value = this.chargesSum;
+      $('[name="total-credits"]', table).value = this.creditsSum;
     });
 
-    console.log(this.chargesSum, this.creditsSum);
+    if (this.totalSum < 0) {
+      alert(
+        'If your total credits are greater than your total charges, you have no annual charges due.'
+      );
+      $('[name="annual-amount"]', this.form).value = 0;
+    } else {
+      $('[name="annual-amount"]', this.form).value = this.totalSum;
+    }
   }
 }
 
