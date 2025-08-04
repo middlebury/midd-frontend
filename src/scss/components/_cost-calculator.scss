@@ -1,7 +1,12 @@
 @use '../core/variables';
+@use '../mixins/breakpoints';
 
 .cost-calculator {
   overflow-x: scroll;
+
+  @include breakpoints.breakpoint(sm) {
+    overflow-x: initial;
+  }
 }
 
 .cost-calculator__table {
