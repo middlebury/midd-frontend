@@ -57,8 +57,7 @@ class VideoControls {
 }
 
 const sections = $$('[data-background-video-parent]');
-// sections.shift();
-console.log(sections);
+
 sections.forEach((section) => {
   new VideoControls(section);
 });
