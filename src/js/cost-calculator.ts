@@ -23,7 +23,7 @@ class CostCalculator {
 
   addEventListeners = () => {
     const inputElems = $$('input:not(input[disabled="disabled"])', this.form);
-    console.log;
+
     inputElems.forEach((el) => {
       el.addEventListener('change', (e) => this.validateInput(e));
     });
@@ -46,7 +46,7 @@ class CostCalculator {
       floatValue < 0
     ) {
       alert(
-        'Please enter a valid amount that is greater than 0 and does not contain a letter or symbol.'
+        'Please enter a valid amount that is greater than or equal to 0 and does not contain a letter or symbol.'
       );
 
       (e.target as HTMLInputElement).focus();
