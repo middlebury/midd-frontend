@@ -36,16 +36,17 @@
 
     .mega-cta__title {
       font-size: functions.rem(32);
-      font-weight: variables.$font-weight-semibold;
+      font-weight: variables.$font-weight-extrabold;
+      line-height: variables.$line-height-admissions-title;
       margin-bottom: variables.$spacing-4;
 
-      @include breakpoints.breakpoint(md) {
-        margin-bottom: variables.$spacing-5;
-      }
+      // @include breakpoints.breakpoint(md) {
+      //   margin-bottom: variables.$spacing-5;
+      // }
 
       @include breakpoints.breakpoint(lg) {
-        font-size: variables.$typescale-10;
-        margin-bottom: variables.$spacing-9;
+        font-size: variables.$typescale-11;
+        // margin-bottom: variables.$spacing-9;
       }
     }
 
