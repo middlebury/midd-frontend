@@ -104,18 +104,18 @@
   "bundlesize": [
     {
       "path": "./dist/css/*.css",
-      "maxSize": "35 kB",
-      "compression": "brotli"
+      "maxSize": "55 kB",
+      "compression": "gzip"
     },
     {
       "path": "./dist/js/main.bundle.js",
-      "maxSize": "60 kB",
-      "compression": "brotli"
+      "maxSize": "50 kB",
+      "compression": "gzip"
     },
     {
       "path": "./dist/js/journey.bundle.js",
-      "maxSize": "22 kB",
-      "compression": "brotli"
+      "maxSize": "25 kB",
+      "compression": "gzip"
     }
   ]
 }
