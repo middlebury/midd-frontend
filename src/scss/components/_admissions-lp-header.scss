@@ -5,6 +5,13 @@
 }
 
 .admissions-lp-header__logo {
+  a {
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
   img {
     border-right: 1px solid variables.$white;
   }

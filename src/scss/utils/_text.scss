@@ -143,6 +143,14 @@
   }
 }
 
+.lead--admissions-lp {
+  font-weight: variables.$font-weight-light;
+
+  & + & {
+    margin-top: -(variables.$spacing-2);
+  }
+}
+
 .davis-lead {
   font-size: variables.$typescale-6;
   font-weight: variables.$font-weight-light;
