@@ -7,6 +7,10 @@
   &.mega-cta--admissions-lp {
     overflow: initial;
 
+    @media only screen and (min-width: 1440px) {
+      padding-top: 810px;
+    }
+
     .mega-cta__front {
       .mega-cta__content {
         margin-top: -(variables.$spacing-8);
