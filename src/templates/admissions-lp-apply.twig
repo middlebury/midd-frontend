@@ -7,7 +7,8 @@
 {% block content %}
 
   {% include 'paragraphs/mega-cta.twig' with {
-    title: 'Apply to Middlebury',
+    title: 'APPLY TO MIDDLEBURY',
+    text: 'Explore in-person and online and see how far you can go once you get here.',
     link: 'Add Us to the Common App',
     text_color: '#75a3cd',
     text_shadow_color_primary: '#ed01a7',
@@ -20,6 +21,10 @@
     items: admissions_lp_useful_links,
     box_shadow_color_primary: '#fff791',
     box_shadow_color_secondary: '#75a3cd'
+  }%}
+
+  {% include 'partials/lead.twig' with {
+    class: 'paragraph--expand lead--admissions-lp'
   }%}
 
   {% include 'partials/lead.twig' with {
@@ -52,6 +57,8 @@
     {% endblock %}
   {% endembed %}
 
+  {% include 'paragraphs/video.twig' %}
+
   {% include 'paragraphs/chart-group.twig' with {
     title: 'Meet the Class of 2028 and 2028.5',
     text: 'For a class size of 700 students (600 September and 100 Febs), here’s what the numbers show:', 
@@ -78,6 +85,7 @@
 
   {% include 'paragraphs/mega-cta.twig' with {
     link: 'Add Us to the Common App',
+    text: 'Get ready for four years of discovery and endless possibility.',
     banner_cta: true,
     image: 'banner_cta',
     dual_border_color_primary: '#75a3cd',
