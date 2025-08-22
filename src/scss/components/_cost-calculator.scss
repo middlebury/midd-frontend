@@ -2,31 +2,47 @@
 @use '../mixins/breakpoints';
 
 .cost-calculator {
-  overflow-x: scroll;
+  // overflow-x: scroll;
 
-  @include breakpoints.breakpoint(sm) {
-    overflow-x: initial;
-  }
+  // @include breakpoints.breakpoint(sm) {
+  //   overflow-x: initial;
+  // }
 }
 
 .cost-calculator__table {
-  min-width: 500px;
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoints.breakpoint(md) {
+    min-width: 500px;
+    flex-direction: row;
+  }
 }
 
 .cost-calculator__table,
 .cost-calculator__table--annual-amount {
   .table {
-    margin-bottom: variables.$spacing-5;
+    margin-bottom: variables.$spacing-4;
+
+    @include breakpoints.breakpoint(lg) {
+      margin-bottom: 0;
+    }
 
     th {
-      display: initial;
+      display: block;
     }
 
     tr {
-      display: flex;
+      @include breakpoints.breakpoint(md) {
+        display: flex;
 
-      > * {
-        width: 50%;
+        > * {
+          width: 100%;
+
+          &:not(th) {
+            min-height: 102px;
+          }
+        }
       }
 
       &:not(:last-child) {
@@ -37,7 +53,9 @@
 
       td:first-child,
       th:first-child {
-        margin-right: variables.$spacing-2;
+        @include breakpoints.breakpoint(md) {
+          margin-right: variables.$spacing-3;
+        }
       }
     }
 
@@ -47,6 +65,7 @@
 
       label {
         width: 70%;
+        margin-bottom: 0;
       }
 
       label[for='cost-calc-total-fall-charges'] {
@@ -55,8 +74,15 @@
 
       input {
         height: fit-content;
-        width: 30%;
-        // padding: variables.$spacing-2;
+        // width: 30%;
+
+        // @include breakpoints.breakpoint(lg) {
+        width: 35%;
+        // }
+
+        @include breakpoints.breakpoint(xl) {
+          width: 30%;
+        }
       }
 
       input:disabled {

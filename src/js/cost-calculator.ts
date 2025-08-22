@@ -3,14 +3,20 @@ import { $, $$ } from './utils/dom';
 class CostCalculator {
   form: HTMLFormElement;
   tables: HTMLElement[];
-  chargesSum: number;
-  creditsSum: number;
+  chargesTables: HTMLElement[];
+  creditsTables: HTMLElement[];
+  totalCharges: number;
+  totalCredits: number;
   totalSum: number;
 
   constructor(form: HTMLFormElement) {
     this.form = form;
     this.tables = $$('.table', form);
-    this.chargesSum = this.creditsSum = this.totalSum = 0;
+    this.chargesTables = $$('.js-charges-table', form);
+    this.creditsTables = $$('.js-credits-table', form);
+    this.totalCharges = this.totalCredits = this.totalSum = 0;
+    // this.totalCharges = this.totalCredits = [];
+    this.totalSum = 0;
 
     this.validateInput = this.validateInput.bind(this);
 
@@ -65,17 +71,26 @@ class CostCalculator {
 
   calculateTotal() {
     this.totalSum = 0;
-    this.tables.slice(0, -1).forEach((table) => {
+    this.totalCharges = 0;
+    this.totalCredits = 0;
+
+    this.chargesTables.forEach((table) => {
       let charges = $$('.js-charges', table);
-      let credits = $$('.js-credits', table);
+      let chargesSum = this.calcSum(charges);
 
-      this.chargesSum = this.calcSum(charges);
-      this.creditsSum = this.calcSum(credits);
-      this.totalSum += this.chargesSum - this.creditsSum;
-
-      $('[name="total-charges"]', table).value = this.chargesSum;
-      $('[name="total-credits"]', table).value = this.creditsSum;
+      $('[name="total-charges"]', table).value = chargesSum;
+      this.totalCharges += chargesSum;
     });
+
+    this.creditsTables.forEach((table) => {
+      let credits = $$('.js-credits', table);
+      let creditsSum = this.calcSum(credits);
+
+      $('[name="total-credits"]', table).value = creditsSum;
+      this.totalCredits += creditsSum;
+    });
+
+    this.totalSum = this.totalCharges - this.totalCredits;
 
     if (this.totalSum < 0) {
       alert(
