@@ -118,13 +118,14 @@ class AudioPlayer extends Component<AudioPlayerProps, AudioPlayerState> {
     { id, btnOnly, outline, playIcon = 'play', size }: AudioPlayerProps,
     { duration, currentTime, muted, playing }: AudioPlayerState
   ) {
-    const btnClasses = `button button--primary ${size &&
-      `button--${size}`} ${outline && 'button--outline'}`;
+    const btnClasses = `button button--primary ${
+      size && `button--${size}`
+    } ${outline && 'button--outline'}`;
 
     const playBtn = (
       <button
         class={btnClasses}
-        aria-label={playing ? 'Pause' : 'Play'}
+        aria-label={playing ? 'Pause' : 'Listen'}
         aria-describedby="midd-audio-title-1"
         onClick={this.handleBtnClick}
       >

@@ -19,6 +19,8 @@
 }
 
 .portrait-video__body {
+  display: flex;
+  flex-direction: column-reverse;
   position: absolute;
   bottom: 0;
   left: 0;
