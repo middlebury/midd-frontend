@@ -76,7 +76,7 @@
     "webpack": "^5.99.3",
     "webpack-bundle-analyzer": "^4.10.1",
     "webpack-stream": "^7.0.0",
-    "yargs": "^17.6.2"
+    "yargs": "^18.0.0"
   },
   "dependencies": {
     "anchor-js": "^5.0.0",
