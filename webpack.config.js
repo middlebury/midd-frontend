@@ -16,7 +16,8 @@ const config = {
   mode: PROD ? 'production' : 'development',
   entry: {
     main: './src/js/index.ts',
-    journey: './src/js/journey-module.ts'
+    journey: './src/js/journey-module.ts',
+    calculator: './src/js/cost-calculator.ts' // for the sfs cost calculator
   },
   devtool: PROD ? false : 'inline-source-map',
   stats: 'normal',
