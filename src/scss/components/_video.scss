@@ -55,7 +55,19 @@
   border: 1px solid variables.$border-color;
 
   .theme-admissions-lp & {
-    background-color: variables.$white;
+    padding: 0;
+    border: none;
+
+    .transcript {
+      &,
+      .transcript__button {
+        color: variables.$white;
+
+        &:hover {
+          border-color: currentColor;
+        }
+      }
+    }
   }
 }
 
