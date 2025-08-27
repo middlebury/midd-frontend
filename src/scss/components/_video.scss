@@ -53,6 +53,10 @@
 .video__body {
   padding: variables.$spacing-3 variables.$spacing-4;
   border: 1px solid variables.$border-color;
+
+  .theme-admissions-lp & {
+    background-color: variables.$white;
+  }
 }
 
 .video__title {
