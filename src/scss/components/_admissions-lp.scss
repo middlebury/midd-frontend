@@ -43,6 +43,10 @@
     }
   }
 
+  .cta-bar {
+    border-top: 1px solid variables.$white;
+  }
+
   .section__header {
     border-top-color: variables.$white;
     color: variables.$white;
