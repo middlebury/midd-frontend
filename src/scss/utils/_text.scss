@@ -149,6 +149,10 @@
   & + & {
     margin-top: -(variables.$spacing-2);
   }
+
+  a {
+    color: variables.$white;
+  }
 }
 
 .davis-lead {

@@ -1,5 +1,6 @@
 @use '../core/variables';
 @use '../mixins/breakpoints';
+@use '../mixins/type';
 
 .admissions-lp-header {
 }
@@ -9,6 +10,10 @@
     &:hover,
     &:focus {
       text-decoration: none;
+
+      .admissions-lp-header__logo-text {
+        border-bottom: 1px solid variables.$white;
+      }
     }
   }
 
