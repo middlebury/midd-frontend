@@ -78,7 +78,6 @@
 }
 
 $mega-cta-alignments: (
-  center: center,
   left-bottom: left bottom,
   right-bottom: right bottom,
   left-top: left top,
@@ -100,10 +99,8 @@ $mega-cta-alignments: (
 @each $key, $pos in $mega-cta-alignments {
   .mega-cta--image-#{$key} {
     img {
-      // @include breakpoints.breakpoint(lg) {
       object-position: $pos;
       font-family: 'object-position: #{$pos};';
-      // }
     }
   }
 }
