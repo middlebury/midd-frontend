@@ -62,9 +62,10 @@
     td {
       display: flex;
       justify-content: space-between;
+      // flex-direction: column;
 
       label {
-        width: 70%;
+        width: 55%;
         margin-bottom: 0;
       }
 
@@ -72,17 +73,22 @@
         font-weight: variables.$font-weight-bold;
       }
 
-      input {
+      input,
+      select {
         height: fit-content;
         // width: 30%;
 
-        // @include breakpoints.breakpoint(lg) {
-        width: 35%;
-        // }
+        @include breakpoints.breakpoint(lg) {
+          width: 35%;
+        }
 
         @include breakpoints.breakpoint(xl) {
-          width: 30%;
+          width: 45%;
         }
+      }
+
+      select {
+        height: 56px;
       }
 
       input:disabled {
