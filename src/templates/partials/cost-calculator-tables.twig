@@ -29,7 +29,12 @@
       <tr>
         <td>
           <label for="cost-calculator-fall-health-insurance" class="label pr-2">Student Health Insurance (estimate)</label>
-          <input id="cost-calculator-fall-health-insurance" name="health-insurance" type="text" class="form-control js-charges" value="0">
+          {# <input id="cost-calculator-fall-health-insurance" name="health-insurance" type="text" class="form-control js-charges" value="0"> #}
+          <select d="cost-calculator-fall-health-insurance" name="health-insurance" type="text" class="form-control js-charges">
+            <option value="0">--Annual or Fall--</option>
+            <option value="3428">Annual - 3428</option>
+            <option value="1597">Fall only - 1597</option>
+          </select>
         </td>
       </tr>
       <tr>
