@@ -3,7 +3,7 @@
 <div class="paragraph paragraph--full">
   <div class="container px-0">
 
-    <section class="mega-cta mega-cta--customizable" aria-labelledby="midd-mega-cta-label-{{id}}">
+    <section class="mega-cta mega-cta--customizable mega-cta--image{{pin_image ? '-' ~ pin_image : '-center'}}" aria-labelledby="midd-mega-cta-label-{{id}}">
       <figure class="mega-cta__back">
         {% include 'partials/img.twig' with {
           name: 'spotlight'

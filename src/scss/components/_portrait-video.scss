@@ -11,6 +11,7 @@
 .portrait-video__content {
   position: relative;
   padding-bottom: math.percentage(math.div(16, 9));
+  background-color: #000;
 
   img,
   iframe {
