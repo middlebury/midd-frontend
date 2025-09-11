@@ -6,10 +6,13 @@
 }
 
 .admissions-lp-header__logo {
+  width: fit-content;
+
   a {
     display: flex;
     align-items: center;
     color: variables.$white;
+    line-height: variables.$line-height-admissions-title;
 
     @include breakpoints.breakpoint(md) {
       .admissions-lp-header__logo-text {
