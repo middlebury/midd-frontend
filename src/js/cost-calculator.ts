@@ -28,7 +28,10 @@ class CostCalculator {
   }
 
   addEventListeners = () => {
-    const inputElems = $$('input:not(input[disabled="disabled"])', this.form);
+    const inputElems = $$(
+      'input:not(input[disabled="disabled"]), select',
+      this.form
+    );
 
     inputElems.forEach((el) => {
       el.addEventListener('change', (e) => this.validateInput(e));
