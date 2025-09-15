@@ -1,178 +1,218 @@
-<div class="cost-calculator__table js-calculator-table">
-  <table class="table js-charges-table js-omit-table">
-    <thead>
-      <tr>
-        <th>
-          Fall Semester Charges
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          <label for="cost-calculator-fall-tuition" class="label pr-2">Tuition</label>
-          <input id="cost-calculator-fall-tuition" name="tuition" type="text" class="form-control js-charges" value="0">
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label for="cost-calculator-fall-room-board" class="label pr-2">Room and Board</label>
-          <input id="cost-calculator-fall-room-board" name="room-board" type="text" class="form-control js-charges" value="0">
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label for="cost-calculator-fall-activity-fee" class="label pr-2">Student Activity Fee</label>
-          <input id="cost-calculator-fall-activity-fee" name="activity-fee" type="text" class="form-control js-charges" value="0">
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label for="cost-calculator-fall-health-insurance" class="label pr-2">Student Health Insurance (estimate)</label>
-          {# <input id="cost-calculator-fall-health-insurance" name="health-insurance" type="text" class="form-control js-charges" value="0"> #}
-          <select id="cost-calculator-fall-health-insurance" name="health-insurance" type="text" class="form-control js-charges">
-            <option value="0">Choose Annual or Fall</option>
-            <option value="3428">Annual - $3428</option>
-            <option value="1597">Fall only - $1597</option>
-          </select>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label for="cost-calculator-fall-total-charges" class="label font-bold pr-2">Total Fall Semester Charges</label>
-          <input class="js-total-charges" id="cost-calculator-fall-total-charges" disabled="disabled" name="total-charges" type="text" value="0">
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <table class="table js-credits-table js-omit-table">
-    <thead>
-      <tr>
-        <th>
-          Fall Semester Credits
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          <label for="cost-calculator-fall-midd-grant" class="label pr-2">Middlebury Grant/Scholarship</label>
-          <input id="cost-calculator-fall-midd-grant" name="midd-grant" type="text" class="form-control js-credits" value="0">
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label for="cost-calculator-fall-student-loans" class="label pr-2">Student Loans</label>
-          <input id="cost-calculator-fall-student-loans" name="student-loans" type="text" class="form-control js-credits" value="0">
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label for="cost-calculator-fall-external-scholarship" class="label pr-2">External Scholarship(s)</label>
-          <input id="cost-calculator-fall-external-scholarship" name="external-scholarship" type="text" class="form-control js-credits" value="0">
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label for="cost-calculator-fall-tuition-benefit" class="label pr-2">Tuition Benefit</label>
-          <input id="cost-calculator-fall-tuition-benefit" name="tuition-benefit" type="text" class="form-control js-credits" value="0">
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label for="cost-calculator-fall-total-credis" class="label font-bold pr-2">Total Fall Semester Credits</label>
-          <input class="js-total-credits" id="cost-calculator-fall-total-credits" disabled="disabled" name="total-credits" type="text" value="0">
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<div class="cost-calculator__table">
-  <table class="table js-charges-table js-omit-table">
-    <thead>
-      <tr>
-        <th>
-          Spring Semester Charges
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          <label for="cost-calculator-spring-tuition" class="label pr-2">Tuition</label>
-          <input id="cost-calculator-spring-tuition" name="tuition" type="text" class="form-control js-charges" value="0">
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label for="cost-calculator-spring-room-board" class="label pr-2">Room and Board</label>
-          <input id="cost-calculator-spring-room-board" name="room-board" type="text" class="form-control js-charges" value="0">
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label for="cost-calculator-spring-activity-fee" class="label pr-2">Student Activity Fee</label>
-          <input id="cost-calculator-spring-activity-fee" name="activity-fee" type="text" class="form-control js-charges" value="0">
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label for="cost-calculator-spring-health-insurance" class="label pr-2">Student Health Insurance</label>
-          <input id="cost-calculator-spring-health-insurance" name="health-insurance" type="text" class="form-control js-charges" value="0">
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label for="cost-calculator-spring-total-charges" class="label font-bold pr-2">Total Spring Semester Charges</label>
-          <input id="cost-calculator-spring-total-charges" disabled="disabled" name="total-charges" type="text" value="0">
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <table class="table js-credits-table js-omit-table">
-    <thead>
-      <tr>
-        <th>
-          Spring Semester Credits
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          <label for="cost-calculator-spring-midd-grant" class="label pr-2">Middlebury Grant/Scholarship</label>
-          <input id="cost-calculator-spring-midd-grant" name="midd-grant" type="text" class="form-control js-credits" value="0">
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label for="cost-calculator-spring-student-loans" class="label pr-2">Student Loans</label>
-          <input id="cost-calculator-spring-student-loans" name="student-loans" type="text" class="form-control js-credits" value="0">
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label for="cost-calculator-spring-external-scholarship" class="label pr-2">External Scholarship(s)</label>
-          <input id="cost-calculator-spring-external-scholarship" name="external-scholarship" type="text" class="form-control js-credits" value="0">
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label for="cost-calculator-spring-tuition-benefit" class="label pr-2">Tuition Benefit</label>
-          <input id="cost-calculator-spring-tuition-benefit" name="tuition-benefit" type="text" class="form-control js-credits" value="0">
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label for="cost-calculator-spring-total-credis" class="label font-bold pr-2">Total Spring Semester Credits</label>
-          <input id="cost-calculator-spring-total-credits" disabled="disabled" name="total-credits" type="text" value="0">
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class=" js-calculator-table">
+  <div class="cost-calculator__row">
+    <table class="table js-charges-table js-omit-table">
+      <thead>
+        <tr>
+          <th>
+            Fall Semester Charges
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <label for="cost-calculator-fall-tuition" class="label pr-2">Tuition</label>
+            <input id="cost-calculator-fall-tuition" name="tuition" type="text" class="form-control js-charges" value="35060">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="cost-calculator-fall-room-board" class="label pr-2">On-campus Housing and Meal Plan</label>
+            <input id="cost-calculator-fall-room-board" name="room-board" type="text" class="form-control js-charges" value="10058">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="cost-calculator-fall-activity-fee" class="label pr-2">Student Activity Fee</label>
+            <input id="cost-calculator-fall-activity-fee" name="activity-fee" type="text" class="form-control js-charges" value="260">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="cost-calculator-fall-health-insurance" class="label pr-2">Student Health Insurance (estimate)</label>
+            <select id="cost-calculator-fall-health-insurance" name="health-insurance" type="text" class="form-control js-charges">
+              <option value="0">Choose Annual or Fall</option>
+              <option value="3428">Annual - $3428</option>
+              <option value="1597">Fall only - $1597</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="cost-calculator-fall-total-charges" class="label font-bold pr-2">Total Fall Semester Charges</label>
+            <input id="cost-calculator-fall-total-charges" disabled="disabled" name="total-charges" type="text" value="45378">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table js-credits-table js-omit-table">
+      <thead>
+        <tr>
+          <th>
+            Fall Semester Credits
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <label for="cost-calculator-fall-midd-grant" class="label pr-2">Middlebury Grant/Scholarship</label>
+            <input id="cost-calculator-fall-midd-grant" name="midd-grant" type="text" class="form-control js-credits" value="0">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="cost-calculator-fall-student-loans" class="label pr-2">Student Loans</label>
+            <input id="cost-calculator-fall-student-loans" name="student-loans" type="text" class="form-control js-credits" value="0">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="cost-calculator-fall-external-scholarship" class="label pr-2">External Scholarship(s)</label>
+            <input id="cost-calculator-fall-external-scholarship" name="external-scholarship" type="text" class="form-control js-credits" value="0">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="cost-calculator-fall-tuition-benefit" class="label pr-2">Tuition Benefit</label>
+            <input id="cost-calculator-fall-tuition-benefit" name="tuition-benefit" type="text" class="form-control js-credits" value="0">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="cost-calculator-fall-total-credits" class="label font-bold pr-2">Total Fall Semester Credits</label>
+            <input class="js-total-credits" id="cost-calculator-fall-total-credits" disabled="disabled" name="total-credits" type="text" value="0">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="cost-calculator__row--sem-total mb-lg-3 mr-3">
+    <table class="table">
+      <thead class="sr-only">
+        <tr>
+          <th>
+            Total Fall Semester Amount
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <label for="cost-calculator-fall-total-amount" class="label font-bold pr-2">Total Fall Semester Amount</label>
+            <input class="" id="cost-calculator-fall-total-amount" disabled="disabled" name="fall-total-amount" type="text" value="45378">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cost-calculator__row">
+    <table class="table js-charges-table js-omit-table">
+      <thead>
+        <tr>
+          <th>
+            Spring Semester Charges
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <label for="cost-calculator-spring-tuition" class="label pr-2">Tuition</label>
+            <input id="cost-calculator-spring-tuition" name="tuition" type="text" class="form-control js-charges" value="35060">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="cost-calculator-spring-room-board" class="label pr-2">On-campus Housing and Meal Plan</label>
+            <input id="cost-calculator-spring-room-board" name="room-board" type="text" class="form-control js-charges" value="10058">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="cost-calculator-spring-activity-fee" class="label pr-2">Student Activity Fee</label>
+            <input id="cost-calculator-spring-activity-fee" name="activity-fee" type="text" class="form-control js-charges" value="260">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="cost-calculator-spring-health-insurance" class="label pr-2">Student Health Insurance</label>
+            <input id="cost-calculator-spring-health-insurance" name="health-insurance" type="text" class="form-control js-charges" value="1831">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="cost-calculator-spring-total-charges" class="label font-bold pr-2">Total Spring Semester Charges</label>
+            <input id="cost-calculator-spring-total-charges" disabled="disabled" name="total-charges" type="text" value="47209">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table js-credits-table js-omit-table">
+      <thead>
+        <tr>
+          <th>
+            Spring Semester Credits
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <label for="cost-calculator-spring-midd-grant" class="label pr-2">Middlebury Grant/Scholarship</label>
+            <input id="cost-calculator-spring-midd-grant" name="midd-grant" type="text" class="form-control js-credits" value="0">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="cost-calculator-spring-student-loans" class="label pr-2">Student Loans</label>
+            <input id="cost-calculator-spring-student-loans" name="student-loans" type="text" class="form-control js-credits" value="0">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="cost-calculator-spring-external-scholarship" class="label pr-2">External Scholarship(s)</label>
+            <input id="cost-calculator-spring-external-scholarship" name="external-scholarship" type="text" class="form-control js-credits" value="0">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="cost-calculator-spring-tuition-benefit" class="label pr-2">Tuition Benefit</label>
+            <input id="cost-calculator-spring-tuition-benefit" name="tuition-benefit" type="text" class="form-control js-credits" value="0">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="cost-calculator-spring-total-credis" class="label font-bold pr-2">Total Spring Semester Credits</label>
+            <input id="cost-calculator-spring-total-credits" disabled="disabled" name="total-credits" type="text" value="0">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="cost-calculator__row--sem-total mb-lg-3 mr-3">
+    <table class="table">
+      <thead class="sr-only">
+        <tr>
+          <th>
+            Total Spring Semester Amount
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <label for="cost-calculator-spring-total-amount" class="label font-bold pr-2">Total Spring Semester Amount</label>
+            <input class="" id="cost-calculator-spring-total-amount" disabled="disabled" name="spring-total-amount" type="text" value="47209">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
-<div class="cost-calculator__table--annual-amount">
+<div class="cost-calculator__row--annual-amount">
   <table class="table">
     <thead class="sr-only">
       <tr>
@@ -185,7 +225,7 @@
       <tr>
         <td>
           <label for="cost-calculator-annual-amount" class="label f3 font-bold pr-2">Annual Budgeted Amount</label>
-          <input class="f3" id="cost-calculator-annual-amount" disabled="disabled" name="annual-amount" type="text" value="0">
+          <input class="f3" id="cost-calculator-annual-amount" disabled="disabled" name="annual-amount" type="text" value="92587">
         </td>
       </tr>
     </tbody>

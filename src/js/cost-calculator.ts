@@ -5,6 +5,10 @@ class CostCalculator {
   tables: HTMLElement[];
   chargesTables: HTMLElement[];
   creditsTables: HTMLElement[];
+  fallCharges: number;
+  fallCredits: number;
+  springCharges: number;
+  springCredits: number;
   totalCharges: number;
   totalCredits: number;
   totalSum: number;
@@ -15,7 +19,11 @@ class CostCalculator {
     this.chargesTables = $$('.js-charges-table', form);
     this.creditsTables = $$('.js-credits-table', form);
     this.totalCharges = this.totalCredits = this.totalSum = 0;
-    // this.totalCharges = this.totalCredits = [];
+    this.fallCharges =
+      this.fallCredits =
+      this.springCharges =
+      this.springCredits =
+        0;
     this.totalSum = 0;
 
     this.validateInput = this.validateInput.bind(this);
@@ -25,6 +33,7 @@ class CostCalculator {
 
   init() {
     this.addEventListeners();
+    this.calculateTotal();
   }
 
   addEventListeners = () => {
@@ -32,6 +41,11 @@ class CostCalculator {
       'input:not(input[disabled="disabled"]), select',
       this.form
     );
+
+    $('input[type="reset"]').addEventListener('click', () => {
+      console.log('click');
+      this.calculateTotal();
+    });
 
     inputElems.forEach((el) => {
       el.addEventListener('change', (e) => this.validateInput(e));
@@ -77,21 +91,37 @@ class CostCalculator {
     this.totalCharges = 0;
     this.totalCredits = 0;
 
-    this.chargesTables.forEach((table) => {
+    this.chargesTables.forEach((table, index) => {
       let charges = $$('.js-charges', table);
       let chargesSum = this.calcSum(charges);
 
       $('[name="total-charges"]', table).value = chargesSum;
+
+      if (index) {
+        this.springCharges = chargesSum;
+      } else {
+        this.fallCharges = chargesSum;
+      }
       this.totalCharges += chargesSum;
     });
 
-    this.creditsTables.forEach((table) => {
+    this.creditsTables.forEach((table, index) => {
       let credits = $$('.js-credits', table);
       let creditsSum = this.calcSum(credits);
 
       $('[name="total-credits"]', table).value = creditsSum;
+
+      if (index) {
+        this.springCredits = creditsSum;
+      } else {
+        this.fallCredits = creditsSum;
+      }
       this.totalCredits += creditsSum;
     });
+
+    $('[name="fall-total-amount"]').value = this.fallCharges - this.fallCredits;
+    $('[name="spring-total-amount"]').value =
+      this.springCharges - this.springCredits;
 
     this.totalSum = this.totalCharges - this.totalCredits;
 
