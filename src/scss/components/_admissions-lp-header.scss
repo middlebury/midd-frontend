@@ -3,6 +3,27 @@
 @use '../mixins/type';
 
 .admissions-lp-header {
+  &.headroom {
+    will-change: transform;
+    transition: transform 0.4s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: variables.$z-index-school-header;
+
+    @media print {
+      position: relative;
+    }
+  }
+
+  &.headroom--pinned {
+    transform: translateY(0%);
+  }
+
+  &.headroom--unpinned {
+    transform: translateY(-100%);
+  }
 }
 
 .admissions-lp-header__logo {
