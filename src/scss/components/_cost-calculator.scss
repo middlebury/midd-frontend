@@ -23,11 +23,7 @@
 .cost-calculator__row--sem-total,
 .cost-calculator__row--annual-amount {
   .table {
-    margin-bottom: variables.$spacing-4;
-
-    @include breakpoints.breakpoint(lg) {
-      margin-bottom: 0;
-    }
+    margin-bottom: 0;
 
     th {
       display: block;
@@ -42,6 +38,10 @@
 
           &:not(th) {
             min-height: 105px;
+
+            @include breakpoints.breakpoint(xl) {
+              min-height: initial;
+            }
           }
         }
       }
@@ -61,7 +61,7 @@
 
       &:last-child {
         td {
-          min-height: 90px;
+          min-height: 80px;
         }
       }
     }
