@@ -1,5 +1,16 @@
+{# form default values #}
+{% set tuition = 35060 %}
+{% set housing_meal_plan = 10058 %}
+{% set activity_fee = 260 %}
+{% set insurance_annual = 3428 %}
+{% set insurance_fall = 1597 %}
+{% set insurance_spring = 1831 %}
+{% set fall_total = tuition + housing_meal_plan + activity_fee %}
+{% set spring_total = tuition + housing_meal_plan + activity_fee + insurance_spring %}
+
 <div class=" js-calculator-table">
   <div class="cost-calculator__row">
+  {# -- fall semester charges table -- #}
     <table class="table js-charges-table js-omit-table">
       <thead>
         <tr>
@@ -12,19 +23,19 @@
         <tr>
           <td>
             <label for="cost-calculator-fall-tuition" class="label pr-2">Tuition</label>
-            <input id="cost-calculator-fall-tuition" name="tuition" type="text" class="form-control js-charges" value="35060">
+            <input id="cost-calculator-fall-tuition" name="tuition" type="text" class="form-control js-charges" value="{{tuition}}">
           </td>
         </tr>
         <tr>
           <td>
             <label for="cost-calculator-fall-room-board" class="label pr-2">On-campus Housing and Meal Plan</label>
-            <input id="cost-calculator-fall-room-board" name="room-board" type="text" class="form-control js-charges" value="10058">
+            <input id="cost-calculator-fall-room-board" name="room-board" type="text" class="form-control js-charges" value="{{housing_meal_plan}}">
           </td>
         </tr>
         <tr>
           <td>
             <label for="cost-calculator-fall-activity-fee" class="label pr-2">Student Activity Fee</label>
-            <input id="cost-calculator-fall-activity-fee" name="activity-fee" type="text" class="form-control js-charges" value="260">
+            <input id="cost-calculator-fall-activity-fee" name="activity-fee" type="text" class="form-control js-charges" value="{{activity_fee}}">
           </td>
         </tr>
         <tr>
@@ -32,19 +43,22 @@
             <label for="cost-calculator-fall-health-insurance" class="label pr-2">Student Health Insurance (estimate)</label>
             <select id="cost-calculator-fall-health-insurance" name="health-insurance" type="text" class="form-control js-charges">
               <option value="0">Choose Annual or Fall</option>
-              <option value="3428">Annual - $3428</option>
-              <option value="1597">Fall only - $1597</option>
+              <option value="{{insurance_annual}}">Annual - ${{insurance_annual}}</option>
+              <option value="{{insurance_fall}}">Fall only - ${{insurance_fall}}</option>
             </select>
           </td>
         </tr>
         <tr>
           <td>
             <label for="cost-calculator-fall-total-charges" class="label font-bold pr-2">Total Fall Semester Charges</label>
-            <input id="cost-calculator-fall-total-charges" disabled="disabled" name="total-charges" type="text" value="45378">
+            <input id="cost-calculator-fall-total-charges" disabled="disabled" name="total-charges" type="text" value="{{fall_total}}">
           </td>
         </tr>
       </tbody>
     </table>
+  {# -- fall semester charges table -- #}
+
+  {# -- fall semester credits table -- #}
     <table class="table js-credits-table js-omit-table">
       <thead>
         <tr>
@@ -86,7 +100,10 @@
         </tr>
       </tbody>
     </table>
+  {# -- fall semester credits table -- #}
+
   </div>
+
   <div class="cost-calculator__row--sem-total mb-lg-3 mr-3">
     <table class="table">
       <thead class="sr-only">
@@ -108,6 +125,7 @@
   </div>
 
   <div class="cost-calculator__row">
+  {# -- spring semester charges table -- #}
     <table class="table js-charges-table js-omit-table">
       <thead>
         <tr>
@@ -120,35 +138,38 @@
         <tr>
           <td>
             <label for="cost-calculator-spring-tuition" class="label pr-2">Tuition</label>
-            <input id="cost-calculator-spring-tuition" name="tuition" type="text" class="form-control js-charges" value="35060">
+            <input id="cost-calculator-spring-tuition" name="tuition" type="text" class="form-control js-charges" value="{{tuition}}">
           </td>
         </tr>
         <tr>
           <td>
             <label for="cost-calculator-spring-room-board" class="label pr-2">On-campus Housing and Meal Plan</label>
-            <input id="cost-calculator-spring-room-board" name="room-board" type="text" class="form-control js-charges" value="10058">
+            <input id="cost-calculator-spring-room-board" name="room-board" type="text" class="form-control js-charges" value="{{housing_meal_plan}}">
           </td>
         </tr>
         <tr>
           <td>
             <label for="cost-calculator-spring-activity-fee" class="label pr-2">Student Activity Fee</label>
-            <input id="cost-calculator-spring-activity-fee" name="activity-fee" type="text" class="form-control js-charges" value="260">
+            <input id="cost-calculator-spring-activity-fee" name="activity-fee" type="text" class="form-control js-charges" value="{{activity_fee}}">
           </td>
         </tr>
         <tr>
           <td>
             <label for="cost-calculator-spring-health-insurance" class="label pr-2">Student Health Insurance</label>
-            <input id="cost-calculator-spring-health-insurance" name="health-insurance" type="text" class="form-control js-charges" value="1831">
+            <input id="cost-calculator-spring-health-insurance" name="health-insurance" type="text" class="form-control js-charges" value="{{insurance_spring}}">
           </td>
         </tr>
         <tr>
           <td>
             <label for="cost-calculator-spring-total-charges" class="label font-bold pr-2">Total Spring Semester Charges</label>
-            <input id="cost-calculator-spring-total-charges" disabled="disabled" name="total-charges" type="text" value="47209">
+            <input id="cost-calculator-spring-total-charges" disabled="disabled" name="total-charges" type="text" value="{{spring_total}}">
           </td>
         </tr>
       </tbody>
     </table>
+  {# -- spring semester charges table -- #}
+
+  {# -- spring semester credits table -- #}
     <table class="table js-credits-table js-omit-table">
       <thead>
         <tr>
@@ -190,7 +211,10 @@
         </tr>
       </tbody>
     </table>
+  {# -- spring semester credits table -- #}
+
   </div>
+  
   <div class="cost-calculator__row--sem-total mb-lg-3 mr-3">
     <table class="table">
       <thead class="sr-only">
@@ -204,7 +228,7 @@
         <tr>
           <td>
             <label for="cost-calculator-spring-total-amount" class="label font-bold pr-2">Total Spring Semester Amount</label>
-            <input class="" id="cost-calculator-spring-total-amount" disabled="disabled" name="spring-total-amount" type="text" value="47209">
+            <input class="" id="cost-calculator-spring-total-amount" disabled="disabled" name="spring-total-amount" type="text" value="{{spring_total}}">
           </td>
         </tr>
       </tbody>
@@ -225,7 +249,7 @@
       <tr>
         <td>
           <label for="cost-calculator-annual-amount" class="label f3 font-bold pr-2">Annual Budgeted Amount</label>
-          <input class="f3" id="cost-calculator-annual-amount" disabled="disabled" name="annual-amount" type="text" value="92587">
+          <input class="f3" id="cost-calculator-annual-amount" disabled="disabled" name="annual-amount" type="text" value="{{fall_total + spring_total}}">
         </td>
       </tr>
     </tbody>

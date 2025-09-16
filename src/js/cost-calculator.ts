@@ -33,7 +33,6 @@ class CostCalculator {
 
   init() {
     this.addEventListeners();
-    this.calculateTotal();
   }
 
   addEventListeners = () => {
