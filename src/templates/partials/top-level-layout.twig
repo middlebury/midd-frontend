@@ -13,30 +13,194 @@
 
 
     <div class="paragraphs paragraphs--wide">
+      <h4 class="mt-3 mb-1"></h4>
       {% block paragraphs %}
-        {% include 'partials/lead.twig' %}
-        {% include 'partials/top-level-paragraphs.twig' %}
-      {% endblock %}
-    </div>
+        <div class="paragraph--button">
+          <a href="" class="button button--primary">Do something awesome</a>
+          <a href="" class="button button--primary">Do something awesome</a>
+        </div>
+        <div class="paragraph--button">
+          <a href="" class="button button--primary">Do something awesome</a>
+          <a href="" class="button button--primary">Do something awesome</a>
+          <a href="" class="button button--primary">Do something awesome</a>
+        </div>
 
-    {# if page has cta or address #}
-    <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2 mt-7">
-      {# slightly differs from markup on office basic content #}
-      <div class="bg-gray-lighter mb-6 p-5">
-        <div class="row">
-          {# if page has cta #}
-          <div class="col-md-6">
-            {% include 'partials/page-cta.twig' %}
-            {# if also has address #}
-            <div class="border-b my-6 d-md-none"></div>
+        <h4 class="mt-3 mb-1">Buttons used in the CourseHub reminder</h4>
+        <a href="" class="button button--primary button--sm mt-2">
+          Update your profile
+        </a>
+        <button class="button button--primary button--sm button--outline mt-2">
+          Remind me later
+        </button>
+
+        <h4 class="mt-5 mb-1">Button no outline with icon, used on Collections page</h4>
+        <a href="" class="button button--sm px-0">
+          {% include 'partials/icon.twig' with {
+            name: 'redo',
+            class: 'mr-1'
+          } %}Clear
+        </a>
+
+        <h4 class="mt-5 mb-1">Button that fills up width of parent element, used on Collections page</h4>
+        <input type="submit"
+            class="button button--primary button--block"
+            value="Apply Filters" />
+        
+        <h4 class="mt-3 mb-1">Buttons in the button box on BLSE homepage</h4>
+        <div class="row row--sm-gutters">
+          <div class="col-lg-4 mt-4">
+            <a href="#" class="button button--primary button--block">Our Programs</a>
           </div>
-          {# if office meta #}
-          <div class="col-md-6">
-            {% include 'partials/office-meta.twig' %}
+          <div class="col-lg-4 mt-4">
+            <a href="#" class="button button--primary button--block">Our Curriculum</a>
+          </div>
+          <div class="col-lg-4 mt-4">
+            <a href="#" class="button button--primary button--block">Our Commmunity</a>
           </div>
         </div>
-      </div>
-    </div>
 
+        <h4 class="mt-3 mb-1">Card Carousel buttons</h4>
+        <div class="p-3" style="background-color: #0d395f;">
+          <div class="card-carousel__button">
+            <a href="#" class="button button--outline button--light">Explore our Programs</a>
+            <button class="button button--light button--outline button--circle js-card-carousel-prev-button" aria-label="Previous" id="midd-card-carousel-button-prev">
+              <span aria-hidden="true">&lsaquo;</span>
+            </button>
+            <button class="button button--light button--outline button--circle js-card-carousel-next-button" aria-label="Next" id="midd-card-carousel-button-next">
+              <span aria-hidden="true">&rsaquo;</span>
+            </button>
+          </div>
+        </div>
+        
+        <h4 class="mt-3 mb-1">Gallery button</h4>
+        <span class="button button--primary">
+          Open Gallery
+          <span class="ml-3">
+            {% include 'partials/icon.twig' with { name: 'images' } %}
+          </span>
+          <span class="d-none d-sm-inline">
+            <span class="mx-2">|</span>
+            <span id="midd-gallery-{{id}}-count">{{gallery_data.length}}
+              images</span>
+          </span>
+        </span>
+
+        <h4 class="mt-3 mb-1">Used in paragraphs/helpfulness.twig</h4>
+        <input data-drupal-selector="edit-submit"
+          type="submit"
+          id="edit-submit"
+          name="op"
+          value="Submit"
+          class="button button--primary js-form-submit form-submit" />
+
+        <h4 class="mt-3 mb-1">Used in paragraphs/homepage-grid.twig</h4>
+        <button class="button button--light grid__button" aria-label="Load more grid content" data-grid-toggle-target=".js-grid-container">
+          <span class="button--load-more">Load More{% include 'partials/icon.twig' with {
+              name: 'chevron-down'
+            } %}
+          </span>
+          <a href="#midd-pagetop" class="button--show-less js-grid-to-top-btn">
+            Show Less{% include 'partials/icon.twig' with {
+              name: 'chevron-up'
+            } %}
+          </a>
+        </button>
+
+        <h4 class="mt-3 mb-1">Used in paragraphs/mega-cta-background-video.twig</h4>
+        <div class="p-3" style="background-color: #0d395f;">
+          {% for link in ['Apply now', 'Visit Middlebury', 'Explore Financial Aid'] %}
+            <a class="button button--primary button--light font-semibold text-uppercase {{loop.last ? "mb-7" : " mr-2 mb-4"}} mb-lg-0" href="">{{link}}</a>
+          {% endfor %}
+        </div>
+
+        <h4 class="mt-3 mb-1">Used in paragraphs/mega-cta-customizable.twig</h4>
+        {% set mode = "" %}
+        <a class="button button--outline {{mode == "dark" ? " button--light" : " button--primary"}} py-3 px-5 p-lg-3 mt-4 mt-lg-5" href="">{{link|default('Apply now')}}</a>
+        <div class="p-3" style="background-color: #000;">
+          {% set mode = "dark" %}
+          <a class="button button--outline {{mode == "dark" ? " button--light" : " button--primary"}} py-3 px-5 p-lg-3 mt-4 mt-lg-5" href="">{{link|default('Apply now')}}</a>
+        </div>
+
+        <h4 class="mt-3 mb-1">Used in paragraphs/mega-cta.twig on admissions landing pages</h4>
+        <a class="button button--primary button--heavy" href="">Financial Aid</a>
+
+        <h4 class="mt-3 mb-1">Used in paragraphs/mega-cta.twig on the rest of the sites</h4>
+        <div class="p-3" style="background-color: #0d395f;">
+          <a class="button button--outline button--light" href="">{{link|default('Apply now')}}</a>
+        </div>
+
+        <h4 class="mt-3 mb-1">Used in paragraphs/themed-panel.twig</h4>
+        <div class="p-3" style="background-color: #000;">
+          <a href="#" class="button button--primary themed-panel__cta">Learn more</a>
+          <a href="" class="button button--light button--outline themed-panel__cta">Read more</a>
+        </div>
+
+        <h4 class="mt-3 mb-1">Used in paragraphs/active-filters.twig</h4>
+        <a href="" class="button button--sm">
+          {% include 'partials/icon.twig' with {
+            name: 'times'
+          } %}Photograph
+        </a>
+        <a href="" class="button button--sm">
+          {% include 'partials/icon.twig' with {
+            name: 'times'
+          } %}1980
+        </a>
+        <a href="" class="ml-auto button button--sm">
+          {% include 'partials/icon.twig' with {
+            name: 'redo',
+            class: 'mr-1'
+          } %}Clear Filters
+        </a>
+
+        <h4 class="mt-3 mb-1">Used in paragraphs/event-search.twig</h4>
+        <button type="submit"
+          class="button button--primary button--outline px-4 button--sm">
+          <span class="sr-only">Search</span>
+          {% include 'partials/icon.twig' with {
+            name: 'search'
+          } %}
+        </button>
+
+        <h4 class="mt-3 mb-1">Used in paragraphs/homepage-hero.twig</h4>
+        <a href="#" class="button button--secondary button--outline button--sm">Read More<span class="sr-only"> of "Water Sanitation Research and Development, India"</span></a>
+
+        <h4 class="mt-3 mb-1">Used in partials/portrait-video.twig</h4>
+        <figure class="portrait-video">
+          <div class="portrait-video__content">
+            <div class="portrait-video__body">
+              <button class="button button--primary button--sm button--block {{cobblestone_modal ? 'button--light' : ''}} mt-2" id="midd-video-button-label-{{id}}">
+                Play
+                {% include 'partials/icon.twig' with {
+                  name: 'play',
+                  class: 'ml-1'
+                } %}
+              </button>
+              <h3 class="portrait-video__title" id="midd-video-label-{{id}}">
+                What do students do after graduation?
+              </h3>
+            </div>
+          </div>
+        </figure>
+
+        <h4 class="mt-3 mb-1">Used in partials/school-footer.twig</h4>
+        <div class="p-3" style="background-color: #000;">
+          <a href="{{cta.link}}" class="button button--light">CTA Text</a>
+        </div>
+
+        <h4 class="mt-3 mb-1">Used in partials/share.twig</h4>
+        <a href="https://www.facebook.com/sharer.php?u={{pageUrl}}" target="_blank" title="Share on Facebook" class="button button--sm button--primary button--outline">
+          {% include 'partials/icon.twig' with { name: 'facebook', class: 'mr-1' } %}
+          Share
+        </a>
+
+        <h4 class="mt-3 mb-1">Used in partials/cta-bar.twig</h4>
+        <div class="p-3" style="background-color: #000;">
+          <a class="cta-bar">
+            <span class="cta-bar__button button button--sm">Applicant Portal</span>
+          </a>
+        </div>
+      {% endblock %}
+    </div>
   </div>
 </div>
