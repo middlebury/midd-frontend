@@ -44,7 +44,11 @@
 
   {% include 'paragraphs/announcement.twig' %}
 
-  {% include 'paragraphs/mega-cta.twig' %}
+  {# title: 'Title of the mega-cta', #}
+  {% include 'paragraphs/mega-cta.twig' with {
+    title_link: 'Title of the Mega CTA',
+    text: 'Nulla eget mauris tortor. Morbi aliquet ac tortor non pharetra. Vestibulum condimentum consequat erat sit amet suscipit. Phasellus tempus mauris vitae neque rhoncus varius. Proin condimentum dui quis risus semper tincidunt sit amet at odio. Maecenas porttitor nisi ut malesuada mattis. Nullam at maximus odio. Nunc in auctor risus.' 
+  } %}
 
   {% include 'paragraphs/cta-group.twig' %}
 {% endblock %}
