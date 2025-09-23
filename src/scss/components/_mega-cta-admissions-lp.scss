@@ -67,6 +67,33 @@
       .mega-cta__front {
         .mega-cta__content {
           margin-top: 0;
+
+          .mega-cta__text {
+            margin-bottom: variables.$spacing-3;
+
+            @include breakpoints.breakpoint(md) {
+              margin-bottom: variables.$spacing-6;
+            }
+          }
+
+          .mega-cta__buttons {
+            @include breakpoints.breakpoint(md) {
+              flex-direction: row;
+            }
+          }
+
+          .button {
+            width: 100%;
+
+            // @include breakpoints.breakpoint(md) {
+            min-width: 229px;
+            width: 229px;
+            // }
+
+            @include breakpoints.breakpoint(lg) {
+              width: 253px;
+            }
+          }
         }
       }
     }

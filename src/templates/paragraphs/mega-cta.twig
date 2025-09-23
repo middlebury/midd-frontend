@@ -51,10 +51,16 @@
             </p>
           {% endif %}
           {% if admissions_lp %}
-            <div class="mega-cta__buttons mt-5">
-              {% for link in ['Common Application', 'Coalition Application', 'QuestBridge Application'] %}
-                <a class="button button--primary button--heavy {{loop.last ? "mb-7" : " mr-lg-2 mb-4"}} mb-lg-0" href="">{{link}}</a>
-              {% endfor %}
+            <div class="mega-cta__buttons {{not banner_cta ? "mt-4 mt-md-5" : ""}}">
+              {% if banner_cta %}
+                {% for link in ['Common Application', 'Coalition Application', 'QuestBridge Application'] %}
+                  <a class="button button--primary button--heavy mr-md-2 mb-4 mb-lg-0" href="">{{link}}</a>
+                {% endfor %}
+              {% else %}
+                {% for link in ['Common Application', 'Coalition Application', 'QuestBridge Application'] %}
+                  <a class="button button--primary button--heavy {{loop.last ? "mb-7" : " mr-lg-2 mb-4"}} mb-lg-0" href="">{{link}}</a>
+                {% endfor %}
+              {% endif %}
             </div>
             {# <a class="button button--primary button--heavy" href="">{{link}}</a> #}
           {% else %}
