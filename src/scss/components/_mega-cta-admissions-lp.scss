@@ -54,6 +54,12 @@
       }
     }
 
+    .mega-cta__buttons {
+      .button {
+        min-width: 253px;
+      }
+    }
+
     &.mega-cta--banner-cta {
       min-height: 250px;
       padding-top: 0;
