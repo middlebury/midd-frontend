@@ -54,7 +54,7 @@
             <div class="mega-cta__buttons {{not banner_cta ? "mt-4 mt-md-5" : ""}}">
               {% if banner_cta %}
                 {% for link in ['Common Application', 'Coalition Application', 'QuestBridge Application'] %}
-                  <a class="button button--primary button--heavy mr-md-2 mb-4 mb-lg-0" href="">{{link}}</a>
+                  <a class="button button--primary button--heavy {{not loop.last ? "mb-3" : ""}} mb-md-0 mr-md-2" href="">{{link}}</a>
                 {% endfor %}
               {% else %}
                 {% for link in ['Common Application', 'Coalition Application', 'QuestBridge Application'] %}

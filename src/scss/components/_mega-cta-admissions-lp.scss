@@ -61,18 +61,26 @@
     }
 
     &.mega-cta--banner-cta {
-      min-height: 250px;
+      min-height: 280px;
       padding-top: 0;
+
+      @include breakpoints.breakpoint(md) {
+        min-height: 250px;
+      }
 
       .mega-cta__front {
         .mega-cta__content {
           margin-top: 0;
 
+          @include breakpoints.breakpoint(sm) {
+            @include grid.make-col(10);
+          }
+
           .mega-cta__text {
             margin-bottom: variables.$spacing-3;
 
             @include breakpoints.breakpoint(md) {
-              margin-bottom: variables.$spacing-6;
+              margin-bottom: variables.$spacing-7;
             }
           }
 
@@ -83,12 +91,8 @@
           }
 
           .button {
-            width: 100%;
-
-            // @include breakpoints.breakpoint(md) {
             min-width: 229px;
             width: 229px;
-            // }
 
             @include breakpoints.breakpoint(lg) {
               width: 253px;
