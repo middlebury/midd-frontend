@@ -107,7 +107,10 @@
         }
       }
     }
+  }
 
+  &.mega-cta--background-video,
+  &.mega-cta--admissions-lp {
     .mega-cta__content {
       .mega-cta__buttons {
         display: flex;
