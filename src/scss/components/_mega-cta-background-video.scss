@@ -107,25 +107,25 @@
         }
       }
     }
-  }
 
-  .mega-cta__content {
-    .mega-cta__buttons {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    .mega-cta__content {
+      .mega-cta__buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-      @include breakpoints.breakpoint(lg) {
-        flex-direction: row;
+        @include breakpoints.breakpoint(lg) {
+          flex-direction: row;
+        }
       }
-    }
 
-    .button {
-      width: 100%;
+      .button {
+        width: 100%;
 
-      @include breakpoints.breakpoint(lg) {
-        width: 253px;
+        @include breakpoints.breakpoint(lg) {
+          width: 253px;
+        }
       }
     }
   }
