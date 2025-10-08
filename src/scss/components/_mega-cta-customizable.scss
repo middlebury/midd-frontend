@@ -62,11 +62,10 @@
 
     .mega-cta__text {
       font-size: variables.$typescale-2;
-      margin-bottom: variables.$spacing-4;
+      margin-bottom: 0;
 
       @include breakpoints.breakpoint(lg) {
         font-size: variables.$typescale-3;
-        margin-bottom: variables.$spacing-5;
       }
     }
 

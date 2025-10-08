@@ -4,10 +4,19 @@
 {% set body_gradient = 'linear-gradient(174deg, #0d395f 30.66%, #75a3cd 50.81%, #7f9e94 77.49%)' %}
 {% set admissions_lp = true %}
 
+{% block before_page_header %}
+  {% include 'partials/cta-bar.twig' with {
+    link: 'https://admissions.middlebury.edu/portal/status',
+    text: 'Check your application',
+    button: 'Applicant Portal'
+  } %}
+{% endblock %}
+
 {% block content %}
 
   {% include 'paragraphs/mega-cta.twig' with {
-    title: 'Apply to Middlebury',
+    pin: 'left-bottom',
+    title: 'APPLY TO MIDDLEBURY',
     link: 'Add Us to the Common App',
     text_color: '#75a3cd',
     text_shadow_color_primary: '#ed01a7',
@@ -20,6 +29,10 @@
     items: admissions_lp_useful_links,
     box_shadow_color_primary: '#fff791',
     box_shadow_color_secondary: '#75a3cd'
+  }%}
+
+  {% include 'partials/lead.twig' with {
+    class: 'paragraph--expand lead--admissions-lp'
   }%}
 
   {% include 'partials/lead.twig' with {
@@ -52,6 +65,19 @@
     {% endblock %}
   {% endembed %}
 
+  {% include 'paragraphs/video.twig' %}
+
+  {% include 'paragraphs/portrait-video-group.twig' %}
+
+  {% include 'paragraphs/media-group.twig' with {
+    title: 'Media group',
+    blurb: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus
+        quam optio ratione labore possimus iusto corrupti vero fugiat explicabo
+        officiis ex, a sunt obcaecati molestias voluptate eum earum ipsam
+        accusantium.',
+    media_content_items : ['video', 'video']
+  } %}
+
   {% include 'paragraphs/chart-group.twig' with {
     title: 'Meet the Class of 2028 and 2028.5',
     text: 'For a class size of 700 students (600 September and 100 Febs), here’s what the numbers show:', 
@@ -78,6 +104,7 @@
 
   {% include 'paragraphs/mega-cta.twig' with {
     link: 'Add Us to the Common App',
+    text: 'Get ready for four years of endless possibilities.',
     banner_cta: true,
     image: 'banner_cta',
     dual_border_color_primary: '#75a3cd',

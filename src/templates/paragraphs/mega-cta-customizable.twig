@@ -3,7 +3,7 @@
 <div class="paragraph paragraph--full">
   <div class="container px-0">
 
-    <section class="mega-cta mega-cta--customizable" aria-labelledby="midd-mega-cta-label-{{id}}">
+    <section class="mega-cta mega-cta--customizable mega-cta--image{{pin_image ? '-' ~ pin_image : '-center'}}" aria-labelledby="midd-mega-cta-label-{{id}}">
       <figure class="mega-cta__back">
         {% include 'partials/img.twig' with {
           name: 'spotlight'
@@ -35,7 +35,7 @@
               {{text}}
             </p>
           {% endif %}
-          <a class="button button--outline {{mode == "dark" ? " button--light" : " button--primary"}} py-3 px-5 p-lg-3" href="">{{link|default('Apply now')}}</a>
+          <a class="button button--outline {{mode == "dark" ? " button--light" : " button--primary"}} py-3 px-5 p-lg-3 mt-4 mt-lg-5" href="">{{link|default('Apply now')}}</a>
         </div>
       </div>
     </section>

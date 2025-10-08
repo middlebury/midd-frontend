@@ -16,7 +16,7 @@
 
     .mega-cta__back {
       background: transparent no-repeat 50% 0% / cover;
-      background-image: url('/images/admissions-cover.jpg');
+      background-image: url('/images/admissions-hp-mobile-hero.jpg');
 
       @include breakpoints.breakpoint(sm) {
         background: none;
@@ -49,7 +49,7 @@
         bottom: 0;
         right: 0;
         background-color: variables.$navy-dark;
-        opacity: 0.75;
+        opacity: 0.65;
         z-index: 2;
       }
     }
@@ -64,25 +64,6 @@
       @include breakpoints.breakpoint(lg) {
         flex: initial;
         max-width: initial;
-      }
-
-      .mega-cta__buttons {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        @include breakpoints.breakpoint(lg) {
-          flex-direction: row;
-        }
-      }
-
-      .button {
-        width: 100%;
-
-        @include breakpoints.breakpoint(lg) {
-          width: 253px;
-        }
       }
     }
 
@@ -99,7 +80,7 @@
     .mega-cta__title {
       display: flex;
       flex-direction: column;
-      text-align: left;
+      text-align: center;
       font-size: functions.rem(46);
       font-weight: variables.$font-weight-bold;
 
@@ -123,6 +104,30 @@
 
         &:nth-child(3) {
           animation-delay: 1.5s;
+        }
+      }
+    }
+  }
+
+  &.mega-cta--background-video,
+  &.mega-cta--admissions-lp {
+    .mega-cta__content {
+      .mega-cta__buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @include breakpoints.breakpoint(lg) {
+          flex-direction: row;
+        }
+      }
+
+      .button {
+        width: 100%;
+
+        @include breakpoints.breakpoint(lg) {
+          width: 253px;
         }
       }
     }

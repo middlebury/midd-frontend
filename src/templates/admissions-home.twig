@@ -18,9 +18,9 @@
 {% block content %}
 
   {% include 'paragraphs/mega-cta-background-video.twig' with {
-    text_color: '#75a3cd',
-    text_shadow_color_primary: '#ed01a7',
-    text_shadow_color_secondary: '#f99f33'
+    text_color: '#9ac5ec',
+    text_shadow_color_primary: '#0d395f',
+    text_shadow_color_secondary: '#fbf48f'
   } %}
   <div class="paragraph--expand paragraph--pull-up">
     {% include 'partials/box-menu.twig' with {
@@ -35,10 +35,12 @@
   
   {# 
     possible options for variables used by mega-cta-custom.twig:
+    pin_image: 'left-bottom', 'right-bottom', 'left-top', 'right-top'
     pin_content: 'top-left', 'top-right', 'bottom-left', 'bottom-right', 'center', 'center-left', 'center-right'
     mode: 'dark', 'light' 
   #}
   {% include 'paragraphs/mega-cta-customizable.twig' with {
+    pin_image: 'left-bottom',
     pin_content: 'center-right',
     mode: 'light',
     dual_border_color_primary: '#75a3cd',

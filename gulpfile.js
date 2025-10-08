@@ -200,7 +200,6 @@ const html = () =>
             name: 'exists',
             func: (value, args) => {
               if (!value) {
-                console.log(args);
                 throw new Error('value is falsy');
               }
 
@@ -304,7 +303,7 @@ const reportFilesizes = () =>
     .pipe(
       size({
         showFiles: true,
-        brotli: true,
+        gzip: true,
         showTotal: false
       })
     );

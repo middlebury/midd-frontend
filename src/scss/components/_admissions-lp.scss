@@ -42,4 +42,46 @@
       }
     }
   }
+
+  .section__header {
+    border-top-color: variables.$white;
+    color: variables.$white;
+  }
+
+  .transcript {
+    margin-top: 0;
+
+    a {
+      color: variables.$white;
+    }
+
+    a:hover {
+      border-color: currentColor;
+    }
+
+    .transcript__body {
+      background: variables.$white;
+      color: variables.$black;
+      padding: variables.$spacing-3;
+    }
+  }
+
+  .video__body {
+    padding: variables.$spacing-3 0;
+    border: none;
+
+    > *,
+    a {
+      color: variables.$white;
+    }
+
+    .video__title {
+      font-family: variables.$font-family-sans-serif;
+      font-weight: variables.$font-weight-medium;
+    }
+
+    .video__text {
+      margin-bottom: variables.$spacing-3;
+    }
+  }
 }
