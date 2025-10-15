@@ -42,7 +42,8 @@
           <td>
             <label for="cost-calculator-fall-health-insurance" class="label pr-2">Student Health Insurance (estimate)</label>
             <select id="cost-calculator-fall-health-insurance" name="health-insurance" type="text" class="form-control js-charges">
-              <option value="0">Choose Annual or Fall</option>
+              <option value="0">Choose an option</option>
+              <option value="0">- N/A - $0</option>
               <option value="{{insurance_annual}}">Annual - ${{insurance_annual}}</option>
               <option value="{{insurance_fall}}">Fall only - ${{insurance_fall}}</option>
             </select>
@@ -70,7 +71,7 @@
       <tbody>
         <tr>
           <td>
-            <label for="cost-calculator-fall-midd-grant" class="label pr-2">Middlebury Grant/Scholarship</label>
+            <label for="cost-calculator-fall-midd-grant" class="label pr-2">Grant(s) / Scholarship(s) (Federal / Institutional)</label>
             <input id="cost-calculator-fall-midd-grant" name="midd-grant" type="text" class="form-control js-credits" value="0">
           </td>
         </tr>
@@ -82,13 +83,13 @@
         </tr>
         <tr>
           <td>
-            <label for="cost-calculator-fall-external-scholarship" class="label pr-2">External Scholarship(s)</label>
+            <label for="cost-calculator-fall-external-scholarship" class="label pr-2">External Scholarship(s)<a class="footnote-link" href="#sfs-footnote"><sup>1</sup></a></label>
             <input id="cost-calculator-fall-external-scholarship" name="external-scholarship" type="text" class="form-control js-credits" value="0">
           </td>
         </tr>
         <tr>
           <td>
-            <label for="cost-calculator-fall-tuition-benefit" class="label pr-2">Tuition Benefit</label>
+            <label for="cost-calculator-fall-tuition-benefit" class="label pr-2">Tuition Benefit<a class="footnote-link" href="#sfs-footnote"><sup>1</sup></a></label>
             <input id="cost-calculator-fall-tuition-benefit" name="tuition-benefit" type="text" class="form-control js-credits" value="0">
           </td>
         </tr>
@@ -156,7 +157,11 @@
         <tr>
           <td>
             <label for="cost-calculator-spring-health-insurance" class="label pr-2">Student Health Insurance</label>
-            <input id="cost-calculator-spring-health-insurance" name="health-insurance" type="text" class="form-control js-charges" value="{{insurance_spring}}">
+            <select id="cost-calculator-spring-health-insurance" name="health-insurance" type="text" class="form-control js-charges">
+              <option value="0">Choose an option</option>
+              <option value="0">- N/A - $0</option>
+              <option value="{{insurance_spring}}">Spring only - ${{insurance_spring}}</option>
+            </select>
           </td>
         </tr>
         <tr>
@@ -181,7 +186,7 @@
       <tbody>
         <tr>
           <td>
-            <label for="cost-calculator-spring-midd-grant" class="label pr-2">Middlebury Grant/Scholarship</label>
+            <label for="cost-calculator-spring-midd-grant" class="label pr-2">Grant(s) / Scholarship(s) (Federal / Institutional)</label>
             <input id="cost-calculator-spring-midd-grant" name="midd-grant" type="text" class="form-control js-credits" value="0">
           </td>
         </tr>
@@ -193,13 +198,13 @@
         </tr>
         <tr>
           <td>
-            <label for="cost-calculator-spring-external-scholarship" class="label pr-2">External Scholarship(s)</label>
+            <label for="cost-calculator-spring-external-scholarship" class="label pr-2">External Scholarship(s)<a class="footnote-link" href="#sfs-footnote"><sup>1</sup></a></label>
             <input id="cost-calculator-spring-external-scholarship" name="external-scholarship" type="text" class="form-control js-credits" value="0">
           </td>
         </tr>
         <tr>
           <td>
-            <label for="cost-calculator-spring-tuition-benefit" class="label pr-2">Tuition Benefit</label>
+            <label for="cost-calculator-spring-tuition-benefit" class="label pr-2">Tuition Benefit<a class="footnote-link" href="#sfs-footnote"><sup>1</sup></a></label>
             <input id="cost-calculator-spring-tuition-benefit" name="tuition-benefit" type="text" class="form-control js-credits" value="0">
           </td>
         </tr>
@@ -241,14 +246,14 @@
     <thead class="sr-only">
       <tr>
         <th>
-          Annual Budgeted Amount
+          Annual Billed Amount
         </th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>
-          <label for="cost-calculator-annual-amount" class="label f3 font-bold pr-2">Annual Budgeted Amount</label>
+          <label for="cost-calculator-annual-amount" class="label f3 font-bold pr-2">Annual Billed Amount</label>
           <input class="f3" id="cost-calculator-annual-amount" disabled="disabled" name="annual-amount" type="text" value="{{fall_total + spring_total}}">
         </td>
       </tr>
