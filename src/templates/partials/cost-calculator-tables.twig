@@ -6,7 +6,7 @@
 {% set insurance_fall = 1597 %}
 {% set insurance_spring = 1831 %}
 {% set fall_total = tuition + housing_meal_plan + activity_fee %}
-{% set spring_total = tuition + housing_meal_plan + activity_fee + insurance_spring %}
+{% set spring_total = tuition + housing_meal_plan + activity_fee %}
 
 <div class=" js-calculator-table">
   <div class="cost-calculator__row">
@@ -42,7 +42,7 @@
           <td>
             <label for="cost-calculator-fall-health-insurance" class="label pr-2">Student Health Insurance (estimate)</label>
             <select id="cost-calculator-fall-health-insurance" name="health-insurance" type="text" class="form-control js-charges">
-              <option value="0">Choose an option</option>
+              <option value="0" selected>Choose an option</option>
               <option value="0">- N/A - $0</option>
               <option value="{{insurance_annual}}">Annual - ${{insurance_annual}}</option>
               <option value="{{insurance_fall}}">Fall only - ${{insurance_fall}}</option>
@@ -158,7 +158,7 @@
           <td>
             <label for="cost-calculator-spring-health-insurance" class="label pr-2">Student Health Insurance</label>
             <select id="cost-calculator-spring-health-insurance" name="health-insurance" type="text" class="form-control js-charges">
-              <option value="0">Choose an option</option>
+              <option value="0" selected>Choose an option</option>
               <option value="0">- N/A - $0</option>
               <option value="{{insurance_spring}}">Spring only - ${{insurance_spring}}</option>
             </select>
