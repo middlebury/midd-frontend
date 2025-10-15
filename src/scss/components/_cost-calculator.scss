@@ -6,6 +6,15 @@
   a:not(.footnote-link) {
     @include type.link-border;
   }
+
+  a.footnote-link {
+    border-bottom: 0;
+
+    &:hover {
+      border-bottom: 1px solid currentcolor;
+      text-decoration: none;
+    }
+  }
 }
 
 .cost-calculator__row {
@@ -76,10 +85,6 @@
           width: 55%;
         }
         margin-bottom: 0;
-
-        a {
-          border-bottom: 0;
-        }
       }
 
       label[for='cost-calc-total-fall-charges'] {
