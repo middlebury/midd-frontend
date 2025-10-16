@@ -23,36 +23,46 @@
         <tr>
           <td>
             <label for="cost-calculator-fall-tuition" class="label pr-2">Tuition</label>
-            <input id="cost-calculator-fall-tuition" name="tuition" type="text" class="form-control js-charges" value="{{tuition}}">
+            <div class="form-control__prefix">
+              <input id="cost-calculator-fall-tuition" name="tuition" type="text" class="form-control js-charges" value="{{tuition}}">
+            </div>
           </td>
         </tr>
         <tr>
           <td>
             <label for="cost-calculator-fall-room-board" class="label pr-2">On-campus Housing and Meal Plan</label>
-            <input id="cost-calculator-fall-room-board" name="room-board" type="text" class="form-control js-charges" value="{{housing_meal_plan}}">
+            <div class="form-control__prefix">
+              <input id="cost-calculator-fall-room-board" name="room-board" type="text" class="form-control js-charges" value="{{housing_meal_plan}}">
+            </div>
           </td>
         </tr>
         <tr>
           <td>
             <label for="cost-calculator-fall-activity-fee" class="label pr-2">Student Activity Fee</label>
-            <input id="cost-calculator-fall-activity-fee" name="activity-fee" type="text" class="form-control js-charges" value="{{activity_fee}}">
+            <div class="form-control__prefix">
+              <input id="cost-calculator-fall-activity-fee" name="activity-fee" type="text" class="form-control js-charges" value="{{activity_fee}}">
+            </div>
           </td>
         </tr>
         <tr>
           <td>
             <label for="cost-calculator-fall-health-insurance" class="label pr-2">Student Health Insurance (estimate)</label>
-            <select id="cost-calculator-fall-health-insurance" name="health-insurance" type="text" class="form-control js-charges">
-              <option value="0" selected>Choose an option</option>
-              <option value="0">- N/A - $0</option>
-              <option value="{{insurance_annual}}">Annual - ${{insurance_annual}}</option>
-              <option value="{{insurance_fall}}">Fall only - ${{insurance_fall}}</option>
-            </select>
+            <div class="form-control__prefix">
+              <select id="cost-calculator-fall-health-insurance" name="health-insurance" type="text" class="form-control js-charges">
+                <option value="0" selected>Choose an option</option>
+                <option value="0">- N/A - 0</option>
+                <option value="{{insurance_annual}}">Annual - {{insurance_annual}}</option>
+                <option value="{{insurance_fall}}">Fall only - {{insurance_fall}}</option>
+              </select>
+            </div>
           </td>
         </tr>
         <tr>
           <td>
             <label for="cost-calculator-fall-total-charges" class="label font-bold pr-2">Total Fall Semester Charges</label>
-            <input id="cost-calculator-fall-total-charges" disabled="disabled" name="total-charges" type="text" value="{{fall_total}}">
+            <div class="form-control__prefix">
+              <input id="cost-calculator-fall-total-charges" disabled="disabled" name="total-charges" type="text" value="{{fall_total}}">
+            </div>
           </td>
         </tr>
       </tbody>
@@ -72,31 +82,41 @@
         <tr>
           <td>
             <label for="cost-calculator-fall-midd-grant" class="label pr-2">Grant(s) / Scholarship(s) (Federal / Institutional)</label>
-            <input id="cost-calculator-fall-midd-grant" name="midd-grant" type="text" class="form-control js-credits" value="0">
+            <div class="form-control__prefix">
+              <input id="cost-calculator-fall-midd-grant" name="midd-grant" type="text" class="form-control js-credits" value="0">
+            </div>
           </td>
         </tr>
         <tr>
           <td>
             <label for="cost-calculator-fall-student-loans" class="label pr-2">Student Loans</label>
-            <input id="cost-calculator-fall-student-loans" name="student-loans" type="text" class="form-control js-credits" value="0">
+            <div class="form-control__prefix">
+              <input id="cost-calculator-fall-student-loans" name="student-loans" type="text" class="form-control js-credits" value="0">
+            </div>
           </td>
         </tr>
         <tr>
           <td>
             <label for="cost-calculator-fall-external-scholarship" class="label pr-2">External Scholarship(s)<a class="footnote-link" href="#sfs-footnote"><sup>1</sup></a></label>
-            <input id="cost-calculator-fall-external-scholarship" name="external-scholarship" type="text" class="form-control js-credits" value="0">
+            <div class="form-control__prefix">
+              <input id="cost-calculator-fall-external-scholarship" name="external-scholarship" type="text" class="form-control js-credits" value="0">
+            </div>
           </td>
         </tr>
         <tr>
           <td>
             <label for="cost-calculator-fall-tuition-benefit" class="label pr-2">Tuition Benefit<a class="footnote-link" href="#sfs-footnote"><sup>1</sup></a></label>
-            <input id="cost-calculator-fall-tuition-benefit" name="tuition-benefit" type="text" class="form-control js-credits" value="0">
+            <div class="form-control__prefix">
+              <input id="cost-calculator-fall-tuition-benefit" name="tuition-benefit" type="text" class="form-control js-credits" value="0">
+            </div>
           </td>
         </tr>
         <tr>
           <td>
             <label for="cost-calculator-fall-total-credits" class="label font-bold pr-2">Total Fall Semester Credits</label>
-            <input class="js-total-credits" id="cost-calculator-fall-total-credits" disabled="disabled" name="total-credits" type="text" value="0">
+            <div class="form-control__prefix">
+              <input class="js-total-credits" id="cost-calculator-fall-total-credits" disabled="disabled" name="total-credits" type="text" value="0">
+            </div>
           </td>
         </tr>
       </tbody>
@@ -118,7 +138,9 @@
         <tr>
           <td>
             <label for="cost-calculator-fall-total-amount" class="label font-bold pr-2">Total Fall Semester Amount</label>
-            <input class="" id="cost-calculator-fall-total-amount" disabled="disabled" name="fall-total-amount" type="text" value="45378">
+            <div class="form-control__prefix">
+              <input class="" id="cost-calculator-fall-total-amount" disabled="disabled" name="fall-total-amount" type="text" value="45378">
+            </div>
           </td>
         </tr>
       </tbody>
@@ -139,35 +161,45 @@
         <tr>
           <td>
             <label for="cost-calculator-spring-tuition" class="label pr-2">Tuition</label>
-            <input id="cost-calculator-spring-tuition" name="tuition" type="text" class="form-control js-charges" value="{{tuition}}">
+            <div class="form-control__prefix">
+              <input id="cost-calculator-spring-tuition" name="tuition" type="text" class="form-control js-charges" value="{{tuition}}">
+            </div>
           </td>
         </tr>
         <tr>
           <td>
             <label for="cost-calculator-spring-room-board" class="label pr-2">On-campus Housing and Meal Plan</label>
-            <input id="cost-calculator-spring-room-board" name="room-board" type="text" class="form-control js-charges" value="{{housing_meal_plan}}">
+            <div class="form-control__prefix">
+              <input id="cost-calculator-spring-room-board" name="room-board" type="text" class="form-control js-charges" value="{{housing_meal_plan}}">
+            </div>
           </td>
         </tr>
         <tr>
           <td>
             <label for="cost-calculator-spring-activity-fee" class="label pr-2">Student Activity Fee</label>
-            <input id="cost-calculator-spring-activity-fee" name="activity-fee" type="text" class="form-control js-charges" value="{{activity_fee}}">
+            <div class="form-control__prefix">
+              <input id="cost-calculator-spring-activity-fee" name="activity-fee" type="text" class="form-control js-charges" value="{{activity_fee}}">
+            </div>
           </td>
         </tr>
         <tr>
           <td>
             <label for="cost-calculator-spring-health-insurance" class="label pr-2">Student Health Insurance</label>
-            <select id="cost-calculator-spring-health-insurance" name="health-insurance" type="text" class="form-control js-charges">
-              <option value="0" selected>Choose an option</option>
-              <option value="0">- N/A - $0</option>
-              <option value="{{insurance_spring}}">Spring only - ${{insurance_spring}}</option>
-            </select>
+            <div class="form-control__prefix">
+              <select id="cost-calculator-spring-health-insurance" name="health-insurance" type="text" class="form-control js-charges">
+                <option value="0" selected>Choose an option</option>
+                <option value="0">- N/A - 0</option>
+                <option value="{{insurance_spring}}">Spring only - {{insurance_spring}}</option>
+              </select>
+            </div>
           </td>
         </tr>
         <tr>
           <td>
             <label for="cost-calculator-spring-total-charges" class="label font-bold pr-2">Total Spring Semester Charges</label>
-            <input id="cost-calculator-spring-total-charges" disabled="disabled" name="total-charges" type="text" value="{{spring_total}}">
+            <div class="form-control__prefix">
+              <input id="cost-calculator-spring-total-charges" disabled="disabled" name="total-charges" type="text" value="{{spring_total}}">
+            </div>
           </td>
         </tr>
       </tbody>
@@ -187,31 +219,41 @@
         <tr>
           <td>
             <label for="cost-calculator-spring-midd-grant" class="label pr-2">Grant(s) / Scholarship(s) (Federal / Institutional)</label>
-            <input id="cost-calculator-spring-midd-grant" name="midd-grant" type="text" class="form-control js-credits" value="0">
+            <div class="form-control__prefix">
+              <input id="cost-calculator-spring-midd-grant" name="midd-grant" type="text" class="form-control js-credits" value="0">
+            </div>
           </td>
         </tr>
         <tr>
           <td>
             <label for="cost-calculator-spring-student-loans" class="label pr-2">Student Loans</label>
-            <input id="cost-calculator-spring-student-loans" name="student-loans" type="text" class="form-control js-credits" value="0">
+            <div class="form-control__prefix">
+              <input id="cost-calculator-spring-student-loans" name="student-loans" type="text" class="form-control js-credits" value="0">
+            </div>
           </td>
         </tr>
         <tr>
           <td>
             <label for="cost-calculator-spring-external-scholarship" class="label pr-2">External Scholarship(s)<a class="footnote-link" href="#sfs-footnote"><sup>1</sup></a></label>
-            <input id="cost-calculator-spring-external-scholarship" name="external-scholarship" type="text" class="form-control js-credits" value="0">
+            <div class="form-control__prefix">
+              <input id="cost-calculator-spring-external-scholarship" name="external-scholarship" type="text" class="form-control js-credits" value="0">
+            </div>
           </td>
         </tr>
         <tr>
           <td>
             <label for="cost-calculator-spring-tuition-benefit" class="label pr-2">Tuition Benefit<a class="footnote-link" href="#sfs-footnote"><sup>1</sup></a></label>
-            <input id="cost-calculator-spring-tuition-benefit" name="tuition-benefit" type="text" class="form-control js-credits" value="0">
+            <div class="form-control__prefix">
+              <input id="cost-calculator-spring-tuition-benefit" name="tuition-benefit" type="text" class="form-control js-credits" value="0">
+            </div>
           </td>
         </tr>
         <tr>
           <td>
             <label for="cost-calculator-spring-total-credits" class="label font-bold pr-2">Total Spring Semester Credits</label>
-            <input id="cost-calculator-spring-total-credits" disabled="disabled" name="total-credits" type="text" value="0">
+            <div class="form-control__prefix">
+              <input id="cost-calculator-spring-total-credits" disabled="disabled" name="total-credits" type="text" value="0">
+            </div>
           </td>
         </tr>
       </tbody>
@@ -233,7 +275,9 @@
         <tr>
           <td>
             <label for="cost-calculator-spring-total-amount" class="label font-bold pr-2">Total Spring Semester Amount</label>
-            <input class="" id="cost-calculator-spring-total-amount" disabled="disabled" name="spring-total-amount" type="text" value="{{spring_total}}">
+            <div class="form-control__prefix">
+              <input class="" id="cost-calculator-spring-total-amount" disabled="disabled" name="spring-total-amount" type="text" value="{{spring_total}}">
+            </div>
           </td>
         </tr>
       </tbody>
@@ -254,7 +298,9 @@
       <tr>
         <td>
           <label for="cost-calculator-annual-amount" class="label f3 font-bold pr-2">Annual Billed Amount</label>
-          <input class="f3" id="cost-calculator-annual-amount" disabled="disabled" name="annual-amount" type="text" value="{{fall_total + spring_total}}">
+          <div class="form-control__prefix">
+            <input class="f3" id="cost-calculator-annual-amount" disabled="disabled" name="annual-amount" type="text" value="{{fall_total + spring_total}}">
+          </div>
         </td>
       </tr>
     </tbody>

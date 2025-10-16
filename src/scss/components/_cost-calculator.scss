@@ -91,29 +91,38 @@
         font-weight: variables.$font-weight-bold;
       }
 
-      input,
-      select {
-        height: fit-content;
+      .form-control__prefix {
+        display: flex;
+        align-items: baseline;
+
+        &:before {
+          content: '$';
+        }
+
         width: 55%;
 
         @include breakpoints.breakpoint(lg) {
           width: 45%;
         }
-      }
 
-      select {
-        height: 56px;
-      }
+        input {
+          display: inline;
+        }
 
-      input:disabled {
-        border: none;
-        font-weight: variables.$font-weight-bold;
-        color: variables.$black;
-        opacity: 1;
-        background: none;
-        padding: 0;
-        padding-left: variables.$spacing-3;
-        padding-top: variables.$spacing-1;
+        select {
+          height: 56px;
+        }
+
+        input:disabled {
+          border: none;
+          font-weight: variables.$font-weight-bold;
+          color: variables.$black;
+          opacity: 1;
+          background: none;
+          padding: 0;
+          padding-left: variables.$spacing-3;
+          padding-top: variables.$spacing-1;
+        }
       }
     }
   }
