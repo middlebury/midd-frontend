@@ -1,0 +1,10 @@
+{% embed 'paragraphs/text.twig' %}
+  {% block content %}
+    <h2>Undergraduate Billing Worksheet</h2>
+    <p><strong>NOTE: All charges with the exception of Student Health Insurance are fixed amounts.</strong></p>
+  {% endblock %}
+{% endembed %}
+<form action="" class="cost-calculator js-cost-calculator" id="cost-calculator" method="post" name="form">
+  {% include 'partials/cost-calculator-tables.twig' %}
+  <p class="mt-3"><a class="footnote-link" id="sfs-footnote" href="#sfs-footnote"><sup>1</sup></a>See our outside aid policy: <a href="https://www.middlebury.edu/student-financial-services/types-aid/grants-and-scholarships#outside-scholarships-and-benefits">Outside Scholarships and Benefits</a>.</p>
+</form>
