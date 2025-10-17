@@ -25,6 +25,23 @@
     min-width: 500px;
     flex-direction: row;
   }
+
+  .table {
+    @include breakpoints.breakpoint(md) {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+    }
+  }
+}
+
+.cost-calculator__row,
+.cost-calculator__row--sem-total {
+  width: fit-content;
+
+  @include breakpoints.breakpoint(md) {
+    width: initial;
+  }
 }
 
 .cost-calculator__row,
