@@ -39,6 +39,10 @@
 .cost-calculator__row--sem-total {
   width: fit-content;
 
+  @include breakpoints.breakpoint(sm) {
+    width: 100%;
+  }
+
   @include breakpoints.breakpoint(md) {
     width: initial;
   }
@@ -114,6 +118,7 @@
 
         &:before {
           content: '$';
+          padding-right: variables.$spacing-1;
         }
 
         width: 55%;
@@ -137,7 +142,6 @@
           opacity: 1;
           background: none;
           padding: 0;
-          padding-left: variables.$spacing-3;
           padding-top: variables.$spacing-1;
         }
       }
