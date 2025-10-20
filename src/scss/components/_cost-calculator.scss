@@ -15,6 +15,10 @@
       text-decoration: none;
     }
   }
+
+  .form-control {
+    line-height: variables.$line-height-admissions-title;
+  }
 }
 
 .cost-calculator__row {
@@ -31,6 +35,18 @@
       display: flex;
       flex-direction: column;
       width: 50%;
+    }
+  }
+}
+
+.cost-calculator__row--sem-total {
+  border-top: 2px solid variables.$gray-light;
+
+  .table tr {
+    td {
+      @include breakpoints.breakpoint(md) {
+        width: calc(50% - #{variables.$spacing-2});
+      }
     }
   }
 }
@@ -163,18 +179,6 @@
 
       label {
         margin-bottom: 0;
-      }
-    }
-  }
-}
-
-.cost-calculator__row--sem-total {
-  border-top: 2px solid variables.$gray-light;
-
-  .table tr {
-    td {
-      @include breakpoints.breakpoint(md) {
-        width: calc(50% - #{variables.$spacing-2});
       }
     }
   }
