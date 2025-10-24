@@ -1,10 +1,10 @@
 {# form default values #}
-{% set tuition = 35060 %}
-{% set housing_meal_plan = 10058 %}
-{% set activity_fee = 260 %}
-{% set insurance_annual = 3428 %}
-{% set insurance_fall = 1601 %}
-{% set insurance_spring = 1837 %}
+{% set tuition = '35060.00' %}
+{% set housing_meal_plan = '10058.00' %}
+{% set activity_fee = '260.00' %}
+{% set insurance_annual = '3428.00' %}
+{% set insurance_fall = '1601.00' %}
+{% set insurance_spring = '1837.00' %}
 {% set fall_total = tuition + housing_meal_plan + activity_fee %}
 {% set spring_total = tuition + housing_meal_plan + activity_fee %}
 
@@ -139,7 +139,7 @@
           <td>
             <label for="cost-calculator-fall-total-amount" class="label font-bold pr-4">Total Fall Semester Amount</label>
             <span class="form-control__prefix">
-              <input class="" id="cost-calculator-fall-total-amount" disabled="disabled" name="fall-total-amount" type="text" value="45378">
+              <input class="" id="cost-calculator-fall-total-amount" disabled="disabled" name="fall-total-amount" type="text" value="{{fall_total}}">
             </span>
           </td>
         </tr>

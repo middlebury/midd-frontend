@@ -104,7 +104,7 @@ class CostCalculator {
    */
   validateInput(e: Event) {
     let value = (e.target as HTMLInputElement).value;
-    let isNumber = /^\d+$/.test(value);
+    let isNumber = /^(\d*\.)?\d+$/.test(value);
     let floatValue = parseFloat(value);
 
     if (
