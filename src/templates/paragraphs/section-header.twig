@@ -1,0 +1,20 @@
+{% set title = title|default('') %}
+{% set view_all_link = view_all_link|default('') %}
+{% set description = description|default('') %}
+{% set width = width|default('896px') %}
+
+<div class="section-header" style="width: {{ width }}">
+  <div class="section-header__border"></div>
+  <div class="section-header__title-row">
+    <h2 class="section-header__title">{{ title }}</h2>
+    {% if view_all_link %}
+      <a href="{{ view_all_link.url|default('#') }}" class="section-header__link">
+        <span class="section-header__link-text">{{ view_all_link.text|default('View all') }}</span>
+        <span class="section-header__link-underline"></span>
+      </a>
+    {% endif %}
+  </div>
+  {% if description %}
+    <p class="section-header__description">{{ description }}</p>
+  {% endif %}
+</div>

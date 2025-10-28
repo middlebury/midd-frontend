@@ -112,5 +112,15 @@
 
   {% include 'paragraphs/cost-calculator.twig' %}
 
+  {% include 'paragraphs/section-header.twig' with {
+    title: 'Section Title',
+    description: 'Lorem ipsum dolor sit amet...',
+    view_all_link: {
+      url: '/path/to/all',
+      text: 'View all'
+    },
+    width: '896px'
+  } %}
+
 	{# {% include 'paragraphs/embed.twig' %} #}
 </div>
