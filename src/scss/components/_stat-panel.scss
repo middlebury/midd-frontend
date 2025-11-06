@@ -80,14 +80,14 @@
 .stat-panel__item {
   padding: variables.$spacing-5;
 
-  @include breakpoints.breakpoint(md) {
-    @include grid.make-col-ready;
-    @include grid.make-col(6);
+  // @include breakpoints.breakpoint(md) {
+  //   @include grid.make-col-ready;
+  //   @include grid.make-col(6);
 
-    &.stat-panel__item--secondary:first-child {
-      @include grid.make-col(12);
-    }
-  }
+  //   &.stat-panel__item--secondary:first-child {
+  //     @include grid.make-col(12);
+  //   }
+  // }
 
   @include breakpoints.breakpoint(lg) {
     &,
