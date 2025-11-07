@@ -53,9 +53,10 @@
   {# 
     possible options for variables used by stat-panel.twig:
     blurb: 'true', 'false'
-    align: 'left', 'right' 
+    align: 'left', 'right'
   #}
   {% include 'paragraphs/stat-panel.twig' with {
+    blurb: true,
     align: 'right'
   }%}
 {% endblock %}

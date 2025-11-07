@@ -26,8 +26,10 @@
   }
 
   a:not([href*='middlebury.edu']):not([href^='#']):not([href^='/']):not(
-      [href^='mailto:']):not([href*='drive.google.com']):not([href*='docs.google.com']):not(
-      [href*='.pdf']):not([href*='middleburycollege-my.sharepoint.com']):not([name]) {
+      [href^='mailto:']
+    ):not([href*='drive.google.com']):not([href*='docs.google.com']):not(
+      [href*='.pdf']
+    ):not([href*='middleburycollege-my.sharepoint.com']):not([name]) {
     @include type.link-external;
   }
 
@@ -278,4 +280,34 @@
 
 .contains-links {
   @include mixins.contains-links;
+}
+
+a#midd-student-org {
+  @include type.link-border;
+
+  &:after {
+    font-size: functions.rem(10);
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: variables.$letter-spacing;
+    padding: variables.$spacing-1;
+    line-height: 1;
+    background: variables.$navy;
+    color: variables.$white;
+    margin-left: variables.$spacing-1;
+    transition: 0.2s;
+  }
+
+  &:hover,
+  &:focus {
+    &:after {
+      transform: translateY(-4px);
+    }
+  }
+}
+
+a#midd-student-org {
+  &:after {
+    content: 'student org';
+  }
 }
