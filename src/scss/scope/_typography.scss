@@ -282,7 +282,8 @@
   @include mixins.contains-links;
 }
 
-a#midd-student-org {
+a#midd-student-org,
+a#midd-institutional {
   @include type.link-border;
 
   &:after {
@@ -309,5 +310,11 @@ a#midd-student-org {
 a#midd-student-org {
   &:after {
     content: 'student org';
+  }
+}
+
+a#midd-institutional {
+  &:after {
+    content: 'institutional';
   }
 }
