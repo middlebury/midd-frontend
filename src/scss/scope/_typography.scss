@@ -286,6 +286,10 @@ a#midd-student-org,
 a#midd-institutional {
   @include type.link-border;
 
+  @include breakpoints.breakpoints(xl) {
+    white-space: nowrap;
+  }
+
   &:after {
     font-size: functions.rem(10);
     display: inline-block;
