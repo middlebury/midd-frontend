@@ -295,7 +295,7 @@ a#midd-institutional {
     line-height: 1;
     background: variables.$navy;
     color: variables.$white;
-    margin-left: functions.rem(2);
+    margin-left: variables.$spacing-1;
     transition: 0.2s;
   }
 

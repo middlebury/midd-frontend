@@ -21,10 +21,25 @@
       </a>
     </h3>
     <time datetime="" class="d-block font-medium" aria-label="{{day}} at {{time}}">{{time}}</time>
-    {% if random(1) %}
+    {# {% if random(1) %}
       <p class="f2 font-medium"><strong class="font-semibold">Sponsored by:</strong> <a id="midd-student-org" href="#">Youpower</a></p>
     {% else %}
       <p class="f2 font-medium"><strong class="font-semibold">Sponsored by:</strong> <a id="midd-institutional" href="#">Middlebury College Activities Board</a></p>
+    {% endif %} #}
+    {% if random(1) %}
+      <dl class="mb-5 mt-2">
+        <div class="mb-2">
+          <dt class="d-block d-sm-inline font-semibold">Sponsored by:</dt>
+          <dd class="d-inline"><a id="midd-student-org" href="#">Youpower</a></dd>
+        </div>
+      </dl>
+    {% else %}
+      <dl class="mb-5 mt-2">
+        <div class="mb-2">
+          <dt class="d-block d-sm-inline font-semibold">Sponsored by:</dt>
+          <dd class="d-inline"><a id="midd-institutional" href="#">Middlebury College Activities Board</a></dd>
+        </div>
+      </dl>
     {% endif %}
     <div class="f3 my-3 typography">
       {# {% set max_length = (i * 30) + 20 %} #}
