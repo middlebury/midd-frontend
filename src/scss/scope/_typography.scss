@@ -286,7 +286,7 @@ a#midd-student-org,
 a#midd-institutional {
   @include type.link-border;
 
-  @include breakpoints.breakpoints(xl) {
+  @include breakpoints.breakpoint(xl) {
     white-space: nowrap;
   }
 
