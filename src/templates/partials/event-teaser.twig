@@ -32,7 +32,7 @@
         <dt class="d-block d-sm-inline font-semibold">Sponsored by:</dt>
         <dd class="d-inline">
           {% for item in item.sponsor %}
-            <span id="{{item.class}}" href="#">{{item.name}}</span>{{not loop.last ? "," : ""}}
+            <span id="{{item.class}}" href="#">{{item.name}}</span>{% if item.class %}<span class="badge badge--primary badge--outline ml-1">Student Org</span>{% endif %}{{not loop.last ? "," : ""}}
           {% endfor %}
         </dd>
       </div>
