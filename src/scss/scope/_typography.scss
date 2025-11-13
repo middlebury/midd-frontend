@@ -282,9 +282,9 @@
   @include mixins.contains-links;
 }
 
-a#midd-student-org,
-a#midd-institutional {
-  @include type.link-border;
+#midd-institutional,
+#midd-student-org {
+  // @include type.link-border;
 
   @include breakpoints.breakpoint(xl) {
     white-space: nowrap;
@@ -301,24 +301,25 @@ a#midd-institutional {
     color: variables.$white;
     margin-left: variables.$spacing-1;
     transition: 0.2s;
+    transform: translateY(-2px);
   }
 
   &:hover,
   &:focus {
     &:after {
-      transform: translateY(-4px);
+      // transform: translateY(-4px);
     }
   }
 }
 
-a#midd-student-org {
+#midd-student-org {
   &:after {
     content: 'student org';
   }
 }
 
-a#midd-institutional {
-  &:after {
-    content: 'institutional';
-  }
-}
+// #midd-institutional {
+//   &:after {
+//     content: 'institutional';
+//   }
+// }
