@@ -1,17 +1,17 @@
 {% set filter_active = true %}
-{% set day = "Sunday, May 23" %}
+{% set day = "Wednesday, November 12, 2025" %}
 
 {% embed 'partials/sidebar-layout.twig' %}
   {% block nav %}
-    {% include 'partials/event-search.twig' with {
+    {# {% include 'partials/event-search.twig' with {
       title: "Search Events"
-    }%}
+    }%} #}
     {% include 'partials/event-filters.twig' %}
   {% endblock %}
   {% block content %}
-    {% if filter_active %}
+    {# {% if filter_active %}
       {% include 'partials/active-filters.twig' %}
-    {% endif %}
+    {% endif %} #}
 
     {% if no_results %}
       <p class="lead">
@@ -19,14 +19,14 @@
       </p>
     {% endif %}
 
-    {% for y in 0..2 %}
+    {% for y in 0..0 %}
       <section class="section">
         <h2 class="section__title">
           {{day}}
         </h2>
 
         <ul class="list list--dividers list--md">
-          {% for i in 0..3 %}
+          {% for item in event_list %}
             <li class="list__item">
               {% include 'partials/event-teaser.twig' %}
             </li>
