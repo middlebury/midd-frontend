@@ -1598,6 +1598,7 @@ event_list:
     description: <p>This interactive public art installation invites members of the Middlebury community to reflect on what matters most. By sharing personal hopes and aspirations on a communal wall, the project fosters connection, introspection, and a celebration of our shared humanity. Inspired by the global <em>Before I Die</em> project, this installation transforms public space into a canvas for gratitude, memory, and possibility.</p>
     sponsor:
       - name: Mahaney Arts Center
+        class: midd-student-org
       - name: Elizabeth Hackett Robinson '84 Innovation Hub
         class: midd-student-org
     image: true
