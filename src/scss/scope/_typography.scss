@@ -284,7 +284,7 @@
 
 #midd-institutional,
 #midd-student-org {
-  // @include type.link-border;
+  @include type.link-border;
 
   @include breakpoints.breakpoint(xl) {
     white-space: nowrap;
@@ -297,18 +297,18 @@
     letter-spacing: variables.$letter-spacing;
     padding: variables.$spacing-1;
     line-height: 1;
-    background: variables.$white;
-    color: variables.$navy;
+    background: variables.$navy;
+    color: variables.$white;
     margin-left: variables.$spacing-1;
     transition: 0.2s;
-    transform: translateY(-2px);
-    border: 1px solid variables.$navy;
+    // transform: translateY(-2px);
+    // border: 1px solid variables.$navy;
   }
 
   &:hover,
   &:focus {
     &:after {
-      // transform: translateY(-4px);
+      transform: translateY(-4px);
     }
   }
 }
