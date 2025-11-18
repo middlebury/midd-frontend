@@ -297,12 +297,12 @@
     letter-spacing: variables.$letter-spacing;
     padding: variables.$spacing-1;
     line-height: 1;
-    background: variables.$navy;
-    color: variables.$white;
+    background: variables.$white;
+    color: variables.$navy;
     margin-left: variables.$spacing-1;
     transition: 0.2s;
     transform: translateY(-2px);
-    // border: 1px solid variables.$navy;
+    border: 1px solid variables.$navy;
   }
 
   &:hover,
