@@ -284,8 +284,6 @@
 
 #midd-institutional,
 #midd-student-org {
-  // @include type.link-border;
-
   @include breakpoints.breakpoint(xl) {
     white-space: nowrap;
   }
@@ -302,14 +300,6 @@
     margin-left: variables.$spacing-1;
     transition: 0.2s;
     transform: translateY(-2px);
-    // border: 1px solid variables.$navy;
-  }
-
-  &:hover,
-  &:focus {
-    &:after {
-      // transform: translateY(-4px);
-    }
   }
 }
 
@@ -318,9 +308,3 @@
     content: 'student org';
   }
 }
-
-// #midd-institutional {
-//   &:after {
-//     content: 'institutional';
-//   }
-// }
