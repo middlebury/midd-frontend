@@ -6,6 +6,19 @@
 @use '../components/terms';
 @use '../components/table';
 
+%link-label {
+  font-size: functions.rem(10);
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: variables.$letter-spacing;
+  padding: variables.$spacing-1;
+  line-height: 1;
+  background: variables.$navy;
+  color: variables.$white;
+  margin-left: variables.$spacing-1;
+  transition: 0.2s;
+}
+
 .typography {
   > :first-child {
     margin-top: 0;
@@ -40,16 +53,7 @@
   a[href^='/media/'],
   a[href*='middleburycollege-my.sharepoint.com'] {
     &:after {
-      font-size: functions.rem(10);
-      display: inline-block;
-      text-transform: uppercase;
-      letter-spacing: variables.$letter-spacing;
-      padding: variables.$spacing-1;
-      line-height: 1;
-      background: variables.$navy;
-      color: variables.$white;
-      margin-left: variables.$spacing-1;
-      transition: 0.2s;
+      @extend %link-label;
     }
 
     &:hover,
@@ -289,16 +293,7 @@
   }
 
   &:after {
-    font-size: functions.rem(10);
-    display: inline-block;
-    text-transform: uppercase;
-    letter-spacing: variables.$letter-spacing;
-    padding: variables.$spacing-1;
-    line-height: 1;
-    background: variables.$navy;
-    color: variables.$white;
-    margin-left: variables.$spacing-1;
-    transition: 0.2s;
+    @extend %link-label;
     transform: translateY(-2px);
   }
 }

@@ -10,7 +10,7 @@
     {% block content %}
 
       <ul class="list list--dividers list--md">
-        {% for i in 0..2 %}
+        {% for item in event_list %}
           <li class="list__item">
             {% include 'partials/event-teaser.twig' %}
           </li>
