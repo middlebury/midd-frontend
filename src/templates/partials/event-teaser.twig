@@ -1,24 +1,38 @@
 {% set time = "11:45 AM ET" %}
 
 <article class="d-flex" aria-labelledby="midd-event-{{ i }}-header">
-  <time datetime="" class="text-center mt-1 lh-solid"  aria-hidden="true">
-    <span class="f3 d-block">Jun</span>
-    <span class="f7 d-block">24</span>
+  <time datetime="" class="text-center mt-1 lh-solid" aria-hidden="true">
+    <span class="f3 d-block">{{item.month|default('Nov')}}</span>
+    <span class="f7 d-block">{{item.day|default('12')}}</span>
   </time>
   <div class="w-100 pl-3 clearfix">
-    <figure class="mb-2 float-md-right ml-md-3">
-      <a href="">
-        {% include 'partials/img.twig' with {
-          name: 'event_teaser'
-        } %}
-      </a>
-    </figure>
+    {% if item.image %}
+      <figure class="mb-2 float-md-right ml-md-3">
+        <a href="">
+          {% include 'partials/img.twig' with {
+            name: 'event_teaser'
+          } %}
+        </a>
+      </figure>
+    {% endif %}
     <h3 class="h3" id="midd-event-{{ i }}-header">
       <a href="{{ url|default('#') }}">
-        Museum of Art Lecture Series
+        {{item.title|default('Museum of Art Lecture Series')}}
       </a>
     </h3>
-    <time datetime="" class="d-block font-medium" aria-label="{{day}} at {{time}}">{{time}}</time>
+    <time datetime="" class="d-block font-medium" aria-label="{{item.day|default('12')}} at {{item.time|default('6:00 AM ET')}}">{{item.time|default('6:00 AM ET')}}</time>
+    {% if item.sponsor %}
+      <dl class="mb-5 mt-2">
+        <div class="mb-2">
+          <dt class="d-block d-sm-inline font-semibold">Sponsored by:</dt>
+          <dd class="d-inline">
+            {% for item in item.sponsor %}
+              <span id="{{item.class}}">{{item.name}}</span>{{not loop.last ? "," : ""}}
+            {% endfor %}
+          </dd>
+        </div>
+      </dl>
+    {% endif %}
     <div class="f3 my-3 typography">
       {# {% set max_length = (i * 30) + 20 %} #}
       {% set text =
@@ -39,14 +53,14 @@
         <li>list item 4</li>
       </ol>'
       %}
-      {{ text }}
+      {{ item.description|default(text) }}
       {# naive example of truncate event text to 100 #}
       {# {{ (text|striptags|length) > max_length
         ? (text|striptags|slice(0, max_length)) ~ '...'
         : text|striptags }} #}
     </div>
     <p class="f3 font-medium">
-      McCone Irvine Auditorium
+      {{item.location|default('McCone Irvine Auditorium')}}
     </p>
     {% if env.test or random(1) %}
       <small class="f2 text-gray">Open to the Public</small>

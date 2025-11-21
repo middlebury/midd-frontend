@@ -6,6 +6,19 @@
 @use '../components/terms';
 @use '../components/table';
 
+%link-label {
+  font-size: functions.rem(10);
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: variables.$letter-spacing;
+  padding: variables.$spacing-1;
+  line-height: 1;
+  background: variables.$navy;
+  color: variables.$white;
+  margin-left: variables.$spacing-1;
+  transition: 0.2s;
+}
+
 .typography {
   > :first-child {
     margin-top: 0;
@@ -26,8 +39,10 @@
   }
 
   a:not([href*='middlebury.edu']):not([href^='#']):not([href^='/']):not(
-      [href^='mailto:']):not([href*='drive.google.com']):not([href*='docs.google.com']):not(
-      [href*='.pdf']):not([href*='middleburycollege-my.sharepoint.com']):not([name]) {
+      [href^='mailto:']
+    ):not([href*='drive.google.com']):not([href*='docs.google.com']):not(
+      [href*='.pdf']
+    ):not([href*='middleburycollege-my.sharepoint.com']):not([name]) {
     @include type.link-external;
   }
 
@@ -38,16 +53,7 @@
   a[href^='/media/'],
   a[href*='middleburycollege-my.sharepoint.com'] {
     &:after {
-      font-size: functions.rem(10);
-      display: inline-block;
-      text-transform: uppercase;
-      letter-spacing: variables.$letter-spacing;
-      padding: variables.$spacing-1;
-      line-height: 1;
-      background: variables.$navy;
-      color: variables.$white;
-      margin-left: variables.$spacing-1;
-      transition: 0.2s;
+      @extend %link-label;
     }
 
     &:hover,
@@ -278,4 +284,22 @@
 
 .contains-links {
   @include mixins.contains-links;
+}
+
+#midd-institutional,
+#midd-student-org {
+  @include breakpoints.breakpoint(xl) {
+    white-space: nowrap;
+  }
+
+  &:after {
+    @extend %link-label;
+    transform: translateY(-2px);
+  }
+}
+
+#midd-student-org {
+  &:after {
+    content: 'student org';
+  }
 }
