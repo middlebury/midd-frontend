@@ -1,0 +1,14 @@
+<div class="section__header">
+  <h2 class="section__title" id="section-{{ id }}-label">
+    {{ title|default("section header title") }}
+  </h2>
+  <a href="" class="section__link">{{ link|default("View all") }}</a>
+  {% if blurb %}
+    <p class="section__text">
+      {{ blurb|default("Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+            reiciendis quod temporibus enim non beatae ipsa explicabo necessitatibus
+            iure. Asperiores optio ad repudiandae culpa voluptatum pariatur saepe,
+            tenetur recusandae possimus?") }}
+    </p>
+  {% endif %}
+</div>

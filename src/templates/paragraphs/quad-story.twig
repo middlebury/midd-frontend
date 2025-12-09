@@ -1,13 +1,13 @@
 <section class="paragraph--quad-story" aria-labelledby="midd-profile-spotlight-label-1" data-digest-content>
   <div class="container">
-
-    <div class="row">
-      <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-        <h2 class="h2 mb-4" id="midd-profile-spotlight-label-1">Profiles Spotlight</h2>
-        <p class="mb-5 mb-md-7 mb-lg-8">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus quam optio ratione labore possimus iusto corrupti vero fugiat explicabo officiis ex, a sunt obcaecati molestias voluptate eum earum ipsam accusantium.</p>
+    {% if title %}
+      <div class="row">
+        <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+          <h2 class="h2 mb-4" id="midd-profile-spotlight-label-1">{{title|default("Profiles Spotlight")}}</h2>
+          <p class="mb-5 mb-md-7 mb-lg-8">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus quam optio ratione labore possimus iusto corrupti vero fugiat explicabo officiis ex, a sunt obcaecati molestias voluptate eum earum ipsam accusantium.</p>
+        </div>
       </div>
-    </div>
-
+    {% endif %}
     <ul class="row justify-content-center">
       {% for item in 0..3 %}
         <li class="col-md-3">
