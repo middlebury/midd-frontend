@@ -36,9 +36,12 @@
 
   {% include 'partials/section-header.twig' %}
 
-  {% include 'paragraphs/video.twig' %}
+  {% include 'paragraphs/video.twig' with {
+    title_link: true
+  }%}
 
   {% include 'paragraphs/media-group.twig' with {
+    title_link: true,
     media_content_items : ['video', 'video']
   } %}
 
