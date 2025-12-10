@@ -1,17 +1,16 @@
 {% set id = random(1234) %}
-<section class="section paragraph" aria-labelledby="section-{{ id }}-label" data-digest-content>
-  <div class="section__header">
-    <h2 class="section__title" id="section-{{ id }}-label">
-      Featured News
-    </h2>
-    <a href="" class="section__link">View all</a>
-    <p class="section__text">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-            reiciendis quod temporibus enim non beatae ipsa explicabo necessitatibus
-            iure. Asperiores optio ad repudiandae culpa voluptatum pariatur saepe,
-            tenetur recusandae possimus?
-    </p>
-  </div>
+<section class="section paragraph" {% if title %}aria-labelledby="section-{{ id }}-label"{% else %}aria-label="{{section_label_text}}"{% endif %} data-digest-content>
+  {% if title %}
+    <div class="section__header">
+      <h2 class="section__title" id="section-{{ id }}-label">
+        {{title}}
+      </h2>
+      <a href="" class="section__link">View all</a>
+        <p class="section__text">
+          {{blurb}}
+        </p>
+    </div>
+  {% endif %}
   <div class="paragraph--dispatches">
     <div class="container px-0">
       <div class="dispatches js-dispatches" {% if randomize %} data-randomize {% endif %}>
