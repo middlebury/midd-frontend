@@ -56,7 +56,9 @@
   }%}
   {% include 'partials/section-header.twig' %}
 
-	{% include 'paragraphs/quad-story.twig' %}
+	{% include 'paragraphs/quad-story.twig' with {
+    title_link: true
+  } %}
 
   {% include 'partials/section-header.twig' %}
 

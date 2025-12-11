@@ -221,6 +221,10 @@
   font-weight: variables.$font-weight-bold;
 }
 
+.letter-spacing-base {
+  letter-spacing: variables.$letter-spacing;
+}
+
 .whitespace-no-wrap {
   white-space: nowrap;
 }
