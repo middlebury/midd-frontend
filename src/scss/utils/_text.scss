@@ -14,7 +14,7 @@
 
 @each $name, $size in variables.$typescale {
   .f#{$name} {
-    font-size: $size;
+    font-size: $size !important;
   }
 }
 
