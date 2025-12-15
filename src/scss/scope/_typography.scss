@@ -286,8 +286,8 @@
   @include mixins.contains-links;
 }
 
-#midd-institutional,
-#midd-student-org {
+.midd-institutional,
+.midd-student-org {
   @include breakpoints.breakpoint(xl) {
     white-space: nowrap;
   }
@@ -298,7 +298,7 @@
   }
 }
 
-#midd-student-org {
+.midd-student-org {
   &:after {
     content: 'student org';
   }

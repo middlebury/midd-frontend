@@ -27,7 +27,7 @@
           <dt class="d-block d-sm-inline font-semibold">Sponsored by:</dt>
           <dd class="d-inline">
             {% for item in item.sponsor %}
-              <span id="{{item.class}}">{{item.name}}</span>{{not loop.last ? "," : ""}}
+              <span class="{{item.class}}">{{item.name}}</span>{{not loop.last ? "," : ""}}
             {% endfor %}
           </dd>
         </div>
