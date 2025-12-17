@@ -10,6 +10,13 @@
 .themed-panel {
   background: variables.$navy;
   z-index: variables.$z-index-themed-panel;
+
+  &.themed-panel--light {
+    &,
+    .themed-panel__main-article {
+      background: variables.$blue-lighter;
+    }
+  }
 }
 
 .themed-panel__main {
@@ -206,13 +213,24 @@
   }
 }
 
+.themed-panel--light {
+  .themed-panel__text {
+    color: variables.$black;
+
+    a {
+      color: variables.$navy;
+    }
+  }
+}
+
 .themed-panel__cta {
   color: variables.$white;
   font-weight: variables.$font-weight-semibold;
   padding: variables.$spacing-2;
   margin-top: variables.$spacing-4;
 
-  &.button--light {
+  &.button--light,
+  &.button--primary {
     font-size: variables.$typescale-2;
   }
 }

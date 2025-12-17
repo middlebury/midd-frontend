@@ -13,8 +13,8 @@
 
 <div class="paragraph--themed-panel">
   <div class="container px-0">
-
-    <section class="themed-panel" aria-labelledby="themed-panel-{{id}}-title">
+    
+    <section class="themed-panel {{ mode == "light" ? "themed-panel--light" : "" }}" aria-labelledby="themed-panel-{{id}}-title">
 
       <div class="themed-panel__main">
 
@@ -66,7 +66,7 @@
             {% for item in 0..subarticles - 1  %}
               <article class="col-auto {{class}} themed-panel__subarticle" aria-labelledby="themed-panel-{{id}}-{{loop.index}}">
                 <h3 class="themed-panel__heading" id="themed-panel-{{id}}-{{loop.index}}">
-                  <a href="" class="text-white">24/7 Support</a>
+                  <a href="" class="{{ mode == "light" ? "" : "text-white" }}">24/7 Support</a>
                 </h3>
                 <p class="themed-panel__text">
                 {% if random(1) %}
@@ -75,19 +75,19 @@
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quo optio quia molestias ipsa debitis, accusamus tempore quaerat eveniet, perspiciatis, natus provident saepe ducimus placeat dignissimos nemo <a href="#">delectus pariatur</a> nesciunt! Earum eveniet qui provident ad aliquam, assumenda reprehenderit fugit recusandae, est cum deleniti, dolore corrupti doloremque magni. Laboriosam accusantium natus rem adipisci.
                 {% endif %}
                 </p>
-                <div class="d-flex mt-1 f1 text-white">
+                <div class="d-flex mt-1 f1 {{ mode == "light" ? "" : "text-white" }}">
                   <span class="mr-1 letter-spacing-base">TAGS:</span>
 
                   <ul class="d-flex flex-wrap">
                     {% for name in ['Arts & Culture', 'Student Life'] %}
                       <li class="mr-1">                  
-                        <a href="#" class="link-underline text-white">{{name}}</a>{% if not loop.last %};{% endif %}
+                        <a href="#" class="link-underline {{ mode == "light" ? "" : "text-white" }}">{{name}}</a>{% if not loop.last %};{% endif %}
                       </li>
                     {% endfor %}
                   </ul>
 
                 </div>
-                <a href="" class="button button--light button--outline themed-panel__cta">Read more</a>
+                <a href="" class="button {{ mode == "light" ? "button--primary" : "button--light" }} button--outline themed-panel__cta">Read more</a>
               </article>
             {% endfor %}
           </div>
