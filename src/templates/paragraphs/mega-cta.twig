@@ -76,7 +76,9 @@
             </div>
             {# <a class="button button--primary button--heavy" href="">{{link}}</a> #}
           {% else %}
-            <a class="button button--outline button--light" href="">{{link|default('Apply now')}}</a>
+            {% if link %}
+              <a class="button button--outline button--light" href="">{{link|default('Apply now')}}</a>
+            {% endif %}
           {% endif %}
         </div>
       </div>
