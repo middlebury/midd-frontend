@@ -221,6 +221,12 @@
       color: variables.$navy;
     }
   }
+
+  .themed-panel__subarticle {
+    &:not(:last-child) {
+      border-color: variables.$blue;
+    }
+  }
 }
 
 .themed-panel__cta {
