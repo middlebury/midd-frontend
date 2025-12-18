@@ -1,0 +1,37 @@
+<header class="site-header site-header--midd-hub js-headroom py-3 py-md-4" style="background:{{background}}">
+
+  <div class="container">
+
+    <div class="site-header__main">
+
+      <div class="site-header__logo">
+        <a href="">
+          <img class="pr-3 py-4 mr-3 pr-md-5 mr-md-5" src="images/middhub.svg" srcset="images/middhub.svg 184w" sizes="(min-width: 768px) 184px, 135px" alt="Logo for MiddHub"/>
+          <span class="site-header__logo-text text-white"><span class="font-bold">THURSDAY</span>, OCTOBER 16th</span>
+        </a>
+      </div>
+
+      <div class="school-header__content">
+        <div class="school-search">
+          <a href="/search" class="school-search__handle" role="button" aria-label="Toggle site search" aria-expanded="false" aria-haspopup="true" {# data-toggle-target=".js-site-search" #} data-toggle-focus=".js-site-search-input" data-toggle-group="school-header">
+            {% include 'partials/icon.twig' with {
+              name: 'search', class: 'mr-1 school-search__mag'
+            } %}
+            {% include 'partials/icon.twig' with {
+              name: 'times', class: 'mr-1 school-search__times'
+            } %}
+            <span class="sr-only">Search</span>
+          </a>
+        </div>
+        <div class="school-nav">
+
+          <button class="school-nav__handle" data-drawer="midd-nav-drawer" aria-label="Open navigation">
+            <span class="d-none d-lg-inline mr-2">Sections</span>
+            {% include 'partials/icon.twig' with { name: 'bars' } %}
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

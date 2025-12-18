@@ -2,7 +2,7 @@
 @use '../mixins/breakpoints';
 @use '../mixins/type';
 
-.admissions-lp-header {
+.site-header {
   &.headroom {
     will-change: transform;
     transition: transform 0.4s ease-in-out;
@@ -26,7 +26,7 @@
   }
 }
 
-.admissions-lp-header__logo {
+.site-header__logo {
   width: fit-content;
 
   a {
@@ -36,7 +36,7 @@
     line-height: variables.$line-height-admissions-title;
 
     @include breakpoints.breakpoint(md) {
-      .admissions-lp-header__logo-text {
+      .site-header__logo-text {
         border-bottom: 1px solid transparent;
       }
 
@@ -44,7 +44,7 @@
       &:focus {
         text-decoration: none;
 
-        .admissions-lp-header__logo-text {
+        .site-header__logo-text {
           border-bottom-color: variables.$white;
         }
       }
@@ -57,7 +57,7 @@
   }
 }
 
-.admissions-lp-header__logo-text {
+.site-header__logo-text {
   font-size: variables.$typescale-2;
   text-transform: uppercase;
   letter-spacing: variables.$letter-spacing;
@@ -67,5 +67,53 @@
   @include breakpoints.breakpoint(md) {
     font-size: variables.$typescale-6;
     width: initial;
+  }
+}
+
+.site-header.site-header--midd-hub {
+  .site-header__main {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .site-header__logo-text {
+    text-transform: initial;
+    letter-spacing: initial;
+    font-weight: variables.$font-weight-light;
+    width: 126px;
+
+    @include breakpoints.breakpoint(md) {
+      width: initial;
+    }
+  }
+
+  .school-header__content {
+    align-items: center;
+  }
+
+  .school-nav__handle,
+  .school-search__handle {
+    color: variables.$white;
+  }
+
+  .school-search__handle {
+    padding: 0;
+    padding-left: variables.$spacing-4;
+    padding-bottom: variables.$spacing-1;
+    border-bottom: 0;
+  }
+
+  .school-nav__handle {
+    display: inline-flex;
+    text-transform: uppercase;
+    font-weight: variables.$font-weight-bold;
+    letter-spacing: 1px;
+    padding: variables.$spacing-2 variables.$spacing-4;
+    border-right: 1px solid;
+  }
+
+  .icon {
+    width: variables.$spacing-4;
+    height: variables.$spacing-4;
   }
 }
