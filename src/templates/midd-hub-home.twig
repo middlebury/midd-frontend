@@ -1,6 +1,6 @@
 {% extends 'school-home.twig' %}
 
-{% set theme = 'institute' %}
+{% set theme = 'midd-hub' %}
 {% set is_front = true %}
 
 {% block layout_header %}
@@ -82,4 +82,13 @@
     menus: footer_nav
   } %}
 	{% include 'partials/midd-footer.twig' %}
+{% endblock %}
+
+{% block layout_before_body_close %}
+  {% embed 'partials/midd-hub-nav.twig'
+    with {
+      title: 'Navigation'
+    }
+  %}
+  {% endembed %}
 {% endblock %}
