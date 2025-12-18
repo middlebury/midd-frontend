@@ -17,13 +17,13 @@
 {% block content %}
 	{% include 'paragraphs/mega-cta.twig' with {
     pin: 'left-bottom',
-    miis: 'true',
+    miis: true,
+    midd_hub: true,
     gradient: 'left-top',
-    image: 'miis_spotlight',
+    image: 'spotlight',
     caption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     title_link: 'Water Sanitation Research and Development, India',
-    text: 'Access to safe water and adequate sanitation services has proven to be one of the most efficient ways of improving human health.',
-    link: 'Read more'
+    text: 'Access to safe water and adequate sanitation services has proven to be one of the most efficient ways of improving human health.'
   } %}
 
   {% include 'paragraphs/dispatches.twig' with {
@@ -36,9 +36,12 @@
 
   {% include 'partials/section-header.twig' %}
 
-  {% include 'paragraphs/video.twig' %}
+  {% include 'paragraphs/video.twig' with {
+    title_link: true
+  }%}
 
   {% include 'paragraphs/media-group.twig' with {
+    title_link: true,
     media_content_items : ['video', 'video']
   } %}
 
@@ -50,10 +53,13 @@
     main_article_cta: true,
     main_article_title_link: false,
     subarticles: 3,
+    mode: 'light'
   }%}
   {% include 'partials/section-header.twig' %}
 
-	{% include 'paragraphs/quad-story.twig' %}
+	{% include 'paragraphs/quad-story.twig' with {
+    title_link: true
+  } %}
 
   {% include 'partials/section-header.twig' %}
 
@@ -62,7 +68,7 @@
     main_article: true,
     main_article_cta: true,
     main_article_title_link: false,
-    subarticles: 3,
+    subarticles: 3
   }%}
   
   {% include 'partials/section-header.twig' %}

@@ -10,9 +10,12 @@ $dispatches-border: variables.$spacing-1 solid variables.$blue;
 $dispatches-card-height: 470px;
 
 .dispatches-item {
-  height: $dispatches-card-height;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border: $dispatches-sm-border;
-  border-top: 0;
+  border-top-width: variables.$spacing-2;
+  height: initial;
 
   & p + article {
     padding-top: 0;
@@ -21,23 +24,21 @@ $dispatches-card-height: 470px;
   @include breakpoints.breakpoint(sm) {
     border-left: $dispatches-border;
     border-bottom: $dispatches-border;
+    border-top-width: variables.$spacing-1;
     border-right: 0;
   }
 }
 
-.dispatches-item__card {
-  height: 100%;
-}
-
 .dispatches-item__label {
   position: absolute;
-  bottom: 0;
+  top: 0;
   font-size: variables.$typescale-1;
+  font-weight: variables.$font-weight-semibold;
   line-height: variables.$line-height-solid;
   text-transform: uppercase;
   letter-spacing: variables.$letter-spacing;
   padding: variables.$spacing-2;
-  margin-top: variables.$spacing-3;
+  color: variables.$navy;
 
   @include breakpoints.breakpoint(md) {
     padding-left: variables.$spacing-3;
@@ -50,8 +51,14 @@ $dispatches-card-height: 470px;
   }
 }
 
+.dispatches-item__tags {
+  // position: absolute;
+  // bottom: 0;
+}
+
 .dispatches-item__image-wrapper {
   position: relative;
+  margin-top: functions.rem(28);
 
   &:before {
     display: block;
@@ -106,7 +113,6 @@ $dispatches-card-height: 470px;
 }
 
 .dispatches-item__toggle {
-  // position: absolute;
   right: 0;
   top: 0;
   padding: variables.$spacing-2;
@@ -131,38 +137,31 @@ $dispatches-card-height: 470px;
 .dispatches-item__body {
   padding: 0 variables.$spacing-2;
   overflow: hidden;
-  height: calc(0.52 * 470px);
+  margin-bottom: variables.$spacing-4;
+  height: calc(0.52 * #{$dispatches-card-height});
 
   @media only screen and (min-width: 375px) {
-    height: calc(0.4 * 470px);
+    height: calc(0.4 * #{$dispatches-card-height});
   }
 
   @include breakpoints.breakpoint(sm) {
-    height: calc(0.65 * 470px);
-  }
-
-  @include breakpoints.breakpoint(md) {
-    padding: 0 variables.$spacing-3;
-    height: calc(0.55 * 470px);
-  }
-
-  @include breakpoints.breakpoint(lg) {
-    height: calc(0.6 * 470px);
+    height: calc(0.65 * #{$dispatches-card-height});
   }
 
   @include breakpoints.breakpoint(xl) {
     padding: 0 variables.$spacing-4;
-    height: calc(0.47 * 470px);
+    height: calc(0.4 * #{$dispatches-card-height});
   }
 
-  h4 {
-    line-height: variables.$line-height-body;
+  h3 {
+    font-size: variables.$typescale-4;
     font-weight: variables.$font-weight-bold;
+    line-height: variables.$line-height-body;
     margin-top: variables.$spacing-2;
     margin-bottom: variables.$spacing-1;
   }
 
-  p {
+  p:not(.dispatches-item__byline) {
     font-size: variables.$typescale-3;
     display: inline;
   }
@@ -186,24 +185,10 @@ $dispatches-card-height: 470px;
   }
 }
 
-.dispatches-item__body-text {
-  h4 {
-    line-height: variables.$line-height-body;
-    font-weight: variables.$font-weight-bold;
-    margin-top: variables.$spacing-2;
-    margin-bottom: variables.$spacing-1;
-  }
-
-  p {
-    font-size: variables.$typescale-3;
-  }
-}
-
 .dispatches-item__footer {
   flex: 0 1 auto;
   padding: variables.$spacing-3;
   text-align: center;
-  // position: relative;
   margin-top: auto;
 
   .dispatches-item__side--back & {
@@ -215,7 +200,7 @@ $dispatches-card-height: 470px;
         rgba(variables.$white, 0),
         variables.$blue-lighter
       );
-      // position: absolute;
+
       bottom: 100%;
       left: 0;
       width: 100%;

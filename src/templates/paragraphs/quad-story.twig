@@ -21,13 +21,64 @@
               </a>
             </div>
             <div class="profile-spotlight-item__content">
+              {% if title_link %}
+                <a href="#">
+              {% endif %}
+              {% if not no_title %}
+                <h3 class="mb-1" id="midd-profile-spotlight-item-label-{{loop.index}}">
+                  {% if random(1) %}
+                    Meet Me, I Love School
+                  {% elseif random(1) %}
+                    Meet Me, I Love School and I Love to Travel to Far Places
+                  {% else %}
+                    Meet Me, I Love School and I Love to Travel to Far Places and Eat Good Food
+                  {% endif %}
+                </h3>
+              {% endif %}
+              {% if title_link %}
+                </a>
+              {% endif %}
+              <p class="f1 mb-1">
+                <time datetime="">Ocotober 10, 2018</time>
+                {% if random(1) %}
+                  <br>
+                  <span>
+                    by
+                    {% for name in ['Sarah Ray', 'Stephen Diehl'] %}
+                      <a href="">{{name}}</a>{% if not loop.last %},{% endif %}
+                    {% endfor %}
+                </span>
+                {% endif %}
+              </p>
+
               <p class="profile-spotlight-item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui voluptate earum laboriosam eaque, eum possimus deserunt magnam animi doloremque beatae facilis ab molestiae placeat ratione veniam adipisci quae, quos porro.</p>
-              <h3
-                class="profile-spotlight-item__name"
-                id="midd-profile-spotlight-item-label-{{loop.index}}"
-              >
-                Trey Palmer
-              </h3>
+
+              <div class="d-flex mb-3 f1">
+                <span class="mr-1 letter-spacing-base">TAGS:</span>
+
+                <ul class="d-flex flex-wrap">
+                  {% for name in ['Arts & Culture', 'Student Life'] %}
+                    <li class="mr-1">                  
+                      <a href="" class="link-underline">{{name}}</a>{% if not loop.last %};{% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+
+              </div>
+              {% if no_title %}
+                <h3
+                  class="profile-spotlight-item__name"
+                  id="midd-profile-spotlight-item-label-{{loop.index}}"
+                >
+                  Trey Palmer
+                </h3>
+              {% else %}
+                <p
+                  class="profile-spotlight-item__name"
+                >
+                  Trey Palmer
+                </p>
+              {% endif %}
               <p class="profile-spotlight-item__title">Middlebury College, Buenos Aries, Argentina</p>
               <a href="" class="link-underline f2">Read my story</a>
             </div>

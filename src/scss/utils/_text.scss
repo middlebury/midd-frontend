@@ -14,7 +14,7 @@
 
 @each $name, $size in variables.$typescale {
   .f#{$name} {
-    font-size: $size;
+    font-size: $size !important;
   }
 }
 
@@ -219,6 +219,10 @@
 // text-bold is deprecated
 .text-bold {
   font-weight: variables.$font-weight-bold;
+}
+
+.letter-spacing-base {
+  letter-spacing: variables.$letter-spacing;
 }
 
 .whitespace-no-wrap {
