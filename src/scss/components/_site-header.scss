@@ -1,4 +1,5 @@
 @use '../core/variables';
+@use '../core/functions';
 @use '../mixins/breakpoints';
 @use '../mixins/type';
 
@@ -74,16 +75,33 @@
   .site-header__main {
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid variables.$white;
+
+    @include breakpoints.breakpoint(sm) {
+      border-bottom: 0;
+    }
+  }
+
+  .site-header__logo img {
+    border-right-width: 0;
+
+    @include breakpoints.breakpoint(sm) {
+      border-right-width: 1px;
+    }
   }
 
   .site-header__logo-text {
     text-transform: initial;
-    letter-spacing: initial;
+    letter-spacing: 1px;
     font-weight: variables.$font-weight-light;
     width: 126px;
+    padding-top: variables.$spacing-2;
 
-    @include breakpoints.breakpoint(md) {
+    @include breakpoints.breakpoint(sm) {
       width: initial;
+      letter-spacing: initial;
+      padding-top: 0;
+      font-size: variables.$typescale-6;
     }
   }
 
@@ -99,8 +117,12 @@
   .school-search__handle {
     padding: 0;
     padding-left: variables.$spacing-4;
-    padding-bottom: variables.$spacing-1;
+    padding-bottom: functions.rem(14);
     border-bottom: 0;
+
+    @include breakpoints.breakpoint(sm) {
+      padding-bottom: variables.$spacing-1;
+    }
   }
 
   .school-nav__handle {
@@ -108,12 +130,23 @@
     text-transform: uppercase;
     font-weight: variables.$font-weight-bold;
     letter-spacing: 1px;
-    padding: variables.$spacing-2 variables.$spacing-4;
+    padding: 0 variables.$spacing-4;
+    margin-bottom: functions.rem(14);
     border-right: 1px solid;
+
+    @include breakpoints.breakpoint(sm) {
+      margin-bottom: 0;
+      padding: variables.$spacing-2 variables.$spacing-4;
+    }
   }
 
   .icon {
-    width: variables.$spacing-4;
-    height: variables.$spacing-4;
+    width: variables.$spacing-3;
+    height: variables.$spacing-3;
+
+    @include breakpoints.breakpoint(md) {
+      width: variables.$spacing-4;
+      height: variables.$spacing-4;
+    }
   }
 }
