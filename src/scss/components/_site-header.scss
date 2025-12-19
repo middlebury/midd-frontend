@@ -1,0 +1,152 @@
+@use '../core/variables';
+@use '../core/functions';
+@use '../mixins/breakpoints';
+@use '../mixins/type';
+
+.site-header {
+  &.headroom {
+    will-change: transform;
+    transition: transform 0.4s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: variables.$z-index-school-header;
+
+    @media print {
+      position: relative;
+    }
+  }
+
+  &.headroom--pinned {
+    transform: translateY(0%);
+  }
+
+  &.headroom--unpinned {
+    transform: translateY(-100%);
+  }
+}
+
+.site-header__logo {
+  width: fit-content;
+
+  a {
+    display: flex;
+    align-items: center;
+    color: variables.$white;
+    line-height: variables.$line-height-admissions-title;
+
+    @include breakpoints.breakpoint(md) {
+      .site-header__logo-text {
+        border-bottom: 1px solid transparent;
+      }
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+
+        .site-header__logo-text {
+          border-bottom-color: variables.$white;
+        }
+      }
+    }
+  }
+
+  img {
+    width: max-content;
+    border-right: 1px solid variables.$white;
+  }
+}
+
+.site-header__logo-text {
+  font-size: variables.$typescale-2;
+  text-transform: uppercase;
+  letter-spacing: variables.$letter-spacing;
+  font-weight: variables.$font-weight-semibold;
+  width: 126px;
+
+  @include breakpoints.breakpoint(md) {
+    font-size: variables.$typescale-6;
+    width: initial;
+  }
+}
+
+.site-header.site-header--midd-hub {
+  .site-header__main {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid variables.$white;
+
+    @include breakpoints.breakpoint(sm) {
+      border-bottom: 0;
+    }
+  }
+
+  .site-header__logo img {
+    border-right-width: 0;
+
+    @include breakpoints.breakpoint(sm) {
+      border-right-width: 1px;
+    }
+  }
+
+  .site-header__logo-text {
+    text-transform: initial;
+    letter-spacing: 1px;
+    font-weight: variables.$font-weight-light;
+    width: 126px;
+    padding-top: variables.$spacing-2;
+
+    @include breakpoints.breakpoint(sm) {
+      width: initial;
+      letter-spacing: initial;
+      padding-top: 0;
+      font-size: variables.$typescale-6;
+    }
+  }
+
+  .school-header__content {
+    align-items: center;
+  }
+
+  .school-nav__handle,
+  .school-search__handle {
+    color: variables.$white;
+  }
+
+  .school-search__handle {
+    padding: 0;
+    padding-left: variables.$spacing-4;
+    padding-bottom: functions.rem(14);
+    border-bottom: 0;
+
+    @include breakpoints.breakpoint(sm) {
+      padding-bottom: variables.$spacing-1;
+    }
+  }
+
+  .school-nav__handle {
+    display: inline-flex;
+    text-transform: uppercase;
+    font-weight: variables.$font-weight-bold;
+    letter-spacing: 1px;
+    padding: 0 variables.$spacing-4;
+    margin-bottom: functions.rem(14);
+    border-right: 1px solid;
+
+    @include breakpoints.breakpoint(sm) {
+      margin-bottom: 0;
+      padding: variables.$spacing-2 variables.$spacing-4;
+    }
+  }
+
+  .icon {
+    width: variables.$spacing-3;
+    height: variables.$spacing-3;
+
+    @include breakpoints.breakpoint(md) {
+      width: variables.$spacing-4;
+      height: variables.$spacing-4;
+    }
+  }
+}

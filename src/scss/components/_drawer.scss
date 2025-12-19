@@ -54,3 +54,35 @@
   padding: variables.$spacing-3;
   font-size: variables.$typescale-2;
 }
+
+.drawer--midd-hub {
+  &.drawer {
+    width: 300px;
+    left: initial;
+  }
+
+  .drawer__overlay {
+    background: variables.$navy;
+    height: fit-content;
+  }
+
+  .drawer__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: variables.$spacing-2;
+
+    img {
+      height: fit-content;
+      padding-left: variables.$spacing-3;
+    }
+  }
+
+  .drawer-nav__link--top {
+    font-weight: variables.$font-weight-semibold;
+  }
+
+  .drawer-nav__item:first-child {
+    border-top: 0;
+  }
+}
