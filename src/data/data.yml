@@ -4,6 +4,7 @@ site_title: Middlebury College
 
 site_nav:
   items:
+    - text: Life at Middlebury
     - text: About the College
       items:
         - text: Liberal Arts at Middlebury
@@ -15,14 +16,13 @@ site_nav:
         - text: Study Abroad
         - text: Academic Resources and Centers
         - text: Academic Calendar
-    - text: Life at Middlebury
+    - text: Admissions
     - text: Academics
       items:
         - text: Liberal Arts at Middlebury
         - text: Faculty Directory
         - text: Departments and Programs
         - text: The Library
-    - text: Admissions
     - text: News
     - text: Events
 

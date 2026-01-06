@@ -1,17 +1,12 @@
 {% extends 'school-home.twig' %}
 
-{% set theme = 'institute' %}
+{% set theme = 'midd-hub' %}
 {% set is_front = true %}
 
 {% block layout_header %}
-	{% embed 'partials/school-header.twig' %}
-		{% block school_logo %}
-			<img src="images/miis-logo.svg" srcset="images/miis-logo.svg 361w" sizes="(min-width: 1280px) 361px, 248px" alt="Logo for Middlebury Institute of International Studies at Monterey"/>
-			<span class="sr-only">
-				Middlebury Institute of International Studies at Monterey
-			</span>
-		{% endblock %}
-	{% endembed %}
+  {% include 'partials/midd-hub-header.twig' with {
+    background: 'linear-gradient(121deg, #022543 33.46%, #75A3CD 166.79%)'
+  } %}
 {% endblock %}
 
 {% block content %}
@@ -88,4 +83,13 @@
     menus: footer_nav
   } %}
 	{% include 'partials/midd-footer.twig' %}
+{% endblock %}
+
+{% block layout_before_body_close %}
+  {% embed 'partials/midd-hub-nav.twig'
+    with {
+      title: 'Navigation'
+    }
+  %}
+  {% endembed %}
 {% endblock %}
