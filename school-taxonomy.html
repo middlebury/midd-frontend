@@ -227,6 +227,9 @@
                   <nav aria-label="Main navigation">
                     <ul class="school-nav__list">
                       <li class="school-nav__item">
+                        <a href="" class="school-nav__link school-nav__link--top">Life at Middlebury</a>
+                      </li>
+                      <li class="school-nav__item">
                         <a href="" class="school-nav__link school-nav__link--top">About the College</a>
                         <ul class="school-nav__list school-nav__list--sub  school-nav__list--cols">
                           <li class="school-nav__item school-nav__item--sub">
@@ -259,10 +262,10 @@
                         </ul>
                       </li>
                       <li class="school-nav__item">
-                        <a href="" class="school-nav__link school-nav__link--top">Life at Middlebury</a>
+                        <a href="" class="school-nav__link school-nav__link--top school-nav__link--active">Admissions</a>
                       </li>
                       <li class="school-nav__item">
-                        <a href="" class="school-nav__link school-nav__link--top school-nav__link--active">Academics</a>
+                        <a href="" class="school-nav__link school-nav__link--top">Academics</a>
                         <ul class="school-nav__list school-nav__list--sub ">
                           <li class="school-nav__item school-nav__item--sub">
                             <a href="" class="school-nav__link school-nav__link--sub">Liberal Arts at Middlebury</a>
@@ -277,9 +280,6 @@
                             <a href="" class="school-nav__link school-nav__link--sub">The Library</a>
                           </li>
                         </ul>
-                      </li>
-                      <li class="school-nav__item">
-                        <a href="" class="school-nav__link school-nav__link--top">Admissions</a>
                       </li>
                       <li class="school-nav__item">
                         <a href="" class="school-nav__link school-nav__link--top">News</a>
@@ -544,6 +544,14 @@
                   <li class="mr-1">
                     <a href="#" class="d-inline-block hover-fadein  px-1">
                       <svg class="icon  " focusable="false" aria-hidden="true">
+                        <use xlink:href="#icon-youtube">
+                      </svg>
+                      <span class="sr-only">Link to page/content on youtube</span>
+                    </a>
+                  </li>
+                  <li class="mr-1">
+                    <a href="#" class="d-inline-block hover-fadein  px-1">
+                      <svg class="icon  " focusable="false" aria-hidden="true">
                         <use xlink:href="#icon-mastodon">
                       </svg>
                       <span class="sr-only">Link to page/content on mastodon</span>
@@ -555,6 +563,14 @@
                         <use xlink:href="#icon-twitter">
                       </svg>
                       <span class="sr-only">Link to page/content on twitter</span>
+                    </a>
+                  </li>
+                  <li class="mr-1">
+                    <a href="#" class="d-inline-block hover-fadein  px-1">
+                      <svg class="icon  " focusable="false" aria-hidden="true">
+                        <use xlink:href="#icon-vimeo">
+                      </svg>
+                      <span class="sr-only">Link to page/content on vimeo</span>
                     </a>
                   </li>
                   <li class="mr-1">
@@ -631,6 +647,14 @@
                     <li class="mr-1">
                       <a href="#" class="d-inline-block text-white hover-fadeout  p-1">
                         <svg class="icon f5 " focusable="false" aria-hidden="true">
+                          <use xlink:href="#icon-linkedin">
+                        </svg>
+                        <span class="sr-only">Link to page/content on linkedin</span>
+                      </a>
+                    </li>
+                    <li class="mr-1">
+                      <a href="#" class="d-inline-block text-white hover-fadeout  p-1">
+                        <svg class="icon f5 " focusable="false" aria-hidden="true">
                           <use xlink:href="#icon-instagram">
                         </svg>
                         <span class="sr-only">Link to page/content on instagram</span>
@@ -639,17 +663,17 @@
                     <li class="mr-1">
                       <a href="#" class="d-inline-block text-white hover-fadeout  p-1">
                         <svg class="icon f5 " focusable="false" aria-hidden="true">
-                          <use xlink:href="#icon-youtube">
+                          <use xlink:href="#icon-tiktok">
                         </svg>
-                        <span class="sr-only">Link to page/content on youtube</span>
+                        <span class="sr-only">Link to page/content on tiktok</span>
                       </a>
                     </li>
                     <li class="mr-1">
                       <a href="#" class="d-inline-block text-white hover-fadeout  p-1">
                         <svg class="icon f5 " focusable="false" aria-hidden="true">
-                          <use xlink:href="#icon-wechat">
+                          <use xlink:href="#icon-twitter">
                         </svg>
-                        <span class="sr-only">Link to page/content on wechat</span>
+                        <span class="sr-only">Link to page/content on twitter</span>
                       </a>
                     </li>
                     <li class="mr-1">
@@ -658,14 +682,6 @@
                           <use xlink:href="#icon-weibo">
                         </svg>
                         <span class="sr-only">Link to page/content on weibo</span>
-                      </a>
-                    </li>
-                    <li class="mr-1">
-                      <a href="#" class="d-inline-block text-white hover-fadeout  p-1">
-                        <svg class="icon f5 " focusable="false" aria-hidden="true">
-                          <use xlink:href="#icon-x">
-                        </svg>
-                        <span class="sr-only">Link to page/content on x</span>
                       </a>
                     </li>
                     <li class="mr-1">
@@ -796,13 +812,16 @@
                   <a href="" class="drawer-nav__link drawer-nav__link--top f2">Financial Aid</a>
                 </li>
                 <li class="drawer-nav__item">
+                  <a href="" class="drawer-nav__link drawer-nav__link--top">Life at Middlebury</a>
+                </li>
+                <li class="drawer-nav__item">
                   <a href="" class="drawer-nav__link drawer-nav__link--top">About the College</a>
-                  <button class="drawer-nav__handle" data-toggle-target=".js-subnav-1" aria-haspopup="true" aria-expanded="false" aria-controls="midd-subnav-1">
+                  <button class="drawer-nav__handle" data-toggle-target=".js-subnav-2" aria-haspopup="true" aria-expanded="false" aria-controls="midd-subnav-2">
                     <svg class="icon drawer-nav__chevron " focusable="false" aria-hidden="true">
                       <use xlink:href="#icon-chevron-down">
                     </svg>
                   </button>
-                  <ul class="drawer-nav__list drawer-nav__list--sub js-subnav-1" id="midd-subnav-1">
+                  <ul class="drawer-nav__list drawer-nav__list--sub js-subnav-2" id="midd-subnav-2">
                     <li class="drawer-nav__item drawer-nav__item--sub">
                       <a href="" class="drawer-nav__link drawer-nav__link--sub">Liberal Arts at Middlebury</a>
                     </li>
@@ -833,16 +852,16 @@
                   </ul>
                 </li>
                 <li class="drawer-nav__item">
-                  <a href="" class="drawer-nav__link drawer-nav__link--top">Life at Middlebury</a>
+                  <a href="" class="drawer-nav__link drawer-nav__link--top">Admissions</a>
                 </li>
                 <li class="drawer-nav__item">
                   <a href="" class="drawer-nav__link drawer-nav__link--top">Academics</a>
-                  <button class="drawer-nav__handle" data-toggle-target=".js-subnav-3" aria-haspopup="true" aria-expanded="false" aria-controls="midd-subnav-3">
+                  <button class="drawer-nav__handle" data-toggle-target=".js-subnav-4" aria-haspopup="true" aria-expanded="false" aria-controls="midd-subnav-4">
                     <svg class="icon drawer-nav__chevron " focusable="false" aria-hidden="true">
                       <use xlink:href="#icon-chevron-down">
                     </svg>
                   </button>
-                  <ul class="drawer-nav__list drawer-nav__list--sub js-subnav-3" id="midd-subnav-3">
+                  <ul class="drawer-nav__list drawer-nav__list--sub js-subnav-4" id="midd-subnav-4">
                     <li class="drawer-nav__item drawer-nav__item--sub">
                       <a href="" class="drawer-nav__link drawer-nav__link--sub">Liberal Arts at Middlebury</a>
                     </li>
@@ -856,9 +875,6 @@
                       <a href="" class="drawer-nav__link drawer-nav__link--sub">The Library</a>
                     </li>
                   </ul>
-                </li>
-                <li class="drawer-nav__item">
-                  <a href="" class="drawer-nav__link drawer-nav__link--top">Admissions</a>
                 </li>
                 <li class="drawer-nav__item">
                   <a href="" class="drawer-nav__link drawer-nav__link--top">News</a>
