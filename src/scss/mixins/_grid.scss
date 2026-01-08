@@ -2,6 +2,7 @@
 @use 'breakpoints';
 
 @use 'sass:math';
+@use 'sass:meta';
 // stylelint-disable scss/no-duplicate-dollar-variables
 
 // Grid mixins adapted from Bootstrap v4 and Primer/css
@@ -73,6 +74,6 @@
 @mixin make-col-offset($size, $columns: variables.$grid-columns) {
   & {
     $num: math.div($size, $columns);
-    margin-left: if($num == 0, 0, math.percentage($num));
+    margin-left: if(sass($num == 0): 0; else: math.percentage($num));
   }
 }
