@@ -17,8 +17,7 @@
             href="/search" 
             class="school-search__handle" 
             role="button"
-            data-toggle-target=".js-midd-hub-search" 
-            {# data-toggle-group="midd-header"  #}
+            data-toggle-target=".js-midd-hub-search"
             data-toggle-focus=".js-midd-hub-search-input" 
             aria-expanded="false"
             aria-haspopup="true"
@@ -52,6 +51,13 @@
           </button>
 
         </div>
+
+        {% embed 'partials/midd-hub-nav.twig'
+          with {
+            title: 'Navigation'
+          }
+        %}
+        {% endembed %}
       </div>
     </div>
     <span class="site-header__logo-text text-white d-sm-none"><span class="font-bold">THURSDAY</span>, OCTOBER 16th</span>

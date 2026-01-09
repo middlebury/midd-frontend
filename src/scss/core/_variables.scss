@@ -365,7 +365,7 @@ $letter-spacing: 0.1em;
 $link-color: $color-primary !default;
 $link-decoration: none !default;
 $link-hover-color: $color-primary !default;
-$link-hover-decoration: underline !default;
+$link-hover-decoration: underline 1px !default;
 
 // Headings
 $headings-font-family: $font-family-serif !default;

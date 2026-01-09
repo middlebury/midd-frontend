@@ -203,6 +203,10 @@
 /// font weight
 ///
 
+.font-light {
+  font-weight: variables.$font-weight-light;
+}
+
 .font-normal {
   font-weight: variables.$font-weight-normal;
 }
