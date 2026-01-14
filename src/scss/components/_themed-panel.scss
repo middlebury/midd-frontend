@@ -16,6 +16,10 @@
     .themed-panel__main-article {
       background: variables.$blue-lighter;
     }
+
+    .themed-panel__main {
+      border-top-color: variables.$blue-lighter;
+    }
   }
 }
 
@@ -24,6 +28,11 @@
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
+  border-top: variables.$spacing-3 solid variables.$navy;
+
+  @include breakpoints.breakpoint(md) {
+    border-top: 0;
+  }
 }
 
 .themed-panel__title {

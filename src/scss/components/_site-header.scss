@@ -37,24 +37,15 @@
     line-height: variables.$line-height-admissions-title;
 
     @include breakpoints.breakpoint(md) {
-      .site-header__logo-text {
-        border-bottom: 1px solid transparent;
-      }
-
       &:hover,
       &:focus {
         text-decoration: none;
-
-        .site-header__logo-text {
-          border-bottom-color: variables.$white;
-        }
       }
     }
   }
 
   img {
     width: max-content;
-    border-right: 1px solid variables.$white;
   }
 }
 
@@ -75,18 +66,18 @@
   .site-header__main {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid variables.$white;
-
-    @include breakpoints.breakpoint(sm) {
-      border-bottom: 0;
-    }
   }
 
   .site-header__logo img {
     border-right-width: 0;
+    padding-top: 4px;
 
     @include breakpoints.breakpoint(sm) {
       border-right-width: 1px;
+    }
+
+    @include breakpoints.breakpoint(md) {
+      padding-top: 0px;
     }
   }
 
@@ -117,10 +108,10 @@
   .school-search__handle {
     padding: 0;
     padding-left: variables.$spacing-4;
-    padding-bottom: functions.rem(14);
+    padding-bottom: variables.$spacing-2;
     border-bottom: 0;
 
-    @include breakpoints.breakpoint(sm) {
+    @include breakpoints.breakpoint(md) {
       padding-bottom: variables.$spacing-1;
     }
   }
@@ -131,10 +122,9 @@
     font-weight: variables.$font-weight-bold;
     letter-spacing: 1px;
     padding: 0 variables.$spacing-4;
-    margin-bottom: functions.rem(14);
     border-right: 1px solid;
 
-    @include breakpoints.breakpoint(sm) {
+    @include breakpoints.breakpoint(md) {
       margin-bottom: 0;
       padding: variables.$spacing-2 variables.$spacing-4;
     }
