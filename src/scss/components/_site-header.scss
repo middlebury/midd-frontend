@@ -25,6 +25,10 @@
   &.headroom--unpinned {
     transform: translateY(-100%);
   }
+
+  body.has-toggled-elem &.headroom--unpinned {
+    transform: translateY(0%);
+  }
 }
 
 .site-header__logo {
