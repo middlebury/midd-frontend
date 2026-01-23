@@ -32,7 +32,7 @@
 
 .audio__button-text {
   display: none;
-  @include breakpoints.breakpoint(md) {
+  @include breakpoints.breakpoint(lg) {
     display: inline;
   }
 }
