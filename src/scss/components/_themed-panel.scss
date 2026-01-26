@@ -48,6 +48,10 @@
     font-size: variables.$typescale-10;
     padding: variables.$spacing-3 variables.$spacing-5;
   }
+
+  .themed-panel--light & {
+    color: variables.$black;
+  }
 }
 
 .themed-panel__figure {
