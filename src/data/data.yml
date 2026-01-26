@@ -4,6 +4,7 @@ site_title: Middlebury College
 
 site_nav:
   items:
+    - text: Life at Middlebury
     - text: About the College
       items:
         - text: Liberal Arts at Middlebury
@@ -15,14 +16,13 @@ site_nav:
         - text: Study Abroad
         - text: Academic Resources and Centers
         - text: Academic Calendar
-    - text: Life at Middlebury
+    - text: Admissions
     - text: Academics
       items:
         - text: Liberal Arts at Middlebury
         - text: Faculty Directory
         - text: Departments and Programs
         - text: The Library
-    - text: Admissions
     - text: News
     - text: Events
 
@@ -1579,3 +1579,105 @@ admissions_lp_useful_links:
   - text: Dates and Deadlines
   - text: Student Financial Services
   - text: Connect with Admissions
+
+event_list:
+  - title: Museum of Art Lecture Series
+    month: Nov
+    day: 12
+    time: 6:00 AM ET
+    description: <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores illum quas, voluptatum atque voluptas, animi ipsam magni sit quo quae ut fugit. Accusantium explicabo sunt laborum? Soluta, placeat nisi.</p><ul><li>list item 1</li><li>list item 2</li><li>list item 3</li><li>list item 4</li></ul><ol><li>list item 1</li><li>list item 2</li><li>list item 3</li><li>list item 4</li></ol>
+    location: McCone Irvine Auditorium
+    sponsor:
+      - name: Middlebury Diversity in Business (MiddDIB)
+        class: midd-student-org
+    image: false
+
+  - title: YOUPOWER Spin Class
+    month: Nov
+    day: 12
+    time: 7:00 AM ET
+    location: McCone Irvine Auditorium
+    sponsor:
+      - name: Youpower
+    image: false
+
+  - title: Before I Die
+    month: Nov
+    day: 12
+    time: 8:00 AM ET
+    description: <p>This interactive public art installation invites members of the Middlebury community to reflect on what matters most. By sharing personal hopes and aspirations on a communal wall, the project fosters connection, introspection, and a celebration of our shared humanity. Inspired by the global <em>Before I Die</em> project, this installation transforms public space into a canvas for gratitude, memory, and possibility.</p>
+    sponsor:
+      - name: Mahaney Arts Center
+      - name: Elizabeth Hackett Robinson '84 Innovation Hub
+    image: true
+
+  - title: Pilates with Izzy
+    month: Nov
+    day: 12
+    time: 8:00 AM ET
+    location: Forest West Basement Activity Space (031)
+    sponsor:
+      - name: Yoga Club
+        class: midd-student-org
+    image: false
+
+  - title: YOUPOWER Spin Class
+    month: Nov
+    day: 12
+    time: 8:00 AM ET
+    location: YouPower Spinning Room
+    sponsor:
+      - name: Youpower
+        class: midd-student-org
+      - name: CrossFit Middlebury
+        class: midd-student-org
+    image: false
+
+  - title: Weekday Morning Sitting Meditation
+    month: Nov
+    day: 12
+    time: 8:30 AM ET
+    description: <p>Join us for 15 minutes of silent meditation every weekday morning, led by various staff, faculty, and students.&nbsp; No registration required.&nbsp; Drop in any day that works&nbsp;for&nbsp;you!</p>
+    sponsor:
+      - name: Charles P. Scott Center for Spiritual and Religious Life
+    image: true
+
+  - title: YOUPOWER Spin Class
+    month: Nov
+    day: 12
+    time: 9:00 AM ET
+    location: YouPower Spinning Room
+    sponsor:
+      - name: Youpower
+        class: midd-student-org
+    image: true
+
+  - title: Dinner with Nathaniel Klein '21
+    month: Nov
+    day: 12
+    time: 6:30 PM ET
+    location: 132 Blinn Lane, Innovation Hub
+    sponsor:
+      - name: Radical Asians (RAISINS)
+        class: midd-student-org
+    image: true
+
+  - title: New Perennials Pamphlet Pop Up
+    month: Nov
+    day: 12
+    time: 3:00 PM ET
+    description: <p>New Perennials is pleased to announce our first annual Radical Pamphlets Pop Up. An open airing of recently published short-form pamphlets by Middlebury students and community partners. Come listen to the authors read their works, take away (free) pamphlets, and ponder the authors' musing on a variety of subjects—from education to equine therapy to the brilliance of&nbsp;nature.&nbsp;All&nbsp;welcome!</p>
+    location: Wilson Terrace, McCullough Student Center
+    sponsor:
+      - name: Sustainability & Environmental Affairs
+    image: true
+
+  - title: Carol Rifelj Lecture Series - Recycling the Apocalypse&colon; Resurrection, Adaption, and Sacred Fragments on Medieval Iceland
+    month: Nov
+    day: 12
+    time: 4:30 PM ET
+    description: <p><strong>Robyn Barrow, History of Art &amp; Architecture</strong><br><strong>Recycling the Apocalypse&colon; Resurrection, Adaption, and Sacred Fragments on Medieval Iceland</strong><br>On medieval Iceland, which visitors conceptualized as the very mouth of hell, drastic environmental change and resource scarcity was not a sign of apocalypse, but a daily lived experience. The island is subject to extreme weather and geothermal activity that renders any material production, particularly architecture, deeply&nbsp;unstable.</p>
+    location: Franklin Environmental Center, The Orchard-Hillcrest 103
+    sponsor:
+      - name: Dean of the Faculty
+    image: true

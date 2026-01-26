@@ -45,7 +45,17 @@
     </nav>
 
     <section class="midd-search" aria-label="Search">
-      <a href="/search" class="midd-search__handle" role="button" data-toggle-target=".js-midd-search" data-toggle-group="midd-header" data-toggle-focus=".js-midd-search-input" aria-expanded="false" aria-haspopup="true" aria-labelledby="midd-search__handle-label">
+      <a 
+        href="/search" 
+        class="midd-search__handle" 
+        role="button" 
+        data-toggle-target=".js-midd-search" 
+        data-toggle-group="midd-header" 
+        data-toggle-focus=".js-midd-search-input" 
+        aria-expanded="false" 
+        aria-haspopup="true" 
+        aria-labelledby="midd-search__handle-label"
+      >
         {% include 'partials/icon.twig' with { name: 'search', class: 'midd-search__mag' } %}
         {% include 'partials/icon.twig' with { name: 'times', class: 'midd-search__times' } %}
         <span class="d-none d-sm-inline" id="midd-search__handle-label">Search</span>

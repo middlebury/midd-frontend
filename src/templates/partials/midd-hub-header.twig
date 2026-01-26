@@ -1,0 +1,63 @@
+<header class="site-header site-header--midd-hub js-headroom" style="background:{{background}}">
+
+  <div class="container">
+
+    <div class="site-header__main">
+
+      <div class="site-header__logo py-4 py-md-5">
+        <a href="">
+          <img src="images/midd-stories.svg" srcset="images/midd-stories.svg 243w" sizes="(min-width: 768px) 243px, 152px" alt="Logo for Midd Stories"/>
+        </a>
+      </div>
+
+      <div class="school-header__content py-4 py-md-5">
+        <section class="school-search" aria-label="Search">
+          <a 
+            href="/search" 
+            class="school-search__handle" 
+            role="button"
+            data-toggle-target=".js-midd-hub-search"
+            data-toggle-focus=".js-midd-hub-search-input" 
+            aria-expanded="false"
+            aria-haspopup="true"
+            aria-labelledby="midd-hub-search__handle-label"
+          >
+            {% include 'partials/icon.twig' with {
+              name: 'search', class: 'mr-1 school-search__mag'
+            } %}
+            {% include 'partials/icon.twig' with {
+              name: 'times', class: 'mr-1 school-search__times'
+            } %}
+            <span class="sr-only" id="midd-hub-search__handle-label">Search</span>
+          </a>
+          <div class="midd-search__content js-midd-hub-search">
+            <form action="https://www.middlebury.edu/search" method="GET" role="search">
+              <div class="input-group">
+                <input type="search" class="form-control form-control--sm midd-search__input js-midd-hub-search-input" id="midd-search-input" placeholder="Search" name="q2" required/>
+                <button type="submit" class="button button--sm midd-search__submit">
+                  <span class="sr-only">Search</span>
+                  {% include 'partials/icon.twig' with { name: 'search' } %}
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+        <div class="school-nav">
+
+          <button class="school-nav__handle" data-drawer-midd-hub="midd-nav-drawer" aria-label="Sections">
+            <span class="d-none d-lg-inline mr-2">Sections</span>
+            {% include 'partials/icon.twig' with { name: 'bars' } %}
+          </button>
+
+        </div>
+
+        {% embed 'partials/midd-hub-nav.twig'
+          with {
+            title: 'Navigation'
+          }
+        %}
+        {% endembed %}
+      </div>
+    </div>
+  </div>
+</header>

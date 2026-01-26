@@ -1,14 +1,16 @@
 <div class="section paragraph paragraph--expand" data-digest-content>
-  <div class="paragraphs--wide__offset">
-    <div class="section__header mb-7 mb-lg-8">
-      <h2 class="section__title">
-        {{title}}
-      </h2>
-      <p class="section__text">
-        {{blurb}}
-      </p>
+  {% if title %}
+    <div class="paragraphs--wide__offset">
+      <div class="section__header mb-7 mb-lg-8">
+        <h2 class="section__title">
+          {{title}}
+        </h2>
+        <p class="section__text">
+          {{blurb}}
+        </p>
+      </div>
     </div>
-  </div>
+  {% endif %}
 
   <div class="row">
     {% for item in media_content_items %}

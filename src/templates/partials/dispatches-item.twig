@@ -1,5 +1,19 @@
+{% set byline %}
+  <p class="f1 my-1 dispatches-item__byline">
+    <time datetime="">Ocotober 10, 2018</time>
+    {% if random(1) %}
+      <span>&nbsp;|&nbsp;</span>
+      by
+      {% for name in ['Sarah Ray', 'Stephen Diehl'] %}
+        <a href="">{{name}}</a>{{ not loop.last ? "," : "" }}
+      {% endfor %}
+    {% endif %}
+  </p>
+{% endset %}
 <article class="dispatches-item__card js-dispatches-item-{{id}}" aria-labelledby="midd-dispatches-{{id}}-header">
-
+  {% if random(1) %}
+    <p class="dispatches-item__label">New York Times</p>
+  {% endif %}
   <figure class="dispatches-item__image-wrapper">
     <div class="dispatches-item__image">
       {% include 'partials/img.twig' with { name: 'dispatches' } %}
@@ -8,28 +22,42 @@
   <div class="dispatches-item__body">
     {% if env.test or random(1) %}
       <a href="#">
-        <h4>
-          The Most Decisive Decade: Ambassadors Go In-Depth on the U.S.-Russia Relationship
+        <h3>
+          The Most Decisive Decade: Ambassadors Go In-Depth on the U.S.-Russia Relationship 
           <span class="dispatches-item__title-label">
             {% include 'partials/icon.twig' with {
 						name: 'play',
 						class: 'dispatches-item__icon' 
 					} %}
           </span>
-        </h4>
+        </h3>
       </a>
+      {{byline}}
       <p>I traveled to Tokyo as part of a seminar on foreign policy, trade, and security. Most of the others were policy and management students, and I was there to provide simultaneous interpretation for the speakers who addressed the class. It was an amazing real-world opportunity to practice my profession.</p>
     {% else %}
       <a href="#">
-        <h4>
+        <h3>
           Incoming Student Identifies Nuclear Siloes in China
-        </h4>
+        </h3>
       </a>
+      {{byline}}
       <p>In an interview on NPR’s
-        <em>Morning Edition</em>, Newhouse said the shooter’s motives appeared not to be political, but rather the result of a warped reality fueled by fringe online communities.</p>
+        <em>Morning Edition</em>, Newhouse said the shooter’s motives appeared not to be political, but rather the result of a warped reality fueled by fringe online communities.
+      </p>
     {% endif %}
   </div>
-  {% if env.test or random(1) %}
-    <p class="dispatches-item__label">New York Times</p>
-  {% endif %}
 </article>
+<div class="mb-2 px-2 px-md-3 px-xl-4 dispatches-item__tags">
+  <p class="f1">
+    <span class="mr-1 letter-spacing-base">TAGS:</span>
+    {% if random(1) %}
+      {% for name in ['Arts & Culture', 'Student Life'] %}                 
+          <a href="" class="link-underline">{{name}}</a>{% if not loop.last %};{% endif %}
+      {% endfor %}
+    {% else  %}
+      {% for name in ['Arts & Culture', 'Student Life', 'Arts & Culture', 'Student Life', 'Arts & Culture', 'Student Life'] %}                 
+          <a href="" class="link-underline">{{name}}</a>{% if not loop.last %};{% endif %}
+      {% endfor %}
+    {% endif %}
+  </p>
+</div>

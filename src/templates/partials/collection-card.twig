@@ -1,5 +1,13 @@
-<article class="border-t border-4 border-navy pt-2"
-  aria-labelledby="midd-collection-item-label-{{ id }}">
+{% set category = random(1) %}
+<article 
+  class="border-t border-4 border-navy {{category ? "" : "pt-2"}}"
+  aria-labelledby="midd-collection-item-label-{{ id }}"
+>
+  {% if category %}
+    <p class="f2 font-light text-uppercase py-1">
+      <a href="#">News</a>
+    </p>
+  {% endif %}
   {% if featured %}
     <div class="mb-3">
       <a href="">
@@ -23,7 +31,6 @@
       </div>
     {% endif %}
   {% endif %}
-
   <h2 class="{{ featured ? 'h2' : 'h3' }} mb-1"
     id="midd-collection-item-label-{{ id }}">
     <a href="#">
