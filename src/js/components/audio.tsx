@@ -36,7 +36,7 @@ class AudioPlayer extends Component<AudioPlayerProps, AudioPlayerState> {
 
   constructor(props: AudioPlayerProps) {
     super(props);
-    console.log(props);
+
     this.state = {
       playing: false,
       duration: props.audio.duration,
