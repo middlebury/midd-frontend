@@ -32,8 +32,42 @@
 
 .audio__button-text {
   display: none;
-  @include breakpoints.breakpoint(lg) {
+  @include breakpoints.breakpoint(md) {
     display: inline;
+  }
+}
+
+.media-group {
+  .audio__buttons {
+    .button {
+      @include breakpoints.breakpoint(lg) {
+        padding: variables.$spacing-3;
+      }
+
+      @include breakpoints.breakpoint(xl) {
+        padding: variables.$spacing-3 variables.$spacing-5;
+      }
+    }
+  }
+
+  .audio__button-text {
+    display: none;
+    @include breakpoints.breakpoint(xl) {
+      display: inline;
+    }
+  }
+
+  .audio__times {
+    @include breakpoints.breakpoint(lg) {
+      flex: 0 0 7rem;
+      padding: 0;
+    }
+
+    @include breakpoints.breakpoint(xl) {
+      flex: 0 0 8rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
   }
 }
 
