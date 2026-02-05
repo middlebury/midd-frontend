@@ -1,0 +1,47 @@
+{% extends 'course-hub-layout.twig' %}
+
+{% block layout_header %}
+  {% include 'partials/app-header.twig' with {
+    title: 'GOtionary',
+    items: [],
+    search: true
+  } %}
+{% endblock %}
+
+{% set page_header = {
+  title: 'Search GO shortcuts',
+  breadcrumb: [
+    {
+      text: 'GOtionary'
+    }
+  ]
+} %}
+
+{% block nav %}
+  {% include 'partials/page-nav.twig' with {
+    label: 'GOtionary',
+    items: []
+  } %}
+{% endblock %}
+
+{% block content %}
+  <form action="http://learn.middlebury.edu/l/74172/2016-04-04/4fsyft" method="post">
+    <input type="hidden" name="success_location" value="http://www.middlebury.edu/language-schools/thank-you">
+    <div class="catalog-search row row--sm-gutters">
+      <div class="col-md-12 form-group">
+        <label for="shortcuts-by-name" class="label">Shortcuts by Name</label>
+        <input type="text" class="form-control" name="shortcuts-by-name" id="shortcuts-by-name" aria-describedby="instructions">
+      </div>
+
+      <div class="col-md-12 form-group">
+        <label for="shortcuts-by-url" class="label">Shortcuts by URL</label>
+        <input type="text" class="form-control" name="shortcuts-by-url" id="shortcuts-by-url" aria-describedby="instructions">
+      </div>
+
+      <div class="col-12 col-xl-4 form-group">
+        <input type="submit" value="Search" class="button button--primary d-block d-md-inline-block">
+      </div>
+
+    </div>
+  </form>
+{% endblock %}
