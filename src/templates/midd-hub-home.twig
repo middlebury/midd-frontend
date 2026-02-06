@@ -22,7 +22,6 @@
   } %}
 
   {% include 'paragraphs/dispatches.twig' with {
-    title: true,
     section_label_text: 'Featured News',
     blurb: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus
         quam optio ratione labore possimus iusto corrupti vero fugiat explicabo
@@ -74,6 +73,14 @@
     title: 'Vignettes and Portraits',
     subtitle: 'J-term Classrooms',
     blurb: 'Winter term brings a feeling of endless possibilities. Some students travel the globe, while others hunker down for a deep-dive on campus. Here are just a few snapshots of what went on in classrooms this January.'
+  } %}
+  {% include 'paragraphs/media-group.twig' with {
+    title: 'Media group',
+    blurb: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus
+        quam optio ratione labore possimus iusto corrupti vero fugiat explicabo
+        officiis ex, a sunt obcaecati molestias voluptate eum earum ipsam
+        accusantium.',
+    media_content_items : ['image', 'audio']
   } %}
 {% endblock %}
 
