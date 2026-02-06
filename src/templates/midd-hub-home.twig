@@ -22,6 +22,7 @@
   } %}
 
   {% include 'paragraphs/dispatches.twig' with {
+    title: true,
     section_label_text: 'Featured News',
     blurb: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus
         quam optio ratione labore possimus iusto corrupti vero fugiat explicabo
@@ -50,10 +51,11 @@
     subarticles: 3,
     mode: 'light'
   }%}
-  {% include 'partials/section-header.twig' %}
+  {# {% include 'partials/section-header.twig' %} #}
 
 	{% include 'paragraphs/quad-story.twig' with {
-    title_link: true
+    title: 'News and Announcements',
+    item_title_link: true
   } %}
 
   {% include 'partials/section-header.twig' %}
@@ -66,9 +68,13 @@
     subarticles: 3
   }%}
   
-  {% include 'partials/section-header.twig' %}
+  {# {% include 'partials/section-header.twig' %} #}
 
-  {% include 'paragraphs/quad-story.twig' %}
+  {% include 'paragraphs/quad-story.twig' with {
+    title: 'Vignettes and Portraits',
+    subtitle: 'J-term Classrooms',
+    blurb: 'Winter term brings a feeling of endless possibilities. Some students travel the globe, while others hunker down for a deep-dive on campus. Here are just a few snapshots of what went on in classrooms this January.'
+  } %}
 {% endblock %}
 
 {% block layout_footer %}
