@@ -1,209 +1,112 @@
-{% extends 'course-hub-layout.twig' %}
-
 {% set go_data = [
   {
-    shortcut: 'go/+middlebury.edu/go/reunionautobiography',
+    shortcut: '+middlebury.edu/go/reunionautobiography',
     destination: 'http://www.middlebury.edu/alumni/reunion/50bio',
     description: ''
   },
   {
-    shortcut: 'go/1800societyreception2024',
+    shortcut: '1800societyreception2024',
     destination: 'https://engage.middlebury.edu/pages/events/fy24/evt20240607-volunteer-and-1800-society-reception',
     description: 'Registration for Appreciation Reception for 1800 Society members and 2024 Volunteers'
   },
   {
-    shortcut: 'go/A1selfcare',
+    shortcut: 'A1selfcare',
     destination: 'https://middlebury.zoom.us/j/9178409189?pwd=TWlGZGtjSU1VcFZHODQvSjZBYkQwdz09',
     description: 'Hi there, \n\nBriana Johnson is inviting you to a scheduled Zoom meeting. \n\nTopic: Briana Johnson\'s Personal Meeting Room\n\nJoin from PC, Mac, Linux, iOS or Android: https://middlebury.zoom.us/j/9178409189?pwd=TWlGZGtjSU1VcFZHODQvSjZBYkQwdz09 \nPassword: 536439\n\n\"Or iPhone one-tap :\nUS: +13126266799,,9178409189#  or +16468769923,,9178409189# \nOr Telephone:\nDial(for higher quality, dial a number based on your current location): \nUS: +1 312 626 6799  or +1 646 876 9923  or +1 301 715 8592  or +1 346 248 7799  or +1 669 900 6833  or +1 253 215 8782 \nMeeting ID: 917 840 9189\nPassword: 536439\nInternational numbers available: https://middlebury.zoom.us/u/ac3T32Kmmj \n\nOr an H.323/SIP room system:\nSee here for info: http://go.middlebury.edu/zoomconnect \nIf meeting is password protected, use the numeric password in the telephone join section of the invitation for H.323 &amp; SIP connections\n\n\n\n\n\n\n\n\n\n\n\n'
   },
   {
-    shortcut: 'go/aacinema21',
+    shortcut: 'aacinema21',
     destination: 'https://middlebury.instructure.com/courses/8205',
     description: 'African-American Cinema, Fmmc 0227A Spring 2021'
   },
   {
-    shortcut: 'go/ABetterMidd',
+    shortcut: 'ABetterMidd',
     destination: 'https://docs.google.com/spreadsheets/d/1evgnAC_LbZWzsgVm91cG5Kvy3c4l8H0NpvfQQP3Puww/edit?usp=sharing',
     description: ''
   },
   {
-    shortcut: 'go/academics?facilities',
+    shortcut: 'academics?facilities',
     destination: 'http://cat.middlebury.edu/events/facilities/',
     description: 'Academic Facilities'
   },
   {
-    shortcut: 'go/b',
+    shortcut: 'b',
     destination: 'https://go.middlebury.edu/studentssb9/',
     description: 'Banner web main page'
   },
   {
-    shortcut: 'go/bachconcert',
+    shortcut: 'bachconcert',
     destination: 'https://www.middlebury.edu/academics/music/bachconcert/',
     description: 'Homepage of the Middlebury Bach Concerts'
   },
   {
-    shortcut: 'go/backupmac',
+    shortcut: 'backupmac',
     destination: 'https://support.gmhec.org/TDClient/47/middlebury/KB/ArticleDet?ID=170',
     description: ''
   },
   {
-    shortcut: 'go/bailey',
+    shortcut: 'bailey',
     destination: 'http://www.youtube.com/watch?v=CyyF-gt_KbM',
     description: ''
   },
   {
-    shortcut: 'go/cabaret',
+    shortcut: 'cabaret',
     destination: 'https://docs.google.com/spreadsheets/d/1O1SP19rm_1bDHzC3TxovQ7Z5MtZXeerRqR_Q5lfYWHM/edit?usp=sharing',
     description: ''
   },
   {
-    shortcut: 'go/carceralstate',
+    shortcut: 'carceralstate',
     destination: 'https://docs.google.com/document/d/1FF4nv9nxqI5ePKMlZLBh4WduKAA3qT0cX6N63Fgwml8/edit?usp=sharing',
     description: 'Transcript to Gensler 2015 Video on YourTube.\nGensler Symposium 2015 - Punishing Bodies: Feminist Responses to the Carceral State'
   },
   {
-    shortcut: 'go/captainguide',
+    shortcut: 'captainguide',
     destination: 'https://drive.google.com/file/d/10ZkIsw_WRHK-Nx3m14x6_qcLp12SGZBu/view?usp=sharing',
     description: 'The Middlebury College Captain Guide 2020: Brought to you by the SGA Athletic Affairs Committee - Thank you for all your feedback from team interviews. The purpose of the guide is to offer all accessible resources to Middlebury College Athletic Captains in order to foster a culture of teams full of healthy minds and bodies.'
   },
   {
-    shortcut: 'go/cceyouthandoutreachcoordinator',
+    shortcut: 'cceyouthandoutreachcoordinator',
     destination: 'https://apply.workable.com/middleburycollege/j/39E19C94D7/',
     description: ''
   },
   {
-    shortcut: 'go/datamanagement',
+    shortcut: 'datamanagement',
     destination: 'http://www.middlebury.edu/academics/lib/libcollections/libraries/armstronglib/datamgt',
     description: 'Middlebury Data Management'
   },
   {
-    shortcut: 'go/daviszoom',
+    shortcut: 'daviszoom',
     destination: 'http://sites.middlebury.edu/dla/events/category/davis-digital-pedagogy-zoom-session/',
     description: 'Funded with a generous grant from the Davis Educational Foundation, the Davis Digital Pedagogy Zoom Sessions help Middlebury College faculty develop digital innovations in their pedagogy, with a particular focus on student research and thesis work.'
   },
   {
-    shortcut: 'go/dcrmmss',
+    shortcut: 'dcrmmss',
     destination: 'http://rbms.info/files/dcrm/dcrmmss/DCRMMSS.pdf',
     description: 'DESCRIPTIVE\nCATALOGING\nOF RARE\nMATERIALS\n(MANUSCRIPTS)'
   },
   {
-    shortcut: 'go/Daviscatalog',
+    shortcut: 'Daviscatalog',
     destination: 'http://www.middlebury.edu/academics/lib',
     description: 'Davis Library Catalog'
   },
   {
-    shortcut: 'go/EdgarDaCat',
+    shortcut: 'EdgarDaCat',
     destination: 'https://drive.google.com/file/d/15DO379QeprvQfXa6K6utdyFkqDaOJBt5/view?usp=sharing',
     description: ''
   },
   {
-    shortcut: 'go/ecosymposium',
+    shortcut: 'ecosymposium',
     destination: 'https://sites.google.com/site/middrscs/green-news-at-midd/ecoentrepreneurshipandleadershipthegrowinginfluenceofinspiredenvironmentalists',
     description: 'January student symposium exploring Eco Entrepreneurship and Leadership: The Growing Influence of Inspired Environmentalists. Five eco innovators will share their secrets of success and help you find your niche in the growing green economy!'
   },
   {
-    shortcut: 'go/edstest',
+    shortcut: 'edstest',
     destination: 'https://discovery.ebsco.com/',
     description: 'TEST EDS instance\nhttps://search.ebscohost.com/login.aspx?custid=s8864408&groupid=test&profid=eds&authtype=ip,uid'
   },
   {
-    shortcut: 'go/exploremidd',
+    shortcut: 'exploremidd',
     destination: 'https://www.google.com/maps/d/u/0/edit?mid=1Ivo5SE_M0uO-FCOxHGjcWTZttE9-hsie&usp=sharing',
     description: 'links to Middbox\'s Google MyMaps'
   }
 ] %}
-
-{% block layout_header %}
-  {% include 'partials/app-header.twig' with {
-    title: 'GO',
-    items: [
-      {
-        text: 'All Shortcuts'
-      },
-      {
-        text: 'Search Shortcuts'
-      }
-    ]
-  } %}
-{% endblock %}
-
-{% set page_header = {
-  title: 'Search GO shortcuts',
-  breadcrumb: [
-    {
-      text: 'Middlebury'
-    },
-    {
-      text: 'Search Shortcuts'
-    }
-  ]
-} %}
-
-{% block content %}
-  <form action="http://learn.middlebury.edu/l/74172/2016-04-04/4fsyft" method="post">
-    <input type="hidden" name="success_location" value="http://www.middlebury.edu/language-schools/thank-you">
-    <div class="catalog-search row row--sm-gutters">
-      <div class="col-md-12 form-group">
-        <label for="shortcuts-by-name" class="label">By Name</label>
-        <input type="text" class="form-control" name="shortcuts-by-name" id="shortcuts-by-name" aria-describedby="instructions">
-      </div>
-
-      <div class="col-md-12 form-group">
-        <label for="shortcuts-by-url" class="label">By URL</label>
-        <input type="text" class="form-control" name="shortcuts-by-url" id="shortcuts-by-url" aria-describedby="instructions">
-      </div>
-
-      <div class="col-12 col-xl-4 form-group">
-        <input type="submit" value="Search" class="button button--primary d-block d-md-inline-block">
-      </div>
-
-    </div>
-  </form>
-
-  <div class="go-search-results">
-    <h2 class="h2 mt-5">
-      Search Results
-    </h2>
-    
-    <ul class="shortcut-list__list row mt-5 mb-7">
-      {% for item in go_data %}
-
-        <li class="shortcut-list__item">
-          
-          <article class="shortcut-list__box clearfix" aria-labelledby="midd-story-label-{{loop.index}}">
-            <div class="shortcut-list__header">
-              <h3 class="mb-1" id="midd-story-label-{{loop.index}}">
-                <a class="shortcut-list__link" href="#">
-                  {{item.shortcut}}
-                </a>
-              </h3>
-              {# <a class="status-report__icon" style="color:#0d395f">
-                <span class="sr-only">More info</span>
-                {% include 'partials/icon.twig' with {
-                  name: 'info',
-                  class: 'f5'
-                } %}
-              </a> #}
-              <ul class="shortcut-list__header-links">
-                <a class="f2 link-underline" style="color:#0d395f">
-                  View
-                </a>
-                <a class="f2 link-underline ml-1" style="color:#0d395f">
-                  Report
-                </a>
-              </ul>
-            </div>
-            {% if item.description %}
-              <p class="link-list__info">
-                {{ item.description }}
-              </p>
-            {% endif %}
-          </article>
-
-        </li>
-      {% endfor %}
-
-    </ul>
-    {% include 'partials/pagination.twig' %}
-  </div>
-{% endblock %}
