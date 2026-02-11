@@ -1,0 +1,68 @@
+{% extends 'course-hub-layout.twig' %}
+
+{% block layout_header %}
+  {% include 'partials/app-header.twig' with {
+    title: 'GO',
+    items: [
+      {
+        text: 'GOtionary'
+      },
+      {
+        text: 'Search Shortcuts',
+        active: true
+      }
+    ]
+  } %}
+{% endblock %}
+
+{% set page_header = {
+  title: '1800boston',
+  breadcrumb: [
+    {
+      text: 'Middlebury'
+    },
+    {
+      text: 'GO'
+    },
+    {
+      text: 'Search Shortcuts'
+    }
+  ]
+} %}
+
+{% block content %}
+  <div class="paragraphs">
+    <div class="typography">
+      <dl>
+        <dt>URL</dt>
+        <dd>
+          <a href="https://engage.middlebury.edu/pages/events/fy25/celebratetheseasonboston">https://engage.middlebury.edu/pages/events/fy25/celebratetheseasonboston</a>
+        </dd>
+
+        <dt>Description</dt>
+        <dd>N/A</dd>
+
+        <dt>Aliases</dt>
+        <dd>
+          N/A
+        </dd>
+
+        <dt>Administrators</dt>
+        <dd>
+          <ul>
+            <li>mdaylor@middlebury.edu</li>
+            <li>klamb@middlebury.edu</li>
+            <li>yanderson@middlebury.edu</li>
+            <li>alyp@middlebury.edu</li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="mb-2"><img src="https://api.qrserver.com/v1/create-qr-code?data=https%3A//go.middlebury.edu/1800boston&amp;size=200x200" alt="QR code for GO code"></div>
+
+      <div class="flag flag-inappropriate js-flag-inappropriate-72 action-flag">
+        <a href="/flag/details/flag/inappropriate/72?destination=/node/72&amp;view_mode=full" title="" rel="nofollow">Flag as inappropriate</a>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

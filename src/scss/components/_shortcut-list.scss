@@ -17,10 +17,10 @@
 .shortcut-list__item {
   margin-bottom: variables.$spacing-5;
 
-  @include breakpoints.breakpoint(sm) {
-    @include grid.make-col-ready;
-    @include grid.make-col(6);
-  }
+  // @include breakpoints.breakpoint(sm) {
+  @include grid.make-col-ready;
+  @include grid.make-col(12);
+  // }
   @include breakpoints.breakpoint(md) {
     @include grid.make-col(6);
   }
@@ -38,17 +38,27 @@
   justify-content: space-between;
 
   h3 {
-    max-width: 70%;
+    max-width: 60%;
   }
 
   .shortcut-list__header-links {
-    max-width: 30%;
+    max-width: 40%;
+  }
+
+  @include breakpoints.breakpoint(xl) {
+    h3 {
+      max-width: 65%;
+    }
+
+    .shortcut-list__header-links {
+      max-width: 35%;
+    }
   }
 }
 
 .shortcut-list__link {
   font-size: variables.$typescale-5;
-  font-weight: variables.$font-weight-medium;
+  font-weight: variables.$font-weight-semibold;
   font-family: variables.$font-family-sans-serif;
   @include type.link-border;
 }
@@ -56,4 +66,8 @@
 .shortcut-list__info {
   font-size: variables.$typescale-2;
   margin-top: variables.$spacing-2;
+}
+
+.shortcut-form {
+  display: flex;
 }

@@ -168,6 +168,7 @@
 
   dd {
     @include terms.terms-text;
+    overflow-wrap: anywhere;
   }
 
   // Maintain vertical h2 top margin when

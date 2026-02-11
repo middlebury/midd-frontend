@@ -118,10 +118,11 @@
     title: 'GO',
     items: [
       {
-        text: 'All Shortcuts'
+        text: 'GOtionary'
       },
       {
-        text: 'Search Shortcuts'
+        text: 'Search Shortcuts',
+        active: true
       }
     ]
   } %}
@@ -134,7 +135,7 @@
       text: 'Middlebury'
     },
     {
-      text: 'Search Shortcuts'
+      text: 'GO'
     }
   ]
 } %}
@@ -177,25 +178,16 @@
                   {{item.shortcut}}
                 </a>
               </h3>
-              {# <a class="status-report__icon" style="color:#0d395f">
-                <span class="sr-only">More info</span>
-                {% include 'partials/icon.twig' with {
-                  name: 'info',
-                  class: 'f5'
-                } %}
-              </a> #}
-              <ul class="shortcut-list__header-links">
-                <a class="f2 link-underline" style="color:#0d395f">
-                  View
-                </a>
-                <a class="f2 link-underline ml-1" style="color:#0d395f">
-                  Report
-                </a>
-              </ul>
+              <div class="shortcut-list__header-links">
+                <a href="#" class="f2 link-underline" style="color:#0d395f">View</a>
+                <a href="#" class="f2 link-underline ml-1" style="color:#0d395f">Report</a>
+              </div>
             </div>
             {% if item.description %}
               <p class="link-list__info">
-                {{ item.description }}
+                {{ (item.description|length) > 200
+                  ? (item.description|slice(0, 200)) ~ '...<a class="link-underline">read more</a>'
+                  : item.description }}
               </p>
             {% endif %}
           </article>
