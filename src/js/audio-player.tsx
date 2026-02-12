@@ -11,20 +11,24 @@ audioWrappers.forEach((wrapper: HTMLElement, index: number) => {
 
   const audioElem = wrapper.querySelector('audio') as HTMLAudioElement;
 
-  const { btnOnly, size, outline, playIcon } = wrapper.dataset;
+  if (audioElem) {
+    const titleElemId = `${wrapper.querySelector('.audio__title')?.id}`;
 
-  const props = {
-    id: `audio-player-${index}`,
-    btnOnly: btnOnly !== undefined,
-    outline: outline !== undefined,
-    audio: audioElem,
-    playIcon,
-    size
-  };
+    const { btnOnly, size, outline, playIcon } = wrapper.dataset;
 
-  render(<AudioPlayer {...props} />, root);
+    const props = {
+      id: `audio-player-${index}`,
+      titleId: titleElemId,
+      btnOnly: btnOnly !== undefined,
+      outline: outline !== undefined,
+      audio: audioElem,
+      playIcon,
+      size
+    };
 
-  wrapper.style.display = 'none';
+    render(<AudioPlayer {...props} />, root);
 
-  wrapper.parentNode?.insertBefore(root, wrapper.nextSibling);
+    audioElem.style.display = 'none';
+    audioElem.parentNode?.insertBefore(root, audioElem.nextSibling);
+  }
 });

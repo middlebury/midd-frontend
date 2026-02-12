@@ -17,7 +17,7 @@
       background: variables.$blue-lighter;
     }
 
-    .themed-panel__main {
+    .themed-panel__figure {
       border-top-color: variables.$blue-lighter;
     }
   }
@@ -28,7 +28,6 @@
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
-  border-top: variables.$spacing-3 solid variables.$navy;
 
   @include breakpoints.breakpoint(md) {
     border-top: 0;
@@ -57,6 +56,10 @@
 .themed-panel__figure {
   position: relative;
 
+  &:first-child {
+    border-top: variables.$spacing-3 solid variables.$navy;
+  }
+
   &:before {
     display: block;
     content: '';
@@ -66,6 +69,10 @@
 
   @include breakpoints.breakpoint(sm) {
     margin: variables.$spacing-3 variables.$spacing-3 0;
+
+    &:first-child {
+      border-top: 0;
+    }
   }
 
   @include breakpoints.breakpoint(lg) {

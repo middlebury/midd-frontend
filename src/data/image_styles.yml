@@ -137,7 +137,7 @@ image_styles:
     title: Media Group component
     ratio: 'any'
     srcset:
-      - 400x225
+      - 640x360
 
   event_teaser:
     title: Event teaser
