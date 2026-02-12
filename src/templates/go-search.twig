@@ -1,0 +1,73 @@
+{% extends 'go-layout.twig' %}
+
+{% set page_header = {
+  title: 'Search GO shortcuts',
+  breadcrumb: [
+    {
+      text: 'Middlebury'
+    },
+    {
+      text: 'GO'
+    }
+  ]
+} %}
+
+{% block content %}
+  <form action="http://learn.middlebury.edu/l/74172/2016-04-04/4fsyft" method="post">
+    <input type="hidden" name="success_location" value="http://www.middlebury.edu/language-schools/thank-you">
+    <div class="catalog-search row row--sm-gutters">
+      <div class="col-md-12 form-group">
+        <label for="shortcuts-by-name" class="label">By Name</label>
+        <input type="text" class="form-control" name="shortcuts-by-name" id="shortcuts-by-name" aria-describedby="instructions">
+      </div>
+
+      <div class="col-md-12 form-group">
+        <label for="shortcuts-by-url" class="label">By URL</label>
+        <input type="text" class="form-control" name="shortcuts-by-url" id="shortcuts-by-url" aria-describedby="instructions">
+      </div>
+
+      <div class="col-12 col-xl-4 form-group">
+        <input type="submit" value="Search" class="button button--primary d-block d-md-inline-block">
+      </div>
+
+    </div>
+  </form>
+
+  <div class="go-search-results">
+    <h2 class="h2 mt-5">
+      Search Results
+    </h2>
+    
+    <ul class="shortcut-list__list row mt-5 mb-7">
+      {% for item in go_data %}
+
+        <li class="shortcut-list__item">
+          
+          <article class="shortcut-list__box clearfix" aria-labelledby="midd-story-label-{{loop.index}}">
+            <div class="shortcut-list__header">
+              <h3 class="mb-1" id="midd-story-label-{{loop.index}}">
+                <a class="shortcut-list__link" href="#">
+                  {{item.shortcut}}
+                </a>
+              </h3>
+              <div class="shortcut-list__header-links">
+                <a href="#" class="f2 link-underline" style="color:#0d395f">View</a>
+                <a href="#" class="f2 link-underline ml-1" style="color:#0d395f">Report</a>
+              </div>
+            </div>
+            {% if item.description %}
+              <p class="link-list__info">
+                {{ (item.description|length) > 200
+                  ? (item.description|slice(0, 200)) ~ '...<a class="link-underline">read more</a>'
+                  : item.description }}
+              </p>
+            {% endif %}
+          </article>
+
+        </li>
+      {% endfor %}
+
+    </ul>
+    {% include 'partials/pagination.twig' %}
+  </div>
+{% endblock %}

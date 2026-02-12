@@ -1,19 +1,4 @@
-{% extends 'course-hub-layout.twig' %}
-
-{% block layout_header %}
-  {% include 'partials/app-header.twig' with {
-    title: 'GO',
-    items: [
-      {
-        text: 'GOtionary'
-      },
-      {
-        text: 'Search Shortcuts',
-        active: true
-      }
-    ]
-  } %}
-{% endblock %}
+{% extends 'go-layout.twig' %}
 
 {% set page_header = {
   title: '1800boston',
@@ -34,7 +19,7 @@
   <div class="paragraphs">
     <div class="typography">
       <dl>
-        <dt>URL</dt>
+        <dt>Destination URL</dt>
         <dd>
           <a href="https://engage.middlebury.edu/pages/events/fy25/celebratetheseasonboston">https://engage.middlebury.edu/pages/events/fy25/celebratetheseasonboston</a>
         </dd>

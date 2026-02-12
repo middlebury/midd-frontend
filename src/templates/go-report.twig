@@ -1,19 +1,4 @@
-{% extends 'course-hub-layout.twig' %}
-
-{% block layout_header %}
-  {% include 'partials/app-header.twig' with {
-    title: 'GO',
-    items: [
-      {
-        text: 'GOtionary'
-      },
-      {
-        text: 'Search Shortcuts',
-        active: true
-      }
-    ]
-  } %}
-{% endblock %}
+{% extends 'go-layout.twig' %}
 
 {% set page_header = {
   title: 'Why is this inappropriate?',
@@ -37,7 +22,7 @@
         <label for="edit-field-reason-0-value" class="label">Reason</label>
         <select class="form-control" type="text" id="edit-field-reason-0-value" name="reason">
           <option value="0" selected>Select a reason</option>
-          <option value="Offensive Language">Offensive Language</option>
+          <option value="Offensive Language">Offensive language</option>
           <option value="Sensitive information">Sensitive information</option>
           <option value="I just don't like it">I just don't like it</option>
           <option value="Other">Other</option>
