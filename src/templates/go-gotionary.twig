@@ -12,6 +12,22 @@
   ]
 } %}
 
+
+{% block layout_header %}
+  {% include 'partials/app-header.twig' with {
+    title: 'GO',
+    items: [
+      {
+        text: 'GOtionary',
+        active: true
+      },
+      {
+        text: 'Search Shortcuts'
+      }
+    ]
+  } %}
+{% endblock %}
+
 {% block content %}
   <div class="go-search-results">
     {# {% include 'partials/pagination.twig' %} #}

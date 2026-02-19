@@ -15,6 +15,20 @@
   ]
 } %}
 
+{% block layout_header %}
+  {% include 'partials/app-header.twig' with {
+    title: 'GO',
+    items: [
+      {
+        text: 'GOtionary'
+      },
+      {
+        text: 'Search Shortcuts'
+      }
+    ]
+  } %}
+{% endblock %}
+
 {% block content %}
   <div class="paragraphs">
     <div class="typography">
