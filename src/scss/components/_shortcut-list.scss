@@ -1,0 +1,83 @@
+@use '../core/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/grid';
+@use '../mixins/type';
+
+.shortcut-list {
+}
+
+.shortcut-list__list {
+  margin-top: variables.$spacing-7;
+
+  @include breakpoints.breakpoint(sm) {
+    @include grid.make-row;
+  }
+}
+
+.shortcut-list__item {
+  margin-bottom: variables.$spacing-5;
+
+  // @include breakpoints.breakpoint(sm) {
+  @include grid.make-col-ready;
+  @include grid.make-col(12);
+  // }
+  @include breakpoints.breakpoint(md) {
+    @include grid.make-col(6);
+  }
+}
+
+.shortcut-list__box {
+  border-bottom: 1px solid variables.$border-color;
+  height: 100%;
+  padding-bottom: variables.$spacing-5;
+  overflow-wrap: break-word;
+}
+
+.shortcut-list__header {
+  display: flex;
+  justify-content: space-between;
+
+  h3 {
+    max-width: 60%;
+  }
+
+  .shortcut-list__header-links {
+    max-width: 40%;
+  }
+
+  @include breakpoints.breakpoint(lg) {
+    h3 {
+      max-width: 50%;
+    }
+
+    .shortcut-list__header-links {
+      max-width: 50%;
+    }
+  }
+
+  @include breakpoints.breakpoint(xl) {
+    h3 {
+      max-width: 65%;
+    }
+
+    .shortcut-list__header-links {
+      max-width: 35%;
+    }
+  }
+}
+
+.shortcut-list__link {
+  font-size: variables.$typescale-5;
+  font-weight: variables.$font-weight-semibold;
+  font-family: variables.$font-family-sans-serif;
+  @include type.link-border;
+}
+
+.shortcut-list__info {
+  font-size: variables.$typescale-2;
+  margin-top: variables.$spacing-2;
+}
+
+.shortcut-form {
+  display: flex;
+}

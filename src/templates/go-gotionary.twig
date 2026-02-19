@@ -1,0 +1,104 @@
+{% extends 'go-layout.twig' %}
+
+{% set page_header = {
+  title: 'GOtionary',
+  breadcrumb: [
+    {
+      text: 'Middlebury'
+    },
+    {
+      text: 'GO'
+    }
+  ]
+} %}
+
+
+{% block layout_header %}
+  {% include 'partials/app-header.twig' with {
+    title: 'GO',
+    items: [
+      {
+        text: 'GOtionary',
+        active: true
+      },
+      {
+        text: 'Search Shortcuts'
+      }
+    ]
+  } %}
+{% endblock %}
+
+{% block content %}
+  <div class="go-search-results">
+    {# {% include 'partials/pagination.twig' %} #}
+    <form class="d-flex">
+      <label for="page-list" class="label pr-2">Go to:</label>
+      <span class="form-control__prefix">
+        <select id="page-list" name="page-list" type="text" class="form-control js-charges">
+          <option value="#" selected="">#</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+          <option value="E">E</option>
+          <option value="F">F</option>
+          <option value="G">G</option>
+          <option value="H">H</option>
+          <option value="I">I</option>
+          <option value="J">J</option>
+          <option value="K">K</option>
+          <option value="L">L</option>
+          <option value="M">M</option>
+          <option value="N">N</option>
+          <option value="O">O</option>
+          <option value="P">P</option>
+          <option value="Q">Q</option>
+          <option value="R">R</option>
+          <option value="S">S</option>
+          <option value="T">T</option>
+          <option value="U">U</option>
+          <option value="V">V</option>
+          <option value="W">W</option>
+          <option value="X">X</option>
+          <option value="Y">Y</option>
+          <option value="Z">Z</option>
+        </select>
+      </span>
+       <input type="submit" value="Go" class="button button--primary d-block d-md-inline-block ml-3">
+    </form>
+    <h2 class="mt-7">#</h2>
+    <ul class="shortcut-list__list row mt-5 mb-7">
+      {% for item in go_data %}
+
+        <li class="shortcut-list__item">
+          
+          <article class="shortcut-list__box clearfix" aria-labelledby="midd-story-label-{{loop.index}}">
+            <div class="shortcut-list__header">
+              <h3 class="mb-1" id="midd-story-label-{{loop.index}}">
+                <a class="shortcut-list__link" href="#">
+                  {{item.shortcut}}
+                </a>
+              </h3>
+              <div class="shortcut-list__header-links">
+                <a href="#" class="f2 link-underline" style="color:#0d395f">View</a>
+                <a href="#" class="f2 link-underline ml-1" style="color:#0d395f">Report</a>
+                <a href="#" class="f4 ml-1">
+                  {% include 'partials/icon.twig' with { name: 'copy' } %}
+                </a>
+              </div>
+            </div>
+            {% if item.description %}
+              <p class="link-list__info">
+                {{ (item.description|length) > 200
+                  ? (item.description|slice(0, 200)) ~ '...<a class="link-underline">read more</a>'
+                  : item.description }}
+              </p>
+            {% endif %}
+          </article>
+
+        </li>
+      {% endfor %}
+
+    </ul>
+    
+{% endblock %}

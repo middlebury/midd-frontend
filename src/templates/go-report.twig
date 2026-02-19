@@ -1,0 +1,53 @@
+{% extends 'go-layout.twig' %}
+
+{% set page_header = {
+  title: 'Why is this inappropriate?',
+  breadcrumb: [
+    {
+      text: 'Middlebury'
+    },
+    {
+      text: 'GO'
+    },
+    {
+      text: '1800boston'
+    }
+  ]
+} %}
+
+{% block layout_header %}
+  {% include 'partials/app-header.twig' with {
+    title: 'GO',
+    items: [
+      {
+        text: 'GOtionary'
+      },
+      {
+        text: 'Search Shortcuts'
+      }
+    ]
+  } %}
+{% endblock %}
+
+{% block content %}
+  <form class="flagging-inappropriate-add-form flagging-form" data-drupal-selector="flagging-inappropriate-add-form" action="/flag/details/flag/inappropriate/1?check_logged_in=1" method="post" id="flagging-inappropriate-add-form" accept-charset="UTF-8">
+    <div class="form-group col-md-12 col-xl-12 js-form-item form-item form-type-textfield js-form-type-textfield form-item-field-reason-0-value js-form-item-field-reason-0-value">
+      <div class="col-md-12 form-group">
+        <label for="edit-field-reason-0-value" class="label">Reason</label>
+        <select class="form-control" type="text" id="edit-field-reason-0-value" name="reason">
+          <option value="0" selected>Select a reason</option>
+          <option value="Offensive Language">Offensive language</option>
+          <option value="Sensitive information">Sensitive information</option>
+          <option value="I just don't like it">I just don't like it</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="col-md-12 form-group">
+        <label for="edit-field-additional-comments" class="label">Additional Comments</label>
+        <input class="js-text-full text-full form-text form-control" type="text" id="edit-field-additional-comments" name="additional-comments" value="" size="60" maxlength="255" placeholder="">
+      </div>
+    <div class="form-group col-md-12 col-xl-12">
+      <input data-drupal-selector="edit-submit" type="submit" id="edit-submit" name="op" value="Flag this shortcut" class="button button--primary js-form-submit form-submit">
+    </div>
+  </form>
+{% endblock %}
