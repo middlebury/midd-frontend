@@ -66,6 +66,10 @@
     @include breakpoints.breakpoint(lg) {
       margin-right: -#{variables.$spacing-5};
     }
+
+    &.is-open {
+      display: none;
+    }
   }
 
   .drawer__overlay {

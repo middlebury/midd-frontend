@@ -48,14 +48,14 @@
             <span class="d-none d-lg-inline mr-2">Sections</span>
             {% include 'partials/icon.twig' with { name: 'bars' } %}
           </button>
-
+          
+          {% embed 'partials/midd-hub-nav.twig'
+            with {
+              title: 'Navigation'
+            }
+          %}
         </div>
 
-        {% embed 'partials/midd-hub-nav.twig'
-          with {
-            title: 'Navigation'
-          }
-        %}
         {% endembed %}
       </div>
     </div>

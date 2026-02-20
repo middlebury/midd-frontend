@@ -31,6 +31,14 @@
   }
 }
 
+.site-header--midd-hub {
+  .school-nav:focus-within {
+    .drawer--midd-hub.is-open {
+      display: block;
+    }
+  }
+}
+
 .school-nav__menu {
   nav:first-child {
     margin-top: variables.$spacing-3;
