@@ -59,12 +59,15 @@
 .drawer--midd-hub {
   &.drawer {
     width: 300px;
+    position: absolute;
     left: initial;
-    right: initial;
-    margin-right: -#{variables.$spacing-3};
 
-    @include breakpoints.breakpoint(lg) {
-      margin-right: -#{variables.$spacing-5};
+    @include breakpoints.breakpoint(xl) {
+      right: -#{variables.$spacing-5};
+    }
+
+    &.is-open {
+      display: none;
     }
   }
 
