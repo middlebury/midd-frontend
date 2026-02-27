@@ -40,22 +40,25 @@
     
     <ul class="shortcut-list__list row mt-5 mb-7">
       {% for item in go_data %}
+        {% set button_id = random(1234) %}
 
         <li class="shortcut-list__item">
           
           <article class="shortcut-list__box clearfix" aria-labelledby="midd-story-label-{{loop.index}}">
-            <div class="shortcut-list__header">
+            <div 
+              class="shortcut-list__header">
               <h3 class="mb-1" id="midd-story-label-{{loop.index}}">
-                <a class="shortcut-list__link" href="#">
+                <a class="shortcut-list__link js-copy-text-{{button_id}}" href="#">
                   {{item.shortcut}}
                 </a>
               </h3>
               <div class="shortcut-list__header-links">
                 <a href="#" class="f2 link-underline" style="color:#0d395f">View</a>
                 <a href="#" class="f2 link-underline ml-1" style="color:#0d395f">Report</a>
-                <a href="#" class="f4 ml-1">
+                <button class="f4 ml-1" data-copy-to-clipboard=".js-copy-text-{{button_id}}">
                   {% include 'partials/icon.twig' with { name: 'copy' } %}
-                </a>
+                </button>
+                {# <a class="f2 link-underline ml-1" style="color:#0d395f" data-copy-to-clipboard=".js-copy-text-{{button_id}}">Copy</a> #}
               </div>
             </div>
             {% if item.description %}

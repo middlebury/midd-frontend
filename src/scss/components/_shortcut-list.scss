@@ -43,6 +43,10 @@
 
   .shortcut-list__header-links {
     max-width: 40%;
+
+    button {
+      cursor: pointer;
+    }
   }
 
   @include breakpoints.breakpoint(lg) {
