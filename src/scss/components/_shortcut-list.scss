@@ -43,9 +43,24 @@
 
   .shortcut-list__header-links {
     max-width: 40%;
+    position: relative;
 
     button {
       cursor: pointer;
+      color: variables.$navy;
+    }
+
+    .tooltip__label {
+      min-width: max-content;
+      right: 0;
+
+      @include breakpoints.breakpoint(md) {
+        right: -#{variables.$spacing-7};
+      }
+    }
+
+    button:focus-within ~ .tooltip__label {
+      display: block;
     }
   }
 
