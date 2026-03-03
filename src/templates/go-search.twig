@@ -99,9 +99,10 @@
               </div>
             </div>
             {% if item.description %}
-              <p class="link-list__info">
-                {{ (item.description|length) > 200
-                  ? (item.description|slice(0, 200)) ~ '...<a class="link-underline">read more</a>'
+              <a class="f2 link-underline" href="{{item.destination}}">{{item.destination}}</a>
+              <p class="f2 link-list__info">
+                {{ (item.description|length) > 150
+                  ? (item.description|slice(0, 150)) ~ '...<a class="link-underline">read more</a>'
                   : item.description }}
               </p>
             {% endif %}
