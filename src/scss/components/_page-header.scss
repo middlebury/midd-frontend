@@ -264,10 +264,25 @@
   }
 
   .page-header__title {
+    // position: relative;
     font-size: variables.$typescale-7;
 
     @include breakpoints.breakpoint(md) {
       font-size: variables.$typescale-8;
+    }
+
+    .page-header__copy-icon {
+      position: relative;
+    }
+
+    .tooltip__label {
+      font-family: variables.$font-family-sans-serif;
+      min-width: max-content;
+      right: -#{variables.$spacing-7};
+    }
+
+    button:focus-within ~ .tooltip__label {
+      display: block;
     }
   }
 }

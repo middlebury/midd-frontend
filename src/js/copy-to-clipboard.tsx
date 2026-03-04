@@ -8,7 +8,7 @@ class CopyText {
     this.button = button;
 
     const textClass = button.getAttribute('data-copy-to-clipboard');
-    this.text = $(`${textClass}`).text.trim();
+    this.text = $(`${textClass}`).textContent?.trim();
 
     this.handleButtonClick = this.handleButtonClick.bind(this);
     this.init();
