@@ -3,12 +3,15 @@ import { $, $$ } from './utils/dom';
 class CopyText {
   button: HTMLElement;
   text: string;
+  domain: string;
 
   constructor(button: HTMLElement) {
     this.button = button;
 
     const textClass = button.getAttribute('data-copy-to-clipboard');
     this.text = $(`${textClass}`).textContent?.trim();
+
+    this.domain = 'https://go.middlebury.edu/';
 
     this.handleButtonClick = this.handleButtonClick.bind(this);
     this.init();
@@ -24,12 +27,12 @@ class CopyText {
 
   async handleButtonClick() {
     try {
-      await navigator.clipboard.writeText(this.text);
+      await navigator.clipboard.writeText(
+        this.domain.concat(this.text.slice(3))
+      );
     } catch (error) {
       console.error(error.message);
     }
-
-    console.log(this.text);
   }
 }
 
