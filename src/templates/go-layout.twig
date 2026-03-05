@@ -1,4 +1,4 @@
-{% extends 'course-hub-layout.twig' %}
+{% extends 'layout.twig' %}
 
 {% set go_data = [
   {
@@ -115,6 +115,58 @@
 
 {% block layout_header %}
   {% include 'partials/app-header.twig' with {
-    title: 'GO'
+    title: 'GO',
+    items: [
+      {
+        text: 'Help',
+        external: true
+      },
+      {
+        text: 'Login'
+      }
+    ]
+  } %}
+{% endblock %}
+
+{% set page_header = {
+  app_header: true,
+  breadcrumb: page_header.breadcrumb|default(false),
+  after_title: page_header.after_title,
+  title: page_header.title,
+  copy_icon: page_header.copy_icon
+} %}
+
+
+{% block page %}
+  {% set _content = block('content') %}
+  {% set _nav = block('nav') %}
+  {% set _toc = block('toc') %}
+  {% set _sidebar = block('sidebar') %}
+
+  {% if not app_layout_full_width %}
+    {% embed 'partials/sidebar-layout.twig' %}
+      {% block nav %}
+        {{ _nav|raw }}
+      {% endblock %}
+      {% block sidebar %}
+        {{ _sidebar|raw }}
+      {% endblock %}
+      {% block content %}
+        {{ _content|raw }}
+      {% endblock %}
+      {% block toc %}
+        {{ _toc|raw }}
+      {% endblock %}
+    {% endembed %}
+  {% else %}
+    {% block content %}
+      {{ _content|raw }}
+    {% endblock %}
+  {% endif %}
+{% endblock %}
+
+{% block layout_footer %}
+  {% include 'partials/midd-footer.twig' with {
+    js_class: 'js-go-to-top-btn'
   } %}
 {% endblock %}
