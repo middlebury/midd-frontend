@@ -19,10 +19,6 @@
 
   @include grid.make-col-ready;
   @include grid.make-col(12);
-
-  @include breakpoints.breakpoint(md) {
-    @include grid.make-col(6);
-  }
 }
 
 .shortcut-list__box {
