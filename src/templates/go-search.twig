@@ -12,9 +12,20 @@
   ]
 } %}
 
+{% block nav %}
+  {% include 'partials/page-nav.twig' with {
+    label: 'GO',
+    items: [
+      {
+        text: 'Help'
+      },
+    ],
+    login: true
+  } %}
+{% endblock %}
+
 {% block content %}
-  <form action="http://learn.middlebury.edu/l/74172/2016-04-04/4fsyft" method="post">
-    <input type="hidden" name="success_location" value="http://www.middlebury.edu/language-schools/thank-you">
+  <form action="#search-results" method="post">
     <div class="catalog-search row row--sm-gutters">
       <div class="col-md-12 form-group">
         <label for="shortcuts-by-name" class="label">By Name</label>
@@ -99,10 +110,10 @@
               </div>
             </div>
             {% if item.description %}
-              <a class="f2 link-underline" href="{{item.destination}}">{{item.destination}}</a>
+              <a class="f2" href="{{item.destination}}">{{item.destination}}</a>
               <p class="f2 link-list__info">
-                {{ (item.description|length) > 150
-                  ? (item.description|slice(0, 150)) ~ '...<a class="link-underline">read more</a>'
+                {{ (item.description|length) > 200
+                  ? (item.description|slice(0, 200)) ~ '...<a class="link-underline">read more</a>'
                   : item.description }}
               </p>
             {% endif %}
