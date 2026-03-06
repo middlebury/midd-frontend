@@ -51,7 +51,7 @@
             <span class="js-copy-text-1">{{title}}</span>
             {% if copy_icon %}
               <span class="page-header__copy-icon">
-                <button class="ml-1 hover-fadein" data-copy-to-clipboard=".js-copy-text-1">
+                <button class="ml-1 hover-fadein" data-copy-to-clipboard=".js-copy-text-1" tabindex="0">
                   {% include 'partials/icon.twig' with { name: 'copy' } %}
                 </button>
                 <div class="tooltip__label" role="tooltip" id="midd-tooltip-label-{{id}}">
