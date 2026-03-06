@@ -271,16 +271,24 @@
       font-size: variables.$typescale-8;
     }
 
+    span:first-child {
+      display: inline-block;
+      max-width: 85%;
+    }
+
     .page-header__copy-icon {
       position: relative;
       display: inline-block;
+      vertical-align: top;
     }
 
     .tooltip__label {
       font-family: variables.$font-family-sans-serif;
       min-width: max-content;
-      right: -#{variables.$spacing-7};
-      // left: 0;
+
+      @include breakpoints.breakpoint(sm) {
+        right: -#{variables.$spacing-7};
+      }
     }
 
     button:focus-within ~ .tooltip__label {
