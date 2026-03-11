@@ -2,10 +2,12 @@
   <div class="drawer__overlay" tabindex="-1" data-drawer-close>
     <div class="drawer__header">
       <h2 class="sr-only" id="midd-modal-1-title">{{title}}</h2>
-      <img src="images/middlebury-logo-white.svg"
-        alt="Middlebury Logo"
-        width="110"
-        height="40" />
+      <a href="https://www.middlebury.edu/">
+        <img src="images/middlebury-logo-white.svg"
+          alt="Middlebury Logo"
+          width="110"
+          height="40" />
+      </a>
       <button class="drawer__close" aria-label="Close modal" data-drawer-close>
         {% include 'partials/icon.twig' with { name: 'times', class: 'mr-1' } %}
         Close
@@ -18,7 +20,7 @@
         {% for item in site_nav.items %}
           <li class="drawer-nav__item">
 
-            <a href="" class="drawer-nav__link drawer-nav__link--top">{{item.text}}</a>
+            <a href="#section-label" class="drawer-nav__link drawer-nav__link--top">{{item.text}}</a>
 
             {% if item.items %}
               <button
