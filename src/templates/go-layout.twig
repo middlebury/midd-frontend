@@ -136,6 +136,12 @@
   copy_icon: page_header.copy_icon
 } %}
 
+{% block nav %}
+  {% include 'partials/page-nav.twig' with {
+    login: true
+  } %}
+{% endblock %}
+
 
 {% block page %}
   {% set _content = block('content') %}

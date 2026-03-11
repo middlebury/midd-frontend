@@ -12,12 +12,6 @@
   ]
 } %}
 
-{% block nav %}
-  {% include 'partials/page-nav.twig' with {
-    login: true
-  } %}
-{% endblock %}
-
 {% block content %}
   <form action="#search-results" method="post">
     <div class="catalog-search row row--sm-gutters">
