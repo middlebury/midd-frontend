@@ -37,7 +37,7 @@
   min-width: 230px;
   max-width: 100vw;
   animation: fadeInDown 0.2s;
-  z-index: 5;
+  z-index: variables.$z-index-tooltip;
 
   .tooltip__button:focus ~ &,
   .tooltip__button:hover ~ & {
