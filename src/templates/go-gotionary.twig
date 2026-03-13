@@ -1,7 +1,7 @@
 {% extends 'go-layout.twig' %}
 
 {% set page_header = {
-  title: 'GOtionary',
+  title: 'Search GO Shortcuts',
   breadcrumb: [
     {
       text: 'Middlebury'
@@ -11,22 +11,6 @@
     }
   ]
 } %}
-
-
-{% block layout_header %}
-  {% include 'partials/app-header.twig' with {
-    title: 'GO',
-    items: [
-      {
-        text: 'GOtionary',
-        active: true
-      },
-      {
-        text: 'Search Shortcuts'
-      }
-    ]
-  } %}
-{% endblock %}
 
 {% block content %}
   <div class="go-search-results">
