@@ -265,9 +265,34 @@
 
   .page-header__title {
     font-size: variables.$typescale-7;
+    overflow-wrap: break-word;
 
     @include breakpoints.breakpoint(md) {
       font-size: variables.$typescale-8;
+    }
+
+    span:first-child {
+      display: inline-block;
+      max-width: 85%;
+    }
+
+    .page-header__copy-icon {
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .tooltip__label {
+      font-family: variables.$font-family-sans-serif;
+      min-width: max-content;
+
+      @include breakpoints.breakpoint(sm) {
+        right: -#{variables.$spacing-7};
+      }
+    }
+
+    button:focus-within ~ .tooltip__label {
+      display: block;
     }
   }
 }
