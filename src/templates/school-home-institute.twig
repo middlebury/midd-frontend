@@ -42,7 +42,10 @@
 
 	{% include 'paragraphs/card-carousel.twig' %}
 
-  {% include 'paragraphs/dispatches.twig' %}
+  {% include 'paragraphs/dispatches.twig' with {
+    title: 'Features News',
+    blurb: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, sunt sit impedit aliquid eum vero officiis saepe natus veritatis, ullam quaerat similique quasi molestias numquam voluptate quam incidunt, provident fugiat?'
+  } %}
 
 	{% include 'paragraphs/spotlight.twig' %}
 
