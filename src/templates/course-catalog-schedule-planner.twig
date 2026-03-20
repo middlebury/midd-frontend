@@ -141,7 +141,7 @@
       </form>
 
       <div id="schedules">
-        <h2>Schedules for Summer 2026 - BLSE</h2>
+        <h2 class="my-4 my-lg-5">Schedules for Summer 2026 - BLSE</h2>
 
         <div class="schedule form-group" id="schedule-328875">
 
@@ -150,9 +150,19 @@
             <input type="submit" class="button button--sm" id="submit_delete_schedule_328875" title="Delete this schedule" value="Delete">
           </form>
 
-          <h3 class="form-group">Untitled Schedule
-            <button class="button button--sm edit_schedule_name_button" data-form-id="update_schedule_328875">Edit</button>
-          </h3>
+          {% set edit_name_id = random(1234) %}
+          <div class="schedule-title">
+            <h3>Untitled Schedule
+            </h3>
+            <div class="schedule-title--edit">
+              <button class="f4 ml-2 hover-fadeout edit_schedule_name_button" data-form-id="update_schedule_328875" aria-labelledby="midd-tooltip-label-{{edit_name_id}}">
+                {% include 'partials/icon.twig' with {
+                  name: 'pencil'
+                } %}
+              </button>
+              <div class="tooltip__label" role="tooltip" id="midd-tooltip-label-{{edit_name_id}}">Edit title</div>
+            </div>
+          </div>
 
           <div class="print-and-email-buttons">
             <a class="print_button button button--sm" href="/schedules/print/328875" title="Click for print view." target="print_view">Print</a>
@@ -171,12 +181,12 @@
 
           </ul>
 
-          <button id="add-to-schedule_328875" data-schedule-id="328875" data-schedule-name="Untitled Schedule" class="add-to-schedule button button--sm button--block">+ Add Course</button>
+          <button id="add-to-schedule_328875" data-schedule-id="328875" data-schedule-name="Untitled Schedule" class="add-to-schedule button button--sm button--primary button--block">+ Add Course</button>
         </div>
 
         <form id="schedule_create" class="row row--sm-gutters mt-6 mb-6" action="/schedules/create/catalog-BLSE" method="post">
           <input type="hidden" name="term" value="term-202670">
-          <input type="submit" class="button button--block button--sm" id="submit_schedule_create" value="+ Create new schedule">
+          <input type="submit" class="m-auto button button--sm button--primary" id="submit_schedule_create" value="+ Create new schedule">
           <input type="hidden" name="csrf_key" value="6eba3e3cdc687183eaf1a656a.OEI4e_8yNIIxvdToBShAnLYL0ZW6WLqFFDZFLYSyQ-A.FSBLGYh4UcVdx5q9NGcEzMJ6s8PWKdLofwEpdcGGLbh_c1c2j0djxUvl4A">
         </form>
 
