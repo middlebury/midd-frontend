@@ -142,6 +142,10 @@ $app-header-bp: lg;
     visibility: visible;
   }
 
+  &.app-header__search--align-left {
+    left: 0;
+  }
+
   @include breakpoints.breakpoint($app-header-bp) {
     width: 400px;
     border: 1px solid variables.$border-color;
