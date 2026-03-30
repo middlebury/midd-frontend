@@ -118,6 +118,7 @@ They might well be outsourced to an external stylesheet of course.
  .svg-icon-chevron-right-dims { width: 24px; height: 24px; }
  .svg-icon-chevron-up-dims { width: 24px; height: 24px; }
  .svg-icon-compass-dims { width: 24px; height: 24px; }
+ .svg-icon-copy-to-clipboard-dims { width: 24px; height: 24px; }
  .svg-icon-discord-dims { width: 24px; height: 24px; }
  .svg-icon-envelope-dims { width: 24px; height: 24px; }
  .svg-icon-expand-dims { width: 24px; height: 24px; }
@@ -193,6 +194,7 @@ for further details on how to create this embeddable sprite variant.
      <symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-chevron-right"><path d="M7 19.921V23l10-11L7 1v3.079L14.201 12 7 19.921z" fill-rule="nonzero"/></symbol>
      <symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-chevron-up"><path d="M4.079 17H1L12 7l11 10h-3.079L12 9.799 4.079 17z" fill-rule="nonzero"/></symbol>
      <symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-compass"><path d="M12 24C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12zm6-18-8 2.74L15.26 14 18 6zM6 18l8-2.74-1.162-1.163L8.72 15.28l1.182-4.117L8.74 10 6 18z"/></symbol>
+     <symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-copy-to-clipboard"><path d="M15 23H2V7h13v16zM4 21h9V9H4v12zM18 2h4v17h-6v-2h4V4h-2V3h-5v1h-3v2H8V2h5V1h5v1zm0 4h-5V4h5v2z"/></symbol>
      <symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-discord"><path d="M20.33 4.464a19.918 19.918 0 0 0-4.951-1.517c-.234.417-.446.846-.634 1.284a18.575 18.575 0 0 0-5.495 0c-.19-.438-.4-.867-.635-1.284-1.71.292-3.377.803-4.955 1.52C.527 9.082-.323 13.582.102 18.018a19.977 19.977 0 0 0 6.073 3.035 14.74 14.74 0 0 0 1.3-2.088c-.71-.263-1.395-.59-2.048-.973.172-.124.34-.252.502-.376 3.845 1.8 8.297 1.8 12.142 0 .164.134.332.261.502.376-.653.385-1.34.71-2.052.975.374.73.808 1.428 1.3 2.086a19.885 19.885 0 0 0 6.077-3.033c.498-5.144-.851-9.603-3.568-13.556zM8.013 15.29c-1.183 0-2.161-1.07-2.161-2.384 0-1.316.944-2.394 2.157-2.394 1.214 0 2.184 1.078 2.164 2.394-.021 1.315-.954 2.384-2.16 2.384zm7.974 0c-1.186 0-2.16-1.07-2.16-2.384 0-1.316.944-2.394 2.16-2.394 1.215 0 2.178 1.078 2.157 2.394-.02 1.315-.951 2.384-2.157 2.384z"/></symbol>
      <symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-envelope"><path d="M24 4.302V18a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4.302l12 10 12-10zM2.762 4h18.476L12 11.698 2.762 4z"/></symbol>
      <symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-expand"><path clip-rule="evenodd" d="M15.1 1.95V.309h6.563v6.564h-1.64V3.107l-4.67 4.673-1.161-1.16 4.673-4.67H15.1zM7.808 6.62 3.134 1.95H6.9V.309H.336v6.564h1.641V3.107l4.671 4.675L7.81 6.62zM6.65 14.164l-4.677 4.681v-3.766H.332v6.564h6.564V20H3.13l4.681-4.677-1.16-1.161zm7.54 1.162 4.68 4.676h-3.767v1.64h6.564v-6.563h-1.64v3.766l-4.677-4.68-1.16 1.161z"/></symbol>
@@ -363,6 +365,14 @@ embedded above. They may be styled via CSS.
                         </svg>
                     </div>
                     <h2>icon-compass, </h2>
+                </li>
+             <li title="icon-copy-to-clipboard">
+                    <div class="icon-box">
+                        <svg class="svg-icon-copy-to-clipboard-dims">
+                            <use xlink:href="#icon-copy-to-clipboard"></use>
+                        </svg>
+                    </div>
+                    <h2>icon-copy-to-clipboard, </h2>
                 </li>
              <li title="icon-discord">
                     <div class="icon-box">
@@ -815,6 +825,14 @@ SVG sprite. They may be styled via CSS.
                     </div>
                     <h2>icon-compass</h2>
                 </li>
+             <li title="icon-copy-to-clipboard">
+                    <div class="icon-box">
+                        <svg class="svg-icon-copy-to-clipboard-dims">
+                            <use xlink:href="svg/sprite.symbol.svg#icon-copy-to-clipboard"></use>
+                        </svg>
+                    </div>
+                    <h2>icon-copy-to-clipboard</h2>
+                </li>
              <li title="icon-discord">
                     <div class="icon-box">
                         <svg class="svg-icon-discord-dims">
@@ -1151,7 +1169,7 @@ SVG sprite. They may be styled via CSS.
 
         </section>
         <footer>
-            <p>Generated at Mon, 23 Mar 2026 15:31:03 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+            <p>Generated at Mon, 30 Mar 2026 12:03:52 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
         </footer>
     </body>
 </html>

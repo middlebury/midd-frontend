@@ -59,6 +59,12 @@
         <symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-compass">
           <path d="M12 24C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12zm6-18-8 2.74L15.26 14 18 6zM6 18l8-2.74-1.162-1.163L8.72 15.28l1.182-4.117L8.74 10 6 18z" />
         </symbol>
+        <symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-copy">
+          <path d="M7 6V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-3v3c0 .552-.45 1-1.007 1H4.007A1.001 1.001 0 0 1 3 21l.003-14c0-.552.45-1 1.006-1H7zM5.002 8 5 20h10V8H5.002zM9 6h8v10h2V4H9v2z" />
+        </symbol>
+        <symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-copy-to-clipboard">
+          <path d="M15 23H2V7h13v16zM4 21h9V9H4v12zM18 2h4v17h-6v-2h4V4h-2V3h-5v1h-3v2H8V2h5V1h5v1zm0 4h-5V4h5v2z" />
+        </symbol>
         <symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-discord">
           <path d="M20.33 4.464a19.918 19.918 0 0 0-4.951-1.517c-.234.417-.446.846-.634 1.284a18.575 18.575 0 0 0-5.495 0c-.19-.438-.4-.867-.635-1.284-1.71.292-3.377.803-4.955 1.52C.527 9.082-.323 13.582.102 18.018a19.977 19.977 0 0 0 6.073 3.035 14.74 14.74 0 0 0 1.3-2.088c-.71-.263-1.395-.59-2.048-.973.172-.124.34-.252.502-.376 3.845 1.8 8.297 1.8 12.142 0 .164.134.332.261.502.376-.653.385-1.34.71-2.052.975.374.73.808 1.428 1.3 2.086a19.885 19.885 0 0 0 6.077-3.033c.498-5.144-.851-9.603-3.568-13.556zM8.013 15.29c-1.183 0-2.161-1.07-2.161-2.384 0-1.316.944-2.394 2.157-2.394 1.214 0 2.184 1.078 2.164 2.394-.021 1.315-.954 2.384-2.16 2.384zm7.974 0c-1.186 0-2.16-1.07-2.16-2.384 0-1.316.944-2.394 2.16-2.394 1.215 0 2.178 1.078 2.157 2.394-.02 1.315-.951 2.384-2.157 2.384z" />
         </symbol>
@@ -357,7 +363,9 @@
                     </li>
                   </ol>
                 </nav>
-                <h1 class="page-header__title" id="midd-page-header-label">School course list</h1>
+                <h1 class="page-header__title" id="midd-page-header-label">
+                  <span class="js-copy-text-1">School course list</span>
+                </h1>
               </div>
             </div>
           </header>
@@ -417,7 +425,7 @@
                 </figure>
               </div>
               <div class="paragraphs">
-                <section class="section paragraph--course-list js-filter-650" data-digest-content>
+                <section class="section paragraph--course-list js-filter-93" data-digest-content>
                   <div class="section__header">
                     <h2 class="section__title"> Department Courses </h2>
                     <p class="section__text"> These are the courses taught in this department. </p>
@@ -425,23 +433,23 @@
                   <p class="course-list--text">Courses offered in the past four years. Courses offered currently are as noted.</p>
                   <div class="course-list--filters">
                     <div class="checkbox checkbox--filter">
-                      <input id="course-list-filter-all-650" name="course-list-filter-650" class="radio__input course-list-filter course-list-filter-all" type="radio" checked data-course-filter="650">
-                      <label class="radio__label" for="course-list-filter-all-650">Show all courses.</label>
+                      <input id="course-list-filter-all-93" name="course-list-filter-93" class="radio__input course-list-filter course-list-filter-all" type="radio" checked data-course-filter="93">
+                      <label class="radio__label" for="course-list-filter-all-93">Show all courses.</label>
                     </div>
                     <div class="checkbox checkbox--filter">
-                      <input id="course-list-filter-current-650" name="course-list-filter-650" class="radio__input course-list-filter course-list-filter-current" type="radio" data-course-filter="650">
-                      <label class="radio__label" for="course-list-filter-current-650">Show current courses.</label>
+                      <input id="course-list-filter-current-93" name="course-list-filter-93" class="radio__input course-list-filter course-list-filter-current" type="radio" data-course-filter="93">
+                      <label class="radio__label" for="course-list-filter-current-93">Show current courses.</label>
                     </div>
                     <div class="checkbox checkbox--filter">
-                      <input id="course-list-filter-upcoming-650" name="course-list-filter-650" class="radio__input course-list-filter course-list-filter-upcoming" type="radio" data-course-filter="650">
-                      <label class="radio__label" for="course-list-filter-upcoming-650">Show upcoming courses.</label>
+                      <input id="course-list-filter-upcoming-93" name="course-list-filter-93" class="radio__input course-list-filter course-list-filter-upcoming" type="radio" data-course-filter="93">
+                      <label class="radio__label" for="course-list-filter-upcoming-93">Show upcoming courses.</label>
                     </div>
                   </div>
                   <div class="accordion" role="tablist">
-                    <div class="accordion-item js-accordion-item-772 accordion-item-current accordion-item-upcoming">
-                      <a href="#midd-accordion-item-label-772" class="accordion-item__link" data-toggle-target=".js-accordion-item-772" aria-expanded="false" aria-controls="midd-accordion-content-772" aria-labelledby="midd-accordion-item-label-772" role="tab">
+                    <div class="accordion-item js-accordion-item-450 accordion-item-current accordion-item-upcoming">
+                      <a href="#midd-accordion-item-label-450" class="accordion-item__link" data-toggle-target=".js-accordion-item-450" aria-expanded="false" aria-controls="midd-accordion-content-450" aria-labelledby="midd-accordion-item-label-450" role="tab">
                         <h3 class="accordion-item__title">
-                          <span id="midd-accordion-item-label-772">
+                          <span id="midd-accordion-item-label-450">
                             <p class="accordion-item__label--bold">biol 0140<span class="badge badge--primary badge--outline ml-2">Current</span><span class="badge badge--primary badge--outline ml-2">Upcoming</span></p> Ecology and Evolution
                           </span>
                           <svg class="icon accordion-item__icon " focusable="false" aria-hidden="true">
@@ -449,7 +457,7 @@
                           </svg>
                         </h3>
                       </a>
-                      <div class="accordion-item__content--column" id="midd-accordion-content-772" role="tabpanel" aria-labelledby="midd-accordion-item-label-772">
+                      <div class="accordion-item__content--column" id="midd-accordion-content-450" role="tabpanel" aria-labelledby="midd-accordion-item-label-450">
                         <p class="accordion-item__sub-title">Course Description</p>
                         <div class="typography">
                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -465,10 +473,10 @@
                         </div>
                       </div>
                     </div>
-                    <div class="accordion-item js-accordion-item-225">
-                      <a href="#midd-accordion-item-label-225" class="accordion-item__link" data-toggle-target=".js-accordion-item-225" aria-expanded="false" aria-controls="midd-accordion-content-225" aria-labelledby="midd-accordion-item-label-225" role="tab">
+                    <div class="accordion-item js-accordion-item-903">
+                      <a href="#midd-accordion-item-label-903" class="accordion-item__link" data-toggle-target=".js-accordion-item-903" aria-expanded="false" aria-controls="midd-accordion-content-903" aria-labelledby="midd-accordion-item-label-903" role="tab">
                         <h3 class="accordion-item__title">
-                          <span id="midd-accordion-item-label-225">
+                          <span id="midd-accordion-item-label-903">
                             <p class="accordion-item__label--bold">biol 0140</p> Film and Television, from Apocolipse Now to the Simpsons
                           </span>
                           <svg class="icon accordion-item__icon " focusable="false" aria-hidden="true">
@@ -476,7 +484,7 @@
                           </svg>
                         </h3>
                       </a>
-                      <div class="accordion-item__content--column" id="midd-accordion-content-225" role="tabpanel" aria-labelledby="midd-accordion-item-label-225">
+                      <div class="accordion-item__content--column" id="midd-accordion-content-903" role="tabpanel" aria-labelledby="midd-accordion-item-label-903">
                         <p class="accordion-item__sub-title">Course Description</p>
                         <div class="typography">
                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -487,10 +495,10 @@
                         </div>
                       </div>
                     </div>
-                    <div class="accordion-item js-accordion-item-83 accordion-item-current">
-                      <a href="#midd-accordion-item-label-83" class="accordion-item__link" data-toggle-target=".js-accordion-item-83" aria-expanded="false" aria-controls="midd-accordion-content-83" aria-labelledby="midd-accordion-item-label-83" role="tab">
+                    <div class="accordion-item js-accordion-item-660 accordion-item-current">
+                      <a href="#midd-accordion-item-label-660" class="accordion-item__link" data-toggle-target=".js-accordion-item-660" aria-expanded="false" aria-controls="midd-accordion-content-660" aria-labelledby="midd-accordion-item-label-660" role="tab">
                         <h3 class="accordion-item__title">
-                          <span id="midd-accordion-item-label-83">
+                          <span id="midd-accordion-item-label-660">
                             <p class="accordion-item__label--bold">biol 0140<span class="badge badge--primary badge--outline ml-2">Current</span></p> Biology of Plants Growing in the Forest
                           </span>
                           <svg class="icon accordion-item__icon " focusable="false" aria-hidden="true">
@@ -498,7 +506,7 @@
                           </svg>
                         </h3>
                       </a>
-                      <div class="accordion-item__content--column" id="midd-accordion-content-83" role="tabpanel" aria-labelledby="midd-accordion-item-label-83">
+                      <div class="accordion-item__content--column" id="midd-accordion-content-660" role="tabpanel" aria-labelledby="midd-accordion-item-label-660">
                         <p class="accordion-item__sub-title">Course Description</p>
                         <div class="typography">
                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -513,10 +521,10 @@
                         </div>
                       </div>
                     </div>
-                    <div class="accordion-item js-accordion-item-1140 accordion-item-upcoming">
-                      <a href="#midd-accordion-item-label-1140" class="accordion-item__link" data-toggle-target=".js-accordion-item-1140" aria-expanded="false" aria-controls="midd-accordion-content-1140" aria-labelledby="midd-accordion-item-label-1140" role="tab">
+                    <div class="accordion-item js-accordion-item-359 accordion-item-upcoming">
+                      <a href="#midd-accordion-item-label-359" class="accordion-item__link" data-toggle-target=".js-accordion-item-359" aria-expanded="false" aria-controls="midd-accordion-content-359" aria-labelledby="midd-accordion-item-label-359" role="tab">
                         <h3 class="accordion-item__title">
-                          <span id="midd-accordion-item-label-1140">
+                          <span id="midd-accordion-item-label-359">
                             <p class="accordion-item__label--bold">biol 0140<span class="badge badge--primary badge--outline ml-2">Upcoming</span></p> Tropical Ecology and how reefs grow
                           </span>
                           <svg class="icon accordion-item__icon " focusable="false" aria-hidden="true">
@@ -524,7 +532,7 @@
                           </svg>
                         </h3>
                       </a>
-                      <div class="accordion-item__content--column" id="midd-accordion-content-1140" role="tabpanel" aria-labelledby="midd-accordion-item-label-1140">
+                      <div class="accordion-item__content--column" id="midd-accordion-content-359" role="tabpanel" aria-labelledby="midd-accordion-item-label-359">
                         <p class="accordion-item__sub-title">Course Description</p>
                         <div class="typography">
                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -535,10 +543,10 @@
                         </div>
                       </div>
                     </div>
-                    <div class="accordion-item js-accordion-item-379">
-                      <a href="#midd-accordion-item-label-379" class="accordion-item__link" data-toggle-target=".js-accordion-item-379" aria-expanded="false" aria-controls="midd-accordion-content-379" aria-labelledby="midd-accordion-item-label-379" role="tab">
+                    <div class="accordion-item js-accordion-item-202">
+                      <a href="#midd-accordion-item-label-202" class="accordion-item__link" data-toggle-target=".js-accordion-item-202" aria-expanded="false" aria-controls="midd-accordion-content-202" aria-labelledby="midd-accordion-item-label-202" role="tab">
                         <h3 class="accordion-item__title">
-                          <span id="midd-accordion-item-label-379">
+                          <span id="midd-accordion-item-label-202">
                             <p class="accordion-item__label--bold">biol 0140</p> Teaching Literature from Around the World
                           </span>
                           <svg class="icon accordion-item__icon " focusable="false" aria-hidden="true">
@@ -546,7 +554,7 @@
                           </svg>
                         </h3>
                       </a>
-                      <div class="accordion-item__content--column" id="midd-accordion-content-379" role="tabpanel" aria-labelledby="midd-accordion-item-label-379">
+                      <div class="accordion-item__content--column" id="midd-accordion-content-202" role="tabpanel" aria-labelledby="midd-accordion-item-label-202">
                         <p class="accordion-item__sub-title">Course Description</p>
                         <div class="typography">
                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -604,9 +612,9 @@
                   <li class="mr-1">
                     <a href="#" class="d-inline-block hover-fadein  px-1">
                       <svg class="icon  " focusable="false" aria-hidden="true">
-                        <use xlink:href="#icon-instagram">
+                        <use xlink:href="#icon-youtube">
                       </svg>
-                      <span class="sr-only">Link to page/content on instagram</span>
+                      <span class="sr-only">Link to page/content on youtube</span>
                     </a>
                   </li>
                   <li class="mr-1">
@@ -620,17 +628,9 @@
                   <li class="mr-1">
                     <a href="#" class="d-inline-block hover-fadein  px-1">
                       <svg class="icon  " focusable="false" aria-hidden="true">
-                        <use xlink:href="#icon-twitter">
+                        <use xlink:href="#icon-pinterest">
                       </svg>
-                      <span class="sr-only">Link to page/content on twitter</span>
-                    </a>
-                  </li>
-                  <li class="mr-1">
-                    <a href="#" class="d-inline-block hover-fadein  px-1">
-                      <svg class="icon  " focusable="false" aria-hidden="true">
-                        <use xlink:href="#icon-vimeo">
-                      </svg>
-                      <span class="sr-only">Link to page/content on vimeo</span>
+                      <span class="sr-only">Link to page/content on pinterest</span>
                     </a>
                   </li>
                   <li class="mr-1">
@@ -639,6 +639,14 @@
                         <use xlink:href="#icon-wechat">
                       </svg>
                       <span class="sr-only">Link to page/content on wechat</span>
+                    </a>
+                  </li>
+                  <li class="mr-1">
+                    <a href="#" class="d-inline-block hover-fadein  px-1">
+                      <svg class="icon  " focusable="false" aria-hidden="true">
+                        <use xlink:href="#icon-weibo">
+                      </svg>
+                      <span class="sr-only">Link to page/content on weibo</span>
                     </a>
                   </li>
                 </ul>
@@ -691,6 +699,14 @@
                     <li class="mr-1">
                       <a href="#" class="d-inline-block text-white hover-fadeout  p-1">
                         <svg class="icon f5 " focusable="false" aria-hidden="true">
+                          <use xlink:href="#icon-discord">
+                        </svg>
+                        <span class="sr-only">Link to page/content on discord</span>
+                      </a>
+                    </li>
+                    <li class="mr-1">
+                      <a href="#" class="d-inline-block text-white hover-fadeout  p-1">
+                        <svg class="icon f5 " focusable="false" aria-hidden="true">
                           <use xlink:href="#icon-linkedin">
                         </svg>
                         <span class="sr-only">Link to page/content on linkedin</span>
@@ -699,9 +715,9 @@
                     <li class="mr-1">
                       <a href="#" class="d-inline-block text-white hover-fadeout  p-1">
                         <svg class="icon f5 " focusable="false" aria-hidden="true">
-                          <use xlink:href="#icon-instagram">
+                          <use xlink:href="#icon-tiktok">
                         </svg>
-                        <span class="sr-only">Link to page/content on instagram</span>
+                        <span class="sr-only">Link to page/content on tiktok</span>
                       </a>
                     </li>
                     <li class="mr-1">
@@ -715,14 +731,6 @@
                     <li class="mr-1">
                       <a href="#" class="d-inline-block text-white hover-fadeout  p-1">
                         <svg class="icon f5 " focusable="false" aria-hidden="true">
-                          <use xlink:href="#icon-pinterest">
-                        </svg>
-                        <span class="sr-only">Link to page/content on pinterest</span>
-                      </a>
-                    </li>
-                    <li class="mr-1">
-                      <a href="#" class="d-inline-block text-white hover-fadeout  p-1">
-                        <svg class="icon f5 " focusable="false" aria-hidden="true">
                           <use xlink:href="#icon-twitter">
                         </svg>
                         <span class="sr-only">Link to page/content on twitter</span>
@@ -731,9 +739,17 @@
                     <li class="mr-1">
                       <a href="#" class="d-inline-block text-white hover-fadeout  p-1">
                         <svg class="icon f5 " focusable="false" aria-hidden="true">
-                          <use xlink:href="#icon-weibo">
+                          <use xlink:href="#icon-facebook">
                         </svg>
-                        <span class="sr-only">Link to page/content on weibo</span>
+                        <span class="sr-only">Link to page/content on facebook</span>
+                      </a>
+                    </li>
+                    <li class="mr-1">
+                      <a href="#" class="d-inline-block text-white hover-fadeout  p-1">
+                        <svg class="icon f5 " focusable="false" aria-hidden="true">
+                          <use xlink:href="#icon-wechat">
+                        </svg>
+                        <span class="sr-only">Link to page/content on wechat</span>
                       </a>
                     </li>
                     <li class="mr-1">
