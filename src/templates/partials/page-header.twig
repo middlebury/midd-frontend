@@ -45,10 +45,25 @@
             light: image_src  }
           %}
         {% endif %}
-        
+  
         {% if title %}
-          <h1 class="page-header__title" id="midd-page-header-label">{{title}}</h1>
+          <h1 class="page-header__title" id="midd-page-header-label">
+            <span class="js-copy-text-1">{{title}}</span>
+            {% if copy_icon %}
+              {% set tooltip_id = random(1234) %}
+              <span class="page-header__copy-icon">
+                <button class="ml-1 hover-fadein" data-copy-to-clipboard=".js-copy-text-1" aria-controls="midd-tooltip-label-{{tooltip_id}}" tabindex="0">
+                  <span class="sr-only">Copy GO link to clipboard</span>
+                  {% include 'partials/icon.twig' with { name: 'copy-to-clipboard' } %}
+                </button>
+                <div class="tooltip__label" role="tooltip" id="midd-tooltip-label-{{tooltip_id}}">
+                  GO link copied!
+                </div>
+              </span>
+            {% endif %}
+          </h1>
         {% endif %}
+
         {{pronouns}}
 
         {{after_title}}

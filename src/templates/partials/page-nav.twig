@@ -13,24 +13,36 @@
 
 {% import _self as macros %}
 
-<nav class="page-nav" aria-labelledby="midd-page-nav-label">
-  <button
-    class="page-nav__button"
-    data-toggle-target=".js-page-nav"
-    aria-haspopup="true"
-    aria-expanded="false"
-  >
-    <span class="page-nav__button-text__label">{{label}}</span>
-    <span class="page-nav__button-text">In this section
-    {% include 'partials/icon.twig' with { name: 'caret-down', class: 'page-nav__icon' } %}
-    </span>
-  </button>
-  <div class="page-nav__content js-page-nav">
-    <h2 class="page-nav__title" id="midd-page-nav-label">
-      <a href="{{href}}" class="page-nav__link">{{label|default("Lorem ipsum")}}</a>
-    </h2>
+{% if label %}
+  <nav class="page-nav" aria-labelledby="midd-page-nav-label">
+    <button class="page-nav__button" data-toggle-target=".js-page-nav" aria-haspopup="true" aria-expanded="false">
+      <span class="page-nav__button-text__label">{{label}}</span>
+      <span class="page-nav__button-text">In this section
+        {% include 'partials/icon.twig' with { name: 'caret-down', class: 'page-nav__icon' } %}
+      </span>
+    </button>
+    <div class="page-nav__content js-page-nav">
+      <h2 class="page-nav__title" id="midd-page-nav-label">
+        <a href="{{href}}" class="page-nav__link">{{label|default("Lorem ipsum")}}</a>
+      </h2>
 
-    {{ macros.list(items) }}
+      {{ macros.list(items) }}
+    </div>
+  </nav>
+{% endif %}
+
+{% if login %}
+  <div class="bg-gray-lighter mb-md-6 p-3">
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-12 order-md-1 order-lg-2">
+        <div class="print-hide">
+          <ul>
+            <li class="mb-2">
+              <a href="/saml/login" class="f2 link-underline" rel="nofollow">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
-</nav>
-
+{% endif %}
