@@ -1,7 +1,7 @@
 // import { Swiper, Navigation, A11y, SwiperOptions } from 'swiper';
 
-import { $, $$ } from './utils/dom';
-import config from './config';
+import { $, $$ } from './utils/dom.js';
+import config from './config.js';
 
 // ie11 polyfill
 // https://github.com/nolimits4web/swiper/issues/3698

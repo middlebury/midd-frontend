@@ -1,6 +1,6 @@
 import { h, FunctionComponent } from 'preact';
 
-import { DataSet } from '../charts';
+import { DataSet } from '../charts.js';
 
 interface LegendProps {
   items: HTMLElement[];
@@ -75,7 +75,7 @@ const PercentBarChart: FunctionComponent<PercentBarProps> = ({
   const sortedLabels = preparedData.map((data: any) => data.label);
 
   return (
-    <figure className='chart--percentage-bar'>
+    <figure className="chart--percentage-bar">
       {title && <figcaption>{title}</figcaption>}
       <div
         style={{

@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 
-import { LEFT_ARROW_KEY, RIGHT_ARROW_KEY } from '../constants';
+import { LEFT_ARROW_KEY, RIGHT_ARROW_KEY } from '../constants.js';
 
 interface SliderProps {
   id: string;

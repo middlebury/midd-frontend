@@ -1,4 +1,4 @@
-import { $, $$ } from './utils/dom';
+import { $, $$ } from './utils/dom.js';
 
 /**
  * Takes a list of anchor links and watches each of their targets to see if they're

@@ -1,7 +1,7 @@
-import { $, $$ } from './utils/dom';
+import { $, $$ } from './utils/dom.js';
 import Superclamp from 'superclamp';
-import animation from './utils/animation';
-import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
+import animation from './utils/animation.js';
+import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion.js';
 
 /**
  * Adds functionality to the waveform component to make the shift left or right
@@ -76,9 +76,9 @@ class ShiftingSlider {
       if (e.code === 'Tab') {
         this.handleKeydown(e);
       }
-    }); 
+    });
 
-    if(!PREFERS_REDUCED_MOTION) {
+    if (!PREFERS_REDUCED_MOTION) {
       // Adds intersection observer to make the waveform slide in when
       // it comes into view
       const io = new IntersectionObserver((entries) => {
@@ -162,7 +162,7 @@ class ShiftingSlider {
         if (e.code === 'Space' || e.code === 'Enter') {
           Superclamp.reclampAll();
         }
-      }); 
+      });
     });
   }
 
@@ -204,7 +204,9 @@ class ShiftingSlider {
 
     this.elem.style.left = shift + 'px';
     this.shift = shift;
-    this.intervalId = window.requestAnimationFrame(() => this.scroll(direction));
+    this.intervalId = window.requestAnimationFrame(() =>
+      this.scroll(direction)
+    );
   }
 
   /**
@@ -217,7 +219,9 @@ class ShiftingSlider {
    */
   animate(speed: number, direction: string) {
     // this.intervalId = setInterval(() => this.scroll(direction), speed);
-    this.intervalId = window.requestAnimationFrame(() => this.scroll(direction));
+    this.intervalId = window.requestAnimationFrame(() =>
+      this.scroll(direction)
+    );
   }
 
   /**

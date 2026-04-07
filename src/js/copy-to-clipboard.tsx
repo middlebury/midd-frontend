@@ -1,4 +1,4 @@
-import { $, $$ } from './utils/dom';
+import { $, $$ } from './utils/dom.js';
 
 class CopyText {
   button: HTMLElement;

@@ -1,7 +1,7 @@
-import { $ } from './utils/dom';
-import onscroll from './utils/onscroll';
+import { $ } from './utils/dom.js';
+import onscroll from './utils/onscroll.js';
 
-import SmoothScroll from './smooth-scroll';
+import SmoothScroll from './smooth-scroll.js';
 
 function makeToTopBtn(btn: HTMLElement, threshold: number = 3) {
   btn.hidden = true;

@@ -1,5 +1,5 @@
-import { $, $$ } from './utils/dom';
-import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
+import { $, $$ } from './utils/dom.js';
+import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion.js';
 
 class VideoControls {
   elem: HTMLElement;
