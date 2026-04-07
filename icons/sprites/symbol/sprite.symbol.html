@@ -138,6 +138,7 @@ They might well be outsourced to an external stylesheet of course.
  .svg-icon-orcid-dims { width: 24px; height: 24px; }
  .svg-icon-pause-dims { width: 24px; height: 24px; }
  .svg-icon-pause-homepage-dims { width: 32px; height: 32px; }
+ .svg-icon-pencil-dims { width: 24px; height: 24px; }
  .svg-icon-pinterest-dims { width: 24px; height: 24px; }
  .svg-icon-play-dims { width: 24px; height: 24px; }
  .svg-icon-play-homepage-dims { width: 32px; height: 32px; }
@@ -214,6 +215,7 @@ for further details on how to create this embeddable sprite variant.
      <symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-orcid"><g fill-rule="nonzero"><path d="M13.875 8.719h-2.222v7.444h2.297c3.272 0 4.022-2.485 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722z"/><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM8.09 11.953v5.503H6.648V7.416H8.09v4.537zm-.72-5.681a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947a.95.95 0 0 1 .947.947.95.95 0 0 1-.947.947zm6.76 11.194h-3.92V7.416h3.9c3.713 0 5.344 2.653 5.344 5.025 0 2.578-2.015 5.025-5.325 5.025z"/></g></symbol>
      <symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-pause"><path clip-rule="evenodd" d="M9 3H7v18h2V3zm7 0h2v18h-2V3z"/></symbol>
      <symbol fill-rule="evenodd" viewBox="0 0 32 32" id="icon-pause-homepage"><path clip-rule="evenodd" d="M13 8H9v16h4V8zm10 0h-4v16h4V8z"/></symbol>
+     <symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-pencil"><path d="m12.9 6.855 4.242 4.242-9.9 9.9H3v-4.243l9.9-9.9zm1.414-1.415 2.121-2.121a1 1 0 0 1 1.414 0l2.829 2.828a1 1 0 0 1 0 1.415l-2.122 2.121-4.242-4.243z"/></symbol>
      <symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-pinterest"><path clip-rule="evenodd" d="M0 12c0 5.123 3.21 9.497 7.73 11.218-.11-.937-.227-2.482.025-3.566.217-.932 1.4-5.938 1.4-5.938S8.8 13 8.8 11.94c0-1.66.962-2.9 2.16-2.9 1.021 0 1.513.765 1.513 1.682 0 1.025-.653 2.557-.99 3.978-.281 1.189.597 2.159 1.769 2.159 2.123 0 3.756-2.24 3.756-5.471 0-2.861-2.056-4.86-4.991-4.86-3.398 0-5.393 2.549-5.393 5.184 0 1.027.395 2.127.889 2.726a.36.36 0 0 1 .083.343c-.091.377-.293 1.188-.332 1.355-.053.218-.173.265-.4.159-1.492-.694-2.424-2.875-2.424-4.627 0-3.77 2.737-7.23 7.892-7.23 4.144 0 7.365 2.954 7.365 6.9s-2.595 7.43-6.2 7.43c-1.21 0-2.347-.63-2.737-1.372 0 0-.6 2.282-.744 2.84-.282 1.084-1.064 2.456-1.549 3.235C9.584 23.815 10.77 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12z"/></symbol>
      <symbol fill-rule="evenodd" viewBox="0 0 24 24" id="icon-play"><path fill-rule="nonzero" d="M21 12 3 24V0z"/></symbol>
      <symbol fill-rule="evenodd" viewBox="0 0 32 32" id="icon-play-homepage"><path d="m25 16-14 9V7l14 9z"/></symbol>
@@ -525,6 +527,14 @@ embedded above. They may be styled via CSS.
                         </svg>
                     </div>
                     <h2>icon-pause-homepage, </h2>
+                </li>
+             <li title="icon-pencil">
+                    <div class="icon-box">
+                        <svg class="svg-icon-pencil-dims">
+                            <use xlink:href="#icon-pencil"></use>
+                        </svg>
+                    </div>
+                    <h2>icon-pencil, </h2>
                 </li>
              <li title="icon-pinterest">
                     <div class="icon-box">
@@ -985,6 +995,14 @@ SVG sprite. They may be styled via CSS.
                     </div>
                     <h2>icon-pause-homepage</h2>
                 </li>
+             <li title="icon-pencil">
+                    <div class="icon-box">
+                        <svg class="svg-icon-pencil-dims">
+                            <use xlink:href="svg/sprite.symbol.svg#icon-pencil"></use>
+                        </svg>
+                    </div>
+                    <h2>icon-pencil</h2>
+                </li>
              <li title="icon-pinterest">
                     <div class="icon-box">
                         <svg class="svg-icon-pinterest-dims">
@@ -1169,7 +1187,7 @@ SVG sprite. They may be styled via CSS.
 
         </section>
         <footer>
-            <p>Generated at Mon, 30 Mar 2026 12:03:52 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+            <p>Generated at Tue, 07 Apr 2026 17:59:28 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
         </footer>
     </body>
 </html>
