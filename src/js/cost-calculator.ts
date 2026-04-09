@@ -1,4 +1,4 @@
-import { $, $$ } from './utils/dom.js';
+import { $, $$ } from './utils/dom';
 
 /**
  * CostCalculator handles calculating fall/spring and annual charges and credits

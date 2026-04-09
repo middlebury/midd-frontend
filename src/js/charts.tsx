@@ -1,10 +1,10 @@
 import { h, render } from 'preact';
-import PercentBarChart from './components/percent-bar-chart.js';
+import PercentBarChart from './components/percent-bar-chart';
 import type * as ChartTypes from 'chart.js';
 
-import { onElementInView } from './utils/on-element-in-view.js';
-import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion.js';
-import { $$ } from './utils/dom.js';
+import { onElementInView } from './utils/on-element-in-view';
+import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
+import { $$ } from './utils/dom';
 
 const colors = [
   '#0d395f',
@@ -475,9 +475,9 @@ function parseConfig(el: HTMLElement): ChartConfig | void {
     return;
   }
 
-  const isValidChartType = ALLOW_CHART_TYPES.includes(chart);
+  const isValidChartType = ALLOW_CHART_TYPES.indexOf(chart);
 
-  if (!isValidChartType) {
+  if (isValidChartType == -1) {
     console.warn(
       `Invalid chart type: ${chart}. Choose one from: ${ALLOW_CHART_TYPES}`
     );

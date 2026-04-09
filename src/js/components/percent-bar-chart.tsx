@@ -1,6 +1,6 @@
 import { h, FunctionComponent } from 'preact';
 
-import { DataSet } from '../charts.js';
+import { DataSet } from '../charts';
 
 interface LegendProps {
   items: HTMLElement[];

@@ -1,4 +1,4 @@
-import { $, $$ } from './utils/dom.js';
+import { $, $$ } from './utils/dom';
 
 /**
  * Sets up a cookie when the cookie banner is closed, by

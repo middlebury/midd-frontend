@@ -1,4 +1,4 @@
-import config from '../config.js';
+import config from '../config';
 
 const mq = (size: number) =>
   window.matchMedia(`(min-width: ${size}px)`).matches;

@@ -1,7 +1,7 @@
-import { $, $$ } from './utils/dom.js';
+import { $, $$ } from './utils/dom';
 import Superclamp from 'superclamp';
-import animation from './utils/animation.js';
-import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion.js';
+import animation from './utils/animation';
+import { PREFERS_REDUCED_MOTION } from './utils/prefers-reduced-motion';
 
 /**
  * Adds functionality to the waveform component to make the shift left or right
@@ -45,7 +45,7 @@ class ShiftingSlider {
   delay: number;
 
   /* Stores the timeoutID returned by the setTimeout function, which is used clear the timeout */
-  timeout: NodeJS.Timeout;
+  timeout: ReturnType<typeof setInterval>;
 
   constructor(elem: HTMLElement) {
     this.elem = elem;

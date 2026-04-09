@@ -1,9 +1,9 @@
 import { h, render } from 'preact';
 import AnchorJS from 'anchor-js';
-import SmoothScroll from './smooth-scroll.js';
+import SmoothScroll from './smooth-scroll';
 
-import { $, $$ } from './utils/dom.js';
-import MenuSpy from './menu-spy.js';
+import { $, $$ } from './utils/dom';
+import MenuSpy from './menu-spy';
 
 const isSelectorValid = (selector: string) => {
   const queryCheck = (s: string) =>

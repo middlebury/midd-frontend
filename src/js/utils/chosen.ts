@@ -1,4 +1,4 @@
-import { $, $$ } from './dom.js';
+import { $, $$ } from './dom';
 
 // add and update aria attributes on forms added by the Chosen library
 // in Drupal on the study abroad courses and cmrs courses sites

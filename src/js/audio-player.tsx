@@ -1,8 +1,8 @@
 import { h, render } from 'preact';
 
-import { $$ } from './utils/dom.js';
+import { $$ } from './utils/dom';
 
-import AudioPlayer from './components/audio.js';
+import AudioPlayer from './components/audio';
 
 const audioWrappers = $$('.js-audio');
 

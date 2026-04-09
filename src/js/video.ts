@@ -1,6 +1,6 @@
-import { on, $, $$ } from './utils/dom.js';
-import decodeHtml from './utils/decode-html.js';
-import { onOutOfElementView } from './utils/on-element-out-of-view.js';
+import { on, $, $$ } from './utils/dom';
+import decodeHtml from './utils/decode-html';
+import { onOutOfElementView } from './utils/on-element-out-of-view';
 
 /**
  * Swaps the cotents of an element with an iframe (retrieved from data attribute) on link click.
