@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "module": "nodenext",
+    "module": "ES2020",
     "noImplicitAny": true,
     "target": "ES6",
     "jsx": "react",
     "jsxFactory": "h",
     "strict": false,
     "sourceMap": true,
+    "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
     "allowJs": true
   },
