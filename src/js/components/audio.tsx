@@ -2,7 +2,6 @@ import { h, Component, Fragment } from 'preact';
 
 import { on } from '../utils/dom';
 import Slider from './slider';
-import Icon from './icon';
 
 function formatTime(seconds: number): string {
   let minutes = Math.floor(seconds / 60);

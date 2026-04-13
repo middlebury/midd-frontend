@@ -475,9 +475,9 @@ function parseConfig(el: HTMLElement): ChartConfig | void {
     return;
   }
 
-  const isValidChartType = ALLOW_CHART_TYPES.includes(chart);
+  const isValidChartType = ALLOW_CHART_TYPES.indexOf(chart);
 
-  if (!isValidChartType) {
+  if (isValidChartType == -1) {
     console.warn(
       `Invalid chart type: ${chart}. Choose one from: ${ALLOW_CHART_TYPES}`
     );

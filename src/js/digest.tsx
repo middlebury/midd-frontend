@@ -4,7 +4,6 @@ import SmoothScroll from './smooth-scroll';
 
 import { $, $$ } from './utils/dom';
 import MenuSpy from './menu-spy';
-import { head } from 'lodash';
 
 const isSelectorValid = (selector: string) => {
   const queryCheck = (s: string) =>

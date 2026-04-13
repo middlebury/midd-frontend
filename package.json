@@ -72,7 +72,7 @@
     "stylelint-config-xo-scss": "~0.15.0",
     "stylelint-prettier": "~4.1.0",
     "ts-loader": "^9.4.2",
-    "typescript": "^5.8.3",
+    "typescript": "^6.0.2",
     "webpack": "^5.99.3",
     "webpack-bundle-analyzer": "^5.0.1",
     "webpack-stream": "^7.0.0",
