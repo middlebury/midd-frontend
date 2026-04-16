@@ -43,7 +43,7 @@
 
       .song__trapezoid-marker {
         position: absolute;
-        z-index: 5;
+        z-index: variables.$z-index-wrmc-marker;
         width: variables.$spacing-5;
         border-bottom: variables.$typescale-5 solid variables.$wrmc-blue-light;
         border-left: 0 solid transparent;

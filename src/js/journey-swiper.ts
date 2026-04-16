@@ -18,7 +18,7 @@ class JourneySwiper {
   translate: number;
   halfWindowWidth: number;
   hiddenWidth: number;
-  timeout: NodeJS.Timeout;
+  timeout: ReturnType<typeof setInterval>;
   activeVideoClass: string;
   closeBtn: HTMLElement;
   loadingEls: HTMLElement[];

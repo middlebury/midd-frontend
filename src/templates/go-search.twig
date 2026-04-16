@@ -1,0 +1,117 @@
+{% extends 'go-layout.twig' %}
+
+{% set page_header = {
+  title: 'Search GO Shortcuts',
+  breadcrumb: [
+    {
+      text: 'Middlebury'
+    },
+    {
+      text: 'GO'
+    }
+  ]
+} %}
+
+{% block content %}
+  <form action="#search-results" method="post">
+    <div class="catalog-search row row--sm-gutters">
+      <div class="col-md-12 form-group">
+        <label for="shortcuts-by-name" class="label">By Name</label>
+        <input type="text" class="form-control" name="shortcuts-by-name" id="shortcuts-by-name" aria-describedby="instructions">
+      </div>
+
+      <div class="col-md-12 form-group">
+        <label for="shortcuts-by-url" class="label">By URL</label>
+        <input type="text" class="form-control" name="shortcuts-by-url" id="shortcuts-by-url" aria-describedby="instructions">
+      </div>
+
+      <div class="col-md-12 form-group">
+        <label for="page-list" class="label pr-2">By Alphabet</label>
+        <span class="form-control__prefix">
+          <select id="page-list" name="page-list" type="text" class="form-control js-charges">
+            <option value="#" selected="">#</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="G">G</option>
+            <option value="H">H</option>
+            <option value="I">I</option>
+            <option value="J">J</option>
+            <option value="K">K</option>
+            <option value="L">L</option>
+            <option value="M">M</option>
+            <option value="N">N</option>
+            <option value="O">O</option>
+            <option value="P">P</option>
+            <option value="Q">Q</option>
+            <option value="R">R</option>
+            <option value="S">S</option>
+            <option value="T">T</option>
+            <option value="U">U</option>
+            <option value="V">V</option>
+            <option value="W">W</option>
+            <option value="X">X</option>
+            <option value="Y">Y</option>
+            <option value="Z">Z</option>
+          </select>
+        </span>
+      </div>
+      
+      <div class="col-12 col-xl-4 form-group">
+        <input type="submit" value="Search" class="button button--primary d-block d-md-inline-block">
+      </div>
+
+    </div>
+  </form>
+
+  <div class="go-search-results" data-digest-content>
+    <h2 class="h2 mt-5">
+      Search Results
+    </h2>
+    
+    <ul class="shortcut-list__list row mt-5 mb-7">
+      {% for item in go_data %}
+        {% set button_id = random(1234) %}
+
+        <li class="shortcut-list__item">
+          
+          <article class="shortcut-list__box clearfix" aria-labelledby="midd-story-label-{{loop.index}}">
+            <div 
+              class="shortcut-list__header">
+              <h3 class="mb-1" id="midd-story-label-{{loop.index}}">
+                <a class="shortcut-list__link js-copy-text-{{button_id}}" href="#">
+                  {{item.shortcut}}
+                </a>
+              </h3>
+              <div class="shortcut-list__header-links">
+                <a href="#" class="f2 link-underline" style="color:#0d395f">View</a>
+                <a href="#" class="f2 link-underline ml-1" style="color:#0d395f">Report</a>
+                <button class="f4 ml-1 hover-fadeout" data-copy-to-clipboard=".js-copy-text-{{button_id}}" aria-controls="midd-tooltip-label-{{button_id}}" tabindex="0">
+                  <span class="sr-only">Copy GO link to clipboard</span>
+                  {% include 'partials/icon.twig' with { name: 'copy-to-clipboard' } %}
+                </button>
+                <div class="tooltip__label" role="tooltip" id="midd-tooltip-label-{{button_id}}">
+                  GO link copied!
+                </div>
+              </div>
+            </div>
+            {% if item.description %}
+              <a class="f2" href="{{item.destination}}">{{item.destination}}</a>
+              <p class="f2 link-list__info">
+                {{ (item.description|length) > 200
+                  ? (item.description|slice(0, 200)) ~ '...<a class="link-underline">read more</a>'
+                  : item.description }}
+              </p>
+            {% endif %}
+          </article>
+
+        </li>
+      {% endfor %}
+
+    </ul>
+    {% include 'partials/pagination.twig' %}
+  </div>
+{% endblock %}

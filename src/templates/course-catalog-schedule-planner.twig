@@ -1,0 +1,224 @@
+{% extends 'course-hub-layout.twig' %}
+
+{% block layout_header %}
+  {% include 'partials/app-header.twig' with {
+    title: 'Course Catalog',
+    items: [
+      {
+        text: 'My Terms',
+        icon: 'chevron-down',
+        icon_class: 'd-none d-lg-inline',
+        active: true,
+        items: [
+          {
+            text: 'Fall 2019'
+          },
+          {
+            text: 'Fall 2019'
+          },
+          {
+            text: 'Fall 2019'
+          },
+          {
+            text: 'Fall 2019'
+          }
+        ]
+      },
+      {
+        text: 'Browse Course Sites'
+      },
+      {
+        text: 'Hub Help'
+      },
+      {
+        text: 'Course Catalog',
+        external: true
+      },
+      {
+        text: 'Schedule Builder',
+        external: true
+      },
+      {
+        text: 'Academic Calendar'
+      }
+    ],
+    search: true
+  } %}
+{% endblock %}
+
+{% set page_header = {
+  title: 'Search in Middlebury College Spring 2025',
+  breadcrumb: [
+    {
+      text: 'All Catalogs'
+    },
+    {
+      text: 'Middlebury College'
+    }
+  ]
+} %}
+
+{% block nav %}
+  {% include 'partials/page-nav.twig' with {
+    label: 'All Catalogs',
+    items: [
+      {
+        text: 'Middlebury College',
+        href: '#',
+        items: [
+          {
+            text: 'Search',
+            href: '#'
+          },
+          {
+            text: 'Course & Requirements',
+            href: '#'
+          }
+        ]
+      },
+      {
+        text: 'My Schedule Planner'
+      }
+    ]
+  } %}
+{% endblock %}
+
+{% block content %}
+  <div class="mb-7">
+    <div class="schedule_planner">
+      <form action="#" method="get" id="schedules_term_choice">
+        <div class="course-catalog-search row row--sm-gutters">
+          <div class="col-md-6 form-group">
+            <label for="catalog">Catalog:
+            </label>
+            <select name="catalog" id="catalog" class="form-control">
+              <option value="/schedules/list">All Catalogs</option>
+              <option value="/schedules/list/catalog-BLSE" selected="selected">Bread Loaf School of English</option>
+              <option value="/schedules/list/catalog-MCLS">Middlebury Language Schools</option>
+              <option value="/schedules/list/catalog-MCUG">Middlebury College</option>
+              <option value="/schedules/list/catalog-MIIS">Middlebury Institute of International Studies</option>
+              <option value="/schedules/list/catalog-MIISLPP">Middlebury Institute of International Studies - Language and Professional Programs</option>
+              <option value="/schedules/list/catalog-MIO">Middlebury Institute Online</option>
+              <option value="/schedules/list/catalog-SA">Middlebury Schools Abroad</option>
+              <option value="/schedules/list/catalog-SE">Middlebury School of the Environment</option>
+            </select>
+          </div>
+
+          <div class="col-md-6 form-group">
+            <label for="term">Term:
+            </label>
+            <select name="term" id="term" class="form-control">
+              <option value="/schedules/list/catalog-BLSE">All Terms</option>
+              <option value="/schedules/list/catalog-BLSE/term-202670" selected="selected">Summer 2026 - BLSE</option>
+              <option value="/schedules/list/catalog-BLSE/term-202570">Summer 2025 - BLSE</option>
+              <option value="/schedules/list/catalog-BLSE/term-202470">Summer 2024 - BLSE</option>
+              <option value="/schedules/list/catalog-BLSE/term-202370">Summer 2023 - BLSE</option>
+              <option value="/schedules/list/catalog-BLSE/term-202270">Summer 2022 - BLSE</option>
+              <option value="/schedules/list/catalog-BLSE/term-202170">Summer 2021 - BLSE</option>
+              <option value="/schedules/list/catalog-BLSE/term-202070">Summer 2020 - BLSE</option>
+              <option value="/schedules/list/catalog-BLSE/term-201970">Summer 2019 - BLSE</option>
+              <option value="/schedules/list/catalog-BLSE/term-201870">Summer 2018 - BLSE</option>
+              <option value="/schedules/list/catalog-BLSE/term-201770">Summer 2017 - BLSE</option>
+              <option value="/schedules/list/catalog-BLSE/term-201670">Summer 2016 - BLSE</option>
+              <option value="/schedules/list/catalog-BLSE/term-201570">Summer 2015 - BLSE</option>
+              <option value="/schedules/list/catalog-BLSE/term-201470">Summer 2014 - BLSE</option>
+              <option value="/schedules/list/catalog-BLSE/term-201370">Summer 2013</option>
+              <option value="/schedules/list/catalog-BLSE/term-201270">Summer 2012</option>
+              <option value="/schedules/list/catalog-BLSE/term-201170">Summer 2011</option>
+              <option value="/schedules/list/catalog-BLSE/term-201070">Summer 2010</option>
+              <option value="/schedules/list/catalog-BLSE/term-200970">Summer 2009</option>
+              <option value="/schedules/list/catalog-BLSE/term-200870">Summer 2008</option>
+              <option value="/schedules/list/catalog-BLSE/term-200770">Summer 2007</option>
+              <option value="/schedules/list/catalog-BLSE/term-200670">Summer 2006</option>
+              <option value="/schedules/list/catalog-BLSE/term-200570">Summer 2005</option>
+              <option value="/schedules/list/catalog-BLSE/term-200470">Summer 2004</option>
+              <option value="/schedules/list/catalog-BLSE/term-200370">Summer 2003</option>
+
+            </select>
+          </div>
+
+        </div>
+      </form>
+
+      <div id="schedules">
+        <h2 class="my-4 my-lg-5">Schedules for Summer 2026 - BLSE</h2>
+
+        <div class="schedule form-group" id="schedule-328875">
+
+          <form class="delete_schedule" id="delete_schedule_328875" action="/schedules/delete/328875/catalog-BLSE/term-202670" method="post">
+            <input type="hidden" name="csrf_key" value="887e1193713a918e8fa.EgEihNDiIA-ZHB-JkuspbxHoRR0k_SXFcsXsF_M1Pwk.d0VX3IGkbmjMLi3qqrhQQnueI25gjX3wR4qmQYMFd1lnUFjvvZdsQtFeRg">
+            <input type="submit" class="button button--sm button--primary button--outline" id="submit_delete_schedule_328875" title="Delete this schedule" value="Delete">
+          </form>
+
+          {% set edit_name_id = random(1234) %}
+          <div class="schedule-title">
+            <h3>Untitled Schedule
+            </h3>
+            <div class="schedule-title--edit">
+              <button class="f4 ml-2 hover-fadeout edit_schedule_name_button" data-form-id="update_schedule_328875" aria-labelledby="midd-tooltip-label-{{edit_name_id}}">
+                {% include 'partials/icon.twig' with {
+                  name: 'pencil'
+                } %}
+              </button>
+              <div class="tooltip__label" role="tooltip" id="midd-tooltip-label-{{edit_name_id}}">Edit title</div>
+            </div>
+          </div>
+
+          <div class="print-and-email-buttons py-2">
+            <a class="print_button f2 font-bold link-underline" href="/schedules/print/328875" title="Click for print view." target="print_view">Print</a>
+            <a class="email_button f2 font-bold link-underline ml-2" href="#" title="Click to preview and send as email.">E-Mail</a>
+
+
+          </div>
+
+          <img class="calendar_img" src="/images/course-catalog-calendar.png" alt="Weekly Schedule Image">
+
+
+          <ul class="offerings">
+            <li style="visibility: hidden">
+              &nbsp;
+            </li>
+
+          </ul>
+
+          <button id="add-to-schedule_328875" data-schedule-id="328875" data-schedule-name="Untitled Schedule" class="add-to-schedule button button--sm button--primary button--block">+ Add Course</button>
+        </div>
+
+        <form id="schedule_create" class="row row--sm-gutters mt-6 mb-6" action="/schedules/create/catalog-BLSE" method="post">
+          <input type="hidden" name="term" value="term-202670">
+          <input type="submit" class="m-auto button button--sm button--primary" id="submit_schedule_create" value="+ Create new schedule">
+          <input type="hidden" name="csrf_key" value="6eba3e3cdc687183eaf1a656a.OEI4e_8yNIIxvdToBShAnLYL0ZW6WLqFFDZFLYSyQ-A.FSBLGYh4UcVdx5q9NGcEzMJ6s8PWKdLofwEpdcGGLbh_c1c2j0djxUvl4A">
+        </form>
+
+        <aside class="schedule-help bg-gray-lighter typography f2 mb-6 p-5" data-landmark-index="6">
+          <p>
+            <strong>Important:</strong>
+            This tool is for planning purposes only. It does not register you for classes.</p>
+          <p>
+            <strong>Basic Usage:</strong>
+          </p>
+          <ol>
+            <li>Search for courses in the catalog and save interesting ones.</li>
+            <li>Create one or more schedules in the Planner.</li>
+            <li>Add courses to schedules.</li>
+            <li>Print or email your schedules.</li>
+          </ol>
+          <p>For more help see:
+            <a href="https://go.middlebury.edu/catalog-help" class="link-external">go/catalog-help</a>
+          </p>
+        </aside>
+
+      </div>
+      <div id="bookmarks" style="display: none">
+        <h2>Saved Courses in Summer 2026 - BLSE</h2>
+
+        <div id="bookmarked_courses" class="typography">
+          <p class="notice">You have no saved courses for this program/term. Please
+            <a href="/offerings/search/catalog-BLSE?term=term-202670">search for courses</a>
+            and save interesting ones first.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+{% endblock %}

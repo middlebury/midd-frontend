@@ -15,7 +15,7 @@ class Journey {
   firstSection: HTMLElement;
   io: IntersectionObserver;
   deviceType: string;
-  timeout: NodeJS.Timeout;
+  timeout: ReturnType<typeof setInterval>;
   scrollRef: object;
   sectionNames: string[];
   sectionIndex: number;

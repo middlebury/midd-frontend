@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
-    "module": "ES2020",
+    "module": "es2020",
     "noImplicitAny": true,
-    "target": "ES5",
+    "target": "es2015",
+    "lib": ["es2020"],
     "jsx": "react",
     "jsxFactory": "h",
     "strict": false,
     "sourceMap": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
     "allowJs": true
   },

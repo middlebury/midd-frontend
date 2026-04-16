@@ -27,6 +27,7 @@ function makeToTopBtn(btn: HTMLElement, threshold: number = 3) {
 
 const btn = $('.js-to-top-btn');
 const homepageBtn = $('.js-journey-to-top-btn');
+const goBtn = $('.js-go-to-top-btn');
 
 if (btn) {
   makeToTopBtn(btn);
@@ -34,4 +35,8 @@ if (btn) {
 
 if (homepageBtn) {
   makeToTopBtn(homepageBtn, 3.75);
+}
+
+if (goBtn) {
+  makeToTopBtn(goBtn, 0.5);
 }

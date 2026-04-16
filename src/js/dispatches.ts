@@ -8,7 +8,7 @@ import Superclamp from 'superclamp';
 class Dispatches {
   elem: HTMLElement;
   delay: number;
-  timeout: NodeJS.Timeout;
+  timeout: ReturnType<typeof setInterval>;
 
   constructor(elem: HTMLElement) {
     this.elem = elem;
