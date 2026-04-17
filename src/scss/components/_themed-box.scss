@@ -22,3 +22,11 @@
     padding-right: 10%;
   }
 }
+
+.themed-box--sa {
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}
