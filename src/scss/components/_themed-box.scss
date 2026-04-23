@@ -24,7 +24,7 @@
 }
 
 .themed-box--sa {
-  .form-group {
+  .form-group:not(:last-child) {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;

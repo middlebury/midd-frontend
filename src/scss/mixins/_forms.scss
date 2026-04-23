@@ -42,7 +42,7 @@
   border: variables.$input-border-width solid variables.$input-border-color;
   font-family: variables.$font-family-base;
   font-size: variables.$input-font-size;
-  line-height: variables.$input-line-height;
+  line-height: initial;
   background-color: variables.$input-bg;
   color: variables.$input-color;
   padding: variables.$input-padding-y variables.$input-padding-x;
