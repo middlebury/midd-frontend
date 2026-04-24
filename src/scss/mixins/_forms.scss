@@ -94,6 +94,7 @@
 @mixin form-checkbox-item() {
   display: flex;
   margin-bottom: variables.$spacing-1;
+  align-items: baseline;
 }
 
 @mixin form-checkbox-control() {
