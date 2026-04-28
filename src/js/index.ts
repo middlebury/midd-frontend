@@ -51,3 +51,4 @@ import './quicksearch';
 import './utils/chosen';
 import './video-controls';
 import './copy-to-clipboard';
+import './form-field-toggle';
