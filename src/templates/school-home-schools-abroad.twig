@@ -1,4 +1,5 @@
 {% extends 'school-home.twig' %}
+{% import 'partials/sa-inquiry-form.twig' as form %}
 
 {% set theme = 'sa' %}
 {% set is_front = true %}
@@ -11,6 +12,11 @@
   } %}
 
   {% include 'paragraphs/school-explorer.twig' %}
+
+  {# {% include 'paragraphs/pardot-form.twig' with {
+      title: 'Request Information',
+      form: form.inquiry_form()
+    }%} #}
 
   {% include 'paragraphs/media-group.twig' with {
     title: 'Media group',
