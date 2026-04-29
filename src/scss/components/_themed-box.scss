@@ -23,7 +23,8 @@
   }
 }
 
-.themed-box--sa {
+.themed-box--sa,
+.paragraph--pardot-form {
   .form-group:not(:last-child) {
     display: flex;
     flex-direction: column;
