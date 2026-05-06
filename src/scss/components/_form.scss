@@ -32,6 +32,10 @@ select.form-control {
   padding: variables.$input-padding-y-sm variables.$input-padding-x-sm;
 }
 
+.form-check-group {
+  column-count: 2;
+}
+
 .form-check {
   @include forms.form-checkbox-item;
 }
