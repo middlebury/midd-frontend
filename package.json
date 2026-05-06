@@ -41,7 +41,7 @@
     "browser-sync": "^3.0.4",
     "bundlesize": "^0.18.2",
     "css-mqpacker": "^7.0.0",
-    "cssnano": "^7.0.5",
+    "cssnano": "^8.0.0",
     "del": "^8.0.0",
     "dotenv": "^17.2.2",
     "gh-pages": "^6.0.0",
