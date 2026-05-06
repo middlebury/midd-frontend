@@ -22,16 +22,3 @@
     padding-right: 10%;
   }
 }
-
-.themed-box--sa,
-.paragraph--pardot-form {
-  .form-group:not(:last-child) {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-
-  .form-group.js-form-field-toggle {
-    display: none;
-  }
-}

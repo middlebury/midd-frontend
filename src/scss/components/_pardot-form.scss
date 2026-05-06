@@ -9,6 +9,16 @@
     margin-bottom: variables.$spacing-4;
   }
 
+  .form-group:not(:last-child) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .form-group.js-form-field-toggle {
+    display: none;
+  }
+
   @include breakpoints.breakpoint(md) {
     margin-bottom: variables.$spacing-8;
     margin-top: variables.$spacing-8;
