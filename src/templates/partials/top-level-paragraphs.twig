@@ -6,6 +6,10 @@
 
 {% include 'paragraphs/status-report.twig' with { items: printer_status } %}
 
+{% include 'paragraphs/portrait-video-group.twig' %}
+
+{% include 'paragraphs/gallery.twig' %}
+
 {% include 'paragraphs/card-carousel.twig' %}
 
 {% include 'paragraphs/dispatches.twig' %}
@@ -50,7 +54,7 @@
 
 {% include 'paragraphs/text-short.twig' %}
 
-{% include 'paragraphs/audio.twig' with { panopto: true, paragraph: true } %}
+{% include 'paragraphs/audio.twig' with { paragraph: true } %}
 
 {% include 'paragraphs/two-col-text.twig' %}
 

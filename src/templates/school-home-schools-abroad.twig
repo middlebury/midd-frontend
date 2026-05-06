@@ -7,6 +7,8 @@
   {% include 'paragraphs/mega-cta.twig' with {
     pin: 'left-bottom',
     hero: true,
+    title: 'What makes Middlebury different?',
+    text: 'With our support, you’ll experience total immersion in the language and culture of your country. You’ll have an authentic learning experience at a local academic institution. You’ll have the guided independence to engage with your community, take on an internship, and make personal discoveries that you’ll always remember.', 
     caption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
   } %}
 
@@ -18,7 +20,7 @@
         quam optio ratione labore possimus iusto corrupti vero fugiat explicabo
         officiis ex, a sunt obcaecati molestias voluptate eum earum ipsam
         accusantium.',
-    media_content_items : ['video', 'image', 'image', 'audio', 'video']
+    media_content_items : ['audio', 'audio', 'audio', 'audio']
   } %}
 
   {# {% include 'paragraphs/video-group.twig' %} #}
@@ -44,7 +46,10 @@
 
   {% include 'paragraphs/announcement.twig' %}
 
-  {% include 'paragraphs/mega-cta.twig' %}
+  {% include 'paragraphs/mega-cta.twig' with {
+    title: 'Title of the Mega CTA',
+    text: 'Nulla eget mauris tortor. Morbi aliquet ac tortor non pharetra. Vestibulum condimentum consequat erat sit amet suscipit. Phasellus tempus mauris vitae neque rhoncus varius. Proin condimentum dui quis risus semper tincidunt sit amet at odio. Maecenas porttitor nisi ut malesuada mattis. Nullam at maximus odio. Nunc in auctor risus.' 
+  } %}
 
   {% include 'paragraphs/cta-group.twig' %}
 {% endblock %}
