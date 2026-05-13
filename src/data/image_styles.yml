@@ -74,7 +74,7 @@ image_styles:
     srcset:
       - 150x200
       - 300x400
-    sizes: '(max-width: 512px) 100px, 300px'
+    sizes: '(max-width: 300px) 100vw, 300px'
   profile_spotlight_item: # 3:4
     title: Quad runner / profile spotlight
     ratio: '3:4'
