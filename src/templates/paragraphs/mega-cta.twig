@@ -65,18 +65,20 @@
             <p class="mega-cta__text{{miis ? '-miis' : ''}} {{midd_hub ? "mb-2": ""}}">
               {{text}}
             </p>
-            <div class="d-flex mt-1 f1 text-white">
-              <span class="mr-1 letter-spacing-base">TAGS:</span>
+            {% if midd_hub %}
+              <div class="d-flex mt-1 f1 text-white">
+                <span class="mr-1 letter-spacing-base">TAGS:</span>
 
-              <ul class="d-flex flex-wrap">
-                {% for name in ['Arts & Culture', 'Student Life'] %}
-                  <li class="mr-1">                  
-                    <a href="#" class="link-underline text-white">{{name}}</a>{% if not loop.last %};{% endif %}
-                  </li>
-                {% endfor %}
-              </ul>
+                <ul class="d-flex flex-wrap">
+                  {% for name in ['Arts & Culture', 'Student Life'] %}
+                    <li class="mr-1">                  
+                      <a href="#" class="link-underline text-white">{{name}}</a>{% if not loop.last %};{% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
 
-            </div>
+              </div>
+            {% endif %}
           {% endif %}
           {% if admissions_lp %}
             <div class="mega-cta__buttons {{not banner_cta ? "mt-4 mt-md-5" : ""}}">
