@@ -44,9 +44,9 @@
 
     </div>
 
-    {% if not env.production %}
-      {% include 'partials/grid-overlay.twig' %}
-    {% endif %}
+    {# {% if not env.production %} #}
+    {% include 'partials/grid-overlay.twig' %}
+    {# {% endif %} #}
 
     {% block layout_before_body_close %}{% endblock %}
     {% block additional_scripts %}{% endblock %}
