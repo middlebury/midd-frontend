@@ -5,7 +5,7 @@
       <span>&nbsp;|&nbsp;</span>
       by
       {% for name in ['Sarah Ray', 'Stephen Diehl'] %}
-        <a href="">{{name}}</a>{{ not loop.last ? "," : "" }}
+        <a href="" class="link-underline">{{name}}</a>{{ not loop.last ? "," : "" }}
       {% endfor %}
     {% endif %}
   </p>
