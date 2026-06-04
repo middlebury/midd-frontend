@@ -15,13 +15,13 @@
         </span>
       {% else %}
         <div class="portrait-video__body">
-          <button class="button button--primary button--sm button--block {{cobblestone_modal ? 'button--light' : ''}} mt-2" id="midd-video-button-label-{{id}}">
+          <span class="button button--primary button--sm button--block {{cobblestone_modal ? 'button--light' : ''}} mt-2" id="midd-video-button-label-{{id}}">
             Play
             {% include 'partials/icon.twig' with {
               name: 'play',
               class: 'ml-1'
             } %}
-          </button>
+          </span>
           <h3 class="portrait-video__title" id="midd-video-label-{{id}}">
             What do students do after graduation?
           </h3>
