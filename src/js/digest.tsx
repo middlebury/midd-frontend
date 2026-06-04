@@ -26,6 +26,7 @@ const DigestNav = ({ items = [] }) => {
       </h2>
       <ol className="digest__list">
         {items.map((item: HTMLElement, i: number) => {
+          item.textContent = item.textContent.replace(/\s/g, ' ');
           return (
             <li key={i} className="digest__item">
               <a href={`#${item.id}`} className="digest__link">
