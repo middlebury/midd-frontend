@@ -12,7 +12,7 @@ import notify from 'gulp-notify';
 import prettify from 'gulp-prettify';
 import imagemin, { mozjpeg, optipng, svgo } from 'gulp-imagemin';
 import replace from 'gulp-replace';
-import yaml from 'js-yaml';
+import { load } from 'js-yaml';
 import { deleteAsync } from 'del';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
@@ -173,10 +173,10 @@ const html = () =>
     )
     .pipe(
       data(function () {
-        const ymlData = yaml.load(
+        const ymlData = load(
           fs.readFileSync('./src/data/data.yml', 'utf8')
         );
-        const imageStyles = yaml.load(
+        const imageStyles = load(
           fs.readFileSync('./src/data/image_styles.yml', 'utf8')
         );
 
