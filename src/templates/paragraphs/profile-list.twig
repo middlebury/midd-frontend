@@ -1,3 +1,5 @@
+{% set social_items = ['instagram', 'facebook', 'twitter', 'linkedin', 'vimeo']%}
+
 {% set items =
   items|default(
     [
@@ -27,7 +29,7 @@
             value: 'Tuesdays 3-4pm, Thursdays 11am-12pm'
           }
         ],
-        social: social_links
+        social: social_items
       },
       {
         name: 'Aaron Smith',
@@ -92,7 +94,7 @@
             value: 'Tuesdays 3-4pm, Thursdays 11am-12pm'
           }
         ],
-        social: social_links
+        social: social_items
       }
     ]
   )
