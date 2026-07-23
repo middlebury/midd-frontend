@@ -1,7 +1,7 @@
 <div class="container px-0">
 
-  <header class="page-header{% if image_src %} page-header--has-image{% endif %}{% if has_menu %} page-header--has-menu{% endif %}{% if app_header %} page-header--app{% endif %}{% if theme == 'wrmc' %} page-header--wrmc{% endif %}">
-    {% if image_src %}
+  <header class="page-header{% if image_src %} page-header--has-image{% endif %}{% if image_full_width %} page-header--has-image-full-width{% endif %}{% if has_menu %} page-header--has-menu{% endif %}{% if app_header %} page-header--app{% endif %}{% if theme == 'wrmc' %} page-header--wrmc{% endif %}">
+    {% if image_full_width %}
       <figure class="page-header__figure">
         {% include 'partials/img.twig' with { name: image_name ?? 'top_level' } %}
 

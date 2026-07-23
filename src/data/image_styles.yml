@@ -281,3 +281,10 @@ image_styles:
       - 136x136
       - 176x176
     sizes: '(max-width: 512px) 128px, (max-width: 768px) 160px, (max-width: 1200px) 136px, 176px'
+  mega_cta_full_width:
+    srcset:
+      - 400x225
+      - 960x540
+      - 1200x675
+      - 1440x810
+      - 1920x1080

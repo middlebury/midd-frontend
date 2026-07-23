@@ -84,7 +84,7 @@
       font-size: functions.rem(46);
       font-weight: variables.$font-weight-bold;
 
-      @include breakpoints.breakpoint(md) {
+      @include breakpoints.breakpoint(lg) {
         font-size: variables.$typescale-11;
         font-weight: variables.$font-weight-extrabold;
       }
