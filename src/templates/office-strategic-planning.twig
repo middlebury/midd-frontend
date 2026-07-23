@@ -1,0 +1,13 @@
+{% extends "anchor-layout.twig" %}
+
+{% block page %}
+  {% embed 'partials/top-level-layout.twig' %}
+    {% block paragraphs %}
+      {% include 'paragraphs/mega-cta.twig' with {
+        image: 'mega_cta_full_width',
+        image_full_width: true,
+      }%}
+      {% include 'partials/top-level-paragraphs.twig' %}
+    {% endblock %}
+  {% endembed %}
+{% endblock %}

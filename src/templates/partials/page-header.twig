@@ -1,10 +1,16 @@
 <div class="container px-0">
 
-  <header class="page-header{% if image_src %} page-header--has-image{% endif %}{% if has_menu %} page-header--has-menu{% endif %}{% if app_header %} page-header--app{% endif %}{% if theme == 'wrmc' %} page-header--wrmc{% endif %}">
+  <header class="page-header{% if image_src %} page-header--has-image{% endif %}{% if image_full_width %} page-header--has-image-full-width{% endif %}{% if has_menu %} page-header--has-menu{% endif %}{% if app_header %} page-header--app{% endif %}{% if theme == 'wrmc' %} page-header--wrmc{% endif %}">
+    {% if image_full_width %}
+      <figure class="page-header__figure">
+        {% include 'partials/img.twig' with { name: image_name ?? 'top_level' } %}
+
+      </figure>
+    {% endif %}
 
     {% if image_src %}
       <figure class="page-header__figure">
-        {% include 'partials/img.twig' with { name: 'top_level' } %}
+        {% include 'partials/img.twig' with { name: image_name ?? 'top_level' } %}
 
         <figcaption class="page-header__caption">
           {% include 'partials/tooltip.twig' with {
@@ -39,7 +45,7 @@
     <div class="page-header__main">
       <div class="page-header__content">
 
-        {% if breadcrumb != false %}
+        {% if breadcrumb %}
           {% include 'partials/breadcrumb.twig' with {
             items: breadcrumb,
             light: image_src  }

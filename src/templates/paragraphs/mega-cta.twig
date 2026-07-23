@@ -2,30 +2,30 @@
 
 <div class="paragraph paragraph--full">
   <div
-    class="container {{admissions_lp and not banner_cta ? "container--xl" : ""}} px-0">
+    class="{{not image_full_width ? "px-0 container" : ""}} {{admissions_lp and not banner_cta ? "container--xl" : ""}}">
 
     {# gradient should be one of left-bottom, left-top, right-bottom, right-top, center #}
 
-    <section class="mega-cta {{miis ? 'mega-cta--miis' : ''}} mega-cta--image{{pin ? '-' ~ pin : '-bottom-left'}} {% if hero %} mega-cta--hero{% endif %}{% if blse %} mega-cta--blse{% endif %}{% if admissions_lp %} mega-cta--admissions-lp {{banner_cta ? 'mega-cta--banner-cta' : '' }}{% endif %}" aria-labelledby="midd-mega-cta-label-{{id}}">
+    <section class="mega-cta {{ miis ? "mega-cta--miis" : "" }}{{ pin ? " mega-cta--image-" ~ pin : "" }} {% if hero %} mega-cta--hero{% endif %}{{ image_full_width ? " mega-cta--image-full-width" : "" }}{% if blse %} mega-cta--blse{% endif %}{% if admissions_lp %} mega-cta--admissions-lp {{ banner_cta ? "mega-cta--banner-cta" : "" }}{% endif %}" aria-labelledby="midd-mega-cta-label-{{id}}">
       {% if gradient %}
         <div class="mega-cta__back-gradient">
-        {% endif %}
+      {% endif %}
         <figure class="mega-cta__back">
-          {% include 'partials/img.twig' with {
-            name: image ?? 'spotlight'
+          {% include "partials/img.twig" with {
+            name: image ?? "spotlight"
           } %}
           {% if caption %}
             <figcaption class="mega-cta__caption">
-              {% include 'partials/tooltip.twig' with {
+              {% include "partials/tooltip.twig" with {
 								light: true,
-								size: 'lg',
+								size: "lg",
 								id: random(1234),
 								label: caption
 							} %}
             </figcaption>
           {% endif %}
         </figure>
-        {% if gradient %}
+      {% if gradient %}
         </div>
       {% endif %}
 
@@ -37,18 +37,24 @@
               <a href="#" class="text-white">Category 2</a>
             </p>
           {% endif %}
+          {% if image_full_width %}
+            <h1 class="mega-cta__title font-sans-serif font-semibold" id="midd-mega-cta-label-{{id}}">
+              <span>Excellence</span>
+              <span>Purpose</span>
+              <span>Joy</span>
+            </h1>
+          {% endif %}
           {% if title %}
             {% if admissions_lp %}
               <h1 class="mega-cta__title font-sans-serif font-semibold border-dual-text-shadow" id="midd-mega-cta-label-{{id}}" style=" --text-color: {{text_color}}; --text-shadow-color-primary: {{text_shadow_color_primary}}; --text-shadow-color-secondary: {{text_shadow_color_secondary}};">
                 {{title}}
               </h1>
-            {% else %}
-              <h2 class="mega-cta__title" id="midd-mega-cta-label-{{id}}">{{title|default('What makes Middlebury different?')}}</h2>
+              <h2 class="mega-cta__title" id="midd-mega-cta-label-{{id}}">{{title|default("What makes Middlebury different?")}}</h2>
             {% endif %}
           {% endif %}
           {% if title_link %}
             <a href="#" class="mega-cta__link">
-              <h2 class="mega-cta__title{{miis ? '-miis' : ''}}" id="midd-mega-cta-label-{{id}}">{{title_link}}</h2>
+              <h2 class="mega-cta__title{{miis ? "-miis" : ""}}" id="midd-mega-cta-label-{{id}}">{{title_link}}</h2>
             </a>
           {% endif %}
           {% if midd_hub %}
@@ -56,13 +62,13 @@
               <time datetime="">Ocotober 10, 2018</time>
               <span>&nbsp;|&nbsp;</span>
               by
-              {% for name in ['Sarah Ray', 'Stephen Diehl'] %}
+              {% for name in ["Sarah Ray", "Stephen Diehl"] %}
                 <a href="" class="text-white link-underline">{{name}}</a>{{ not loop.last ? "," : "" }}
               {% endfor %}
             </p>
           {% endif %}
           {% if text %}
-            <p class="mega-cta__text{{miis ? '-miis' : ''}} {{midd_hub ? "mb-2": ""}}">
+            <p class="mega-cta__text{{miis ? "-miis" : ""}} {{midd_hub ? "mb-2": ""}}">
               {{text}}
             </p>
             {% if midd_hub %}
@@ -70,7 +76,7 @@
                 <span class="mr-1 letter-spacing-base">TAGS:</span>
 
                 <ul class="d-flex flex-wrap">
-                  {% for name in ['Arts & Culture', 'Student Life'] %}
+                  {% for name in ["Arts & Culture", "Student Life"] %}
                     <li class="mr-1">                  
                       <a href="#" class="link-underline text-white">{{name}}</a>{% if not loop.last %};{% endif %}
                     </li>
@@ -83,11 +89,11 @@
           {% if admissions_lp %}
             <div class="mega-cta__buttons {{not banner_cta ? "mt-4 mt-md-5" : ""}}">
               {% if banner_cta %}
-                {% for link in ['Common Application', 'Coalition Application', 'QuestBridge Application'] %}
+                {% for link in ["Common Application", "Coalition Application", "QuestBridge Application"] %}
                   <a class="button button--primary button--heavy {{not loop.last ? "mb-3" : "mb-2"}} mb-md-0 mr-md-2" href="">{{link}}</a>
                 {% endfor %}
               {% else %}
-                {% for link in ['Common Application', 'Coalition Application', 'QuestBridge Application'] %}
+                {% for link in ["Common Application", "Coalition Application", "QuestBridge Application"] %}
                   <a class="button button--primary button--heavy {{loop.last ? "mb-7" : " mr-lg-2 mb-4"}} mb-lg-0" href="">{{link}}</a>
                 {% endfor %}
               {% endif %}
@@ -95,7 +101,7 @@
             {# <a class="button button--primary button--heavy" href="">{{link}}</a> #}
           {% else %}
             {% if link %}
-              <a class="button button--outline button--light" href="">{{link|default('Apply now')}}</a>
+              <a class="button button--outline button--light" href="">{{link|default("Apply now")}}</a>
             {% endif %}
           {% endif %}
         </div>

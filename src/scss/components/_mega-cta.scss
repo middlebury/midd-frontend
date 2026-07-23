@@ -47,6 +47,40 @@
       }
     }
   }
+
+  &.mega-cta--image-full-width {
+    img {
+      opacity: 1;
+    }
+
+    .mega-cta__content {
+      flex: unset;
+      max-width: initial;
+      width: fit-content;
+    }
+
+    .mega-cta__title {
+      width: fit-content;
+      font-size: functions.rem(90);
+      font-family: 'League Spartan', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.05rem;
+
+      span:nth-child(2) {
+        color: variables.$blue;
+      }
+
+      span:last-child {
+        color: variables.$wrmc-green;
+      }
+
+      // Add responsive styles here
+
+      @include breakpoints.breakpoint(xl) {
+        font-size: functions.rem(90);
+      }
+    }
+  }
 }
 
 .mega-cta__back {
