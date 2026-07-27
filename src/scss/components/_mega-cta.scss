@@ -61,10 +61,13 @@
 
     .mega-cta__title {
       width: fit-content;
-      font-size: functions.rem(90);
+      font-size: functions.rem(40);
       font-family: 'League Spartan', sans-serif;
+      line-height: 1.1;
       text-transform: uppercase;
       letter-spacing: 0.05rem;
+      display: flex;
+      flex-direction: column;
 
       span:nth-child(2) {
         color: variables.$blue;
@@ -74,7 +77,14 @@
         color: variables.$wrmc-green;
       }
 
-      // Add responsive styles here
+      @include breakpoints.breakpoint(md) {
+        font-size: functions.rem(60);
+      }
+
+      @include breakpoints.breakpoint(lg) {
+        display: initial;
+        font-size: functions.rem(80);
+      }
 
       @include breakpoints.breakpoint(xl) {
         font-size: functions.rem(90);
