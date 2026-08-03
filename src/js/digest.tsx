@@ -26,11 +26,11 @@ const DigestNav = ({ items = [] }) => {
       </h2>
       <ol className="digest__list">
         {items.map((item: HTMLElement, i: number) => {
-          item.textContent = item.textContent.replace(/\s/g, ' ');
           return (
             <li key={i} className="digest__item">
               <a href={`#${item.id}`} className="digest__link">
-                {item.textContent}
+                {/* remove nbsps */}
+                {item.textContent.replace(/\s/g, ' ')}  
               </a>
             </li>
           );
@@ -47,7 +47,7 @@ function addHeadingAnchors(): HTMLElement[] | null {
   const headingSelector =
     '[data-digest-content] h2:not(:empty):first-child, [data-digest-content] > h2:not(:empty)';
 
-  // Get all headings in the data-digest-content
+  // Get all headings in the 
   const headings = $$(headingSelector);
 
   if (!headings.length) {
