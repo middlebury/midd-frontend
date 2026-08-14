@@ -331,6 +331,6 @@ As of August 14, 2026, the following dependencies have newer releases that we ca
 2. `stylelint`, `stylelint-config-xo-scss` & `stylelint-prettier` - These are required by `@ronilaukkarinen/gulp-stylelint`. `@ronilaukkarinen/gulp-stylelint` is currently only compatible with `stylelint@15.11.0`, `stylelint-config-xo-scss@0.15.0` & `stylelint-prettier@4.1.0`.
 3. `typescript` - The latest version available is `7.0.2` which is an RC version. This will need to be updated once the LTS version is released.
 
-If there are no other dependencies with major releases, `npm install` should automatically update minor and patch versions of dependencies in `package-lock.json`. Commit the changes to package-lock.json to the `master` branch. 
+If there are no other dependencies with major releases, `npm install` should automatically update minor and patch versions of dependencies in `package-lock.json`. Commit the changes to `package-lock.json` to the `master` branch. 
 
 If other dependencies have new major releases, check the release notes for the dependencies in their respective repositories and review breaking changes if any. Install the latest versions of the dependencies and make the necessary updates in code. Run `npm start` to review the built templates served through localhost in the browser. If all looks good, run `npm run build` to test if the build process runs smoothly. If there are no issues, commit changes and push to the `master` branch. 
