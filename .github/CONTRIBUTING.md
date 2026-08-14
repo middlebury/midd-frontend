@@ -316,6 +316,9 @@ You can now use your new icon in templates.
 Steps for periodic maintenance:
 
 ```shell
+# delete previously installed dependencies 
+rm -rf node_modules package-lock.json
+
 # install dependencies
 npm install
 
