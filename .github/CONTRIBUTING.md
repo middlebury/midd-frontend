@@ -309,3 +309,28 @@ You can now use your new icon in templates.
 - Supported browsers are defined in `.browserlistrc` in the root of the repo. This config is checked by other tools using [browserslist](https://github.com/browserslist/browserslist)
 - PostCSS will check this browser list to ensure it adds needed vendor prefixes when running autoprefixer.
 - Previously, [@babel/preset-env](https://babeljs.io/docs/en/babel-preset-env) used this but JS was converted to TypeScript
+
+
+## Maintenance
+
+Steps for periodic maintenance:
+
+```shell
+# delete previously installed dependencies 
+rm -rf node_modules package-lock.json
+
+# install dependencies
+npm install
+
+# list dependencies with new major releases
+npm outdated
+```
+
+As of August 14, 2026, the following dependencies have newer releases that we cannot update to yet:
+1. `iframe-resizer` - This was a dependency required for resizing `iframe`s from forms.middlebury.edu and forms.miis.edu (see https://github.com/middlebury/midd-frontend/issues/169 and https://github.com/middlebury/drupal/issues/824) As that service is discontinued this dependency can possibly be removed. 
+2. `stylelint`, `stylelint-config-xo-scss` & `stylelint-prettier` - These are required by `@ronilaukkarinen/gulp-stylelint`. `@ronilaukkarinen/gulp-stylelint` is currently only compatible with `stylelint@15.11.0`, `stylelint-config-xo-scss@0.15.0` & `stylelint-prettier@4.1.0`.
+3. `typescript` - The latest version available is `7.0.2` which is an RC version. This will need to be updated once the LTS version is released.
+
+If other dependencies have new major releases, check the release notes for the dependencies and review breaking changes if any. Install the latest versions of the dependencies and make the necessary updates in code.
+
+If there are no other dependencies with major releases, `npm install` should automatically update minor and patch versions of dependencies in `package-lock.json`. Commit the changes to package-lock.json to the `main` branch. 
