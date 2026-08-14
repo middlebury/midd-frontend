@@ -117,5 +117,15 @@
       "maxSize": "25 kB",
       "compression": "gzip"
     }
-  ]
+  ],
+  "allowScripts": {
+    "@parcel/watcher@2.6.0": true,
+    "core-js@2.6.12": true,
+    "es5-ext@0.10.64": true,
+    "gifsicle@5.3.0": true,
+    "iframe-resizer@4.4.5": true,
+    "iltorb@2.4.5": true,
+    "mozjpeg@8.0.0": true,
+    "optipng-bin@7.0.1": true
+  }
 }
