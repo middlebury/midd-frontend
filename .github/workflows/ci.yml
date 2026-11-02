@@ -55,6 +55,48 @@ jobs:
           publish_branch: master-dist
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
+  # Tag the master-dist commit built from this push with the version in
+  # package.json. Releases are only ever tagged here, never by hand.
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Tag master-dist
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::error::package.json version '$VERSION' is not X.Y.Z"
+            exit 1
+          fi
+
+          if git rev-parse -q --verify "refs/tags/$VERSION" > /dev/null; then
+            echo "::notice::$VERSION is already tagged; bump the version in package.json to release"
+            exit 0
+          fi
+
+          # peaceiris/actions-gh-pages commits as "deploy: <source sha>"
+          DIST_SHA=$(git log origin/master-dist -n 1 --format=%H --grep="^deploy: $GITHUB_SHA$")
+          if [ -z "$DIST_SHA" ]; then
+            echo "::error::No master-dist commit found for $GITHUB_SHA"
+            exit 1
+          fi
+          if ! git cat-file -e "$DIST_SHA:composer.json"; then
+            echo "::error::master-dist commit $DIST_SHA has no composer.json"
+            exit 1
+          fi
+
+          git tag "$VERSION" "$DIST_SHA"
+          git push origin "refs/tags/$VERSION"
+          echo "::notice::Tagged $VERSION on master-dist $DIST_SHA"
+
   notify:
     needs: build
     runs-on: ubuntu-latest
