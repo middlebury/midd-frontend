@@ -64,6 +64,7 @@ images/demo | images meant to be used for testing designs in this repo. These im
 js | JavaScript/TypeScript files. Root contains mostly custom JavaScript widgets and the main `index.ts` file which imports each widget so they can be bundled together.
 js/components | [Preact](https://preactjs.com/) components like the custom audio player
 js/utils | Small reusable utilities used throughout the JS widgets
+meta | `composer.json`, copied to the root of `dist` by the build. Kept out of the repo root so `master` is never installable from Packagist. [See Releasing](#releasing)
 scss| Sass/CSS files. Root contains some configuration files and `main.scss` to be the root file which imports all partial files. Also contains `pardot-forms.scss` which is compiled as a separate stylesheet to be uploaded to Pardot.
 scss/components | Various components like buttons, accordions, or styles tied to a full Drupal Paragraph component.
 scss/mixins | [SCSS mixins](https://sass-lang.com/documentation/at-rules/mixin)
@@ -73,33 +74,59 @@ templates | Twig/HTML files. Root folder contains mainly full page layout exampl
 templates/paragraphs | Components for [Drupal Paragraphs](https://www.drupal.org/project/paragraphs). There is little that tightly couples the markup to actual Paragraphs, so the markup can could be considered generic HTML/BEM components.
 templates/partials | Abstracted components like `accordion.twig` which is used in multiple paragraphs or simply files to contain other imports for re-use in the root `templates/` files. An example of this is `basic-content.twig` which includes all possible Paragraphs. Since we have a school layout and
 
-## Deploying / Git workflow
+## Git workflow
 
-`develop` branch is the default branch. This is intended to be somewhat of a staging environment before shipping code to production.
+There are two long-lived branches:
+
+Branch|Contents
+---|---
+`master` | Source code. The default branch; feature branches are created from and merged into it.
+`master-dist` | Built assets only. Written by CI on every push to `master`. Never commit to it by hand.
+
+The `develop` branch is no longer used.
 
 ## Working on a feature
 
-1. Create your new feature branch `git checkout -b my-feature-name`
+1. Create your new feature branch from `master`: `git fetch origin && git switch -c my-feature-name --no-track origin/master`
 2. Make your changes and commit
-3. Open a pull request merging your feature branch into `develop` branch
+3. Push with `git push -u origin my-feature-name` and open a pull request into `master`
 4. GitHub Actions (`.github/workflows/ci.yml`) will run a build of the branch to ensure it compiles.
    - Your feature branch will automatically be deployed to a preview environment using [Vercel](https://vercel.com/) and it will leave a comment on the PR giving you a link to the built files (Vercel runs its own build, so the build from GH actions is not the exact same run). This is handy when you want to share the changes with team members.
 
-## Deploying to production
+## Releasing
 
-1. Once `develop` branch is in a production-ready state, open a pull request to merge it into `master`.
-2. Let GitHub actions run a build to ensure all assets compile correctly.
-3. Once merged, the [GitHub Actions CI workflow](https://github.com/middlebury/midd-frontend/actions?query=workflow%3ACI) automatically builds the updated `master` branch using `npm run build` and commits the built assets to a [`master-dist`](https://github.com/middlebury/midd-frontend/tree/master-dist) branch. That branch is then pulled down via ITS' deployment scripts for deploying to production.
+Drupal sites install this package through [Packagist](https://packagist.org/packages/middlebury/midd-frontend) as `middlebury/midd-frontend`. Packagist publishes a version for every git tag whose commit has a `composer.json` at its root. Only `master-dist` has one: on `master` the file lives at `src/meta/composer.json` and the build copies it into `dist/`. A tag on `master` is therefore not installable, but it is still a mistake, so always tag `master-dist`.
 
-> You can certainly avoid GitHub pull request workflows and merge locally on your machine then push to `master` but it's ideal run the CI scripts to help catch possible issues.
+1. Merge your pull request into `master`.
+2. Wait for the [CI workflow](https://github.com/middlebury/midd-frontend/actions?query=workflow%3ACI) run on `master` to pass. Its Deploy step commits the build to [`master-dist`](https://github.com/middlebury/midd-frontend/tree/master-dist).
+3. Find the latest version with `git ls-remote --tags origin` and choose the next one ([semver](https://semver.org/): patch for fixes, minor for new components, major for breaking markup or class changes).
+4. Tag the tip of `master-dist` from the command line:
+
+   ```bash
+   git fetch origin master-dist
+   git log -1 origin/master-dist   # confirm this is the CI commit for your merge
+   git tag 4.5.13 origin/master-dist
+   git push origin 4.5.13
+   ```
+
+   If you use the GitHub "Draft a new release" page instead, change **Target** from `master` to `master-dist` before publishing. It defaults to `master`.
+
+5. Confirm the version appears on Packagist, then update and deploy the version required in [middlebury/drupal](https://github.com/middlebury/drupal), which pins an exact version (see middlebury/drupal#3140).
+
+Never move or re-push an existing tag. Packagist and Composer caches may keep the old commit. Fix a bad release by tagging a new version.
+
+## Rolling back
+
+- **A release breaks the sites:** in middlebury/drupal, set the midd-frontend requirement back to the last good version and deploy. Then fix forward on `master` and release a new version.
+- **A tag was created on the wrong commit:** delete it (`git push origin :refs/tags/<version>`), then tag the correct `master-dist` commit with a **new** version number. Don't reuse the deleted version number.
+
+> You can merge locally and push to `master` without a pull request, but pull requests let CI catch build failures before they reach `master-dist`.
 
 <!-- > Percy visual diffs aren't in a perfect condition but they work for the most part. See https://github.com/middlebury/midd-frontend/issues/347 -->
 
 ### Possible improvements
 
-- We could build and commit assets in a `dist` directly on the `develop` or `master` branch. This is how some npm packages like Bootstrap deploy and will let you see diffs over time more easily with other branches.
-
-- Constantly merging (if with a merge commit) from `develop` -> `master` creates commit spam on the `master` branch. If making pull requests to merge (which is recommended), GitHub might complain that your branch isn't up to date with the target branch. This can possibly be avoided if merging is done with rebase option in GH PRs but has not been fully investigated.
+- Have CI create the release tag on `master-dist` after a successful build, and use a GitHub tag ruleset so tags can't be created by hand.
 
 ## Editor setup
 
