@@ -97,36 +97,24 @@ The `develop` branch is no longer used.
 
 Drupal sites install this package through [Packagist](https://packagist.org/packages/middlebury/midd-frontend) as `middlebury/midd-frontend`. Packagist publishes a version for every git tag whose commit has a `composer.json` at its root. Only `master-dist` has one: on `master` the file lives at `src/meta/composer.json` and the build copies it into `dist/`. A tag on `master` is therefore not installable, but it is still a mistake, so always tag `master-dist`.
 
-1. Merge your pull request into `master`.
-2. Wait for the [CI workflow](https://github.com/middlebury/midd-frontend/actions?query=workflow%3ACI) run on `master` to pass. Its Deploy step commits the build to [`master-dist`](https://github.com/middlebury/midd-frontend/tree/master-dist).
-3. Find the latest version with `git ls-remote --tags origin` and choose the next one ([semver](https://semver.org/): patch for fixes, minor for new components, major for breaking markup or class changes).
-4. Tag the tip of `master-dist` from the command line:
+Tags are created by CI, not by hand. The `release` job in `.github/workflows/ci.yml` runs after every successful build and deploy on `master`. It tags the `master-dist` commit built from that push with the `version` in `package.json`. If that version is already tagged, it does nothing.
 
-   ```bash
-   git fetch origin master-dist
-   git log -1 origin/master-dist   # confirm this is the CI commit for your merge
-   git tag 4.5.13 origin/master-dist
-   git push origin 4.5.13
-   ```
+1. In your pull request, bump the version with `npm version <version> --no-git-tag-version`, which updates `package.json` and `package-lock.json`. Use [semver](https://semver.org/): patch for fixes, minor for new components, major for breaking markup or class changes. Leave the version alone in pull requests that shouldn't be released yet.
+2. Merge the pull request into `master`.
+3. Wait for the [CI workflow](https://github.com/middlebury/midd-frontend/actions?query=workflow%3ACI) run on `master` to pass. Its Deploy step commits the build to [`master-dist`](https://github.com/middlebury/midd-frontend/tree/master-dist), and its `release` job tags that commit. The run's annotations show the tag and commit.
+4. Confirm the version appears on Packagist, then update and deploy the version required in [middlebury/drupal](https://github.com/middlebury/drupal), which pins an exact version (see middlebury/drupal#3140).
 
-   If you use the GitHub "Draft a new release" page instead, change **Target** from `master` to `master-dist` before publishing. It defaults to `master`.
-
-5. Confirm the version appears on Packagist, then update and deploy the version required in [middlebury/drupal](https://github.com/middlebury/drupal), which pins an exact version (see middlebury/drupal#3140).
-
-Never move or re-push an existing tag. Packagist and Composer caches may keep the old commit. Fix a bad release by tagging a new version.
+Don't create tags or releases in the GitHub UI. The UI targets `master` by default, and a tag ruleset only lets GitHub Actions create tags. Never move or re-push an existing tag. Packagist and Composer caches may keep the old commit. Fix a bad release by releasing a new version.
 
 ## Rolling back
 
 - **A release breaks the sites:** in middlebury/drupal, set the midd-frontend requirement back to the last good version and deploy. Then fix forward on `master` and release a new version.
-- **A tag was created on the wrong commit:** delete it (`git push origin :refs/tags/<version>`), then tag the correct `master-dist` commit with a **new** version number. Don't reuse the deleted version number.
+- **A tag was created on the wrong commit:** have a repository admin delete it (`git push origin :refs/tags/<version>`). Then release a **new** version number. Don't reuse the deleted one.
+- **The `release` job failed:** fix the cause and push to `master` again. If the version wasn't tagged, the next successful run tags it.
 
 > You can merge locally and push to `master` without a pull request, but pull requests let CI catch build failures before they reach `master-dist`.
 
 <!-- > Percy visual diffs aren't in a perfect condition but they work for the most part. See https://github.com/middlebury/midd-frontend/issues/347 -->
-
-### Possible improvements
-
-- Have CI create the release tag on `master-dist` after a successful build, and use a GitHub tag ruleset so tags can't be created by hand.
 
 ## Editor setup
 
