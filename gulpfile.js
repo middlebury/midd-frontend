@@ -269,7 +269,9 @@ const copyDeps = () => {
 };
 
 const copyMeta = () => {
-  return gulp.src(['./composer.json']).pipe(gulp.dest('./dist/'));
+  // composer.json lives outside the repo root so Packagist only sees it on
+  // master-dist, never on master. See .github/CONTRIBUTING.md#releasing
+  return gulp.src(['./src/meta/composer.json']).pipe(gulp.dest('./dist/'));
 };
 
 const deployDist = () => {
